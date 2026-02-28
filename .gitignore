@@ -1,0 +1,7 @@
+evidence/
+docs/case.txt
+src/kmap/
+.env
+**/__pycache__/
+**/.langgraph_api/
+**/.venv/

@@ -1,0 +1,18 @@
+# OSINT agent & LangGraph
+# Use ~= for compatible-release (same major.minor, allow patches). For exact pins, use == and run pip freeze.
+langgraph==1.0.9
+langgraph-api==0.7.55
+langgraph-cli
+langchain==1.0.2
+langchain-openai>=0.3.33
+openai==1.109.1
+python-dotenv==1.1.1
+typing_extensions>=4.0.0,<5
+
+# Web & scraping
+requests>=2.31.0,<3
+beautifulsoup4>=4.12.0,<5
+selenium>=4.0.0,<5
+webdriver-manager>=4.0.0,<5
+trafilatura>=1.6.0,<2
+PyPDF2>=3.0.0,<4
