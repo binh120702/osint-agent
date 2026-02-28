@@ -58,6 +58,10 @@ langgraph dev
 
 Use the [Agent Chat UI](docs/agent_chat_ui_setup.md) (submodule) or any LangGraph client to chat.
 
+Example chat UI:
+
+![Example chat UI](assets/chat_ui.png)
+
 ---
 ## Project structure
 
