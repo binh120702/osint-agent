@@ -62,6 +62,8 @@ Example chat UI:
 
 ![Example chat UI](assets/chat_ui.png)
 
+![Example tools config page](assets/tools_config_page.png)
+
 ---
 ## Project structure
 
