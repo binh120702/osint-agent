@@ -1,0 +1,15 @@
+{
+  "_comment": "Toggle tools on/off. true = enabled, false = disabled.",
+  "deep_search": true,
+  "describe_image": true,
+  "engine_search_tool": true,
+  "final_report": true,
+  "get_url_content": true,
+  "github_repo_summary": true,
+  "github_search_repos": true,
+  "pinterest_scrape_by_username": true,
+  "wiki_fetch_page": true,
+  "wiki_search_pages": true,
+  "kb_extract_entities": true,
+  "kb_get": true
+}
