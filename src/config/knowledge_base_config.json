@@ -9,6 +9,7 @@
     { "type": "domain", "description": "A website domain or subdomain (example: 'example.com', 'blog.example.com')." },
     { "type": "url", "description": "A full HTTP/HTTPS URL to a specific resource/page (include scheme 'http://' or 'https://')." },
     { "type": "repository", "description": "A GitHub/code repository identifier (example: 'owner/repo' or a repo URL)." },
+    { "type": "image", "description": "An image file or image URL that can be analyzed for visual clues and metadata." },
     { "type": "email", "description": "An email address." },
     { "type": "phone", "description": "A phone number (include country code if possible)." },
     { "type": "ip", "description": "An IP address (IPv4 or IPv6)." },
@@ -18,6 +19,25 @@
     { "type": "document", "description": "A document/artifact identifier (example: report title, PDF name, or 'case file' label). " },
     { "type": "keyword", "description": "A notable keyword/phrase that anchors investigation (example: campaign name, tag, tagline, or unique phrase)." },
     { "type": "other", "description": "Any entity that does not fit the categories above." }
+  ],
+  "relation_types": [
+    { "type": "mentions", "description": "Entity A and Entity B are both mentioned together in the same text excerpt (context relationship)." },
+    { "type": "alias_for", "description": "An alias/handle belongs to or refers to Entity B (e.g. alias -> person/account)." },
+    { "type": "affiliated_with", "description": "Entity A is affiliated with Entity B (work, education, membership, role, or involvement)." },
+    { "type": "uses_account", "description": "Entity A uses, operates, maintains, or is associated with Entity B as an account." },
+    { "type": "owns_domain", "description": "Entity A owns/controls/is responsible for Entity B as a domain/subdomain." },
+    { "type": "operates_domain", "description": "Entity A operates/maintains Entity B as a domain/subdomain." },
+    { "type": "hosts_repository", "description": "Entity A hosts or is the owner/maintainer of Entity B as a repository." },
+    { "type": "linked_to", "description": "Entity A (a URL/document) is explicitly linked to Entity B (e.g. a page contains evidence about the entity)." },
+    { "type": "depicts", "description": "An image depicts/shows Entity B (person, object, place, event)." },
+    { "type": "image_from", "description": "An image was extracted from a source URL/page/document." },
+    { "type": "captured_on", "description": "An image or event is associated with a date/time." },
+    { "type": "captured_at", "description": "An image or event is associated with a location." },
+    { "type": "located_in", "description": "Entity A is located in Entity B as a place/location." },
+    { "type": "occurred_on", "description": "Entity A (event) occurred on Entity B (date)." },
+    { "type": "has_email", "description": "Entity A has (or is associated with) Entity B as an email address." },
+    { "type": "has_phone", "description": "Entity A has (or is associated with) Entity B as a phone number." },
+    { "type": "other_relation", "description": "Any other relationship that is clearly supported by text evidence." }
   ]
 }
 

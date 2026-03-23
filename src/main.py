@@ -3,12 +3,14 @@ from dotenv import load_dotenv
 import operator
 import os
 from typing import Literal, Any
+from collections.abc import Mapping
 
 from langchain.messages import AnyMessage, SystemMessage, ToolMessage
-from typing_extensions import TypedDict, Annotated
+from typing_extensions import TypedDict, Annotated, NotRequired
 from langgraph.graph import StateGraph, START, END
 
 from tools.all_tools import get_all_tools
+from tools.knowledge_base import set_kb_thread_id
 from llms.openai_client import OPENAI_CLIENT
 from prompts import MAIN_PROMPT
 
@@ -18,6 +20,7 @@ load_dotenv()
 
 class MessagesState(TypedDict):
     messages: Annotated[list[AnyMessage], operator.add]
+    context: NotRequired[dict[str, Any]]
 
 
 TOOLS_BY_NAME = {}
@@ -45,6 +48,44 @@ def _truncate_observation(observation: Any) -> Any:
     if keep <= 0:
         return suffix
     return observation[:keep] + suffix
+
+
+def _resolve_thread_id(config: Any) -> str:
+    """
+    Best-effort extraction of LangGraph thread id from runtime config.
+    Falls back to known environment variables.
+    """
+    candidates: list[str] = []
+
+    if isinstance(config, Mapping):
+        # Common top-level keys
+        for k in ("thread_id", "threadId"):
+            v = config.get(k, "")
+            if v:
+                candidates.append(str(v))
+
+        configurable = config.get("configurable", {})
+        if isinstance(configurable, Mapping):
+            for k in ("thread_id", "threadId"):
+                v = configurable.get(k, "")
+                if v:
+                    candidates.append(str(v))
+
+    # Runtime/env fallbacks
+    for env_key in (
+        "LANGGRAPH_THREAD_ID",
+        "THREAD_ID",
+        "OSINT_THREAD_ID",
+    ):
+        v = os.getenv(env_key, "")
+        if v:
+            candidates.append(v)
+
+    for c in candidates:
+        cc = str(c).strip()
+        if cc:
+            return cc
+    return "global"
 
 
 def _refresh_tools_if_needed() -> None:
@@ -78,8 +119,21 @@ def should_continue(state: MessagesState) -> Literal["tool_node", END]:
     return END
 
 
-def tool_node(state: dict):
+def tool_node(state: dict, config: dict | None = None):
     """Performs the tool call."""
+
+    # Thread-aware KB files: expose current thread id to tools.
+    thread_id = _resolve_thread_id(config)
+    if thread_id == "global":
+        # Fallback: use thread id provided by UI in state context.
+        ctx = state.get("context", {})
+        if isinstance(ctx, Mapping):
+            for key in ("thread_id", "threadId", "conversation_id"):
+                candidate = str(ctx.get(key, "") or "").strip()
+                if candidate:
+                    thread_id = candidate
+                    break
+    set_kb_thread_id(thread_id)
 
     result = []
     for tool_call in state["messages"][-1].tool_calls:
@@ -87,7 +141,7 @@ def tool_node(state: dict):
         observation = tool.invoke(tool_call["args"])
         observation = _truncate_observation(observation)
         result.append(ToolMessage(content=observation, tool_call_id=tool_call["id"]))
-    return {"messages": result}
+    return {"messages": result, "context": state.get("context", {})}
 
 
 def llm_call(state: dict):
@@ -98,7 +152,8 @@ def llm_call(state: dict):
             CLIENT_WITH_TOOLS.invoke(
                 [SystemMessage(content=MAIN_PROMPT)] + state["messages"]
             )
-        ]
+        ],
+        "context": state.get("context", {}),
     }
 
 

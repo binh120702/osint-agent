@@ -16,8 +16,12 @@ MAIN_PROMPT = """
     - As you gather important information (from engine_search, deep_search, wiki, github, pinterest, or manual notes),
       you should periodically call kb_extract_entities with your current notes or summaries to build an OSINT knowledge base
       of entities (people, accounts, domains, locations, etc.).
+    - As you gather important information, you should also periodically call kb_extract_relations with your current
+      notes or summaries so the knowledge base can capture relationships/edges between entities (for a lightweight graph).
     - Before making important reasoning steps or generating a final report, you should call kb_get to recall the current
       knowledge base and use it as context when thinking and writing.
+    - Before making important reasoning steps or generating a final report, you should call kb_get_edges to recall
+      the current knowledge graph relationships and use them as additional context when thinking and writing.
 
     Only stop gathering information when you have enough information to show some insights about the object of investigation.
     If there is still anything you need to know, automatically use the tools provided to you to get more information.
