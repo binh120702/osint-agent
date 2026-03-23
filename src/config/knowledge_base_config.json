@@ -1,0 +1,23 @@
+{
+  "_comment": "Knowledge base config. Edit entity_types to change the allowed kb_extract_entities 'type' tag set.",
+  "entity_types": [
+    { "type": "person", "description": "A real human person (full name and likely name variants)." },
+    { "type": "alias", "description": "An AKA / nickname / alternate spelling used by the same person (short label, not a full identity)." },
+    { "type": "organization", "description": "A company, nonprofit, agency, university, or group (brand/legal name)." },
+    { "type": "handle", "description": "A social username/screen name without a platform prefix (example: 'elonmusk', 'gouldieloxx'). Do not include the '@' unless you prefer consistency." },
+    { "type": "account", "description": "A full account identifier tied to a platform or profile URL (example: 'twitter:elonmusk', 'github:octocat', or https://profile.url)." },
+    { "type": "domain", "description": "A website domain or subdomain (example: 'example.com', 'blog.example.com')." },
+    { "type": "url", "description": "A full HTTP/HTTPS URL to a specific resource/page (include scheme 'http://' or 'https://')." },
+    { "type": "repository", "description": "A GitHub/code repository identifier (example: 'owner/repo' or a repo URL)." },
+    { "type": "email", "description": "An email address." },
+    { "type": "phone", "description": "A phone number (include country code if possible)." },
+    { "type": "ip", "description": "An IP address (IPv4 or IPv6)." },
+    { "type": "location", "description": "A geographic location (city/region/country or approximate place). " },
+    { "type": "date", "description": "A specific date or normalized date string (example: '2026-03-09' or '2024-05')." },
+    { "type": "event", "description": "A named incident/event/milestone (example: '2024 data breach', 'arrest', 'conference 2023')." },
+    { "type": "document", "description": "A document/artifact identifier (example: report title, PDF name, or 'case file' label). " },
+    { "type": "keyword", "description": "A notable keyword/phrase that anchors investigation (example: campaign name, tag, tagline, or unique phrase)." },
+    { "type": "other", "description": "Any entity that does not fit the categories above." }
+  ]
+}
+

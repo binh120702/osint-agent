@@ -4,7 +4,7 @@ An Open Source Intelligence (OSINT) agent built with LangGraph. It investigates 
 
 ## Prerequisites
 
-- **Python 3.11** (see `src/langgraph.json`)
+- **Python 3.13** (see `src/pyproject.toml` and `src/.python-version`)
 - **OpenAI API key** (for the LLM and image description)
 - Optional: **Node.js** and **pnpm** if you want to use the [Agent Chat UI](https://github.com/langchain-ai/agent-chat-ui) (see [docs/agent_chat_ui_setup.md](docs/agent_chat_ui_setup.md))
 
@@ -21,13 +21,9 @@ If you use the optional [Agent Chat UI](docs/agent_chat_ui_setup.md) submodule: 
 
 ### 2. Create a virtual environment and install Python dependencies
 
-
-**Install from version ranges only**:
-
 ```bash
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r src/requirements.txt
+cd src
+uv sync --frozen
 ```
 
 ### 3. Environment variables
@@ -51,7 +47,7 @@ Start the LangGraph server from the **`src`** directory:
 
 ```bash
 cd src
-langgraph dev
+uv run langgraph dev
 ```
 
 - Server: **http://localhost:2024** · Graph ID: **osint_agent**
