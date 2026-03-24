@@ -18,3 +18,8 @@ class LLMClient(ABC):
     def get_model_name(self) -> str:
         """Return the identifier for the underlying model."""
         raise NotImplementedError
+
+    @abstractmethod
+    def describe_image(self, image_url: str, prompt: str) -> str:
+        """Describe an image URL using the underlying provider."""
+        raise NotImplementedError

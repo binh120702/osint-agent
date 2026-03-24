@@ -3,7 +3,8 @@ import time
 
 from dotenv import load_dotenv
 from langchain.tools import tool
-from openai import OpenAI
+
+from llms.client_factory import ACTIVE_LLM_CLIENT
 
 
 load_dotenv()
@@ -26,8 +27,6 @@ def describe_image(image_url: str) -> str:
         A detailed description of the image.
     """
 
-    client = OpenAI()
-
     max_retries = 3
     backoff_seconds = 1.0
     description_text = None
@@ -35,17 +34,9 @@ def describe_image(image_url: str) -> str:
 
     for attempt in range(1, max_retries + 1):
         try:
-            response = client.responses.create(
-                model="gpt-4.1-nano-2025-04-14",
-                input=[{
-                    "role": "user",
-                    "content": [
-                        {"type": "input_text", "text": IMAGE_DESCRIPTION_PROMPT},
-                        {"type": "input_image", "image_url": image_url},
-                    ]
-                }]
+            description_text = ACTIVE_LLM_CLIENT.describe_image(
+                image_url=image_url, prompt=IMAGE_DESCRIPTION_PROMPT
             )
-            description_text = getattr(response, "output_text", None)
             if description_text:
                 break
             last_error_message = "Empty response from image descriptor API"
@@ -70,4 +61,15 @@ def describe_image(image_url: str) -> str:
             "last_error": last_error_message
         }
     }
+
+    # Persist image description into KB as IMAGE entity notes for later retrieval.
+    try:
+        from tools.knowledge_base import upsert_image_entity_description
+
+        upsert_image_entity_description(image_ref=image_url, description=description_text)
+        results["meta"]["kb_entity_updated"] = True
+    except Exception as e:
+        results["meta"]["kb_entity_updated"] = False
+        results["meta"]["kb_update_error"] = str(e)
+
     return json.dumps(results, indent=2, default=str)

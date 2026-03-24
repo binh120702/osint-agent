@@ -11,7 +11,7 @@ from langgraph.graph import StateGraph, START, END
 
 from tools.all_tools import get_all_tools
 from tools.knowledge_base import set_kb_thread_id
-from llms.openai_client import OPENAI_CLIENT
+from llms.client_factory import ACTIVE_LLM_CLIENT
 from prompts import MAIN_PROMPT
 
 
@@ -104,7 +104,7 @@ def _refresh_tools_if_needed() -> None:
         return
 
     TOOLS_BY_NAME = {tool.name: tool for tool in tools}
-    CLIENT_WITH_TOOLS = OPENAI_CLIENT.client.bind_tools(tools, tool_choice="auto")
+    CLIENT_WITH_TOOLS = ACTIVE_LLM_CLIENT.client.bind_tools(tools, tool_choice="auto")
     _LAST_TOOL_NAMES = current_names
 
 

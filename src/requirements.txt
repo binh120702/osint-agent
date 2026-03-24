@@ -5,6 +5,8 @@ langgraph-api==0.7.55
 langgraph-cli
 langchain==1.0.2
 langchain-openai>=0.3.33
+langchain-google-genai>=2.0.0
+langchain-anthropic>=0.3.0
 openai==1.109.1
 python-dotenv==1.1.1
 typing_extensions>=4.0.0,<5

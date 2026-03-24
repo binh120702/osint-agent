@@ -8,7 +8,7 @@ from contextvars import ContextVar
 from langchain.messages import SystemMessage, HumanMessage
 from langchain.tools import tool
 
-from llms.openai_client import OPENAI_CLIENT
+from llms.client_factory import ACTIVE_LLM_CLIENT
 from tools.image_descriptor import describe_image
 from tools.osint_multimedia import getEXIFdata
 
@@ -273,6 +273,68 @@ def _write_kb_lines(lines: List[str]) -> None:
     path.write_text(content, encoding="utf-8")
 
 
+def _build_entity_line(etype: str, value: str, notes: str = "") -> str:
+    line = f"{etype.upper() or 'UNKNOWN'} | {value}"
+    if notes:
+        line = f"{line} | {notes}"
+    return line
+
+
+def _parse_entity_line(line: str) -> Dict[str, str]:
+    """
+    Parse KB entity line in format:
+      TYPE | value | notes(optional)
+    """
+    parts = [p.strip() for p in line.split(" | ")]
+    if len(parts) < 2:
+        return {"type": "", "value": "", "notes": ""}
+    etype = parts[0]
+    value = parts[1]
+    notes = " | ".join(parts[2:]).strip() if len(parts) > 2 else ""
+    return {"type": etype, "value": value, "notes": notes}
+
+
+def upsert_image_entity_description(image_ref: str, description: str) -> None:
+    """
+    Attach a generated description to an IMAGE entity in KB.
+
+    - Creates the IMAGE entity if it does not exist.
+    - Merges with existing notes for the same IMAGE + value.
+    """
+    ref = str(image_ref or "").strip()
+    desc = str(description or "").strip()
+    if not ref or not desc:
+        return
+
+    existing = _read_kb_lines()
+    updated: List[str] = []
+    found = False
+    image_key = ref.lower()
+    desc_note = f"image_description: {desc}"
+
+    for line in existing:
+        parsed = _parse_entity_line(line)
+        etype = parsed.get("type", "").strip().upper()
+        value = parsed.get("value", "").strip()
+        notes = parsed.get("notes", "").strip()
+        if etype == "IMAGE" and value.lower() == image_key:
+            found = True
+            if "image_description:" in notes:
+                # Replace existing image_description while preserving other notes.
+                other_notes = [n.strip() for n in notes.split(" | ") if n.strip() and not n.strip().startswith("image_description:")]
+                merged_notes = " | ".join([*other_notes, desc_note]).strip(" |")
+            else:
+                merged_notes = f"{notes} | {desc_note}".strip(" |") if notes else desc_note
+            updated.append(_build_entity_line("IMAGE", value, merged_notes))
+        else:
+            updated.append(line)
+
+    if not found:
+        updated.append(_build_entity_line("IMAGE", ref, desc_note))
+
+    _write_kb_lines(sorted(set(updated)))
+
+
 @tool
 def kb_extract_entities(text: str) -> str:
     """Extract key entities from investigation text and append them to the OSINT knowledge base.
@@ -308,7 +370,7 @@ def kb_extract_entities(text: str) -> str:
         SystemMessage(content=_entities_system_prompt(entity_types)),
         HumanMessage(content=text),
     ]
-    response = OPENAI_CLIENT.invoke(messages)
+    response = ACTIVE_LLM_CLIENT.invoke(messages)
     content = getattr(response, "content", str(response))
 
     try:
@@ -348,9 +410,7 @@ def kb_extract_entities(text: str) -> str:
             if enrichment:
                 notes = f"{notes} | {enrichment}" if notes else enrichment
 
-        line = f"{etype.upper() or 'UNKNOWN'} | {value}"
-        if notes:
-            line = f"{line} | {notes}"
+        line = _build_entity_line(etype, value, notes)
         if line not in existing_lines:
             existing_lines.add(line)
             added.append(line)
@@ -566,7 +626,7 @@ def kb_extract_relations(text: str) -> str:
         HumanMessage(content=text),
     ]
 
-    response = OPENAI_CLIENT.invoke(messages)
+    response = ACTIVE_LLM_CLIENT.invoke(messages)
     content = getattr(response, "content", str(response))
 
     try:

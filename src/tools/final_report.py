@@ -1,7 +1,7 @@
 from langchain.messages import SystemMessage, HumanMessage
 from langchain.tools import tool
 
-from llms.openai_client import OPENAI_CLIENT
+from llms.client_factory import ACTIVE_LLM_CLIENT
 
 
 FINAL_REPORT_SYSTEM_PROMPT = """
@@ -40,6 +40,6 @@ def final_report(investigation_summary: str) -> str:
         SystemMessage(content=FINAL_REPORT_SYSTEM_PROMPT),
         HumanMessage(content=investigation_summary),
     ]
-    response = OPENAI_CLIENT.invoke(messages)
+    response = ACTIVE_LLM_CLIENT.invoke(messages)
     return getattr(response, "content", str(response))
 
