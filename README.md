@@ -54,6 +54,10 @@ uv run langgraph dev
 
 Use the [Agent Chat UI](docs/agent_chat_ui_setup.md) (submodule) or any LangGraph client to chat.
 
+## MVP smoke demo
+
+For a quick end-to-end validation of the workflow (tools → KB/KG → HITL → report + export), see [docs/smoke_demo.md](docs/smoke_demo.md).
+
 Example chat UI:
 
 ![Example chat UI](assets/chat_ui.png)

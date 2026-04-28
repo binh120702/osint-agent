@@ -481,23 +481,143 @@ def example_offline_copy(url_to_investigate):
 @tool
 def deep_search(pages: list[str]) -> str:
     """
-        Deep search a website, input the url of the website to search.
-        When investigating a website, if there is not enough information to show some insights about the object of investigation
-        you MUST ALWAYS try to deep_search the robots.txt file (url: <website>/robots.txt) to get more pages inside the website. 
-        Find all the pages even it is disallowed in the robots.txt file. 
-        REMEMBER: YOU MUST ALWAYS TRY TO DEEP SEARCH THE ROBOTS.TXT FILE TO GET MORE PAGES INSIDE THE WEBSITE. 
-        DEEP SEARCH ALL THE PAGES INCLUDE ALLOWED AND DISALLOWED PAGES IN THE ROBOTS.TXT FILE.
-        When finding urls, if there are some patterns like /page/1, /page/2, etc., you MUST ALWAYS try to deep_search all the pages.
-        for example, if you find the url https://www.example.com/page/1 and https://www.example.com/page/5, 
-        you MUST ALWAYS try to deep_search the url https://www.example.com/page/2, https://www.example.com/page/3, https://www.example.com/page/4.
+        Deep search one or more web pages (URLs) and extract text/links/images.
+
+        This tool is intentionally **bounded** for safety and predictability:
+        - It will investigate the URLs you provide.
+        - It will also *optionally* discover extra URLs from each site's `robots.txt`
+          (both Allow and Disallow paths) and expand simple pagination patterns
+          like `/page/1`..`/page/5`, but only up to small fixed limits.
+
     Args:
         pages: The list of pages to investigate.
     Returns:
         Something with the information of the website.
     """
     logger.info(f"Deep searching multiple pages: {pages}")
-    investigator = WebsiteInvestigator()    
-    results = investigator.investigate_multiple_pages(pages)
+
+    def _origin(url: str) -> str:
+        p = urlparse(url)
+        if not p.scheme or not p.netloc:
+            return ""
+        return f"{p.scheme}://{p.netloc}"
+
+    def _robots_url(url: str) -> str:
+        o = _origin(url)
+        return f"{o}/robots.txt" if o else ""
+
+    def _parse_robots_txt(text: str, base: str) -> List[str]:
+        """
+        Very lightweight robots.txt parser:
+        - Collects Allow/Disallow path values
+        - Ignores user-agent grouping (we just want candidate URLs)
+        """
+        urls: List[str] = []
+        for raw_line in text.splitlines():
+            line = raw_line.strip()
+            if not line or line.startswith("#"):
+                continue
+            if ":" not in line:
+                continue
+            k, v = line.split(":", 1)
+            key = k.strip().lower()
+            value = v.strip()
+            if key not in {"allow", "disallow", "sitemap"}:
+                continue
+            if key == "sitemap":
+                if value.startswith("http://") or value.startswith("https://"):
+                    urls.append(value)
+                continue
+            # Allow/Disallow paths are usually relative.
+            if value and value != "/":
+                urls.append(urljoin(base, value))
+        return urls
+
+    def _expand_pagination(urls: List[str], max_new: int) -> List[str]:
+        """
+        Expand simple pagination patterns like `/page/1`..`/page/5`.
+        Only expands within the same (scheme, netloc, path prefix) bucket.
+        """
+        expanded: Set[str] = set()
+        buckets: Dict[str, Set[int]] = {}
+        pattern = re.compile(r"^(.*?)(\d+)(/?)(\?.*)?$")
+
+        for u in urls:
+            m = pattern.match(u)
+            if not m:
+                continue
+            prefix, num_str, slash, qs = m.group(1), m.group(2), m.group(3), m.group(4) or ""
+            # Heuristic: only treat as pagination if prefix ends with /page/ or page=
+            if not (prefix.endswith("/page/") or "page=" in (prefix + qs)):
+                continue
+            try:
+                n = int(num_str)
+            except ValueError:
+                continue
+            key = f"{prefix}|{slash}|{qs}"
+            buckets.setdefault(key, set()).add(n)
+
+        for key, nums in buckets.items():
+            if len(expanded) >= max_new:
+                break
+            if len(nums) < 2:
+                continue
+            min_n, max_n = min(nums), max(nums)
+            # Bound the range so we don't explode.
+            if max_n - min_n > 25:
+                continue
+            prefix, slash, qs = key.split("|", 2)
+            for n in range(min_n, max_n + 1):
+                if len(expanded) >= max_new:
+                    break
+                expanded.add(f"{prefix}{n}{slash}{qs}")
+
+        return list(expanded)
+
+    # Bounded discovery limits
+    MAX_TOTAL_URLS = 30
+    MAX_ROBOTS_URLS_PER_ORIGIN = 15
+    MAX_PAGINATION_EXPANSION = 15
+
+    provided = [p for p in pages if isinstance(p, str) and p.strip()]
+    candidate_urls: List[str] = []
+    seen: Set[str] = set()
+
+    def _add(u: str):
+        if not u or u in seen:
+            return
+        if len(seen) >= MAX_TOTAL_URLS:
+            return
+        seen.add(u)
+        candidate_urls.append(u)
+
+    for u in provided:
+        _add(u.strip())
+
+    # robots.txt discovery (best effort)
+    origins = list({o for o in (_origin(u) for u in provided) if o})
+    fetcher = WebsiteFetcher(timeout=10, max_retries=2)
+    for o in origins:
+        if len(candidate_urls) >= MAX_TOTAL_URLS:
+            break
+        rurl = f"{o}/robots.txt"
+        try:
+            r = fetcher.fetch(rurl)
+            if not r.get("success") or not isinstance(r.get("html"), str):
+                continue
+            robots_candidates = _parse_robots_txt(r["html"], o)
+            for rc in robots_candidates[:MAX_ROBOTS_URLS_PER_ORIGIN]:
+                _add(rc)
+        except Exception:
+            # ignore robots failures
+            continue
+
+    # Pagination expansion (best effort, bounded)
+    for u in _expand_pagination(candidate_urls, MAX_PAGINATION_EXPANSION):
+        _add(u)
+
+    investigator = WebsiteInvestigator()
+    results = investigator.investigate_multiple_pages(candidate_urls)
     logger.info(f"Results: {json.dumps(results, indent=2, default=str)}")
     results = json.dumps(results, indent=2, default=str)
     return results

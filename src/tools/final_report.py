@@ -25,6 +25,11 @@ The report should be in the following format (you may adapt it based on the info
 - CONCLUSION
 - REFERENCES
 
+Input format:
+- You may receive either plain text, or a JSON-like text blob that includes sections such as:
+  `case`, `scope`, `kb_entities`, `kb_edges`, `evidence_urls`, `notes`, `assumptions`.
+- If the input includes KB entities/edges, treat them as ground truth context and reflect them in findings.
+
 Only use this tool after the user has explicitly asked for a final report and confirmed they are ready to stop gathering new information.
 """
 

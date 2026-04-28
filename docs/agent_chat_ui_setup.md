@@ -20,7 +20,7 @@ From the repo root (see [README – Running the agent](../README.md#running-the-
 
 ```bash
 cd src
-langgraph dev
+uv run langgraph dev
 ```
 
 Server: **http://localhost:2024** · Graph ID: **`osint_agent`**
