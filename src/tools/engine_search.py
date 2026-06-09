@@ -3,8 +3,12 @@ OSINT Web Access - Search Engines & Social Media
 Complete implementation with retry logic and rate limiting
 """
 
+from dotenv import load_dotenv
+load_dotenv()
+
 from langchain.tools import tool
 import requests
+import os
 from typing import Dict, List, Optional
 import time
 from datetime import datetime
@@ -112,6 +116,55 @@ class DuckDuckGoSearch(SearchEngineClient):
                 })
         
         return results
+
+
+class SearxngSearch(SearchEngineClient):
+    """SearXNG Search Engine - Configurable instance or fallback list"""
+    
+    def __init__(self, base_url: Optional[str] = None):
+        super().__init__()
+        self.configured_url = base_url or os.getenv("SEARXNG_URL", "").strip()
+        self.fallback_instances = [
+            "https://searx.be",
+            "https://searxng.site",
+            "https://searx.work",
+            "https://priv.au",
+        ]
+
+    def search(self, query: str, num_results: int = 20) -> List[Dict]:
+        if self.configured_url:
+            urls = [self.configured_url]
+        else:
+            urls = self.fallback_instances
+
+        for url in urls:
+            search_url = url if url.endswith("/search") else urljoin(url, "search")
+            try:
+                def _search():
+                    params = {
+                        'q': query,
+                        'format': 'json',
+                        'pageno': '1'
+                    }
+                    response = self.session.get(search_url, params=params, timeout=8)
+                    response.raise_for_status()
+                    return response.json()
+                
+                results = self.retry_with_backoff(_search)
+                items = results.get('results', [])
+                if items:
+                    return [{
+                        'title': item.get('title'),
+                        'url': item.get('url'),
+                        'snippet': item.get('content') or item.get('snippet') or '',
+                        'source': 'searxng'
+                    } for item in items[:num_results]]
+            except Exception as e:
+                logger.warning(f"SearXNG instance {url} failed: {e}. Trying next...")
+                continue
+        
+        return []
+
 
 
 class BingSearchAPI(SearchEngineClient):
@@ -458,6 +511,7 @@ def example_usage():
 
 
 AGGREGATOR = OSINTAggregator()
+AGGREGATOR.add_search_engine('searxng', SearxngSearch())
 AGGREGATOR.add_search_engine('duckduckgo', DuckDuckGoSearch())
 
 @tool
@@ -472,7 +526,15 @@ def engine_search_tool(query: str) -> str:
         Something with the information of the search results.
     """
     logger.info(f"Searching the web using the engine search tool: {query}")
-    results = AGGREGATOR.aggregate_search(query, ['duckduckgo'])
+    results = AGGREGATOR.aggregate_search(query, ['searxng'])
+    
+    # Fallback to DuckDuckGo if SearXNG failed or returned no results
+    searxng_results = results.get('sources', {}).get('searxng', [])
+    if not searxng_results or (isinstance(searxng_results, dict) and searxng_results.get('error')):
+        logger.warning("SearXNG failed or returned empty results. Falling back to DuckDuckGo...")
+        fallback_results = AGGREGATOR.aggregate_search(query, ['duckduckgo'])
+        results['sources']['duckduckgo'] = fallback_results.get('sources', {}).get('duckduckgo', [])
+        
     logger.info(f"Results: {json.dumps(results, indent=2, default=str)}")
     return json.dumps(results, indent=2, default=str)
 

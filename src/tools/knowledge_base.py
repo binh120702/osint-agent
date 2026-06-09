@@ -86,6 +86,71 @@ def kb_current_thread_namespace() -> str:
     return _current_thread_id()
 
 
+def _mirror_entities_to_file(thread_id: str) -> None:
+    """Sync entities from Neo4j back to local files for Next.js UI compatibility."""
+    try:
+        driver = get_neo4j_driver()
+        query = """
+        MATCH (e:Entity {thread_id: $thread_id})
+        RETURN e.type AS type, e.value AS value, e.notes AS notes
+        ORDER BY type, value
+        """
+        with driver.session() as session:
+            result = session.run(query, thread_id=thread_id)
+            lines = []
+            for record in result:
+                lines.append(_build_entity_line(record["type"], record["value"], record["notes"] or ""))
+            
+            root = Path(__file__).resolve().parent.parent
+            data_dir = root / "data" / thread_id
+            data_dir.mkdir(parents=True, exist_ok=True)
+            entities_file = data_dir / "kb_entities.txt"
+            
+            content = "\n".join(lines) + "\n" if lines else ""
+            entities_file.write_text(content, encoding="utf-8")
+    except Exception as e:
+        print(f"Error mirroring entities to file: {e}")
+
+
+def _mirror_relations_to_file(thread_id: str) -> None:
+    """Sync relationships from Neo4j back to JSONL file for Next.js UI compatibility."""
+    try:
+        driver = get_neo4j_driver()
+        query = """
+        MATCH (from:Entity {thread_id: $thread_id})-[r]->(to:Entity {thread_id: $thread_id})
+        RETURN from.type AS from_type, from.value AS from_value,
+               type(r) AS relation_type,
+               to.type AS to_type, to.value AS to_value,
+               r.notes AS notes
+        ORDER BY from_type, from_value, relation_type, to_type, to_value
+        """
+        with driver.session() as session:
+            result = session.run(query, thread_id=thread_id)
+            lines = []
+            for record in result:
+                notes = record["notes"] or ""
+                notes_list = [n.strip() for n in notes.split(" | ") if n.strip()]
+                obj = {
+                    "from_type": record["from_type"],
+                    "from_value": record["from_value"],
+                    "relation_type": record["relation_type"].lower(),
+                    "to_type": record["to_type"],
+                    "to_value": record["to_value"],
+                    "notes": " | ".join(notes_list)
+                }
+                lines.append(json.dumps(obj, ensure_ascii=False))
+            
+            root = Path(__file__).resolve().parent.parent
+            data_dir = root / "data" / thread_id
+            data_dir.mkdir(parents=True, exist_ok=True)
+            edges_file = data_dir / "kb_edges.jsonl"
+            
+            content = "\n".join(lines) + "\n" if lines else ""
+            edges_file.write_text(content, encoding="utf-8")
+    except Exception as e:
+        print(f"Error mirroring relations to file: {e}")
+
+
 def _kb_config_path() -> Path:
     """Path to knowledge base config for dynamic entity type tag sets."""
     root = Path(__file__).resolve().parent.parent  # src/
@@ -325,6 +390,8 @@ def upsert_image_entity_description(image_ref: str, description: str) -> None:
             "SET e:Image, e.notes = $notes, e.updated_at = timestamp()",
             thread_id=thread_id, value=ref, notes=merged_notes
         )
+    _mirror_entities_to_file(thread_id)
+
 
 
 @tool
@@ -428,6 +495,8 @@ def kb_extract_entities(text: str) -> str:
             for record in result:
                 added_entities_info.append(f"{record['type'].upper()} | {record['value']}")
 
+    _mirror_entities_to_file(thread_id)
+
     return json.dumps(
         {
             "status": "ok",
@@ -436,6 +505,7 @@ def kb_extract_entities(text: str) -> str:
         },
         indent=2,
     )
+
 
 
 @tool
@@ -642,10 +712,14 @@ def kb_extract_relations(text: str) -> str:
                     f"{rel_type} | {record['from_type']}:{record['from_value']} -> {record['to_type']}:{record['to_value']}"
                 )
 
+    _mirror_entities_to_file(thread_id)
+    _mirror_relations_to_file(thread_id)
+
     return json.dumps(
         {"status": "ok", "added_edges": added_edges, "neo4j": True},
         indent=2,
     )
+
 
 
 @tool

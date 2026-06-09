@@ -1,0 +1,12 @@
+# SearXNG settings override to enable JSON output format
+use_default_settings: true
+
+server:
+  port: 8080
+  bind_address: "0.0.0.0"
+  secret_key: "osint_agent_secret_key_string"
+
+search:
+  formats:
+    - html
+    - json

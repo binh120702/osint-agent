@@ -7,6 +7,7 @@ case intake → tool calls → KB/KG updates → human-in-the-loop → report + 
 
 - Python **3.13** (see `src/.python-version`)
 - `uv` installed
+- Docker (with Neo4j and SearXNG containers running)
 - Optional: Node.js + `pnpm` for the UI
 - Env: set `OPENAI_API_KEY` in `src/.env`
 

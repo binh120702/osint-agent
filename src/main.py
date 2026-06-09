@@ -1,5 +1,7 @@
 
 from dotenv import load_dotenv
+load_dotenv()
+
 import operator
 import os
 from typing import Literal, Any
@@ -14,8 +16,6 @@ from tools.knowledge_base import set_kb_thread_id
 from llms.client_factory import ACTIVE_LLM_CLIENT
 from prompts import MAIN_PROMPT
 
-
-load_dotenv()
 
 
 class MessagesState(TypedDict):
