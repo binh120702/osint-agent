@@ -3,6 +3,7 @@ from pathlib import Path
 from typing import Any, List, Dict
 from urllib.parse import urlparse
 import re
+import os
 from contextvars import ContextVar
 
 from langchain.messages import SystemMessage, HumanMessage
@@ -12,8 +13,50 @@ from llms.client_factory import ACTIVE_LLM_CLIENT
 from tools.image_descriptor import describe_image
 from tools.osint_multimedia import getEXIFdata
 
+from neo4j import GraphDatabase
+
 
 _KB_THREAD_ID_CTX: ContextVar[str] = ContextVar("kb_thread_id", default="global")
+_NEO4J_DRIVER = None
+
+
+def get_neo4j_driver():
+    """Get or initialize the Neo4j database driver connection pool."""
+    global _NEO4J_DRIVER
+    if _NEO4J_DRIVER is None:
+        uri = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+        username = os.getenv("NEO4J_USERNAME", "neo4j")
+        password = os.getenv("NEO4J_PASSWORD", "password")
+        driver = GraphDatabase.driver(uri, auth=(username, password))
+        
+        # Try to initialize uniqueness constraint on Entity nodes
+        try:
+            with driver.session() as session:
+                session.run(
+                    "CREATE CONSTRAINT UNIQUE_ENTITY_PER_THREAD IF NOT EXISTS "
+                    "FOR (e:Entity) REQUIRE (e.thread_id, e.type, e.value) IS UNIQUE"
+                )
+        except Exception as e:
+            # Non-blocking warning (AuraDB or server versions may handle this differently)
+            print(f"Neo4j constraint initialization warning: {e}")
+            
+        _NEO4J_DRIVER = driver
+    return _NEO4J_DRIVER
+
+
+def _sanitize_label(etype: str) -> str:
+    """Sanitize entity type to form a safe Neo4j label name (PascalCase)."""
+    clean = re.sub(r"[^a-zA-Z0-9]+", "", etype.strip())
+    return clean.capitalize() or "Other"
+
+
+def _sanitize_relationship_type(rel_type: str) -> str:
+    """Sanitize relationship type to form a safe Neo4j relationship type (UPPER_SNAKE_CASE)."""
+    clean = re.sub(r"[^a-zA-Z0-9_]+", "_", rel_type.strip()).upper()
+    clean = clean.strip("_")
+    if not clean or not clean[0].isalpha():
+        return f"R_{clean}" if clean else "MENTIONS"
+    return clean
 
 
 def _sanitize_thread_id(thread_id: str) -> str:
@@ -41,17 +84,6 @@ def set_kb_thread_id(thread_id: str) -> None:
 def kb_current_thread_namespace() -> str:
     """Return the currently resolved KB thread namespace (for debugging thread-id wiring)."""
     return _current_thread_id()
-
-
-def _kb_path() -> Path:
-    """Return the path to the thread-scoped knowledge base entities text file."""
-    root = Path(__file__).resolve().parent.parent
-    data_dir = root / "data"
-    data_dir.mkdir(parents=True, exist_ok=True)
-    tid = _current_thread_id()
-    thread_dir = data_dir / tid
-    thread_dir.mkdir(parents=True, exist_ok=True)
-    return thread_dir / "kb_entities.txt"
 
 
 def _kb_config_path() -> Path:
@@ -89,7 +121,6 @@ def _load_kb_config() -> Dict[str, Any]:
     seen: set[str] = set()
 
     for entry in entity_types:
-        # Backwards compatible: allow ["person", "domain"] style.
         if isinstance(entry, str):
             t = entry.strip()
             if not t or t in seen:
@@ -119,7 +150,6 @@ def _load_kb_config() -> Dict[str, Any]:
     normalized_relations: List[Dict[str, str]] = []
     seen_rel: set[str] = set()
     for entry in relation_types:
-        # Backwards compatible: allow ["mentions", "linked_to"] style.
         if isinstance(entry, str):
             rt = entry.strip()
             if not rt or rt in seen_rel:
@@ -142,7 +172,6 @@ def _load_kb_config() -> Dict[str, Any]:
     if not normalized_relations:
         normalized_relations = minimal_fallback.get("relation_types", [])
 
-    # Return normalized structure.
     return {
         "entity_types": normalized_types,
         "relation_types": normalized_relations,
@@ -225,7 +254,6 @@ def _enrich_image_notes(image_ref: str) -> str:
             snippets.append(f"description_error: {e}")
         return " | ".join(snippets)
 
-    # local file / filename
     if _looks_like_image_ref(image_ref):
         try:
             exif = getEXIFdata(image_ref)
@@ -249,30 +277,6 @@ def _enrich_image_notes(image_ref: str) -> str:
     return " | ".join(snippets)
 
 
-def _read_kb_lines() -> List[str]:
-    path = _kb_path()
-    if path.exists():
-        return [line.rstrip("\n") for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
-
-    # Backward compatibility with old file naming in src/data root.
-    legacy = path.parent.parent / f"kb_entities__{_current_thread_id()}.txt"
-    if legacy.exists():
-        return [line.rstrip("\n") for line in legacy.read_text(encoding="utf-8").splitlines() if line.strip()]
-
-    # Backward compatibility with previous folder-per-type layout.
-    legacy_folder = path.parent.parent / "kb_entities" / f"{_current_thread_id()}.txt"
-    if legacy_folder.exists():
-        return [line.rstrip("\n") for line in legacy_folder.read_text(encoding="utf-8").splitlines() if line.strip()]
-
-    return []
-
-
-def _write_kb_lines(lines: List[str]) -> None:
-    path = _kb_path()
-    content = "\n".join(lines) + "\n" if lines else ""
-    path.write_text(content, encoding="utf-8")
-
-
 def _build_entity_line(etype: str, value: str, notes: str = "") -> str:
     line = f"{etype.upper() or 'UNKNOWN'} | {value}"
     if notes:
@@ -280,23 +284,9 @@ def _build_entity_line(etype: str, value: str, notes: str = "") -> str:
     return line
 
 
-def _parse_entity_line(line: str) -> Dict[str, str]:
-    """
-    Parse KB entity line in format:
-      TYPE | value | notes(optional)
-    """
-    parts = [p.strip() for p in line.split(" | ")]
-    if len(parts) < 2:
-        return {"type": "", "value": "", "notes": ""}
-    etype = parts[0]
-    value = parts[1]
-    notes = " | ".join(parts[2:]).strip() if len(parts) > 2 else ""
-    return {"type": etype, "value": value, "notes": notes}
-
-
 def upsert_image_entity_description(image_ref: str, description: str) -> None:
     """
-    Attach a generated description to an IMAGE entity in KB.
+    Attach a generated description to an IMAGE entity in Neo4j.
 
     - Creates the IMAGE entity if it does not exist.
     - Merges with existing notes for the same IMAGE + value.
@@ -306,47 +296,43 @@ def upsert_image_entity_description(image_ref: str, description: str) -> None:
     if not ref or not desc:
         return
 
-    existing = _read_kb_lines()
-    updated: List[str] = []
-    found = False
-    image_key = ref.lower()
+    thread_id = _current_thread_id()
     desc_note = f"image_description: {desc}"
 
-    for line in existing:
-        parsed = _parse_entity_line(line)
-        etype = parsed.get("type", "").strip().upper()
-        value = parsed.get("value", "").strip()
-        notes = parsed.get("notes", "").strip()
-        if etype == "IMAGE" and value.lower() == image_key:
-            found = True
+    driver = get_neo4j_driver()
+    with driver.session() as session:
+        # Get existing notes
+        result = session.run(
+            "MATCH (e:Entity {thread_id: $thread_id, type: 'image', value: $value}) RETURN e.notes AS notes",
+            thread_id=thread_id, value=ref
+        )
+        record = result.single()
+        notes = record["notes"] if record else None
+
+        if notes:
             if "image_description:" in notes:
                 # Replace existing image_description while preserving other notes.
                 other_notes = [n.strip() for n in notes.split(" | ") if n.strip() and not n.strip().startswith("image_description:")]
                 merged_notes = " | ".join([*other_notes, desc_note]).strip(" |")
             else:
-                merged_notes = f"{notes} | {desc_note}".strip(" |") if notes else desc_note
-            updated.append(_build_entity_line("IMAGE", value, merged_notes))
+                merged_notes = f"{notes} | {desc_note}".strip(" |")
         else:
-            updated.append(line)
+            merged_notes = desc_note
 
-    if not found:
-        updated.append(_build_entity_line("IMAGE", ref, desc_note))
-
-    _write_kb_lines(sorted(set(updated)))
+        # Upsert node
+        session.run(
+            "MERGE (e:Entity {thread_id: $thread_id, type: 'image', value: $value}) "
+            "SET e:Image, e.notes = $notes, e.updated_at = timestamp()",
+            thread_id=thread_id, value=ref, notes=merged_notes
+        )
 
 
 @tool
 def kb_extract_entities(text: str) -> str:
-    """Extract key entities from investigation text and append them to the OSINT knowledge base.
+    """Extract key entities from investigation text and append them to the Neo4j knowledge base.
 
     Input:
         text: Any notes, tool outputs, or summaries related to the investigation.
-
-    Behaviour:
-        - Uses the LLM to extract structured entities (person, account, domain, etc.).
-        - Appends them to a simple text knowledge base file (data/kb_entities.txt),
-          merging and de-duplicating existing entries.
-        - Returns the list of entities that are now stored in the knowledge base.
     """
     if not text or not text.strip():
         return "No text provided for entity extraction."
@@ -355,7 +341,7 @@ def kb_extract_entities(text: str) -> str:
     entity_types = kb_config.get("entity_types", [])
     if not isinstance(entity_types, list):
         entity_types = []
-    # Ensure entries are objects (we support string-only configs too).
+        
     normalized: List[Dict[str, str]] = []
     for entry in entity_types:
         if isinstance(entry, str):
@@ -373,24 +359,26 @@ def kb_extract_entities(text: str) -> str:
     response = ACTIVE_LLM_CLIENT.invoke(messages)
     content = getattr(response, "content", str(response))
 
+    thread_id = _current_thread_id()
+    driver = get_neo4j_driver()
+
     try:
         data = json.loads(content)
     except json.JSONDecodeError:
         # Fallback: store raw content if it is not valid JSON
-        existing = _read_kb_lines()
-        new_line = f"RAW: {content}"
-        if new_line not in existing:
-            existing.append(new_line)
-            _write_kb_lines(existing)
+        with driver.session() as session:
+            session.run(
+                "MERGE (e:Entity {thread_id: $thread_id, type: 'RAW', value: $value}) "
+                "SET e:Raw, e.notes = $notes, e.created_at = timestamp()",
+                thread_id=thread_id, value=content[:200], notes=content
+            )
         return json.dumps({"status": "stored_raw", "raw": content}, indent=2)
 
     entities = data.get("entities", [])
     if not isinstance(entities, list):
         entities = []
 
-    existing_lines = set(_read_kb_lines())
-    added: list[str] = []
-
+    processed_entities = []
     for entity in entities:
         if not isinstance(entity, dict):
             continue
@@ -400,30 +388,51 @@ def kb_extract_entities(text: str) -> str:
         if not value:
             continue
 
-        # If type isn't explicitly image, infer image refs from value.
         if etype.lower() != "image" and _looks_like_image_ref(value):
             etype = "image"
 
-        # Enrich image entities with visual/metadata insights.
         if etype.lower() == "image":
             enrichment = _enrich_image_notes(value)
             if enrichment:
                 notes = f"{notes} | {enrichment}" if notes else enrichment
 
-        line = _build_entity_line(etype, value, notes)
-        if line not in existing_lines:
-            existing_lines.add(line)
-            added.append(line)
+        processed_entities.append({
+            "type": etype,
+            "value": value,
+            "notes": notes
+        })
 
-    if added:
-        all_lines = sorted(existing_lines)
-        _write_kb_lines(all_lines)
+    # Group by label to execute dynamic cypher batch updates safely
+    entities_by_label = {}
+    for item in processed_entities:
+        label = _sanitize_label(item["type"])
+        entities_by_label.setdefault((item["type"], label), []).append(item)
+
+    added_entities_info = []
+    with driver.session() as session:
+        for (etype, label), batch in entities_by_label.items():
+            query = f"""
+            UNWIND $batch AS item
+            MERGE (e:Entity {{thread_id: $thread_id, type: $type, value: item.value}})
+            ON CREATE SET e.notes = item.notes, e.created_at = timestamp()
+            ON MATCH SET e.notes = CASE
+                WHEN item.notes = '' THEN e.notes
+                WHEN e.notes IS NULL OR e.notes = '' THEN item.notes
+                WHEN NOT e.notes CONTAINS item.notes THEN e.notes + ' | ' + item.notes
+                ELSE e.notes
+            END
+            SET e:{label}
+            RETURN e.type AS type, e.value AS value
+            """
+            result = session.run(query, thread_id=thread_id, type=etype, batch=batch)
+            for record in result:
+                added_entities_info.append(f"{record['type'].upper()} | {record['value']}")
 
     return json.dumps(
         {
             "status": "ok",
-            "added": added,
-            "kb_path": str(_kb_path()),
+            "added": added_entities_info,
+            "neo4j": True,
         },
         indent=2,
     )
@@ -431,108 +440,27 @@ def kb_extract_entities(text: str) -> str:
 
 @tool
 def kb_get() -> str:
-    """Return the current contents of the OSINT knowledge base (entities text file)."""
-    lines = _read_kb_lines()
-    if not lines:
-        return "Knowledge base is empty."
-    return "\n".join(lines)
-
-
-def _kb_edges_path() -> Path:
-    """Return the path to the thread-scoped knowledge base edges file (jsonl)."""
-    root = Path(__file__).resolve().parent.parent  # src/
-    data_dir = root / "data"
-    data_dir.mkdir(parents=True, exist_ok=True)
-    tid = _current_thread_id()
-    thread_dir = data_dir / tid
-    thread_dir.mkdir(parents=True, exist_ok=True)
-    return thread_dir / "kb_edges.jsonl"
+    """Return the current contents of the OSINT knowledge base (Neo4j Entity nodes)."""
+    thread_id = _current_thread_id()
+    driver = get_neo4j_driver()
+    query = """
+    MATCH (e:Entity {thread_id: $thread_id})
+    RETURN e.type AS type, e.value AS value, e.notes AS notes
+    ORDER BY type, value
+    """
+    with driver.session() as session:
+        result = session.run(query, thread_id=thread_id)
+        lines = []
+        for record in result:
+            lines.append(_build_entity_line(record["type"], record["value"], record["notes"] or ""))
+        
+        if not lines:
+            return "Knowledge base is empty."
+        return "\n".join(lines)
 
 
 def _edge_key(from_type: str, from_value: str, relation_type: str, to_type: str, to_value: str) -> str:
     return f"{from_type}||{from_value}||{relation_type}||{to_type}||{to_value}"
-
-
-def _load_edges_map() -> Dict[str, Dict[str, Any]]:
-    path = _kb_edges_path()
-    if not path.exists():
-        # Backward compatibility with old file naming in src/data root.
-        legacy = path.parent.parent / f"kb_edges__{_current_thread_id()}.jsonl"
-        if legacy.exists():
-            path = legacy
-        else:
-            # Backward compatibility with previous folder-per-type layout.
-            legacy_folder = path.parent.parent / "kb_graph_edges" / f"{_current_thread_id()}.jsonl"
-            if legacy_folder.exists():
-                path = legacy_folder
-            else:
-                return {}
-
-    edges: Dict[str, Dict[str, Any]] = {}
-    for line in path.read_text(encoding="utf-8").splitlines():
-        if not line.strip():
-            continue
-        try:
-            obj = json.loads(line)
-        except json.JSONDecodeError:
-            continue
-
-        from_type = str(obj.get("from_type", "")).strip()
-        from_value = str(obj.get("from_value", "")).strip()
-        to_type = str(obj.get("to_type", "")).strip()
-        to_value = str(obj.get("to_value", "")).strip()
-        relation_type = str(obj.get("relation_type", "")).strip()
-        if not (from_type and from_value and to_type and to_value and relation_type):
-            continue
-
-        key = _edge_key(from_type, from_value, relation_type, to_type, to_value)
-        notes = obj.get("notes", "")
-        if key not in edges:
-            edges[key] = {
-                "from_type": from_type,
-                "from_value": from_value,
-                "to_type": to_type,
-                "to_value": to_value,
-                "relation_type": relation_type,
-                "notes_set": set(),
-            }
-        if isinstance(notes, str) and notes.strip():
-            edges[key]["notes_set"].add(notes.strip())
-
-    # Convert notes_set to list on save-time.
-    return edges
-
-
-def _save_edges_map(edges_map: Dict[str, Dict[str, Any]]) -> None:
-    path = _kb_edges_path()
-    # Write all edges deterministically for easier diffing/debugging.
-    items = list(edges_map.values())
-    items.sort(
-        key=lambda e: (
-            str(e.get("from_type", "")),
-            str(e.get("from_value", "")),
-            str(e.get("relation_type", "")),
-            str(e.get("to_type", "")),
-            str(e.get("to_value", "")),
-        )
-    )
-
-    lines: List[str] = []
-    for e in items:
-        notes_set = e.get("notes_set", set())
-        notes_list = sorted([n for n in notes_set if isinstance(n, str) and n.strip()])
-        obj = {
-            "from_type": e.get("from_type", ""),
-            "from_value": e.get("from_value", ""),
-            "relation_type": e.get("relation_type", ""),
-            "to_type": e.get("to_type", ""),
-            "to_value": e.get("to_value", ""),
-            "notes": " | ".join(notes_list),
-        }
-        lines.append(json.dumps(obj, ensure_ascii=False))
-
-    content = "\n".join(lines) + ("\n" if lines else "")
-    path.write_text(content, encoding="utf-8")
 
 
 def _relations_system_prompt(entity_types: List[Dict[str, str]], relation_types: List[Dict[str, str]]) -> str:
@@ -545,7 +473,6 @@ def _relations_system_prompt(entity_types: List[Dict[str, str]], relation_types:
     if not rel_meanings:
         rel_meanings = "- other_relation: (unspecified)"
 
-    # Reuse entity meanings so the model knows how to choose from entity_types.
     entity_meanings = "\n".join(
         [f"- {t['type']}: {t.get('description', '').strip()}" for t in entity_types if t.get("type")]
     ).strip()
@@ -585,9 +512,9 @@ Rules:
 
 @tool
 def kb_extract_relations(text: str) -> str:
-    """Extract relationships between KB entities from investigation text and append to the knowledge graph edges.
+    """Extract relationships between KB entities from investigation text and append to the Neo4j knowledge graph.
 
-    Stores edges in `src/data/kb_edges.jsonl` and de-duplicates by (from_type, from_value, relation_type, to_type, to_value).
+    Stores relationships in Neo4j and partitions by thread_id.
     """
     if not text or not text.strip():
         return "No text provided for relation extraction."
@@ -600,7 +527,6 @@ def kb_extract_relations(text: str) -> str:
     if not isinstance(relation_types, list):
         relation_types = []
 
-    # Normalize entity type entries into {type, description}.
     normalized_entity_types: List[Dict[str, str]] = []
     for entry in entity_types:
         if isinstance(entry, str):
@@ -629,23 +555,23 @@ def kb_extract_relations(text: str) -> str:
     response = ACTIVE_LLM_CLIENT.invoke(messages)
     content = getattr(response, "content", str(response))
 
+    thread_id = _current_thread_id()
+    driver = get_neo4j_driver()
+
     try:
         data = json.loads(content)
     except json.JSONDecodeError:
-        # If model output isn't valid JSON, don't destroy KB; store raw note as an edge-less raw record.
-        edges = _load_edges_map()
-        raw_key = _edge_key("other", "RAW", "other_relation", "other", content[:80])
-        if raw_key not in edges:
-            edges[raw_key] = {
-                "from_type": "other",
-                "from_value": "RAW",
-                "to_type": "other",
-                "to_value": content[:80],
-                "relation_type": "other_relation",
-                "notes_set": {content},
-            }
-            _save_edges_map(edges)
-        return json.dumps({"status": "stored_raw_relations", "kb_path": str(_kb_edges_path())}, indent=2)
+        with driver.session() as session:
+            session.run(
+                "MERGE (from:Entity {thread_id: $thread_id, type: 'RAW_SOURCE', value: 'RAW_TEXT'}) "
+                "SET from:RawSource "
+                "MERGE (to:Entity {thread_id: $thread_id, type: 'RAW_CONTENT', value: $value}) "
+                "SET to:RawContent "
+                "MERGE (from)-[r:HAS_RAW_CONTENT {thread_id: $thread_id}]->(to) "
+                "SET r.notes = $notes, r.created_at = timestamp()",
+                thread_id=thread_id, value=content[:200], notes=content
+            )
+        return json.dumps({"status": "stored_raw_relations", "neo4j": True}, indent=2)
 
     relations = data.get("relations", [])
     if not isinstance(relations, list):
@@ -655,9 +581,8 @@ def kb_extract_relations(text: str) -> str:
     if not allowed_rel_types:
         allowed_rel_types = {"other_relation"}
 
-    edges_map = _load_edges_map()
-    added_keys: List[str] = []
-
+    # Filter and group relations by key components
+    relations_by_group = {}
     for rel in relations:
         if not isinstance(rel, dict):
             continue
@@ -675,64 +600,99 @@ def kb_extract_relations(text: str) -> str:
         if relation_type not in allowed_rel_types:
             relation_type = "mentions"
 
-        key = _edge_key(from_type, from_value, relation_type, to_type, to_value)
-        if key not in edges_map:
-            edges_map[key] = {
-                "from_type": from_type,
-                "from_value": from_value,
-                "to_type": to_type,
-                "to_value": to_value,
-                "relation_type": relation_type,
-                "notes_set": set(),
-            }
-            added_keys.append(key)
+        from_label = _sanitize_label(from_type)
+        to_label = _sanitize_label(to_type)
+        rel_type = _sanitize_relationship_type(relation_type)
 
-        if notes:
-            edges_map[key]["notes_set"].add(notes)
+        group_key = (from_type, from_label, to_type, to_label, rel_type)
+        relations_by_group.setdefault(group_key, []).append({
+            "from_value": from_value,
+            "to_value": to_value,
+            "notes": notes
+        })
 
-    if added_keys or relations:
-        _save_edges_map(edges_map)
+    added_edges = []
+    with driver.session() as session:
+        for (from_type, from_label, to_type, to_label, rel_type), batch in relations_by_group.items():
+            query = f"""
+            UNWIND $batch AS item
+            MERGE (from:Entity {{thread_id: $thread_id, type: $from_type, value: item.from_value}})
+            MERGE (to:Entity {{thread_id: $thread_id, type: $to_type, value: item.to_value}})
+            MERGE (from)-[r:{rel_type} {{thread_id: $thread_id}}]->(to)
+            ON CREATE SET r.notes = item.notes, r.created_at = timestamp()
+            ON MATCH SET r.notes = CASE
+                WHEN item.notes = '' THEN r.notes
+                WHEN r.notes IS NULL OR r.notes = '' THEN item.notes
+                WHEN NOT r.notes CONTAINS item.notes THEN r.notes + ' | ' + item.notes
+                ELSE r.notes
+            END
+            SET from:{from_label}, to:{to_label}
+            RETURN from.type AS from_type, from.value AS from_value,
+                   to.type AS to_type, to.value AS to_value
+            """
+            result = session.run(
+                query,
+                thread_id=thread_id,
+                from_type=from_type,
+                to_type=to_type,
+                batch=batch
+            )
+            for record in result:
+                added_edges.append(
+                    f"{rel_type} | {record['from_type']}:{record['from_value']} -> {record['to_type']}:{record['to_value']}"
+                )
 
     return json.dumps(
-        {"status": "ok", "added_edges": added_keys, "kb_path": str(_kb_edges_path())},
+        {"status": "ok", "added_edges": added_edges, "neo4j": True},
         indent=2,
     )
 
 
 @tool
 def kb_get_edges(limit: int = 50) -> str:
-    """Return the current knowledge graph edges (relationships) from `kb_edges.jsonl`."""
-    edges_map = _load_edges_map()
-    if not edges_map:
-        return "Knowledge graph edges are empty."
+    """Return the current knowledge graph edges (relationships) from Neo4j."""
+    thread_id = _current_thread_id()
+    driver = get_neo4j_driver()
+    query = """
+    MATCH (from:Entity {thread_id: $thread_id})-[r]->(to:Entity {thread_id: $thread_id})
+    RETURN from.type AS from_type, from.value AS from_value,
+           type(r) AS relation_type,
+           to.type AS to_type, to.value AS to_value,
+           r.notes AS notes
+    ORDER BY from_type, from_value, relation_type, to_type, to_value
+    """
+    with driver.session() as session:
+        result = session.run(query, thread_id=thread_id)
+        edges_list = []
+        for record in result:
+            edges_list.append({
+                "from_type": record["from_type"],
+                "from_value": record["from_value"],
+                "relation_type": record["relation_type"],
+                "to_type": record["to_type"],
+                "to_value": record["to_value"],
+                "notes": record["notes"] or ""
+            })
 
-    edges_list = list(edges_map.values())
-    edges_list.sort(
-        key=lambda e: (
-            str(e.get("from_type", "")),
-            str(e.get("from_value", "")),
-            str(e.get("relation_type", "")),
-            str(e.get("to_type", "")),
-            str(e.get("to_value", "")),
-        )
-    )
+        if not edges_list:
+            return "Knowledge graph edges are empty."
 
-    sliced = edges_list[: max(1, limit)]
-    lines: List[str] = []
-    for e in sliced:
-        notes_set = e.get("notes_set", set())
-        notes = ""
-        if isinstance(notes_set, set):
-            notes_list = sorted([n for n in notes_set if isinstance(n, str) and n.strip()])
-            if notes_list:
-                notes = f" | evidence: {notes_list[0]}"
-        lines.append(
-            f"{e.get('relation_type')} | {e.get('from_type')}:{e.get('from_value')} -> {e.get('to_type')}:{e.get('to_value')}{notes}"
-        )
+        sliced = edges_list[: max(1, limit)]
+        lines: List[str] = []
+        for e in sliced:
+            notes = e["notes"].strip()
+            evidence = ""
+            if notes:
+                notes_list = [n.strip() for n in notes.split(" | ") if n.strip()]
+                if notes_list:
+                    evidence = f" | evidence: {notes_list[0]}"
+            
+            lines.append(
+                f"{e['relation_type'].lower()} | {e['from_type']}:{e['from_value']} -> {e['to_type']}:{e['to_value']}{evidence}"
+            )
 
-    more = ""
-    if len(edges_list) > len(sliced):
-        more = f"\n... truncated; showing first {len(sliced)} of {len(edges_list)} edges."
+        more = ""
+        if len(edges_list) > len(sliced):
+            more = f"\n... truncated; showing first {len(sliced)} of {len(edges_list)} edges."
 
-    return "\n".join(lines) + more
-
+        return "\n".join(lines) + more

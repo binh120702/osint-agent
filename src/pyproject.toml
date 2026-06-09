@@ -21,4 +21,5 @@ dependencies = [
     "trafilatura>=1.6.0,<2",
     "typing-extensions>=4.0.0,<5",
     "webdriver-manager>=4.0.0,<5",
+    "neo4j>=5.0.0",
 ]
