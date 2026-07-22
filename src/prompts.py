@@ -17,12 +17,11 @@ MAIN_PROMPT = """
     3. Use the pinterest_scrape_by_username tool to get more information about the Pinterest profile.
 
     KNOWLEDGE BASE GUIDELINES:
-    - After each *meaningful batch* of tool results, write a short bullet summary of what you learned, then call:
-        - kb_extract_entities(summary_text)
-        - kb_extract_relations(summary_text)
-    - Before making important reasoning steps or generating a final report, you should call kb_get to recall the current
+    - After each *meaningful batch* of tool results, call the `knowledge_agent` tool with a concise summary of the new findings/text.
+    - The `knowledge_agent` acts as a sub-agent that automatically extracts and saves both entities and relationships to the knowledge graph.
+    - Before making important reasoning steps or generating a final report, you should call `kb_get` to recall the current
       knowledge base and use it as context when thinking and writing.
-    - Before making important reasoning steps or generating a final report, you should call kb_get_edges to recall
+    - Before making important reasoning steps or generating a final report, you should call `kb_get_edges` to recall
       the current knowledge graph relationships and use them as additional context when thinking and writing.
 
     HUMAN-IN-THE-LOOP:

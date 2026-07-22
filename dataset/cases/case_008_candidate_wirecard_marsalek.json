@@ -1,0 +1,259 @@
+{
+  "case_id": "OSINT-CAND-008",
+  "investigation_goal": "Reconstruct the Wirecard public-fraud trail by linking company statements, audit uncertainty, missing cash, supervisory failures, and Jan Marsalek disappearance.",
+  "target": "Wirecard / Jan Marsalek public fraud trail",
+  "investigation_category": "Shell Company & Corporate Fraud",
+  "difficulty": "Hard",
+  "sources": [
+    {
+      "source_id": "SRC-001",
+      "type": "Web_Page",
+      "uri": "https://wirecard.com/wp-content/uploads/2021/01/AH_2020_04_28_KPMG-report.pdf",
+      "content": {
+        "page_title": "Wirecard AG: KPMG delivers report on special investigation",
+        "publication_date": "2020-04-28",
+        "date_accessed": "2026-06-29",
+        "verification_status": "Opened successfully with the web tool; relevant content was present.",
+        "evidence_summary": "Wirecard announced receipt of the KPMG special audit report and said no incriminating evidence of balance-sheet forgery had been identified, while acknowledging not all data needed to prove historical third-party acquiring revenues could be obtained.",
+        "supports_findings": [
+          "FIND-001",
+          "FIND-003"
+        ],
+        "confidence": "High"
+      },
+      "raw_text": "Wirecard announced receipt of the KPMG special audit report and said no incriminating evidence of balance-sheet forgery had been identified, while acknowledging not all data needed to prove historical third-party acquiring revenues could be obtained."
+    },
+    {
+      "source_id": "SRC-002",
+      "type": "Web_Page",
+      "uri": "https://www.europarl.europa.eu/RegData/etudes/BRIE/2021/659639/IPOL_BRI%282021%29659639_EN.pdf",
+      "content": {
+        "page_title": "Update on Wirecard case: public hearing",
+        "publication_date": "2021",
+        "date_accessed": "2026-06-29",
+        "verification_status": "Opened successfully with the web tool; relevant content was present.",
+        "evidence_summary": "European Parliament briefing describes German inquiry into Wirecard, including whether BaFin, auditors, and agencies missed warning signs. It states Jan Marsalek, then-suspended COO, absconded to Belarus after Wirecard disclosed EUR 1.9 billion was missing.",
+        "supports_findings": [
+          "FIND-001",
+          "FIND-002",
+          "FIND-003"
+        ],
+        "confidence": "High"
+      },
+      "raw_text": "European Parliament briefing describes German inquiry into Wirecard, including whether BaFin, auditors, and agencies missed warning signs. It states Jan Marsalek, then-suspended COO, absconded to Belarus after Wirecard disclosed EUR 1.9 billion was missing."
+    }
+  ],
+  "ground_truth": {
+    "entities": [
+      {
+        "id": "ENT-001",
+        "type": "Organization",
+        "value": "Wirecard AG",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "id": "ENT-002",
+        "type": "Organization",
+        "value": "KPMG",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "id": "ENT-003",
+        "type": "Organization",
+        "value": "EY",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "id": "ENT-004",
+        "type": "Person",
+        "value": "Jan Marsalek",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "id": "ENT-005",
+        "type": "Organization",
+        "value": "BaFin",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "id": "ENT-006",
+        "type": "Location",
+        "value": "Belarus",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "id": "ENT-007",
+        "type": "Alias",
+        "value": "EUR 1.9 billion missing cash",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "id": "ENT-008",
+        "type": "Alias",
+        "value": "Third Party Acquiring business",
+        "source_references": [
+          "SRC-001"
+        ]
+      }
+    ],
+    "relations": [
+      {
+        "source": "ENT-002",
+        "target": "ENT-001",
+        "relationship_type": "performed_special_audit",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "source": "ENT-003",
+        "target": "ENT-001",
+        "relationship_type": "audited",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "source": "ENT-004",
+        "target": "ENT-001",
+        "relationship_type": "former_coo_of",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "source": "ENT-004",
+        "target": "ENT-006",
+        "relationship_type": "absconded_to",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "source": "ENT-001",
+        "target": "ENT-007",
+        "relationship_type": "disclosed_missing_cash",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "source": "ENT-005",
+        "target": "ENT-001",
+        "relationship_type": "supervised_or_inquired_about",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "source": "ENT-008",
+        "target": "ENT-001",
+        "relationship_type": "business_area_under_audit",
+        "source_references": [
+          "SRC-001"
+        ]
+      }
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "CONTRA-001",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ],
+        "description": "Public sources use different labels, scopes, or confidence levels for the same investigation target.",
+        "reconciliation": "Preserve the source-specific wording and confidence level, then cite the exact source supporting each claim."
+      }
+    ],
+    "reasoning_proof_chains": [
+      {
+        "step_index": 1,
+        "premise_entities": [
+          "ENT-001"
+        ],
+        "premise_relations": [],
+        "conclusion": "Identify the primary target and gather independent public sources."
+      },
+      {
+        "step_index": 2,
+        "premise_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-003",
+          "ENT-004"
+        ],
+        "premise_relations": [
+          "performed_special_audit",
+          "audited",
+          "former_coo_of"
+        ],
+        "conclusion": "Link aliases, organizations, people, platforms, or infrastructure across sources."
+      },
+      {
+        "step_index": 3,
+        "premise_entities": [
+          "ENT-006",
+          "ENT-007",
+          "ENT-008"
+        ],
+        "premise_relations": [
+          "disclosed_missing_cash",
+          "supervised_or_inquired_about",
+          "business_area_under_audit"
+        ],
+        "conclusion": "Produce traceable expected findings while preserving caveats."
+      }
+    ],
+    "key_findings": [
+      {
+        "question": "What contradiction should an investigator reconcile?",
+        "answer": "Wirecard April 2020 messaging said no incriminating balance-sheet evidence had been found while acknowledging audit limitations; later public material describes the EUR 1.9 billion missing-cash disclosure and Marsalek flight.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-004",
+          "ENT-007"
+        ]
+      },
+      {
+        "question": "Which institutions form the oversight chain?",
+        "answer": "The case links Wirecard, KPMG, EY, BaFin, and European/German parliamentary scrutiny over audit and supervisory failures.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-003",
+          "ENT-005"
+        ]
+      },
+      {
+        "question": "Why is Marsalek a key entity?",
+        "answer": "European Parliament material identifies Jan Marsalek as the then-suspended COO who absconded to Belarus after the missing-cash disclosure.",
+        "supporting_entities": [
+          "ENT-004",
+          "ENT-006",
+          "ENT-007"
+        ]
+      }
+    ],
+    "ground_truth_summary": "Candidate-derived OSINT benchmark case built from verified public URLs for multi-source entity linking, reasoning, caveat handling, and report generation."
+  },
+  "evaluation_notes": "All source URLs in this file were opened with the web tool on 2026-06-29 and retained only when reachable and relevant."
+}

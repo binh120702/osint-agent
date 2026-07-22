@@ -3,7 +3,7 @@ Pinterest Profile Scraper & Image Downloader
 Selenium-based scraper to handle Pinterest's anti-scraping measures
 """
 
-from langchain.tools import tool
+from agent.tool_decorator import tool
 import hashlib
 import json
 import logging

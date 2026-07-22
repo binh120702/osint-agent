@@ -1,0 +1,237 @@
+{
+  "case_id": "OSINT-CAND-006",
+  "investigation_goal": "Trace the MOVEit Transfer exploitation from CVE disclosure through LEMURLOOT deployment and public attribution to FIN11/CL0P-linked extortion infrastructure.",
+  "target": "MOVEit Transfer / CL0P mass exploitation",
+  "investigation_category": "Threat Actor & Infrastructure Attribution",
+  "difficulty": "Hard",
+  "sources": [
+    {
+      "source_id": "SRC-001",
+      "type": "Web_Page",
+      "uri": "https://cloud.google.com/blog/topics/threat-intelligence/zero-day-moveit-data-theft",
+      "content": {
+        "page_title": "Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft",
+        "publication_date": "2023-06-02",
+        "date_accessed": "2026-06-29",
+        "verification_status": "Opened successfully with the web tool; relevant content was present.",
+        "evidence_summary": "Mandiant reports wide exploitation of MOVEit Transfer CVE-2023-34362 beginning as early as May 27, 2023, LEMURLOOT web shell deployment, data theft, and attribution from UNC4857 into FIN11 based on overlaps.",
+        "supports_findings": [
+          "FIND-001",
+          "FIND-002",
+          "FIND-003"
+        ],
+        "confidence": "High"
+      },
+      "raw_text": "Mandiant reports wide exploitation of MOVEit Transfer CVE-2023-34362 beginning as early as May 27, 2023, LEMURLOOT web shell deployment, data theft, and attribution from UNC4857 into FIN11 based on overlaps."
+    },
+    {
+      "source_id": "SRC-002",
+      "type": "Web_Page",
+      "uri": "https://nvd.nist.gov/vuln/detail/cve-2023-34362",
+      "content": {
+        "page_title": "NVD - CVE-2023-34362",
+        "publication_date": "2023-06-02",
+        "date_accessed": "2026-06-29",
+        "verification_status": "Opened successfully with the web tool; relevant content was present.",
+        "evidence_summary": "NVD describes CVE-2023-34362 as a SQL injection vulnerability in Progress MOVEit Transfer allowing unauthenticated access to the database, exploited in the wild in May and June 2023, with critical CVSS 9.8 score.",
+        "supports_findings": [
+          "FIND-001"
+        ],
+        "confidence": "High"
+      },
+      "raw_text": "NVD describes CVE-2023-34362 as a SQL injection vulnerability in Progress MOVEit Transfer allowing unauthenticated access to the database, exploited in the wild in May and June 2023, with critical CVSS 9.8 score."
+    }
+  ],
+  "ground_truth": {
+    "entities": [
+      {
+        "id": "ENT-001",
+        "type": "Alias",
+        "value": "MOVEit Transfer",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "id": "ENT-002",
+        "type": "Alias",
+        "value": "CVE-2023-34362",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "id": "ENT-003",
+        "type": "Alias",
+        "value": "LEMURLOOT",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "id": "ENT-004",
+        "type": "Alias",
+        "value": "UNC4857",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "id": "ENT-005",
+        "type": "Alias",
+        "value": "FIN11",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "id": "ENT-006",
+        "type": "Alias",
+        "value": "CL0P",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "id": "ENT-007",
+        "type": "Organization",
+        "value": "Mandiant",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "id": "ENT-008",
+        "type": "Organization",
+        "value": "NVD",
+        "source_references": [
+          "SRC-002"
+        ]
+      }
+    ],
+    "relations": [
+      {
+        "source": "ENT-002",
+        "target": "ENT-001",
+        "relationship_type": "affects",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "source": "ENT-004",
+        "target": "ENT-002",
+        "relationship_type": "exploited",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "source": "ENT-004",
+        "target": "ENT-003",
+        "relationship_type": "deployed",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "source": "ENT-004",
+        "target": "ENT-005",
+        "relationship_type": "merged_into",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "source": "ENT-005",
+        "target": "ENT-006",
+        "relationship_type": "linked_to_extortion_brand",
+        "source_references": [
+          "SRC-001"
+        ]
+      }
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "CONTRA-001",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ],
+        "description": "Public sources use different labels, scopes, or confidence levels for the same investigation target.",
+        "reconciliation": "Preserve the source-specific wording and confidence level, then cite the exact source supporting each claim."
+      }
+    ],
+    "reasoning_proof_chains": [
+      {
+        "step_index": 1,
+        "premise_entities": [
+          "ENT-001"
+        ],
+        "premise_relations": [],
+        "conclusion": "Identify the primary target and gather independent public sources."
+      },
+      {
+        "step_index": 2,
+        "premise_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-003",
+          "ENT-004"
+        ],
+        "premise_relations": [
+          "affects",
+          "exploited",
+          "deployed"
+        ],
+        "conclusion": "Link aliases, organizations, people, platforms, or infrastructure across sources."
+      },
+      {
+        "step_index": 3,
+        "premise_entities": [
+          "ENT-006",
+          "ENT-007",
+          "ENT-008"
+        ],
+        "premise_relations": [
+          "deployed",
+          "merged_into",
+          "linked_to_extortion_brand"
+        ],
+        "conclusion": "Produce traceable expected findings while preserving caveats."
+      }
+    ],
+    "key_findings": [
+      {
+        "question": "What vulnerability enabled the campaign?",
+        "answer": "CVE-2023-34362, a critical SQL injection issue in MOVEit Transfer, allowed unauthenticated database access and was exploited in the wild.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002"
+        ]
+      },
+      {
+        "question": "What malware/tooling should be extracted?",
+        "answer": "Mandiant identified the LEMURLOOT web shell, including commands for file retrieval and application configuration access.",
+        "supporting_entities": [
+          "ENT-003",
+          "ENT-007"
+        ]
+      },
+      {
+        "question": "How should attribution be represented?",
+        "answer": "The activity was initially tracked as UNC4857 and later merged into FIN11, with CL0P leak-site and extortion context; these labels should not be flattened without source caveats.",
+        "supporting_entities": [
+          "ENT-004",
+          "ENT-005",
+          "ENT-006"
+        ]
+      }
+    ],
+    "ground_truth_summary": "Candidate-derived OSINT benchmark case built from verified public URLs for multi-source entity linking, reasoning, caveat handling, and report generation."
+  },
+  "evaluation_notes": "All source URLs in this file were opened with the web tool on 2026-06-29 and retained only when reachable and relevant."
+}

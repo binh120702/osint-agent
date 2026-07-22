@@ -1,7 +1,7 @@
 import json
 from typing import Optional
 
-from langchain.tools import tool
+from agent.tool_decorator import tool
 
 from crawlers import GitHubRepo
 

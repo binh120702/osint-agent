@@ -1,13 +1,14 @@
 # OSINT Investigator Agent
 
-An Open Source Intelligence (OSINT) agent built with LangGraph. It investigates people, websites, and cases using web search, deep site crawling, Pinterest scraping, Wikipedia/GitHub lookups, image description, and other tools. Run it as a LangGraph server and use the [Agent Chat UI](docs/agent_chat_ui_setup.md) or any LangGraph client to chat.
+An Open Source Intelligence (OSINT) agent built from scratch with a custom lightweight agent framework (no LangGraph or LangChain). It investigates targets using web search, deep site crawling, Pinterest scraping, Wikipedia/GitHub lookups, image description, and other tools, and dynamically maintains a Neo4j knowledge base graph. 
+
+It runs as a FastAPI server and serves an interactive dark-mode HTML chat interface directly.
 
 ## Prerequisites
 
 - **Python 3.13** (see `src/pyproject.toml` and `src/.python-version`)
 - **Docker Desktop** (to run local Neo4j database and SearXNG search engine)
-- **OpenAI API key** (for the LLM and image description)
-- Optional: **Node.js** and **pnpm** if you want to use the [Agent Chat UI](https://github.com/langchain-ai/agent-chat-ui) (see [docs/agent_chat_ui_setup.md](docs/agent_chat_ui_setup.md))
+- **API Key** (OpenAI, Anthropic, or Gemini) based on your chosen provider
 
 ## Installation
 
@@ -18,11 +19,9 @@ git clone https://github.com/binh120702/osint-agent.git
 cd osint-agent
 ```
 
-If you use the optional [Agent Chat UI](docs/agent_chat_ui_setup.md) submodule: `git submodule update --init --recursive` (see that doc for Node/pnpm and running the UI).
-
 ### 2. Set up local Docker services (Neo4j and SearXNG)
 
-The agent uses **Neo4j** as its primary storage engine for the knowledge base, and a local **SearXNG** instance to query search engines resiliently without bot blocks.
+The agent uses **Neo4j** as its storage engine for the knowledge base, and a local **SearXNG** instance to query search engines resiliently without bot blocks.
 
 Start the services using Docker:
 
@@ -36,68 +35,69 @@ docker run -d --name searxng-osint -p 8080:8080 -v <absolute_path_to_workspace>/
 
 *Note: Replace `<absolute_path_to_workspace>` with the absolute path of the repository on your host machine.*
 
-### 3. Create a virtual environment and install Python dependencies
+### 3. Install Python dependencies
+
+Set up a virtual environment and install dependencies using `uv` (recommended):
 
 ```bash
 cd src
-uv sync --frozen
+uv sync
 ```
 
-### 3. Environment variables
+### 4. Configure Environment Variables
 
-Copy the example env file and set your OpenAI key:
+Copy the example environment file and configure your API keys:
 
 ```bash
 cp src/.env.example src/.env
-# Edit src/.env and set OPENAI_API_KEY=sk-...
+# Edit src/.env and configure your LLM_PROVIDER and corresponding API key
 ```
 
-If there is no `.env.example`, create `src/.env` with:
-
+Required settings in `.env`:
 ```env
-OPENAI_API_KEY=sk-your-key-here
+LLM_PROVIDER=openai   # Or "claude" / "gemini"
+OPENAI_API_KEY=sk-... # If provider is openai
+# or ANTHROPIC_API_KEY / GOOGLE_API_KEY
 ```
 
-## Running the agent
+---
 
-Start the LangGraph server from the **`src`** directory:
+## Running the Agent
+
+Start the FastAPI application from the **`src`** directory:
 
 ```bash
 cd src
-uv run langgraph dev
+uv run python main.py
 ```
 
-- Server: **http://localhost:2024** · Graph ID: **osint_agent**
-
-Use the [Agent Chat UI](docs/agent_chat_ui_setup.md) (submodule) or any LangGraph client to chat.
-
-## MVP smoke demo
-
-For a quick end-to-end validation of the workflow (tools → KB/KG → HITL → report + export), see [docs/smoke_demo.md](docs/smoke_demo.md).
-
-Example chat UI:
-
-![Example chat UI](assets/chat_ui.png)
-
-![Example tools config page](assets/tools_config_page.png)
+This starts the Uvicorn server on **http://localhost:8000**. Open this URL in your web browser to start using the OSINT Agent chat interface.
 
 ---
-## Project structure
+
+## MVP Smoke Demo
+
+For a quick end-to-end validation of the workflow (web search → entity extraction → knowledge graph updates → streaming responses), see [docs/smoke_demo.md](docs/smoke_demo.md).
+
+---
+
+## Project Structure
 
 ```
-osint/
+osint-agent/
 ├── README.md                 # This file
+├── docs/                     # Documentation (architecture overview, smoke demo)
 ├── src/
-│   ├── main.py               # LangGraph graph (osint_agent)
-│   ├── langgraph.json        # LangGraph config
-│   ├── requirements.txt      # Python dependencies (version ranges)
-│   ├── requirements.lock    # Exact pins for reproducible installs
-│   ├── prompts.py
-│   ├── llms/                 # LLM client (OpenAI)
-│   ├── tools/                # Agent tools + osint_multimedia (EXIF, image AI detection)
-│   └── crawlers/             # Web content, Wikipedia, GitHub (from kmap reference)
-├── agent-chat-ui/            # Optional Next.js UI (submodule)
-└── docs/
-    ├── agent_chat_ui_setup.md
-    └── ...
+│   ├── main.py               # Application entry point (runs FastAPI/Uvicorn)
+│   ├── server.py             # FastAPI routing and SSE streaming endpoints
+│   ├── pyproject.toml        # Build configuration and dependencies
+│   ├── requirements.txt      # Python dependencies list
+│   ├── agent/                # Custom agent framework:
+│   │   ├── messages.py       # Message objects (System, Human, AI, Tool)
+│   │   ├── tool_decorator.py # Lightweight @tool decorator & JSON schema generator
+│   │   └── loop.py           # Custom agent execution and streaming loop
+│   ├── llms/                 # Direct SDK clients (OpenAI, Claude, Gemini)
+│   ├── tools/                # Agent tools: search, web crawler, final report, KB/Neo4j graph
+│   ├── static/               # HTML/CSS assets for the self-hosted Chat UI
+│   └── crawlers/             # Helper scraping adapters
 ```

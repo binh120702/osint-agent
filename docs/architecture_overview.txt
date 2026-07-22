@@ -3,124 +3,75 @@ OSINT Agent – Repository & Infrastructure Overview
 
 Purpose
 -------
-This repository provides an Open Source Intelligence (OSINT) agent built on top of LangGraph. It exposes a single graph (`osint_agent`) that can:
+This repository provides an Open Source Intelligence (OSINT) agent built with a custom lightweight agent framework (no LangGraph or LangChain). It exposes a custom agent loop that can:
 - Search the open web (including Tor via a separate tool),
 - Deep-crawl websites and PDFs,
 - Query Wikipedia and GitHub,
 - Scrape Pinterest,
 - Generate image metadata/description via external services,
-- Aggregate findings into a final report.
+- Update a local knowledge base (Neo4j graph database),
+- Stream text tokens in real-time using Server-Sent Events (SSE),
+- Generate a final investigation report.
 
-The agent runs as a LangGraph server and can be used directly via the LangGraph API/CLI or via the optional Agent Chat UI submodule.
+The agent runs as a FastAPI backend server and is accessed via a self-contained HTML/CSS chat interface served at the root URL.
 
 Top-Level Layout
 ----------------
-- `README.md` – Quickstart, prerequisites, and how to run the LangGraph server.
-- `src/` – All Python code for the OSINT agent and supporting modules.
-- `agent-chat-ui/` – Optional Next.js Agent Chat UI (Git submodule).
-- `docs/` – Documentation, including this architecture overview and UI setup notes.
+- `README.md` – Quickstart, prerequisites, and how to run the FastAPI server.
+- `src/` – All Python code for the OSINT agent, custom framework, and supporting modules.
+  - `agent/` – Core framework code (messages, custom `@tool` decorator, and the agent loop).
+  - `llms/` – Direct API clients for OpenAI, Anthropic (Claude), and Google (Gemini) SDKs.
+  - `tools/` – Concrete OSINT tools (search, crawling, database connections, scrapers, report generator).
+  - `static/` – The frontend files (e.g. `index.html` chat UI).
+- `docs/` – Documentation, including this architecture overview and a smoke demo guide.
 
-Key Python Directories (under `src/`)
--------------------------------------
-- `main.py`
-  - Entry point for the LangGraph graph.
-  - Defines a `MessagesState` (list of messages), an `llm_call` node, and a `tool_node` for executing tools.
-  - Uses `StateGraph` from `langgraph` and compiles it into a `graph` object (ID `osint_agent`, as referenced in `langgraph.json`).
-  - The LLM is bound to tools via `OPENAI_CLIENT.client.bind_tools(get_all_tools(), tool_choice="auto")`.
-
-- `langgraph.json`
-  - LangGraph configuration file pointing to `main.graph` and giving the graph the ID `osint_agent`.
-  - Used by `langgraph dev` to spin up the server.
-
+Key Directories and Files (under `src/`)
+----------------------------------------
+- `agent/`
+  - `messages.py` – Plain Python dataclasses (`SystemMessage`, `HumanMessage`, `AIMessage`, `ToolMessage`, `ToolCall`) replacing langchain message objects.
+  - `tool_decorator.py` – A custom `@tool` decorator that parses function signatures and docstrings to generate OpenAI-compatible tool schemas.
+  - `loop.py` – A lightweight agent execution loop that calls the LLM, yields streamed tokens in a background thread using a `queue.Queue`, executes requested tools, appends responses to thread history, and continues.
 - `llms/`
-  - `llm_client.py` – Abstract base class (`LLMClient`) that defines the interface used by the rest of the code.
-  - `openai_client.py` – Concrete implementation using `ChatOpenAI` from `langchain-openai`.
-    - Loads environment variables via `dotenv`.
-    - Configures a default `OpenAIClient` (model `gpt-4.1-mini`, temperature 0) and exposes it as `OPENAI_CLIENT`.
-
+  - `llm_client.py` – Abstract base class (`LLMClient`) defining the standard `invoke()`, `invoke_streaming()`, `stream()`, and `describe_image()` signatures.
+  - `openai_client.py` – Concrete client using the direct `openai` Python SDK.
+  - `claude_client.py` – Concrete client using the direct `anthropic` Python SDK.
+  - `gemini_client.py` – Concrete client using the direct `google-generativeai` Python SDK.
+  - `client_factory.py` – Decides which model client to activate based on the `LLM_PROVIDER` environment variable.
+- `server.py`
+  - The FastAPI application exposing API endpoints:
+    - `POST /api/chat` – Receives a user prompt and returns a Server-Sent Events (SSE) stream of tool executions and token chunks.
+    - `GET /api/threads` – Lists all active chat thread history metadata.
+    - `GET /api/threads/{thread_id}/messages` – Retrieves full message history.
+    - `DELETE /api/threads/{thread_id}` – Deletes a thread from memory.
+    - `GET /api/tools` – Lists all registered tools and their enabled status.
+    - `POST /api/tools/{name}/toggle` – Toggles a tool's enabled state in `tool_config.json`.
+    - `GET /api/kb/{thread_id}/entities` – Retrieves extracted entities from Neo4j/local files.
+    - `GET /api/kb/{thread_id}/edges` – Retrieves extracted relationships/edges.
+- `static/`
+  - `index.html` – A dark-themed, modern HTML interface using SSE streams, featuring a conversation history panel, a side drawer for threads, collapsible tool-call details, and direct API connection controls.
+- `main.py`
+  - Simple entry point script to run the FastAPI server using Uvicorn.
 - `tools/`
-  - `all_tools.py`
-    - Central place where all tools are imported and registered.
-    - `get_all_tools()` returns the list that is bound to the LLM in `main.py`.
-    - Reads `src/tools/tool_config.json` so users can toggle individual tools on/off without touching code.
-  - `engine_search.py`
-    - Web search tool (e.g., for general open web lookups or pivoting to other OSINT tools).
-  - `web_content_tools.py`
-    - High-level helpers to fetch and extract structured content from URLs and PDFs using `requests`, `trafilatura`, and `PyPDF2`.
-  - `wiki_tools.py`
-    - Wikipedia-oriented tools (search pages, fetch page content).
-  - `github_tools.py`
-    - Tools to search for GitHub repositories and summarize them.
-  - `deep_search.py`
-    - Orchestrates deeper multi-step search/investigation using the lower-level tools.
-  - `tor_search.py`
-    - Tool for Tor/Dark Web searches (if configured and used).
-  - `image_descriptor.py`
-    - Uses the LLM to describe images (typically via OpenAI’s vision models).
-  - `osint_multimedia.py`
-    - EXIF extraction, external image description, and AI-generated image detection.
-    - Uses Selenium to drive third-party sites (`jimpl.com`, `foundmyself.com`, `decopy.ai`) and parse results with BeautifulSoup.
-    - This module is a standalone adaptation of legacy functionality from `kmap/internal/component/osint_tools/multimedia.py`, so the kmap dependency is no longer required for these features.
-  - `pinterest.py`
-    - Selenium-based Pinterest scraper (`PinterestSeleniumScraper`) plus the `pinterest_scrape_by_username` LangChain tool.
-    - Handles scrolling, de-duplication, and optional image downloading + metadata.
-  - `final_report.py`
-    - Aggregates intermediate findings into a structured final report for the investigation.
-
-- `crawlers/`
-  - High-level wrappers around fetching and extracting information from web pages, Wikipedia, and GitHub (separate from the tool layer but often used by it).
-
-- `kmap/`
-  - Legacy/reference OSINT and knowledge-mapping framework.
-  - Contains routers, internal components (`internal/component/osint_tools`, `internal/component/crawlers`, etc.), and unit tests.
-  - The OSINT agent in `main.py` does **not** depend directly on this package for its main graph, but some tools (e.g. multimedia/image-related ones) were adapted from here.
-  - You can treat this folder as a library of reference implementations and tests, useful if you need to extend or cross-check tool behaviour.
+  - `all_tools.py` – Central tool registry. Exposes `get_all_tools()` filtering tools via `tool_config.json`.
+  - `engine_search.py` – Scrapes search engines and aggregators (like SearXNG/Google API).
+  - `web_content_tools.py` – Crawls content from general URLs and extracts PDF text.
+  - `deep_search.py` – Multi-step research tool.
+  - `tor_search.py` – Dark web search tool.
+  - `pinterest.py` – Pinterest scraping via Selenium.
+  - `knowledge_base.py` – Handles Neo4j graphing and local file mirroring (`kb_entities.txt`, `kb_edges.jsonl`). Contains the `knowledge_agent` tool which manages ontology-based entity/relation extraction.
+  - `final_report.py` – Generates structured markdown summaries.
 
 How the Agent Runs
 ------------------
-1. Environment:
-   - You create/activate a virtualenv and install `src/requirements.txt`.
-   - `OPENAI_API_KEY` is loaded from `src/.env` (you can copy from `.env.example`).
-
-2. Graph server:
-   - From `src/`, you run `langgraph dev`.
-   - LangGraph loads `langgraph.json`, which points at `main.graph` (built in `main.py`).
-   - The compiled `graph` exposes the `osint_agent` assistant.
-
-3. Message loop:
-   - The client sends messages into the graph.
-   - `llm_call` uses `OPENAI_CLIENT` bound to tools via `get_all_tools()`.
-   - If the LLM response includes tool calls, `should_continue` routes to `tool_node`, which invokes the concrete tool functions and feeds their `ToolMessage`s back into the state.
-   - The loop continues until the LLM produces a final answer without tool calls, at which point the graph returns an answer.
-
-4. Tools and external services:
-   - Web scraping and content extraction rely on `requests`, `trafilatura`, and `PyPDF2`.
-   - Selenium + Chrome (and optionally `webdriver-manager`) are required for:
-     - Pinterest scraping (`tools/pinterest.py`),
-     - Image EXIF/description/AI-detection (`tools/osint_multimedia.py`).
-   - LLM functionality uses `langchain-openai` and the OpenAI Chat Completions API.
-
-Agent Chat UI (Optional)
-------------------------
-- The Next.js Agent Chat UI is located in the `agent-chat-ui/` submodule at the repo root.
-- It is configured to talk to the LangGraph server at `http://localhost:2024` with assistant/graph ID `osint_agent`.
-- You can run it by following `docs/agent_chat_ui_setup.md`:
-  - Start the LangGraph server from `src/` with `langgraph dev`.
-  - In `agent-chat-ui/`, install dependencies with `pnpm install` and run `pnpm dev`.
-
-osint_tools vs tools
---------------------
-- The legacy `osint_tools` implementations live under `src/kmap/internal/component/osint_tools/`.
-- The modern, LangGraph-ready tools are exposed via `src/tools/` and registered in `tools/all_tools.py`.
-- Where relevant (e.g. multimedia/image analysis), functionality from `osint_tools` has been **merged/adapted** into the `tools/` modules so the agent can use them without depending on the kmap runtime.
-- When adding new tools, prefer putting them in `src/tools/` and exporting them from `get_all_tools()` so they automatically become available to the graph.
+1. **Configure Environments**: Set up `.env` (or copy from `.env.example`) with API keys and database credentials (Neo4j, etc.).
+2. **Start Server**:
+   ```bash
+   cd src
+   uv run python main.py
+   ```
+3. **Open UI**: Go to `http://localhost:8000` in your web browser.
 
 Notes for Future Changes
 ------------------------
-- Keep `src/requirements.txt` in sync with the tools you actually expose in `all_tools.py` (for example, Selenium and `webdriver-manager` are only needed if you want to keep Pinterest and multimedia tools enabled).
-- `llms/` is intentionally abstracted so you can swap in a different model provider or configuration without rewiring the graph.
-- If you add new tools, always:
-  - Implement them as LangChain tools or plain callables in `src/tools/`,
-  - Import and register them in `get_all_tools()`,
-  - Optionally extend the prompt in `prompts.py` to tell the LLM when to use them.
-
+- When writing a new tool, use `from agent.tool_decorator import tool` instead of LangChain's decorator, and register it in `src/tools/all_tools.py`.
+- Thread history is stored in-memory in `src/agent/loop.py`. If persistent conversation history across server restarts is required, update `loop.py` to save/retrieve messages from an SQLite database.

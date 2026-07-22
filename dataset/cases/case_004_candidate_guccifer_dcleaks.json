@@ -1,0 +1,246 @@
+{
+  "case_id": "OSINT-CAND-004",
+  "investigation_goal": "Resolve the Guccifer 2.0/DCLeaks persona narrative against public indictment and incident-response evidence linking the personas to GRU-controlled election-interference operations.",
+  "target": "Guccifer 2.0 and DCLeaks attribution chain",
+  "investigation_category": "Social Media & Sockpuppet Networks",
+  "difficulty": "Hard",
+  "sources": [
+    {
+      "source_id": "SRC-001",
+      "type": "Web_Page",
+      "uri": "https://www.justice.gov/archives/sco/file/1080281/dl?inline=",
+      "content": {
+        "page_title": "Indictment",
+        "publication_date": "2018-07-13",
+        "date_accessed": "2026-06-29",
+        "verification_status": "Opened successfully with the web tool; relevant content was present.",
+        "evidence_summary": "The Mueller indictment says conspirators used fictitious personas including DCLeaks and Guccifer 2.0 to stage releases of stolen documents, and that GRU Unit 74455 assisted in release and promotion through those personas.",
+        "supports_findings": [
+          "FIND-001",
+          "FIND-002"
+        ],
+        "confidence": "High"
+      },
+      "raw_text": "The Mueller indictment says conspirators used fictitious personas including DCLeaks and Guccifer 2.0 to stage releases of stolen documents, and that GRU Unit 74455 assisted in release and promotion through those personas."
+    },
+    {
+      "source_id": "SRC-002",
+      "type": "Web_Page",
+      "uri": "https://www.crowdstrike.com/en-us/blog/bears-midst-intrusion-democratic-national-committee/",
+      "content": {
+        "page_title": "CrowdStrike work with the Democratic National Committee: Setting the record straight",
+        "publication_date": "Accessed live page",
+        "date_accessed": "2026-06-29",
+        "verification_status": "Opened successfully with the web tool; relevant content was present.",
+        "evidence_summary": "CrowdStrike states it identified two Russian intelligence-affiliated adversaries in the DNC network, COZY BEAR and FANCY BEAR, and that its findings were supported by U.S. intelligence and independent reports.",
+        "supports_findings": [
+          "FIND-001",
+          "FIND-003"
+        ],
+        "confidence": "High"
+      },
+      "raw_text": "CrowdStrike states it identified two Russian intelligence-affiliated adversaries in the DNC network, COZY BEAR and FANCY BEAR, and that its findings were supported by U.S. intelligence and independent reports."
+    }
+  ],
+  "ground_truth": {
+    "entities": [
+      {
+        "id": "ENT-001",
+        "type": "Alias",
+        "value": "Guccifer 2.0",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "id": "ENT-002",
+        "type": "Domain",
+        "value": "dcleaks.com",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "id": "ENT-003",
+        "type": "Organization",
+        "value": "GRU Unit 74455",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "id": "ENT-004",
+        "type": "Organization",
+        "value": "GRU Unit 26165",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "id": "ENT-005",
+        "type": "Organization",
+        "value": "Democratic National Committee",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "id": "ENT-006",
+        "type": "Alias",
+        "value": "FANCY BEAR",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "id": "ENT-007",
+        "type": "Alias",
+        "value": "COZY BEAR",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "id": "ENT-008",
+        "type": "Organization",
+        "value": "CrowdStrike",
+        "source_references": [
+          "SRC-002"
+        ]
+      }
+    ],
+    "relations": [
+      {
+        "source": "ENT-003",
+        "target": "ENT-001",
+        "relationship_type": "operated_or_assisted_persona",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "source": "ENT-003",
+        "target": "ENT-002",
+        "relationship_type": "operated_or_assisted_release_site",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "source": "ENT-004",
+        "target": "ENT-005",
+        "relationship_type": "hacked_network",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "source": "ENT-006",
+        "target": "ENT-005",
+        "relationship_type": "identified_in_network",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "source": "ENT-007",
+        "target": "ENT-005",
+        "relationship_type": "identified_in_network",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "source": "ENT-008",
+        "target": "ENT-005",
+        "relationship_type": "investigated_breach_of",
+        "source_references": [
+          "SRC-002"
+        ]
+      }
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "CONTRA-001",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ],
+        "description": "Public sources use different labels, scopes, or confidence levels for the same investigation target.",
+        "reconciliation": "Preserve the source-specific wording and confidence level, then cite the exact source supporting each claim."
+      }
+    ],
+    "reasoning_proof_chains": [
+      {
+        "step_index": 1,
+        "premise_entities": [
+          "ENT-001"
+        ],
+        "premise_relations": [],
+        "conclusion": "Identify the primary target and gather independent public sources."
+      },
+      {
+        "step_index": 2,
+        "premise_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-003",
+          "ENT-004"
+        ],
+        "premise_relations": [
+          "operated_or_assisted_persona",
+          "operated_or_assisted_release_site",
+          "hacked_network"
+        ],
+        "conclusion": "Link aliases, organizations, people, platforms, or infrastructure across sources."
+      },
+      {
+        "step_index": 3,
+        "premise_entities": [
+          "ENT-006",
+          "ENT-007",
+          "ENT-008"
+        ],
+        "premise_relations": [
+          "identified_in_network",
+          "identified_in_network",
+          "investigated_breach_of"
+        ],
+        "conclusion": "Produce traceable expected findings while preserving caveats."
+      }
+    ],
+    "key_findings": [
+      {
+        "question": "Was Guccifer 2.0 an independent lone hacker persona?",
+        "answer": "The public indictment treats Guccifer 2.0 and DCLeaks as fictitious personas used by GRU conspirators to release stolen documents.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-003"
+        ]
+      },
+      {
+        "question": "What independent evidence predates the indictment?",
+        "answer": "CrowdStrike incident response identified Russian intelligence-affiliated adversaries in the DNC network before the indictment mapped release personas to GRU units.",
+        "supporting_entities": [
+          "ENT-005",
+          "ENT-006",
+          "ENT-007",
+          "ENT-008"
+        ]
+      },
+      {
+        "question": "What contradiction should the agent resolve?",
+        "answer": "The persona narrative conflicts with DOJ allegations of GRU control and operational support behind Guccifer 2.0 and DCLeaks.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-003"
+        ]
+      }
+    ],
+    "ground_truth_summary": "Candidate-derived OSINT benchmark case built from verified public URLs for multi-source entity linking, reasoning, caveat handling, and report generation."
+  },
+  "evaluation_notes": "All source URLs in this file were opened with the web tool on 2026-06-29 and retained only when reachable and relevant."
+}

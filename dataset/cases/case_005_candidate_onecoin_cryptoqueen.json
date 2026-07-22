@@ -1,0 +1,270 @@
+{
+  "case_id": "OSINT-CAND-005",
+  "investigation_goal": "Reconstruct the OneCoin fraud network from public enforcement records, linking founders, promoters, MLM structure, asset movements, and the unresolved fugitive status of Ruja Ignatova.",
+  "target": "OneCoin / Cryptoqueen network",
+  "investigation_category": "Cryptocurrency & Asset Tracing",
+  "difficulty": "Hard",
+  "sources": [
+    {
+      "source_id": "SRC-001",
+      "type": "Web_Page",
+      "uri": "https://www.justice.gov/usao-sdny/pr/manhattan-us-attorney-announces-charges-against-leaders-onecoin-multibillion-dollar",
+      "content": {
+        "page_title": "Manhattan U.S. Attorney Announces Charges Against Leaders Of OneCoin",
+        "publication_date": "2019-03-08",
+        "date_accessed": "2026-06-29",
+        "verification_status": "Opened successfully with the web tool; relevant content was present.",
+        "evidence_summary": "DOJ announced charges against Konstantin Ignatov and Ruja Ignatova, describing OneCoin as a multibillion-dollar pyramid scheme involving a fraudulent cryptocurrency and saying victims invested billions worldwide.",
+        "supports_findings": [
+          "FIND-001",
+          "FIND-002"
+        ],
+        "confidence": "High"
+      },
+      "raw_text": "DOJ announced charges against Konstantin Ignatov and Ruja Ignatova, describing OneCoin as a multibillion-dollar pyramid scheme involving a fraudulent cryptocurrency and saying victims invested billions worldwide."
+    },
+    {
+      "source_id": "SRC-002",
+      "type": "Web_Page",
+      "uri": "https://www.justice.gov/usao-sdny/pr/co-founder-multibillion-dollar-cryptocurrency-scheme-onecoin-sentenced-20-years-prison",
+      "content": {
+        "page_title": "Co-Founder Of Multibillion-Dollar Cryptocurrency Scheme OneCoin Sentenced To 20 Years In Prison",
+        "publication_date": "2023-09-12",
+        "date_accessed": "2026-06-29",
+        "verification_status": "Opened successfully with the web tool; relevant content was present.",
+        "evidence_summary": "DOJ reports Karl Sebastian Greenwood co-founded OneCoin with Ruja Ignatova, marketed it through a global MLM network, and that investors put over $4 billion into the fraudulent cryptocurrency.",
+        "supports_findings": [
+          "FIND-001",
+          "FIND-002",
+          "FIND-003"
+        ],
+        "confidence": "High"
+      },
+      "raw_text": "DOJ reports Karl Sebastian Greenwood co-founded OneCoin with Ruja Ignatova, marketed it through a global MLM network, and that investors put over $4 billion into the fraudulent cryptocurrency."
+    },
+    {
+      "source_id": "SRC-003",
+      "type": "Web_Page",
+      "uri": "https://www.icij.org/news/2024/08/a-uk-court-ordered-a-global-asset-freeze-for-the-cryptoqueen-and-her-onecoin-associates/",
+      "content": {
+        "page_title": "A UK court ordered a global asset freeze for the Cryptoqueen and her OneCoin associates",
+        "publication_date": "2024-08-21",
+        "date_accessed": "2026-06-29",
+        "verification_status": "Opened successfully with the web tool; relevant content was present.",
+        "evidence_summary": "ICIJ reports a UK court issued worldwide freezing orders targeting Ruja Ignatova and associates, and connects OneCoin-linked proceeds to Dubai and London property structures including Oceana Properties Ltd.",
+        "supports_findings": [
+          "FIND-003"
+        ],
+        "confidence": "High"
+      },
+      "raw_text": "ICIJ reports a UK court issued worldwide freezing orders targeting Ruja Ignatova and associates, and connects OneCoin-linked proceeds to Dubai and London property structures including Oceana Properties Ltd."
+    }
+  ],
+  "ground_truth": {
+    "entities": [
+      {
+        "id": "ENT-001",
+        "type": "Organization",
+        "value": "OneCoin Ltd.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "id": "ENT-002",
+        "type": "Person",
+        "value": "Ruja Ignatova",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003"
+        ]
+      },
+      {
+        "id": "ENT-003",
+        "type": "Alias",
+        "value": "Cryptoqueen",
+        "source_references": [
+          "SRC-002",
+          "SRC-003"
+        ]
+      },
+      {
+        "id": "ENT-004",
+        "type": "Person",
+        "value": "Konstantin Ignatov",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "id": "ENT-005",
+        "type": "Person",
+        "value": "Karl Sebastian Greenwood",
+        "source_references": [
+          "SRC-002",
+          "SRC-003"
+        ]
+      },
+      {
+        "id": "ENT-006",
+        "type": "Organization",
+        "value": "Oceana Properties Ltd.",
+        "source_references": [
+          "SRC-003"
+        ]
+      },
+      {
+        "id": "ENT-007",
+        "type": "Location",
+        "value": "Sofia, Bulgaria",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "id": "ENT-008",
+        "type": "Location",
+        "value": "Dubai",
+        "source_references": [
+          "SRC-003"
+        ]
+      }
+    ],
+    "relations": [
+      {
+        "source": "ENT-002",
+        "target": "ENT-003",
+        "relationship_type": "also_known_as",
+        "source_references": [
+          "SRC-002",
+          "SRC-003"
+        ]
+      },
+      {
+        "source": "ENT-002",
+        "target": "ENT-001",
+        "relationship_type": "co_founded",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "source": "ENT-005",
+        "target": "ENT-001",
+        "relationship_type": "co_founded",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "source": "ENT-004",
+        "target": "ENT-001",
+        "relationship_type": "led_or_promoted",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "source": "ENT-001",
+        "target": "ENT-007",
+        "relationship_type": "based_in",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "source": "ENT-006",
+        "target": "ENT-008",
+        "relationship_type": "used_for_property_purchase",
+        "source_references": [
+          "SRC-003"
+        ]
+      }
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "CONTRA-001",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ],
+        "description": "Public sources use different labels, scopes, or confidence levels for the same investigation target.",
+        "reconciliation": "Preserve the source-specific wording and confidence level, then cite the exact source supporting each claim."
+      }
+    ],
+    "reasoning_proof_chains": [
+      {
+        "step_index": 1,
+        "premise_entities": [
+          "ENT-001"
+        ],
+        "premise_relations": [],
+        "conclusion": "Identify the primary target and gather independent public sources."
+      },
+      {
+        "step_index": 2,
+        "premise_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-003",
+          "ENT-004"
+        ],
+        "premise_relations": [
+          "also_known_as",
+          "co_founded",
+          "co_founded"
+        ],
+        "conclusion": "Link aliases, organizations, people, platforms, or infrastructure across sources."
+      },
+      {
+        "step_index": 3,
+        "premise_entities": [
+          "ENT-006",
+          "ENT-007",
+          "ENT-008"
+        ],
+        "premise_relations": [
+          "led_or_promoted",
+          "based_in",
+          "used_for_property_purchase"
+        ],
+        "conclusion": "Produce traceable expected findings while preserving caveats."
+      }
+    ],
+    "key_findings": [
+      {
+        "question": "What was OneCoin core misrepresentation?",
+        "answer": "DOJ records describe OneCoin as a fraudulent cryptocurrency and pyramid/MLM scheme, not a legitimate cryptocurrency with real market value.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-005"
+        ]
+      },
+      {
+        "question": "Who were key network actors?",
+        "answer": "The public record links Ruja Ignatova, Konstantin Ignatov, and Karl Sebastian Greenwood to leadership or promotion of OneCoin.",
+        "supporting_entities": [
+          "ENT-002",
+          "ENT-004",
+          "ENT-005"
+        ]
+      },
+      {
+        "question": "What asset-tracing angle makes the case non-trivial?",
+        "answer": "ICIJ reporting adds property and offshore-company pivots, including Oceana Properties Ltd. and Dubai/London real estate, beyond the initial criminal charges.",
+        "supporting_entities": [
+          "ENT-006",
+          "ENT-008"
+        ]
+      }
+    ],
+    "ground_truth_summary": "Candidate-derived OSINT benchmark case built from verified public URLs for multi-source entity linking, reasoning, caveat handling, and report generation."
+  },
+  "evaluation_notes": "All source URLs in this file were opened with the web tool on 2026-06-29 and retained only when reachable and relevant."
+}

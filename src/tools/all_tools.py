@@ -9,8 +9,7 @@ from tools.github_tools import github_repo_summary, github_search_repos
 from tools.image_descriptor import describe_image
 from tools.knowledge_base import (
     kb_current_thread_namespace,
-    kb_extract_entities,
-    kb_extract_relations,
+    knowledge_agent,
     kb_get,
     kb_get_edges,
 )
@@ -30,9 +29,8 @@ TOOLS: Dict[str, object] = {
     "github_search_repos": github_search_repos,
     "describe_image": describe_image,
     "final_report": final_report,
-    "kb_extract_entities": kb_extract_entities,
+    "knowledge_agent": knowledge_agent,
     "kb_get": kb_get,
-    "kb_extract_relations": kb_extract_relations,
     "kb_get_edges": kb_get_edges,
     "kb_current_thread_namespace": kb_current_thread_namespace,
 }

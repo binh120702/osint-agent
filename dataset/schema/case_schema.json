@@ -1,0 +1,251 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OSINT-Bench Case Schema",
+  "description": "Schema definition for an OSINT-Bench evaluation case.",
+  "type": "object",
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "description": "Unique identifier for the case (e.g., OSINT-001)"
+    },
+    "investigation_goal": {
+      "type": "string",
+      "description": "High-level goal of the investigation (e.g., Identify the developer behind the threat actor infrastructure)"
+    },
+    "target": {
+      "type": "string",
+      "description": "Primary entity or asset under investigation (e.g., a domain name, a crypto wallet address, a company name)"
+    },
+    "investigation_category": {
+      "type": "string",
+      "enum": [
+        "Threat Actor & Infrastructure Attribution",
+        "Cryptocurrency & Asset Tracing",
+        "Shell Company & Corporate Fraud",
+        "Social Media & Sockpuppet Networks"
+      ],
+      "description": "The category of the OSINT investigation"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": ["Easy", "Medium", "Hard"],
+      "description": "Subjective complexity of the investigation case"
+    },
+    "sources": {
+      "type": "array",
+      "description": "A list of simulated/reproducible sources representing the public information available to the agent",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "description": "Unique identifier for the source (e.g., SRC-001)"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "WHOIS",
+              "DNS",
+              "SSL_Certificate",
+              "Blockchain_Ledger",
+              "Forum_Post",
+              "Social_Media_Profile",
+              "Corporate_Registry",
+              "EXIF_Metadata",
+              "Git_Commit",
+              "Web_Page"
+            ],
+            "description": "The type of the public data source"
+          },
+          "uri": {
+            "type": "string",
+            "description": "Mocked or real URL/location of the source"
+          },
+          "content": {
+            "type": "object",
+            "description": "Structured data content of the source"
+          },
+          "raw_text": {
+            "type": "string",
+            "description": "Raw text representation of the source (e.g., markdown content or transcript)"
+          }
+        },
+        "required": ["source_id", "type", "uri"]
+      }
+    },
+    "ground_truth": {
+      "type": "object",
+      "description": "Deterministic and verifiable ground truth data representing the correct graph and conclusions",
+      "properties": {
+        "entities": {
+          "type": "array",
+          "description": "List of all key entities to be extracted and linked during the investigation",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Unique ID for the entity within the ground truth graph"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "Person",
+                  "Alias",
+                  "Email",
+                  "Phone",
+                  "Domain",
+                  "IP_Address",
+                  "Crypto_Wallet",
+                  "Organization",
+                  "Location",
+                  "SSH_Key",
+                  "PGP_Key",
+                  "Social_Media_Handle"
+                ]
+              },
+              "value": {
+                "type": "string",
+                "description": "The exact value or name of the entity (e.g., mail@example.com)"
+              },
+              "source_references": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "List of source_ids where this entity is explicitly mentioned or derived from"
+              }
+            },
+            "required": ["id", "type", "value", "source_references"]
+          }
+        },
+        "relations": {
+          "type": "array",
+          "description": "List of relations/edges linking the extracted entities",
+          "items": {
+            "type": "object",
+            "properties": {
+              "source": {
+                "type": "string",
+                "description": "ID of the source entity"
+              },
+              "target": {
+                "type": "string",
+                "description": "ID of the target entity"
+              },
+              "relationship_type": {
+                "type": "string",
+                "description": "Type of relation (e.g., registered_by, associated_with, transaction_to, director_of)"
+              },
+              "source_references": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "List of source_ids providing evidence for this relationship"
+              }
+            },
+            "required": ["source", "target", "relationship_type", "source_references"]
+          }
+        },
+        "contradictions": {
+          "type": "array",
+          "description": "Expected anomalies or contradictions the agent must find to solve the case correctly",
+          "items": {
+            "type": "object",
+            "properties": {
+              "contradiction_id": {
+                "type": "string"
+              },
+              "source_references": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 2,
+                "description": "The minimum two source_ids that contradict each other"
+              },
+              "description": {
+                "type": "string",
+                "description": "Clear explanation of why these sources conflict"
+              },
+              "reconciliation": {
+                "type": "string",
+                "description": "The correct logical explanation resolving the contradiction (the truth)"
+              }
+            },
+            "required": ["contradiction_id", "source_references", "description", "reconciliation"]
+          }
+        },
+        "reasoning_proof_chains": {
+          "type": "array",
+          "description": "Sequential steps of inference required to solve the goal",
+          "items": {
+            "type": "object",
+            "properties": {
+              "step_index": {
+                "type": "integer"
+              },
+              "premise_entities": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "premise_relations": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "conclusion": {
+                "type": "string",
+                "description": "The logical deduction made in this step"
+              }
+            },
+            "required": ["step_index", "conclusion"]
+          }
+        },
+        "key_findings": {
+          "type": "array",
+          "description": "The core questions/conclusions the analyst must report",
+          "items": {
+            "type": "object",
+            "properties": {
+              "question": {
+                "type": "string",
+                "description": "The investigative question being answered (e.g., Who is the registrant of malicious domain?)"
+              },
+              "answer": {
+                "type": "string",
+                "description": "The ground truth answer"
+              },
+              "supporting_entities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "The ground truth entity IDs needed to verify the answer"
+              }
+            },
+            "required": ["question", "answer", "supporting_entities"]
+          }
+        },
+        "ground_truth_summary": {
+          "type": "string",
+          "description": "Narrative summary of the true events and investigation findings (markdown format)"
+        }
+      },
+      "required": ["entities", "relations", "key_findings", "ground_truth_summary"]
+    },
+    "evaluation_notes": {
+      "type": "string",
+      "description": "Custom tips or edge cases for evaluating systems against this case"
+    }
+  },
+  "required": [
+    "case_id",
+    "investigation_goal",
+    "target",
+    "investigation_category",
+    "difficulty",
+    "sources",
+    "ground_truth"
+  ]
+}

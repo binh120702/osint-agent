@@ -6,7 +6,7 @@ Complete implementation with retry logic and rate limiting
 from dotenv import load_dotenv
 load_dotenv()
 
-from langchain.tools import tool
+from agent.tool_decorator import tool
 import requests
 import os
 from typing import Dict, List, Optional

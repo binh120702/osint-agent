@@ -2,7 +2,7 @@ import json
 import time
 
 from dotenv import load_dotenv
-from langchain.tools import tool
+from agent.tool_decorator import tool
 
 from llms.client_factory import ACTIVE_LLM_CLIENT
 

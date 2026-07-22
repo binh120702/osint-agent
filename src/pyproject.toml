@@ -1,25 +1,22 @@
 [project]
 name = "osint-agent"
-version = "0.1.0"
-description = "An Open Source Intelligence (OSINT) agent built with LangGraph."
+version = "2.0.0"
+description = "An Open Source Intelligence (OSINT) agent — custom framework, no LangGraph."
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "anthropic>=0.40.0",
     "beautifulsoup4>=4.12.0,<5",
-    "langchain==1.0.2",
-    "langchain-anthropic>=0.3.0",
-    "langchain-google-genai>=2.0.0",
-    "langchain-openai>=0.3.33",
-    "langgraph==1.0.9",
-    "langgraph-api==0.7.55",
-    "langgraph-cli>=0.4.19",
-    "openai==1.109.1",
+    "fastapi>=0.115.0",
+    "google-generativeai>=0.8.0",
+    "neo4j>=5.0.0",
+    "openai>=1.50.0",
     "pypdf2>=3.0.0,<4",
-    "python-dotenv==1.1.1",
+    "python-dotenv>=1.0.0",
     "requests>=2.31.0,<3",
     "selenium>=4.0.0,<5",
     "trafilatura>=1.6.0,<2",
     "typing-extensions>=4.0.0,<5",
+    "uvicorn[standard]>=0.32.0",
     "webdriver-manager>=4.0.0,<5",
-    "neo4j>=5.0.0",
 ]

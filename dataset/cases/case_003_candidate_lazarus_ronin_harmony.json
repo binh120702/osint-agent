@@ -1,0 +1,288 @@
+{
+  "case_id": "OSINT-CAND-003",
+  "investigation_goal": "Link the Ronin Bridge and Harmony Horizon thefts through public attribution, laundering patterns, and wallet evidence associated with Lazarus Group/APT38.",
+  "target": "Lazarus-linked Ronin Bridge and Harmony Horizon cryptocurrency thefts",
+  "investigation_category": "Cryptocurrency & Asset Tracing",
+  "difficulty": "Hard",
+  "sources": [
+    {
+      "source_id": "SRC-001",
+      "type": "Web_Page",
+      "uri": "https://www.fbi.gov/news/press-releases/fbi-confirms-lazarus-group-cyber-actors-responsible-for-harmonys-horizon-bridge-currency-theft",
+      "content": {
+        "page_title": "FBI Confirms Lazarus Group Cyber Actors Responsible for Harmony Horizon Bridge Currency Theft",
+        "publication_date": "2023-01-23",
+        "date_accessed": "2026-06-29",
+        "verification_status": "Opened successfully with the web tool; relevant content was present.",
+        "evidence_summary": "The FBI confirms Lazarus Group, also known as APT38, was responsible for the theft of $100 million from Harmony Horizon bridge and lists North Korean-controlled virtual currency wallets.",
+        "supports_findings": [
+          "FIND-001",
+          "FIND-003"
+        ],
+        "confidence": "High"
+      },
+      "raw_text": "The FBI confirms Lazarus Group, also known as APT38, was responsible for the theft of $100 million from Harmony Horizon bridge and lists North Korean-controlled virtual currency wallets."
+    },
+    {
+      "source_id": "SRC-002",
+      "type": "Web_Page",
+      "uri": "https://www.chainalysis.com/blog/axie-infinity-ronin-bridge-dprk-hack-seizure/",
+      "content": {
+        "page_title": "Crypto Community Makes Profiting Hard for North Korean Hackers",
+        "publication_date": "Accessed live page",
+        "date_accessed": "2026-06-29",
+        "verification_status": "Opened successfully with the web tool; relevant content was present.",
+        "evidence_summary": "Chainalysis describes how Lazarus gained five of nine Ronin validator keys, approved withdrawals of 173,600 ETH and 25.5 million USDC, and laundered funds through wallets, Tornado Cash, swaps, mixers, bridges, and cashout services.",
+        "supports_findings": [
+          "FIND-002",
+          "FIND-004"
+        ],
+        "confidence": "High"
+      },
+      "raw_text": "Chainalysis describes how Lazarus gained five of nine Ronin validator keys, approved withdrawals of 173,600 ETH and 25.5 million USDC, and laundered funds through wallets, Tornado Cash, swaps, mixers, bridges, and cashout services."
+    },
+    {
+      "source_id": "SRC-003",
+      "type": "Web_Page",
+      "uri": "https://www.elliptic.co/blog/540-million-stolen-from-the-ronin-defi-bridge",
+      "content": {
+        "page_title": "North Korea Lazarus Group identified as exploiters behind $540 million Ronin bridge heist",
+        "publication_date": "2022-04-14",
+        "date_accessed": "2026-06-29",
+        "verification_status": "Opened successfully with the web tool; relevant content was present.",
+        "evidence_summary": "Elliptic reports that OFAC listed the Ronin exploiter Ethereum address as Lazarus Group, and explains that five validator private keys were enough to steal the cryptoassets.",
+        "supports_findings": [
+          "FIND-001",
+          "FIND-002"
+        ],
+        "confidence": "High"
+      },
+      "raw_text": "Elliptic reports that OFAC listed the Ronin exploiter Ethereum address as Lazarus Group, and explains that five validator private keys were enough to steal the cryptoassets."
+    },
+    {
+      "source_id": "SRC-004",
+      "type": "Web_Page",
+      "uri": "https://www.elliptic.co/resources/harmony-horizon-bridge-hack",
+      "content": {
+        "page_title": "The Harmony Horizon Bridge Hack",
+        "publication_date": "Accessed live page",
+        "date_accessed": "2026-06-29",
+        "verification_status": "Opened successfully with the web tool; relevant content was present.",
+        "evidence_summary": "Elliptic reports that the Horizon Bridge hack stole $99.6 million, assets were swapped for Ether and laundered through Tornado Cash, and the hack was attributed to APT38/Lazarus before FBI confirmation.",
+        "supports_findings": [
+          "FIND-001",
+          "FIND-003"
+        ],
+        "confidence": "High"
+      },
+      "raw_text": "Elliptic reports that the Horizon Bridge hack stole $99.6 million, assets were swapped for Ether and laundered through Tornado Cash, and the hack was attributed to APT38/Lazarus before FBI confirmation."
+    }
+  ],
+  "ground_truth": {
+    "entities": [
+      {
+        "id": "ENT-001",
+        "type": "Alias",
+        "value": "Lazarus Group",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "id": "ENT-002",
+        "type": "Alias",
+        "value": "APT38",
+        "source_references": [
+          "SRC-001",
+          "SRC-004"
+        ]
+      },
+      {
+        "id": "ENT-003",
+        "type": "Organization",
+        "value": "Ronin Network",
+        "source_references": [
+          "SRC-002",
+          "SRC-003"
+        ]
+      },
+      {
+        "id": "ENT-004",
+        "type": "Organization",
+        "value": "Harmony Horizon Bridge",
+        "source_references": [
+          "SRC-001",
+          "SRC-004"
+        ]
+      },
+      {
+        "id": "ENT-005",
+        "type": "Crypto_Wallet",
+        "value": "Ronin exploiter Ethereum address",
+        "source_references": [
+          "SRC-003"
+        ]
+      },
+      {
+        "id": "ENT-006",
+        "type": "Crypto_Wallet",
+        "value": "FBI-listed Harmony wallets",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "id": "ENT-007",
+        "type": "Alias",
+        "value": "Tornado Cash",
+        "source_references": [
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ]
+      }
+    ],
+    "relations": [
+      {
+        "source": "ENT-001",
+        "target": "ENT-002",
+        "relationship_type": "also_known_as",
+        "source_references": [
+          "SRC-001",
+          "SRC-004"
+        ]
+      },
+      {
+        "source": "ENT-001",
+        "target": "ENT-003",
+        "relationship_type": "attributed_to_theft_from",
+        "source_references": [
+          "SRC-002",
+          "SRC-003"
+        ]
+      },
+      {
+        "source": "ENT-001",
+        "target": "ENT-004",
+        "relationship_type": "attributed_to_theft_from",
+        "source_references": [
+          "SRC-001",
+          "SRC-004"
+        ]
+      },
+      {
+        "source": "ENT-005",
+        "target": "ENT-001",
+        "relationship_type": "listed_as_lazarus_controlled",
+        "source_references": [
+          "SRC-003"
+        ]
+      },
+      {
+        "source": "ENT-006",
+        "target": "ENT-001",
+        "relationship_type": "listed_as_north_korean_controlled",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "source": "ENT-001",
+        "target": "ENT-007",
+        "relationship_type": "laundered_funds_through",
+        "source_references": [
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ]
+      }
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "CONTRA-001",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ],
+        "description": "Public sources use different labels, scopes, or confidence levels for the same investigation target.",
+        "reconciliation": "Preserve the source-specific wording and confidence level, then cite the exact source supporting each claim."
+      }
+    ],
+    "reasoning_proof_chains": [
+      {
+        "step_index": 1,
+        "premise_entities": [
+          "ENT-001"
+        ],
+        "premise_relations": [],
+        "conclusion": "Identify the primary target and gather independent public sources."
+      },
+      {
+        "step_index": 2,
+        "premise_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-003",
+          "ENT-004"
+        ],
+        "premise_relations": [
+          "also_known_as",
+          "attributed_to_theft_from",
+          "attributed_to_theft_from"
+        ],
+        "conclusion": "Link aliases, organizations, people, platforms, or infrastructure across sources."
+      },
+      {
+        "step_index": 3,
+        "premise_entities": [
+          "ENT-005",
+          "ENT-006",
+          "ENT-007"
+        ],
+        "premise_relations": [
+          "listed_as_lazarus_controlled",
+          "listed_as_north_korean_controlled",
+          "laundered_funds_through"
+        ],
+        "conclusion": "Produce traceable expected findings while preserving caveats."
+      }
+    ],
+    "key_findings": [
+      {
+        "question": "What actor connects the Ronin and Harmony thefts?",
+        "answer": "Public sources attribute both thefts to Lazarus Group/APT38, a North Korean malicious cyber actor group.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-003",
+          "ENT-004"
+        ]
+      },
+      {
+        "question": "What financial pivot links the cases?",
+        "answer": "Both cases involve bridge thefts followed by laundering paths using wallets, swaps, mixers, and Tornado Cash.",
+        "supporting_entities": [
+          "ENT-005",
+          "ENT-006",
+          "ENT-007"
+        ]
+      },
+      {
+        "question": "What should be traced in a benchmark run?",
+        "answer": "An ideal investigation should link victim bridges, attributed actor names, wallet evidence, and laundering services without collapsing all wallets into one address.",
+        "supporting_entities": [
+          "ENT-003",
+          "ENT-004",
+          "ENT-005",
+          "ENT-006",
+          "ENT-007"
+        ]
+      }
+    ],
+    "ground_truth_summary": "Candidate-derived OSINT benchmark case built from verified public URLs for multi-source entity linking, reasoning, caveat handling, and report generation."
+  },
+  "evaluation_notes": "All source URLs in this file were opened with the web tool on 2026-06-29 and retained only when reachable and relevant."
+}

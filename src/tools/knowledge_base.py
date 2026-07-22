@@ -6,8 +6,8 @@ import re
 import os
 from contextvars import ContextVar
 
-from langchain.messages import SystemMessage, HumanMessage
-from langchain.tools import tool
+from agent.messages import SystemMessage, HumanMessage
+from agent.tool_decorator import tool
 
 from llms.client_factory import ACTIVE_LLM_CLIENT
 from tools.image_descriptor import describe_image
@@ -70,7 +70,7 @@ def _current_thread_id() -> str:
     """
     Current thread id for KB namespacing.
 
-    Set by main.tool_node per LangGraph thread invocation via set_kb_thread_id().
+    Set by agent.loop per request context via set_kb_thread_id().
     """
     return _sanitize_thread_id(_KB_THREAD_ID_CTX.get())
 
@@ -243,43 +243,67 @@ def _load_kb_config() -> Dict[str, Any]:
     }
 
 
-def _entities_system_prompt(entity_types: List[Dict[str, str]]) -> str:
-    allowed = [t["type"] for t in entity_types if t.get("type")]
-    allowed_str = " | ".join(allowed) if allowed else "other"
-
-    type_meanings = "\n".join(
+def _knowledge_agent_system_prompt(entity_types: List[Dict[str, str]], relation_types: List[Dict[str, str]]) -> str:
+    allowed_entities = [t["type"] for t in entity_types if t.get("type")]
+    allowed_entities_str = " | ".join(allowed_entities) if allowed_entities else "other"
+    
+    allowed_relations = [t["type"] for t in relation_types if t.get("type")]
+    allowed_relations_str = " | ".join(allowed_relations) if allowed_relations else "other_relation"
+    
+    entity_meanings = "\n".join(
         [f"- {t['type']}: {t.get('description', '').strip()}" for t in entity_types if t.get("type")]
     ).strip()
-    if not type_meanings:
-        type_meanings = "- other: (unspecified)"
+    
+    relation_meanings = "\n".join(
+        [f"- {r['type']}: {r.get('description', '').strip()}" for r in relation_types if r.get("type")]
+    ).strip()
 
     return f"""
-You extract a structured OSINT knowledge base from investigation notes.
+You are a specialized Knowledge Agent. Your task is to extract a structured OSINT knowledge base and graph from the provided investigation text.
 
-Given free-form text about a target (person, organization, accounts, domains, etc.),
-identify key entities and facts that should be stored for later reasoning and reporting.
+Analyze the input text to identify key entities and the relationships between them. You must strictly use the allowed entity types and relationship types below.
 
-Return a JSON object with this shape:
+Allowed Entity Types:
+{allowed_entities_str}
+
+Entity Type Meanings & Descriptions:
+{entity_meanings}
+
+Allowed Relationship Types:
+{allowed_relations_str}
+
+Relationship Type Meanings & Descriptions:
+{relation_meanings}
+
+Return a single JSON object containing both entities and relations using this exact schema:
 {{
   "entities": [
     {{
-      "type": "{allowed_str}",
-      "value": "short identifier (e.g. username, full name, domain)",
-      "notes": "optional short note with key evidence or context"
-    }},
-    ...
+      "type": "one of the allowed entity types",
+      "value": "short identifier (e.g. username, full name, domain, URL)",
+      "notes": "optional short note with key evidence, context, or timestamps"
+    }}
+  ],
+  "relations": [
+    {{
+      "from_type": "entity type of the source entity",
+      "from_value": "identifier value of the source entity exactly matching a value in the entities list",
+      "to_type": "entity type of the target entity",
+      "to_value": "identifier value of the target entity exactly matching a value in the entities list",
+      "relation_type": "one of the allowed relationship types",
+      "notes": "short evidence note explaining what in the text supports this relationship"
+    }}
   ]
 }}
 
-Entity type meanings:
-{type_meanings}
-
-Guidelines:
-- Be concise but include all important entities and aliases.
-- Prefer stable identifiers (usernames, profile URLs, domains) over long sentences.
-- Use `notes` to briefly capture the most important evidence or context.
-- If you detect images, classify them as type "image" and keep value as a stable URL/path/filename.
+Extraction Rules:
+1. Be concise but complete. Extract all key details.
+2. Values should be stable identifiers where possible (e.g., usernames, domain names, URLs, email addresses) rather than conversational text.
+3. Only extract relations that are explicitly supported by the text.
+4. Ensure the source and target values in the "relations" array exist exactly in the "entities" array.
+5. If you detect images, classify them as type "image" and use their URL, path, or filename as the value.
 """
+
 
 
 def _is_url(value: str) -> bool:
@@ -394,117 +418,7 @@ def upsert_image_entity_description(image_ref: str, description: str) -> None:
 
 
 
-@tool
-def kb_extract_entities(text: str) -> str:
-    """Extract key entities from investigation text and append them to the Neo4j knowledge base.
 
-    Input:
-        text: Any notes, tool outputs, or summaries related to the investigation.
-    """
-    if not text or not text.strip():
-        return "No text provided for entity extraction."
-
-    kb_config = _load_kb_config()
-    entity_types = kb_config.get("entity_types", [])
-    if not isinstance(entity_types, list):
-        entity_types = []
-        
-    normalized: List[Dict[str, str]] = []
-    for entry in entity_types:
-        if isinstance(entry, str):
-            normalized.append({"type": entry, "description": ""})
-        elif isinstance(entry, dict) and entry.get("type"):
-            normalized.append(
-                {"type": str(entry.get("type", "")).strip(), "description": str(entry.get("description", "")).strip()}
-            )
-    entity_types = normalized
-
-    messages = [
-        SystemMessage(content=_entities_system_prompt(entity_types)),
-        HumanMessage(content=text),
-    ]
-    response = ACTIVE_LLM_CLIENT.invoke(messages)
-    content = getattr(response, "content", str(response))
-
-    thread_id = _current_thread_id()
-    driver = get_neo4j_driver()
-
-    try:
-        data = json.loads(content)
-    except json.JSONDecodeError:
-        # Fallback: store raw content if it is not valid JSON
-        with driver.session() as session:
-            session.run(
-                "MERGE (e:Entity {thread_id: $thread_id, type: 'RAW', value: $value}) "
-                "SET e:Raw, e.notes = $notes, e.created_at = timestamp()",
-                thread_id=thread_id, value=content[:200], notes=content
-            )
-        return json.dumps({"status": "stored_raw", "raw": content}, indent=2)
-
-    entities = data.get("entities", [])
-    if not isinstance(entities, list):
-        entities = []
-
-    processed_entities = []
-    for entity in entities:
-        if not isinstance(entity, dict):
-            continue
-        etype = str(entity.get("type", "") or "").strip()
-        value = str(entity.get("value", "") or "").strip()
-        notes = str(entity.get("notes", "") or "").strip()
-        if not value:
-            continue
-
-        if etype.lower() != "image" and _looks_like_image_ref(value):
-            etype = "image"
-
-        if etype.lower() == "image":
-            enrichment = _enrich_image_notes(value)
-            if enrichment:
-                notes = f"{notes} | {enrichment}" if notes else enrichment
-
-        processed_entities.append({
-            "type": etype,
-            "value": value,
-            "notes": notes
-        })
-
-    # Group by label to execute dynamic cypher batch updates safely
-    entities_by_label = {}
-    for item in processed_entities:
-        label = _sanitize_label(item["type"])
-        entities_by_label.setdefault((item["type"], label), []).append(item)
-
-    added_entities_info = []
-    with driver.session() as session:
-        for (etype, label), batch in entities_by_label.items():
-            query = f"""
-            UNWIND $batch AS item
-            MERGE (e:Entity {{thread_id: $thread_id, type: $type, value: item.value}})
-            ON CREATE SET e.notes = item.notes, e.created_at = timestamp()
-            ON MATCH SET e.notes = CASE
-                WHEN item.notes = '' THEN e.notes
-                WHEN e.notes IS NULL OR e.notes = '' THEN item.notes
-                WHEN NOT e.notes CONTAINS item.notes THEN e.notes + ' | ' + item.notes
-                ELSE e.notes
-            END
-            SET e:{label}
-            RETURN e.type AS type, e.value AS value
-            """
-            result = session.run(query, thread_id=thread_id, type=etype, batch=batch)
-            for record in result:
-                added_entities_info.append(f"{record['type'].upper()} | {record['value']}")
-
-    _mirror_entities_to_file(thread_id)
-
-    return json.dumps(
-        {
-            "status": "ok",
-            "added": added_entities_info,
-            "neo4j": True,
-        },
-        indent=2,
-    )
 
 
 
@@ -533,61 +447,15 @@ def _edge_key(from_type: str, from_value: str, relation_type: str, to_type: str,
     return f"{from_type}||{from_value}||{relation_type}||{to_type}||{to_value}"
 
 
-def _relations_system_prompt(entity_types: List[Dict[str, str]], relation_types: List[Dict[str, str]]) -> str:
-    allowed_rel = [t["type"] for t in relation_types if t.get("type")]
-    allowed_rel_str = " | ".join(allowed_rel) if allowed_rel else "other_relation"
-
-    rel_meanings = "\n".join(
-        [f"- {r['type']}: {r.get('description', '').strip()}" for r in relation_types if r.get("type")]
-    ).strip()
-    if not rel_meanings:
-        rel_meanings = "- other_relation: (unspecified)"
-
-    entity_meanings = "\n".join(
-        [f"- {t['type']}: {t.get('description', '').strip()}" for t in entity_types if t.get("type")]
-    ).strip()
-
-    return f"""
-You extract relationships (edges) between entities for a lightweight OSINT knowledge graph.
-
-The input text may include mentions of multiple entity types. You should connect entities only when the text
-explicitly supports the relationship.
-
-Return a JSON object:
-{{
-  "relations": [
-    {{
-      "from_type": "entity type from allowed set",
-      "from_value": "identifier value exactly as it appears/normalized",
-      "to_type": "entity type from allowed set",
-      "to_value": "identifier value exactly as it appears/normalized",
-      "relation_type": "{allowed_rel_str}",
-      "notes": "short evidence note (what in the text supports the edge)"
-    }}
-  ]
-}}
-
-Allowed entity types:
-{entity_meanings}
-
-Allowed relation types:
-{rel_meanings}
-
-Rules:
-- Only output relations you can justify from the provided text.
-- You should prefer the most specific relation_type possible; use "other_relation" only as a last resort.
-- Use consistent direction: from_type/from_value should be the most specific or primary entity mentioned first.
-"""
-
-
 @tool
-def kb_extract_relations(text: str) -> str:
-    """Extract relationships between KB entities from investigation text and append to the Neo4j knowledge graph.
-
-    Stores relationships in Neo4j and partitions by thread_id.
+def knowledge_agent(text: str) -> str:
+    """Analyze investigation findings to extract, resolve, and save structured entities and relationships to the knowledge base.
+    
+    Args:
+        text: Raw observations, notes, or tool outputs to process.
     """
     if not text or not text.strip():
-        return "No text provided for relation extraction."
+        return "No text provided to the Knowledge Agent."
 
     kb_config = _load_kb_config()
     entity_types = kb_config.get("entity_types", [])
@@ -597,63 +465,123 @@ def kb_extract_relations(text: str) -> str:
     if not isinstance(relation_types, list):
         relation_types = []
 
-    normalized_entity_types: List[Dict[str, str]] = []
+    # Normalize entity types
+    normalized_entities: List[Dict[str, str]] = []
     for entry in entity_types:
         if isinstance(entry, str):
-            normalized_entity_types.append({"type": entry, "description": ""})
+            normalized_entities.append({"type": entry, "description": ""})
         elif isinstance(entry, dict) and entry.get("type"):
-            normalized_entity_types.append(
+            normalized_entities.append(
                 {"type": str(entry.get("type", "")).strip(), "description": str(entry.get("description", "")).strip()}
             )
 
-    normalized_relation_types: List[Dict[str, str]] = []
+    # Normalize relation types
+    normalized_relations: List[Dict[str, str]] = []
     for entry in relation_types:
         if isinstance(entry, str):
-            normalized_relation_types.append({"type": entry, "description": ""})
+            normalized_relations.append({"type": entry, "description": ""})
         elif isinstance(entry, dict) and entry.get("type"):
-            normalized_relation_types.append(
+            normalized_relations.append(
                 {"type": str(entry.get("type", "")).strip(), "description": str(entry.get("description", "")).strip()}
             )
 
     messages = [
-        SystemMessage(
-            content=_relations_system_prompt(normalized_entity_types, normalized_relation_types)
-        ),
+        SystemMessage(content=_knowledge_agent_system_prompt(normalized_entities, normalized_relations)),
         HumanMessage(content=text),
     ]
-
+    
     response = ACTIVE_LLM_CLIENT.invoke(messages)
     content = getattr(response, "content", str(response))
-
+    
     thread_id = _current_thread_id()
     driver = get_neo4j_driver()
 
     try:
-        data = json.loads(content)
+        # LLM might wrap JSON in markdown block. Clean it if necessary.
+        cleaned_content = content.strip()
+        if cleaned_content.startswith("```json"):
+            cleaned_content = cleaned_content[7:]
+        if cleaned_content.endswith("```"):
+            cleaned_content = cleaned_content[:-3]
+        cleaned_content = cleaned_content.strip()
+
+        data = json.loads(cleaned_content)
     except json.JSONDecodeError:
+        # Fallback: store raw content in Neo4j if it is not valid JSON
         with driver.session() as session:
             session.run(
-                "MERGE (from:Entity {thread_id: $thread_id, type: 'RAW_SOURCE', value: 'RAW_TEXT'}) "
-                "SET from:RawSource "
-                "MERGE (to:Entity {thread_id: $thread_id, type: 'RAW_CONTENT', value: $value}) "
-                "SET to:RawContent "
-                "MERGE (from)-[r:HAS_RAW_CONTENT {thread_id: $thread_id}]->(to) "
-                "SET r.notes = $notes, r.created_at = timestamp()",
+                "MERGE (e:Entity {thread_id: $thread_id, type: 'RAW', value: $value}) "
+                "SET e:Raw, e.notes = $notes, e.created_at = timestamp()",
                 thread_id=thread_id, value=content[:200], notes=content
             )
-        return json.dumps({"status": "stored_raw_relations", "neo4j": True}, indent=2)
+        return json.dumps({"status": "stored_raw", "raw": content}, indent=2)
 
-    relations = data.get("relations", [])
-    if not isinstance(relations, list):
-        relations = []
+    extracted_entities = data.get("entities", [])
+    extracted_relations = data.get("relations", [])
 
-    allowed_rel_types = {str(r.get("type", "")).strip() for r in normalized_relation_types if isinstance(r, dict)}
+    if not isinstance(extracted_entities, list):
+        extracted_entities = []
+    if not isinstance(extracted_relations, list):
+        extracted_relations = []
+
+    # Process Entities
+    processed_entities = []
+    for entity in extracted_entities:
+        if not isinstance(entity, dict):
+            continue
+        etype = str(entity.get("type", "") or "").strip()
+        value = str(entity.get("value", "") or "").strip()
+        notes = str(entity.get("notes", "") or "").strip()
+        if not value:
+            continue
+
+        if etype.lower() != "image" and _looks_like_image_ref(value):
+            etype = "image"
+
+        if etype.lower() == "image":
+            enrichment = _enrich_image_notes(value)
+            if enrichment:
+                notes = f"{notes} | {enrichment}" if notes else enrichment
+
+        processed_entities.append({
+            "type": etype,
+            "value": value,
+            "notes": notes
+        })
+
+    # Group by label to execute dynamic Cypher batch updates safely
+    entities_by_label = {}
+    for item in processed_entities:
+        label = _sanitize_label(item["type"])
+        entities_by_label.setdefault((item["type"], label), []).append(item)
+
+    added_entities_info = []
+    with driver.session() as session:
+        for (etype, label), batch in entities_by_label.items():
+            query = f"""
+            UNWIND $batch AS item
+            MERGE (e:Entity {{thread_id: $thread_id, type: $type, value: item.value}})
+            ON CREATE SET e.notes = item.notes, e.created_at = timestamp()
+            ON MATCH SET e.notes = CASE
+                WHEN item.notes = '' THEN e.notes
+                WHEN e.notes IS NULL OR e.notes = '' THEN item.notes
+                WHEN NOT e.notes CONTAINS item.notes THEN e.notes + ' | ' + item.notes
+                ELSE e.notes
+            END
+            SET e:{label}
+            RETURN e.type AS type, e.value AS value
+            """
+            result = session.run(query, thread_id=thread_id, type=etype, batch=batch)
+            for record in result:
+                added_entities_info.append(f"{record['type'].upper()} | {record['value']}")
+
+    # Process Relations
+    allowed_rel_types = {str(r.get("type", "")).strip() for r in normalized_relations}
     if not allowed_rel_types:
         allowed_rel_types = {"other_relation"}
 
-    # Filter and group relations by key components
     relations_by_group = {}
-    for rel in relations:
+    for rel in extracted_relations:
         if not isinstance(rel, dict):
             continue
 
@@ -712,11 +640,17 @@ def kb_extract_relations(text: str) -> str:
                     f"{rel_type} | {record['from_type']}:{record['from_value']} -> {record['to_type']}:{record['to_value']}"
                 )
 
+    # Sync entities and relations to local files for Next.js UI compatibility
     _mirror_entities_to_file(thread_id)
     _mirror_relations_to_file(thread_id)
 
     return json.dumps(
-        {"status": "ok", "added_edges": added_edges, "neo4j": True},
+        {
+            "status": "ok",
+            "added_entities": added_entities_info,
+            "added_edges": added_edges,
+            "neo4j": True,
+        },
         indent=2,
     )
 

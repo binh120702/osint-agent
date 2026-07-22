@@ -1,0 +1,371 @@
+{
+  "case_id": "OSINT-CAND-010",
+  "investigation_goal": "Reconstruct the Internet Research Agency 2016 social media influence operation by linking DOJ indictment facts, Senate findings, platform data, personas, funding, and campaign objectives.",
+  "target": "Internet Research Agency 2016 influence operation",
+  "investigation_category": "Social Media & Sockpuppet Networks",
+  "difficulty": "Hard",
+  "sources": [
+    {
+      "source_id": "SRC-001",
+      "type": "Web_Page",
+      "uri": "https://www.justice.gov/archives/opa/pr/grand-jury-indicts-thirteen-russian-individuals-and-three-russian-companies-scheme-interfere",
+      "content": {
+        "page_title": "Grand Jury Indicts Thirteen Russian Individuals and Three Russian Companies for Scheme to Interfere in the United States Political System",
+        "publication_date": "2018-02-16",
+        "date_accessed": "2026-06-29",
+        "verification_status": "Opened successfully with the web tool; relevant content was present.",
+        "evidence_summary": "DOJ says 13 Russian nationals and three Russian companies were charged for seeking to interfere in the U.S. political system, including the 2016 election; it describes the Internet Research Agency, Project Lakhta, Yevgeniy Prigozhin, and Concord companies.",
+        "supports_findings": [
+          "FIND-001",
+          "FIND-002"
+        ],
+        "confidence": "High"
+      },
+      "raw_text": "DOJ says 13 Russian nationals and three Russian companies were charged for seeking to interfere in the U.S. political system, including the 2016 election; it describes the Internet Research Agency, Project Lakhta, Yevgeniy Prigozhin, and Concord companies."
+    },
+    {
+      "source_id": "SRC-002",
+      "type": "Web_Page",
+      "uri": "https://www.intelligence.senate.gov/2019/10/08/press-senate-intel-committee-releases-bipartisan-report-russia-e2-80-99s-use-social-media/",
+      "content": {
+        "page_title": "Senate Intel Committee Releases Bipartisan Report on Russia Use of Social Media",
+        "publication_date": "2019-10-08",
+        "date_accessed": "2026-06-29",
+        "verification_status": "Opened successfully with the web tool; relevant content was present.",
+        "evidence_summary": "The Senate Intelligence Committee says IRA activity was led by a Kremlin-backed organization and aimed to sow societal discord and influence the 2016 election, with activity supportive of Trump and detrimental to Clinton.",
+        "supports_findings": [
+          "FIND-001",
+          "FIND-003"
+        ],
+        "confidence": "High"
+      },
+      "raw_text": "The Senate Intelligence Committee says IRA activity was led by a Kremlin-backed organization and aimed to sow societal discord and influence the 2016 election, with activity supportive of Trump and detrimental to Clinton."
+    },
+    {
+      "source_id": "SRC-003",
+      "type": "Web_Page",
+      "uri": "https://www.intelligence.senate.gov/wp-content/uploads/2024/08/sites-default-files-documents-report-volume2.pdf",
+      "content": {
+        "page_title": "Report of the Select Committee on Intelligence, Volume II: Russia Use of Social Media",
+        "publication_date": "2019",
+        "date_accessed": "2026-06-29",
+        "verification_status": "Opened successfully with the web tool; relevant content was present.",
+        "evidence_summary": "The Senate report states IRA operatives masqueraded as Americans using ads, false news, self-generated content, and platform tools to deceive tens of millions of U.S. users, and that the campaign sought to polarize Americans.",
+        "supports_findings": [
+          "FIND-001",
+          "FIND-003",
+          "FIND-004"
+        ],
+        "confidence": "High"
+      },
+      "raw_text": "The Senate report states IRA operatives masqueraded as Americans using ads, false news, self-generated content, and platform tools to deceive tens of millions of U.S. users, and that the campaign sought to polarize Americans."
+    },
+    {
+      "source_id": "SRC-004",
+      "type": "Web_Page",
+      "uri": "https://digitalcommons.unl.edu/senatedocs/1/",
+      "content": {
+        "page_title": "The IRA, Social Media and Political Polarization in the United States",
+        "publication_date": "2018",
+        "date_accessed": "2026-06-29",
+        "verification_status": "Opened successfully with the web tool; relevant content was present.",
+        "evidence_summary": "The Oxford/Graphika report summary says IRA campaigns reached tens of millions of U.S. users across Facebook, Instagram, Twitter, and YouTube, with organic posts more far-reaching than advertisements.",
+        "supports_findings": [
+          "FIND-004"
+        ],
+        "confidence": "High"
+      },
+      "raw_text": "The Oxford/Graphika report summary says IRA campaigns reached tens of millions of U.S. users across Facebook, Instagram, Twitter, and YouTube, with organic posts more far-reaching than advertisements."
+    }
+  ],
+  "ground_truth": {
+    "entities": [
+      {
+        "id": "ENT-001",
+        "type": "Organization",
+        "value": "Internet Research Agency",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "id": "ENT-002",
+        "type": "Alias",
+        "value": "Project Lakhta",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "id": "ENT-003",
+        "type": "Person",
+        "value": "Yevgeniy Viktorovich Prigozhin",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "id": "ENT-004",
+        "type": "Organization",
+        "value": "Concord Management and Consulting LLC",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "id": "ENT-005",
+        "type": "Organization",
+        "value": "Concord Catering",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "id": "ENT-006",
+        "type": "Location",
+        "value": "St. Petersburg, Russia",
+        "source_references": [
+          "SRC-001",
+          "SRC-003"
+        ]
+      },
+      {
+        "id": "ENT-007",
+        "type": "Organization",
+        "value": "Facebook",
+        "source_references": [
+          "SRC-001",
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "id": "ENT-008",
+        "type": "Organization",
+        "value": "Twitter",
+        "source_references": [
+          "SRC-001",
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "id": "ENT-009",
+        "type": "Organization",
+        "value": "Instagram",
+        "source_references": [
+          "SRC-004"
+        ]
+      },
+      {
+        "id": "ENT-010",
+        "type": "Organization",
+        "value": "YouTube",
+        "source_references": [
+          "SRC-004"
+        ]
+      },
+      {
+        "id": "ENT-011",
+        "type": "Person",
+        "value": "Hillary Clinton",
+        "source_references": [
+          "SRC-002",
+          "SRC-003"
+        ]
+      },
+      {
+        "id": "ENT-012",
+        "type": "Person",
+        "value": "Donald Trump",
+        "source_references": [
+          "SRC-002",
+          "SRC-003"
+        ]
+      }
+    ],
+    "relations": [
+      {
+        "source": "ENT-001",
+        "target": "ENT-002",
+        "relationship_type": "part_of_operation",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "source": "ENT-003",
+        "target": "ENT-001",
+        "relationship_type": "funded_or_controlled",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "source": "ENT-004",
+        "target": "ENT-001",
+        "relationship_type": "funding_or_support_company",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "source": "ENT-005",
+        "target": "ENT-001",
+        "relationship_type": "funding_or_support_company",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "source": "ENT-001",
+        "target": "ENT-006",
+        "relationship_type": "based_in",
+        "source_references": [
+          "SRC-001",
+          "SRC-003"
+        ]
+      },
+      {
+        "source": "ENT-001",
+        "target": "ENT-007",
+        "relationship_type": "used_platform",
+        "source_references": [
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "source": "ENT-001",
+        "target": "ENT-008",
+        "relationship_type": "used_platform",
+        "source_references": [
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "source": "ENT-001",
+        "target": "ENT-009",
+        "relationship_type": "used_platform",
+        "source_references": [
+          "SRC-004"
+        ]
+      },
+      {
+        "source": "ENT-001",
+        "target": "ENT-010",
+        "relationship_type": "used_platform",
+        "source_references": [
+          "SRC-004"
+        ]
+      },
+      {
+        "source": "ENT-001",
+        "target": "ENT-011",
+        "relationship_type": "targeted_against",
+        "source_references": [
+          "SRC-002",
+          "SRC-003"
+        ]
+      },
+      {
+        "source": "ENT-001",
+        "target": "ENT-012",
+        "relationship_type": "supported_or_promoted",
+        "source_references": [
+          "SRC-002",
+          "SRC-003"
+        ]
+      }
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "CONTRA-001",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ],
+        "description": "Public sources use different labels, scopes, or confidence levels for the same investigation target.",
+        "reconciliation": "Preserve the source-specific wording and confidence level, then cite the exact source supporting each claim."
+      }
+    ],
+    "reasoning_proof_chains": [
+      {
+        "step_index": 1,
+        "premise_entities": [
+          "ENT-001"
+        ],
+        "premise_relations": [],
+        "conclusion": "Identify the primary target and gather independent public sources."
+      },
+      {
+        "step_index": 2,
+        "premise_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-003",
+          "ENT-004"
+        ],
+        "premise_relations": [
+          "part_of_operation",
+          "funded_or_controlled",
+          "funding_or_support_company"
+        ],
+        "conclusion": "Link aliases, organizations, people, platforms, or infrastructure across sources."
+      },
+      {
+        "step_index": 3,
+        "premise_entities": [
+          "ENT-010",
+          "ENT-011",
+          "ENT-012"
+        ],
+        "premise_relations": [
+          "used_platform",
+          "targeted_against",
+          "supported_or_promoted"
+        ],
+        "conclusion": "Produce traceable expected findings while preserving caveats."
+      }
+    ],
+    "key_findings": [
+      {
+        "question": "What organization was behind the influence operation?",
+        "answer": "DOJ and Senate sources identify the Internet Research Agency, connected to Project Lakhta and funded through Prigozhin-linked Concord companies.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-003",
+          "ENT-004",
+          "ENT-005"
+        ]
+      },
+      {
+        "question": "What tactics should be extracted?",
+        "answer": "The operation used fake American personas, ads, false news, organic content, and multiple social media platforms to reach and polarize U.S. audiences.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-007",
+          "ENT-008",
+          "ENT-009",
+          "ENT-010"
+        ]
+      },
+      {
+        "question": "What objectives should be reported carefully?",
+        "answer": "Senate findings state the IRA sought to harm Clinton chances, support Trump, and sow broader social discord; the activity also extended beyond election content.",
+        "supporting_entities": [
+          "ENT-011",
+          "ENT-012",
+          "ENT-001"
+        ]
+      }
+    ],
+    "ground_truth_summary": "Candidate-derived OSINT benchmark case built from verified public URLs for multi-source entity linking, reasoning, caveat handling, and report generation."
+  },
+  "evaluation_notes": "All source URLs in this file were opened with the web tool on 2026-06-29 and retained only when reachable and relevant."
+}

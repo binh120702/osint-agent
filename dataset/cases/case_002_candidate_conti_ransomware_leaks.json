@@ -1,0 +1,276 @@
+{
+  "case_id": "OSINT-CAND-002",
+  "investigation_goal": "Reconstruct how public sources describe Conti as a ransomware-as-a-service operation, how leaks exposed its internal structure, and how law-enforcement records link aliases and defendants to Conti activity.",
+  "target": "Conti ransomware leaks and public attribution record",
+  "investigation_category": "Threat Actor & Infrastructure Attribution",
+  "difficulty": "Hard",
+  "sources": [
+    {
+      "source_id": "SRC-001",
+      "type": "Web_Page",
+      "uri": "https://rewardsforjustice.net/rewards/conti/",
+      "content": {
+        "page_title": "Conti - Rewards For Justice",
+        "publication_date": "Accessed live page",
+        "date_accessed": "2026-06-29",
+        "verification_status": "Opened successfully with the web tool; relevant content was present.",
+        "evidence_summary": "Rewards for Justice identifies Conti, also known as Wizard Spider, as a Russian government-linked ransomware-as-a-service group and lists aliases Target, Reshaev, Professor, Tramp, and Dandis as believed linked to the group.",
+        "supports_findings": [
+          "FIND-001",
+          "FIND-003"
+        ],
+        "confidence": "High"
+      },
+      "raw_text": "Rewards for Justice identifies Conti, also known as Wizard Spider, as a Russian government-linked ransomware-as-a-service group and lists aliases Target, Reshaev, Professor, Tramp, and Dandis as believed linked to the group."
+    },
+    {
+      "source_id": "SRC-002",
+      "type": "Web_Page",
+      "uri": "https://krebsonsecurity.com/2022/03/conti-ransomware-group-diaries-part-i-evasion/",
+      "content": {
+        "page_title": "Conti Ransomware Group Diaries, Part I: Evasion",
+        "publication_date": "2022-03-01",
+        "date_accessed": "2026-06-29",
+        "verification_status": "Opened successfully with the web tool; relevant content was present.",
+        "evidence_summary": "KrebsOnSecurity reports that a Ukrainian researcher leaked internal Conti chats after Conti pledged support for Russia, and describes a large Russian cybercrime group with salaried employees and internal handles.",
+        "supports_findings": [
+          "FIND-001",
+          "FIND-002"
+        ],
+        "confidence": "High"
+      },
+      "raw_text": "KrebsOnSecurity reports that a Ukrainian researcher leaked internal Conti chats after Conti pledged support for Russia, and describes a large Russian cybercrime group with salaried employees and internal handles."
+    },
+    {
+      "source_id": "SRC-003",
+      "type": "Web_Page",
+      "uri": "https://www.cisecurity.org/insights/blog/the-conti-leaks-a-case-of-cybercrimes-commercialization",
+      "content": {
+        "page_title": "The Conti Leaks: A Case of Cybercrime commercialization",
+        "publication_date": "Accessed live page",
+        "date_accessed": "2026-06-29",
+        "verification_status": "Opened successfully with the web tool; relevant content was present.",
+        "evidence_summary": "CIS explains Conti as a RaaS operation using double extortion and says leaks showed business units including coders, testers, administrators, reverse engineers, and penetration testers.",
+        "supports_findings": [
+          "FIND-002"
+        ],
+        "confidence": "High"
+      },
+      "raw_text": "CIS explains Conti as a RaaS operation using double extortion and says leaks showed business units including coders, testers, administrators, reverse engineers, and penetration testers."
+    },
+    {
+      "source_id": "SRC-004",
+      "type": "Web_Page",
+      "uri": "https://www.justice.gov/usao-mdtn/conti-ransomware-2",
+      "content": {
+        "page_title": "Conti Ransomware",
+        "publication_date": "Updated 2026-06-16",
+        "date_accessed": "2026-06-29",
+        "verification_status": "Opened successfully with the web tool; relevant content was present.",
+        "evidence_summary": "The U.S. Attorney page lists Conti ransomware cases and defendants including Maksim Galochkin, Maksim Rudenskiy, Mikhail Tsarev, Andrey Zhuykov, and Oleksii Lytvynenko.",
+        "supports_findings": [
+          "FIND-003"
+        ],
+        "confidence": "High"
+      },
+      "raw_text": "The U.S. Attorney page lists Conti ransomware cases and defendants including Maksim Galochkin, Maksim Rudenskiy, Mikhail Tsarev, Andrey Zhuykov, and Oleksii Lytvynenko."
+    }
+  ],
+  "ground_truth": {
+    "entities": [
+      {
+        "id": "ENT-001",
+        "type": "Alias",
+        "value": "Conti",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "id": "ENT-002",
+        "type": "Alias",
+        "value": "Wizard Spider",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "id": "ENT-003",
+        "type": "Alias",
+        "value": "Target",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "id": "ENT-004",
+        "type": "Alias",
+        "value": "Stern",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "id": "ENT-005",
+        "type": "Alias",
+        "value": "TrickBot",
+        "source_references": [
+          "SRC-001",
+          "SRC-003"
+        ]
+      },
+      {
+        "id": "ENT-006",
+        "type": "Person",
+        "value": "Maksim Galochkin",
+        "source_references": [
+          "SRC-004"
+        ]
+      },
+      {
+        "id": "ENT-007",
+        "type": "Person",
+        "value": "Oleksii Lytvynenko",
+        "source_references": [
+          "SRC-004"
+        ]
+      }
+    ],
+    "relations": [
+      {
+        "source": "ENT-001",
+        "target": "ENT-002",
+        "relationship_type": "also_known_as",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "source": "ENT-003",
+        "target": "ENT-001",
+        "relationship_type": "linked_alias_to_group",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "source": "ENT-004",
+        "target": "ENT-001",
+        "relationship_type": "internal_handle_in_leaked_chats",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "source": "ENT-001",
+        "target": "ENT-005",
+        "relationship_type": "associated_with_malware_ecosystem",
+        "source_references": [
+          "SRC-001",
+          "SRC-003"
+        ]
+      },
+      {
+        "source": "ENT-006",
+        "target": "ENT-001",
+        "relationship_type": "charged_in_related_conspiracy",
+        "source_references": [
+          "SRC-004"
+        ]
+      },
+      {
+        "source": "ENT-007",
+        "target": "ENT-001",
+        "relationship_type": "charged_in_related_conspiracy",
+        "source_references": [
+          "SRC-004"
+        ]
+      }
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "CONTRA-001",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ],
+        "description": "Public sources use different labels, scopes, or confidence levels for the same investigation target.",
+        "reconciliation": "Preserve the source-specific wording and confidence level, then cite the exact source supporting each claim."
+      }
+    ],
+    "reasoning_proof_chains": [
+      {
+        "step_index": 1,
+        "premise_entities": [
+          "ENT-001"
+        ],
+        "premise_relations": [],
+        "conclusion": "Identify the primary target and gather independent public sources."
+      },
+      {
+        "step_index": 2,
+        "premise_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-003",
+          "ENT-004"
+        ],
+        "premise_relations": [
+          "also_known_as",
+          "linked_alias_to_group",
+          "internal_handle_in_leaked_chats"
+        ],
+        "conclusion": "Link aliases, organizations, people, platforms, or infrastructure across sources."
+      },
+      {
+        "step_index": 3,
+        "premise_entities": [
+          "ENT-005",
+          "ENT-006",
+          "ENT-007"
+        ],
+        "premise_relations": [
+          "associated_with_malware_ecosystem",
+          "charged_in_related_conspiracy",
+          "charged_in_related_conspiracy"
+        ],
+        "conclusion": "Produce traceable expected findings while preserving caveats."
+      }
+    ],
+    "key_findings": [
+      {
+        "question": "What was Conti operating as?",
+        "answer": "Conti should be characterized as a ransomware-as-a-service group using double extortion and a corporate-style internal structure exposed by leaks.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-005"
+        ]
+      },
+      {
+        "question": "Which public sources expose internal structure?",
+        "answer": "Krebs and CIS reporting on the Conti leaks describe internal chats, salaried employees, business units, and handles.",
+        "supporting_entities": [
+          "ENT-003",
+          "ENT-004"
+        ]
+      },
+      {
+        "question": "How do law-enforcement records add attribution pivots?",
+        "answer": "Rewards for Justice links public aliases to Conti and DOJ lists named defendants in Conti ransomware cases.",
+        "supporting_entities": [
+          "ENT-003",
+          "ENT-006",
+          "ENT-007"
+        ]
+      }
+    ],
+    "ground_truth_summary": "Candidate-derived OSINT benchmark case built from verified public URLs for multi-source entity linking, reasoning, caveat handling, and report generation."
+  },
+  "evaluation_notes": "All source URLs in this file were opened with the web tool on 2026-06-29 and retained only when reachable and relevant."
+}

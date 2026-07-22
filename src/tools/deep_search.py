@@ -13,7 +13,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional, Set
 from urllib.parse import urljoin, urlparse, parse_qs
-from langchain.tools import tool
+from agent.tool_decorator import tool
 
 import requests
 from bs4 import BeautifulSoup

@@ -1,0 +1,235 @@
+{
+  "case_id": "OSINT-001",
+  "investigation_goal": "Reconstruct the public evidence chain showing how the 2023 3CX DesktopApp compromise was initiated, how it propagated into 3CX's build environment, and which threat activity cluster it was publicly attributed to.",
+  "target": "3CX DesktopApp 2023 software supply chain compromise",
+  "investigation_category": "Threat Actor & Infrastructure Attribution",
+  "difficulty": "Hard",
+  "sources": [
+    {
+      "source_id": "SRC-001",
+      "type": "Web_Page",
+      "uri": "https://www.3cx.com/blog/news/desktopapp-security-alert/",
+      "content": {
+        "page_title": "3CX Security Alert for Electron Windows App | Desktop App",
+        "publication_date": "2023-03-30",
+        "date_accessed": "2026-06-29",
+        "source_quality": "Official vendor incident notice",
+        "verification_status": "Opened successfully; page contained the March 30, 2023 3CX DesktopApp security alert and affected version details.",
+        "evidence_summary": "3CX stated that Windows Electron App versions 18.12.407 and 18.12.416, plus several macOS Electron versions, were affected. The notice said contacted domains and a GitHub repository had been taken down and described the event as a targeted, possibly state-sponsored supply chain attack.",
+        "supports_findings": ["FIND-001", "FIND-003", "FIND-005"],
+        "confidence": "High"
+      },
+      "raw_text": "3CX's March 30, 2023 security alert said the Electron Windows App shipped in Update 7, versions 18.12.407 and 18.12.416, had a security issue, and that macOS Electron versions 18.11.1213, 18.12.402, 18.12.407, and 18.12.416 were also affected. 3CX reported that domains contacted by the compromised library and a GitHub repository had been taken down, and assessed the incident as a targeted, possibly state-sponsored supply chain attack."
+    },
+    {
+      "source_id": "SRC-002",
+      "type": "Web_Page",
+      "uri": "https://www.3cx.com/blog/news/mandiant-security-update2/",
+      "content": {
+        "page_title": "Mandiant Security Update - Initial Intrusion Vector | 3CX",
+        "publication_date": "2023-04-20",
+        "date_accessed": "2026-06-29",
+        "source_quality": "Official vendor update summarizing incident-response findings",
+        "verification_status": "Opened successfully; page contained 3CX's April 20, 2023 update on the initial intrusion vector, lateral movement, build environment compromise, attribution, and indicators.",
+        "evidence_summary": "3CX reported that Mandiant identified the initial compromise as beginning when a 3CX employee installed Trading Technologies X_TRADER software on a personal computer in 2022. The post says the X_TRADER installer contained VEILEDSIGNAL, the actor stole corporate credentials, used VPN access and Fast Reverse Proxy, compromised Windows and macOS build environments, and Mandiant attributed the activity to UNC4736 with high confidence of a North Korean nexus.",
+        "supports_findings": ["FIND-001", "FIND-002", "FIND-003", "FIND-004", "FIND-006"],
+        "confidence": "High"
+      },
+      "raw_text": "3CX's April 20, 2023 update said Mandiant identified the source of internal compromise as a 2022 installation of Trading Technologies X_TRADER software on an employee's personal computer. The X_TRADER installer, X_TRADER_r7.17.90p608.exe, contained VEILEDSIGNAL malware and was signed by a valid certificate for Trading Technologies International, Inc. 3CX stated that the actor stole the employee's corporate credentials, accessed the 3CX environment via VPN, used Fast Reverse Proxy named MsMpEng.exe, compromised Windows and macOS build environments, and was attributed by Mandiant to UNC4736 with high confidence of a North Korean nexus."
+    },
+    {
+      "source_id": "SRC-003",
+      "type": "Web_Page",
+      "uri": "https://cloud.google.com/blog/topics/threat-intelligence/3cx-software-supply-chain-compromise",
+      "content": {
+        "page_title": "3CX Software Supply Chain Compromise Initiated by a Prior Software Supply Chain Compromise; Suspected North Korean Actor Responsible | Mandiant | Google Cloud Blog",
+        "publication_date": "2023-04-20",
+        "date_accessed": "2026-06-29",
+        "source_quality": "Primary technical incident report by Mandiant / Google Cloud",
+        "verification_status": "Opened successfully; page contained detailed Mandiant analysis of the 3CX compromise, X_TRADER predecessor compromise, malware families, shared tooling, infrastructure, and attribution.",
+        "evidence_summary": "Mandiant reported that the 3CX compromise was initiated through malicious software downloaded from Trading Technologies' website and described it as the first observed software supply chain attack leading to another software supply chain attack. The report links 3CX DesktopApp versions to SUDDENICON, ICONICSTEALER, GitHub-hosted encrypted icon files, X_TRADER to VEILEDSIGNAL, and UNC4736 to suspected North Korean financially motivated activity.",
+        "supports_findings": ["FIND-001", "FIND-002", "FIND-003", "FIND-004", "FIND-005", "FIND-006"],
+        "confidence": "High"
+      },
+      "raw_text": "Mandiant wrote that the March 2023 3CX DesktopApp compromise was initiated by malicious software downloaded from the Trading Technologies website and that this was the first time Mandiant had seen one software supply chain attack lead to another. The report identified affected 3CX DesktopApp 18.12.416 and earlier, SUDDENICON, ICONICSTEALER, encrypted icon files hosted on GitHub, X_TRADER_r7.17.90p608.exe, VEILEDSIGNAL, Fast Reverse Proxy, TAXHAUL, COLDCAT, POOLRAT, and UNC4736 as a suspected North Korean-nexus activity cluster."
+    },
+    {
+      "source_id": "SRC-004",
+      "type": "Web_Page",
+      "uri": "https://securelist.com/gopuram-backdoor-deployed-through-3cx-supply-chain-attack/109344/",
+      "content": {
+        "page_title": "Not just an infostealer: Gopuram backdoor deployed through 3CX supply chain attack | Securelist",
+        "publication_date": "2023-04-03",
+        "date_accessed": "2026-06-29",
+        "source_quality": "Independent security-research report by Kaspersky Securelist",
+        "verification_status": "Opened successfully; page contained Kaspersky's analysis of Gopuram deployment through the 3CX supply chain attack and its Lazarus attribution rationale.",
+        "evidence_summary": "Kaspersky reported that 3CX installers for Windows and macOS were trojanized, extracted C2 URLs from icons in a removed GitHub repository, and downloaded an infostealer. Kaspersky further observed Gopuram on fewer than ten machines, noted specific interest in cryptocurrency companies, and attributed the Gopuram deployment to Lazarus with medium-to-high confidence.",
+        "supports_findings": ["FIND-003", "FIND-004", "FIND-005", "FIND-006"],
+        "confidence": "High"
+      },
+      "raw_text": "Kaspersky reported that the 3CX infection spread through MSI installers and a trojanized macOS installer, that a payload extracted C2 URLs from icons stored in a GitHub repository, and that an infostealer collected system information and browser history. It connected the campaign to Gopuram, stated Gopuram was deployed on fewer than ten infected machines with specific interest in cryptocurrency companies, and attributed the Gopuram deployment to Lazarus with medium-to-high confidence."
+    },
+    {
+      "source_id": "SRC-005",
+      "type": "Web_Page",
+      "uri": "https://blog.google/threat-analysis-group/countering-threats-north-korea/",
+      "content": {
+        "page_title": "Countering threats from North Korea",
+        "publication_date": "2022-03-24",
+        "date_accessed": "2026-06-29",
+        "source_quality": "Primary report by Google Threat Analysis Group",
+        "verification_status": "Opened successfully; page contained Google TAG reporting on North Korean activity exploiting CVE-2022-0609 and compromising fintech websites including Trading Technologies.",
+        "evidence_summary": "Google TAG reported that a North Korean group publicly tracked as Operation AppleJeus targeted cryptocurrency and fintech users. TAG listed www.tradingtechnologies.com as a compromised website observed from February 7 to February 9, 2022, which Mandiant later cited as corroborating context for the 3CX/X_TRADER chain.",
+        "supports_findings": ["FIND-004", "FIND-006"],
+        "confidence": "High"
+      },
+      "raw_text": "Google TAG reported that Operation AppleJeus targeted cryptocurrency and fintech organizations and compromised at least two legitimate fintech company websites. The list of compromised websites observed from February 7 to February 9, 2022 included www.tradingtechnologies.com."
+    },
+    {
+      "source_id": "SRC-006",
+      "type": "Web_Page",
+      "uri": "https://attack.mitre.org/software/S0584/",
+      "content": {
+        "page_title": "AppleJeus, Software S0584 | MITRE ATT&CK",
+        "publication_date": "Last modified 2025-04-16",
+        "date_accessed": "2026-06-29",
+        "source_quality": "Authoritative threat-technique knowledge base",
+        "verification_status": "Opened successfully; page contained MITRE ATT&CK entry S0584 for AppleJeus and listed Lazarus Group as a group that uses it.",
+        "evidence_summary": "MITRE identifies AppleJeus as malware for Windows and macOS, records techniques such as code signing, MSI installation, C2 over web protocols, and host-information collection, and lists Lazarus Group as using the software.",
+        "supports_findings": ["FIND-004", "FIND-006"],
+        "confidence": "High"
+      },
+      "raw_text": "MITRE ATT&CK entry S0584 identifies AppleJeus as malware for Windows and macOS. It lists techniques including code signing, MSI installer execution, C2 over POST requests, and host information collection, and lists Lazarus Group as a group that uses AppleJeus."
+    },
+    {
+      "source_id": "SRC-007",
+      "type": "Web_Page",
+      "uri": "https://attack.mitre.org/groups/G0032/",
+      "content": {
+        "page_title": "Lazarus Group, Labyrinth Chollima, HIDDEN COBRA, Guardians of Peace, ZINC, NICKEL ACADEMY, Diamond Sleet, Group G0032 | MITRE ATT&CK",
+        "publication_date": "Accessed live ATT&CK group page",
+        "date_accessed": "2026-06-29",
+        "source_quality": "Authoritative threat-actor knowledge base",
+        "verification_status": "Opened successfully; page contained MITRE ATT&CK group entry G0032 for Lazarus Group and its known aliases and techniques.",
+        "evidence_summary": "MITRE lists Lazarus Group aliases including Labyrinth Chollima, HIDDEN COBRA, ZINC, NICKEL ACADEMY, and Diamond Sleet, and documents techniques such as domain acquisition, compromised infrastructure, GitHub-hosted malicious downloads, and HTTP/HTTPS C2.",
+        "supports_findings": ["FIND-004", "FIND-006"],
+        "confidence": "High"
+      },
+      "raw_text": "MITRE ATT&CK group G0032 identifies Lazarus Group and aliases including Labyrinth Chollima, HIDDEN COBRA, ZINC, NICKEL ACADEMY, and Diamond Sleet. The page documents Lazarus techniques including acquiring domains, compromising domains and servers, hosting malicious downloads on GitHub, and conducting C2 over HTTP and HTTPS."
+    },
+    {
+      "source_id": "SRC-008",
+      "type": "Web_Page",
+      "uri": "https://www.wired.com/story/3cx-supply-chain-attack-times-two",
+      "content": {
+        "page_title": "The Huge 3CX Breach Was Actually 2 Linked Supply Chain Attacks",
+        "publication_date": "2023-04-20",
+        "date_accessed": "2026-06-29",
+        "source_quality": "Reputable technology news report synthesizing primary-source findings",
+        "verification_status": "Opened successfully; page contained WIRED reporting on Mandiant's finding that 3CX was compromised through a prior Trading Technologies X_TRADER supply chain compromise.",
+        "evidence_summary": "WIRED reported that Mandiant found the 3CX breach began when a 3CX employee installed a corrupted Trading Technologies X_TRADER application, allowing attackers to move into 3CX and compromise its installer. The article also notes the link to North Korea-associated activity and a likely cryptocurrency-theft motive.",
+        "supports_findings": ["FIND-001", "FIND-002", "FIND-004", "FIND-006"],
+        "confidence": "Medium"
+      },
+      "raw_text": "WIRED reported that Mandiant found a 3CX employee's PC had been hacked through an earlier software supply chain attack against Trading Technologies' X_TRADER application, and that the attackers used this access to reach 3CX software-development systems and corrupt a 3CX installer. The report framed the incident as a rare chain of one supply chain attack leading to another."
+    },
+    {
+      "source_id": "SRC-009",
+      "type": "Web_Page",
+      "uri": "https://www.axios.com/2023/04/21/north-korea-supply-chain-attacks-3cx",
+      "content": {
+        "page_title": "North Korea-linked 3CX supply chain attack was actually two attacks",
+        "publication_date": "2023-04-21",
+        "date_accessed": "2026-06-29",
+        "source_quality": "Reputable news report summarizing primary-source findings",
+        "verification_status": "Opened successfully; page contained Axios reporting on Mandiant's conclusion that the 3CX incident consisted of two connected supply chain attacks.",
+        "evidence_summary": "Axios reported that Mandiant found the 3CX attack was composed of two linked supply chain attacks, with the first targeting X_TRADER and the second compromising 3CX software. Axios also noted that 3CX claimed 600,000 enterprise customers, making the case useful for impact reasoning.",
+        "supports_findings": ["FIND-001", "FIND-002", "FIND-006"],
+        "confidence": "Medium"
+      },
+      "raw_text": "Axios reported that Mandiant found the 3CX incident was composed of two connected supply chain attacks: one involving X_TRADER and a second affecting 3CX software. It also reported that 3CX claimed 600,000 enterprise customers."
+    }
+  ],
+  "ground_truth": {
+    "entities": [
+      {"id": "ENT-001", "type": "Organization", "value": "3CX", "source_references": ["SRC-001", "SRC-002", "SRC-003", "SRC-008", "SRC-009"]},
+      {"id": "ENT-002", "type": "Alias", "value": "3CX DesktopApp", "source_references": ["SRC-001", "SRC-003", "SRC-004"]},
+      {"id": "ENT-003", "type": "Organization", "value": "Trading Technologies International, Inc.", "source_references": ["SRC-002", "SRC-003", "SRC-008", "SRC-009"]},
+      {"id": "ENT-004", "type": "Alias", "value": "X_TRADER", "source_references": ["SRC-002", "SRC-003", "SRC-008", "SRC-009"]},
+      {"id": "ENT-005", "type": "Alias", "value": "X_TRADER_r7.17.90p608.exe", "source_references": ["SRC-002", "SRC-003"]},
+      {"id": "ENT-006", "type": "Alias", "value": "VEILEDSIGNAL", "source_references": ["SRC-002", "SRC-003"]},
+      {"id": "ENT-007", "type": "Alias", "value": "UNC4736", "source_references": ["SRC-002", "SRC-003"]},
+      {"id": "ENT-008", "type": "Alias", "value": "Lazarus Group", "source_references": ["SRC-004", "SRC-006", "SRC-007"]},
+      {"id": "ENT-009", "type": "Alias", "value": "AppleJeus", "source_references": ["SRC-003", "SRC-004", "SRC-005", "SRC-006"]},
+      {"id": "ENT-010", "type": "Alias", "value": "SUDDENICON", "source_references": ["SRC-003"]},
+      {"id": "ENT-011", "type": "Alias", "value": "ICONICSTEALER", "source_references": ["SRC-003"]},
+      {"id": "ENT-012", "type": "Alias", "value": "Gopuram", "source_references": ["SRC-004"]},
+      {"id": "ENT-013", "type": "Alias", "value": "Fast Reverse Proxy", "source_references": ["SRC-002", "SRC-003"]},
+      {"id": "ENT-014", "type": "Alias", "value": "POOLRAT", "source_references": ["SRC-002", "SRC-003"]},
+      {"id": "ENT-015", "type": "Alias", "value": "TAXHAUL", "source_references": ["SRC-002", "SRC-003"]},
+      {"id": "ENT-016", "type": "Alias", "value": "COLDCAT", "source_references": ["SRC-002", "SRC-003"]},
+      {"id": "ENT-017", "type": "Domain", "value": "www.tradingtechnologies.com", "source_references": ["SRC-003", "SRC-005"]},
+      {"id": "ENT-018", "type": "Domain", "value": "download.tradingtechnologies.com", "source_references": ["SRC-002"]},
+      {"id": "ENT-019", "type": "Domain", "value": "github.com", "source_references": ["SRC-001", "SRC-003", "SRC-004", "SRC-007"]},
+      {"id": "ENT-020", "type": "Domain", "value": "journalide.org", "source_references": ["SRC-003"]},
+      {"id": "ENT-021", "type": "Organization", "value": "Mandiant", "source_references": ["SRC-002", "SRC-003", "SRC-008", "SRC-009"]},
+      {"id": "ENT-022", "type": "Organization", "value": "Kaspersky", "source_references": ["SRC-004"]},
+      {"id": "ENT-023", "type": "Organization", "value": "Google Threat Analysis Group", "source_references": ["SRC-003", "SRC-005"]},
+      {"id": "ENT-024", "type": "Alias", "value": "Operation AppleJeus", "source_references": ["SRC-005"]},
+      {"id": "ENT-025", "type": "Alias", "value": "cryptocurrency and fintech targets", "source_references": ["SRC-003", "SRC-004", "SRC-005", "SRC-008"]}
+    ],
+    "relations": [
+      {"source": "ENT-003", "target": "ENT-004", "relationship_type": "provided_software", "source_references": ["SRC-002", "SRC-003", "SRC-008", "SRC-009"]},
+      {"source": "ENT-004", "target": "ENT-005", "relationship_type": "distributed_as_installer", "source_references": ["SRC-002", "SRC-003"]},
+      {"source": "ENT-005", "target": "ENT-006", "relationship_type": "contained_malware", "source_references": ["SRC-002", "SRC-003"]},
+      {"source": "ENT-006", "target": "ENT-001", "relationship_type": "enabled_initial_compromise_of_employee_system_leading_to_corporate_access", "source_references": ["SRC-002", "SRC-003"]},
+      {"source": "ENT-007", "target": "ENT-006", "relationship_type": "used_or_deployed", "source_references": ["SRC-002", "SRC-003"]},
+      {"source": "ENT-007", "target": "ENT-001", "relationship_type": "compromised_build_environment_of", "source_references": ["SRC-002", "SRC-003"]},
+      {"source": "ENT-007", "target": "ENT-002", "relationship_type": "trojanized", "source_references": ["SRC-001", "SRC-003", "SRC-004"]},
+      {"source": "ENT-002", "target": "ENT-010", "relationship_type": "executed_downloader", "source_references": ["SRC-003"]},
+      {"source": "ENT-010", "target": "ENT-011", "relationship_type": "downloaded_follow_on_payload", "source_references": ["SRC-003"]},
+      {"source": "ENT-010", "target": "ENT-019", "relationship_type": "retrieved_c2_data_from_encrypted_icon_files_hosted_on", "source_references": ["SRC-003", "SRC-004"]},
+      {"source": "ENT-007", "target": "ENT-013", "relationship_type": "used_for_lateral_movement", "source_references": ["SRC-002", "SRC-003"]},
+      {"source": "ENT-007", "target": "ENT-014", "relationship_type": "used_on_macos_build_server", "source_references": ["SRC-002", "SRC-003"]},
+      {"source": "ENT-007", "target": "ENT-015", "relationship_type": "used_on_windows_build_environment", "source_references": ["SRC-002", "SRC-003"]},
+      {"source": "ENT-007", "target": "ENT-016", "relationship_type": "used_on_windows_build_environment", "source_references": ["SRC-002", "SRC-003"]},
+      {"source": "ENT-014", "target": "ENT-020", "relationship_type": "configured_c2_domain", "source_references": ["SRC-003"]},
+      {"source": "ENT-023", "target": "ENT-017", "relationship_type": "reported_prior_compromise_of", "source_references": ["SRC-005"]},
+      {"source": "ENT-009", "target": "ENT-025", "relationship_type": "targeted", "source_references": ["SRC-003", "SRC-004", "SRC-005"]},
+      {"source": "ENT-008", "target": "ENT-009", "relationship_type": "uses_or_is_associated_with", "source_references": ["SRC-004", "SRC-006"]},
+      {"source": "ENT-007", "target": "ENT-008", "relationship_type": "overlaps_with_north_korean_lazarus_related_activity", "source_references": ["SRC-003", "SRC-004", "SRC-006", "SRC-007"]}
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "CONTRA-001",
+        "source_references": ["SRC-001", "SRC-002", "SRC-003"],
+        "description": "The initial 3CX alert described the visible issue as appearing to involve a bundled library compiled into the Electron app via Git, whereas later 3CX/Mandiant reporting identified the upstream intrusion vector as a trojanized Trading Technologies X_TRADER installer that compromised a 3CX employee system and led into the corporate build environment.",
+        "reconciliation": "Treat the March 30 vendor alert as an early, incomplete incident notice about the compromised shipped app and the April 20 3CX/Mandiant publications as the later root-cause finding. The correct investigation conclusion is that the final 3CX DesktopApp compromise was caused by an earlier X_TRADER software supply chain compromise, not merely an isolated bundled-library issue."
+      },
+      {
+        "contradiction_id": "CONTRA-002",
+        "source_references": ["SRC-001", "SRC-004", "SRC-009"],
+        "description": "Public reporting described a potentially broad compromise of 3CX software used by many enterprise customers, while 3CX and Kaspersky reported that follow-on payload execution was selective and that Gopuram was deployed to fewer than ten observed machines.",
+        "reconciliation": "The compromised installer had broad distribution risk, but the actor appears to have filtered victims and deployed later-stage payloads selectively. Analysts should separate exposure scale from confirmed deeper compromise."
+      }
+    ],
+    "reasoning_proof_chains": [
+      {"step_index": 1, "premise_entities": ["ENT-001", "ENT-002"], "premise_relations": ["trojanized"], "conclusion": "The investigation begins with a confirmed supply chain compromise of 3CX DesktopApp, affecting specific Windows and macOS Electron app versions."},
+      {"step_index": 2, "premise_entities": ["ENT-003", "ENT-004", "ENT-005", "ENT-006"], "premise_relations": ["provided_software", "distributed_as_installer", "contained_malware"], "conclusion": "The initial vector was upstream of 3CX: a Trading Technologies X_TRADER installer contained VEILEDSIGNAL malware."},
+      {"step_index": 3, "premise_entities": ["ENT-006", "ENT-001", "ENT-013"], "premise_relations": ["enabled_initial_compromise_of_employee_system_leading_to_corporate_access", "used_for_lateral_movement"], "conclusion": "The compromised X_TRADER installation enabled the actor to move from an employee system into the 3CX corporate environment."},
+      {"step_index": 4, "premise_entities": ["ENT-001", "ENT-014", "ENT-015", "ENT-016"], "premise_relations": ["used_on_macos_build_server", "used_on_windows_build_environment"], "conclusion": "The actor compromised 3CX build infrastructure on both Windows and macOS, enabling the later trojanization of 3CX DesktopApp."},
+      {"step_index": 5, "premise_entities": ["ENT-002", "ENT-010", "ENT-011", "ENT-019"], "premise_relations": ["executed_downloader", "downloaded_follow_on_payload", "retrieved_c2_data_from_encrypted_icon_files_hosted_on"], "conclusion": "The trojanized 3CX DesktopApp used a staged malware chain involving SUDDENICON, GitHub-hosted encrypted icon files, and ICONICSTEALER."},
+      {"step_index": 6, "premise_entities": ["ENT-007", "ENT-008", "ENT-009", "ENT-012", "ENT-025"], "premise_relations": ["overlaps_with_north_korean_lazarus_related_activity", "uses_or_is_associated_with", "targeted"], "conclusion": "The public attribution points to UNC4736, a suspected North Korean-nexus cluster, with overlap to Lazarus/AppleJeus cryptocurrency-focused activity."}
+    ],
+    "key_findings": [
+      {"question": "What was the initial intrusion vector that led to the 3CX compromise?", "answer": "A 3CX employee installed a trojanized Trading Technologies X_TRADER installer, X_TRADER_r7.17.90p608.exe, which contained VEILEDSIGNAL malware and enabled the actor to compromise the employee system before accessing the 3CX environment.", "supporting_entities": ["ENT-001", "ENT-003", "ENT-004", "ENT-005", "ENT-006"]},
+      {"question": "Why is this incident considered a cascading software supply chain compromise?", "answer": "Public Mandiant/3CX reporting states that an earlier software supply chain compromise of Trading Technologies X_TRADER led to the later compromise of 3CX's build environment and trojanized 3CX DesktopApp, making one software supply chain compromise lead to another.", "supporting_entities": ["ENT-001", "ENT-002", "ENT-003", "ENT-004", "ENT-021"]},
+      {"question": "Which 3CX software was affected and how did the malware stage operate?", "answer": "The affected software was 3CX DesktopApp, including Windows Electron App versions 18.12.407 and 18.12.416 and several macOS Electron versions. Mandiant reports that 3CX DesktopApp 18.12.416 and earlier contained malicious code that ran SUDDENICON, obtained C2 data from encrypted GitHub-hosted icon files, and downloaded ICONICSTEALER.", "supporting_entities": ["ENT-002", "ENT-010", "ENT-011", "ENT-019"]},
+      {"question": "What public attribution should an investigator report?", "answer": "The activity should be reported as UNC4736, assessed by Mandiant as a suspected North Korean-nexus cluster and by 3CX's summary as having a North Korean nexus with high confidence. Related reporting links the broader activity to Lazarus/AppleJeus-style cryptocurrency targeting, but the exact labels should preserve each source's confidence level.", "supporting_entities": ["ENT-007", "ENT-008", "ENT-009", "ENT-012", "ENT-021", "ENT-022"]},
+      {"question": "Was the campaign broadly exposed or selectively exploited?", "answer": "The compromised 3CX installer created broad exposure because 3CX DesktopApp was distributed to many customers, but public analysis indicates selective follow-on exploitation: 3CX said most systems only had dormant files, while Kaspersky observed Gopuram on fewer than ten machines and noted interest in cryptocurrency companies.", "supporting_entities": ["ENT-001", "ENT-002", "ENT-012", "ENT-025"]},
+      {"question": "Which prior public evidence connected Trading Technologies to North Korean cryptocurrency-focused activity?", "answer": "Google TAG reported in March 2022 that Operation AppleJeus targeted cryptocurrency and fintech organizations and that www.tradingtechnologies.com was among compromised websites observed in February 2022. Mandiant later cited this as corroborating context for the 3CX/X_TRADER chain.", "supporting_entities": ["ENT-017", "ENT-023", "ENT-024", "ENT-025"]}
+    ],
+    "ground_truth_summary": "The 2023 3CX DesktopApp incident is a strong OSINT benchmark case because the correct answer requires linking multiple public reports across time. The surface event was a trojanized 3CX DesktopApp affecting Windows and macOS Electron builds. Later 3CX and Mandiant reporting identified the root cause as a prior compromise of Trading Technologies' X_TRADER installer, which a 3CX employee installed on a personal computer in 2022. That installer deployed VEILEDSIGNAL, enabling theft of corporate credentials and access into the 3CX environment. The actor then moved laterally, compromised Windows and macOS build environments, and produced trojanized 3CX DesktopApp builds that used staged malware including SUDDENICON and ICONICSTEALER. Attribution should be stated carefully: Mandiant tracked the activity as UNC4736 and assessed a North Korean nexus, while Kaspersky and MITRE provide supporting context around Lazarus/AppleJeus-style cryptocurrency-focused activity. A correct investigation must reconcile early incomplete vendor statements with later root-cause findings, and distinguish broad installer exposure from selective follow-on compromise."
+  },
+  "evaluation_notes": "This case is intended to test multi-hop OSINT reasoning, not live intrusion analysis. Evaluators should reward systems that preserve source confidence levels, cite the exact source behind each attribution claim, distinguish exposure from confirmed follow-on compromise, and avoid collapsing UNC4736, Lazarus Group, and AppleJeus into a single unsupported identity. All URLs in sources were opened with the web tool on 2026-06-29 and included only if reachable with relevant content. Candidate sources that returned internal errors or could not be verified were discarded."
+}

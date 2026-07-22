@@ -1,0 +1,336 @@
+{
+  "case_id": "OSINT-CAND-009",
+  "investigation_goal": "Map the Pandora Papers public reporting on King Abdullah II offshore property network, connecting shell companies, advisers, jurisdictions, and luxury real-estate locations.",
+  "target": "Pandora Papers - King Abdullah II property network",
+  "investigation_category": "Shell Company & Corporate Fraud",
+  "difficulty": "Hard",
+  "sources": [
+    {
+      "source_id": "SRC-001",
+      "type": "Web_Page",
+      "uri": "https://www.icij.org/investigations/pandora-papers/jordan-king-abdullah-luxury-property/",
+      "content": {
+        "page_title": "While foreign aid poured in, Jordan King Abdullah funnelled $100m through secret companies to buy luxury homes",
+        "publication_date": "2021-10-03",
+        "date_accessed": "2026-06-29",
+        "verification_status": "Opened successfully with the web tool; relevant content was present.",
+        "evidence_summary": "ICIJ reports that King Abdullah II owned at least 36 front companies in secretive tax havens and that advisers worked to conceal links between the king, companies, and properties. It identifies advisers Victoria Loraine and Andrew Evans and companies including Guinevere Enterprises Ltd. and Zayer Ltd.",
+        "supports_findings": [
+          "FIND-001",
+          "FIND-002"
+        ],
+        "confidence": "High"
+      },
+      "raw_text": "ICIJ reports that King Abdullah II owned at least 36 front companies in secretive tax havens and that advisers worked to conceal links between the king, companies, and properties. It identifies advisers Victoria Loraine and Andrew Evans and companies including Guinevere Enterprises Ltd. and Zayer Ltd."
+    },
+    {
+      "source_id": "SRC-002",
+      "type": "Web_Page",
+      "uri": "https://www.theguardian.com/news/2021/oct/03/king-of-jordan-hidden-property-empire-worth-more-than-100m-pandora-papers-reveal",
+      "content": {
+        "page_title": "King of Jordan hidden property empire worth more than $100m, Pandora papers reveal",
+        "publication_date": "2021-10-03",
+        "date_accessed": "2026-06-29",
+        "verification_status": "Opened successfully with the web tool; relevant content was present.",
+        "evidence_summary": "The Guardian reports that King Abdullah II amassed a property empire worth over $100 million from Malibu to Washington and London, with ownership disguised through BVI companies.",
+        "supports_findings": [
+          "FIND-001",
+          "FIND-003"
+        ],
+        "confidence": "High"
+      },
+      "raw_text": "The Guardian reports that King Abdullah II amassed a property empire worth over $100 million from Malibu to Washington and London, with ownership disguised through BVI companies."
+    },
+    {
+      "source_id": "SRC-003",
+      "type": "Web_Page",
+      "uri": "https://offshoreleaks.icij.org/investigations/panama-papers",
+      "content": {
+        "page_title": "Browse - ICIJ Offshore Leaks Database",
+        "publication_date": "Accessed live page",
+        "date_accessed": "2026-06-29",
+        "verification_status": "Opened successfully with the web tool; relevant content was present.",
+        "evidence_summary": "The ICIJ Offshore Leaks Database explains that the database contains offshore companies, foundations, and trusts from investigations including Pandora Papers and Panama Papers, with a disclaimer that offshore entities can have legitimate uses.",
+        "supports_findings": [
+          "FIND-004"
+        ],
+        "confidence": "High"
+      },
+      "raw_text": "The ICIJ Offshore Leaks Database explains that the database contains offshore companies, foundations, and trusts from investigations including Pandora Papers and Panama Papers, with a disclaimer that offshore entities can have legitimate uses."
+    },
+    {
+      "source_id": "SRC-004",
+      "type": "Web_Page",
+      "uri": "https://www.aljazeera.com/news/2021/10/3/investigation-reveals-offshore-assets-of-heads-of-state",
+      "content": {
+        "page_title": "Jordan king exposed over tax havens and luxury homes",
+        "publication_date": "2021-10-03",
+        "date_accessed": "2026-06-29",
+        "verification_status": "Opened successfully with the web tool; relevant content was present.",
+        "evidence_summary": "Al Jazeera reports the Pandora Papers showed a network of offshore companies and tax havens used to build a property empire from Malibu to Washington, DC and London, while also quoting denials that state funds were misused.",
+        "supports_findings": [
+          "FIND-001",
+          "FIND-004"
+        ],
+        "confidence": "High"
+      },
+      "raw_text": "Al Jazeera reports the Pandora Papers showed a network of offshore companies and tax havens used to build a property empire from Malibu to Washington, DC and London, while also quoting denials that state funds were misused."
+    }
+  ],
+  "ground_truth": {
+    "entities": [
+      {
+        "id": "ENT-001",
+        "type": "Person",
+        "value": "King Abdullah II",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-004"
+        ]
+      },
+      {
+        "id": "ENT-002",
+        "type": "Organization",
+        "value": "Guinevere Enterprises Ltd.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "id": "ENT-003",
+        "type": "Organization",
+        "value": "Zayer Ltd.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "id": "ENT-004",
+        "type": "Person",
+        "value": "Victoria Loraine",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "id": "ENT-005",
+        "type": "Person",
+        "value": "Andrew Evans",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "id": "ENT-006",
+        "type": "Organization",
+        "value": "Alcogal",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "id": "ENT-007",
+        "type": "Location",
+        "value": "British Virgin Islands",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-004"
+        ]
+      },
+      {
+        "id": "ENT-008",
+        "type": "Location",
+        "value": "Malibu, California",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-004"
+        ]
+      },
+      {
+        "id": "ENT-009",
+        "type": "Location",
+        "value": "Washington, DC",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-004"
+        ]
+      },
+      {
+        "id": "ENT-010",
+        "type": "Location",
+        "value": "London",
+        "source_references": [
+          "SRC-002",
+          "SRC-004"
+        ]
+      }
+    ],
+    "relations": [
+      {
+        "source": "ENT-001",
+        "target": "ENT-002",
+        "relationship_type": "owned_or_connected_to_front_company",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "source": "ENT-001",
+        "target": "ENT-003",
+        "relationship_type": "owned_or_connected_to_front_company",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "source": "ENT-004",
+        "target": "ENT-001",
+        "relationship_type": "adviser_to",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "source": "ENT-005",
+        "target": "ENT-001",
+        "relationship_type": "wealth_manager_or_record_keeper_for",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "source": "ENT-006",
+        "target": "ENT-001",
+        "relationship_type": "offshore_service_provider_for",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "source": "ENT-002",
+        "target": "ENT-007",
+        "relationship_type": "incorporated_in",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "source": "ENT-001",
+        "target": "ENT-008",
+        "relationship_type": "owned_property_in",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-004"
+        ]
+      },
+      {
+        "source": "ENT-001",
+        "target": "ENT-009",
+        "relationship_type": "owned_property_in",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-004"
+        ]
+      },
+      {
+        "source": "ENT-001",
+        "target": "ENT-010",
+        "relationship_type": "owned_property_in",
+        "source_references": [
+          "SRC-002",
+          "SRC-004"
+        ]
+      }
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "CONTRA-001",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ],
+        "description": "Public sources use different labels, scopes, or confidence levels for the same investigation target.",
+        "reconciliation": "Preserve the source-specific wording and confidence level, then cite the exact source supporting each claim."
+      }
+    ],
+    "reasoning_proof_chains": [
+      {
+        "step_index": 1,
+        "premise_entities": [
+          "ENT-001"
+        ],
+        "premise_relations": [],
+        "conclusion": "Identify the primary target and gather independent public sources."
+      },
+      {
+        "step_index": 2,
+        "premise_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-003",
+          "ENT-004"
+        ],
+        "premise_relations": [
+          "owned_or_connected_to_front_company",
+          "owned_or_connected_to_front_company",
+          "adviser_to"
+        ],
+        "conclusion": "Link aliases, organizations, people, platforms, or infrastructure across sources."
+      },
+      {
+        "step_index": 3,
+        "premise_entities": [
+          "ENT-008",
+          "ENT-009",
+          "ENT-010"
+        ],
+        "premise_relations": [
+          "owned_property_in",
+          "owned_property_in",
+          "owned_property_in"
+        ],
+        "conclusion": "Produce traceable expected findings while preserving caveats."
+      }
+    ],
+    "key_findings": [
+      {
+        "question": "What offshore ownership pattern should be reconstructed?",
+        "answer": "Public reporting links King Abdullah II to a network of offshore front companies, advisers, and luxury properties in the U.S. and U.K.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-003",
+          "ENT-004",
+          "ENT-005",
+          "ENT-006"
+        ]
+      },
+      {
+        "question": "Which jurisdictions and locations matter?",
+        "answer": "The case requires linking BVI/offshore structures to properties in Malibu, Washington, DC, and London.",
+        "supporting_entities": [
+          "ENT-007",
+          "ENT-008",
+          "ENT-009",
+          "ENT-010"
+        ]
+      },
+      {
+        "question": "What caveat should be preserved?",
+        "answer": "Sources note that offshore ownership is not automatically illegal and include denials of misuse of public funds, so the benchmark should test careful reporting rather than unsupported criminal conclusions.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-007"
+        ]
+      }
+    ],
+    "ground_truth_summary": "Candidate-derived OSINT benchmark case built from verified public URLs for multi-source entity linking, reasoning, caveat handling, and report generation."
+  },
+  "evaluation_notes": "All source URLs in this file were opened with the web tool on 2026-06-29 and retained only when reachable and relevant."
+}

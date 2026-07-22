@@ -1,0 +1,288 @@
+{
+  "case_id": "OSINT-CAND-007",
+  "investigation_goal": "Investigate how HyperFund/HyperVerse combined alleged crypto Ponzi mechanics, public promoters, rebranding, and a questionable CEO persona to recruit investors.",
+  "target": "HyperFund / HyperVerse alleged crypto fraud network",
+  "investigation_category": "Cryptocurrency & Asset Tracing",
+  "difficulty": "Hard",
+  "sources": [
+    {
+      "source_id": "SRC-001",
+      "type": "Web_Page",
+      "uri": "https://www.sec.gov/newsroom/press-releases/2024-11",
+      "content": {
+        "page_title": "SEC Charges Founder of $1.7 Billion HyperFund Crypto Pyramid Scheme and Top Promoter with Fraud",
+        "publication_date": "2024-01-29",
+        "date_accessed": "2026-06-29",
+        "verification_status": "Opened successfully with the web tool; relevant content was present.",
+        "evidence_summary": "SEC says Sam Lee and Brenda Chunga promoted HyperFund memberships promising high returns from supposed mining operations, while HyperFund had no real source of revenue other than investor funds and collapsed in 2022.",
+        "supports_findings": [
+          "FIND-001",
+          "FIND-002"
+        ],
+        "confidence": "High"
+      },
+      "raw_text": "SEC says Sam Lee and Brenda Chunga promoted HyperFund memberships promising high returns from supposed mining operations, while HyperFund had no real source of revenue other than investor funds and collapsed in 2022."
+    },
+    {
+      "source_id": "SRC-002",
+      "type": "Web_Page",
+      "uri": "https://www.justice.gov/usao-md/pr/three-individuals-charged-189-billion-cryptocurrency-fraud-scheme",
+      "content": {
+        "page_title": "Three Individuals Charged In $1.89 Billion Cryptocurrency Fraud Scheme",
+        "publication_date": "2024-01-29",
+        "date_accessed": "2026-06-29",
+        "verification_status": "Opened successfully with the web tool; relevant content was present.",
+        "evidence_summary": "DOJ says Sam Lee co-founded HyperFund, also known as HyperTech, HyperCapital, HyperVerse, and HyperNation; Rodney Burton was charged as a promoter; Brenda Chunga pleaded guilty and admitted receiving at least $3 million in fraud proceeds.",
+        "supports_findings": [
+          "FIND-001",
+          "FIND-002",
+          "FIND-003"
+        ],
+        "confidence": "High"
+      },
+      "raw_text": "DOJ says Sam Lee co-founded HyperFund, also known as HyperTech, HyperCapital, HyperVerse, and HyperNation; Rodney Burton was charged as a promoter; Brenda Chunga pleaded guilty and admitted receiving at least $3 million in fraud proceeds."
+    },
+    {
+      "source_id": "SRC-003",
+      "type": "Web_Page",
+      "uri": "https://www.theguardian.com/technology/2024/jan/04/chief-executive-of-collapsed-crypto-fund-hyperverse-does-not-appear-to-exist",
+      "content": {
+        "page_title": "Chief executive of collapsed crypto fund HyperVerse does not appear to exist",
+        "publication_date": "2024-01-03",
+        "date_accessed": "2026-06-29",
+        "verification_status": "Opened successfully with the web tool; relevant content was present.",
+        "evidence_summary": "The Guardian reports that Steven Reece Lewis was introduced as HyperVerse CEO, but universities, Companies House, the SEC, Adobe, Goldman Sachs, LinkedIn, and broader internet searches produced no supporting records for his claimed credentials.",
+        "supports_findings": [
+          "FIND-004"
+        ],
+        "confidence": "High"
+      },
+      "raw_text": "The Guardian reports that Steven Reece Lewis was introduced as HyperVerse CEO, but universities, Companies House, the SEC, Adobe, Goldman Sachs, LinkedIn, and broader internet searches produced no supporting records for his claimed credentials."
+    },
+    {
+      "source_id": "SRC-004",
+      "type": "Web_Page",
+      "uri": "https://www.sec.gov/files/litigation/complaints/2024/comp-pr2024-11.pdf",
+      "content": {
+        "page_title": "SEC Complaint: Xue Samuel Lee and Brenda Indah Chunga",
+        "publication_date": "2024-01-29",
+        "date_accessed": "2026-06-29",
+        "verification_status": "Opened successfully with the web tool; relevant content was present.",
+        "evidence_summary": "The SEC complaint states HyperFund rebranded as HyperVerse and HyperNation, promised 0.5% to 1% daily returns and tripling of investment, used referral rewards, and hired an actor to pretend to be the new CEO when HyperVerse launched.",
+        "supports_findings": [
+          "FIND-001",
+          "FIND-004"
+        ],
+        "confidence": "High"
+      },
+      "raw_text": "The SEC complaint states HyperFund rebranded as HyperVerse and HyperNation, promised 0.5% to 1% daily returns and tripling of investment, used referral rewards, and hired an actor to pretend to be the new CEO when HyperVerse launched."
+    }
+  ],
+  "ground_truth": {
+    "entities": [
+      {
+        "id": "ENT-001",
+        "type": "Person",
+        "value": "Xue Samuel Lee / Sam Lee",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-004"
+        ]
+      },
+      {
+        "id": "ENT-002",
+        "type": "Person",
+        "value": "Brenda Indah Chunga / Bitcoin Beautee",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-004"
+        ]
+      },
+      {
+        "id": "ENT-003",
+        "type": "Person",
+        "value": "Rodney Burton / Bitcoin Rodney",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "id": "ENT-004",
+        "type": "Organization",
+        "value": "HyperFund",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-004"
+        ]
+      },
+      {
+        "id": "ENT-005",
+        "type": "Organization",
+        "value": "HyperVerse",
+        "source_references": [
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "id": "ENT-006",
+        "type": "Organization",
+        "value": "HyperNation",
+        "source_references": [
+          "SRC-002",
+          "SRC-004"
+        ]
+      },
+      {
+        "id": "ENT-007",
+        "type": "Person",
+        "value": "Steven Reece Lewis",
+        "source_references": [
+          "SRC-003",
+          "SRC-004"
+        ]
+      }
+    ],
+    "relations": [
+      {
+        "source": "ENT-001",
+        "target": "ENT-004",
+        "relationship_type": "co_founded_or_promoted",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-004"
+        ]
+      },
+      {
+        "source": "ENT-002",
+        "target": "ENT-004",
+        "relationship_type": "promoted",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-004"
+        ]
+      },
+      {
+        "source": "ENT-003",
+        "target": "ENT-004",
+        "relationship_type": "promoted",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "source": "ENT-004",
+        "target": "ENT-005",
+        "relationship_type": "rebranded_as",
+        "source_references": [
+          "SRC-002",
+          "SRC-004"
+        ]
+      },
+      {
+        "source": "ENT-005",
+        "target": "ENT-006",
+        "relationship_type": "rebranded_as",
+        "source_references": [
+          "SRC-002",
+          "SRC-004"
+        ]
+      },
+      {
+        "source": "ENT-007",
+        "target": "ENT-005",
+        "relationship_type": "presented_as_ceo",
+        "source_references": [
+          "SRC-003",
+          "SRC-004"
+        ]
+      }
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "CONTRA-001",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ],
+        "description": "Public sources use different labels, scopes, or confidence levels for the same investigation target.",
+        "reconciliation": "Preserve the source-specific wording and confidence level, then cite the exact source supporting each claim."
+      }
+    ],
+    "reasoning_proof_chains": [
+      {
+        "step_index": 1,
+        "premise_entities": [
+          "ENT-001"
+        ],
+        "premise_relations": [],
+        "conclusion": "Identify the primary target and gather independent public sources."
+      },
+      {
+        "step_index": 2,
+        "premise_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-003",
+          "ENT-004"
+        ],
+        "premise_relations": [
+          "co_founded_or_promoted",
+          "promoted",
+          "promoted"
+        ],
+        "conclusion": "Link aliases, organizations, people, platforms, or infrastructure across sources."
+      },
+      {
+        "step_index": 3,
+        "premise_entities": [
+          "ENT-005",
+          "ENT-006",
+          "ENT-007"
+        ],
+        "premise_relations": [
+          "rebranded_as",
+          "rebranded_as",
+          "presented_as_ceo"
+        ],
+        "conclusion": "Produce traceable expected findings while preserving caveats."
+      }
+    ],
+    "key_findings": [
+      {
+        "question": "What was the alleged business model?",
+        "answer": "SEC and DOJ describe HyperFund as a pyramid/Ponzi-style scheme promising passive returns from supposed mining while relying on investor funds.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-004"
+        ]
+      },
+      {
+        "question": "How did the network evolve its branding?",
+        "answer": "DOJ and the SEC complaint link HyperFund to HyperTech, HyperCapital, HyperVerse, and HyperNation names.",
+        "supporting_entities": [
+          "ENT-004",
+          "ENT-005",
+          "ENT-006"
+        ]
+      },
+      {
+        "question": "What identity-linking task makes the case valuable?",
+        "answer": "Investigators must connect Steven Reece Lewis to HyperVerse promotional material while recognizing public reporting and SEC allegations that the CEO persona was not substantiated.",
+        "supporting_entities": [
+          "ENT-005",
+          "ENT-007"
+        ]
+      }
+    ],
+    "ground_truth_summary": "Candidate-derived OSINT benchmark case built from verified public URLs for multi-source entity linking, reasoning, caveat handling, and report generation."
+  },
+  "evaluation_notes": "All source URLs in this file were opened with the web tool on 2026-06-29 and retained only when reachable and relevant."
+}

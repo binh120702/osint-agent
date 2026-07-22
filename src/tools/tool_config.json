@@ -10,9 +10,8 @@
   "pinterest_scrape_by_username": true,
   "wiki_fetch_page": true,
   "wiki_search_pages": true,
-  "kb_extract_entities": true,
+  "knowledge_agent": true,
   "kb_get": true,
-  "kb_extract_relations": true,
   "kb_get_edges": true,
   "kb_current_thread_namespace": true
 }
