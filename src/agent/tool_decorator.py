@@ -23,7 +23,7 @@ from functools import wraps
 from typing import Any, Callable, get_type_hints
 
 
-# ── Python type → JSON Schema type ──────────────────────────────────────────
+# ── Python type → JSON Schema converter ──────────────────────────────────────────
 
 _PY_TO_JSON: dict[type, str] = {
     str: "string",
@@ -35,19 +35,34 @@ _PY_TO_JSON: dict[type, str] = {
 }
 
 
-def _py_type_to_json(annotation: Any) -> str:
-    """Convert a basic Python annotation to a JSON Schema type string."""
+def _type_to_schema(annotation: Any) -> dict:
+    """Convert a Python annotation to an OpenAI-compatible JSON Schema dict."""
     if annotation in _PY_TO_JSON:
-        return _PY_TO_JSON[annotation]
-    # Handle Optional[X], Union[X, None], etc.
+        if annotation is list:
+            return {"type": "array", "items": {"type": "string"}}
+        if annotation is dict:
+            return {"type": "object"}
+        return {"type": _PY_TO_JSON[annotation]}
+
     origin = getattr(annotation, "__origin__", None)
     if origin is not None:
         args = getattr(annotation, "__args__", ())
-        # Flatten away NoneType for Optional
+        if origin in {list, set, tuple}:
+            inner_type = str
+            non_none = [a for a in args if a is not type(None)]
+            if non_none:
+                inner_type = non_none[0]
+            return {"type": "array", "items": _type_to_schema(inner_type)}
+
+        if origin is dict:
+            return {"type": "object"}
+
+        # Handle Union / Optional types
         non_none = [a for a in args if a is not type(None)]
         if non_none:
-            return _py_type_to_json(non_none[0])
-    return "string"  # safe fallback
+            return _type_to_schema(non_none[0])
+
+    return {"type": "string"}
 
 
 def _build_schema(fn: Callable) -> dict:
@@ -87,8 +102,7 @@ def _build_schema(fn: Callable) -> dict:
         if name == "self":
             continue
         ann = hints.get(name, str)
-        json_type = _py_type_to_json(ann)
-        prop: dict[str, Any] = {"type": json_type}
+        prop = _type_to_schema(ann)
         if name in param_docs:
             prop["description"] = param_docs[name]
         properties[name] = prop

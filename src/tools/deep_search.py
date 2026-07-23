@@ -494,6 +494,8 @@ def deep_search(pages: list[str]) -> str:
     Returns:
         Something with the information of the website.
     """
+    if isinstance(pages, str):
+        pages = [pages]
     logger.info(f"Deep searching multiple pages: {pages}")
 
     def _origin(url: str) -> str:

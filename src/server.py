@@ -43,6 +43,10 @@ app.add_middleware(
 )
 
 STATIC_DIR = Path(__file__).parent / "static"
+FRONTEND_DIST_DIR = Path(__file__).parent.parent / "frontend" / "dist"
+
+if FRONTEND_DIST_DIR.exists() and (FRONTEND_DIST_DIR / "assets").exists():
+    app.mount("/assets", StaticFiles(directory=FRONTEND_DIST_DIR / "assets"), name="assets")
 
 
 # ── Request / response models ────────────────────────────────────────────────
@@ -50,6 +54,8 @@ STATIC_DIR = Path(__file__).parent / "static"
 class ChatRequest(BaseModel):
     message: str
     thread_id: str | None = None  # if None, a new thread is created
+    provider: str | None = None
+    model_name: str | None = None
 
 
 class ToggleToolRequest(BaseModel):
@@ -63,10 +69,20 @@ async def chat(req: ChatRequest):
     """Send a user message; stream back SSE events."""
     thread_id = req.thread_id or str(uuid.uuid4())
 
+    llm_client = None
+    if req.provider or req.model_name:
+        try:
+            from llms.client_factory import get_llm_client_for
+            llm_client = get_llm_client_for(req.provider, req.model_name)
+        except Exception as e:
+            def err_generator():
+                yield f"data: {json.dumps({'type': 'error', 'message': str(e)})}\n\n"
+            return StreamingResponse(err_generator(), media_type="text/event-stream")
+
     def generate():
         # First emit the thread_id so the UI can save it
         yield f"data: {json.dumps({'type': 'thread_id', 'thread_id': thread_id})}\n\n"
-        yield from agent_loop.run_streaming(thread_id, req.message)
+        yield from agent_loop.run_streaming(thread_id, req.message, llm_client=llm_client)
 
     return StreamingResponse(generate(), media_type="text/event-stream")
 
@@ -157,7 +173,10 @@ def kb_edges(thread_id: str):
 
 @app.get("/", response_class=HTMLResponse)
 def serve_ui():
-    index = STATIC_DIR / "index.html"
+    if FRONTEND_DIST_DIR.exists() and (FRONTEND_DIST_DIR / "index.html").exists():
+        index = FRONTEND_DIST_DIR / "index.html"
+    else:
+        index = STATIC_DIR / "index.html"
     if not index.exists():
-        return HTMLResponse("<h1>UI not found. Place index.html in src/static/</h1>", status_code=404)
+        return HTMLResponse("<h1>UI not found. Build the frontend or place index.html in src/static/</h1>", status_code=404)
     return HTMLResponse(index.read_text(encoding="utf-8"))

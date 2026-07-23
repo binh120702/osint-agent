@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-dark: #090b0f;
+  --color-panel-dark: #0f121a;
+  --color-border-dark: #222834;
+  --color-accent-blue: #10b981;   /* soft emerald phosphor green */
+  --color-accent-indigo: #06b6d4; /* cool cyber cyan */
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #090b0f;
+  color: #c9d1d9; /* soft, comfortable grey text for code readability */
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Ensure inputs are easy to read and use default styling */
+input, textarea {
+  color: #e2e8f0 !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #222834;
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #10b981;
+}

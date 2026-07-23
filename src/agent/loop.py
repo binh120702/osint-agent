@@ -59,16 +59,54 @@ def _truncate(text: str) -> str:
     return text[:max(keep, 0)] + suffix
 
 
+from pathlib import Path
+import json
+
+_DATA_DIR = Path(__file__).parent.parent / "data" / "threads"
+
+
+def save_thread(thread_id: str) -> None:
+    """Save thread history to disk."""
+    if thread_id not in _THREADS:
+        return
+    _DATA_DIR.mkdir(parents=True, exist_ok=True)
+    file_path = _DATA_DIR / f"{thread_id}.json"
+    data = [m.to_dict() for m in _THREADS[thread_id]]
+    file_path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+
+
 def get_thread(thread_id: str) -> list[AnyMessage]:
-    """Return the message history for a thread (creates it if new)."""
-    return _THREADS.setdefault(thread_id, [])
+    """Return the message history for a thread (creates it if new, loads from disk if exists)."""
+    if thread_id in _THREADS:
+        return _THREADS[thread_id]
+
+    _DATA_DIR.mkdir(parents=True, exist_ok=True)
+    file_path = _DATA_DIR / f"{thread_id}.json"
+    if file_path.exists():
+        try:
+            from agent.messages import from_dict
+            data = json.loads(file_path.read_text(encoding="utf-8"))
+            msgs = [from_dict(m) for m in data]
+            _THREADS[thread_id] = msgs
+            return msgs
+        except Exception:
+            pass
+
+    msgs = []
+    _THREADS[thread_id] = msgs
+    return msgs
 
 
 def list_threads() -> list[dict]:
-    """Return a summary list of all active threads."""
+    """Return a summary list of all active threads from memory and disk."""
+    _DATA_DIR.mkdir(parents=True, exist_ok=True)
+    thread_ids = set(_THREADS.keys())
+    for f in _DATA_DIR.glob("*.json"):
+        thread_ids.add(f.stem)
+
     result = []
-    for tid, msgs in _THREADS.items():
-        # Find first human message as a title
+    for tid in sorted(thread_ids):
+        msgs = get_thread(tid)
         title = ""
         for m in msgs:
             if isinstance(m, HumanMessage):
@@ -79,10 +117,19 @@ def list_threads() -> list[dict]:
 
 
 def delete_thread(thread_id: str) -> bool:
+    deleted = False
     if thread_id in _THREADS:
         del _THREADS[thread_id]
-        return True
-    return False
+        deleted = True
+    _DATA_DIR.mkdir(parents=True, exist_ok=True)
+    file_path = _DATA_DIR / f"{thread_id}.json"
+    if file_path.exists():
+        try:
+            file_path.unlink()
+            deleted = True
+        except Exception:
+            pass
+    return deleted
 
 
 def run(
@@ -90,6 +137,7 @@ def run(
     user_message: str,
     on_tool_start: Callable[[str, dict], None] | None = None,
     on_tool_end: Callable[[str, str], None] | None = None,
+    llm_client: LLMClient | None = None,
 ) -> Iterator[str]:
     """
     Run one user turn of the agent loop.
@@ -104,16 +152,19 @@ def run(
     _refresh_tools()
     set_kb_thread_id(thread_id)
 
+    client = llm_client or ACTIVE_LLM_CLIENT
     history = get_thread(thread_id)
     history.append(HumanMessage(content=user_message))
+    save_thread(thread_id)
 
     for _iteration in range(_MAX_ITERATIONS):
         # Build full message list for LLM: system + history
         full_messages: list[AnyMessage] = [SystemMessage(content=MAIN_PROMPT)] + history
 
         # Call LLM (non-streaming first to handle tool calls)
-        ai_msg = ACTIVE_LLM_CLIENT.invoke(full_messages, tools=_CACHED_TOOL_SCHEMAS)
+        ai_msg = client.invoke(full_messages, tools=_CACHED_TOOL_SCHEMAS)
         history.append(ai_msg)
+        save_thread(thread_id)
 
         if not ai_msg.tool_calls:
             # No tool calls → stream the final text response to the caller
@@ -146,6 +197,7 @@ def run(
                 on_tool_end(tc.name, result)
 
             history.append(ToolMessage(content=result, tool_call_id=tc.id))
+            save_thread(thread_id)
 
     # Exceeded max iterations
     yield "[Agent loop exceeded max iterations without a final answer.]"
@@ -156,6 +208,7 @@ def run_streaming(
     user_message: str,
     on_tool_start: Callable[[str, dict], None] | None = None,
     on_tool_end: Callable[[str, str], None] | None = None,
+    llm_client: LLMClient | None = None,
 ) -> Iterator[str]:
     """
     Same as run() but yields SSE-formatted event strings for the FastAPI endpoint.
@@ -167,6 +220,8 @@ def run_streaming(
         data: {"type": "done"}
         data: {"type": "error", "message": "..."}
     """
+    import time
+
     def _event(payload: dict) -> str:
         return f"data: {json.dumps(payload)}\n\n"
 
@@ -179,11 +234,18 @@ def run_streaming(
     _refresh_tools()
     set_kb_thread_id(thread_id)
 
+    client = llm_client or ACTIVE_LLM_CLIENT
     history = get_thread(thread_id)
     history.append(HumanMessage(content=user_message))
+    save_thread(thread_id)
+
+    start_time = time.time()
+    tool_call_count = 0
+    iteration_count = 0
 
     try:
         for _iteration in range(_MAX_ITERATIONS):
+            iteration_count += 1
             full_messages: list[AnyMessage] = [SystemMessage(content=MAIN_PROMPT)] + history
 
             q = queue.Queue()
@@ -192,7 +254,7 @@ def run_streaming(
 
             def target():
                 try:
-                    msg = ACTIVE_LLM_CLIENT.invoke_streaming(
+                    msg = client.invoke_streaming(
                         full_messages,
                         tools=_CACHED_TOOL_SCHEMAS,
                         chunk_queue=q
@@ -218,12 +280,22 @@ def run_streaming(
 
             ai_msg = ai_msg_container[0]
             history.append(ai_msg)
+            save_thread(thread_id)
 
             if not ai_msg.tool_calls:
-                yield _event({"type": "done"})
+                duration = round(time.time() - start_time, 2)
+                yield _event({
+                    "type": "done",
+                    "metrics": {
+                        "duration_sec": duration,
+                        "iterations": iteration_count,
+                        "tools_called": tool_call_count,
+                    }
+                })
                 return
 
             for tc in ai_msg.tool_calls:
+                tool_call_count += 1
                 yield _event({"type": "tool_start", "name": tc.name, "args": tc.arguments})
 
                 tool_fn = _TOOLS_BY_NAME.get(tc.name)
@@ -240,6 +312,7 @@ def run_streaming(
 
                 yield _event({"type": "tool_end", "name": tc.name, "result": result[:500]})
                 history.append(ToolMessage(content=result, tool_call_id=tc.id))
+                save_thread(thread_id)
 
         yield _event({"type": "error", "message": "Agent loop exceeded max iterations."})
 

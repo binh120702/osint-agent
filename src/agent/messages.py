@@ -76,3 +76,34 @@ AnyMessage = SystemMessage | HumanMessage | AIMessage | ToolMessage
 def to_dict(msg: AnyMessage) -> dict:
     """Serialize any message to an OpenAI-compatible dict."""
     return msg.to_dict()
+
+
+def from_dict(d: dict) -> AnyMessage:
+    """Reconstruct a Message object from a dictionary representation."""
+    role = d.get("role")
+    content = d.get("content", "")
+    if role == "system":
+        return SystemMessage(content=content)
+    elif role == "user":
+        return HumanMessage(content=content)
+    elif role == "assistant":
+        tool_calls = []
+        if "tool_calls" in d:
+            for tc in d["tool_calls"]:
+                func = tc.get("function", {})
+                args = func.get("arguments", {})
+                if isinstance(args, str):
+                    import json
+                    try:
+                        args = json.loads(args)
+                    except Exception:
+                        pass
+                tool_calls.append(ToolCall(
+                    id=tc.get("id", ""),
+                    name=func.get("name", ""),
+                    arguments=args
+                ))
+        return AIMessage(content=content, tool_calls=tool_calls)
+    elif role == "tool":
+        return ToolMessage(content=content, tool_call_id=d.get("tool_call_id", ""))
+    raise ValueError(f"Unknown message role: {role}")
