@@ -149,24 +149,122 @@ def toggle_tool(name: str, req: ToggleToolRequest):
 
 @app.get("/api/kb/{thread_id}/entities")
 def kb_entities(thread_id: str):
+    from pathlib import Path
+    import json
+    
+    entities = []
+    neo4j_success = False
+    
+    # Try querying Neo4j first
     try:
-        from tools.knowledge_base import kb_get, set_kb_thread_id
-        set_kb_thread_id(thread_id)
-        result = kb_get.invoke({})
-        return json.loads(result) if isinstance(result, str) else result
-    except Exception as exc:
-        raise HTTPException(status_code=500, detail=str(exc))
+        from tools.knowledge_base import get_neo4j_driver
+        driver = get_neo4j_driver()
+        query = """
+        MATCH (e:Entity {thread_id: $thread_id})
+        RETURN labels(e) AS labels, e.type AS type, e.value AS value, e.notes AS notes
+        ORDER BY type, value
+        """
+        with driver.session() as session:
+            result = session.run(query, thread_id=thread_id)
+            for record in result:
+                labels = record["labels"] or []
+                label = next((l for l in labels if l != "Entity"), record["type"].upper())
+                entities.append({
+                    "id": f"{record['type'].lower()}_{record['value']}",
+                    "label": label,
+                    "properties": {
+                        "name": record["value"],
+                        "notes": record["notes"] or ""
+                    }
+                })
+            neo4j_success = True
+    except Exception as e:
+        print(f"Neo4j fetch entities failed, falling back to local file: {e}")
+
+    # Fallback if Neo4j is down or failed
+    if not neo4j_success:
+        root = Path(__file__).resolve().parent.parent
+        entities_file = root / "data" / thread_id / "kb_entities.txt"
+        if entities_file.exists():
+            try:
+                content = entities_file.read_text(encoding="utf-8")
+                for line in content.splitlines():
+                    if not line.strip():
+                        continue
+                    parts = [p.strip() for p in line.split("|")]
+                    if len(parts) >= 2:
+                        etype = parts[0]
+                        value = parts[1]
+                        notes = parts[2] if len(parts) >= 3 else ""
+                        entities.append({
+                            "id": f"{etype.lower()}_{value}",
+                            "label": etype.upper(),
+                            "properties": {
+                                "name": value,
+                                "notes": notes
+                            }
+                        })
+            except Exception as e:
+                print(f"Error reading local entities fallback file: {e}")
+                
+    return entities
 
 
 @app.get("/api/kb/{thread_id}/edges")
 def kb_edges(thread_id: str):
+    from pathlib import Path
+    import json
+    
+    edges = []
+    neo4j_success = False
+    
+    # Try querying Neo4j first
     try:
-        from tools.knowledge_base import kb_get_edges, set_kb_thread_id
-        set_kb_thread_id(thread_id)
-        result = kb_get_edges.invoke({})
-        return json.loads(result) if isinstance(result, str) else result
-    except Exception as exc:
-        raise HTTPException(status_code=500, detail=str(exc))
+        from tools.knowledge_base import get_neo4j_driver
+        driver = get_neo4j_driver()
+        query = """
+        MATCH (from:Entity {thread_id: $thread_id})-[r]->(to:Entity {thread_id: $thread_id})
+        RETURN from.value AS source, to.value AS target, type(r) AS type, r.notes AS notes
+        ORDER BY source, type, target
+        """
+        with driver.session() as session:
+            result = session.run(query, thread_id=thread_id)
+            for record in result:
+                edges.append({
+                    "source": record["source"],
+                    "target": record["target"],
+                    "type": record["type"],
+                    "properties": {
+                        "notes": record["notes"] or ""
+                    }
+                })
+            neo4j_success = True
+    except Exception as e:
+        print(f"Neo4j fetch edges failed, falling back to local file: {e}")
+
+    # Fallback if Neo4j is down or failed
+    if not neo4j_success:
+        root = Path(__file__).resolve().parent.parent
+        edges_file = root / "data" / thread_id / "kb_edges.jsonl"
+        if edges_file.exists():
+            try:
+                content = edges_file.read_text(encoding="utf-8")
+                for line in content.splitlines():
+                    if not line.strip():
+                        continue
+                    data = json.loads(line)
+                    edges.append({
+                        "source": data.get("from_value"),
+                        "target": data.get("to_value"),
+                        "type": data.get("relation_type", "mentions").upper(),
+                        "properties": {
+                            "notes": data.get("notes", "")
+                        }
+                    })
+            except Exception as e:
+                print(f"Error reading local edges fallback file: {e}")
+                
+    return edges
 
 
 # ── Static UI ────────────────────────────────────────────────────────────────
