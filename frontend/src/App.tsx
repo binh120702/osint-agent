@@ -16,7 +16,7 @@ function App() {
   const [kbRefreshTrigger, setKbRefreshTrigger] = useState(0);
   const [toolsRefreshTrigger] = useState(0);
   const [selectedProvider, setSelectedProvider] = useState<string>('openai');
-  const [selectedModel, setSelectedModel] = useState<string>('gpt-4o');
+  const [selectedModel, setSelectedModel] = useState<string>('gpt-5.4');
 
   const fetchThreads = async () => {
     try {
