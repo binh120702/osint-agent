@@ -191,6 +191,7 @@ def run(
                 logger.error("Tool '%s' not found.", tc.name)
             else:
                 try:
+                    set_kb_thread_id(thread_id)
                     result = tool_fn.invoke(tc.arguments)
                     if not isinstance(result, str):
                         result = json.dumps(result, default=str)
@@ -318,6 +319,7 @@ def run_streaming(
                     logger.error("Tool '%s' not found.", tc.name)
                 else:
                     try:
+                        set_kb_thread_id(thread_id)
                         result = tool_fn.invoke(tc.arguments)
                         if not isinstance(result, str):
                             result = json.dumps(result, default=str)
