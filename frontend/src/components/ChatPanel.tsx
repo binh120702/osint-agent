@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { Send, Terminal, ChevronDown, User } from 'lucide-react';
 import type { Message } from '../types';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 interface ChatPanelProps {
   messages: Message[];
@@ -113,6 +114,7 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
                   ) : (
                     <div className="text-sm">
                       <ReactMarkdown
+                        remarkPlugins={[remarkGfm]}
                         components={{
                           h1: ({ node, ...props }) => <h1 className="text-sm font-bold mt-2.5 mb-1.5 text-accent-blue border-b border-border-dark/30 pb-0.5" {...props} />,
                           h2: ({ node, ...props }) => <h2 className="text-xs font-bold mt-2 mb-1 text-accent-indigo" {...props} />,
@@ -136,6 +138,16 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
                           },
                           a: ({ node, ...props }) => <a className="text-accent-blue hover:underline font-semibold" target="_blank" rel="noreferrer" {...props} />,
                           blockquote: ({ node, ...props }) => <blockquote className="border-l-2 border-accent-blue/40 pl-3 italic text-slate-400 my-1.5" {...props} />,
+                          table: ({ node, ...props }) => (
+                            <div className="overflow-x-auto my-3 border border-border-dark w-full">
+                              <table className="min-w-full divide-y divide-border-dark text-[10px] font-mono border-collapse" {...props} />
+                            </div>
+                          ),
+                          thead: ({ node, ...props }) => <thead className="bg-slate-900/60" {...props} />,
+                          tbody: ({ node, ...props }) => <tbody className="divide-y divide-border-dark/30 bg-slate-950/20" {...props} />,
+                          tr: ({ node, ...props }) => <tr className="hover:bg-slate-900/20 transition-colors" {...props} />,
+                          th: ({ node, ...props }) => <th className="px-3 py-1.5 text-left font-bold text-slate-400 border-r border-border-dark/40 last:border-r-0" {...props} />,
+                          td: ({ node, ...props }) => <td className="px-3 py-1.5 text-slate-300 border-r border-border-dark/30 last:border-r-0 break-words" {...props} />,
                         }}
                       >
                         {m.content}
