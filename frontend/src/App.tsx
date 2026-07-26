@@ -43,9 +43,10 @@ function App() {
         msgs.map((m: any) => ({
           role: m.role,
           content: m.content,
-          isToolCall: m.role === 'tool',
-          toolName: m.role === 'tool' ? (m.name || 'tool') : undefined,
-          toolResult: m.role === 'tool' ? m.content : undefined,
+          isToolCall: m.isToolCall || m.role === 'tool',
+          toolName: m.toolName || (m.role === 'tool' ? (m.name || 'tool') : undefined),
+          toolArgs: m.toolArgs,
+          toolResult: m.toolResult || (m.role === 'tool' ? m.content : undefined),
         }))
       );
       // Trigger KB refresh for the new thread
