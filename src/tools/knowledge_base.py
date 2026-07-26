@@ -426,25 +426,184 @@ def upsert_image_entity_description(image_ref: str, description: str) -> None:
 def kb_get() -> str:
     """Return the current contents of the OSINT knowledge base (Neo4j Entity nodes)."""
     thread_id = _current_thread_id()
-    driver = get_neo4j_driver()
-    query = """
-    MATCH (e:Entity {thread_id: $thread_id})
-    RETURN e.type AS type, e.value AS value, e.notes AS notes
-    ORDER BY type, value
-    """
-    with driver.session() as session:
-        result = session.run(query, thread_id=thread_id)
-        lines = []
-        for record in result:
-            lines.append(_build_entity_line(record["type"], record["value"], record["notes"] or ""))
+    neo4j_success = False
+    lines = []
+    
+    try:
+        driver = get_neo4j_driver()
+        query = """
+        MATCH (e:Entity {thread_id: $thread_id})
+        RETURN e.type AS type, e.value AS value, e.notes AS notes
+        ORDER BY type, value
+        """
+        with driver.session() as session:
+            result = session.run(query, thread_id=thread_id)
+            for record in result:
+                lines.append(_build_entity_line(record["type"], record["value"], record["notes"] or ""))
+            neo4j_success = True
+    except Exception as e:
+        print(f"Neo4j kb_get failed, falling back to local files: {e}")
         
-        if not lines:
-            return "Knowledge base is empty."
-        return "\n".join(lines)
+    if not neo4j_success:
+        root = Path(__file__).resolve().parent.parent
+        entities_file = root / "data" / thread_id / "kb_entities.txt"
+        if entities_file.exists():
+            try:
+                content = entities_file.read_text(encoding="utf-8")
+                for line in content.splitlines():
+                    if line.strip():
+                        parts = [p.strip() for p in line.split("|")]
+                        if len(parts) >= 2:
+                            etype = parts[0]
+                            val = parts[1]
+                            notes = parts[2] if len(parts) >= 3 else ""
+                            lines.append(_build_entity_line(etype, val, notes))
+            except Exception:
+                pass
+                
+    if not lines:
+        return "Knowledge base is empty."
+    return "\n".join(lines)
 
 
 def _edge_key(from_type: str, from_value: str, relation_type: str, to_type: str, to_value: str) -> str:
     return f"{from_type}||{from_value}||{relation_type}||{to_type}||{to_value}"
+
+
+
+def _local_add_entities_and_relations(
+    thread_id: str,
+    processed_entities: list,
+    extracted_relations: list,
+    allowed_rel_types: set
+) -> tuple[list[str], list[str]]:
+    """Save entities and relations directly to local mirror files when Neo4j is unreachable."""
+    root = Path(__file__).resolve().parent.parent
+    data_dir = root / "data" / thread_id
+    data_dir.mkdir(parents=True, exist_ok=True)
+    entities_file = data_dir / "kb_entities.txt"
+    edges_file = data_dir / "kb_edges.jsonl"
+    
+    # Load existing entities
+    existing_entities = {}
+    if entities_file.exists():
+        try:
+            content = entities_file.read_text(encoding="utf-8")
+            for line in content.splitlines():
+                if not line.strip():
+                    continue
+                parts = [p.strip() for p in line.split("|")]
+                if len(parts) >= 2:
+                    etype = parts[0]
+                    val = parts[1]
+                    notes = parts[2] if len(parts) >= 3 else ""
+                    existing_entities[(etype.lower(), val.lower())] = {
+                        "type": etype,
+                        "value": val,
+                        "notes": notes
+                    }
+        except Exception:
+            pass
+
+    added_entities = []
+    # Merge new entities
+    for item in processed_entities:
+        key = (item["type"].lower(), item["value"].lower())
+        new_notes = item["notes"].strip()
+        if key in existing_entities:
+            exist = existing_entities[key]
+            if new_notes:
+                if not exist["notes"]:
+                    exist["notes"] = new_notes
+                elif new_notes not in exist["notes"]:
+                    exist["notes"] = f"{exist['notes']} | {new_notes}"
+        else:
+            existing_entities[key] = {
+                "type": item["type"],
+                "value": item["value"],
+                "notes": new_notes
+            }
+            added_entities.append(f"{item['type'].upper()} | {item['value']}")
+            
+    # Write back entities
+    lines = []
+    for ent in existing_entities.values():
+        lines.append(f"{ent['type']} | {ent['value']} | {ent['notes']}")
+    content = "\n".join(lines) + "\n" if lines else ""
+    entities_file.write_text(content, encoding="utf-8")
+    
+    # Load existing edges
+    existing_edges = {}
+    if edges_file.exists():
+        try:
+            content_edges = edges_file.read_text(encoding="utf-8")
+            for line in content_edges.splitlines():
+                if not line.strip():
+                    continue
+                data = json.loads(line)
+                key = (
+                    data.get("from_type", "").lower(),
+                    data.get("from_value", "").lower(),
+                    data.get("relation_type", "").lower(),
+                    data.get("to_type", "").lower(),
+                    data.get("to_value", "").lower()
+                )
+                existing_edges[key] = data
+        except Exception:
+            pass
+
+    added_edges = []
+    # Merge new relations
+    for rel in extracted_relations:
+        if not isinstance(rel, dict):
+            continue
+        from_type = str(rel.get("from_type", "")).strip()
+        from_value = str(rel.get("from_value", "")).strip()
+        to_type = str(rel.get("to_type", "")).strip()
+        to_value = str(rel.get("to_value", "")).strip()
+        relation_type = str(rel.get("relation_type", "")).strip() or "mentions"
+        notes = str(rel.get("notes", "")).strip()
+
+        if not (from_type and from_value and to_type and to_value):
+            continue
+
+        if relation_type not in allowed_rel_types:
+            relation_type = "mentions"
+            
+        key = (
+            from_type.lower(),
+            from_value.lower(),
+            relation_type.lower(),
+            to_type.lower(),
+            to_value.lower()
+        )
+        
+        if key in existing_edges:
+            exist = existing_edges[key]
+            if notes:
+                if not exist.get("notes"):
+                    exist["notes"] = notes
+                elif notes not in exist["notes"]:
+                    exist["notes"] = f"{exist['notes']} | {notes}"
+        else:
+            existing_edges[key] = {
+                "from_type": from_type,
+                "from_value": from_value,
+                "relation_type": relation_type.lower(),
+                "to_type": to_type,
+                "to_value": to_value,
+                "notes": notes
+            }
+            added_edges.append(f"{relation_type.upper()} | {from_type}:{from_value} -> {to_type}:{to_value}")
+            
+    # Write back edges
+    edge_lines = []
+    for edge in existing_edges.values():
+        edge_lines.append(json.dumps(edge, ensure_ascii=False))
+    edge_content = "\n".join(edge_lines) + "\n" if edge_lines else ""
+    edges_file.write_text(edge_content, encoding="utf-8")
+    
+    return added_entities, added_edges
 
 
 @tool
@@ -494,7 +653,6 @@ def knowledge_agent(text: str) -> str:
     content = getattr(response, "content", str(response))
     
     thread_id = _current_thread_id()
-    driver = get_neo4j_driver()
 
     try:
         # LLM might wrap JSON in markdown block. Clean it if necessary.
@@ -507,13 +665,24 @@ def knowledge_agent(text: str) -> str:
 
         data = json.loads(cleaned_content)
     except json.JSONDecodeError:
-        # Fallback: store raw content in Neo4j if it is not valid JSON
-        with driver.session() as session:
-            session.run(
-                "MERGE (e:Entity {thread_id: $thread_id, type: 'RAW', value: $value}) "
-                "SET e:Raw, e.notes = $notes, e.created_at = timestamp()",
-                thread_id=thread_id, value=content[:200], notes=content
-            )
+        # Fallback: store raw content in Neo4j or file if it is not valid JSON
+        try:
+            driver = get_neo4j_driver()
+            with driver.session() as session:
+                session.run(
+                    "MERGE (e:Entity {thread_id: $thread_id, type: 'RAW', value: $value}) "
+                    "SET e:Raw, e.notes = $notes, e.created_at = timestamp()",
+                    thread_id=thread_id, value=content[:200], notes=content
+                )
+        except Exception:
+            try:
+                root = Path(__file__).resolve().parent.parent
+                raw_file = root / "data" / thread_id / "kb_raw_fallback.txt"
+                raw_file.parent.mkdir(parents=True, exist_ok=True)
+                with raw_file.open("a", encoding="utf-8") as f:
+                    f.write(f"--- RAW FALLBACK ---\n{content}\n")
+            except Exception:
+                pass
         return json.dumps({"status": "stored_raw", "raw": content}, indent=2)
 
     extracted_entities = data.get("entities", [])
@@ -549,107 +718,119 @@ def knowledge_agent(text: str) -> str:
             "notes": notes
         })
 
-    # Group by label to execute dynamic Cypher batch updates safely
-    entities_by_label = {}
-    for item in processed_entities:
-        label = _sanitize_label(item["type"])
-        entities_by_label.setdefault((item["type"], label), []).append(item)
-
-    added_entities_info = []
-    with driver.session() as session:
-        for (etype, label), batch in entities_by_label.items():
-            query = f"""
-            UNWIND $batch AS item
-            MERGE (e:Entity {{thread_id: $thread_id, type: $type, value: item.value}})
-            ON CREATE SET e.notes = item.notes, e.created_at = timestamp()
-            ON MATCH SET e.notes = CASE
-                WHEN item.notes = '' THEN e.notes
-                WHEN e.notes IS NULL OR e.notes = '' THEN item.notes
-                WHEN NOT e.notes CONTAINS item.notes THEN e.notes + ' | ' + item.notes
-                ELSE e.notes
-            END
-            SET e:{label}
-            RETURN e.type AS type, e.value AS value
-            """
-            result = session.run(query, thread_id=thread_id, type=etype, batch=batch)
-            for record in result:
-                added_entities_info.append(f"{record['type'].upper()} | {record['value']}")
-
-    # Process Relations
     allowed_rel_types = {str(r.get("type", "")).strip() for r in normalized_relations}
     if not allowed_rel_types:
         allowed_rel_types = {"other_relation"}
 
-    relations_by_group = {}
-    for rel in extracted_relations:
-        if not isinstance(rel, dict):
-            continue
-
-        from_type = str(rel.get("from_type", "")).strip()
-        from_value = str(rel.get("from_value", "")).strip()
-        to_type = str(rel.get("to_type", "")).strip()
-        to_value = str(rel.get("to_value", "")).strip()
-        relation_type = str(rel.get("relation_type", "")).strip() or "mentions"
-        notes = str(rel.get("notes", "")).strip()
-
-        if not (from_type and from_value and to_type and to_value):
-            continue
-
-        if relation_type not in allowed_rel_types:
-            relation_type = "mentions"
-
-        from_label = _sanitize_label(from_type)
-        to_label = _sanitize_label(to_type)
-        rel_type = _sanitize_relationship_type(relation_type)
-
-        group_key = (from_type, from_label, to_type, to_label, rel_type)
-        relations_by_group.setdefault(group_key, []).append({
-            "from_value": from_value,
-            "to_value": to_value,
-            "notes": notes
-        })
-
+    # Attempt to write to Neo4j, falling back to local files on exception
+    added_entities_info = []
     added_edges = []
-    with driver.session() as session:
-        for (from_type, from_label, to_type, to_label, rel_type), batch in relations_by_group.items():
-            query = f"""
-            UNWIND $batch AS item
-            MERGE (from:Entity {{thread_id: $thread_id, type: $from_type, value: item.from_value}})
-            MERGE (to:Entity {{thread_id: $thread_id, type: $to_type, value: item.to_value}})
-            MERGE (from)-[r:{rel_type} {{thread_id: $thread_id}}]->(to)
-            ON CREATE SET r.notes = item.notes, r.created_at = timestamp()
-            ON MATCH SET r.notes = CASE
-                WHEN item.notes = '' THEN r.notes
-                WHEN r.notes IS NULL OR r.notes = '' THEN item.notes
-                WHEN NOT r.notes CONTAINS item.notes THEN r.notes + ' | ' + item.notes
-                ELSE r.notes
-            END
-            SET from:{from_label}, to:{to_label}
-            RETURN from.type AS from_type, from.value AS from_value,
-                   to.type AS to_type, to.value AS to_value
-            """
-            result = session.run(
-                query,
-                thread_id=thread_id,
-                from_type=from_type,
-                to_type=to_type,
-                batch=batch
-            )
-            for record in result:
-                added_edges.append(
-                    f"{rel_type} | {record['from_type']}:{record['from_value']} -> {record['to_type']}:{record['to_value']}"
-                )
+    neo4j_success = False
 
-    # Sync entities and relations to local files for Next.js UI compatibility
-    _mirror_entities_to_file(thread_id)
-    _mirror_relations_to_file(thread_id)
+    try:
+        driver = get_neo4j_driver()
+        entities_by_label = {}
+        for item in processed_entities:
+            label = _sanitize_label(item["type"])
+            entities_by_label.setdefault((item["type"], label), []).append(item)
+
+        with driver.session() as session:
+            for (etype, label), batch in entities_by_label.items():
+                query = f"""
+                UNWIND $batch AS item
+                MERGE (e:Entity {{thread_id: $thread_id, type: $type, value: item.value}})
+                ON CREATE SET e.notes = item.notes, e.created_at = timestamp()
+                ON MATCH SET e.notes = CASE
+                    WHEN item.notes = '' THEN e.notes
+                    WHEN e.notes IS NULL OR e.notes = '' THEN item.notes
+                    WHEN NOT e.notes CONTAINS item.notes THEN e.notes + ' | ' + item.notes
+                    ELSE e.notes
+                END
+                SET e:{label}
+                RETURN e.type AS type, e.value AS value
+                """
+                result = session.run(query, thread_id=thread_id, type=etype, batch=batch)
+                for record in result:
+                    added_entities_info.append(f"{record['type'].upper()} | {record['value']}")
+
+        relations_by_group = {}
+        for rel in extracted_relations:
+            if not isinstance(rel, dict):
+                continue
+
+            from_type = str(rel.get("from_type", "")).strip()
+            from_value = str(rel.get("from_value", "")).strip()
+            to_type = str(rel.get("to_type", "")).strip()
+            to_value = str(rel.get("to_value", "")).strip()
+            relation_type = str(rel.get("relation_type", "")).strip() or "mentions"
+            notes = str(rel.get("notes", "")).strip()
+
+            if not (from_type and from_value and to_type and to_value):
+                continue
+
+            if relation_type not in allowed_rel_types:
+                relation_type = "mentions"
+
+            from_label = _sanitize_label(from_type)
+            to_label = _sanitize_label(to_type)
+            rel_type = _sanitize_relationship_type(relation_type)
+
+            group_key = (from_type, from_label, to_type, to_label, rel_type)
+            relations_by_group.setdefault(group_key, []).append({
+                "from_value": from_value,
+                "to_value": to_value,
+                "notes": notes
+            })
+
+        with driver.session() as session:
+            for (from_type, from_label, to_type, to_label, rel_type), batch in relations_by_group.items():
+                query = f"""
+                UNWIND $batch AS item
+                MERGE (from:Entity {{thread_id: $thread_id, type: $from_type, value: item.from_value}})
+                MERGE (to:Entity {{thread_id: $thread_id, type: $to_type, value: item.to_value}})
+                MERGE (from)-[r:{rel_type} {{thread_id: $thread_id}}]->(to)
+                ON CREATE SET r.notes = item.notes, r.created_at = timestamp()
+                ON MATCH SET r.notes = CASE
+                    WHEN item.notes = '' THEN r.notes
+                    WHEN r.notes IS NULL OR r.notes = '' THEN item.notes
+                    WHEN NOT r.notes CONTAINS item.notes THEN r.notes + ' | ' + item.notes
+                    ELSE r.notes
+                END
+                SET from:{from_label}, to:{to_label}
+                RETURN from.type AS from_type, from.value AS from_value,
+                       to.type AS to_type, to.value AS to_value
+                """
+                result = session.run(
+                    query,
+                    thread_id=thread_id,
+                    from_type=from_type,
+                    to_type=to_type,
+                    batch=batch
+                )
+                for record in result:
+                    added_edges.append(
+                        f"{rel_type} | {record['from_type']}:{record['from_value']} -> {record['to_type']}:{record['to_value']}"
+                    )
+
+        # Sync to local files for Next.js fallback compatibility
+        _mirror_entities_to_file(thread_id)
+        _mirror_relations_to_file(thread_id)
+        neo4j_success = True
+    except Exception as e:
+        print(f"Neo4j save in knowledge_agent failed, falling back to local files: {e}")
+
+    # Fallback to local files if Neo4j failed
+    if not neo4j_success:
+        added_entities_info, added_edges = _local_add_entities_and_relations(
+            thread_id, processed_entities, extracted_relations, allowed_rel_types
+        )
 
     return json.dumps(
         {
             "status": "ok",
             "added_entities": added_entities_info,
             "added_edges": added_edges,
-            "neo4j": True,
+            "neo4j": neo4j_success,
         },
         indent=2,
     )
@@ -660,47 +841,74 @@ def knowledge_agent(text: str) -> str:
 def kb_get_edges(limit: int = 50) -> str:
     """Return the current knowledge graph edges (relationships) from Neo4j."""
     thread_id = _current_thread_id()
-    driver = get_neo4j_driver()
-    query = """
-    MATCH (from:Entity {thread_id: $thread_id})-[r]->(to:Entity {thread_id: $thread_id})
-    RETURN from.type AS from_type, from.value AS from_value,
-           type(r) AS relation_type,
-           to.type AS to_type, to.value AS to_value,
-           r.notes AS notes
-    ORDER BY from_type, from_value, relation_type, to_type, to_value
-    """
-    with driver.session() as session:
-        result = session.run(query, thread_id=thread_id)
-        edges_list = []
-        for record in result:
-            edges_list.append({
-                "from_type": record["from_type"],
-                "from_value": record["from_value"],
-                "relation_type": record["relation_type"],
-                "to_type": record["to_type"],
-                "to_value": record["to_value"],
-                "notes": record["notes"] or ""
-            })
+    neo4j_success = False
+    edges_list = []
+    
+    try:
+        driver = get_neo4j_driver()
+        query = """
+        MATCH (from:Entity {thread_id: $thread_id})-[r]->(to:Entity {thread_id: $thread_id})
+        RETURN from.type AS from_type, from.value AS from_value,
+               type(r) AS relation_type,
+               to.type AS to_type, to.value AS to_value,
+               r.notes AS notes
+        ORDER BY from_type, from_value, relation_type, to_type, to_value
+        """
+        with driver.session() as session:
+            result = session.run(query, thread_id=thread_id)
+            for record in result:
+                edges_list.append({
+                    "from_type": record["from_type"],
+                    "from_value": record["from_value"],
+                    "relation_type": record["relation_type"],
+                    "to_type": record["to_type"],
+                    "to_value": record["to_value"],
+                    "notes": record["notes"] or ""
+                })
+            neo4j_success = True
+    except Exception as e:
+        print(f"Neo4j kb_get_edges failed, falling back to local files: {e}")
+        
+    if not neo4j_success:
+        root = Path(__file__).resolve().parent.parent
+        edges_file = root / "data" / thread_id / "kb_edges.jsonl"
+        if edges_file.exists():
+            try:
+                content = edges_file.read_text(encoding="utf-8")
+                for line in content.splitlines():
+                    if not line.strip():
+                        continue
+                    data = json.loads(line)
+                    edges_list.append({
+                        "from_type": data.get("from_type"),
+                        "from_value": data.get("from_value"),
+                        "relation_type": data.get("relation_type"),
+                        "to_type": data.get("to_type"),
+                        "to_value": data.get("to_value"),
+                        "notes": data.get("notes", "")
+                    })
+            except Exception:
+                pass
 
-        if not edges_list:
-            return "Knowledge graph edges are empty."
+    if not edges_list:
+        return "Knowledge graph edges are empty."
 
-        sliced = edges_list[: max(1, limit)]
-        lines: List[str] = []
-        for e in sliced:
-            notes = e["notes"].strip()
-            evidence = ""
-            if notes:
-                notes_list = [n.strip() for n in notes.split(" | ") if n.strip()]
-                if notes_list:
-                    evidence = f" | evidence: {notes_list[0]}"
-            
-            lines.append(
-                f"{e['relation_type'].lower()} | {e['from_type']}:{e['from_value']} -> {e['to_type']}:{e['to_value']}{evidence}"
-            )
+    sliced = edges_list[: max(1, limit)]
+    lines: List[str] = []
+    for e in sliced:
+        notes = e["notes"].strip()
+        evidence = ""
+        if notes:
+            notes_list = [n.strip() for n in notes.split(" | ") if n.strip()]
+            if notes_list:
+                evidence = f" | evidence: {notes_list[0]}"
+        
+        lines.append(
+            f"{e['relation_type'].lower()} | {e['from_type']}:{e['from_value']} -> {e['to_type']}:{e['to_value']}{evidence}"
+        )
 
-        more = ""
-        if len(edges_list) > len(sliced):
-            more = f"\n... truncated; showing first {len(sliced)} of {len(edges_list)} edges."
+    more = ""
+    if len(edges_list) > len(sliced):
+        more = f"\n... truncated; showing first {len(sliced)} of {len(edges_list)} edges."
 
-        return "\n".join(lines) + more
+    return "\n".join(lines) + more

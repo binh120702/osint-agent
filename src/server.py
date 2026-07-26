@@ -183,7 +183,7 @@ def kb_entities(thread_id: str):
 
     # Fallback if Neo4j is down or failed
     if not neo4j_success:
-        root = Path(__file__).resolve().parent.parent
+        root = Path(__file__).resolve().parent
         entities_file = root / "data" / thread_id / "kb_entities.txt"
         if entities_file.exists():
             try:
@@ -244,7 +244,7 @@ def kb_edges(thread_id: str):
 
     # Fallback if Neo4j is down or failed
     if not neo4j_success:
-        root = Path(__file__).resolve().parent.parent
+        root = Path(__file__).resolve().parent
         edges_file = root / "data" / thread_id / "kb_edges.jsonl"
         if edges_file.exists():
             try:
