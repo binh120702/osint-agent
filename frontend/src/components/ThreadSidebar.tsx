@@ -110,11 +110,16 @@ export const ThreadSidebar: React.FC<ThreadSidebarProps> = ({
                 }`}
                 onClick={() => onSelectThread(t.thread_id)}
               >
-                <div className="flex items-center gap-2.5 overflow-hidden flex-1">
-                  <MessageSquare className={`w-4 h-4 flex-shrink-0 ${isActive ? 'text-accent-blue' : 'text-slate-500'}`} />
-                  <span className="text-xs font-medium truncate">
-                    {t.title || t.thread_id.slice(0, 8)}
-                  </span>
+                <div className="flex items-start gap-2.5 overflow-hidden flex-1">
+                  <MessageSquare className={`w-4 h-4 flex-shrink-0 mt-0.5 ${isActive ? 'text-accent-blue' : 'text-slate-500'}`} />
+                  <div className="flex flex-col flex-1 overflow-hidden">
+                    <span className="text-xs font-semibold truncate text-slate-300">
+                      {t.title || 'New Investigation'}
+                    </span>
+                    <span className="text-[9px] text-slate-500 font-mono truncate" title={t.thread_id}>
+                      ID: {t.thread_id}
+                    </span>
+                  </div>
                 </div>
                 <button
                   onClick={(e) => {

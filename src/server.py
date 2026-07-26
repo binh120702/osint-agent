@@ -97,16 +97,59 @@ def list_threads():
 @app.get("/api/threads/{thread_id}/messages")
 def get_messages(thread_id: str):
     history = agent_loop.get_thread(thread_id)
-    result = []
+    ui_messages = []
+    
+    # Pre-map tool_call_id -> {name, arguments} from assistant messages
+    tool_calls_map = {}
     for m in history:
         d = m.to_dict()
-        # Simplify tool_calls to avoid heavy payload
-        if "tool_calls" in d and d["tool_calls"]:
-            d["tool_calls"] = [
-                {"name": tc["function"]["name"]} for tc in d["tool_calls"]
-            ]
-        result.append(d)
-    return result
+        if d.get("role") == "assistant" and d.get("tool_calls"):
+            for tc in d["tool_calls"]:
+                tc_id = tc.get("id")
+                func = tc.get("function", {})
+                name = func.get("name")
+                args = func.get("arguments", {})
+                if isinstance(args, str):
+                    try:
+                        args = json.loads(args)
+                    except Exception:
+                        pass
+                tool_calls_map[tc_id] = {"name": name, "args": args}
+                
+    for m in history:
+        d = m.to_dict()
+        role = d.get("role")
+        
+        if role == "user":
+            ui_messages.append({
+                "role": "user",
+                "content": d.get("content", "")
+            })
+        elif role == "assistant":
+            content = d.get("content", "")
+            metrics = d.get("metrics")
+            if content and content.strip():
+                ui_messages.append({
+                    "role": "assistant",
+                    "content": content,
+                    "metrics": metrics
+                })
+        elif role == "tool":
+            tc_id = d.get("tool_call_id")
+            tc_info = tool_calls_map.get(tc_id, {})
+            name = tc_info.get("name", d.get("name") or "tool")
+            args = tc_info.get("args")
+            
+            ui_messages.append({
+                "role": "tool",
+                "content": "",
+                "isToolCall": True,
+                "toolName": name,
+                "toolArgs": args,
+                "toolResult": d.get("content", "")
+            })
+            
+    return ui_messages
 
 
 @app.delete("/api/threads/{thread_id}")
