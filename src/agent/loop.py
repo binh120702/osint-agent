@@ -16,7 +16,10 @@ import os
 import uuid
 import queue
 import threading
+import logging
 from typing import Callable, Iterator
+
+logger = logging.getLogger("agent.loop")
 
 from agent.messages import (
     AnyMessage,
@@ -156,8 +159,10 @@ def run(
     history = get_thread(thread_id)
     history.append(HumanMessage(content=user_message))
     save_thread(thread_id)
+    logger.info("Starting run for thread_id=%s. LLM client provider=%s, model=%s", thread_id, getattr(client, "provider", "unknown"), getattr(client, "model", "unknown"))
 
     for _iteration in range(_MAX_ITERATIONS):
+        logger.info("Iteration %d/%d: Calling LLM...", _iteration + 1, _MAX_ITERATIONS)
         # Build full message list for LLM: system + history
         full_messages: list[AnyMessage] = [SystemMessage(content=MAIN_PROMPT)] + history
 
@@ -167,16 +172,15 @@ def run(
         save_thread(thread_id)
 
         if not ai_msg.tool_calls:
-            # No tool calls → stream the final text response to the caller
-            # Since we already have the content, yield it in one go.
-            # For a proper streaming UX we re-issue as a streaming call when there
-            # are no tool calls, but only if there's no content yet (edge case).
+            logger.info("No tool calls. Yielding final response (length=%d).", len(ai_msg.content or ""))
             if ai_msg.content:
                 yield ai_msg.content
             return
 
+        logger.info("LLM requested %d tool call(s)", len(ai_msg.tool_calls))
         # Execute each tool call
         for tc in ai_msg.tool_calls:
+            logger.info("⚡ Executing tool: '%s' with arguments: %s", tc.name, json.dumps(tc.arguments, ensure_ascii=False))
             tool_fn = _TOOLS_BY_NAME.get(tc.name)
 
             if on_tool_start:
@@ -184,14 +188,17 @@ def run(
 
             if tool_fn is None:
                 result = f"Error: tool '{tc.name}' not found."
+                logger.error("Tool '%s' not found.", tc.name)
             else:
                 try:
                     result = tool_fn.invoke(tc.arguments)
                     if not isinstance(result, str):
                         result = json.dumps(result, default=str)
                     result = _truncate(result)
+                    logger.info("⚙️ Tool '%s' execution complete. Result preview: %s", tc.name, result[:200] + ("..." if len(result) > 200 else ""))
                 except Exception as exc:
                     result = f"Tool '{tc.name}' raised an error: {exc}"
+                    logger.exception("Error executing tool '%s': %s", tc.name, exc)
 
             if on_tool_end:
                 on_tool_end(tc.name, result)
@@ -200,6 +207,7 @@ def run(
             save_thread(thread_id)
 
     # Exceeded max iterations
+    logger.warning("Agent loop exceeded max iterations (%d).", _MAX_ITERATIONS)
     yield "[Agent loop exceeded max iterations without a final answer.]"
 
 
@@ -238,6 +246,7 @@ def run_streaming(
     history = get_thread(thread_id)
     history.append(HumanMessage(content=user_message))
     save_thread(thread_id)
+    logger.info("Starting run_streaming for thread_id=%s. LLM client provider=%s, model=%s", thread_id, getattr(client, "provider", "unknown"), getattr(client, "model", "unknown"))
 
     start_time = time.time()
     tool_call_count = 0
@@ -246,6 +255,7 @@ def run_streaming(
     try:
         for _iteration in range(_MAX_ITERATIONS):
             iteration_count += 1
+            logger.info("Iteration %d/%d: Calling LLM...", iteration_count, _MAX_ITERATIONS)
             full_messages: list[AnyMessage] = [SystemMessage(content=MAIN_PROMPT)] + history
 
             q = queue.Queue()
@@ -276,6 +286,7 @@ def run_streaming(
             thread.join()
 
             if exception_container:
+                logger.error("LLM streaming call failed: %s", exception_container[0])
                 raise exception_container[0]
 
             ai_msg = ai_msg_container[0]
@@ -284,6 +295,7 @@ def run_streaming(
 
             if not ai_msg.tool_calls:
                 duration = round(time.time() - start_time, 2)
+                logger.info("No tool calls. Final answer complete (duration=%s sec, iterations=%d, tools_called=%d).", duration, iteration_count, tool_call_count)
                 yield _event({
                     "type": "done",
                     "metrics": {
@@ -294,27 +306,34 @@ def run_streaming(
                 })
                 return
 
+            logger.info("LLM requested %d tool call(s)", len(ai_msg.tool_calls))
             for tc in ai_msg.tool_calls:
                 tool_call_count += 1
+                logger.info("⚡ Executing tool: '%s' with arguments: %s", tc.name, json.dumps(tc.arguments, ensure_ascii=False))
                 yield _event({"type": "tool_start", "name": tc.name, "args": tc.arguments})
 
                 tool_fn = _TOOLS_BY_NAME.get(tc.name)
                 if tool_fn is None:
                     result = f"Error: tool '{tc.name}' not found."
+                    logger.error("Tool '%s' not found.", tc.name)
                 else:
                     try:
                         result = tool_fn.invoke(tc.arguments)
                         if not isinstance(result, str):
                             result = json.dumps(result, default=str)
                         result = _truncate(result)
+                        logger.info("⚙️ Tool '%s' execution complete. Result preview: %s", tc.name, result[:200] + ("..." if len(result) > 200 else ""))
                     except Exception as exc:
                         result = f"Tool '{tc.name}' raised an error: {exc}"
+                        logger.exception("Error executing tool '%s': %s", tc.name, exc)
 
                 yield _event({"type": "tool_end", "name": tc.name, "result": result[:500]})
                 history.append(ToolMessage(content=result, tool_call_id=tc.id))
                 save_thread(thread_id)
 
+        logger.warning("Agent loop exceeded max iterations (%d).", _MAX_ITERATIONS)
         yield _event({"type": "error", "message": "Agent loop exceeded max iterations."})
 
     except Exception as exc:
+        logger.exception("Exception in run_streaming: %s", exc)
         yield _event({"type": "error", "message": str(exc)})
