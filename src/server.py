@@ -30,6 +30,19 @@ from pydantic import BaseModel
 from agent import loop as agent_loop
 from agent.messages import HumanMessage, AIMessage, ToolMessage, SystemMessage
 from tools.all_tools import get_all_tools, _load_tool_config
+from tools.knowledge_base import (
+    get_neo4j_driver,
+    list_subject_evidence,
+    migrate_thread_knowledge_to_subject,
+    update_subject_evidence,
+)
+from subject_manager import get_subject_manager
+from models.subject import (
+    SubjectCreateRequest,
+    SubjectUpdateRequest,
+    EvidenceUpdateRequest,
+    EvidenceStatus,
+)
 
 import os
 
@@ -45,6 +58,19 @@ app.add_middleware(
 STATIC_DIR = Path(__file__).parent / "static"
 FRONTEND_DIST_DIR = Path(__file__).parent.parent / "frontend" / "dist"
 
+
+def _decode_entity_metadata(raw: object) -> dict:
+    """Decode the JSON string used for structured Neo4j entity metadata."""
+    if not raw:
+        return {}
+    if isinstance(raw, dict):
+        return raw
+    try:
+        value = json.loads(str(raw))
+        return value if isinstance(value, dict) else {}
+    except (TypeError, json.JSONDecodeError):
+        return {}
+
 if FRONTEND_DIST_DIR.exists() and (FRONTEND_DIST_DIR / "assets").exists():
     app.mount("/assets", StaticFiles(directory=FRONTEND_DIST_DIR / "assets"), name="assets")
 
@@ -54,6 +80,7 @@ if FRONTEND_DIST_DIR.exists() and (FRONTEND_DIST_DIR / "assets").exists():
 class ChatRequest(BaseModel):
     message: str
     thread_id: str | None = None  # if None, a new thread is created
+    subject_id: str | None = None
     provider: str | None = None
     model_name: str | None = None
 
@@ -62,12 +89,30 @@ class ToggleToolRequest(BaseModel):
     enabled: bool
 
 
+class SubjectDraftRequest(BaseModel):
+    provider: str | None = None
+    model_name: str | None = None
+
+
+class ThreadSubjectAttachRequest(SubjectCreateRequest):
+    pass
+
+
 # ── Chat endpoint ────────────────────────────────────────────────────────────
 
 @app.post("/api/chat")
 async def chat(req: ChatRequest):
     """Send a user message; stream back SSE events."""
     thread_id = req.thread_id or str(uuid.uuid4())
+    manager = get_subject_manager()
+    subject_id = req.subject_id
+    if not subject_id and req.thread_id:
+        linked = manager.get_by_thread(req.thread_id)
+        subject_id = linked.subject_id if linked else None
+    if subject_id and not manager.get(subject_id):
+        raise HTTPException(status_code=404, detail="Subject not found")
+    if subject_id and not req.thread_id:
+        manager.add_thread(subject_id, thread_id)
 
     llm_client = None
     if req.provider or req.model_name:
@@ -82,7 +127,9 @@ async def chat(req: ChatRequest):
     def generate():
         # First emit the thread_id so the UI can save it
         yield f"data: {json.dumps({'type': 'thread_id', 'thread_id': thread_id})}\n\n"
-        yield from agent_loop.run_streaming(thread_id, req.message, llm_client=llm_client)
+        yield from agent_loop.run_streaming(
+            thread_id, req.message, subject_id=subject_id, llm_client=llm_client
+        )
 
     return StreamingResponse(generate(), media_type="text/event-stream")
 
@@ -91,7 +138,13 @@ async def chat(req: ChatRequest):
 
 @app.get("/api/threads")
 def list_threads():
-    return agent_loop.list_threads()
+    subjects = get_subject_manager()
+    result = agent_loop.list_threads()
+    for thread in result:
+        subject = subjects.get_by_thread(thread["thread_id"])
+        thread["subject_id"] = subject.subject_id if subject else None
+        thread["subject_name"] = subject.name if subject else None
+    return result
 
 
 @app.get("/api/threads/{thread_id}/messages")
@@ -160,6 +213,103 @@ def delete_thread(thread_id: str):
     return {"deleted": thread_id}
 
 
+@app.post("/api/threads")
+def create_unassigned_thread():
+    """Create a persisted thread before a subject has been selected."""
+    thread_id = str(uuid.uuid4())
+    agent_loop.get_thread(thread_id)
+    agent_loop.save_thread(thread_id)
+    return {"thread_id": thread_id, "subject_id": None}
+
+
+@app.post("/api/threads/{thread_id}/subject-draft")
+def create_subject_draft(thread_id: str, request: SubjectDraftRequest):
+    """Use the selected model to propose subject metadata from thread history."""
+    history = agent_loop.get_thread(thread_id)
+    transcript_parts = []
+    for message in history:
+        if message.role not in {"user", "assistant"}:
+            continue
+        content = message.content.strip()
+        if content:
+            transcript_parts.append(f"{message.role.upper()}: {content}")
+    transcript = "\n\n".join(transcript_parts)
+    if not transcript:
+        raise HTTPException(status_code=400, detail="The thread has no conversation history yet")
+
+    prompt = """You extract an investigation subject from a research conversation.
+Return only valid JSON with exactly these fields:
+name (string), subject_type (one of person, company, organization, domain, account, location, event, other),
+canonical_identifier (string or null), aliases (array of strings), identifiers (array of strings),
+description (string), investigation_goals (string).
+
+Use only information supported by the conversation. If a field is unknown, use null for canonical_identifier and [] for arrays. Do not invent a real identity. Keep the description and goals concise."""
+
+    try:
+        from llms.client_factory import get_llm_client_for
+        from agent.messages import HumanMessage, SystemMessage
+
+        client = get_llm_client_for(request.provider, request.model_name)
+        result = client.invoke([
+            SystemMessage(content=prompt),
+            HumanMessage(content=transcript[-16000:]),
+        ])
+        raw = (result.content or "").strip()
+        if raw.startswith("```"):
+            raw = raw.strip("`").removeprefix("json").strip()
+        start = raw.find("{")
+        end = raw.rfind("}")
+        if start < 0 or end <= start:
+            raise ValueError("The model did not return a JSON subject draft")
+        draft = json.loads(raw[start:end + 1])
+        validated = SubjectCreateRequest(**draft)
+        return validated.dict()
+    except HTTPException:
+        raise
+    except Exception as exc:
+        raise HTTPException(status_code=502, detail=f"Unable to generate subject draft: {exc}")
+
+
+@app.post("/api/threads/{thread_id}/subject")
+def create_subject_for_thread(thread_id: str, request: ThreadSubjectAttachRequest):
+    manager = get_subject_manager()
+    if manager.get_by_thread(thread_id):
+        raise HTTPException(status_code=409, detail="Thread is already linked to a subject")
+    subject = manager.create(request)
+    manager.add_thread(subject.subject_id, thread_id)
+    return subject.dict()
+
+
+@app.post("/api/threads/{thread_id}/subjects/{subject_id}")
+def attach_existing_subject_to_thread(thread_id: str, subject_id: str):
+    """Attach an existing subject to an unassigned thread."""
+    manager = get_subject_manager()
+    subject = manager.get(subject_id)
+    if not subject:
+        raise HTTPException(status_code=404, detail="Subject not found")
+    if not any(item["thread_id"] == thread_id for item in agent_loop.list_threads()):
+        raise HTTPException(status_code=404, detail="Thread not found")
+
+    linked = manager.get_by_thread(thread_id)
+    if linked and linked.subject_id != subject_id:
+        raise HTTPException(status_code=409, detail="Thread is already linked to another subject")
+
+    manager.add_thread(subject_id, thread_id)
+    evidence_records = []
+    for message in agent_loop.get_thread(thread_id):
+        for tool_call in (getattr(message, "tool_calls", None) or []):
+            if getattr(tool_call, "name", "") != "knowledge_agent":
+                continue
+            arguments = getattr(tool_call, "arguments", {}) or {}
+            evidence_records.append({
+                "claim": str(arguments.get("text", "")),
+                "source_url": str(arguments.get("source_url", "")),
+                "source_title": str(arguments.get("source_title", "")),
+            })
+    migration = migrate_thread_knowledge_to_subject(thread_id, subject_id, evidence_records)
+    return {"thread_id": thread_id, "subject_id": subject_id, "migration": migration}
+
+
 # ── Tool management ─────────────────────────────────────────────────────────
 
 @app.get("/api/tools")
@@ -197,7 +347,7 @@ def kb_entities(thread_id: str):
         driver = get_neo4j_driver()
         query = """
         MATCH (e:Entity {thread_id: $thread_id})
-        RETURN labels(e) AS labels, e.type AS type, e.value AS value, e.notes AS notes
+        RETURN labels(e) AS labels, e.type AS type, e.value AS value, e.notes AS notes, e.metadata_json AS metadata_json
         ORDER BY type, value
         """
         entities = []
@@ -211,7 +361,8 @@ def kb_entities(thread_id: str):
                     "label": label,
                     "properties": {
                         "name": record["value"],
-                        "notes": record["notes"] or ""
+                        "notes": record["notes"] or "",
+                        "metadata": _decode_entity_metadata(record["metadata_json"]),
                     }
                 })
         return entities
@@ -244,6 +395,128 @@ def kb_edges(thread_id: str):
         return edges
     except Exception as exc:
         raise HTTPException(status_code=500, detail=str(exc))
+
+
+# ── Subject management ──────────────────────────────────────────────────────
+
+@app.post("/api/subjects")
+def create_subject(request: SubjectCreateRequest):
+    return get_subject_manager().create(request).dict()
+
+
+@app.get("/api/subjects")
+def list_subjects():
+    return [subject.dict() for subject in get_subject_manager().list()]
+
+
+@app.get("/api/subjects/{subject_id}")
+def get_subject(subject_id: str):
+    subject = get_subject_manager().get(subject_id)
+    if not subject:
+        raise HTTPException(status_code=404, detail="Subject not found")
+    return subject.dict()
+
+
+@app.put("/api/subjects/{subject_id}")
+def update_subject(subject_id: str, request: SubjectUpdateRequest):
+    subject = get_subject_manager().update(subject_id, request)
+    if not subject:
+        raise HTTPException(status_code=404, detail="Subject not found")
+    return subject.dict()
+
+
+@app.delete("/api/subjects/{subject_id}")
+def delete_subject(subject_id: str):
+    manager = get_subject_manager()
+    if not manager.get(subject_id):
+        raise HTTPException(status_code=404, detail="Subject not found")
+    try:
+        driver = get_neo4j_driver()
+        with driver.session() as session:
+            session.run("MATCH (e:Evidence {subject_id: $subject_id}) DETACH DELETE e", subject_id=subject_id)
+            session.run("MATCH (e:Entity {thread_id: $subject_id}) DETACH DELETE e", subject_id=subject_id)
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=f"Unable to delete subject knowledge: {exc}")
+    manager.delete(subject_id)
+    return {"deleted": subject_id}
+
+
+@app.post("/api/subjects/{subject_id}/threads")
+def create_subject_thread(subject_id: str):
+    manager = get_subject_manager()
+    if not manager.get(subject_id):
+        raise HTTPException(status_code=404, detail="Subject not found")
+    thread_id = str(uuid.uuid4())
+    # Materialize the empty transcript so it is a real thread immediately,
+    # even before the investigator sends the first message.
+    agent_loop.get_thread(thread_id)
+    agent_loop.save_thread(thread_id)
+    manager.add_thread(subject_id, thread_id)
+    return {"thread_id": thread_id, "subject_id": subject_id}
+
+
+@app.get("/api/subjects/{subject_id}/entities")
+def subject_entities(subject_id: str):
+    if not get_subject_manager().get(subject_id):
+        raise HTTPException(status_code=404, detail="Subject not found")
+    try:
+        with get_neo4j_driver().session() as session:
+            result = session.run(
+                "MATCH (e:Entity {thread_id: $subject_id}) "
+                "RETURN e.type AS type, e.value AS value, e.notes AS notes, e.metadata_json AS metadata_json ORDER BY type, value",
+                subject_id=subject_id,
+            )
+            return [
+                {"id": f"{r['type']}:{r['value']}", "label": r["type"].upper(),
+                 "properties": {"name": r["value"], "notes": r["notes"] or "",
+                                "metadata": _decode_entity_metadata(r["metadata_json"])} }
+                for r in result
+            ]
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
+@app.get("/api/subjects/{subject_id}/edges")
+def subject_edges(subject_id: str):
+    if not get_subject_manager().get(subject_id):
+        raise HTTPException(status_code=404, detail="Subject not found")
+    try:
+        with get_neo4j_driver().session() as session:
+            result = session.run(
+                "MATCH (a:Entity {thread_id: $subject_id})-[r]->(b:Entity {thread_id: $subject_id}) "
+                "RETURN a.value AS source, b.value AS target, type(r) AS type, r.notes AS notes",
+                subject_id=subject_id,
+            )
+            return [{"source": r["source"], "target": r["target"], "type": r["type"],
+                     "properties": {"notes": r["notes"] or ""}} for r in result]
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
+@app.get("/api/subjects/{subject_id}/evidence")
+def subject_evidence(subject_id: str, status: EvidenceStatus | None = None):
+    if not get_subject_manager().get(subject_id):
+        raise HTTPException(status_code=404, detail="Subject not found")
+    try:
+        return list_subject_evidence(subject_id, status.value if status else None)
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
+@app.patch("/api/subjects/{subject_id}/evidence/{evidence_id}")
+def edit_subject_evidence(subject_id: str, evidence_id: str, request: EvidenceUpdateRequest):
+    if not get_subject_manager().get(subject_id):
+        raise HTTPException(status_code=404, detail="Subject not found")
+    updates = request.dict(exclude_unset=True)
+    if isinstance(updates.get("status"), EvidenceStatus):
+        updates["status"] = updates["status"].value
+    try:
+        result = update_subject_evidence(subject_id, evidence_id, updates)
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+    if not result:
+        raise HTTPException(status_code=404, detail="Evidence not found")
+    return result
 
 
 # ── Static UI ────────────────────────────────────────────────────────────────

@@ -1,4 +1,6 @@
 import json
+import uuid
+import hashlib
 from pathlib import Path
 from typing import Any, List, Dict
 from urllib.parse import urlparse
@@ -17,6 +19,7 @@ from neo4j import GraphDatabase
 
 
 _KB_THREAD_ID_CTX: ContextVar[str] = ContextVar("kb_thread_id", default="global")
+_KB_SUBJECT_ID_CTX: ContextVar[str] = ContextVar("kb_subject_id", default="")
 _NEO4J_DRIVER = None
 
 
@@ -80,10 +83,24 @@ def set_kb_thread_id(thread_id: str) -> None:
     _KB_THREAD_ID_CTX.set(_sanitize_thread_id(thread_id))
 
 
+def set_kb_subject_id(subject_id: str | None) -> None:
+    """Set the shared subject namespace for the current request, if any."""
+    _KB_SUBJECT_ID_CTX.set(_sanitize_thread_id(subject_id) if subject_id else "")
+
+
+def _current_subject_id() -> str:
+    return _KB_SUBJECT_ID_CTX.get()
+
+
+def current_kb_namespace() -> str:
+    """Return the shared subject namespace or legacy thread namespace."""
+    return _current_subject_id() or _current_thread_id()
+
+
 @tool
 def kb_current_thread_namespace() -> str:
     """Return the currently resolved KB thread namespace (for debugging thread-id wiring)."""
-    return _current_thread_id()
+    return current_kb_namespace()
 
 
 def _mirror_entities_to_file(thread_id: str) -> None:
@@ -182,7 +199,7 @@ def _load_kb_config() -> Dict[str, Any]:
     if not isinstance(entity_types, list):
         return minimal_fallback
 
-    normalized_types: List[Dict[str, str]] = []
+    normalized_types: List[Dict[str, Any]] = []
     seen: set[str] = set()
 
     for entry in entity_types:
@@ -191,7 +208,7 @@ def _load_kb_config() -> Dict[str, Any]:
             if not t or t in seen:
                 continue
             seen.add(t)
-            normalized_types.append({"type": t, "description": ""})
+            normalized_types.append({"type": t, "description": "", "metadata_fields": []})
             continue
 
         if not isinstance(entry, dict):
@@ -203,7 +220,10 @@ def _load_kb_config() -> Dict[str, Any]:
 
         desc = str(entry.get("description", "") or "").strip()
         seen.add(t)
-        normalized_types.append({"type": t, "description": desc})
+        metadata_fields = entry.get("metadata_fields", [])
+        if not isinstance(metadata_fields, list):
+            metadata_fields = []
+        normalized_types.append({"type": t, "description": desc, "metadata_fields": metadata_fields})
 
     if not normalized_types:
         normalized_types = minimal_fallback["entity_types"]
@@ -251,7 +271,11 @@ def _knowledge_agent_system_prompt(entity_types: List[Dict[str, str]], relation_
     allowed_relations_str = " | ".join(allowed_relations) if allowed_relations else "other_relation"
     
     entity_meanings = "\n".join(
-        [f"- {t['type']}: {t.get('description', '').strip()}" for t in entity_types if t.get("type")]
+        [
+            f"- {t['type']}: {t.get('description', '').strip()}"
+            + (f" Metadata fields: {', '.join(str(field.get('name', field)) if isinstance(field, dict) else str(field) for field in t.get('metadata_fields', []))}." if t.get('metadata_fields') else "")
+            for t in entity_types if t.get("type")
+        ]
     ).strip()
     
     relation_meanings = "\n".join(
@@ -281,7 +305,10 @@ Return a single JSON object containing both entities and relations using this ex
     {{
       "type": "one of the allowed entity types",
       "value": "short identifier (e.g. username, full name, domain, URL)",
-      "notes": "optional short note with key evidence, context, or timestamps"
+      "notes": "optional short note with key evidence, context, or timestamps",
+      "metadata": {{
+        "field_name": "source-supported metadata value; use only fields defined for this entity type"
+      }}
     }}
   ],
   "relations": [
@@ -302,6 +329,8 @@ Extraction Rules:
 3. Only extract relations that are explicitly supported by the text.
 4. Ensure the source and target values in the "relations" array exist exactly in the "entities" array.
 5. If you detect images, classify them as type "image" and use their URL, path, or filename as the value.
+6. Extract metadata only when the input explicitly supports it. Do not infer or invent metadata.
+7. Metadata keys must be one of the fields listed for the entity type. Use arrays only when multiple distinct values are supported.
 """
 
 
@@ -425,7 +454,7 @@ def upsert_image_entity_description(image_ref: str, description: str) -> None:
 @tool
 def kb_get() -> str:
     """Return the current contents of the OSINT knowledge base (Neo4j Entity nodes)."""
-    thread_id = _current_thread_id()
+    thread_id = current_kb_namespace()
     driver = get_neo4j_driver()
     query = """
     MATCH (e:Entity {thread_id: $thread_id})
@@ -449,11 +478,13 @@ def _edge_key(from_type: str, from_value: str, relation_type: str, to_type: str,
 
 
 @tool
-def knowledge_agent(text: str) -> str:
+def knowledge_agent(text: str, source_url: str = "", source_title: str = "") -> str:
     """Analyze investigation findings to extract, resolve, and save structured entities and relationships to the knowledge base.
     
     Args:
         text: Raw observations, notes, or tool outputs to process.
+        source_url: Optional source URL or document reference for the observations.
+        source_title: Optional source title.
     """
     if not text or not text.strip():
         return "No text provided to the Knowledge Agent."
@@ -467,13 +498,17 @@ def knowledge_agent(text: str) -> str:
         relation_types = []
 
     # Normalize entity types
-    normalized_entities: List[Dict[str, str]] = []
+    normalized_entities: List[Dict[str, Any]] = []
     for entry in entity_types:
         if isinstance(entry, str):
-            normalized_entities.append({"type": entry, "description": ""})
+            normalized_entities.append({"type": entry, "description": "", "metadata_fields": []})
         elif isinstance(entry, dict) and entry.get("type"):
             normalized_entities.append(
-                {"type": str(entry.get("type", "")).strip(), "description": str(entry.get("description", "")).strip()}
+                {
+                    "type": str(entry.get("type", "")).strip(),
+                    "description": str(entry.get("description", "")).strip(),
+                    "metadata_fields": entry.get("metadata_fields", []) if isinstance(entry.get("metadata_fields", []), list) else [],
+                }
             )
 
     # Normalize relation types
@@ -494,7 +529,8 @@ def knowledge_agent(text: str) -> str:
     response = ACTIVE_LLM_CLIENT.invoke(messages)
     content = getattr(response, "content", str(response))
     
-    thread_id = _current_thread_id()
+    thread_id = current_kb_namespace()
+    subject_id = _current_subject_id()
     driver = get_neo4j_driver()
 
     try:
@@ -515,6 +551,14 @@ def knowledge_agent(text: str) -> str:
                 "SET e:Raw, e.notes = $notes, e.created_at = timestamp()",
                 thread_id=thread_id, value=content[:200], notes=content
             )
+            if subject_id:
+                session.run(
+                    "CREATE (ev:Evidence {evidence_id: $evidence_id, subject_id: $subject_id, "
+                    "thread_id: $thread_id, claim: $claim, source_url: $source_url, "
+                    "source_title: $source_title, confidence: 0.5, status: 'pending', created_at: timestamp()})",
+                    evidence_id=f"EVD-{uuid.uuid4().hex[:12].upper()}", subject_id=subject_id,
+                    thread_id=thread_id, claim=content, source_url=source_url, source_title=source_title,
+                )
         return json.dumps({"status": "stored_raw", "raw": content}, indent=2)
 
     extracted_entities = data.get("entities", [])
@@ -527,6 +571,15 @@ def knowledge_agent(text: str) -> str:
 
     # Process Entities
     processed_entities = []
+    metadata_fields_by_type = {
+        item["type"]: {
+            str(field.get("name", field)).strip()
+            for field in item.get("metadata_fields", [])
+            if (isinstance(field, str) and field.strip()) or (isinstance(field, dict) and field.get("name"))
+        }
+        for item in normalized_entities
+        if item.get("type")
+    }
     for entity in extracted_entities:
         if not isinstance(entity, dict):
             continue
@@ -544,10 +597,27 @@ def knowledge_agent(text: str) -> str:
             if enrichment:
                 notes = f"{notes} | {enrichment}" if notes else enrichment
 
+        allowed_metadata = metadata_fields_by_type.get(etype, set())
+        raw_metadata = entity.get("metadata", {})
+        metadata: Dict[str, List[Any]] = {}
+        if isinstance(raw_metadata, dict):
+            for key, raw_value in raw_metadata.items():
+                key = str(key).strip()
+                if key not in allowed_metadata:
+                    continue
+                values = raw_value if isinstance(raw_value, list) else [raw_value]
+                clean_values = []
+                for value_item in values:
+                    if isinstance(value_item, (str, int, float, bool)) and str(value_item).strip():
+                        clean_values.append(value_item)
+                if clean_values:
+                    metadata[key] = clean_values
+
         processed_entities.append({
             "type": etype,
             "value": value,
-            "notes": notes
+            "notes": notes,
+            "metadata": metadata,
         })
 
     # Group by label to execute dynamic Cypher batch updates safely
@@ -640,6 +710,50 @@ def knowledge_agent(text: str) -> str:
                     f"{rel_type} | {record['from_type']}:{record['from_value']} -> {record['to_type']}:{record['to_value']}"
                 )
 
+        if subject_id:
+            evidence_id = f"EVD-{uuid.uuid4().hex[:12].upper()}"
+            session.run(
+                "CREATE (ev:Evidence {evidence_id: $evidence_id, subject_id: $subject_id, "
+                "thread_id: $thread_id, claim: $claim, source_url: $source_url, "
+                "source_title: $source_title, confidence: 0.5, status: 'pending', created_at: timestamp()})",
+                evidence_id=evidence_id, subject_id=subject_id,
+                thread_id=thread_id, claim=text[:12000], source_url=source_url, source_title=source_title,
+            )
+            values = [item["value"] for item in processed_entities]
+            if values:
+                session.run(
+                    "MATCH (ev:Evidence {evidence_id: $evidence_id}) "
+                    "MATCH (e:Entity {thread_id: $thread_id}) WHERE e.value IN $values "
+                    "MERGE (ev)-[:SUPPORTS]->(e)",
+                    evidence_id=evidence_id, thread_id=thread_id, values=values,
+                )
+
+            # Metadata is proposed as field-level evidence so each value can be
+            # reviewed independently and retain its source provenance.
+            for item in processed_entities:
+                for metadata_key, values in item["metadata"].items():
+                    for proposed_value in values:
+                        metadata_evidence_id = "EVD-" + hashlib.sha256(
+                            f"{subject_id}|{thread_id}|{item['type']}|{item['value']}|{metadata_key}|{proposed_value}|{source_url}|{source_title}".encode("utf-8")
+                        ).hexdigest()[:12].upper()
+                        metadata_claim = f"{item['type']}:{item['value']} has {metadata_key} = {proposed_value}"
+                        session.run(
+                            "MERGE (ev:Evidence {evidence_id: $evidence_id}) "
+                            "ON CREATE SET ev.subject_id = $subject_id, ev.thread_id = $thread_id, "
+                            "ev.kind = 'entity_metadata', ev.entity_type = $entity_type, "
+                            "ev.entity_value = $entity_value, ev.metadata_key = $metadata_key, "
+                            "ev.proposed_value = $proposed_value, ev.claim = $claim, "
+                            "ev.source_url = $source_url, ev.source_title = $source_title, "
+                            "ev.confidence = 0.5, ev.status = 'pending', ev.created_at = timestamp() "
+                            "WITH ev "
+                            "MATCH (entity:Entity {thread_id: $subject_id, type: $entity_type, value: $entity_value}) "
+                            "MERGE (ev)-[:SUPPORTS]->(entity)",
+                            evidence_id=metadata_evidence_id, subject_id=subject_id, thread_id=thread_id,
+                            entity_type=item["type"], entity_value=item["value"], metadata_key=metadata_key,
+                            proposed_value=json.dumps(proposed_value, ensure_ascii=False), claim=metadata_claim[:12000],
+                            source_url=source_url, source_title=source_title,
+                        )
+
     # Sync entities and relations to local files for Next.js UI compatibility
     _mirror_entities_to_file(thread_id)
     _mirror_relations_to_file(thread_id)
@@ -658,7 +772,7 @@ def knowledge_agent(text: str) -> str:
 @tool
 def kb_get_edges(limit: int = 50) -> str:
     """Return the current knowledge graph edges (relationships) from Neo4j."""
-    thread_id = _current_thread_id()
+    thread_id = current_kb_namespace()
     driver = get_neo4j_driver()
     query = """
     MATCH (from:Entity {thread_id: $thread_id})-[r]->(to:Entity {thread_id: $thread_id})
@@ -703,3 +817,228 @@ def kb_get_edges(limit: int = 50) -> str:
             more = f"\n... truncated; showing first {len(sliced)} of {len(edges_list)} edges."
 
         return "\n".join(lines) + more
+
+
+def get_subject_context(subject_id: str, limit: int = 40) -> str:
+    """Build a compact context block from confirmed subject knowledge."""
+    driver = get_neo4j_driver()
+    lines: list[str] = []
+    with driver.session() as session:
+        entities = session.run(
+            "MATCH (e:Entity {thread_id: $subject_id}) "
+            "RETURN e.type AS type, e.value AS value, e.notes AS notes "
+            "ORDER BY type, value LIMIT $limit",
+            subject_id=_sanitize_thread_id(subject_id), limit=limit,
+        )
+        for record in entities:
+            note = f" — {record['notes']}" if record["notes"] else ""
+            lines.append(f"ENTITY | {record['type']} | {record['value']}{note}")
+
+        evidence = session.run(
+            "MATCH (e:Evidence {subject_id: $subject_id}) "
+            "WHERE e.status = 'confirmed' "
+            "RETURN e.claim AS claim, e.source_url AS source_url, e.source_title AS source_title "
+            "ORDER BY e.created_at DESC LIMIT $limit",
+            subject_id=_sanitize_thread_id(subject_id), limit=limit,
+        )
+        for record in evidence:
+            source = record["source_url"] or record["source_title"] or "unknown source"
+            lines.append(f"CONFIRMED EVIDENCE | {record['claim']} | source: {source}")
+
+    return "No confirmed subject knowledge is available yet." if not lines else "\n".join(lines)
+
+
+def list_subject_evidence(subject_id: str, status: str | None = None) -> list[dict[str, Any]]:
+    driver = get_neo4j_driver()
+    query = (
+        "MATCH (e:Evidence {subject_id: $subject_id}) "
+        + ("WHERE e.status = $status " if status else "")
+        + "RETURN e.evidence_id AS evidence_id, e.kind AS kind, e.entity_type AS entity_type, "
+          "e.entity_value AS entity_value, e.metadata_key AS metadata_key, "
+          "e.proposed_value AS proposed_value, e.claim AS claim, e.source_url AS source_url, "
+          "e.source_title AS source_title, e.confidence AS confidence, e.status AS status, "
+          "e.thread_id AS thread_id, e.created_at AS created_at ORDER BY e.created_at DESC"
+    )
+    with driver.session() as session:
+        result = session.run(query, subject_id=_sanitize_thread_id(subject_id), status=status)
+        return [dict(record) for record in result]
+
+
+def update_subject_evidence(subject_id: str, evidence_id: str, updates: dict[str, Any]) -> dict | None:
+    allowed = {k: v for k, v in updates.items() if k in {"status", "claim", "confidence"}}
+    if not allowed:
+        return None
+    driver = get_neo4j_driver()
+    safe_subject_id = _sanitize_thread_id(subject_id)
+    with driver.session() as session:
+        record = session.run(
+            "MATCH (e:Evidence {subject_id: $subject_id, evidence_id: $evidence_id}) "
+            "OPTIONAL MATCH (e)-[:SUPPORTS]->(entity:Entity) "
+            "WITH e, collect(entity)[0] AS entity "
+            "SET e += $updates "
+            "RETURN e.evidence_id AS evidence_id, e.kind AS kind, e.entity_type AS entity_type, "
+            "e.entity_value AS entity_value, e.metadata_key AS metadata_key, "
+            "e.proposed_value AS proposed_value, e.claim AS claim, e.source_url AS source_url, "
+            "e.source_title AS source_title, e.confidence AS confidence, e.status AS status, "
+            "e.thread_id AS thread_id, e.created_at AS created_at, entity.metadata_json AS metadata_json, "
+            "entity.type AS linked_entity_type, entity.value AS linked_entity_value",
+            subject_id=safe_subject_id, evidence_id=evidence_id, updates=allowed,
+        ).single()
+        if not record:
+            return None
+
+        result = dict(record)
+        if result.get("kind") == "entity_metadata" and allowed.get("status") == "confirmed":
+            entity_type = result.get("linked_entity_type") or result.get("entity_type")
+            entity_value = result.get("linked_entity_value") or result.get("entity_value")
+            metadata_key = result.get("metadata_key")
+            proposed_value = result.get("proposed_value")
+            if entity_type and entity_value and metadata_key and proposed_value is not None:
+                try:
+                    metadata = json.loads(result.get("metadata_json") or "{}")
+                    if not isinstance(metadata, dict):
+                        metadata = {}
+                except (TypeError, json.JSONDecodeError):
+                    metadata = {}
+                try:
+                    value = json.loads(proposed_value)
+                except (TypeError, json.JSONDecodeError):
+                    value = proposed_value
+                entries = metadata.get(metadata_key, [])
+                if not isinstance(entries, list):
+                    entries = [entries]
+                if not any(isinstance(entry, dict) and entry.get("value") == value for entry in entries):
+                    entries.append({"value": value, "evidence_ids": [evidence_id]})
+                else:
+                    for entry in entries:
+                        if isinstance(entry, dict) and entry.get("value") == value:
+                            entry.setdefault("evidence_ids", [])
+                            if evidence_id not in entry["evidence_ids"]:
+                                entry["evidence_ids"].append(evidence_id)
+                metadata[metadata_key] = entries
+                session.run(
+                    "MATCH (entity:Entity {thread_id: $subject_id, type: $entity_type, value: $entity_value}) "
+                    "SET entity.metadata_json = $metadata_json, entity.metadata_updated_at = timestamp()",
+                    subject_id=safe_subject_id, entity_type=entity_type, entity_value=entity_value,
+                    metadata_json=json.dumps(metadata, ensure_ascii=False),
+                )
+                result["metadata_json"] = json.dumps(metadata, ensure_ascii=False)
+
+        result.pop("metadata_json", None)
+        result.pop("linked_entity_type", None)
+        result.pop("linked_entity_value", None)
+        return result
+
+
+def migrate_thread_knowledge_to_subject(
+    thread_id: str,
+    subject_id: str,
+    evidence_records: list[dict[str, str]] | None = None,
+) -> dict[str, int]:
+    """Copy thread-scoped graph findings into a subject namespace.
+
+    Older threads may have been investigated before a subject was attached.
+    Their entities and relationships are valid findings, but are namespaced by
+    thread. This migration keeps the original graph intact and creates
+    pending subject evidence from the saved knowledge-agent calls.
+    """
+    source_id = _sanitize_thread_id(thread_id)
+    target_id = _sanitize_thread_id(subject_id)
+    if source_id == target_id:
+        return {"entities": 0, "edges": 0, "evidence": 0}
+
+    driver = get_neo4j_driver()
+    entity_rows: list[dict[str, Any]] = []
+    edge_rows: list[dict[str, str]] = []
+    with driver.session() as session:
+        result = session.run(
+            "MATCH (e:Entity {thread_id: $thread_id}) "
+            "RETURN e.type AS type, e.value AS value, e.notes AS notes, e.metadata_json AS metadata_json",
+            thread_id=source_id,
+        )
+        entity_rows = [
+            {
+                "type": str(row["type"] or "other"),
+                "value": str(row["value"] or ""),
+                "notes": str(row["notes"] or ""),
+                "metadata_json": str(row["metadata_json"] or ""),
+            }
+            for row in result
+            if row["value"]
+        ]
+        result = session.run(
+            "MATCH (a:Entity {thread_id: $thread_id})-[r]->(b:Entity {thread_id: $thread_id}) "
+            "RETURN a.type AS from_type, a.value AS from_value, type(r) AS relation_type, "
+            "b.type AS to_type, b.value AS to_value, r.notes AS notes",
+            thread_id=source_id,
+        )
+        edge_rows = [
+            {
+                "from_type": str(row["from_type"] or "other"),
+                "from_value": str(row["from_value"] or ""),
+                "relation_type": str(row["relation_type"] or "MENTIONS"),
+                "to_type": str(row["to_type"] or "other"),
+                "to_value": str(row["to_value"] or ""),
+                "notes": str(row["notes"] or ""),
+            }
+            for row in result
+            if row["from_value"] and row["to_value"]
+        ]
+
+        for entity in entity_rows:
+            label = _sanitize_label(entity["type"])
+            session.run(
+                f"MERGE (e:Entity {{thread_id: $thread_id, type: $type, value: $value}}) "
+                f"ON CREATE SET e.notes = $notes, e.metadata_json = CASE WHEN $metadata_json = '' THEN e.metadata_json ELSE $metadata_json END, e.created_at = timestamp() "
+                f"ON MATCH SET e.notes = CASE WHEN $notes = '' THEN e.notes "
+                f"WHEN e.notes IS NULL OR e.notes = '' THEN $notes "
+                f"WHEN NOT e.notes CONTAINS $notes THEN e.notes + ' | ' + $notes ELSE e.notes END "
+                f"SET e:{label}",
+                thread_id=target_id, type=entity["type"], value=entity["value"], notes=entity["notes"], metadata_json=entity["metadata_json"],
+            )
+
+        for edge in edge_rows:
+            relation_type = _sanitize_relationship_type(edge["relation_type"])
+            session.run(
+                f"MATCH (a:Entity {{thread_id: $thread_id, type: $from_type, value: $from_value}}) "
+                f"MATCH (b:Entity {{thread_id: $thread_id, type: $to_type, value: $to_value}}) "
+                f"MERGE (a)-[r:{relation_type} {{thread_id: $thread_id}}]->(b) "
+                f"ON CREATE SET r.notes = $notes, r.created_at = timestamp() "
+                f"ON MATCH SET r.notes = CASE WHEN $notes = '' THEN r.notes "
+                f"WHEN r.notes IS NULL OR r.notes = '' THEN $notes "
+                f"WHEN NOT r.notes CONTAINS $notes THEN r.notes + ' | ' + $notes ELSE r.notes END",
+                thread_id=target_id, from_type=edge["from_type"], from_value=edge["from_value"],
+                to_type=edge["to_type"], to_value=edge["to_value"], notes=edge["notes"],
+            )
+
+        evidence_count = 0
+        for record in evidence_records or []:
+            claim = str(record.get("claim", "") or "").strip()
+            if not claim:
+                continue
+            source_url = str(record.get("source_url", "") or "")
+            source_title = str(record.get("source_title", "") or "")
+            evidence_id = "EVD-" + hashlib.sha256(
+                f"{target_id}|{source_id}|{source_url}|{source_title}|{claim}".encode("utf-8")
+            ).hexdigest()[:12].upper()
+            session.run(
+                "MERGE (ev:Evidence {evidence_id: $evidence_id}) "
+                "ON CREATE SET ev.subject_id = $subject_id, ev.thread_id = $thread_id, "
+                "ev.claim = $claim, ev.source_url = $source_url, ev.source_title = $source_title, "
+                "ev.confidence = 0.5, ev.status = 'pending', ev.created_at = timestamp()",
+                evidence_id=evidence_id, subject_id=target_id, thread_id=source_id,
+                claim=claim[:12000], source_url=source_url, source_title=source_title,
+            )
+            session.run(
+                "MATCH (ev:Evidence {evidence_id: $evidence_id}) "
+                "MATCH (e:Entity {thread_id: $thread_id}) "
+                "WHERE e.value IN $values "
+                "MERGE (ev)-[:SUPPORTS]->(e)",
+                evidence_id=evidence_id, thread_id=target_id,
+                values=[entity["value"] for entity in entity_rows],
+            )
+            evidence_count += 1
+
+    _mirror_entities_to_file(target_id)
+    _mirror_relations_to_file(target_id)
+    return {"entities": len(entity_rows), "edges": len(edge_rows), "evidence": evidence_count}
