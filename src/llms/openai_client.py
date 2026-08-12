@@ -42,6 +42,8 @@ def _parse_tool_calls(raw_tool_calls) -> list[ToolCall]:
 
 
 class OpenAIClient(LLMClient):
+    provider = "openai"
+
     def __init__(self, model_name: str | None = None, temperature: float = 0) -> None:
         model_name = model_name or os.getenv("OPENAI_MODEL_ID", "gpt-4o")
         super().__init__(model_name)

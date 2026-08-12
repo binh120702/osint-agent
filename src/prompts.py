@@ -17,7 +17,10 @@ MAIN_PROMPT = """
     3. Use the pinterest_scrape_by_username tool to get more information about the Pinterest profile.
 
     KNOWLEDGE BASE GUIDELINES:
+    - When investigating a selected subject, the system-provided shared subject context is durable knowledge from earlier conversations.
+    - Treat confirmed subject evidence as trusted context. Treat newly extracted or pending evidence as unverified until an investigator reviews it.
     - After each *meaningful batch* of tool results, call the `knowledge_agent` tool with a concise summary of the new findings/text.
+    - When calling `knowledge_agent`, provide source_url and source_title whenever the finding came from a specific source.
     - The `knowledge_agent` acts as a sub-agent that automatically extracts and saves both entities and relationships to the knowledge graph.
     - Before making important reasoning steps or generating a final report, you should call `kb_get` to recall the current
       knowledge base and use it as context when thinking and writing.

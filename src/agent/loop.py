@@ -31,7 +31,7 @@ from agent.messages import (
 from llms.client_factory import ACTIVE_LLM_CLIENT
 from prompts import MAIN_PROMPT
 from tools.all_tools import get_all_tools
-from tools.knowledge_base import set_kb_thread_id
+from tools.knowledge_base import set_kb_thread_id, set_kb_subject_id, get_subject_context
 
 
 _MAX_TOOL_CHARS = int(os.getenv("OSINT_MAX_TOOL_CHARS", "8000"))
@@ -152,6 +152,7 @@ def delete_thread(thread_id: str) -> bool:
 def run(
     thread_id: str,
     user_message: str,
+    subject_id: str | None = None,
     on_tool_start: Callable[[str, dict], None] | None = None,
     on_tool_end: Callable[[str, str], None] | None = None,
     llm_client: LLMClient | None = None,
@@ -168,17 +169,21 @@ def run(
     """
     _refresh_tools()
     set_kb_thread_id(thread_id)
+    set_kb_subject_id(subject_id)
 
     client = llm_client or ACTIVE_LLM_CLIENT
     history = get_thread(thread_id)
     history.append(HumanMessage(content=user_message))
     save_thread(thread_id)
-    logger.info("Starting run for thread_id=%s. LLM client provider=%s, model=%s", thread_id, getattr(client, "provider", "unknown"), getattr(client, "model", "unknown"))
+    logger.info("Starting run for thread_id=%s. LLM client provider=%s, model=%s", thread_id, getattr(client, "provider", "unknown"), getattr(client, "model_name", "unknown"))
 
     for _iteration in range(_MAX_ITERATIONS):
         logger.info("Iteration %d/%d: Calling LLM...", _iteration + 1, _MAX_ITERATIONS)
         # Build full message list for LLM: system + history
-        full_messages: list[AnyMessage] = [SystemMessage(content=MAIN_PROMPT)] + history
+        prompt = MAIN_PROMPT
+        if subject_id:
+            prompt += "\n\nSHARED INVESTIGATION SUBJECT CONTEXT:\n" + get_subject_context(subject_id)
+        full_messages: list[AnyMessage] = [SystemMessage(content=prompt)] + history
 
         # Call LLM (non-streaming first to handle tool calls)
         ai_msg = client.invoke(full_messages, tools=_CACHED_TOOL_SCHEMAS)
@@ -229,6 +234,7 @@ def run(
 def run_streaming(
     thread_id: str,
     user_message: str,
+    subject_id: str | None = None,
     on_tool_start: Callable[[str, dict], None] | None = None,
     on_tool_end: Callable[[str, str], None] | None = None,
     llm_client: LLMClient | None = None,
@@ -256,12 +262,13 @@ def run_streaming(
 
     _refresh_tools()
     set_kb_thread_id(thread_id)
+    set_kb_subject_id(subject_id)
 
     client = llm_client or ACTIVE_LLM_CLIENT
     history = get_thread(thread_id)
     history.append(HumanMessage(content=user_message))
     save_thread(thread_id)
-    logger.info("Starting run_streaming for thread_id=%s. LLM client provider=%s, model=%s", thread_id, getattr(client, "provider", "unknown"), getattr(client, "model", "unknown"))
+    logger.info("Starting run_streaming for thread_id=%s. LLM client provider=%s, model=%s", thread_id, getattr(client, "provider", "unknown"), getattr(client, "model_name", "unknown"))
 
     start_time = time.time()
     tool_call_count = 0
@@ -271,7 +278,10 @@ def run_streaming(
         for _iteration in range(_MAX_ITERATIONS):
             iteration_count += 1
             logger.info("Iteration %d/%d: Calling LLM...", iteration_count, _MAX_ITERATIONS)
-            full_messages: list[AnyMessage] = [SystemMessage(content=MAIN_PROMPT)] + history
+            prompt = MAIN_PROMPT
+            if subject_id:
+                prompt += "\n\nSHARED INVESTIGATION SUBJECT CONTEXT:\n" + get_subject_context(subject_id)
+            full_messages: list[AnyMessage] = [SystemMessage(content=prompt)] + history
 
             q = queue.Queue()
             ai_msg_container = []

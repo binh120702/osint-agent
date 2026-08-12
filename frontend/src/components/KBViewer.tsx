@@ -4,6 +4,7 @@ import type { KBEntity, KBEdge } from '../types';
 
 interface KBViewerProps {
   threadId: string | null;
+  subjectId?: string | null;
   refreshTrigger: number;
 }
 
@@ -19,6 +20,28 @@ const LABEL_COLORS: Record<string, { bg: string; text: string; border: string; f
   DEFAULT: { bg: 'bg-slate-500/10', text: 'text-slate-400', border: 'border-slate-500/20', fill: '#94a3b8', stroke: '#64748b' },
 };
 
+const formatPropertyValue = (value: any): string => {
+  if (value && typeof value === 'object') {
+    if (Array.isArray(value)) {
+      return value.map((item) => item && typeof item === 'object' && 'value' in item ? item.value : String(item)).join(', ');
+    }
+    return JSON.stringify(value);
+  }
+  return String(value ?? '');
+};
+
+const MetadataRows: React.FC<{ metadata: any }> = ({ metadata }) => {
+  if (!metadata || typeof metadata !== 'object' || Object.keys(metadata).length === 0) return null;
+  return <div className="mt-2 border-t border-border-dark/50 pt-2">
+    <div className="mb-1 text-[9px] font-bold uppercase tracking-wider text-accent-blue">Confirmed metadata</div>
+    {Object.entries(metadata).map(([key, rawValues]) => {
+      const values = Array.isArray(rawValues) ? rawValues : [rawValues];
+      const rendered = values.map((item: any) => item && typeof item === 'object' && 'value' in item ? item.value : item);
+      return <div key={key} className="text-[10px] break-words"><span className="font-semibold text-slate-500">{key.replaceAll('_', ' ')}:</span>{' '}{rendered.join(', ')}{values.length > 1 && <span className="ml-1 text-amber-400">conflict</span>}</div>;
+    })}
+  </div>;
+};
+
 interface SimNode {
   id: string;
   label: string;
@@ -30,7 +53,7 @@ interface SimNode {
   properties: any;
 }
 
-export const KBViewer: React.FC<KBViewerProps> = ({ threadId, refreshTrigger }) => {
+export const KBViewer: React.FC<KBViewerProps> = ({ threadId, subjectId, refreshTrigger }) => {
   const [activeTab, setActiveTab] = useState<'graph' | 'entities' | 'relations'>('graph');
   const [entities, setEntities] = useState<KBEntity[]>([]);
   const [edges, setEdges] = useState<KBEdge[]>([]);
@@ -50,7 +73,8 @@ export const KBViewer: React.FC<KBViewerProps> = ({ threadId, refreshTrigger }) 
   const svgRef = useRef<SVGSVGElement | null>(null);
 
   const fetchKB = async () => {
-    if (!threadId) {
+    const namespace = subjectId || threadId;
+    if (!namespace) {
       setEntities([]);
       setEdges([]);
       setVisualNodes([]);
@@ -60,8 +84,8 @@ export const KBViewer: React.FC<KBViewerProps> = ({ threadId, refreshTrigger }) 
     setLoading(true);
     try {
       const [entRes, edgeRes] = await Promise.all([
-        fetch(`/api/kb/${threadId}/entities`),
-        fetch(`/api/kb/${threadId}/edges`),
+        fetch(subjectId ? `/api/subjects/${subjectId}/entities` : `/api/kb/${threadId}/entities`),
+        fetch(subjectId ? `/api/subjects/${subjectId}/edges` : `/api/kb/${threadId}/edges`),
       ]);
       if (entRes.ok) {
         const entData = await entRes.json();
@@ -80,7 +104,7 @@ export const KBViewer: React.FC<KBViewerProps> = ({ threadId, refreshTrigger }) 
 
   useEffect(() => {
     fetchKB();
-  }, [threadId, refreshTrigger]);
+  }, [threadId, subjectId, refreshTrigger]);
 
   // Force-directed layout simulation loop
   useEffect(() => {
@@ -246,7 +270,7 @@ export const KBViewer: React.FC<KBViewerProps> = ({ threadId, refreshTrigger }) 
     setSelectedNode(null);
   };
 
-  if (!threadId) {
+  if (!threadId && !subjectId) {
     return (
       <div className="w-80 bg-panel-dark border-l border-border-dark flex flex-col items-center justify-center p-6 text-center text-slate-500 text-xs">
         <Network className="w-10 h-10 mb-3 text-slate-700 stroke-[1.5]" />
@@ -456,14 +480,15 @@ export const KBViewer: React.FC<KBViewerProps> = ({ threadId, refreshTrigger }) 
                   </span>
                 </div>
                 {Object.entries(selectedNode.properties).map(([k, v]) => {
-                  if (['name', 'title', 'value'].includes(k)) return null;
+                  if (['name', 'title', 'value', 'metadata'].includes(k)) return null;
                   return (
                     <div key={k} className="text-[10px] break-words">
                       <span className="font-semibold text-slate-500 capitalize">{k}:</span>{' '}
-                      {String(v)}
+                      {formatPropertyValue(v)}
                     </div>
                   );
                 })}
+                <MetadataRows metadata={selectedNode.properties.metadata} />
               </div>
             )}
           </div>
@@ -495,14 +520,15 @@ export const KBViewer: React.FC<KBViewerProps> = ({ threadId, refreshTrigger }) 
                       </span>
                     </div>
                     {Object.entries(e.properties).map(([k, v]) => {
-                      if (['name', 'title', 'value'].includes(k)) return null;
+                      if (['name', 'title', 'value', 'metadata'].includes(k)) return null;
                       return (
                         <div key={k} className="text-[10px] text-slate-500 truncate">
                           <span className="font-semibold text-slate-400 capitalize">{k}:</span>{' '}
-                          {String(v)}
+                          {formatPropertyValue(v)}
                         </div>
                       );
                     })}
+                    <MetadataRows metadata={e.properties.metadata} />
                   </div>
                 );
               })

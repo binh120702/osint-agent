@@ -71,6 +71,8 @@ def _openai_tools_to_anthropic(tools: list[dict]) -> list[dict]:
 
 
 class ClaudeClient(LLMClient):
+    provider = "claude"
+
     def __init__(self, model_name: str | None = None, temperature: float = 0) -> None:
         model_name = model_name or os.getenv("CLAUDE_MODEL_ID", "claude-sonnet-4-5")
         super().__init__(model_name)

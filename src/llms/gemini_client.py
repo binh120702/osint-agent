@@ -16,6 +16,8 @@ load_dotenv()
 
 
 class GeminiClient(LLMClient):
+    provider = "gemini"
+
     def __init__(self, model_name: str | None = None, temperature: float = 0) -> None:
         model_name = model_name or os.getenv("GEMINI_MODEL_ID", "gemini-2.5-flash")
         super().__init__(model_name)

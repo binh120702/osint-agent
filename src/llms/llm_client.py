@@ -11,6 +11,8 @@ from agent.messages import AnyMessage, AIMessage
 class LLMClient(ABC):
     """Abstract interface for all LLM clients."""
 
+    provider = "unknown"
+
     def __init__(self, model_name: str) -> None:
         self.model_name = model_name
 
