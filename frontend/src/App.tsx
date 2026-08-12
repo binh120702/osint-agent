@@ -3,11 +3,16 @@ import { ThreadSidebar } from './components/ThreadSidebar';
 import { ToolConfig } from './components/ToolConfig';
 import { ChatPanel } from './components/ChatPanel';
 import { KBViewer } from './components/KBViewer';
-import type { Thread, Message } from './types';
+import { SubjectBar } from './components/SubjectBar';
+import { InvestigationHome } from './components/InvestigationHome';
+import { CreateSubjectModal } from './components/CreateSubjectModal';
+import type { Thread, Message, Subject } from './types';
 
 function App() {
   const [threads, setThreads] = useState<Thread[]>([]);
   const [currentThreadId, setCurrentThreadId] = useState<string | null>(null);
+  const [currentSubjectId, setCurrentSubjectId] = useState<string | null>(null);
+  const [subjects, setSubjects] = useState<Subject[]>([]);
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -17,23 +22,41 @@ function App() {
   const [toolsRefreshTrigger] = useState(0);
   const [selectedProvider, setSelectedProvider] = useState<string>('openai');
   const [selectedModel, setSelectedModel] = useState<string>('gpt-5.4');
+  const [view, setView] = useState<'home' | 'chat'>('home');
+  const [subjectsLoading, setSubjectsLoading] = useState(false);
+  const [showCreateSubject, setShowCreateSubject] = useState(false);
+  const [showCreateSubjectForThread, setShowCreateSubjectForThread] = useState(false);
+  const [homeTab, setHomeTab] = useState<'subjects' | 'threads'>('subjects');
 
   const fetchThreads = async () => {
     try {
       const res = await fetch('/api/threads');
       const data = await res.json();
-      setThreads(data);
+      setThreads(Array.isArray(data) ? data : []);
     } catch (e) {
       console.error('Failed to load threads', e);
     }
   };
 
-  useEffect(() => {
-    fetchThreads();
-  }, []);
+  const fetchSubjects = async () => {
+    setSubjectsLoading(true);
+    try {
+      const res = await fetch('/api/subjects');
+      const data = await res.json();
+      // Keep the UI usable while an older backend is still running or an API
+      // returns an error object instead of the expected collection.
+      setSubjects(Array.isArray(data) ? data : []);
+    } catch (e) {
+      console.error('Failed to load subjects', e);
+    } finally {
+      setSubjectsLoading(false);
+    }
+  };
 
-  const handleSelectThread = async (id: string) => {
+  const loadThread = async (id: string, subjectId?: string | null) => {
+    setView('chat');
     setCurrentThreadId(id);
+    setCurrentSubjectId(subjectId ?? (threads.find((thread) => thread.thread_id === id)?.subject_id || null));
     setMessages([]);
     setActiveTool(null);
     try {
@@ -49,24 +72,162 @@ function App() {
           toolResult: m.toolResult || (m.role === 'tool' ? m.content : undefined),
         }))
       );
-      // Trigger KB refresh for the new thread
       setKbRefreshTrigger((prev) => prev + 1);
     } catch (e) {
       console.error('Failed to fetch thread messages', e);
     }
   };
 
-  const handleNewThread = () => {
+  useEffect(() => {
+    fetchThreads();
+    fetchSubjects();
+
+    const currentState = window.history.state;
+    if (currentState?.view === 'chat' && currentState.thread_id) {
+      loadThread(currentState.thread_id, currentState.subject_id);
+    } else {
+      window.history.replaceState({ view: 'home' }, '', '#subjects');
+    }
+
+    const handleHistoryChange = (event: PopStateEvent) => {
+      const state = event.state;
+      if (state?.view === 'chat' && state.thread_id) {
+        loadThread(state.thread_id, state.subject_id);
+        return;
+      }
+      setView('home');
+      setCurrentThreadId(null);
+      setCurrentSubjectId(null);
+      setMessages([]);
+      setActiveTool(null);
+    };
+
+    window.addEventListener('popstate', handleHistoryChange);
+    return () => window.removeEventListener('popstate', handleHistoryChange);
+  }, []);
+
+  const handleSelectThread = async (id: string) => {
+    const selectedThread = threads.find((thread) => thread.thread_id === id);
+    window.history.pushState(
+      { view: 'chat', thread_id: id, subject_id: selectedThread?.subject_id || null },
+      '',
+      `#chat/${encodeURIComponent(id)}`
+    );
+    loadThread(id, selectedThread?.subject_id || null);
+  };
+
+  const handleGoHome = () => {
+    window.history.pushState({ view: 'home' }, '', '#subjects');
+    setView('home');
+    setCurrentThreadId(null);
+    setCurrentSubjectId(null);
+    setMessages([]);
+    setActiveTool(null);
+  };
+
+  const handleNewThread = async () => {
+    try {
+      const response = await fetch('/api/threads', { method: 'POST' });
+      if (!response.ok) throw new Error('Unable to create thread');
+      const data = await response.json();
+      window.history.pushState(
+        { view: 'chat', thread_id: data.thread_id, subject_id: null },
+        '',
+        `#chat/${encodeURIComponent(data.thread_id)}`
+      );
+      setView('chat');
+      setCurrentThreadId(data.thread_id);
+      setCurrentSubjectId(null);
+      setMessages([]);
+      setActiveTool(null);
+      await fetchThreads();
+    } catch (e) {
+      console.error('Failed to create unassigned thread', e);
+    }
+  };
+
+  const handleStartThread = async (subject: Subject) => {
+    try {
+      const response = await fetch(`/api/subjects/${subject.subject_id}/threads`, { method: 'POST' });
+      if (!response.ok) throw new Error('Unable to create thread');
+      const data = await response.json();
+      window.history.pushState(
+        { view: 'chat', thread_id: data.thread_id, subject_id: subject.subject_id },
+        '',
+        `#chat/${encodeURIComponent(data.thread_id)}`
+      );
+      setCurrentSubjectId(subject.subject_id);
+      setCurrentThreadId(data.thread_id);
+      setMessages([]);
+      setActiveTool(null);
+      setView('chat');
+      await fetchThreads();
+      await fetchSubjects();
+    } catch (e) {
+      console.error('Failed to create subject thread', e);
+    }
+  };
+
+  const handleSubjectCreated = (subject: Subject) => {
+    setSubjects((prev) => [subject, ...prev]);
+    setShowCreateSubject(false);
+    handleStartThread(subject);
+  };
+
+  const handleSubjectCreatedForThread = async (subject: Subject) => {
+    setSubjects((prev) => [subject, ...prev.filter((item) => item.subject_id !== subject.subject_id)]);
+    setCurrentSubjectId(subject.subject_id);
+    setShowCreateSubjectForThread(false);
+    window.history.replaceState(
+      { view: 'chat', thread_id: currentThreadId, subject_id: subject.subject_id },
+      '',
+      currentThreadId ? `#chat/${encodeURIComponent(currentThreadId)}` : '#subjects'
+    );
+    await fetchThreads();
+    await fetchSubjects();
+  };
+
+  const handleToggleSubjectStatus = async (subject: Subject) => {
+    const status = subject.status === 'done' ? 'active' : 'done';
+    try {
+      const response = await fetch(`/api/subjects/${subject.subject_id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status }),
+      });
+      if (!response.ok) throw new Error('Unable to update subject status');
+      const updated = await response.json();
+      setSubjects((prev) => prev.map((item) => item.subject_id === updated.subject_id ? updated : item));
+    } catch (e) {
+      console.error('Failed to update subject status', e);
+    }
+  };
+
+  const handleSelectSubject = (subjectId: string | null) => {
+    setCurrentSubjectId(subjectId);
     setCurrentThreadId(null);
     setMessages([]);
     setActiveTool(null);
+    setKbRefreshTrigger((prev) => prev + 1);
+  };
+
+  const handleAttachSubjectToThread = async (subjectId: string) => {
+    if (!currentThreadId) return;
+    const response = await fetch(`/api/threads/${encodeURIComponent(currentThreadId)}/subjects/${encodeURIComponent(subjectId)}`, { method: 'POST' });
+    if (!response.ok) {
+      const detail = await response.json().catch(() => ({}));
+      throw new Error(detail.detail || 'Unable to add subject to thread');
+    }
+    setCurrentSubjectId(subjectId);
+    window.history.replaceState({ view: 'chat', thread_id: currentThreadId, subject_id: subjectId }, '', `#chat/${encodeURIComponent(currentThreadId)}`);
+    fetchThreads();
   };
 
   const handleDeleteThread = async (id: string) => {
     try {
       await fetch(`/api/threads/${id}`, { method: 'DELETE' });
       if (currentThreadId === id) {
-        handleNewThread();
+        handleGoHome();
       }
       fetchThreads();
     } catch (e) {
@@ -92,6 +253,7 @@ function App() {
         body: JSON.stringify({
           message: text,
           thread_id: currentThreadId,
+          subject_id: currentSubjectId,
           provider: selectedProvider,
           model_name: selectedModel,
         }),
@@ -211,6 +373,26 @@ function App() {
     }
   };
 
+  if (view === 'home') {
+    return <>
+      <InvestigationHome
+        subjects={subjects}
+        onCreateSubject={() => setShowCreateSubject(true)}
+        onStartThread={handleStartThread}
+        onNewThread={handleNewThread}
+        onToggleStatus={handleToggleSubjectStatus}
+        onRefresh={() => { fetchThreads(); fetchSubjects(); }}
+        loading={subjectsLoading}
+        activeTab={homeTab}
+        onTabChange={setHomeTab}
+        threads={threads}
+        onSelectThread={handleSelectThread}
+        onDeleteThread={handleDeleteThread}
+      />
+      {showCreateSubject && <CreateSubjectModal onClose={() => setShowCreateSubject(false)} onCreated={handleSubjectCreated} />}
+    </>;
+  }
+
   return (
     <div className="flex h-screen w-screen overflow-hidden bg-bg-dark text-slate-100">
       {/* Sidebar */}
@@ -219,6 +401,7 @@ function App() {
         currentThreadId={currentThreadId}
         onSelectThread={handleSelectThread}
         onNewThread={handleNewThread}
+        onGoHome={handleGoHome}
         onDeleteThread={handleDeleteThread}
         showTools={showTools}
         setShowTools={setShowTools}
@@ -231,20 +414,38 @@ function App() {
       />
 
       {/* Main Panel */}
-      <div className="flex-1 flex flex-col min-w-0 h-full overflow-hidden">
-        {showTools && <ToolConfig onRefreshToolsTrigger={toolsRefreshTrigger} />}
-        <ChatPanel
+          <div className="flex-1 flex flex-col min-w-0 h-full overflow-hidden">
+            {showTools && <ToolConfig onRefreshToolsTrigger={toolsRefreshTrigger} />}
+            <SubjectBar
+              subjects={subjects}
+              selectedSubjectId={currentSubjectId}
+              currentThreadId={currentThreadId}
+              onSelect={handleSelectSubject}
+              onCreateSubjectFromThread={() => setShowCreateSubjectForThread(true)}
+              onAttachSubjectToThread={handleAttachSubjectToThread}
+              onCreated={(subject) => setSubjects((prev) => [subject, ...prev])}
+              onEvidenceChanged={() => setKbRefreshTrigger((prev) => prev + 1)}
+            />
+            <ChatPanel
           messages={messages}
           inputValue={inputValue}
           setInputValue={setInputValue}
           onSendMessage={handleSendMessage}
-          isLoading={isLoading}
-          activeTool={activeTool}
-        />
+              isLoading={isLoading}
+              activeTool={activeTool}
+              canSend={view === 'chat'}
+            />
       </div>
 
       {/* Right KB Panel */}
-      <KBViewer threadId={currentThreadId} refreshTrigger={kbRefreshTrigger} />
+          <KBViewer threadId={currentThreadId} subjectId={currentSubjectId} refreshTrigger={kbRefreshTrigger} />
+      {showCreateSubjectForThread && currentThreadId && <CreateSubjectModal
+        threadId={currentThreadId}
+        provider={selectedProvider}
+        model={selectedModel}
+        onClose={() => setShowCreateSubjectForThread(false)}
+        onCreated={handleSubjectCreatedForThread}
+      />}
     </div>
   );
 }

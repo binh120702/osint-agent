@@ -27,6 +27,33 @@ input, textarea {
   color: #e2e8f0 !important;
 }
 
+/* Make every actionable control communicate hover and press state. */
+button:not(:disabled) {
+  transition: filter 160ms ease, transform 120ms ease, border-color 160ms ease, color 160ms ease, background-color 160ms ease;
+}
+
+button:not(:disabled):hover {
+  filter: brightness(0.88);
+}
+
+button:not(:disabled):active {
+  transform: translateY(1px) scale(0.98);
+}
+
+button:focus-visible,
+select:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #10b981;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button:not(:disabled) {
+    transition: none;
+  }
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;

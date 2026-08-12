@@ -1,5 +1,5 @@
 import React from 'react';
-import { Plus, MessageSquare, Trash2, Sliders } from 'lucide-react';
+import { ArrowLeft, Plus, MessageSquare, Trash2, Sliders } from 'lucide-react';
 import type { Thread } from '../types';
 
 interface ThreadSidebarProps {
@@ -7,6 +7,7 @@ interface ThreadSidebarProps {
   currentThreadId: string | null;
   onSelectThread: (id: string) => void;
   onNewThread: () => void;
+  onGoHome: () => void;
   onDeleteThread: (id: string) => void;
   showTools: boolean;
   setShowTools: (show: boolean) => void;
@@ -19,6 +20,7 @@ const MODELS = [
   { provider: 'openai', name: 'gpt-4o', label: 'OpenAI: GPT-4o' },
   { provider: 'openai', name: 'gpt-4o-mini', label: 'OpenAI: GPT-4o-mini' },
   { provider: 'openai', name: 'gpt-5.4', label: 'OpenAI: GPT-5.4 (Experimental)' },
+  { provider: 'openai', name: 'gpt-5.6-luna', label: 'OpenAI: GPT-5.6 Luna' },
   { provider: 'gemini', name: 'gemini-2.5-flash', label: 'Gemini: 2.5 Flash' },
   { provider: 'gemini', name: 'gemini-2.5-pro', label: 'Gemini: 2.5 Pro' },
   { provider: 'claude', name: 'claude-sonnet-4-5', label: 'Claude: Sonnet 4.5' },
@@ -30,6 +32,7 @@ export const ThreadSidebar: React.FC<ThreadSidebarProps> = ({
   currentThreadId,
   onSelectThread,
   onNewThread,
+  onGoHome,
   onDeleteThread,
   showTools,
   setShowTools,
@@ -39,12 +42,20 @@ export const ThreadSidebar: React.FC<ThreadSidebarProps> = ({
 }) => {
   return (
     <div className="w-64 bg-panel-dark border-r border-border-dark flex flex-col h-full">
-      <div className="p-4 border-b border-border-dark flex justify-between items-center">
-        <div>
+      <div className="p-4 border-b border-border-dark flex items-start justify-between gap-3">
+        <div className="min-w-0">
           <h1 className="text-base font-bold bg-gradient-to-r from-accent-blue to-accent-indigo bg-clip-text text-transparent tracking-wide">
             🕵️ OSINT Agent
           </h1>
           <p className="text-xs text-slate-500 font-medium">Dashboard v2.0</p>
+          <button
+            onClick={onGoHome}
+            className="mt-3 flex min-h-9 items-center gap-2 border border-border-dark px-2.5 text-[11px] font-semibold text-slate-400 transition-colors hover:border-accent-blue/50 hover:text-accent-blue"
+            title="Back to investigation subjects"
+          >
+            <ArrowLeft className="h-3.5 w-3.5" />
+            Subjects
+          </button>
         </div>
         <button
           onClick={() => setShowTools(!showTools)}
@@ -117,7 +128,7 @@ export const ThreadSidebar: React.FC<ThreadSidebarProps> = ({
                       {t.title || 'New Investigation'}
                     </span>
                     <span className="text-[9px] text-slate-500 font-mono truncate" title={t.thread_id}>
-                      ID: {t.thread_id}
+                      {t.subject_name ? `${t.subject_name} · ` : ''}ID: {t.thread_id}
                     </span>
                   </div>
                 </div>

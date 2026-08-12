@@ -69,6 +69,7 @@ interface ChatPanelProps {
   onSendMessage: () => void;
   isLoading: boolean;
   activeTool: { name: string; args: any; result?: string } | null;
+  canSend?: boolean;
 }
 
 export const ChatPanel: React.FC<ChatPanelProps> = ({
@@ -78,6 +79,7 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
   onSendMessage,
   isLoading,
   activeTool,
+  canSend = true,
 }) => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -275,14 +277,14 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder={isLoading ? "Agent is investigating..." : "Ask the OSINT agent..."}
-            disabled={isLoading}
+            placeholder={isLoading ? "Agent is investigating..." : canSend ? "Ask the OSINT agent..." : "Choose an investigation subject first..."}
+            disabled={isLoading || !canSend}
             rows={1}
             className="flex-1 bg-transparent border-none outline-none resize-none text-slate-200 text-sm py-1.5 max-h-32 leading-relaxed"
           />
           <button
             onClick={onSendMessage}
-            disabled={isLoading || !inputValue.trim()}
+            disabled={isLoading || !canSend || !inputValue.trim()}
             className="p-2 bg-gradient-to-r from-accent-blue to-accent-indigo hover:opacity-90 disabled:opacity-30 disabled:cursor-not-allowed rounded-none text-white transition-all active:scale-95 flex-shrink-0"
           >
             <Send className="w-4.5 h-4.5" />
