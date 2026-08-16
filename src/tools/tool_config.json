@@ -3,6 +3,7 @@
   "deep_search": true,
   "describe_image": true,
   "engine_search_tool": true,
+  "duckduckgo_search": false,
   "final_report": true,
   "get_url_content": true,
   "github_repo_summary": true,
@@ -13,5 +14,10 @@
   "knowledge_agent": true,
   "kb_get": true,
   "kb_get_edges": true,
+  "kb_search_entities": true,
+  "kb_search_relationships": true,
+  "kb_update_entity": true,
+  "kb_upsert_relationship": true,
+  "kb_remove_relationship": true,
   "kb_current_thread_namespace": true
 }

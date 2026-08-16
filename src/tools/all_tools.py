@@ -3,7 +3,7 @@ from pathlib import Path
 from typing import Dict
 
 from tools.deep_search import deep_search
-from tools.engine_search import engine_search_tool
+from tools.engine_search import duckduckgo_search, engine_search_tool
 from tools.final_report import final_report
 from tools.github_tools import github_repo_summary, github_search_repos
 from tools.image_descriptor import describe_image
@@ -12,6 +12,11 @@ from tools.knowledge_base import (
     knowledge_agent,
     kb_get,
     kb_get_edges,
+    kb_search_entities,
+    kb_search_relationships,
+    kb_update_entity,
+    kb_upsert_relationship,
+    kb_remove_relationship,
 )
 from tools.pinterest import pinterest_scrape_by_username
 from tools.web_content_tools import get_url_content
@@ -22,6 +27,7 @@ TOOLS: Dict[str, object] = {
     "pinterest_scrape_by_username": pinterest_scrape_by_username,
     "deep_search": deep_search,
     "engine_search_tool": engine_search_tool,
+    "duckduckgo_search": duckduckgo_search,
     "get_url_content": get_url_content,
     "wiki_fetch_page": wiki_fetch_page,
     "wiki_search_pages": wiki_search_pages,
@@ -32,6 +38,11 @@ TOOLS: Dict[str, object] = {
     "knowledge_agent": knowledge_agent,
     "kb_get": kb_get,
     "kb_get_edges": kb_get_edges,
+    "kb_search_entities": kb_search_entities,
+    "kb_search_relationships": kb_search_relationships,
+    "kb_update_entity": kb_update_entity,
+    "kb_upsert_relationship": kb_upsert_relationship,
+    "kb_remove_relationship": kb_remove_relationship,
     "kb_current_thread_namespace": kb_current_thread_namespace,
 }
 

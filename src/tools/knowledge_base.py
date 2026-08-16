@@ -135,6 +135,7 @@ def _mirror_relations_to_file(thread_id: str) -> None:
         driver = get_neo4j_driver()
         query = """
         MATCH (from:Entity {thread_id: $thread_id})-[r]->(to:Entity {thread_id: $thread_id})
+        WHERE coalesce(r.status, 'active') <> 'removed'
         RETURN from.type AS from_type, from.value AS from_value,
                type(r) AS relation_type,
                to.type AS to_type, to.value AS to_value,
@@ -472,6 +473,236 @@ def kb_get() -> str:
         return "\n".join(lines)
 
 
+def _decode_metadata(raw: Any) -> dict:
+    if not raw:
+        return {}
+    if isinstance(raw, dict):
+        return raw
+    try:
+        value = json.loads(str(raw))
+        return value if isinstance(value, dict) else {}
+    except (TypeError, json.JSONDecodeError):
+        return {}
+
+
+@tool
+def kb_search_entities(query: str = "", entity_type: str = "", limit: int = 25) -> str:
+    """Search entities in the active knowledge-base namespace before editing them.
+
+    Args:
+        query: Case-insensitive text matched against entity type, value, or notes.
+        entity_type: Optional exact entity type filter.
+        limit: Maximum number of results to return.
+    """
+    namespace = current_kb_namespace()
+    safe_limit = max(1, min(int(limit or 25), 100))
+    query_text = str(query or "").strip().lower()
+    type_text = str(entity_type or "").strip()
+    driver = get_neo4j_driver()
+    with driver.session() as session:
+        result = session.run(
+            "MATCH (e:Entity {thread_id: $namespace}) "
+            "WHERE ($entity_type = '' OR e.type = $entity_type) "
+            "AND ($query = '' OR toLower(e.type) CONTAINS $query "
+            "OR toLower(e.value) CONTAINS $query OR toLower(coalesce(e.notes, '')) CONTAINS $query) "
+            "RETURN e.type AS type, e.value AS value, e.notes AS notes, "
+            "e.metadata_json AS metadata_json ORDER BY e.type, e.value LIMIT $limit",
+            namespace=namespace, entity_type=type_text, query=query_text, limit=safe_limit,
+        )
+        matches = [
+            {
+                "type": record["type"],
+                "value": record["value"],
+                "notes": record["notes"] or "",
+                "metadata": _decode_metadata(record["metadata_json"]),
+            }
+            for record in result
+        ]
+    return json.dumps({"namespace": namespace, "count": len(matches), "entities": matches}, ensure_ascii=False, indent=2)
+
+
+@tool
+def kb_search_relationships(
+    query: str = "",
+    from_type: str = "",
+    from_value: str = "",
+    relation_type: str = "",
+    to_type: str = "",
+    to_value: str = "",
+    limit: int = 50,
+) -> str:
+    """Search active relationships in the active knowledge-base namespace.
+
+    Args:
+        query: Case-insensitive text matched against endpoint values, relation type, or notes.
+        from_type: Optional exact source entity type.
+        from_value: Optional exact source entity value.
+        relation_type: Optional relationship type filter.
+        to_type: Optional exact target entity type.
+        to_value: Optional exact target entity value.
+        limit: Maximum number of results to return.
+    """
+    namespace = current_kb_namespace()
+    safe_limit = max(1, min(int(limit or 50), 200))
+    params = {
+        "namespace": namespace,
+        "query": str(query or "").strip().lower(),
+        "from_type": str(from_type or "").strip(),
+        "from_value": str(from_value or "").strip(),
+        "relation_type": _sanitize_relationship_type(relation_type) if relation_type else "",
+        "to_type": str(to_type or "").strip(),
+        "to_value": str(to_value or "").strip(),
+        "limit": safe_limit,
+    }
+    with get_neo4j_driver().session() as session:
+        result = session.run(
+            "MATCH (from:Entity {thread_id: $namespace})-[r]->(to:Entity {thread_id: $namespace}) "
+            "WHERE coalesce(r.status, 'active') <> 'removed' "
+            "AND ($from_type = '' OR from.type = $from_type) "
+            "AND ($from_value = '' OR from.value = $from_value) "
+            "AND ($relation_type = '' OR type(r) = $relation_type) "
+            "AND ($to_type = '' OR to.type = $to_type) "
+            "AND ($to_value = '' OR to.value = $to_value) "
+            "AND ($query = '' OR toLower(from.value) CONTAINS $query "
+            "OR toLower(to.value) CONTAINS $query OR toLower(type(r)) CONTAINS $query "
+            "OR toLower(coalesce(r.notes, '')) CONTAINS $query) "
+            "RETURN from.type AS from_type, from.value AS from_value, type(r) AS relation_type, "
+            "to.type AS to_type, to.value AS to_value, r.notes AS notes "
+            "ORDER BY from_type, from_value, relation_type, to_type, to_value LIMIT $limit",
+            **params,
+        )
+        matches = [
+            {
+                "from_type": record["from_type"], "from_value": record["from_value"],
+                "relation_type": record["relation_type"].lower(),
+                "to_type": record["to_type"], "to_value": record["to_value"],
+                "notes": record["notes"] or "",
+            }
+            for record in result
+        ]
+    return json.dumps({"namespace": namespace, "count": len(matches), "relationships": matches}, ensure_ascii=False, indent=2)
+
+
+@tool
+def kb_update_entity(type: str, value: str, notes: str = "", metadata: dict | None = None) -> str:
+    """Update notes or structured metadata on one exact existing entity.
+
+    Search first and use the exact type and value returned by kb_search_entities. Entity identity cannot be renamed by this tool.
+
+    Args:
+        type: Exact entity type.
+        value: Exact entity value.
+        notes: Optional replacement for the entity notes. Omit by passing an empty string to preserve existing notes.
+        metadata: Optional metadata fields to merge into the existing metadata map.
+    """
+    namespace = current_kb_namespace()
+    entity_type = str(type or "").strip()
+    entity_value = str(value or "").strip()
+    if not entity_type or not entity_value:
+        return json.dumps({"status": "error", "error": "type and value are required"})
+    metadata = metadata if isinstance(metadata, dict) else {}
+    with get_neo4j_driver().session() as session:
+        record = session.run(
+            "MATCH (e:Entity {thread_id: $namespace, type: $type, value: $value}) "
+            "RETURN e.notes AS notes, e.metadata_json AS metadata_json",
+            namespace=namespace, type=entity_type, value=entity_value,
+        ).single()
+        if not record:
+            return json.dumps({"status": "not_found", "namespace": namespace, "type": entity_type, "value": entity_value})
+        current_metadata = _decode_metadata(record["metadata_json"])
+        merged_metadata = {**current_metadata, **metadata}
+        set_parts = ["e.updated_at = timestamp()"]
+        params: dict[str, Any] = {"namespace": namespace, "type": entity_type, "value": entity_value}
+        if notes:
+            set_parts.append("e.notes = $notes")
+            params["notes"] = notes.strip()
+        if metadata:
+            set_parts.append("e.metadata_json = $metadata_json")
+            params["metadata_json"] = json.dumps(merged_metadata, ensure_ascii=False)
+        if len(set_parts) == 1:
+            return json.dumps({"status": "unchanged", "namespace": namespace, "type": entity_type, "value": entity_value})
+        updated = session.run(
+            f"MATCH (e:Entity {{thread_id: $namespace, type: $type, value: $value}}) "
+            f"SET {', '.join(set_parts)} "
+            "RETURN e.type AS type, e.value AS value, e.notes AS notes, e.metadata_json AS metadata_json",
+            **params,
+        ).single()
+    _mirror_entities_to_file(namespace)
+    return json.dumps({
+        "status": "updated", "namespace": namespace,
+        "entity": {"type": updated["type"], "value": updated["value"], "notes": updated["notes"] or "", "metadata": _decode_metadata(updated["metadata_json"])},
+    }, ensure_ascii=False, indent=2)
+
+
+@tool
+def kb_upsert_relationship(
+    from_type: str, from_value: str, relation_type: str, to_type: str, to_value: str, notes: str = ""
+) -> str:
+    """Create or update one relationship between exact existing entities.
+
+    Search both entities and the relationship first. This tool will not create missing endpoint entities.
+    """
+    namespace = current_kb_namespace()
+    source_type, source_value = str(from_type or "").strip(), str(from_value or "").strip()
+    target_type, target_value = str(to_type or "").strip(), str(to_value or "").strip()
+    rel_type = _sanitize_relationship_type(relation_type)
+    if not all([source_type, source_value, target_type, target_value, relation_type]):
+        return json.dumps({"status": "error", "error": "all endpoint and relationship fields are required"})
+    with get_neo4j_driver().session() as session:
+        endpoints = session.run(
+            "MATCH (e:Entity {thread_id: $namespace}) "
+            "WHERE (e.type = $source_type AND e.value = $source_value) "
+            "OR (e.type = $target_type AND e.value = $target_value) "
+            "RETURN e.type AS type, e.value AS value",
+            namespace=namespace, source_type=source_type, source_value=source_value,
+            target_type=target_type, target_value=target_value,
+        )
+        endpoint_keys = {(row["type"], row["value"]) for row in endpoints}
+        if (source_type, source_value) not in endpoint_keys or (target_type, target_value) not in endpoint_keys:
+            return json.dumps({"status": "not_found", "error": "both endpoint entities must already exist", "namespace": namespace})
+        updated = session.run(
+            f"MATCH (from:Entity {{thread_id: $namespace, type: $source_type, value: $source_value}}) "
+            f"MATCH (to:Entity {{thread_id: $namespace, type: $target_type, value: $target_value}}) "
+            f"MERGE (from)-[r:{rel_type} {{thread_id: $namespace}}]->(to) "
+            "SET r.status = 'active', r.updated_at = timestamp(), "
+            "r.notes = CASE WHEN $notes = '' THEN coalesce(r.notes, '') ELSE $notes END "
+            "RETURN from.type AS from_type, from.value AS from_value, type(r) AS relation_type, "
+            "to.type AS to_type, to.value AS to_value, r.notes AS notes",
+            namespace=namespace, source_type=source_type, source_value=source_value,
+            target_type=target_type, target_value=target_value, notes=str(notes or "").strip(),
+        ).single()
+    _mirror_relations_to_file(namespace)
+    return json.dumps({"status": "upserted", "namespace": namespace, "relationship": dict(updated)}, ensure_ascii=False, indent=2)
+
+
+@tool
+def kb_remove_relationship(
+    from_type: str, from_value: str, relation_type: str, to_type: str, to_value: str, reason: str = ""
+) -> str:
+    """Soft-remove one exact relationship while preserving its audit history.
+
+    Search first and use exact endpoint identities. Removed relationships are hidden from normal searches and can be restored with kb_upsert_relationship.
+    """
+    namespace = current_kb_namespace()
+    rel_type = _sanitize_relationship_type(relation_type)
+    with get_neo4j_driver().session() as session:
+        removed = session.run(
+            f"MATCH (from:Entity {{thread_id: $namespace, type: $from_type, value: $from_value}})"
+            f"-[r:{rel_type} {{thread_id: $namespace}}]->"
+            f"(to:Entity {{thread_id: $namespace, type: $to_type, value: $to_value}}) "
+            "WHERE coalesce(r.status, 'active') <> 'removed' "
+            "SET r.status = 'removed', r.removed_at = timestamp(), r.removal_reason = $reason "
+            "RETURN from.type AS from_type, from.value AS from_value, type(r) AS relation_type, "
+            "to.type AS to_type, to.value AS to_value, r.removal_reason AS removal_reason",
+            namespace=namespace, from_type=str(from_type or "").strip(), from_value=str(from_value or "").strip(),
+            to_type=str(to_type or "").strip(), to_value=str(to_value or "").strip(), reason=str(reason or "").strip(),
+        ).single()
+    if not removed:
+        return json.dumps({"status": "not_found", "namespace": namespace})
+    _mirror_relations_to_file(namespace)
+    return json.dumps({"status": "removed", "namespace": namespace, "relationship": dict(removed)}, ensure_ascii=False, indent=2)
+
+
 def _edge_key(from_type: str, from_value: str, relation_type: str, to_type: str, to_value: str) -> str:
     return f"{from_type}||{from_value}||{relation_type}||{to_type}||{to_value}"
 
@@ -528,6 +759,10 @@ def knowledge_agent(text: str, source_url: str = "", source_title: str = "") -> 
     
     response = ACTIVE_LLM_CLIENT.invoke(messages)
     content = getattr(response, "content", str(response))
+    if not isinstance(content, str):
+        # Some providers return structured content blocks instead of a plain
+        # string. Preserve the response in a form the parser can inspect.
+        content = json.dumps(content, ensure_ascii=False, default=str)
     
     thread_id = current_kb_namespace()
     subject_id = _current_subject_id()
@@ -543,7 +778,14 @@ def knowledge_agent(text: str, source_url: str = "", source_title: str = "") -> 
         cleaned_content = cleaned_content.strip()
 
         data = json.loads(cleaned_content)
-    except json.JSONDecodeError:
+        # Models occasionally return a JSON-encoded string containing the
+        # actual object (for example, \"{\\\"entities\\\": []}\"). Unwrap it
+        # once before accessing object fields.
+        if isinstance(data, str):
+            data = json.loads(data)
+        if not isinstance(data, dict):
+            raise ValueError("Knowledge Agent response must be a JSON object")
+    except (json.JSONDecodeError, ValueError, TypeError):
         # Fallback: store raw content in Neo4j if it is not valid JSON
         with driver.session() as session:
             session.run(
@@ -776,6 +1018,7 @@ def kb_get_edges(limit: int = 50) -> str:
     driver = get_neo4j_driver()
     query = """
     MATCH (from:Entity {thread_id: $thread_id})-[r]->(to:Entity {thread_id: $thread_id})
+    WHERE coalesce(r.status, 'active') <> 'removed'
     RETURN from.type AS from_type, from.value AS from_value,
            type(r) AS relation_type,
            to.type AS to_type, to.value AS to_value,

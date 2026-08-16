@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, Plus, MessageSquare, Trash2, Sliders } from 'lucide-react';
+import { ArrowLeft, Plus, MessageSquare, Settings, Trash2 } from 'lucide-react';
 import type { Thread } from '../types';
 
 interface ThreadSidebarProps {
@@ -9,8 +9,7 @@ interface ThreadSidebarProps {
   onNewThread: () => void;
   onGoHome: () => void;
   onDeleteThread: (id: string) => void;
-  showTools: boolean;
-  setShowTools: (show: boolean) => void;
+  onOpenSettings: () => void;
   selectedProvider: string;
   selectedModel: string;
   onModelChange: (provider: string, model: string) => void;
@@ -34,8 +33,7 @@ export const ThreadSidebar: React.FC<ThreadSidebarProps> = ({
   onNewThread,
   onGoHome,
   onDeleteThread,
-  showTools,
-  setShowTools,
+  onOpenSettings,
   selectedProvider,
   selectedModel,
   onModelChange,
@@ -57,16 +55,8 @@ export const ThreadSidebar: React.FC<ThreadSidebarProps> = ({
             Subjects
           </button>
         </div>
-        <button
-          onClick={() => setShowTools(!showTools)}
-          className={`p-1.5 rounded-none border transition-colors ${
-            showTools
-              ? 'bg-accent-blue/10 border-accent-blue/40 text-accent-blue'
-              : 'border-border-dark text-slate-400 hover:text-slate-200'
-          }`}
-          title="Toggle Tool Settings"
-        >
-          <Sliders className="w-4.5 h-4.5" />
+        <button onClick={onOpenSettings} className="p-1.5 rounded-none border border-border-dark text-slate-400 hover:border-accent-blue/50 hover:text-accent-blue" title="Open settings">
+          <Settings className="w-4.5 h-4.5" />
         </button>
       </div>
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ThreadSidebar } from './components/ThreadSidebar';
-import { ToolConfig } from './components/ToolConfig';
+import { SettingsPage } from './components/SettingsPage';
 import { ChatPanel } from './components/ChatPanel';
 import { KBViewer } from './components/KBViewer';
 import { SubjectBar } from './components/SubjectBar';
@@ -16,13 +16,12 @@ function App() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [showTools, setShowTools] = useState(false);
   const [activeTool, setActiveTool] = useState<{ name: string; args: any; result?: string } | null>(null);
   const [kbRefreshTrigger, setKbRefreshTrigger] = useState(0);
   const [toolsRefreshTrigger] = useState(0);
   const [selectedProvider, setSelectedProvider] = useState<string>('openai');
   const [selectedModel, setSelectedModel] = useState<string>('gpt-5.4');
-  const [view, setView] = useState<'home' | 'chat'>('home');
+  const [view, setView] = useState<'home' | 'chat' | 'settings'>('home');
   const [subjectsLoading, setSubjectsLoading] = useState(false);
   const [showCreateSubject, setShowCreateSubject] = useState(false);
   const [showCreateSubjectForThread, setShowCreateSubjectForThread] = useState(false);
@@ -83,7 +82,9 @@ function App() {
     fetchSubjects();
 
     const currentState = window.history.state;
-    if (currentState?.view === 'chat' && currentState.thread_id) {
+    if (currentState?.view === 'settings') {
+      setView('settings');
+    } else if (currentState?.view === 'chat' && currentState.thread_id) {
       loadThread(currentState.thread_id, currentState.subject_id);
     } else {
       window.history.replaceState({ view: 'home' }, '', '#subjects');
@@ -91,6 +92,10 @@ function App() {
 
     const handleHistoryChange = (event: PopStateEvent) => {
       const state = event.state;
+      if (state?.view === 'settings') {
+        setView('settings');
+        return;
+      }
       if (state?.view === 'chat' && state.thread_id) {
         loadThread(state.thread_id, state.subject_id);
         return;
@@ -123,6 +128,19 @@ function App() {
     setCurrentSubjectId(null);
     setMessages([]);
     setActiveTool(null);
+  };
+
+  const handleOpenSettings = () => {
+    window.history.pushState({ view: 'settings' }, '', '#settings');
+    setView('settings');
+  };
+
+  const handleBackFromSettings = () => {
+    if (window.history.length > 1) {
+      window.history.back();
+      return;
+    }
+    handleGoHome();
   };
 
   const handleNewThread = async () => {
@@ -200,6 +218,20 @@ function App() {
       setSubjects((prev) => prev.map((item) => item.subject_id === updated.subject_id ? updated : item));
     } catch (e) {
       console.error('Failed to update subject status', e);
+    }
+  };
+
+  const handleDeleteSubject = async (subject: Subject) => {
+    const response = await fetch(`/api/subjects/${encodeURIComponent(subject.subject_id)}`, { method: 'DELETE' });
+    if (!response.ok) {
+      const detail = await response.json().catch(() => ({}));
+      throw new Error(detail.detail || 'Unable to delete subject');
+    }
+    setSubjects((prev) => prev.filter((item) => item.subject_id !== subject.subject_id));
+    await fetchThreads();
+    if (currentSubjectId === subject.subject_id) {
+      setCurrentSubjectId(null);
+      setKbRefreshTrigger((prev) => prev + 1);
     }
   };
 
@@ -378,9 +410,11 @@ function App() {
       <InvestigationHome
         subjects={subjects}
         onCreateSubject={() => setShowCreateSubject(true)}
+        onOpenSettings={handleOpenSettings}
         onStartThread={handleStartThread}
         onNewThread={handleNewThread}
         onToggleStatus={handleToggleSubjectStatus}
+        onDeleteSubject={handleDeleteSubject}
         onRefresh={() => { fetchThreads(); fetchSubjects(); }}
         loading={subjectsLoading}
         activeTab={homeTab}
@@ -393,6 +427,10 @@ function App() {
     </>;
   }
 
+  if (view === 'settings') {
+    return <SettingsPage onBack={handleBackFromSettings} selectedProvider={selectedProvider} selectedModel={selectedModel} onModelChange={(provider, model) => { setSelectedProvider(provider); setSelectedModel(model); }} toolsRefreshTrigger={toolsRefreshTrigger} />;
+  }
+
   return (
     <div className="flex h-screen w-screen overflow-hidden bg-bg-dark text-slate-100">
       {/* Sidebar */}
@@ -403,8 +441,7 @@ function App() {
         onNewThread={handleNewThread}
         onGoHome={handleGoHome}
         onDeleteThread={handleDeleteThread}
-        showTools={showTools}
-        setShowTools={setShowTools}
+        onOpenSettings={handleOpenSettings}
         selectedProvider={selectedProvider}
         selectedModel={selectedModel}
         onModelChange={(p, m) => {
@@ -415,7 +452,6 @@ function App() {
 
       {/* Main Panel */}
           <div className="flex-1 flex flex-col min-w-0 h-full overflow-hidden">
-            {showTools && <ToolConfig onRefreshToolsTrigger={toolsRefreshTrigger} />}
             <SubjectBar
               subjects={subjects}
               selectedSubjectId={currentSubjectId}

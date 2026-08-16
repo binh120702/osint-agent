@@ -14,8 +14,9 @@ import time
 from datetime import datetime
 import json
 from bs4 import BeautifulSoup
-from urllib.parse import quote_plus, urljoin
+from urllib.parse import quote_plus, urljoin, urlsplit, urlunsplit
 import logging
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -85,32 +86,119 @@ class GoogleSearchAPI(SearchEngineClient):
 
 
 class DuckDuckGoSearch(SearchEngineClient):
-    """DuckDuckGo - No API key needed, good for testing"""
+    """DuckDuckGo HTML search with optional Chrome TLS impersonation.
+
+    DuckDuckGo commonly blocks generic HTTP clients based on their TLS
+    fingerprint. ``curl_cffi`` can impersonate a real Chrome client and is
+    therefore used automatically when the normal request is challenged.
+    """
+
+    BLOCK_MARKERS = (
+        "captcha",
+        "challenge",
+        "bot detection",
+        "unusual traffic",
+        "automated queries",
+    )
+
+    def __init__(self):
+        super().__init__()
+        try:
+            self.max_retries = max(1, min(int(os.getenv("DDG_MAX_RETRIES", "2")), 3))
+        except ValueError:
+            self.max_retries = 2
+        try:
+            self.timeout = max(3, min(float(os.getenv("DDG_TIMEOUT", "12")), 60))
+        except ValueError:
+            self.timeout = 12.0
+        self.backend = os.getenv("DDG_SEARCH_BACKEND", "auto").strip().lower()
+        if self.backend not in {"auto", "requests", "curl"}:
+            logger.warning("Invalid DDG_SEARCH_BACKEND=%s; using auto", self.backend)
+            self.backend = "auto"
+        self.region = os.getenv("DDG_REGION", "").strip()
+        self.safe_search = os.getenv("DDG_SAFE_SEARCH", "MODERATE").strip().upper()
+        self.impersonate = os.getenv("DDG_CURL_IMPERSONATE", "chrome131").strip()
+        self.proxy = os.getenv("DDG_PROXY", "").strip() or None
+
+    @classmethod
+    def _is_blocked(cls, status_code: int, body: str) -> bool:
+        if status_code in (202, 403):
+            return True
+        if not body.strip():
+            return True
+        body_lower = body.lower()
+        return any(marker in body_lower for marker in cls.BLOCK_MARKERS) and not ".result" in body_lower
+
+    def _curl_search(self, query: str) -> str:
+        try:
+            from curl_cffi import requests as curl_requests
+        except ImportError as exc:
+            raise RuntimeError(
+                "DuckDuckGo requires curl-cffi for Chrome TLS impersonation. "
+                "Install project dependencies or set DDG_SEARCH_BACKEND=requests."
+            ) from exc
+
+        response = curl_requests.post(
+            "https://html.duckduckgo.com/html",
+            data={
+                "q": query,
+                "b": "",
+                "kl": self.region,
+                "kp": {"OFF": "-2", "MODERATE": "", "STRICT": "1"}.get(self.safe_search, ""),
+            },
+            impersonate=self.impersonate,
+            timeout=self.timeout,
+            proxy=self.proxy,
+        )
+        response.raise_for_status()
+        if self._is_blocked(response.status_code, response.text):
+            raise RuntimeError(f"DuckDuckGo returned a blocked response (HTTP {response.status_code})")
+        return response.text
     
     def search(self, query: str, num_results: int = 20) -> List[Dict]:
         """
         DuckDuckGo HTML scraping (no official API)
         Note: For production, consider using their unofficial API or official methods
         """
-        def _search():
-            url = f"https://html.duckduckgo.com/html/?q={quote_plus(query)}"
-            response = self.session.get(url)
+        def _requests_search():
+            response = self.session.post(
+                "https://html.duckduckgo.com/html",
+                data={
+                    "q": query,
+                    "b": "",
+                    "kl": self.region,
+                    "kp": {"OFF": "-2", "MODERATE": "", "STRICT": "1"}.get(self.safe_search, ""),
+                },
+                timeout=self.timeout,
+            )
             response.raise_for_status()
+            if self._is_blocked(response.status_code, response.text):
+                raise RuntimeError(f"DuckDuckGo returned a blocked response (HTTP {response.status_code})")
             return response.text
-        
-        html = self.retry_with_backoff(_search)
+
+        if self.backend == "curl":
+            html = self.retry_with_backoff(self._curl_search, query)
+        else:
+            try:
+                html = self.retry_with_backoff(_requests_search)
+            except Exception:
+                if self.backend != "auto":
+                    raise
+                logger.info("DuckDuckGo normal HTTP request was blocked; retrying with Chrome TLS impersonation")
+                html = self.retry_with_backoff(self._curl_search, query)
+
         soup = BeautifulSoup(html, 'html.parser')
         
         results = []
         for result in soup.select('.result')[:num_results]:
             title_elem = result.select_one('.result__title')
             snippet_elem = result.select_one('.result__snippet')
-            url_elem = result.select_one('.result__url')
-            
-            if title_elem and url_elem:
+            link_elem = result.select_one('.result__title a') or result.select_one('.result__url')
+
+            if title_elem and link_elem:
                 results.append({
                     'title': title_elem.get_text(strip=True),
-                    'url': url_elem.get('href', ''),
+                    'url': link_elem.get('href', ''),
                     'snippet': snippet_elem.get_text(strip=True) if snippet_elem else '',
                     'source': 'duckduckgo'
                 })
@@ -440,6 +528,49 @@ class OSINTAggregator:
                 results['sources'][source] = {'error': str(e)}
         
         return results
+
+    def aggregate_search_merged(self, query: str, sources: List[str], num_results: int = 20) -> Dict:
+        """Search sources independently and return source buckets plus deduped results."""
+        results = {
+            'query': query,
+            'timestamp': datetime.now().isoformat(),
+            'sources': {},
+            'merged_results': [],
+            'errors': {},
+        }
+
+        def run(source):
+            client = getattr(self, f"search_{source}", None)
+            if not client:
+                raise RuntimeError(f"Search source is not configured: {source}")
+            return client.search(query, num_results=num_results)
+
+        with ThreadPoolExecutor(max_workers=max(1, len(sources))) as executor:
+            futures = {executor.submit(run, source): source for source in sources}
+            for future in as_completed(futures):
+                source = futures[future]
+                try:
+                    results['sources'][source] = future.result()
+                except Exception as exc:
+                    logger.error("Error searching %s: %s", source, exc)
+                    results['sources'][source] = []
+                    results['errors'][source] = str(exc)
+
+        seen = {}
+        for source in sources:
+            for item in results['sources'].get(source, []):
+                url = item.get('url') or ''
+                parts = urlsplit(url)
+                key = urlunsplit((parts.scheme.lower(), parts.netloc.lower(), parts.path.rstrip('/'), parts.query, '')) if parts.scheme else url
+                if not key:
+                    continue
+                if key not in seen:
+                    seen[key] = dict(item)
+                    seen[key]['sources'] = [source]
+                    results['merged_results'].append(seen[key])
+                elif source not in seen[key]['sources']:
+                    seen[key]['sources'].append(source)
+        return results
     
     def aggregate_social(self, query: str, sources: List[str]) -> Dict:
         """
@@ -513,6 +644,7 @@ def example_usage():
 AGGREGATOR = OSINTAggregator()
 AGGREGATOR.add_search_engine('searxng', SearxngSearch())
 AGGREGATOR.add_search_engine('duckduckgo', DuckDuckGoSearch())
+DDG_ENABLED = os.getenv("DDG_ENABLED", "0").strip().lower() in {"1", "true", "yes", "on"}
 
 @tool
 def engine_search_tool(query: str) -> str:
@@ -526,16 +658,25 @@ def engine_search_tool(query: str) -> str:
         Something with the information of the search results.
     """
     logger.info(f"Searching the web using the engine search tool: {query}")
-    results = AGGREGATOR.aggregate_search(query, ['searxng'])
-    
-    # Fallback to DuckDuckGo if SearXNG failed or returned no results
-    searxng_results = results.get('sources', {}).get('searxng', [])
-    if not searxng_results or (isinstance(searxng_results, dict) and searxng_results.get('error')):
-        logger.warning("SearXNG failed or returned empty results. Falling back to DuckDuckGo...")
-        fallback_results = AGGREGATOR.aggregate_search(query, ['duckduckgo'])
-        results['sources']['duckduckgo'] = fallback_results.get('sources', {}).get('duckduckgo', [])
+    sources = ['searxng', 'duckduckgo'] if DDG_ENABLED else ['searxng']
+    results = AGGREGATOR.aggregate_search_merged(query, sources)
         
     logger.info(f"Results: {json.dumps(results, indent=2, default=str)}")
+    return json.dumps(results, indent=2, default=str)
+
+
+@tool
+def duckduckgo_search(query: str) -> str:
+    """Search DuckDuckGo directly using the configured anti-bot-capable backend."""
+    if not DDG_ENABLED:
+        return json.dumps({
+            "query": query,
+            "sources": {},
+            "merged_results": [],
+            "errors": {"duckduckgo": "DuckDuckGo search is disabled (set DDG_ENABLED=1 to enable it)."},
+        }, indent=2)
+    logger.info("Searching DuckDuckGo directly: %s", query)
+    results = AGGREGATOR.aggregate_search_merged(query, ['duckduckgo'])
     return json.dumps(results, indent=2, default=str)
 
 

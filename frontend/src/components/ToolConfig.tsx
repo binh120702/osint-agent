@@ -46,7 +46,7 @@ export const ToolConfig: React.FC<ToolConfigProps> = ({ onRefreshToolsTrigger })
 
   if (loading) {
     return (
-      <div className="p-4 border-b border-border-dark flex items-center justify-center text-slate-500 text-xs">
+      <div className="p-8 border border-border-dark bg-panel-dark/60 flex items-center justify-center text-slate-500 text-xs">
         <Loader className="animate-spin w-4 h-4 mr-2" />
         Loading Tools Config...
       </div>
@@ -54,17 +54,16 @@ export const ToolConfig: React.FC<ToolConfigProps> = ({ onRefreshToolsTrigger })
   }
 
   return (
-    <div className="bg-panel-dark/40 border-b border-border-dark p-4">
-      <div className="text-xs font-semibold text-slate-400 mb-3 uppercase tracking-wider flex items-center justify-between">
+    <section className="bg-panel-dark/40 border border-border-dark p-5">
+      <div className="text-xs font-semibold text-slate-400 mb-4 uppercase tracking-wider flex items-center justify-between">
         <span>OSINT Core Tools</span>
         <span className="text-[10px] text-slate-500">Enable/disable features</span>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5">
+      <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
         {tools.map((t) => (
           <div
             key={t.name}
-            onClick={() => toggleTool(t.name, t.enabled)}
-            className={`flex items-center justify-between px-3 py-2.5 rounded-none border cursor-pointer transition-colors ${
+            className={`flex items-center justify-between px-3 py-3 rounded-none border transition-colors ${
               t.enabled
                 ? 'bg-accent-blue/10 border-accent-blue/40 text-slate-100'
                 : 'bg-slate-900/40 border-border-dark text-slate-400 hover:border-slate-700 hover:text-slate-300'
@@ -82,7 +81,7 @@ export const ToolConfig: React.FC<ToolConfigProps> = ({ onRefreshToolsTrigger })
                 {t.name}
               </span>
             </div>
-            <button className="flex-shrink-0 focus:outline-none">
+            <button onClick={() => toggleTool(t.name, t.enabled)} className="flex-shrink-0 focus:outline-none" aria-label={`${t.enabled ? 'Disable' : 'Enable'} ${t.name}`}>
               {t.enabled ? (
                 <ToggleRight className="w-6 h-6 text-accent-blue" />
               ) : (
@@ -92,6 +91,6 @@ export const ToolConfig: React.FC<ToolConfigProps> = ({ onRefreshToolsTrigger })
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };

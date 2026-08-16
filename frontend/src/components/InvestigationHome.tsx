@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { Activity, ArrowRight, Check, CheckCircle2, CircleDot, Clock3, ExternalLink, Plus, RefreshCw, Search, ShieldCheck, X } from 'lucide-react';
+import { Activity, ArrowRight, Check, CheckCircle2, CircleDot, Clock3, ExternalLink, Plus, RefreshCw, Search, Settings, ShieldCheck, Trash2, X } from 'lucide-react';
 import type { Subject, SubjectEvidence } from '../types';
 import type { Thread } from '../types';
 import { ThreadBrowser } from './ThreadBrowser';
@@ -14,8 +14,10 @@ interface SubjectProgress {
 interface Props {
   subjects: Subject[];
   onCreateSubject: () => void;
+  onOpenSettings: () => void;
   onStartThread: (subject: Subject) => void;
   onToggleStatus: (subject: Subject) => void;
+  onDeleteSubject: (subject: Subject) => Promise<void>;
   onRefresh: () => void;
   loading?: boolean;
   activeTab: 'subjects' | 'threads';
@@ -48,7 +50,7 @@ const formatProposedValue = (value?: string) => {
   }
 };
 
-export const InvestigationHome: React.FC<Props> = ({ subjects, onCreateSubject, onStartThread, onToggleStatus, onRefresh, loading, activeTab, onTabChange, threads, onSelectThread, onDeleteThread, onNewThread }) => {
+export const InvestigationHome: React.FC<Props> = ({ subjects, onCreateSubject, onOpenSettings, onStartThread, onToggleStatus, onDeleteSubject, onRefresh, loading, activeTab, onTabChange, threads, onSelectThread, onDeleteThread, onNewThread }) => {
   const [progress, setProgress] = useState<Record<string, SubjectProgress>>({});
   const [progressLoading, setProgressLoading] = useState(false);
   const [query, setQuery] = useState('');
@@ -57,6 +59,8 @@ export const InvestigationHome: React.FC<Props> = ({ subjects, onCreateSubject, 
   const [evidenceLoading, setEvidenceLoading] = useState(false);
   const [evidenceFilter, setEvidenceFilter] = useState<'all' | SubjectEvidence['status']>('all');
   const [evidenceRefresh, setEvidenceRefresh] = useState(0);
+  const [deleteSubject, setDeleteSubject] = useState<Subject | null>(null);
+  const [deleting, setDeleting] = useState(false);
 
   const activeSubjects = useMemo(() => subjects.filter((subject) => subject.status !== 'done'), [subjects]);
   const completedSubjects = useMemo(() => subjects.filter((subject) => subject.status === 'done'), [subjects]);
@@ -131,6 +135,17 @@ export const InvestigationHome: React.FC<Props> = ({ subjects, onCreateSubject, 
 
   const visibleEvidence = evidenceFilter === 'all' ? evidence : evidence.filter((item) => item.status === evidenceFilter);
 
+  const confirmDeleteSubject = async () => {
+    if (!deleteSubject) return;
+    setDeleting(true);
+    try {
+      await onDeleteSubject(deleteSubject);
+      setDeleteSubject(null);
+    } finally {
+      setDeleting(false);
+    }
+  };
+
   const totals = activeSubjects.reduce((summary, subject) => {
     const item = progress[subject.subject_id] || { confirmed: 0, pending: 0, rejected: 0, total: 0 };
     summary.threads += subject.thread_ids.length;
@@ -152,6 +167,7 @@ export const InvestigationHome: React.FC<Props> = ({ subjects, onCreateSubject, 
             <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-400">Choose a subject to continue an investigation or open a fresh research thread.</p>
           </div>
           <div className="flex items-center gap-2">
+            <button onClick={onOpenSettings} className="flex min-h-11 items-center gap-2 border border-border-dark px-3 text-xs font-semibold text-slate-400 hover:border-slate-600 hover:text-slate-100" title="Open settings"><Settings size={14} /> Settings</button>
             <button onClick={onRefresh} className="flex min-h-11 items-center gap-2 border border-border-dark px-3 text-xs font-semibold text-slate-400 transition-colors hover:border-slate-600 hover:text-slate-200" title="Refresh subjects">
               <RefreshCw size={14} className={loading ? 'animate-spin' : ''} /> Refresh
             </button>
@@ -190,13 +206,13 @@ export const InvestigationHome: React.FC<Props> = ({ subjects, onCreateSubject, 
                 <div className="flex items-start justify-between gap-4"><div><div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-accent-blue"><span className="h-1.5 w-1.5 bg-accent-blue" /> {TYPE_LABELS[subject.subject_type] || subject.subject_type}</div><h2 className="mt-2 text-xl font-semibold text-slate-100">{subject.name}</h2>{subject.canonical_identifier && <div className="mt-1 font-mono text-[11px] text-slate-500">{subject.canonical_identifier}</div>}</div><span className="border border-emerald-500/20 bg-emerald-500/10 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-emerald-400">Active</span></div>
                 {subject.description && <p className="mt-5 line-clamp-2 text-xs leading-5 text-slate-400">{subject.description}</p>}
                 <div className="mt-6 border-t border-border-dark pt-4"><div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-slate-500"><span>Evidence reviewed</span><span className="text-slate-300">{progressLoading ? 'Loading' : `${completion}%`}</span></div><div className="mt-2 h-1.5 bg-slate-900"><div className="h-full bg-accent-blue transition-all" style={{ width: `${completion}%` }} /></div><div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-[11px] text-slate-500"><span className="flex items-center gap-1.5 text-emerald-400"><ShieldCheck size={13} /> {item.confirmed} confirmed</span><span className="flex items-center gap-1.5"><Clock3 size={13} /> {item.pending} pending</span><span>{subject.thread_ids.length} {subject.thread_ids.length === 1 ? 'thread' : 'threads'}</span></div></div>
-                <div className="mt-5 flex items-center justify-between gap-3"><div className="flex items-center gap-1"><button onClick={() => openEvidence(subject)} className="flex min-h-10 items-center gap-1.5 border border-border-dark px-2 text-[11px] font-semibold text-slate-400 hover:border-slate-500 hover:text-slate-100"><ShieldCheck size={13} /> Review evidence</button><button onClick={() => onToggleStatus(subject)} className="min-h-10 px-2 text-[11px] font-semibold text-slate-500 hover:text-emerald-400">Mark done</button></div><button onClick={() => onStartThread(subject)} className="flex min-h-10 items-center gap-2 bg-slate-100 px-4 text-xs font-bold text-slate-950 transition-colors hover:bg-white">New thread <ArrowRight size={14} /></button></div>
+                <div className="mt-5 flex items-center justify-between gap-3"><div className="flex items-center gap-1"><button onClick={() => openEvidence(subject)} className="flex min-h-10 items-center gap-1.5 border border-border-dark px-2 text-[11px] font-semibold text-slate-400 hover:border-slate-500 hover:text-slate-100"><ShieldCheck size={13} /> Review evidence</button><button onClick={() => onToggleStatus(subject)} className="min-h-10 px-2 text-[11px] font-semibold text-slate-500 hover:text-emerald-400">Mark done</button><button onClick={() => setDeleteSubject(subject)} className="flex min-h-10 items-center gap-1.5 px-2 text-[11px] font-semibold text-red-500/70 hover:text-red-400" title={`Delete ${subject.name}`}><Trash2 size={13} /> Delete</button></div><button onClick={() => onStartThread(subject)} className="flex min-h-10 items-center gap-2 bg-slate-100 px-4 text-xs font-bold text-slate-950 transition-colors hover:bg-white">New thread <ArrowRight size={14} /></button></div>
               </article>;
             })}
           </div>
         )}
 
-        {completedSubjects.length > 0 && <section className="mt-12 border-t border-border-dark pt-6"><div className="flex items-center gap-2 text-sm font-semibold text-slate-300"><CheckCircle2 size={16} className="text-slate-500" /> Completed subjects <span className="text-xs font-normal text-slate-600">{completedSubjects.length}</span></div><div className="mt-3 grid gap-2 md:grid-cols-2 xl:grid-cols-3">{completedSubjects.map((subject) => <div key={subject.subject_id} className="flex items-center justify-between gap-3 border border-border-dark/70 bg-panel-dark/50 px-4 py-3"><div><div className="text-sm font-semibold text-slate-400">{subject.name}</div><div className="mt-1 text-[10px] uppercase tracking-wider text-slate-600">Completed {formatDate(subject.updated_at)}</div></div><div className="flex items-center gap-1"><button onClick={() => openEvidence(subject)} className="flex min-h-9 items-center gap-1.5 px-2 text-[11px] font-semibold text-slate-500 hover:text-slate-200"><ShieldCheck size={13} /> Evidence</button><button onClick={() => onToggleStatus(subject)} className="min-h-9 px-2 text-[11px] font-semibold text-slate-500 hover:text-accent-blue">Reopen</button></div></div>)}</div></section>}
+        {completedSubjects.length > 0 && <section className="mt-12 border-t border-border-dark pt-6"><div className="flex items-center gap-2 text-sm font-semibold text-slate-300"><CheckCircle2 size={16} className="text-slate-500" /> Completed subjects <span className="text-xs font-normal text-slate-600">{completedSubjects.length}</span></div><div className="mt-3 grid gap-2 md:grid-cols-2 xl:grid-cols-3">{completedSubjects.map((subject) => <div key={subject.subject_id} className="flex items-center justify-between gap-3 border border-border-dark/70 bg-panel-dark/50 px-4 py-3"><div><div className="text-sm font-semibold text-slate-400">{subject.name}</div><div className="mt-1 text-[10px] uppercase tracking-wider text-slate-600">Completed {formatDate(subject.updated_at)}</div></div><div className="flex items-center gap-1"><button onClick={() => openEvidence(subject)} className="flex min-h-9 items-center gap-1.5 px-2 text-[11px] font-semibold text-slate-500 hover:text-slate-200"><ShieldCheck size={13} /> Evidence</button><button onClick={() => onToggleStatus(subject)} className="min-h-9 px-2 text-[11px] font-semibold text-slate-500 hover:text-accent-blue">Reopen</button><button onClick={() => setDeleteSubject(subject)} className="p-2 text-red-500/60 hover:text-red-400" title={`Delete ${subject.name}`}><Trash2 size={13} /></button></div></div>)}</div></section>}
         </>}
       </div>
       {evidenceSubject && <div className="fixed inset-0 z-30 flex items-start justify-center overflow-y-auto bg-black/70 p-4 sm:p-8" role="dialog" aria-modal="true" aria-label={`Evidence for ${evidenceSubject.name}`}>
@@ -204,6 +220,12 @@ export const InvestigationHome: React.FC<Props> = ({ subjects, onCreateSubject, 
           <header className="flex items-start justify-between gap-4 border-b border-border-dark px-5 py-4"><div><div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-accent-blue"><ShieldCheck size={14} /> Subject evidence</div><h2 className="mt-2 text-lg font-semibold text-slate-100">{evidenceSubject.name}</h2><p className="mt-1 text-xs text-slate-500">Review findings from all threads linked to this subject.</p></div><button onClick={() => setEvidenceSubject(null)} className="p-1 text-slate-500 hover:text-slate-100" title="Close evidence"><X size={18} /></button></header>
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border-dark px-5 py-3"><div className="flex gap-1" role="tablist" aria-label="Evidence status"><button onClick={() => setEvidenceFilter('all')} className={`px-2 py-1.5 text-[11px] font-semibold ${evidenceFilter === 'all' ? 'bg-slate-100 text-slate-950' : 'text-slate-500 hover:text-slate-200'}`}>All {evidence.length}</button>{(['pending', 'confirmed', 'rejected'] as const).map((status) => <button key={status} onClick={() => setEvidenceFilter(status)} className={`px-2 py-1.5 text-[11px] font-semibold capitalize ${evidenceFilter === status ? 'bg-slate-100 text-slate-950' : 'text-slate-500 hover:text-slate-200'}`}>{status} {evidence.filter((item) => item.status === status).length}</button>)}</div><button onClick={() => setEvidenceRefresh((value) => value + 1)} className="flex items-center gap-1.5 text-[11px] font-semibold text-slate-500 hover:text-slate-200" title="Refresh evidence"><RefreshCw size={13} className={evidenceLoading ? 'animate-spin' : ''} /> Refresh</button></div>
           <div className="max-h-[65vh] overflow-y-auto p-5">{evidenceLoading ? <div className="py-12 text-center text-xs text-slate-500">Loading evidence...</div> : visibleEvidence.length === 0 ? <div className="border border-dashed border-border-dark px-5 py-12 text-center"><ShieldCheck size={22} className="mx-auto text-slate-600" /><p className="mt-3 text-xs text-slate-400">{evidence.length ? 'No evidence matches this filter.' : 'No evidence has been extracted yet.'}</p></div> : <div className="space-y-2">{visibleEvidence.map((item) => <article key={item.evidence_id} className="border border-border-dark/70 bg-bg-dark/40 p-4"><div className="flex items-start justify-between gap-4"><div className="min-w-0 flex-1">{item.kind === 'entity_metadata' && <div className="mb-2 text-[10px] font-bold uppercase tracking-wider text-accent-blue">Metadata proposal · {item.entity_type}:{item.entity_value}</div>}<p className="text-sm leading-6 text-slate-300">{item.kind === 'entity_metadata' && item.metadata_key ? <><span className="text-slate-500">{item.metadata_key.replaceAll('_', ' ')}:</span> {formatProposedValue(item.proposed_value)}</> : item.claim}</p></div><span className={`shrink-0 px-2 py-1 text-[10px] font-bold uppercase tracking-wider ${item.status === 'confirmed' ? 'bg-emerald-500/10 text-emerald-400' : item.status === 'rejected' ? 'bg-red-500/10 text-red-400' : 'bg-amber-500/10 text-amber-400'}`}>{item.status}</span></div><div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-[10px] text-slate-500">{item.source_url ? <a href={item.source_url} target="_blank" rel="noreferrer" className="flex max-w-full items-center gap-1 truncate text-accent-indigo hover:text-cyan-300"><ExternalLink size={11} /> {item.source_title || item.source_url}</a> : <span>{item.source_title || 'No source recorded'}</span>}{item.thread_id && <span>Extracted from thread {item.thread_id.slice(0, 8)}</span>}{typeof item.confidence === 'number' && <span>Confidence {Math.round(item.confidence * 100)}%</span>}</div>{item.status === 'pending' && <div className="mt-4 flex gap-2"><button onClick={() => void reviewEvidence(item, 'confirmed')} className="flex items-center gap-1.5 bg-emerald-500/10 px-3 py-2 text-[11px] font-bold text-emerald-400 hover:bg-emerald-500/20"><Check size={13} /> Confirm</button><button onClick={() => void reviewEvidence(item, 'rejected')} className="flex items-center gap-1.5 bg-red-500/10 px-3 py-2 text-[11px] font-bold text-red-400 hover:bg-red-500/20"><X size={13} /> Reject</button></div>}</article>)}</div>}</div>
+        </section>
+      </div>}
+      {deleteSubject && <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/75 p-4" role="dialog" aria-modal="true" aria-label="Delete subject confirmation">
+        <section className="w-full max-w-md border border-red-500/30 bg-panel-dark p-5 shadow-2xl">
+          <div className="flex items-start gap-3"><div className="mt-0.5 text-red-400"><Trash2 size={18} /></div><div><h2 className="text-sm font-bold text-slate-100">Delete subject?</h2><p className="mt-2 text-xs leading-5 text-slate-400">This permanently removes <span className="font-semibold text-slate-200">{deleteSubject.name}</span>, its subject knowledge graph, and evidence. Linked thread transcripts are kept.</p></div></div>
+          <div className="mt-5 flex justify-end gap-2"><button onClick={() => setDeleteSubject(null)} disabled={deleting} className="px-3 py-2 text-xs text-slate-400 hover:text-slate-100">Cancel</button><button onClick={() => void confirmDeleteSubject()} disabled={deleting} className="flex items-center gap-1.5 bg-red-500/15 px-3 py-2 text-xs font-bold text-red-400 hover:bg-red-500/25 disabled:opacity-50"><Trash2 size={13} /> {deleting ? 'Deleting...' : 'Delete subject'}</button></div>
         </section>
       </div>}
     </main>
