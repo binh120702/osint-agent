@@ -815,7 +815,7 @@ def knowledge_agent(text: str, source_url: str = "", source_title: str = "") -> 
     processed_entities = []
     metadata_fields_by_type = {
         item["type"]: {
-            str(field.get("name", field)).strip()
+            str(field.get("name", "")).strip() if isinstance(field, dict) else str(field).strip()
             for field in item.get("metadata_fields", [])
             if (isinstance(field, str) and field.strip()) or (isinstance(field, dict) and field.get("name"))
         }

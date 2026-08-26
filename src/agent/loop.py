@@ -35,7 +35,10 @@ from tools.knowledge_base import set_kb_thread_id, set_kb_subject_id, get_subjec
 
 
 _MAX_TOOL_CHARS = int(os.getenv("OSINT_MAX_TOOL_CHARS", "8000"))
-_MAX_ITERATIONS = 50  # safety cap to avoid infinite loops
+try:
+    _MAX_ITERATIONS = max(1, int(os.getenv("OSINT_MAX_ITERATIONS", "50")))
+except ValueError:
+    _MAX_ITERATIONS = 50
 
 # In-memory thread store: thread_id → list of messages (no system prompt stored)
 _THREADS: dict[str, list[AnyMessage]] = {}
