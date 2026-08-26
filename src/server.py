@@ -277,7 +277,35 @@ def create_subject_for_thread(thread_id: str, request: ThreadSubjectAttachReques
         raise HTTPException(status_code=409, detail="Thread is already linked to a subject")
     subject = manager.create(request)
     manager.add_thread(subject.subject_id, thread_id)
-    return subject.dict()
+    migration = migrate_thread_knowledge_to_subject(
+        thread_id,
+        subject.subject_id,
+        _knowledge_agent_evidence_records(thread_id),
+    )
+    return {**subject.dict(), "migration": migration}
+
+
+def _knowledge_agent_evidence_records(thread_id: str) -> list[dict[str, str]]:
+    """Extract source claims from saved knowledge-agent calls for subject migration."""
+    evidence_records = []
+    for message in agent_loop.get_thread(thread_id):
+        for tool_call in (getattr(message, "tool_calls", None) or []):
+            if getattr(tool_call, "name", "") != "knowledge_agent":
+                continue
+            arguments = getattr(tool_call, "arguments", {}) or {}
+            if isinstance(arguments, str):
+                try:
+                    arguments = json.loads(arguments)
+                except json.JSONDecodeError:
+                    continue
+            if not isinstance(arguments, dict):
+                continue
+            evidence_records.append({
+                "claim": str(arguments.get("text", "")),
+                "source_url": str(arguments.get("source_url", "")),
+                "source_title": str(arguments.get("source_title", "")),
+            })
+    return evidence_records
 
 
 @app.post("/api/threads/{thread_id}/subjects/{subject_id}")
@@ -295,18 +323,11 @@ def attach_existing_subject_to_thread(thread_id: str, subject_id: str):
         raise HTTPException(status_code=409, detail="Thread is already linked to another subject")
 
     manager.add_thread(subject_id, thread_id)
-    evidence_records = []
-    for message in agent_loop.get_thread(thread_id):
-        for tool_call in (getattr(message, "tool_calls", None) or []):
-            if getattr(tool_call, "name", "") != "knowledge_agent":
-                continue
-            arguments = getattr(tool_call, "arguments", {}) or {}
-            evidence_records.append({
-                "claim": str(arguments.get("text", "")),
-                "source_url": str(arguments.get("source_url", "")),
-                "source_title": str(arguments.get("source_title", "")),
-            })
-    migration = migrate_thread_knowledge_to_subject(thread_id, subject_id, evidence_records)
+    migration = migrate_thread_knowledge_to_subject(
+        thread_id,
+        subject_id,
+        _knowledge_agent_evidence_records(thread_id),
+    )
     return {"thread_id": thread_id, "subject_id": subject_id, "migration": migration}
 
 
