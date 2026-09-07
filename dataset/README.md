@@ -1,6 +1,8 @@
 # OSINT-Bench: An End-to-End Benchmark for Agentic AI in OSINT Investigations
 
-OSINT-Bench is an evaluation benchmark designed to measure the capabilities of Agentic AI systems and individual NLP/reasoning modules on realistic, end-to-end Open Source Intelligence (OSINT) investigations. 
+OSINT-Bench is an evaluation benchmark designed to measure the capabilities of Agentic AI systems and individual NLP/reasoning modules on realistic, end-to-end Open Source Intelligence (OSINT) investigations.
+
+> **Dataset status — provenance gate:** Cases are intended to use real public records, but a URL and a snapshot hash alone do not certify provenance or ground-truth correctness. Run `python scripts/audit_provenance.py --strict`; until every source has human verification metadata, the suite must be treated as pending review, not as a certified real-world benchmark. LLMs may assist discovery or drafting, but may not create evidence, source text, or ground truth.
 
 Unlike existing benchmarks that focus on isolated sub-tasks (e.g., question answering, entity extraction, or API tool calling), OSINT-Bench evaluates an agent's ability to discover relationships, perform multi-hop reasoning across heterogeneous data sources, resolve logical contradictions, and generate structured, traceable investigative reports.
 
@@ -75,7 +77,7 @@ OSINT-Bench models each investigation case using a deterministic schema that spl
 ```
 
 Each case is defined in a JSON file containing:
-- **`sources`**: A sandbox or mocked set of reproducible web pages, API endpoints, or database tables.
+- **`sources`**: Immutable snapshots of real public web pages, official records, public archives, or official exports. Synthetic/mock sources are prohibited for the real-source suite.
 - **`ground_truth`**: A graph structure containing the nodes, relations, and proof chains that must be traversed to solve the goal.
 - **`contradictions`**: Deliberate anomalies in the source data that the agent must identify and flag.
 

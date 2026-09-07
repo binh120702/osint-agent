@@ -8,10 +8,12 @@ This guide establishes the standard for contributing, designing, and maintaining
 
 To be accepted into the benchmark, every case must satisfy the following criteria:
 
-1. **Reproducibility**: All public sources used by a case must be fully snapshotted or mock-represented within the `sources` array of the JSON file. Do *not* rely on live internet resources, which are prone to link rot, API changes, or content modifications.
-2. **Reasoning-Heavy**: Avoid simple lookup tasks. A case should require the agent to combine pieces of information from at least three different sources to reach the final attribution or conclusion.
-3. **Strict Privacy & Ethics**: Under no circumstances should real-world, non-public, or sensitive PII (Personally Identifiable Information) be included. Any real-world targets (e.g., active threat groups) must be analyzed using publicly documented, sanitized reports, or completely fictionalized (using mock data).
-4. **Logical Consistency Testing**: Each Medium and Hard case must contain at least one intentional logical contradiction or deceptive clue that testing systems must resolve.
+1. **Public-source provenance**: Every source must be a real, publicly accessible source (official record, publisher page, public archive, or official export). Synthetic URLs, mock pages, LLM-generated text, and LLM-generated structured facts are prohibited. The case stores an immutable snapshot so evaluation does not depend on the live web.
+2. **Reproducibility**: Every source snapshot must include its canonical HTTPS URL, publisher, publication date, retrieval timestamp, retrieval method, payload SHA-256, and human verification notes. A failed refresh must never replace an existing snapshot with generated text. Do *not* rely on live internet resources during evaluation.
+3. **Evidence versus annotation**: `raw_text` is the verbatim or faithfully extracted source payload. `content.evidence_summary`, labels, findings, and ground truth are annotations made by a human reviewer; they are not evidence and must not be generated from unsupported model guesses.
+4. **Reasoning-Heavy**: Avoid simple lookup tasks. A case should require the agent to combine pieces of information from at least three different sources to reach the final attribution or conclusion.
+5. **Strict Privacy & Ethics**: Under no circumstances should real-world, non-public, or sensitive PII (Personally Identifiable Information) be included. Real-world targets must be limited to publicly documented, sanitized records. Fictionalized cases are not part of the real-source benchmark and must be placed in a separate clearly labelled synthetic dataset.
+6. **Logical Consistency Testing**: Each Medium and Hard case must contain at least one contradiction between real source claims or an explicitly documented uncertainty. Do not invent a deceptive clue merely to satisfy this requirement.
 
 ---
 

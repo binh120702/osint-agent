@@ -51,6 +51,36 @@ REPLACEMENTS = {
         "verification_status": "Direct fetch returned readable article text.",
         "evidence_summary": "Rapid7 reports that internal Conti ransomware group chats were leaked after the group publicly supported Russia, and describes the leaked communications and the group's organization.",
     }),
+    ("OSINT-003", "SRC-003"): ("https://www.elliptic.co/insights/540-million-stolen-from-the-ronin-defi-bridge", {
+        "page_title": "North Korea's Lazarus Group identified as exploiters of $540 million Ronin bridge theft",
+        "source_quality": "Blockchain analysis firm reporting",
+        "verification_status": "Direct fetch returned readable article text.",
+        "evidence_summary": "Elliptic describes the Ronin bridge theft, the movement of stolen assets, and its assessment linking the exploitation to Lazarus Group.",
+    }),
+    ("OSINT-004", "SRC-001"): ("https://www.pbs.org/newshour/nation/read-muellers-full-indictment-against-12-russian-officers-for-election-interference", {
+        "page_title": "Read Mueller's full indictment against 12 Russian officers for election interference",
+        "source_quality": "PBS publication of the public federal indictment",
+        "verification_status": "Direct fetch returned readable article text.",
+        "evidence_summary": "PBS publishes the public indictment and summarizes the charges against Russian intelligence officers, including the use of DCLeaks and Guccifer 2.0 personas.",
+    }),
+    ("OSINT-005", "SRC-001"): ("https://www.justice.gov/opa/pr/justice-department-announces-compensation-process-onecoin-fraud-victims-funds-recovered", {
+        "page_title": "Justice Department Announces Compensation Process for OneCoin Fraud Victims",
+        "source_quality": "Official U.S. Department of Justice press release",
+        "verification_status": "Direct fetch returned readable DOJ press-release text.",
+        "evidence_summary": "The DOJ describes OneCoin as an international investment fraud scheme involving Ruja Ignatova and Karl Sebastian Greenwood and announces compensation for victims from recovered funds.",
+    }),
+    ("OSINT-005", "SRC-004"): ("https://www.state.gov/reward-for-information-german-national-ruja-ignatova", {
+        "page_title": "Reward for Information: German National Ruja Ignatova",
+        "source_quality": "Official U.S. Department of State reward notice",
+        "verification_status": "Direct fetch returned readable State Department page text.",
+        "evidence_summary": "The State Department reward notice identifies Ruja Ignatova, describes the fraud and money-laundering charges, and offers a reward for information leading to her arrest or conviction.",
+    }),
+    ("OSINT-006", "SRC-001"): ("https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a", {
+        "page_title": "CL0P Ransomware Gang Exploits CVE-2023-34362 MOVEit Vulnerability",
+        "source_quality": "Official CISA and FBI joint cybersecurity advisory",
+        "verification_status": "Direct fetch returned readable advisory text.",
+        "evidence_summary": "The joint CISA/FBI advisory states that CL0P began exploiting CVE-2023-34362 in MOVEit Transfer on or about May 27, 2023 and provides technical details and mitigations.",
+    }),
     ("OSINT-003", "SRC-001"): ("https://www.elliptic.co/insights/fbi-confirms-north-korea-s-lazarus-group-as-hackers-behind-100-million-harmony-horizon-bridge-theft", {
         "page_title": "FBI confirms North Korea's Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft",
         "source_quality": "Blockchain analysis firm reporting on FBI attribution",
@@ -93,6 +123,18 @@ REPLACEMENTS = {
         "verification_status": "Direct fetch returned readable DOJ case-page text.",
         "evidence_summary": "The DOJ case page identifies the HyperFund associated cases, the defendants, the charges, and the indictment and plea developments.",
     }),
+    ("OSINT-007", "SRC-004"): ("https://www.sec.gov/newsroom/press-releases/2024-11", {
+        "page_title": "SEC Charges Founder of $1.7 Billion HyperFund Crypto Pyramid Scheme",
+        "source_quality": "Official U.S. Securities and Exchange Commission press release",
+        "verification_status": "Direct fetch returned readable SEC press-release text.",
+        "evidence_summary": "The SEC charges Xue Lee and Brenda Chunga over their alleged roles in the HyperFund crypto-asset pyramid scheme and states that it raised more than $1.7 billion.",
+    }),
+    ("OSINT-008", "SRC-001"): ("https://www.europarl.europa.eu/RegData/etudes/STUD/2020/651384/IPOL_STU(2020)651384_EN.pdf", {
+        "page_title": "What are the wider supervisory implications of the Wirecard case?",
+        "source_quality": "European Parliament research study",
+        "verification_status": "Direct PDF fetch and text extraction succeeded.",
+        "evidence_summary": "The European Parliament study examines the Wirecard scandal, audit and supervisory failures, and the implications of the company's collapse.",
+    }),
     ("OSINT-008", "SRC-002"): ("https://safe-frankfurt.de/fileadmin/user_upload/editor_common/Policy_Center/SAFE_Policy_White_Paper_74.pdf", {
         "page_title": "What are the wider supervisory implications of the Wirecard case?",
         "source_quality": "SAFE policy white paper",
@@ -111,6 +153,12 @@ REPLACEMENTS = {
         "verification_status": "Direct fetch returned readable article text.",
         "evidence_summary": "Al Jazeera reports on the Pandora Papers investigation and offshore assets associated with heads of state, including Jordan's King Abdullah II.",
     }),
+    ("OSINT-009", "SRC-004"): ("https://www.icij.org/investigations/pandora-papers/jordan-king-abdullah-luxury-property/", {
+        "page_title": "While foreign aid poured in, Jordan's King Abdullah funnelled $100 million into luxury homes",
+        "source_quality": "International Consortium of Investigative Journalists investigation",
+        "verification_status": "Direct fetch returned readable ICIJ investigation text.",
+        "evidence_summary": "ICIJ reports that the Pandora Papers identified offshore companies and luxury property holdings associated with Jordan's King Abdullah II.",
+    }),
     ("OSINT-010", "SRC-001"): ("https://www.justice.gov/d9/fieldable-panel-panes/basic-panes/attachments/2018/02/16/internet_research_agency_indictment.pdf", {
         "page_title": "Internet Research Agency Indictment",
         "source_quality": "Official U.S. Department of Justice indictment PDF",
@@ -122,6 +170,21 @@ REPLACEMENTS = {
         "source_quality": "Reputable public-radio reporting",
         "verification_status": "Direct fetch returned readable article text.",
         "evidence_summary": "NPR reports on the Senate Intelligence Committee's findings that Russian actors used social media to target racial divisions and influence the 2016 election.",
+    }),
+    # These entries intentionally appear after the legacy map entries above so
+    # the current, directly searched replacements win if an older mapping is
+    # still present in a downstream checkout.
+    ("OSINT-004", "SRC-001"): ("https://www.justice.gov/archives/opa/pr/grand-jury-indicts-12-russian-intelligence-officers-hacking-offenses-related-2016-election", {
+        "page_title": "Grand Jury Indicts 12 Russian Intelligence Officers for Hacking Offenses Related to the 2016 Election",
+        "source_quality": "Official U.S. Department of Justice press release",
+        "verification_status": "Direct fetch returned readable DOJ press-release text.",
+        "evidence_summary": "The DOJ release summarizes the indictment charging Russian intelligence officers and describes the use of DCLeaks and Guccifer 2.0 personas to release stolen material.",
+    }),
+    ("OSINT-005", "SRC-001"): ("https://www.justice.gov/opa/pr/justice-department-announces-compensation-process-onecoin-fraud-victims-funds-recovered", {
+        "page_title": "Justice Department Announces Compensation Process for OneCoin Fraud Victims",
+        "source_quality": "Official U.S. Department of Justice press release",
+        "verification_status": "Direct fetch returned readable DOJ press-release text.",
+        "evidence_summary": "The DOJ describes OneCoin as an international investment fraud scheme involving Ruja Ignatova and Karl Sebastian Greenwood and announces compensation for victims from recovered funds.",
     }),
 }
 
@@ -153,7 +216,7 @@ class TextExtractor(HTMLParser):
 def fetch(url: str) -> dict:
     request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "text/html,application/xhtml+xml,application/pdf;q=0.9,*/*;q=0.1"})
     try:
-        with urlopen(request, timeout=30, context=ssl.create_default_context()) as response:
+        with urlopen(request, timeout=10, context=ssl.create_default_context()) as response:
             payload = response.read()
             content_type = response.headers.get_content_type()
             status = int(response.status)
@@ -180,9 +243,14 @@ def fetch(url: str) -> dict:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--apply", action="store_true", help="Write successful and failed fetch metadata to case files")
+    parser.add_argument("--case", action="append", help="Refresh only the named case filename or case id; repeatable")
     args = parser.parse_args()
     failures = []
-    for path in sorted(CASES.glob("*.json")):
+    selected = set(args.case or [])
+    paths = sorted(CASES.glob("*.json"))
+    if selected:
+        paths = [p for p in paths if p.stem in selected or json.loads(p.read_text(encoding="utf-8")).get("case_id") in selected]
+    for path in paths:
         data = json.loads(path.read_text(encoding="utf-8"))
         changed = False
         for source in data.get("sources", []):

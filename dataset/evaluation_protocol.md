@@ -32,7 +32,7 @@ Measures the system's ability to identify relationships between extracted entiti
 
 - Let $R_{GT}$ be the set of ground truth relations: tuples of `(source_id, relationship_type, target_id)`.
 - Let $R_{SYS}$ be the set of relations output by the system.
-- A relation match is successful if both the source and target entity IDs match, and the relationship type aligns semantically (mapped via a semantic dictionary or LLM evaluator).
+- A relation match is successful if both the source and target entity IDs match, and the relationship type aligns through the case's explicit semantic mapping. The default evaluator uses a conservative deterministic alias dictionary; it does not ask an LLM to judge relations.
 
 $$\text{Precision}_{Rel} = \frac{|R_{SYS} \cap R_{GT}|}{|R_{SYS}|}$$
 $$\text{Recall}_{Rel} = \frac{|R_{SYS} \cap R_{GT}|}{|R_{GT}|}$$
@@ -72,7 +72,7 @@ $$\text{Investigation Completion (IC)} = \frac{\sum \text{Score of Findings}}{|K
 ### B. Source Traceability
 Verifies that the agent's findings are verifiable and not hallucinated.
 
-- For each finding reported by the agent, we count the number of claims that contain direct links or citations to the source URIs.
+- Findings must contain explicit source IDs. Claims must use `[CLAIM sources=...]...[/CLAIM]` annotations. A claim is traceable only when its source ID was actually returned by a benchmark tool during the run and is listed in the case.
 - A claim is "Traceable" if the cited source ID matches the ground-truth `source_references` for that entity/relation.
 
 $$\text{Source Traceability (ST)} = \frac{\text{Number of Correctly Traced Claims}}{\text{Total Number of Claims in Report}}$$
@@ -83,7 +83,7 @@ $$\text{Source Traceability (ST)} = \frac{\text{Number of Correctly Traced Claim
 Measures how much of the ground-truth proof chain the agent traversed. This is verified by analyzing the agent's reasoning logs against the step-by-step logic defined in the case.
 
 - Let $P_{GT}$ be the set of reasoning steps in `reasoning_proof_chains`.
-- A step is counted as "covered" if the agent's logs contain the conclusion and the supporting evidence/premises for that step.
+- A step is counted as covered only when the final output contains an explicit `[STEP id=...]...[/STEP]` annotation. This avoids awarding reasoning credit from incidental word overlap in a report.
 
 $$\text{Reasoning Coverage (RC)} = \frac{\text{Number of Traversed Steps}}{|P_{GT}|}$$
 
@@ -91,7 +91,7 @@ $$\text{Reasoning Coverage (RC)} = \frac{\text{Number of Traversed Steps}}{|P_{G
 
 ### D. Qualitative Report Quality
 Evaluates the professionalism and clarity of the generated markdown report. Rated on a scale of 1-5 (or normalized to 0-1) using a standardized rubric:
-1. **Structure (0.2)**: Follows a professional intelligence report format (Executive Summary, Findings, Evidence Map).
+1. **Structure (0.2)**: Follows a professional intelligence report format (Executive Summary, Findings, Evidence Map). The implementation currently uses a deterministic proxy rubric and reports each check separately.
 2. **Clarity (0.2)**: Clear, objective language with no stylistic fluff.
 3. **Actionability (0.2)**: Provides clear intelligence or next steps.
 4. **OpSec awareness (0.2)**: Identifies risks associated with target interaction.
