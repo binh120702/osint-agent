@@ -1,7 +1,10 @@
 import os
 import json
 import sys
+from pathlib import Path
 from jsonschema import validate, ValidationError
+
+from audit_provenance import audit as audit_provenance
 
 def validate_case_file(filepath, schema):
     print(f"Validating {os.path.basename(filepath)}...")
@@ -72,6 +75,7 @@ def validate_case_file(filepath, schema):
     return True
 
 def main():
+    strict_provenance = '--strict-provenance' in sys.argv
     script_dir = os.path.dirname(os.path.abspath(__file__))
     project_dir = os.path.dirname(script_dir)
     schema_path = os.path.join(project_dir, 'schema', 'case_schema.json')
@@ -98,6 +102,14 @@ def main():
         if not validate_case_file(case_file, schema):
             all_valid = False
             print("-" * 50)
+        if strict_provenance:
+            provenance_errors = audit_provenance(Path(case_file))
+            if provenance_errors:
+                all_valid = False
+                print(f"  [ERROR] Provenance audit failed for {os.path.basename(case_file)}:")
+                for error in provenance_errors:
+                    print(f"    - {error}")
+                print("-" * 50)
 
     if all_valid:
         print("\nAll cases passed validation successfully.")

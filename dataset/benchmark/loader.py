@@ -83,6 +83,17 @@ def load_case(case_id_or_path: str | Path, validate: bool = True) -> BenchmarkCa
     path = requested if requested.exists() else CASES_PATH / f"{case_id_or_path}.json"
     if not path.exists():
         matches = sorted(CASES_PATH.glob(f"*{case_id_or_path}*.json"))
+        if not matches:
+            # Case IDs such as OSINT-001 are metadata identifiers and do not
+            # necessarily occur in the filename. Resolve them without relying
+            # on filename conventions.
+            for candidate in sorted(CASES_PATH.glob("*.json")):
+                try:
+                    candidate_data = json.loads(candidate.read_text(encoding="utf-8"))
+                except (OSError, json.JSONDecodeError):
+                    continue
+                if str(candidate_data.get("case_id", "")) == str(case_id_or_path):
+                    matches.append(candidate)
         if len(matches) != 1:
             raise FileNotFoundError(f"Could not resolve benchmark case: {case_id_or_path}")
         path = matches[0]

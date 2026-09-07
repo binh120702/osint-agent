@@ -9,6 +9,7 @@ if str(SRC_ROOT) not in sys.path:
 from .loader import load_case
 from .replay import SourceReplay
 from .scoring import score_case
+from .case_quality import audit
 
 
 class BenchmarkFrameworkTests(unittest.TestCase):
@@ -48,6 +49,30 @@ class BenchmarkFrameworkTests(unittest.TestCase):
         self.assertEqual(scores["relations"]["f1"], 1.0)
         self.assertEqual(scores["contradictions"]["f1"], 1.0)
         self.assertEqual(scores["reasoning_coverage"]["ratio"], 1.0)
+
+    def test_structured_report_annotations_are_scored(self):
+        output = {
+            "report": "Evidence shows the claim. " * 30,
+            "claims": [{"claim": "claim", "source_references": ["SRC-001"]}],
+            "key_findings": [{"question": self.case.data["ground_truth"]["key_findings"][0]["question"], "answer": self.case.data["ground_truth"]["key_findings"][0]["answer"], "supporting_entities": self.case.data["ground_truth"]["key_findings"][0]["supporting_entities"], "source_references": ["SRC-001"]}],
+            "reasoning_steps": [],
+            "contradictions": [],
+        }
+        scores = score_case(self.case.data, output)
+        self.assertEqual(scores["source_traceability"]["claim_level"]["ratio"], 1.0)
+        self.assertEqual(scores["report_quality"]["score"], 1.0)
+
+    def test_case_quality_does_not_require_human_review_flag(self):
+        case = {"sources": [{"source_id": "SRC-1", "uri": "https://example.org/a", "raw_text": "verified passage"}],
+                "ground_truth": {"entities": [{"id": "ENT-1", "source_references": ["SRC-1"], "evidence": [{"source_id": "SRC-1", "quote": "verified passage"}]}]}}
+        errors = audit(case, strict=True)
+        self.assertFalse(any("not human verified" in error for error in errors))
+
+    def test_case_quality_rejects_quote_not_in_snapshot(self):
+        case = {"sources": [{"source_id": "SRC-1", "uri": "https://example.org/a", "raw_text": "actual passage"}],
+                "ground_truth": {"entities": [{"id": "ENT-1", "source_references": ["SRC-1"], "evidence": [{"source_id": "SRC-1", "quote": "invented passage"}]}]}}
+        errors = audit(case, strict=True)
+        self.assertTrue(any("not present" in error for error in errors))
 
     def test_string_metadata_fields_are_supported(self):
         from tools.knowledge_base import _load_kb_config

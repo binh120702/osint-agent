@@ -3,6 +3,42 @@
   "title": "OSINT-Bench Case Schema",
   "description": "Schema definition for an OSINT-Bench evaluation case.",
   "type": "object",
+  "definitions": {
+    "evidence": {
+      "type": "object",
+      "description": "Exact evidence passage copied from the immutable source snapshot.",
+      "properties": {
+        "source_id": {
+          "type": "string"
+        },
+        "quote": {
+          "type": "string",
+          "minLength": 1
+        },
+        "locator": {
+          "type": "string"
+        },
+        "claim_status": {
+          "type": "string",
+          "enum": [
+            "official_fact",
+            "court_record",
+            "official_allegation",
+            "researcher_assessment",
+            "company_statement",
+            "journalistic_report",
+            "uncertain"
+          ]
+        }
+      },
+      "required": [
+        "source_id",
+        "quote",
+        "claim_status"
+      ],
+      "additionalProperties": false
+    }
+  },
   "properties": {
     "case_id": {
       "type": "string",
@@ -28,12 +64,16 @@
     },
     "difficulty": {
       "type": "string",
-      "enum": ["Easy", "Medium", "Hard"],
+      "enum": [
+        "Easy",
+        "Medium",
+        "Hard"
+      ],
       "description": "Subjective complexity of the investigation case"
     },
     "sources": {
       "type": "array",
-      "description": "A list of simulated/reproducible sources representing the public information available to the agent",
+      "description": "A list of immutable snapshots of publicly accessible sources; synthetic or LLM-invented evidence is not permitted.",
       "items": {
         "type": "object",
         "properties": {
@@ -59,7 +99,7 @@
           },
           "uri": {
             "type": "string",
-            "description": "Mocked or real URL/location of the source"
+            "description": "Canonical HTTPS URL of the real public source from which this snapshot was retrieved"
           },
           "content": {
             "type": "object",
@@ -67,10 +107,15 @@
           },
           "raw_text": {
             "type": "string",
-            "description": "Raw text representation of the source (e.g., markdown content or transcript)"
+            "minLength": 120,
+            "description": "Verbatim or faithfully extracted source text; must not be LLM-generated"
           }
         },
-        "required": ["source_id", "type", "uri"]
+        "required": [
+          "source_id",
+          "type",
+          "uri"
+        ]
       }
     },
     "ground_truth": {
@@ -114,9 +159,20 @@
                   "type": "string"
                 },
                 "description": "List of source_ids where this entity is explicitly mentioned or derived from"
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/evidence"
+                }
               }
             },
-            "required": ["id", "type", "value", "source_references"]
+            "required": [
+              "id",
+              "type",
+              "value",
+              "source_references"
+            ]
           }
         },
         "relations": {
@@ -143,9 +199,20 @@
                   "type": "string"
                 },
                 "description": "List of source_ids providing evidence for this relationship"
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/evidence"
+                }
               }
             },
-            "required": ["source", "target", "relationship_type", "source_references"]
+            "required": [
+              "source",
+              "target",
+              "relationship_type",
+              "source_references"
+            ]
           }
         },
         "contradictions": {
@@ -172,9 +239,20 @@
               "reconciliation": {
                 "type": "string",
                 "description": "The correct logical explanation resolving the contradiction (the truth)"
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/evidence"
+                }
               }
             },
-            "required": ["contradiction_id", "source_references", "description", "reconciliation"]
+            "required": [
+              "contradiction_id",
+              "source_references",
+              "description",
+              "reconciliation"
+            ]
           }
         },
         "reasoning_proof_chains": {
@@ -188,18 +266,31 @@
               },
               "premise_entities": {
                 "type": "array",
-                "items": { "type": "string" }
+                "items": {
+                  "type": "string"
+                }
               },
               "premise_relations": {
                 "type": "array",
-                "items": { "type": "string" }
+                "items": {
+                  "type": "string"
+                }
               },
               "conclusion": {
                 "type": "string",
                 "description": "The logical deduction made in this step"
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/evidence"
+                }
               }
             },
-            "required": ["step_index", "conclusion"]
+            "required": [
+              "step_index",
+              "conclusion"
+            ]
           }
         },
         "key_findings": {
@@ -222,9 +313,25 @@
                   "type": "string"
                 },
                 "description": "The ground truth entity IDs needed to verify the answer"
+              },
+              "source_references": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/evidence"
+                }
               }
             },
-            "required": ["question", "answer", "supporting_entities"]
+            "required": [
+              "question",
+              "answer",
+              "supporting_entities"
+            ]
           }
         },
         "ground_truth_summary": {
@@ -232,11 +339,50 @@
           "description": "Narrative summary of the true events and investigation findings (markdown format)"
         }
       },
-      "required": ["entities", "relations", "key_findings", "ground_truth_summary"]
+      "required": [
+        "entities",
+        "relations",
+        "key_findings",
+        "ground_truth_summary"
+      ]
     },
     "evaluation_notes": {
       "type": "string",
       "description": "Custom tips or edge cases for evaluating systems against this case"
+    },
+    "retrieval_topics": {
+      "type": "array",
+      "description": "Reviewed retrieval topics and source relevance judgments; absent means retrieval is not annotated.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "topic_id": {
+            "type": "string"
+          },
+          "query": {
+            "type": "string"
+          },
+          "relevant_sources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "graded_relevance": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 2
+            }
+          }
+        },
+        "required": [
+          "topic_id",
+          "query",
+          "relevant_sources"
+        ]
+      }
     }
   },
   "required": [

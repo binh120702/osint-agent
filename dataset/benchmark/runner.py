@@ -23,6 +23,7 @@ if str(SRC_ROOT) not in sys.path:
 from .loader import BenchmarkCase, load_case, load_cases
 from .replay import OfflineToolOverrides, SourceReplay
 from .scoring import score_case
+from .retrieval_metrics import score_retrieval
 
 
 RESULTS_ROOT = Path(__file__).resolve().parent.parent / "results"
@@ -52,42 +53,75 @@ def _capture_neo4j_output(thread_id: str) -> tuple[list[dict[str, Any]], list[di
 
 
 def _report_output(case: BenchmarkCase, report: str) -> dict[str, Any]:
-    """Derive structured benchmark fields from the final report without a judge."""
-    normalized_report = report.casefold()
-    report_tokens = set(re.findall(r"[a-z0-9_@.-]+", normalized_report))
-    findings = []
-    for finding in case.data["ground_truth"].get("key_findings", []):
-        answer_tokens = {token for token in re.findall(r"[a-z0-9_@.-]+", finding["answer"].casefold()) if len(token) > 3}
-        overlap = len(answer_tokens & report_tokens) / len(answer_tokens) if answer_tokens else 0
-        supporting = []
-        for entity in case.data["ground_truth"]["entities"]:
-            if entity["id"] in finding.get("supporting_entities", []) and entity["value"].casefold() in normalized_report:
-                supporting.append(entity["id"])
-        if overlap >= 0.25:
-            findings.append({"question": finding["question"], "answer": report, "supporting_entities": supporting})
+    """Parse explicit machine-readable report annotations.
 
-    reasoning_steps = []
-    for step in case.data["ground_truth"].get("reasoning_proof_chains", []):
-        premise_values = []
-        entities_by_id = {item["id"]: item for item in case.data["ground_truth"]["entities"]}
-        for entity_id in step.get("premise_entities", []):
-            value = entities_by_id.get(entity_id, {}).get("value", "")
-            if value and value.casefold() in normalized_report:
-                premise_values.append(value)
-        conclusion_tokens = {token for token in re.findall(r"[a-z0-9_@.-]+", step["conclusion"].casefold()) if len(token) > 3}
-        if len(premise_values) >= max(1, len(step.get("premise_entities", [])) // 2) and len(conclusion_tokens & report_tokens) >= 3:
-            reasoning_steps.append(step["step_index"])
-    return {"key_findings": findings, "reasoning_steps": reasoning_steps}
+    The agent may write normal Markdown, but benchmark credit requires markers:
+      [FINDING question=... entities=ENT-1,ENT-2 sources=SRC-1] answer [/FINDING]
+      [CONTRADICTION id=CONTRA-1 sources=SRC-1,SRC-2] explanation [/CONTRADICTION]
+      [STEP id=1] evidence [/STEP]
+      [CLAIM sources=SRC-1,SRC-2] claim [/CLAIM]
+    """
+    def blocks(tag: str):
+        return re.findall(rf"\[{tag}([^]]*)\](.*?)\[/{tag}\]", report, re.I | re.S)
+
+    def attrs(header: str) -> dict[str, str]:
+        return {key: value.strip().strip('"') for key, value in re.findall(r'(\w+)=("[^"]*"|[^\s]+)', header)}
+
+    findings = []
+    for header, body in blocks("FINDING"):
+        a = attrs(header)
+        findings.append({"question": a.get("question", ""), "answer": body.strip(),
+                         "supporting_entities": [x for x in a.get("entities", "").split(",") if x],
+                         "source_references": [x for x in a.get("sources", "").split(",") if x]})
+    contradictions = []
+    for header, body in blocks("CONTRADICTION"):
+        a = attrs(header)
+        contradictions.append({"contradiction_id": a.get("id", ""),
+                               "source_references": [x for x in a.get("sources", "").split(",") if x],
+                               "description": body.strip()})
+    steps = []
+    for header, body in blocks("STEP"):
+        a = attrs(header)
+        if a.get("id", "").isdigit():
+            steps.append(int(a["id"]))
+    claims = []
+    for header, body in blocks("CLAIM"):
+        a = attrs(header)
+        claims.append({"claim": body.strip(), "source_references": [x for x in a.get("sources", "").split(",") if x]})
+    errors = []
+    entity_ids = {str(item["id"]) for item in case.data["ground_truth"].get("entities", [])}
+    source_ids = {str(item["source_id"]) for item in case.data.get("sources", [])}
+    contradiction_ids = {str(item["contradiction_id"]) for item in case.data["ground_truth"].get("contradictions", [])}
+    step_ids = {int(item["step_index"]) for item in case.data["ground_truth"].get("reasoning_proof_chains", [])}
+    for item in findings:
+        errors.extend(f"finding references unknown entity {x}" for x in item["supporting_entities"] if x not in entity_ids)
+        errors.extend(f"finding references unknown source {x}" for x in item["source_references"] if x not in source_ids)
+    for item in contradictions:
+        if item["contradiction_id"] not in contradiction_ids:
+            errors.append(f"unknown contradiction {item['contradiction_id']}")
+        errors.extend(f"contradiction references unknown source {x}" for x in item["source_references"] if x not in source_ids)
+    for item in claims:
+        errors.extend(f"claim references unknown source {x}" for x in item["source_references"] if x not in source_ids)
+    errors.extend(f"unknown proof step {x}" for x in steps if x not in step_ids)
+    return {"key_findings": findings, "contradictions": contradictions, "reasoning_steps": steps,
+            "claims": claims, "structured_output": bool(findings or contradictions or steps or claims),
+            "structured_output_valid": not errors, "structured_output_errors": errors}
 
 
 def _extract_output(trace: dict[str, Any], case: BenchmarkCase) -> dict[str, Any]:
     entities = []
     relations = []
     source_references = set()
+    available_sources = set()
     report = trace.get("final_report", "")
-    # Only citations present in the final report count as traceability evidence.
+    # A citation is eligible only if the agent actually received that source
+    # from a benchmark tool during this run.
+    for call in trace.get("tool_calls", []):
+        result = call.get("result", "")
+        if isinstance(result, str):
+            available_sources.update(re.findall(r"\bSRC-[A-Za-z0-9_-]+\b", result))
     for source in case.data.get("sources", []):
-        if source["source_id"] in report or source["uri"] in report:
+        if source["source_id"] in available_sources and (source["source_id"] in report or source["uri"] in report):
             source_references.add(source["source_id"])
     for call in trace.get("tool_calls", []):
         result = call.get("result", "")
@@ -118,11 +152,12 @@ def _extract_output(trace: dict[str, Any], case: BenchmarkCase) -> dict[str, Any
         "relations": relations,
         "source_references": sorted(source_references),
         "citations": sorted(source_references),
+        "available_source_references": sorted(available_sources),
         "report": report,
     }
 
 
-def run_existing_agent(case: BenchmarkCase, mode: str = "offline", llm_client=None) -> dict[str, Any]:
+def run_existing_agent(case: BenchmarkCase, mode: str = "offline", llm_client=None, graph_source: str = "trace") -> dict[str, Any]:
     """Run the production agent and capture its tool trace.
 
     This intentionally imports the application only when a real run is requested;
@@ -147,6 +182,8 @@ def run_existing_agent(case: BenchmarkCase, mode: str = "offline", llm_client=No
         active_call["duration_ms"] = round((time.time() - active_call["started_at"]) * 1000, 2)
 
     thread_id = f"benchmark-{case.case_id.lower()}-{uuid.uuid4().hex[:8]}"
+    if mode not in {"offline", "live"}:
+        raise ValueError(f"Unsupported execution mode: {mode}")
     context = OfflineToolOverrides(SourceReplay(case.data)) if mode == "offline" else None
     started = time.time()
     if context:
@@ -154,7 +191,16 @@ def run_existing_agent(case: BenchmarkCase, mode: str = "offline", llm_client=No
     try:
         final_report = "".join(loop.run(
             thread_id=thread_id,
-            user_message=f"Investigate this benchmark case. Goal: {case.data['investigation_goal']} Target: {case.data['target']}",
+            user_message=(
+                f"Investigate this benchmark case. Goal: {case.data['investigation_goal']} Target: {case.data['target']}\n\n"
+                "Use only evidence returned by benchmark sources. Do not invent facts. In the final report, "
+                "include explicit benchmark annotations using these exact markers (in addition to readable Markdown):\n"
+                "[CLAIM sources=SRC-001,SRC-002] one evidence-backed claim [/CLAIM]\n"
+                "[FINDING question=\"exact case question\" entities=ENT-001,ENT-002 sources=SRC-001] answer [/FINDING]\n"
+                "[CONTRADICTION id=CONTRA-001 sources=SRC-001,SRC-002] conflicting claims and reconciliation [/CONTRADICTION]\n"
+                "[STEP id=1] evidence and conclusion for proof step [/STEP]\n"
+                "Cite only source IDs that were returned by tools. Label allegations, assessments, and uncertainty explicitly."
+            ),
             on_tool_start=on_start,
             on_tool_end=on_end,
             llm_client=llm_client,
@@ -163,15 +209,22 @@ def run_existing_agent(case: BenchmarkCase, mode: str = "offline", llm_client=No
         if context:
             context.__exit__(None, None, None)
     trace = {"thread_id": thread_id, "tool_calls": calls, "final_report": final_report,
-             "operational": {"duration_ms": round((time.time() - started) * 1000, 2), "mode": mode}}
+             "operational": {"duration_ms": round((time.time() - started) * 1000, 2), "mode": mode,
+                             "iterations": sum(1 for x in calls if x.get("name")),
+                             "search_calls": sum(x.get("name") == "engine_search_tool" for x in calls),
+                             "fetch_calls": sum(x.get("name") in {"get_url_content", "deep_search"} for x in calls),
+                             "knowledge_base_calls": sum(x.get("name") == "knowledge_agent" for x in calls),
+                             "termination_reason": "final_report" if final_report else "empty_report"}}
     trace["output"] = _extract_output(trace, case)
     trace["output"]["operational"] = dict(trace["operational"])
-    graph = _capture_neo4j_output(thread_id)
-    if graph is not None:
+    if graph_source == "neo4j":
+        graph = _capture_neo4j_output(thread_id)
+        if graph is None:
+            raise RuntimeError("Requested Neo4j graph capture, but Neo4j was unavailable")
         trace["output"]["entities"], trace["output"]["relations"] = graph
         trace["output"]["graph_capture_source"] = "neo4j"
     else:
-        trace["output"]["graph_capture_source"] = "tool_result_fallback"
+        trace["output"]["graph_capture_source"] = "trace"
     trace["output"].update(_report_output(case, final_report))
     return trace
 
@@ -185,7 +238,7 @@ def write_result(case: BenchmarkCase, trace: dict[str, Any], run_id: str) -> Pat
         "case_sha256": case.sha256,
         "trace": trace,
         "output": output,
-        "metrics": score_case(case.data, output),
+        "metrics": {**score_case(case.data, output), "retrieval": score_retrieval(case.data, [trace])},
     }
     path = directory / f"{case.case_id}.json"
     path.write_text(json.dumps(result, ensure_ascii=False, indent=2, default=str), encoding="utf-8")
@@ -195,9 +248,12 @@ def write_result(case: BenchmarkCase, trace: dict[str, Any], run_id: str) -> Pat
 def main() -> int:
     parser = argparse.ArgumentParser(description="Run or validate OSINT-Bench cases")
     parser.add_argument("--case", default="case_001", help="Case ID/path, or all")
-    parser.add_argument("--mode", choices=("offline", "live"), default="offline")
+    parser.add_argument("--mode", choices=("offline", "recorded", "live"), default="offline")
+    parser.add_argument("--llm-fixture", help="RecordedLLMClient JSON fixture; required with --mode recorded")
     parser.add_argument("--max-iterations", type=int, help="Maximum agent iterations for this benchmark run")
     parser.add_argument("--validate-only", action="store_true", help="Validate cases without invoking an LLM")
+    parser.add_argument("--graph-source", choices=("trace", "neo4j"), default="trace",
+                        help="Graph representation to score; trace is reproducible, neo4j requires a database")
     args = parser.parse_args()
 
     if args.max_iterations is not None:
@@ -205,6 +261,8 @@ def main() -> int:
             parser.error("--max-iterations must be at least 1")
         os.environ["OSINT_MAX_ITERATIONS"] = str(args.max_iterations)
 
+    if args.mode == "recorded" and not args.llm_fixture:
+        parser.error("--llm-fixture is required with --mode recorded")
     cases = load_cases(args.case)
     if args.validate_only:
         for case in cases:
@@ -212,7 +270,7 @@ def main() -> int:
         return 0
 
     run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ") + "-" + uuid.uuid4().hex[:8]
-    manifest = {"run_id": run_id, "mode": args.mode,
+    manifest = {"run_id": run_id, "mode": args.mode, "graph_source": args.graph_source,
                 "cases": [{"case_id": case.case_id, "sha256": case.sha256} for case in cases],
                 "platform": platform.platform(), "python": sys.version, "started_at": datetime.now(timezone.utc).isoformat()}
     manifest_path = RESULTS_ROOT / run_id / "manifest.json"
@@ -220,7 +278,13 @@ def main() -> int:
     manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     summaries = []
     for case in cases:
-        path = write_result(case, run_existing_agent(case, mode=args.mode), run_id)
+        fixture_client = None
+        execution_mode = args.mode
+        if args.mode == "recorded":
+            from .recorded_llm import RecordedLLMClient
+            fixture_client = RecordedLLMClient(args.llm_fixture)
+            execution_mode = "offline"
+        path = write_result(case, run_existing_agent(case, mode=execution_mode, llm_client=fixture_client, graph_source=args.graph_source), run_id)
         result = json.loads(path.read_text(encoding="utf-8"))
         summaries.append({"case_id": case.case_id, "metrics": result["metrics"]})
         print(path)
