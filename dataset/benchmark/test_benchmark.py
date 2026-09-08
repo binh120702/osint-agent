@@ -74,6 +74,13 @@ class BenchmarkFrameworkTests(unittest.TestCase):
         self.assertTrue(parsed["structured_output_complete"])
         self.assertTrue(parsed["structured_output_valid"])
 
+    def test_required_question_prompt_is_explicit(self):
+        from dataset.benchmark import runner
+        import inspect
+        source = inspect.getsource(runner.run_existing_agent)
+        self.assertIn("one finding object for EVERY required case question", source)
+        self.assertIn("Required case questions", source)
+
     def test_prose_only_report_is_incomplete_not_valid_benchmark_output(self):
         parsed = _report_output(self.case, "A prose-only report with no payload.")
         self.assertFalse(parsed["structured_output_complete"])

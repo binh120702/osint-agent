@@ -332,6 +332,10 @@ Extraction Rules:
 5. If you detect images, classify them as type "image" and use their URL, path, or filename as the value.
 6. Extract metadata only when the input explicitly supports it. Do not infer or invent metadata.
 7. Metadata keys must be one of the fields listed for the entity type. Use arrays only when multiple distinct values are supported.
+8. Prefer the most specific allowed relationship type that is explicitly supported by the text. Do not replace a specific relationship with `associated_with`, `mentions`, or `other_relation` merely because the specific type is unfamiliar.
+9. Relationship direction matters: preserve the actor/source entity as `from` and the acted-on/target entity as `to`.
+10. Use `associated_with` only when the text establishes an association but does not support any more specific allowed relationship. Never emit a relation solely because two entities occur in the same passage.
+11. For relationships not covered by the allowed list, omit the relation rather than inventing a generic edge.
 """
 
 

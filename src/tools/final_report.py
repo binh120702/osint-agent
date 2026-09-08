@@ -36,6 +36,8 @@ At the very end, append a machine-readable benchmark payload in a fenced `json` 
 ```
 Use only entity and source identifiers supplied in the investigation context. Never invent identifiers or evidence. This JSON is required for automated evaluation; the Markdown report remains the human-readable companion.
 
+If the investigation context contains required case questions or key findings, emit exactly one finding object for each question. Preserve the question text (minor paraphrase is acceptable), do not merge multiple questions into one finding, and include an evidence-based answer for every question. If evidence is insufficient, emit the finding with an explicit uncertainty statement and the supporting sources that justify that limitation.
+
 Input format:
 - You may receive either plain text, or a JSON-like text blob that includes sections such as:
   `case`, `scope`, `kb_entities`, `kb_edges`, `evidence_urls`, `notes`, `assumptions`.

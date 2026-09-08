@@ -235,7 +235,9 @@ def run_existing_agent(case: BenchmarkCase, mode: str = "offline", llm_client=No
                 "Cite only source IDs that were returned by tools. Label allegations, assessments, and uncertainty explicitly. "
                 "End with a fenced json object containing exactly these arrays: findings, claims, reasoning_steps, contradictions. "
                 "Each finding must have question, answer, supporting_entities, source_references; each claim must have claim and source_references; "
-                "each reasoning step must have id and conclusion; each contradiction must have contradiction_id, description, and source_references."
+                "each reasoning step must have id and conclusion; each contradiction must have contradiction_id, description, and source_references. "
+                "Emit one finding object for EVERY required case question below; preserve each question (minor paraphrase is acceptable) and never combine multiple questions into one finding. "
+                + "Required case questions:\n- " + "\n- ".join(item["question"] for item in case.data["ground_truth"].get("key_findings", []))
             ),
             on_tool_start=on_start,
             on_tool_end=on_end,
