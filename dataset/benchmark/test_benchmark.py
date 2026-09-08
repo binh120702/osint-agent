@@ -10,6 +10,7 @@ from .loader import load_case
 from .replay import SourceReplay
 from .scoring import score_case
 from .case_quality import audit
+from .runner import _report_output
 
 
 class BenchmarkFrameworkTests(unittest.TestCase):
@@ -64,6 +65,19 @@ class BenchmarkFrameworkTests(unittest.TestCase):
         self.assertEqual(scores["source_traceability"]["claim_level"]["ratio"], 1.0)
         self.assertGreater(scores["key_findings"]["f1"], 0.0)
         self.assertLess(scores["report_quality"]["score"], 1.0)
+
+    def test_json_report_payload_is_parsed_and_completeness_is_explicit(self):
+        report = "Report\n```json\n" + __import__("json").dumps({
+            "findings": [], "claims": [], "reasoning_steps": [], "contradictions": []
+        }) + "\n```"
+        parsed = _report_output(self.case, report)
+        self.assertTrue(parsed["structured_output_complete"])
+        self.assertTrue(parsed["structured_output_valid"])
+
+    def test_prose_only_report_is_incomplete_not_valid_benchmark_output(self):
+        parsed = _report_output(self.case, "A prose-only report with no payload.")
+        self.assertFalse(parsed["structured_output_complete"])
+        self.assertEqual(set(parsed["missing_structured_sections"]), {"findings", "claims", "reasoning_steps", "contradictions"})
 
     def test_invalid_reasoning_steps_are_not_credited(self):
         scores = score_case(self.case.data, {

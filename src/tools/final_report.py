@@ -25,6 +25,17 @@ The report should be in the following format (you may adapt it based on the info
 - CONCLUSION
 - REFERENCES
 
+At the very end, append a machine-readable benchmark payload in a fenced `json` block. Do not omit any of these four arrays, even when an array is empty:
+```json
+{
+  "findings": [{"question": "...", "answer": "...", "supporting_entities": ["ENT-001"], "source_references": ["SRC-001"]}],
+  "claims": [{"claim": "...", "source_references": ["SRC-001"]}],
+  "reasoning_steps": [{"id": 1, "conclusion": "..."}],
+  "contradictions": [{"contradiction_id": "CONTRA-001", "description": "...", "source_references": ["SRC-001", "SRC-002"]}]
+}
+```
+Use only entity and source identifiers supplied in the investigation context. Never invent identifiers or evidence. This JSON is required for automated evaluation; the Markdown report remains the human-readable companion.
+
 Input format:
 - You may receive either plain text, or a JSON-like text blob that includes sections such as:
   `case`, `scope`, `kb_entities`, `kb_edges`, `evidence_urls`, `notes`, `assumptions`.

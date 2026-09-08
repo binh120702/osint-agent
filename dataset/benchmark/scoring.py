@@ -202,6 +202,7 @@ def _report_quality(report: str, output: dict[str, Any], finding_score: dict[str
     text = str(report or "")
     checks = {
         "non_empty": bool(text.strip()),
+        "structured_output_complete": bool(output.get("structured_output_complete", False)),
         "structured_output_valid": bool(output.get("structured_output_valid", False)),
         "findings_present": bool(output.get("key_findings")),
         "findings_match": finding_score.get("f1", 0.0) >= 0.5,

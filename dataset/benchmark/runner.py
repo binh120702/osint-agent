@@ -53,14 +53,20 @@ def _capture_neo4j_output(thread_id: str) -> tuple[list[dict[str, Any]], list[di
 
 
 def _report_output(case: BenchmarkCase, report: str) -> dict[str, Any]:
-    """Parse explicit machine-readable report annotations.
+    """Parse the preferred JSON report payload, with legacy marker support."""
+    def json_payload() -> dict[str, Any] | None:
+        candidates = re.findall(r"```(?:json)?\s*(\{.*?\})\s*```", report or "", re.I | re.S)
+        candidates += re.findall(r"\{\s*\"findings\"\s*:.*\}", report or "", re.I | re.S)
+        for candidate in reversed(candidates):
+            try:
+                value = json.loads(candidate)
+            except json.JSONDecodeError:
+                continue
+            if isinstance(value, dict) and any(key in value for key in ("findings", "claims", "reasoning_steps", "contradictions")):
+                return value
+        return None
 
-    The agent may write normal Markdown, but benchmark credit requires markers:
-      [FINDING question=... entities=ENT-1,ENT-2 sources=SRC-1] answer [/FINDING]
-      [CONTRADICTION id=CONTRA-1 sources=SRC-1,SRC-2] explanation [/CONTRADICTION]
-      [STEP id=1] evidence [/STEP]
-      [CLAIM sources=SRC-1,SRC-2] claim [/CLAIM]
-    """
+    payload = json_payload()
     def blocks(tag: str):
         return re.findall(rf"\[{tag}([^]]*)\](.*?)\[/{tag}\]", report, re.I | re.S)
 
@@ -68,27 +74,52 @@ def _report_output(case: BenchmarkCase, report: str) -> dict[str, Any]:
         return {key: value.strip().strip('"') for key, value in re.findall(r'(\w+)=("[^"]*"|[^\s]+)', header)}
 
     findings = []
-    for header, body in blocks("FINDING"):
+    if payload is not None:
+        findings = payload.get("findings", payload.get("key_findings", []))
+        claims = payload.get("claims", [])
+        contradictions = payload.get("contradictions", [])
+        steps = payload.get("reasoning_steps", payload.get("steps", []))
+        normalized_steps = []
+        for step in steps if isinstance(steps, list) else []:
+            value = step.get("id", step.get("step_index")) if isinstance(step, dict) else step
+            if str(value).isdigit():
+                normalized_steps.append(int(value))
+        steps = normalized_steps
+    else:
+        claims = []
+        contradictions = []
+        steps = []
+    for header, body in blocks("FINDING") if payload is None else []:
         a = attrs(header)
         findings.append({"question": a.get("question", ""), "answer": body.strip(),
                          "supporting_entities": [x for x in a.get("entities", "").split(",") if x],
                          "source_references": [x for x in a.get("sources", "").split(",") if x]})
-    contradictions = []
-    for header, body in blocks("CONTRADICTION"):
+    if payload is None:
+        contradictions = []
+    for header, body in blocks("CONTRADICTION") if payload is None else []:
         a = attrs(header)
         contradictions.append({"contradiction_id": a.get("id", ""),
                                "source_references": [x for x in a.get("sources", "").split(",") if x],
                                "description": body.strip()})
-    steps = []
-    for header, body in blocks("STEP"):
+    if payload is None:
+        steps = []
+    for header, body in blocks("STEP") if payload is None else []:
         a = attrs(header)
         if a.get("id", "").isdigit():
             steps.append(int(a["id"]))
-    claims = []
-    for header, body in blocks("CLAIM"):
+    if payload is None:
+        claims = []
+    for header, body in blocks("CLAIM") if payload is None else []:
         a = attrs(header)
         claims.append({"claim": body.strip(), "source_references": [x for x in a.get("sources", "").split(",") if x]})
     errors = []
+    required = {"findings", "claims", "reasoning_steps", "contradictions"}
+    present = set()
+    if payload is not None:
+        present = {key for key in required if key in payload and isinstance(payload[key], list)}
+    elif findings or claims or steps or contradictions:
+        present = {"findings", "claims", "reasoning_steps", "contradictions"}
+    missing_sections = sorted(required - present)
     entity_ids = {str(item["id"]) for item in case.data["ground_truth"].get("entities", [])}
     source_ids = {str(item["source_id"]) for item in case.data.get("sources", [])}
     contradiction_ids = {str(item["contradiction_id"]) for item in case.data["ground_truth"].get("contradictions", [])}
@@ -103,9 +134,11 @@ def _report_output(case: BenchmarkCase, report: str) -> dict[str, Any]:
     for item in claims:
         errors.extend(f"claim references unknown source {x}" for x in item["source_references"] if x not in source_ids)
     errors.extend(f"unknown proof step {x}" for x in steps if x not in step_ids)
+    has_structured_contract = payload is not None or bool(findings or contradictions or steps or claims)
     return {"key_findings": findings, "contradictions": contradictions, "reasoning_steps": steps,
-            "claims": claims, "structured_output": bool(findings or contradictions or steps or claims),
-            "structured_output_valid": not errors, "structured_output_errors": errors}
+            "claims": claims, "structured_output": has_structured_contract,
+            "structured_output_valid": has_structured_contract and not errors, "structured_output_complete": not missing_sections,
+            "missing_structured_sections": missing_sections, "structured_output_errors": errors}
 
 
 def _extract_output(trace: dict[str, Any], case: BenchmarkCase) -> dict[str, Any]:
@@ -199,7 +232,10 @@ def run_existing_agent(case: BenchmarkCase, mode: str = "offline", llm_client=No
                 "[FINDING question=\"exact case question\" entities=ENT-001,ENT-002 sources=SRC-001] answer [/FINDING]\n"
                 "[CONTRADICTION id=CONTRA-001 sources=SRC-001,SRC-002] conflicting claims and reconciliation [/CONTRADICTION]\n"
                 "[STEP id=1] evidence and conclusion for proof step [/STEP]\n"
-                "Cite only source IDs that were returned by tools. Label allegations, assessments, and uncertainty explicitly."
+                "Cite only source IDs that were returned by tools. Label allegations, assessments, and uncertainty explicitly. "
+                "End with a fenced json object containing exactly these arrays: findings, claims, reasoning_steps, contradictions. "
+                "Each finding must have question, answer, supporting_entities, source_references; each claim must have claim and source_references; "
+                "each reasoning step must have id and conclusion; each contradiction must have contradiction_id, description, and source_references."
             ),
             on_tool_start=on_start,
             on_tool_end=on_end,
@@ -226,6 +262,13 @@ def run_existing_agent(case: BenchmarkCase, mode: str = "offline", llm_client=No
     else:
         trace["output"]["graph_capture_source"] = "trace"
     trace["output"].update(_report_output(case, final_report))
+    trace["output"]["graph_capture_diagnostics"] = {
+        "entity_records_emitted": len(trace["output"].get("entities", [])),
+        "relation_records_emitted": len(trace["output"].get("relations", [])),
+        "knowledge_agent_calls": sum(call.get("name") == "knowledge_agent" for call in calls),
+        "relations_expected": len(case.data["ground_truth"].get("relations", [])),
+        "contradictions_expected": len(case.data["ground_truth"].get("contradictions", [])),
+    }
     return trace
 
 
