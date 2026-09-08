@@ -57,10 +57,22 @@ class BenchmarkFrameworkTests(unittest.TestCase):
             "key_findings": [{"question": self.case.data["ground_truth"]["key_findings"][0]["question"], "answer": self.case.data["ground_truth"]["key_findings"][0]["answer"], "supporting_entities": self.case.data["ground_truth"]["key_findings"][0]["supporting_entities"], "source_references": ["SRC-001"]}],
             "reasoning_steps": [],
             "contradictions": [],
+            "available_source_references": ["SRC-001"],
+            "structured_output_valid": True,
         }
         scores = score_case(self.case.data, output)
         self.assertEqual(scores["source_traceability"]["claim_level"]["ratio"], 1.0)
-        self.assertEqual(scores["report_quality"]["score"], 1.0)
+        self.assertGreater(scores["key_findings"]["f1"], 0.0)
+        self.assertLess(scores["report_quality"]["score"], 1.0)
+
+    def test_invalid_reasoning_steps_are_not_credited(self):
+        scores = score_case(self.case.data, {
+            "reasoning_steps": [999], "structured_output_valid": False,
+            "structured_output_errors": ["unknown proof step 999"],
+        })
+        self.assertEqual(scores["reasoning_coverage"]["f1"], 0.0)
+        self.assertEqual(scores["reasoning_coverage"]["invalid"], [999])
+        self.assertLess(scores["report_quality"]["score"], 1.0)
 
     def test_case_quality_does_not_require_human_review_flag(self):
         case = {"sources": [{"source_id": "SRC-1", "uri": "https://example.org/a", "raw_text": "verified passage"}],

@@ -19,7 +19,9 @@ uv run --project src python -m dataset.benchmark.runner --case case_001 --mode o
 
 Results are written to `dataset/results/<run_id>/`. Offline mode replaces only search/content tools with case-snapshot replay. Live mode uses the normal production tools and is non-deterministic. Offline mode is deterministic with respect to source availability, but the production LLM and Neo4j remain external dependencies unless a benchmark-specific client and graph backend are supplied.
 
-Final-report scoring requires explicit annotations rather than broad prose overlap:
+Final-report scoring requires explicit annotations rather than broad prose overlap. Finding matching uses answer similarity with one-to-one matching, so paraphrased investigative questions are allowed. Reasoning reports precision, recall, and F1 over valid proof-step IDs and separately reports invalid IDs. Traceability checks source availability and claim/finding coverage. Quality includes structured-output validity and finding/traceability thresholds; it is not a writing-style or factuality score.
+
+Required annotations:
 
 ```text
 [CLAIM sources=SRC-001,SRC-002] evidence-backed claim [/CLAIM]
