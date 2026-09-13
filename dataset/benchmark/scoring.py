@@ -123,15 +123,23 @@ def _source_ids(output: dict[str, Any], source_lookup: dict[str, str]) -> set[st
 
 
 def _contradiction_scores(case: dict[str, Any], output: dict[str, Any]) -> dict[str, Any]:
-    expected_by_id = {str(item["contradiction_id"]): set(item.get("source_references", [])) for item in case["ground_truth"].get("contradictions", [])}
-    predicted = {str(item.get("contradiction_id", item.get("id", ""))): set(item.get("source_references", [])) for item in output.get("contradictions", []) if isinstance(item, dict)}
+    expected_items = case["ground_truth"].get("contradictions", [])
+    expected_by_id = {str(item["contradiction_id"]): set(item.get("source_references", [])) for item in expected_items}
+    predicted_items = [item for item in output.get("contradictions", []) if isinstance(item, dict)]
+    predicted = {str(item.get("contradiction_id", item.get("id", ""))): set(item.get("source_references", [])) for item in predicted_items}
     result = _f1(set(predicted), set(expected_by_id))
-    result["details"] = [{"contradiction_id": cid,
-                           "source_references_correct": predicted.get(cid, set()) >= refs,
-                           "source_reference_recall": len(predicted.get(cid, set()) & refs) / len(refs) if refs else 1.0}
-                          for cid, refs in expected_by_id.items() if cid in predicted]
+    details = []
+    for cid, refs in expected_by_id.items():
+        cited = predicted.get(cid, set())
+        details.append({"contradiction_id": cid,
+                        "source_references_correct": cited >= refs,
+                        "source_reference_recall": len(cited & refs) / len(refs) if refs else 1.0})
+    result["details"] = [item for item in details if item["contradiction_id"] in predicted]
     result["missing"] = sorted(set(expected_by_id) - set(predicted))
     result["unexpected"] = sorted(set(predicted) - set(expected_by_id))
+    recalls = [item["source_reference_recall"] for item in details if item["contradiction_id"] in predicted]
+    result["grounded_recall"] = sum(recalls) / len(recalls) if recalls else 0.0
+    result["grounded_f1"] = result["f1"] * result["grounded_recall"]
     return result
 
 
@@ -171,11 +179,13 @@ def _finding_scores(case: dict[str, Any], output: dict[str, Any], judge: Callabl
         expected_entities = set(item.get("supporting_entities", []))
         cited_entities = set(candidate.get("supporting_entities", []))
         cited_sources = set(candidate.get("source_references", []))
+        expected_sources = set(item.get("source_references", []))
         entity_ratio = len(cited_entities & expected_entities) / len(expected_entities) if expected_entities else 1.0
-        score = semantic * (0.5 + 0.5 * entity_ratio) if cited_sources else semantic * 0.5
+        source_ratio = len(cited_sources & expected_sources) / len(expected_sources) if expected_sources else (1.0 if cited_sources else 0.0)
+        score = semantic * (0.4 + 0.3 * entity_ratio + 0.3 * source_ratio) if cited_sources else semantic * 0.4
         details.append({"question": item["question"], "status": "matched", "score": score,
                         "semantic": semantic, "supporting_entity_recall": entity_ratio,
-                        "has_source_references": bool(cited_sources)})
+                        "source_recall": source_ratio, "has_source_references": bool(cited_sources)})
     tp = len(matched)
     precision = tp / len(predicted) if predicted else 0.0
     recall = tp / len(expected) if expected else 1.0
@@ -198,7 +208,21 @@ def _claim_traceability(case: dict[str, Any], output: dict[str, Any]) -> dict[st
             "unknown_sources": unknown, "unavailable_sources": unavailable}
 
 
-def _report_quality(report: str, output: dict[str, Any], finding_score: dict[str, Any], traceability: dict[str, Any]) -> dict[str, Any]:
+def _reasoning_quality(case: dict[str, Any], output: dict[str, Any], judge: Callable[[str, str], float] | None = None) -> dict[str, Any]:
+    expected = {int(item["step_index"]): item.get("conclusion", "") for item in case["ground_truth"].get("reasoning_proof_chains", [])}
+    details = {int(item["id"]): item.get("conclusion", "") for item in output.get("reasoning_step_details", []) if isinstance(item, dict) and str(item.get("id", "")).isdigit()}
+    scores = []
+    for step_id, conclusion in expected.items():
+        if step_id not in details:
+            continue
+        scores.append(judge(details[step_id], conclusion) if judge else _overlap_score(details[step_id], conclusion))
+    semantic = sum(scores) / len(scores) if scores else 0.0
+    coverage = len(set(details) & set(expected)) / len(expected) if expected else 1.0
+    return {"covered": len(scores), "expected": len(expected), "coverage": coverage, "semantic_similarity": semantic,
+            "grounded_score": coverage * semantic}
+
+
+def _report_quality(report: str, output: dict[str, Any], finding_score: dict[str, Any], traceability: dict[str, Any], contradiction_score: dict[str, Any], reasoning_score: dict[str, Any]) -> dict[str, Any]:
     text = str(report or "")
     checks = {
         "non_empty": bool(text.strip()),
@@ -207,6 +231,9 @@ def _report_quality(report: str, output: dict[str, Any], finding_score: dict[str
         "findings_present": bool(output.get("key_findings")),
         "findings_match": finding_score.get("f1", 0.0) >= 0.5,
         "claims_traceable": traceability.get("ratio", 0.0) >= 0.5,
+        "contradictions_grounded": contradiction_score.get("grounded_recall", 0.0) >= 0.5,
+        "finding_sources_grounded": traceability.get("finding_level", {}).get("ratio", 0.0) >= 0.5,
+        "reasoning_conclusions_grounded": reasoning_score.get("grounded_score", 0.0) >= 0.5,
         "uncertainty_language": bool(re.search(r"\b(alleged|reported|assessment|uncertain|unknown|evidence)\b", text, re.I)),
         "readable_length": 200 <= len(text) <= 30000,
     }
@@ -227,6 +254,8 @@ def score_case(case: dict[str, Any], output: dict[str, Any], judge: Callable[[st
     step_f1 = 2 * step_precision * step_recall / (step_precision + step_recall) if step_precision + step_recall else 0.0
     finding_scores = _finding_scores(case, output, judge)
     claim_traceability = _claim_traceability(case, output)
+    contradiction_scores = _contradiction_scores(case, output)
+    reasoning_quality = _reasoning_quality(case, output, judge)
     predicted_findings = [item for item in output.get("key_findings", []) if isinstance(item, dict)]
     available_expected = available_sources & expected_sources
     finding_sources = [set(item.get("source_references", [])) for item in predicted_findings]
@@ -246,13 +275,14 @@ def score_case(case: dict[str, Any], output: dict[str, Any], judge: Callable[[st
         "output_validation": {"valid": output.get("structured_output_valid", False), "errors": output.get("structured_output_errors", [])},
         "entities": _entity_scores(case, output),
         "relations": _relation_scores(case, output),
-        "contradictions": _contradiction_scores(case, output),
+        "contradictions": contradiction_scores,
         "key_findings": finding_scores,
         "source_traceability": traceability,
         "reasoning_coverage": {"covered": sorted(valid_steps), "invalid": sorted(invalid_steps), "total": len(proof_ids),
                                 "precision": step_precision, "recall": step_recall, "f1": step_f1,
                                 "ratio": step_recall,
                                 "status": "structured_step_ids" if output.get("reasoning_steps") else "no_structured_steps"},
-        "report_quality": _report_quality(output.get("report", ""), output, finding_scores, traceability),
+        "report_quality": _report_quality(output.get("report", ""), output, finding_scores, traceability, contradiction_scores, reasoning_quality),
+        "reasoning_quality": reasoning_quality,
         "operational": output.get("operational", {}),
     }

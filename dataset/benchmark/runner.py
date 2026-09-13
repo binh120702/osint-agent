@@ -80,10 +80,14 @@ def _report_output(case: BenchmarkCase, report: str) -> dict[str, Any]:
         contradictions = payload.get("contradictions", [])
         steps = payload.get("reasoning_steps", payload.get("steps", []))
         normalized_steps = []
+        step_details = []
         for step in steps if isinstance(steps, list) else []:
             value = step.get("id", step.get("step_index")) if isinstance(step, dict) else step
             if str(value).isdigit():
-                normalized_steps.append(int(value))
+                step_id = int(value)
+                normalized_steps.append(step_id)
+                if isinstance(step, dict):
+                    step_details.append({"id": step_id, "conclusion": str(step.get("conclusion", ""))})
         steps = normalized_steps
     else:
         claims = []
@@ -136,7 +140,7 @@ def _report_output(case: BenchmarkCase, report: str) -> dict[str, Any]:
     errors.extend(f"unknown proof step {x}" for x in steps if x not in step_ids)
     has_structured_contract = payload is not None or bool(findings or contradictions or steps or claims)
     return {"key_findings": findings, "contradictions": contradictions, "reasoning_steps": steps,
-            "claims": claims, "structured_output": has_structured_contract,
+            "reasoning_step_details": locals().get("step_details", []), "claims": claims, "structured_output": has_structured_contract,
             "structured_output_valid": has_structured_contract and not errors, "structured_output_complete": not missing_sections,
             "missing_structured_sections": missing_sections, "structured_output_errors": errors}
 

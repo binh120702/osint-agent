@@ -86,6 +86,20 @@ class BenchmarkFrameworkTests(unittest.TestCase):
         self.assertFalse(parsed["structured_output_complete"])
         self.assertEqual(set(parsed["missing_structured_sections"]), {"findings", "claims", "reasoning_steps", "contradictions"})
 
+    def test_reasoning_and_contradiction_scores_require_grounding(self):
+        expected = self.case.data["ground_truth"]
+        output = {
+            "reasoning_steps": [1, 2, 3, 4, 5, 6],
+            "reasoning_step_details": [{"id": i, "conclusion": "placeholder"} for i in range(1, 7)],
+            "contradictions": [{"contradiction_id": item["contradiction_id"], "description": "placeholder", "source_references": []} for item in expected["contradictions"]],
+            "structured_output_valid": True,
+        }
+        scores = score_case(self.case.data, output)
+        self.assertEqual(scores["reasoning_coverage"]["f1"], 1.0)
+        self.assertLess(scores["reasoning_quality"]["semantic_similarity"], 1.0)
+        self.assertEqual(scores["contradictions"]["f1"], 1.0)
+        self.assertEqual(scores["contradictions"]["grounded_recall"], 0.0)
+
     def test_invalid_reasoning_steps_are_not_credited(self):
         scores = score_case(self.case.data, {
             "reasoning_steps": [999], "structured_output_valid": False,
