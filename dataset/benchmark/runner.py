@@ -87,7 +87,9 @@ def _report_output(case: BenchmarkCase, report: str) -> dict[str, Any]:
                 step_id = int(value)
                 normalized_steps.append(step_id)
                 if isinstance(step, dict):
-                    step_details.append({"id": step_id, "conclusion": str(step.get("conclusion", ""))})
+                    step_details.append({"id": step_id, "conclusion": str(step.get("conclusion", "")),
+                                         "premise_entities": list(step.get("premise_entities", [])),
+                                         "premise_relations": list(step.get("premise_relations", []))})
         steps = normalized_steps
     else:
         claims = []
@@ -239,7 +241,7 @@ def run_existing_agent(case: BenchmarkCase, mode: str = "offline", llm_client=No
                 "Cite only source IDs that were returned by tools. Label allegations, assessments, and uncertainty explicitly. "
                 "End with a fenced json object containing exactly these arrays: findings, claims, reasoning_steps, contradictions. "
                 "Each finding must have question, answer, supporting_entities, source_references; each claim must have claim and source_references; "
-                "each reasoning step must have id and conclusion; each contradiction must have contradiction_id, description, and source_references. "
+                "each reasoning step must have id, conclusion, premise_entities, and premise_relations; each contradiction must have contradiction_id, description, and source_references. "
                 "Emit one finding object for EVERY required case question below; preserve each question (minor paraphrase is acceptable) and never combine multiple questions into one finding. "
                 + "Required case questions:\n- " + "\n- ".join(item["question"] for item in case.data["ground_truth"].get("key_findings", []))
             ),

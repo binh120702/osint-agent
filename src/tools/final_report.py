@@ -30,7 +30,7 @@ At the very end, append a machine-readable benchmark payload in a fenced `json` 
 {
   "findings": [{"question": "...", "answer": "...", "supporting_entities": ["ENT-001"], "source_references": ["SRC-001"]}],
   "claims": [{"claim": "...", "source_references": ["SRC-001"]}],
-  "reasoning_steps": [{"id": 1, "conclusion": "..."}],
+  "reasoning_steps": [{"id": 1, "conclusion": "...", "premise_entities": ["ENT-001"], "premise_relations": ["trojanized"]}],
   "contradictions": [{"contradiction_id": "CONTRA-001", "description": "...", "source_references": ["SRC-001", "SRC-002"]}]
 }
 ```

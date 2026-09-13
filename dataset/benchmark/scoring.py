@@ -208,18 +208,42 @@ def _claim_traceability(case: dict[str, Any], output: dict[str, Any]) -> dict[st
             "unknown_sources": unknown, "unavailable_sources": unavailable}
 
 
+def _token_similarity(left: str, right: str) -> float:
+    """Deterministic lexical entailment proxy; reports its method explicitly."""
+    left_tokens = set(re.findall(r"[a-z0-9_]+", normalize(left)))
+    right_tokens = set(re.findall(r"[a-z0-9_]+", normalize(right)))
+    if not right_tokens:
+        return 1.0 if not left_tokens else 0.0
+    return len(left_tokens & right_tokens) / len(right_tokens)
+
+
 def _reasoning_quality(case: dict[str, Any], output: dict[str, Any], judge: Callable[[str, str], float] | None = None) -> dict[str, Any]:
-    expected = {int(item["step_index"]): item.get("conclusion", "") for item in case["ground_truth"].get("reasoning_proof_chains", [])}
-    details = {int(item["id"]): item.get("conclusion", "") for item in output.get("reasoning_step_details", []) if isinstance(item, dict) and str(item.get("id", "")).isdigit()}
-    scores = []
-    for step_id, conclusion in expected.items():
-        if step_id not in details:
+    expected_items = {int(item["step_index"]): item for item in case["ground_truth"].get("reasoning_proof_chains", [])}
+    details = {int(item["id"]): item for item in output.get("reasoning_step_details", [])
+               if isinstance(item, dict) and str(item.get("id", "")).isdigit()}
+    detail_rows = []
+    for step_id, expected in expected_items.items():
+        actual = details.get(step_id)
+        if not actual:
             continue
-        scores.append(judge(details[step_id], conclusion) if judge else _overlap_score(details[step_id], conclusion))
-    semantic = sum(scores) / len(scores) if scores else 0.0
-    coverage = len(set(details) & set(expected)) / len(expected) if expected else 1.0
-    return {"covered": len(scores), "expected": len(expected), "coverage": coverage, "semantic_similarity": semantic,
-            "grounded_score": coverage * semantic}
+        expected_entities = set(expected.get("premise_entities", []))
+        expected_relations = set(expected.get("premise_relations", []))
+        actual_entities = set(actual.get("premise_entities", []))
+        actual_relations = set(actual.get("premise_relations", []))
+        entity_recall = len(actual_entities & expected_entities) / len(expected_entities) if expected_entities else 1.0
+        relation_recall = len(actual_relations & expected_relations) / len(expected_relations) if expected_relations else 1.0
+        premise_score = (entity_recall + relation_recall) / 2
+        conclusion_score = judge(actual.get("conclusion", ""), expected.get("conclusion", "")) if judge else _token_similarity(actual.get("conclusion", ""), expected.get("conclusion", ""))
+        detail_rows.append({"id": step_id, "premise_score": premise_score, "entity_recall": entity_recall,
+                            "relation_recall": relation_recall, "conclusion_similarity": conclusion_score,
+                            "grounded_score": premise_score * conclusion_score})
+    coverage = len(details.keys() & expected_items.keys()) / len(expected_items) if expected_items else 1.0
+    grounded = sum(row["grounded_score"] for row in detail_rows) / len(detail_rows) if detail_rows else 0.0
+    return {"covered": len(detail_rows), "expected": len(expected_items), "coverage": coverage,
+            "semantic_similarity": sum(row["conclusion_similarity"] for row in detail_rows) / len(detail_rows) if detail_rows else 0.0,
+            "premise_grounding": sum(row["premise_score"] for row in detail_rows) / len(detail_rows) if detail_rows else 0.0,
+            "grounded_score": coverage * grounded, "method": "premise_ids_plus_token_entailment_proxy",
+            "details": detail_rows}
 
 
 def _report_quality(report: str, output: dict[str, Any], finding_score: dict[str, Any], traceability: dict[str, Any], contradiction_score: dict[str, Any], reasoning_score: dict[str, Any]) -> dict[str, Any]:
