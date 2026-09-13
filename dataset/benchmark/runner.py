@@ -130,6 +130,20 @@ def _report_output(case: BenchmarkCase, report: str) -> dict[str, Any]:
     source_ids = {str(item["source_id"]) for item in case.data.get("sources", [])}
     contradiction_ids = {str(item["contradiction_id"]) for item in case.data["ground_truth"].get("contradictions", [])}
     step_ids = {int(item["step_index"]) for item in case.data["ground_truth"].get("reasoning_proof_chains", [])}
+    expected_step_ids = {int(item["step_index"]) for item in case.data["ground_truth"].get("reasoning_proof_chains", [])}
+    if payload is not None and steps and expected_step_ids and set(steps) != expected_step_ids:
+        missing_steps = sorted(expected_step_ids - set(steps))
+        extra_steps = sorted(set(steps) - expected_step_ids)
+        if missing_steps:
+            errors.append(f"missing required proof steps {missing_steps}")
+        if extra_steps:
+            errors.append(f"unknown proof steps {extra_steps}")
+    valid_relation_types = {str(item.get("relationship_type", "")) for item in case.data["ground_truth"].get("relations", [])}
+    for step in locals().get("step_details", []):
+        errors.extend(f"reasoning step {step['id']} references unknown entity {x}" for x in step.get("premise_entities", []) if x not in entity_ids)
+        errors.extend(f"reasoning step {step['id']} uses non-canonical relation {x}" for x in step.get("premise_relations", []) if x not in valid_relation_types)
+        if not step.get("conclusion", "").strip():
+            errors.append(f"reasoning step {step['id']} has empty conclusion")
     for item in findings:
         errors.extend(f"finding references unknown entity {x}" for x in item["supporting_entities"] if x not in entity_ids)
         errors.extend(f"finding references unknown source {x}" for x in item["source_references"] if x not in source_ids)

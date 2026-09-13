@@ -219,6 +219,8 @@ def _token_similarity(left: str, right: str) -> float:
 
 def _reasoning_quality(case: dict[str, Any], output: dict[str, Any], judge: Callable[[str, str], float] | None = None) -> dict[str, Any]:
     expected_items = {int(item["step_index"]): item for item in case["ground_truth"].get("reasoning_proof_chains", [])}
+    valid_entity_ids = {str(item["id"]) for item in case["ground_truth"].get("entities", [])}
+    valid_relation_types = {normalize(item["relationship_type"]) for item in case["ground_truth"].get("relations", [])}
     details = {int(item["id"]): item for item in output.get("reasoning_step_details", [])
                if isinstance(item, dict) and str(item.get("id", "")).isdigit()}
     detail_rows = []
@@ -234,9 +236,7 @@ def _reasoning_quality(case: dict[str, Any], output: dict[str, Any], judge: Call
         invalid_entities = sorted(actual_entities - set(
             item["id"] for item in case["ground_truth"].get("entities", [])
         ))
-        invalid_relations = sorted(actual_relations - {
-            normalize(item["relationship_type"]) for item in case["ground_truth"].get("relations", [])
-        })
+        invalid_relations = sorted(actual_relations - valid_relation_types)
         entity_recall = len(actual_entities & expected_entities) / len(expected_entities) if expected_entities else 1.0
         relation_recall = len(actual_relations & expected_relations) / len(expected_relations) if expected_relations else 1.0
         premise_score = (entity_recall + relation_recall) / 2

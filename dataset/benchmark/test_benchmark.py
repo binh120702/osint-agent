@@ -103,6 +103,20 @@ class BenchmarkFrameworkTests(unittest.TestCase):
         self.assertLess(scores["contradictions"]["f1"], 1.0)
         self.assertEqual(scores["contradictions"]["grounded_recall"], 0.0)
 
+    def test_missing_reasoning_steps_invalidates_structured_report(self):
+        import json
+        payload = {"findings": [], "claims": [], "reasoning_steps": [{"id": 1, "conclusion": "x", "premise_entities": [], "premise_relations": []}], "contradictions": []}
+        parsed = _report_output(self.case, "```json\n" + json.dumps(payload) + "\n```")
+        self.assertFalse(parsed["structured_output_valid"])
+        self.assertTrue(any("missing required proof steps" in error for error in parsed["structured_output_errors"]))
+
+    def test_noncanonical_reasoning_relation_invalidates_structured_report(self):
+        import json
+        payload = {"findings": [], "claims": [], "reasoning_steps": [{"id": i, "conclusion": "x", "premise_entities": [], "premise_relations": ["free form relation"]} for i in range(1, 7)], "contradictions": []}
+        parsed = _report_output(self.case, "```json\n" + json.dumps(payload) + "\n```")
+        self.assertFalse(parsed["structured_output_valid"])
+        self.assertTrue(any("non-canonical relation" in error for error in parsed["structured_output_errors"]))
+
     def test_invalid_reasoning_premises_are_reported(self):
         scores = score_case(self.case.data, {
             "reasoning_steps": [1],
