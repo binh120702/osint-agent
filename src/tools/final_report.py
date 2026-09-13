@@ -36,6 +36,8 @@ At the very end, append a machine-readable benchmark payload in a fenced `json` 
 ```
 Use only entity and source identifiers supplied in the investigation context. Never invent identifiers or evidence. This JSON is required for automated evaluation; the Markdown report remains the human-readable companion.
 
+For reasoning steps, `premise_entities` must contain exact entity IDs from the case context and `premise_relations` must contain exact canonical relation_type strings from the case context. Do not use prose descriptions such as "compromised build environment" or invent alternate identifiers.
+
 If the investigation context contains required case questions or key findings, emit exactly one finding object for each question. Preserve the question text (minor paraphrase is acceptable), do not merge multiple questions into one finding, and include an evidence-based answer for every question. If evidence is insufficient, emit the finding with an explicit uncertainty statement and the supporting sources that justify that limitation.
 
 Input format:

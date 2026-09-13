@@ -91,15 +91,27 @@ class BenchmarkFrameworkTests(unittest.TestCase):
         output = {
             "reasoning_steps": [1, 2, 3, 4, 5, 6],
             "reasoning_step_details": [{"id": i, "conclusion": "placeholder", "premise_entities": [], "premise_relations": []} for i in range(1, 7)],
-            "contradictions": [{"contradiction_id": item["contradiction_id"], "description": "placeholder", "source_references": []} for item in expected["contradictions"]],
+            "contradictions": [{"contradiction_id": expected["contradictions"][0]["contradiction_id"], "description": "placeholder", "source_references": []}],
             "structured_output_valid": True,
         }
         scores = score_case(self.case.data, output)
         self.assertEqual(scores["reasoning_coverage"]["f1"], 1.0)
         self.assertLess(scores["reasoning_quality"]["semantic_similarity"], 1.0)
         self.assertEqual(scores["reasoning_quality"]["method"], "premise_ids_plus_token_entailment_proxy")
-        self.assertEqual(scores["contradictions"]["f1"], 1.0)
+        self.assertEqual(scores["report_quality"]["checks"]["findings_match"], False)
+        self.assertEqual(scores["report_quality"]["checks"]["contradictions_complete"], False)
+        self.assertLess(scores["contradictions"]["f1"], 1.0)
         self.assertEqual(scores["contradictions"]["grounded_recall"], 0.0)
+
+    def test_invalid_reasoning_premises_are_reported(self):
+        scores = score_case(self.case.data, {
+            "reasoning_steps": [1],
+            "reasoning_step_details": [{"id": 1, "conclusion": "x", "premise_entities": ["ENT-999"], "premise_relations": ["made_up_relation"]}],
+            "structured_output_valid": True,
+        })
+        detail = scores["reasoning_quality"]["details"][0]
+        self.assertEqual(detail["invalid_premise_entities"], ["ENT-999"])
+        self.assertEqual(detail["invalid_premise_relations"], ["made_up_relation"])
 
     def test_invalid_reasoning_steps_are_not_credited(self):
         scores = score_case(self.case.data, {

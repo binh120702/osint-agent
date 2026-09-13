@@ -242,6 +242,8 @@ def run_existing_agent(case: BenchmarkCase, mode: str = "offline", llm_client=No
                 "End with a fenced json object containing exactly these arrays: findings, claims, reasoning_steps, contradictions. "
                 "Each finding must have question, answer, supporting_entities, source_references; each claim must have claim and source_references; "
                 "each reasoning step must have id, conclusion, premise_entities, and premise_relations; each contradiction must have contradiction_id, description, and source_references. "
+                "For reasoning steps, premise_entities MUST contain exact ground-truth entity IDs and premise_relations MUST contain exact canonical relation_type strings from the case context; do not use prose relation descriptions. "
+                "Use the case entity and relation IDs exactly as supplied; do not substitute names, aliases, or invented IDs. "
                 "Emit one finding object for EVERY required case question below; preserve each question (minor paraphrase is acceptable) and never combine multiple questions into one finding. "
                 + "Required case questions:\n- " + "\n- ".join(item["question"] for item in case.data["ground_truth"].get("key_findings", []))
             ),

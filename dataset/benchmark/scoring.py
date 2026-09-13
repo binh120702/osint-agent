@@ -228,14 +228,22 @@ def _reasoning_quality(case: dict[str, Any], output: dict[str, Any], judge: Call
             continue
         expected_entities = set(expected.get("premise_entities", []))
         expected_relations = set(expected.get("premise_relations", []))
-        actual_entities = set(actual.get("premise_entities", []))
-        actual_relations = set(actual.get("premise_relations", []))
+        actual_entities = {str(value) for value in actual.get("premise_entities", [])}
+        actual_relations = {normalize(value) for value in actual.get("premise_relations", [])}
+        expected_relations = {normalize(value) for value in expected_relations}
+        invalid_entities = sorted(actual_entities - set(
+            item["id"] for item in case["ground_truth"].get("entities", [])
+        ))
+        invalid_relations = sorted(actual_relations - {
+            normalize(item["relationship_type"]) for item in case["ground_truth"].get("relations", [])
+        })
         entity_recall = len(actual_entities & expected_entities) / len(expected_entities) if expected_entities else 1.0
         relation_recall = len(actual_relations & expected_relations) / len(expected_relations) if expected_relations else 1.0
         premise_score = (entity_recall + relation_recall) / 2
         conclusion_score = judge(actual.get("conclusion", ""), expected.get("conclusion", "")) if judge else _token_similarity(actual.get("conclusion", ""), expected.get("conclusion", ""))
         detail_rows.append({"id": step_id, "premise_score": premise_score, "entity_recall": entity_recall,
                             "relation_recall": relation_recall, "conclusion_similarity": conclusion_score,
+                            "invalid_premise_entities": invalid_entities, "invalid_premise_relations": invalid_relations,
                             "grounded_score": premise_score * conclusion_score})
     coverage = len(details.keys() & expected_items.keys()) / len(expected_items) if expected_items else 1.0
     grounded = sum(row["grounded_score"] for row in detail_rows) / len(detail_rows) if detail_rows else 0.0
@@ -253,10 +261,11 @@ def _report_quality(report: str, output: dict[str, Any], finding_score: dict[str
         "structured_output_complete": bool(output.get("structured_output_complete", False)),
         "structured_output_valid": bool(output.get("structured_output_valid", False)),
         "findings_present": bool(output.get("key_findings")),
-        "findings_match": finding_score.get("f1", 0.0) >= 0.5,
+        "findings_match": finding_score.get("recall", 0.0) >= 1.0 and finding_score.get("precision", 0.0) >= 1.0,
         "claims_traceable": traceability.get("ratio", 0.0) >= 0.5,
-        "contradictions_grounded": contradiction_score.get("grounded_recall", 0.0) >= 0.5,
-        "finding_sources_grounded": traceability.get("finding_level", {}).get("ratio", 0.0) >= 0.5,
+        "contradictions_complete": contradiction_score.get("recall", 0.0) >= 1.0,
+        "contradictions_grounded": contradiction_score.get("grounded_recall", 0.0) >= 1.0,
+        "finding_sources_grounded": traceability.get("finding_level", {}).get("ratio", 0.0) >= 1.0,
         "reasoning_conclusions_grounded": reasoning_score.get("grounded_score", 0.0) >= 0.5,
         "uncertainty_language": bool(re.search(r"\b(alleged|reported|assessment|uncertain|unknown|evidence)\b", text, re.I)),
         "readable_length": 200 <= len(text) <= 30000,
