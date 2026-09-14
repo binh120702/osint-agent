@@ -248,6 +248,13 @@
           "SRC-003",
           "SRC-008",
           "SRC-009"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Supply chain attack against 3CX communications app could impact thousands | Cybersecurity Dive Skip to main content CONTINUE TO SITE ➞ Don't miss tomorrow's Cybersecurity industry news Let Cybersecurity Dive's free newsletter keep you informed, straight from your inbox.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -258,6 +265,13 @@
           "SRC-001",
           "SRC-003",
           "SRC-004"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "The affected software was 3CX DesktopApp 18.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -269,6 +283,13 @@
           "SRC-003",
           "SRC-008",
           "SRC-009"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-002",
+            "quote": "Massive 3CX Supply-Chain Hack Targeted Cryptocurrency Firms | WIRED Skip to main content SECURITY POLITICS THE BIG STORY BUSINESS SCIENCE CULTURE REVIEWS Newsletters Security Politics The Big Story Business Science Culture Reviews More The Big Interview Magazine Events WIRED Insider WIRED Consulting Newsletters Podcasts Video Livestreams Merch Search Andy Greenberg Security Apr 3, 2023 2:03 PM The Massive 3CX Supply-Chain Hack Targeted Cryptocurrency Firms North Korean hackers appear to have use",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -280,6 +301,13 @@
           "SRC-003",
           "SRC-008",
           "SRC-009"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "Figure 1: 3CX software supply chain compromise linked to Trading Technologies software supply chain compromise Software Supply Chain Exploitation Explained Mandiant Consulting’s investigation of the 3CX supply chain compromise has uncovered the initial intrusion vector: a malware-laced software package distributed via an earlier software supply chain compromise that began with a tampered installer for X_TRADER, a software package provided by Trading Technologies (Figure 1).",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -289,6 +317,13 @@
         "source_references": [
           "SRC-002",
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "VEILEDSIGNAL Backdoor Analysis Mandiant Consulting identified an installer with the filename X_TRADER_r7.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -298,6 +333,13 @@
         "source_references": [
           "SRC-002",
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "Mandiant determined that a complex loading process led to the deployment of VEILEDSIGNAL, a multi-stage modular backdoor, and its modules.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -307,6 +349,13 @@
         "source_references": [
           "SRC-002",
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "Mandiant tracks this activity as UNC4736, a suspected North Korean nexus cluster of activity.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -317,6 +366,13 @@
           "SRC-004",
           "SRC-006",
           "SRC-007"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-004",
+            "quote": "Powered by SAS: threat hunting and new techniques Dmitry Bestuzhev Costin Raiu Pierre Delcher Brian Bartholomew Boris Larin Ariel Jungheit Fabio Assolini From the same authors Operation ForumTroll continues: Russian political scientists targeted using plagiarism reports PassiveNeuron: a sophisticated campaign targeting servers of high-profile organizations Code highlighting with Cursor AI for $500,000 The GitVenom campaign: cryptocurrency theft using GitHub Lazarus group evolves its infection chain with old and new malware In the same category The game is over: when “free” comes at too high a price.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -328,6 +384,13 @@
           "SRC-004",
           "SRC-005",
           "SRC-006"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "Mandiant assesses with moderate confidence that UNC4736 is related to financially motivated North Korean “AppleJeus” activity as reported by CISA.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -336,6 +399,13 @@
         "value": "SUDDENICON",
         "source_references": [
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "416 and earlier, which contained malicious code that ran a downloader, SUDDENICON, which in turn received additional command and control (C2) servers from encrypted icon files hosted on GitHub.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -344,6 +414,13 @@
         "value": "ICONICSTEALER",
         "source_references": [
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "The decrypted C2 server was used to download a third stage identified as ICONICSTEALER, a dataminer that steals browser information.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -352,6 +429,13 @@
         "value": "Gopuram",
         "source_references": [
           "SRC-004"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-004",
+            "quote": "Not just an infostealer: Gopuram backdoor deployed through 3CX supply chain attack | Securelist Solutions for: Home Products Small Business 1-50 employees Medium Business 51-999 employees Enterprise 1000+ employees by Kaspersky CompanyAccount Get In Touch Dark mode off English Russian Spanish Brazil Solutions Internet of Things & Embedded Security Learn More Industrial Cybersecurity Learn More Fraud Prevention Learn More KasperskyOS-based solutions Learn More Other solutions Kaspersky for Security Operations Center Kaspersky IoT Infrastructure Security Kaspersky Secure Remote Workspace Industries National Cybersecurity Learn More Industrial Cybersecurity Learn More Finance Services Cybersecurity Learn More Healthcare Cybersecurity Learn More Transportation Cybersecurity Learn More Retail Cybersecurity Learn More Other Industries Telecom Cybersecurity View all Products Kaspersky Next NEW! Learn More Kaspersky XDR Learn More Kaspersky Endpoint Security for Business Learn More Kaspersky EDR Expert Learn More Kaspersky EDR Optimum Learn More Kaspersky Anti Targeted Attack Platform Learn More Kaspersky Hybrid Cloud Security Learn More Kaspersky SD-WAN Learn More Kaspersky Industrial CyberSecurity Learn More Kaspersky Container Security Learn More Other Products Kaspersky Security for Internet Gateway Kaspersky Embedded Systems Security Kaspersky IoT Infrastructure Security Kaspersky Secure Remote Workspace Kaspersky Security for Mail Server View All Services Kaspersky Cybersecurity Services Learn More Kaspersky Security Awareness Learn More Kaspersky Premium Support Learn More Kaspersky Threat Intelligence Learn More Kaspersky Managed Detection and Response Learn More Kaspersky Compromise Assessment Learn More Kaspersky SOC Consulting Learn More Other Services Kaspersky Professional Services Kaspersky Incident Response Kaspersky Cybersecurity Training View All Resource Center Case Studies White Papers Datasheets Technologies MITRE ATT&CK About Us Transparency Corporate News Press Center Careers Sponsorship Policy Blog Contacts GDPR Dark mode off Securelist menu English Russian Spanish Brazil Existing Customers Personal My Kaspersky Renew your product Update your product Customer support Business KSOS portal Kaspersky Business Hub Technical Support Knowledge Base Renew License Home Products Trials&Update Resource Center Business Kaspersky Next Small Business (1-50 employees) Medium Business (51-999 employees) Enterprise (1000+ employees) Securelist Threats Financial threats Mobile threats Web threats Secure environment (IoT) Vulnerabilities and exploits Spam and Phishing Industrial threats Categories APT reports Incidents Research Malware reports Spam and phishing reports Publications Kaspersky Security Bulletin Archive All Tags APT Logbook Webinars Statistics Encyclopedia Threats descriptions KSB 2021 About Us Company Transparency Corporate News Press Center Careers Sponsorships Policy Blog Contacts Partners Find a Partner Partner Program Content menu Close Subscribe Threat Response by Kaspersky Dark mode off Threats Threats APT (Targeted attacks) Secure environment (IoT) Mobile threats Financial threats Spam and phishing Industrial threats Web threats Vulnerabilities and exploits All threats Categories Categories APT reports Malware descriptions Security Bulletin Malware reports Spam and phishing reports Security technologies Research Publications All categories Other sections Threat Response All tags Webinars APT Logbook Statistics Encyclopedia Threats descriptions KSB 2025 Kaspersky ICS CERT Incidents Not just an infostealer: Gopuram backdoor deployed through 3CX supply chain attack Incidents 03 Apr 2023 minute read Georgy Kucherin Vasily Berdnikov Vilen Kamalov Authors Georgy Kucherin Vasily Berdnikov Vilen Kamalov On March 29, Crowdstrike published a report about a supply chain attack conducted via 3CXDesktopApp, a popular VoIP program.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -361,6 +445,13 @@
         "source_references": [
           "SRC-002",
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "Compromise of the 3CX Build Environment The attacker used a compiled version of the publicly available Fast Reverse Proxy project , to move laterally within the 3CX organization during the attack.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -370,6 +461,13 @@
         "source_references": [
           "SRC-002",
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "The macOS build server was compromised with POOLRAT backdoor using Launch Daemons as a persistence mechanism.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -379,6 +477,13 @@
         "source_references": [
           "SRC-002",
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "On the Windows build environment, the attacker deployed a TAXHAUL launcher and COLDCAT downloader that persisted by performing DLL search order hijacking through the IKEEXT service and ran with LocalSystem privileges.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -388,6 +493,13 @@
         "source_references": [
           "SRC-002",
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "On the Windows build environment, the attacker deployed a TAXHAUL launcher and COLDCAT downloader that persisted by performing DLL search order hijacking through the IKEEXT service and ran with LocalSystem privileges.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -397,6 +509,13 @@
         "source_references": [
           "SRC-003",
           "SRC-005"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "3CX Software Supply Chain Compromise Initiated by a Prior Software Supply Chain Compromise; Suspected North Korean Actor Responsible | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligenc",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -405,6 +524,13 @@
         "value": "download.tradingtechnologies.com",
         "source_references": [
           "SRC-002"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-002",
+            "quote": "Massive 3CX Supply-Chain Hack Targeted Cryptocurrency Firms | WIRED Skip to main content SECURITY POLITICS THE BIG STORY BUSINESS SCIENCE CULTURE REVIEWS Newsletters Security Politics The Big Story Business Science Culture Reviews More The Big Interview Magazine Events WIRED Insider WIRED Consulting Newsletters Podcasts Video Livestreams Merch Search Andy Greenberg Security Apr 3, 2023 2:03 PM The Massive 3CX Supply-Chain Hack Targeted Cryptocurrency Firms North Korean hackers appear to have use",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -416,6 +542,13 @@
           "SRC-003",
           "SRC-004",
           "SRC-007"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "\" ascii $ss4 = \"github.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -424,6 +557,13 @@
         "value": "journalide.org",
         "source_references": [
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "3CX Software Supply Chain Compromise Initiated by a Prior Software Supply Chain Compromise; Suspected North Korean Actor Responsible | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligenc",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -435,6 +575,13 @@
           "SRC-003",
           "SRC-008",
           "SRC-009"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "3CX Software Supply Chain Compromise Initiated by a Prior Software Supply Chain Compromise; Suspected North Korean Actor Responsible | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threat Intelligence 3CX Software Supply Chain Compromise Initiated by a Prior Software Supply Chain Compromise; Suspected North Korean Actor Responsible April 20, 2023 Mandiant Written by: Jeff Johnson, Fred Plan, Adrian Sanchez, Renato Fontana, Jake Nicastro, Dimiter Andonov, Marius Fodoreanu, Daniel Scott In March 2023, Mandiant Consulting responded to a supply chain compromise that affected 3CX Desktop App software.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -443,6 +590,13 @@
         "value": "Kaspersky",
         "source_references": [
           "SRC-004"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-004",
+            "quote": "Not just an infostealer: Gopuram backdoor deployed through 3CX supply chain attack | Securelist Solutions for: Home Products Small Business 1-50 employees Medium Business 51-999 employees Enterprise 1000+ employees by Kaspersky CompanyAccount Get In Touch Dark mode off English Russian Spanish Brazil Solutions Internet of Things & Embedded Security Learn More Industrial Cybersecurity Learn More Fraud Prevention Learn More KasperskyOS-based solutions Learn More Other solutions Kaspersky for Security Operations Center Kaspersky IoT Infrastructure Security Kaspersky Secure Remote Workspace Industries National Cybersecurity Learn More Industrial Cybersecurity Learn More Finance Services Cybersecurity Learn More Healthcare Cybersecurity Learn More Transportation Cybersecurity Learn More Retail Cybersecurity Learn More Other Industries Telecom Cybersecurity View all Products Kaspersky Next NEW! Learn More Kaspersky XDR Learn More Kaspersky Endpoint Security for Business Learn More Kaspersky EDR Expert Learn More Kaspersky EDR Optimum Learn More Kaspersky Anti Targeted Attack Platform Learn More Kaspersky Hybrid Cloud Security Learn More Kaspersky SD-WAN Learn More Kaspersky Industrial CyberSecurity Learn More Kaspersky Container Security Learn More Other Products Kaspersky Security for Internet Gateway Kaspersky Embedded Systems Security Kaspersky IoT Infrastructure Security Kaspersky Secure Remote Workspace Kaspersky Security for Mail Server View All Services Kaspersky Cybersecurity Services Learn More Kaspersky Security Awareness Learn More Kaspersky Premium Support Learn More Kaspersky Threat Intelligence Learn More Kaspersky Managed Detection and Response Learn More Kaspersky Compromise Assessment Learn More Kaspersky SOC Consulting Learn More Other Services Kaspersky Professional Services Kaspersky Incident Response Kaspersky Cybersecurity Training View All Resource Center Case Studies White Papers Datasheets Technologies MITRE ATT&CK About Us Transparency Corporate News Press Center Careers Sponsorship Policy Blog Contacts GDPR Dark mode off Securelist menu English Russian Spanish Brazil Existing Customers Personal My Kaspersky Renew your product Update your product Customer support Business KSOS portal Kaspersky Business Hub Technical Support Knowledge Base Renew License Home Products Trials&Update Resource Center Business Kaspersky Next Small Business (1-50 employees) Medium Business (51-999 employees) Enterprise (1000+ employees) Securelist Threats Financial threats Mobile threats Web threats Secure environment (IoT) Vulnerabilities and exploits Spam and Phishing Industrial threats Categories APT reports Incidents Research Malware reports Spam and phishing reports Publications Kaspersky Security Bulletin Archive All Tags APT Logbook Webinars Statistics Encyclopedia Threats descriptions KSB 2021 About Us Company Transparency Corporate News Press Center Careers Sponsorships Policy Blog Contacts Partners Find a Partner Partner Program Content menu Close Subscribe Threat Response by Kaspersky Dark mode off Threats Threats APT (Targeted attacks) Secure environment (IoT) Mobile threats Financial threats Spam and phishing Industrial threats Web threats Vulnerabilities and exploits All threats Categories Categories APT reports Malware descriptions Security Bulletin Malware reports Spam and phishing reports Security technologies Research Publications All categories Other sections Threat Response All tags Webinars APT Logbook Statistics Encyclopedia Threats descriptions KSB 2025 Kaspersky ICS CERT Incidents Not just an infostealer: Gopuram backdoor deployed through 3CX supply chain attack Incidents 03 Apr 2023 minute read Georgy Kucherin Vasily Berdnikov Vilen Kamalov Authors Georgy Kucherin Vasily Berdnikov Vilen Kamalov On March 29, Crowdstrike published a report about a supply chain attack conducted via 3CXDesktopApp, a popular VoIP program.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -452,6 +606,13 @@
         "source_references": [
           "SRC-003",
           "SRC-005"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "Mandiant would also like to thank the Google Threat Analysis Group (TAG) and Microsoft Threat Intelligence Center (MSTIC) for their collaboration in this research.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -460,6 +621,13 @@
         "value": "Operation AppleJeus",
         "source_references": [
           "SRC-005"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-005",
+            "quote": "These groups' activity has been publicly tracked as Operation Dream Job and Operation AppleJeus .",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -471,6 +639,13 @@
           "SRC-004",
           "SRC-005",
           "SRC-008"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "3CX Software Supply Chain Compromise Initiated by a Prior Software Supply Chain Compromise; Suspected North Korean Actor Responsible | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligenc",
+            "claim_status": "journalistic_report"
+          }
         ]
       }
     ],
@@ -484,6 +659,13 @@
           "SRC-003",
           "SRC-008",
           "SRC-009"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "Figure 1: 3CX software supply chain compromise linked to Trading Technologies software supply chain compromise Software Supply Chain Exploitation Explained Mandiant Consulting’s investigation of the 3CX supply chain compromise has uncovered the initial intrusion vector: a malware-laced software package distributed via an earlier software supply chain compromise that began with a tampered installer for X_TRADER, a software package provided by Trading Technologies (Figure 1).",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -493,6 +675,13 @@
         "source_references": [
           "SRC-002",
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "Figure 1: 3CX software supply chain compromise linked to Trading Technologies software supply chain compromise Software Supply Chain Exploitation Explained Mandiant Consulting’s investigation of the 3CX supply chain compromise has uncovered the initial intrusion vector: a malware-laced software package distributed via an earlier software supply chain compromise that began with a tampered installer for X_TRADER, a software package provided by Trading Technologies (Figure 1).",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -502,6 +691,13 @@
         "source_references": [
           "SRC-002",
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "VEILEDSIGNAL Backdoor Analysis Mandiant Consulting identified an installer with the filename X_TRADER_r7.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -511,6 +707,13 @@
         "source_references": [
           "SRC-002",
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "Mandiant determined that a complex loading process led to the deployment of VEILEDSIGNAL, a multi-stage modular backdoor, and its modules.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -520,6 +723,13 @@
         "source_references": [
           "SRC-002",
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "Mandiant tracks this activity as UNC4736, a suspected North Korean nexus cluster of activity.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -529,6 +739,13 @@
         "source_references": [
           "SRC-002",
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "Mandiant tracks this activity as UNC4736, a suspected North Korean nexus cluster of activity.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -539,6 +756,13 @@
           "SRC-001",
           "SRC-003",
           "SRC-004"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "Mandiant tracks this activity as UNC4736, a suspected North Korean nexus cluster of activity.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -547,6 +771,13 @@
         "relationship_type": "executed_downloader",
         "source_references": [
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "The affected software was 3CX DesktopApp 18.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -555,6 +786,13 @@
         "relationship_type": "downloaded_follow_on_payload",
         "source_references": [
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "416 and earlier, which contained malicious code that ran a downloader, SUDDENICON, which in turn received additional command and control (C2) servers from encrypted icon files hosted on GitHub.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -564,6 +802,13 @@
         "source_references": [
           "SRC-003",
           "SRC-004"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "416 and earlier, which contained malicious code that ran a downloader, SUDDENICON, which in turn received additional command and control (C2) servers from encrypted icon files hosted on GitHub.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -573,6 +818,13 @@
         "source_references": [
           "SRC-002",
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "Mandiant tracks this activity as UNC4736, a suspected North Korean nexus cluster of activity.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -582,6 +834,13 @@
         "source_references": [
           "SRC-002",
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "Mandiant tracks this activity as UNC4736, a suspected North Korean nexus cluster of activity.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -591,6 +850,13 @@
         "source_references": [
           "SRC-002",
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "Mandiant tracks this activity as UNC4736, a suspected North Korean nexus cluster of activity.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -600,6 +866,13 @@
         "source_references": [
           "SRC-002",
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "Mandiant tracks this activity as UNC4736, a suspected North Korean nexus cluster of activity.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -608,6 +881,13 @@
         "relationship_type": "configured_c2_domain",
         "source_references": [
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "The macOS build server was compromised with POOLRAT backdoor using Launch Daemons as a persistence mechanism.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -616,6 +896,13 @@
         "relationship_type": "reported_prior_compromise_of",
         "source_references": [
           "SRC-005"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "Mandiant would also like to thank the Google Threat Analysis Group (TAG) and Microsoft Threat Intelligence Center (MSTIC) for their collaboration in this research.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -626,6 +913,13 @@
           "SRC-003",
           "SRC-004",
           "SRC-005"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "Mandiant assesses with moderate confidence that UNC4736 is related to financially motivated North Korean “AppleJeus” activity as reported by CISA.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -635,6 +929,13 @@
         "source_references": [
           "SRC-004",
           "SRC-006"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-004",
+            "quote": "Powered by SAS: threat hunting and new techniques Dmitry Bestuzhev Costin Raiu Pierre Delcher Brian Bartholomew Boris Larin Ariel Jungheit Fabio Assolini From the same authors Operation ForumTroll continues: Russian political scientists targeted using plagiarism reports PassiveNeuron: a sophisticated campaign targeting servers of high-profile organizations Code highlighting with Cursor AI for $500,000 The GitVenom campaign: cryptocurrency theft using GitHub Lazarus group evolves its infection chain with old and new malware In the same category The game is over: when “free” comes at too high a price.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -646,6 +947,13 @@
           "SRC-004",
           "SRC-006",
           "SRC-007"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "Mandiant tracks this activity as UNC4736, a suspected North Korean nexus cluster of activity.",
+            "claim_status": "journalistic_report"
+          }
         ]
       }
     ],
@@ -658,7 +966,14 @@
           "SRC-003"
         ],
         "description": "The initial 3CX alert described the visible issue as appearing to involve a bundled library compiled into the Electron app via Git, whereas later 3CX/Mandiant reporting identified the upstream intrusion vector as a trojanized Trading Technologies X_TRADER installer that compromised a 3CX employee system and led into the corporate build environment.",
-        "reconciliation": "Treat the March 30 vendor alert as an early, incomplete incident notice about the compromised shipped app and the April 20 3CX/Mandiant publications as the later root-cause finding. The correct investigation conclusion is that the final 3CX DesktopApp compromise was caused by an earlier X_TRADER software supply chain compromise, not merely an isolated bundled-library issue."
+        "reconciliation": "Treat the March 30 vendor alert as an early, incomplete incident notice about the compromised shipped app and the April 20 3CX/Mandiant publications as the later root-cause finding. The correct investigation conclusion is that the final 3CX DesktopApp compromise was caused by an earlier X_TRADER software supply chain compromise, not merely an isolated bundled-library issue.",
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "3CX confirmed an advanced persistent threat actor is behind a targeted attack that is impacting its Windows Electron app running update 7, CEO Nick Galea said in an alert Thursday .",
+            "claim_status": "journalistic_report"
+          }
+        ]
       },
       {
         "contradiction_id": "CONTRA-002",
@@ -668,7 +983,14 @@
           "SRC-009"
         ],
         "description": "Public reporting described a potentially broad compromise of 3CX software used by many enterprise customers, while 3CX and Kaspersky reported that follow-on payload execution was selective and that Gopuram was deployed to fewer than ten observed machines.",
-        "reconciliation": "The compromised installer had broad distribution risk, but the actor appears to have filtered victims and deployed later-stage payloads selectively. Analysts should separate exposure scale from confirmed deeper compromise."
+        "reconciliation": "The compromised installer had broad distribution risk, but the actor appears to have filtered victims and deployed later-stage payloads selectively. Analysts should separate exposure scale from confirmed deeper compromise.",
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Informa TechTarget | Channel Dive CIO Dive Dark Reading SearchSecurity Explore our brands An Informa TechTarget Publication Deep Dive Library Events Press Releases Topics Sign up Search Sign up Search People also ask Loading questions.",
+            "claim_status": "journalistic_report"
+          }
+        ]
       }
     ],
     "reasoning_proof_chains": [
@@ -681,7 +1003,14 @@
         "premise_relations": [
           "trojanized"
         ],
-        "conclusion": "The investigation begins with a confirmed supply chain compromise of 3CX DesktopApp, affecting specific Windows and macOS Electron app versions."
+        "conclusion": "The investigation begins with a confirmed supply chain compromise of 3CX DesktopApp, affecting specific Windows and macOS Electron app versions.",
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Supply chain attack against 3CX communications app could impact thousands | Cybersecurity Dive Skip to main content CONTINUE TO SITE ➞ Don't miss tomorrow's Cybersecurity industry news Let Cybersecurity Dive's free newsletter keep you informed, straight from your inbox.",
+            "claim_status": "journalistic_report"
+          }
+        ]
       },
       {
         "step_index": 2,
@@ -696,7 +1025,14 @@
           "distributed_as_installer",
           "contained_malware"
         ],
-        "conclusion": "The initial vector was upstream of 3CX: a Trading Technologies X_TRADER installer contained VEILEDSIGNAL malware."
+        "conclusion": "The initial vector was upstream of 3CX: a Trading Technologies X_TRADER installer contained VEILEDSIGNAL malware.",
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "Figure 1: 3CX software supply chain compromise linked to Trading Technologies software supply chain compromise Software Supply Chain Exploitation Explained Mandiant Consulting’s investigation of the 3CX supply chain compromise has uncovered the initial intrusion vector: a malware-laced software package distributed via an earlier software supply chain compromise that began with a tampered installer for X_TRADER, a software package provided by Trading Technologies (Figure 1).",
+            "claim_status": "journalistic_report"
+          }
+        ]
       },
       {
         "step_index": 3,
@@ -709,7 +1045,14 @@
           "enabled_initial_compromise_of_employee_system_leading_to_corporate_access",
           "used_for_lateral_movement"
         ],
-        "conclusion": "The compromised X_TRADER installation enabled the actor to move from an employee system into the 3CX corporate environment."
+        "conclusion": "The compromised X_TRADER installation enabled the actor to move from an employee system into the 3CX corporate environment.",
+        "evidence": [
+          {
+            "source_id": "SRC-002",
+            "quote": "Massive 3CX Supply-Chain Hack Targeted Cryptocurrency Firms | WIRED Skip to main content SECURITY POLITICS THE BIG STORY BUSINESS SCIENCE CULTURE REVIEWS Newsletters Security Politics The Big Story Business Science Culture Reviews More The Big Interview Magazine Events WIRED Insider WIRED Consulting Newsletters Podcasts Video Livestreams Merch Search Andy Greenberg Security Apr 3, 2023 2:03 PM The Massive 3CX Supply-Chain Hack Targeted Cryptocurrency Firms North Korean hackers appear to have used the corrupted VoIP software to go after just a handful of crypto firms with “surgical precision.",
+            "claim_status": "journalistic_report"
+          }
+        ]
       },
       {
         "step_index": 4,
@@ -723,7 +1066,14 @@
           "used_on_macos_build_server",
           "used_on_windows_build_environment"
         ],
-        "conclusion": "The actor compromised 3CX build infrastructure on both Windows and macOS, enabling the later trojanization of 3CX DesktopApp."
+        "conclusion": "The actor compromised 3CX build infrastructure on both Windows and macOS, enabling the later trojanization of 3CX DesktopApp.",
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Supply chain attack against 3CX communications app could impact thousands | Cybersecurity Dive Skip to main content CONTINUE TO SITE ➞ Don't miss tomorrow's Cybersecurity industry news Let Cybersecurity Dive's free newsletter keep you informed, straight from your inbox.",
+            "claim_status": "journalistic_report"
+          }
+        ]
       },
       {
         "step_index": 5,
@@ -738,7 +1088,14 @@
           "downloaded_follow_on_payload",
           "retrieved_c2_data_from_encrypted_icon_files_hosted_on"
         ],
-        "conclusion": "The trojanized 3CX DesktopApp used a staged malware chain involving SUDDENICON, GitHub-hosted encrypted icon files, and ICONICSTEALER."
+        "conclusion": "The trojanized 3CX DesktopApp used a staged malware chain involving SUDDENICON, GitHub-hosted encrypted icon files, and ICONICSTEALER.",
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "The affected software was 3CX DesktopApp 18.",
+            "claim_status": "journalistic_report"
+          }
+        ]
       },
       {
         "step_index": 6,
@@ -754,7 +1111,14 @@
           "uses_or_is_associated_with",
           "targeted"
         ],
-        "conclusion": "The public attribution points to UNC4736, a suspected North Korean-nexus cluster, with overlap to Lazarus/AppleJeus cryptocurrency-focused activity."
+        "conclusion": "The public attribution points to UNC4736, a suspected North Korean-nexus cluster, with overlap to Lazarus/AppleJeus cryptocurrency-focused activity.",
+        "evidence": [
+          {
+            "source_id": "SRC-002",
+            "quote": "” Kaspersky says the appearance of that malware also represents a North Korean fingerprint: It has seen Gopuram used before on the same network as another piece of malware, known as AppleJeus, linked to North Korean hackers.",
+            "claim_status": "journalistic_report"
+          }
+        ]
       }
     ],
     "key_findings": [
@@ -767,6 +1131,13 @@
           "ENT-004",
           "ENT-005",
           "ENT-006"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "The Cybersecurity and Infrastructure Security Agency confirmed it is aware of reports the phone app has been trojanized and is urging organizations to review information provided by CrowdStrike and SentinelOne and hunt for indicators of compromise.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -778,6 +1149,13 @@
           "ENT-003",
           "ENT-004",
           "ENT-021"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "By Eric Geller • Updated June 2, 2026 themotioncloud via Getty Images Federal pivot on software security oversight could complicate vendor strategies Software companies cheered the elimination of a government-wide attestation mandate.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -788,6 +1166,13 @@
           "ENT-010",
           "ENT-011",
           "ENT-019"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "By Eric Geller • Updated June 2, 2026 themotioncloud via Getty Images Federal pivot on software security oversight could complicate vendor strategies Software companies cheered the elimination of a government-wide attestation mandate.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -800,6 +1185,13 @@
           "ENT-012",
           "ENT-021",
           "ENT-022"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Strategy Breaches Vulnerability Cyberattacks Threats Leadership & Careers Policy & Regulation An article from Supply chain attack against 3CX communications app could impact thousands Researchers warn a state-linked actor has launched malicious activity against a voice application widely used by major corporate customers.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -810,6 +1202,13 @@
           "ENT-002",
           "ENT-012",
           "ENT-025"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-002",
+            "quote": "” Security firms CrowdStrike and SentinelOne last week pinned the operation on North Korean hackers, who compromised 3CX installer software that's used by 600,000 organizations worldwide, according to the vendor.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -820,6 +1219,13 @@
           "ENT-023",
           "ENT-024",
           "ENT-025"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Published March 30, 2023 David Jones Reporter Share Copy link Email LinkedIn X/Twitter Facebook Print License Add us on Google Getty Images A supply chain attack campaign is underway, targeting customers of the 3CX desktop app, a voice and video conferencing application used by thousands of companies across the globe, researchers said Wednesday.",
+            "claim_status": "journalistic_report"
+          }
         ]
       }
     ],

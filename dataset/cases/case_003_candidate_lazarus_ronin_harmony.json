@@ -111,6 +111,13 @@
           "SRC-002",
           "SRC-003",
           "SRC-004"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "FBI confirms North Korea’s Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Data and intelligence Blockchain Analytics Due diligence dashboards Screening and monitoring Law enforcement Trace illicit activity and recover assets How we help law enforcement Blockchain analytics Screening and monitoring Investigations Spotlight Operation Atlantic Operation Atlantic How Elliptic helped trace $45M+ in stolen crypto Products Products Lens Real-time multi-asset wallet & transaction screening Discovery VASP screening & entity due diligence Investigator Single-click cross-chain investigations Ecosystem monitoring Visualizations for crypto exposure trend analysis Platform The Elliptic difference Issuer due diligence Asset due diligence Data Fabric Elliptic’s copilot API documentation ROI Compliance efficency calculator Compliance efficency calculator See how much your business could save Training & Certifications Courses Crypto certification Master wallet screening, transaction monitoring and deep investigations Product certifications Turn your team into experts on Elliptic's blockchain analytics solutions Spotlight series Self-paced compliance training Fundamentals Blockchain basics Country guides Glossary Webinar Crypto regulation in 2026: How to prepare Crypto regulation in 2026: How to prepare Watch on demand Insights & Community Resources Insights and research From quick guides to trend forecasting and deep analysis Customer stories Real results, big impact.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -120,6 +127,13 @@
         "source_references": [
           "SRC-001",
           "SRC-004"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "FBI confirms North Korea’s Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -129,6 +143,13 @@
         "source_references": [
           "SRC-002",
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-002",
+            "quote": "These are the results thus far of our investigation following the March 2022 theft of more than $600 million from Ronin Network, a sidechain built for the play-to-earn game Axie Infinity.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -138,6 +159,13 @@
         "source_references": [
           "SRC-001",
           "SRC-004"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "FBI confirms North Korea’s Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Data and intelligence Blockchain Analytics Due diligence dashboards Screening and monitoring Law enforcement Trace illicit activity and recover assets How we help law enforcement Blockchain analytics Screening and monitoring Investigations Spotlight Operation Atlantic Operation Atlantic How Elliptic helped trace $45M+ in stolen crypto Products Products Lens Real-time multi-asset wallet & transaction screening Discovery VASP screening & entity due diligence Investigator Single-click cross-chain investigations Ecosystem monitoring Visualizations for crypto exposure trend analysis Platform The Elliptic difference Issuer due diligence Asset due diligence Data Fabric Elliptic’s copilot API documentation ROI Compliance efficency calculator Compliance efficency calculator See how much your business could save Training & Certifications Courses Crypto certification Master wallet screening, transaction monitoring and deep investigations Product certifications Turn your team into experts on Elliptic's blockchain analytics solutions Spotlight series Self-paced compliance training Fundamentals Blockchain basics Country guides Glossary Webinar Crypto regulation in 2026: How to prepare Crypto regulation in 2026: How to prepare Watch on demand Insights & Community Resources Insights and research From quick guides to trend forecasting and deep analysis Customer stories Real results, big impact.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -146,6 +174,13 @@
         "value": "Ronin exploiter Ethereum address",
         "source_references": [
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "North Korea’s Lazarus Group identified as exploiters behind $540 million Ronin bridge heist | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investig",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -154,6 +189,13 @@
         "value": "FBI-listed Harmony wallets",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "FBI confirms North Korea’s Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -164,6 +206,13 @@
           "SRC-002",
           "SRC-003",
           "SRC-004"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-002",
+            "quote": "North Korea’s typical DeFi laundering technique has roughly five stages: Stolen Ether sent to intermediary wallets Ether mixed in batches using Tornado Cash Ether swapped for bitcoin Bitcoin mixed in batches Bitcoin deposited to crypto-to-fiat services for cashout Lazarus Group has replicated this process with large portions of Ronin’s stolen funds.",
+            "claim_status": "journalistic_report"
+          }
         ]
       }
     ],
@@ -175,6 +224,13 @@
         "source_references": [
           "SRC-001",
           "SRC-004"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "FBI confirms North Korea’s Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Data and intelligence Blockchain Analytics Due diligence dashboards Screening and monitoring Law enforcement Trace illicit activity and recover assets How we help law enforcement Blockchain analytics Screening and monitoring Investigations Spotlight Operation Atlantic Operation Atlantic How Elliptic helped trace $45M+ in stolen crypto Products Products Lens Real-time multi-asset wallet & transaction screening Discovery VASP screening & entity due diligence Investigator Single-click cross-chain investigations Ecosystem monitoring Visualizations for crypto exposure trend analysis Platform The Elliptic difference Issuer due diligence Asset due diligence Data Fabric Elliptic’s copilot API documentation ROI Compliance efficency calculator Compliance efficency calculator See how much your business could save Training & Certifications Courses Crypto certification Master wallet screening, transaction monitoring and deep investigations Product certifications Turn your team into experts on Elliptic's blockchain analytics solutions Spotlight series Self-paced compliance training Fundamentals Blockchain basics Country guides Glossary Webinar Crypto regulation in 2026: How to prepare Crypto regulation in 2026: How to prepare Watch on demand Insights & Community Resources Insights and research From quick guides to trend forecasting and deep analysis Customer stories Real results, big impact.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -184,6 +240,13 @@
         "source_references": [
           "SRC-002",
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-002",
+            "quote": "Much of the value stolen from DeFi protocols can be attributed to bad actors affiliated with North Korea, especially elite hacking units like Lazarus Group.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -193,6 +256,13 @@
         "source_references": [
           "SRC-001",
           "SRC-004"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "FBI confirms North Korea’s Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Data and intelligence Blockchain Analytics Due diligence dashboards Screening and monitoring Law enforcement Trace illicit activity and recover assets How we help law enforcement Blockchain analytics Screening and monitoring Investigations Spotlight Operation Atlantic Operation Atlantic How Elliptic helped trace $45M+ in stolen crypto Products Products Lens Real-time multi-asset wallet & transaction screening Discovery VASP screening & entity due diligence Investigator Single-click cross-chain investigations Ecosystem monitoring Visualizations for crypto exposure trend analysis Platform The Elliptic difference Issuer due diligence Asset due diligence Data Fabric Elliptic’s copilot API documentation ROI Compliance efficency calculator Compliance efficency calculator See how much your business could save Training & Certifications Courses Crypto certification Master wallet screening, transaction monitoring and deep investigations Product certifications Turn your team into experts on Elliptic's blockchain analytics solutions Spotlight series Self-paced compliance training Fundamentals Blockchain basics Country guides Glossary Webinar Crypto regulation in 2026: How to prepare Crypto regulation in 2026: How to prepare Watch on demand Insights & Community Resources Insights and research From quick guides to trend forecasting and deep analysis Customer stories Real results, big impact.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -201,6 +271,13 @@
         "relationship_type": "listed_as_lazarus_controlled",
         "source_references": [
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "North Korea’s Lazarus Group identified as exploiters behind $540 million Ronin bridge heist | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Data and intelligence Blockchain Analytics Due diligence dashboards Screening and monitoring Law enforcement Trace illicit activity and recover assets How we help law enforcement Blockchain analytics Screening and monitoring Investigations Spotlight Operation Atlantic Operation Atlantic How Elliptic helped trace $45M+ in stolen crypto Products Products Lens Real-time multi-asset wallet & transaction screening Discovery VASP screening & entity due diligence Investigator Single-click cross-chain investigations Ecosystem monitoring Visualizations for crypto exposure trend analysis Platform The Elliptic difference Issuer due diligence Asset due diligence Data Fabric Elliptic’s copilot API documentation ROI Compliance efficency calculator Compliance efficency calculator See how much your business could save Training & Certifications Courses Crypto certification Master wallet screening, transaction monitoring and deep investigations Product certifications Turn your team into experts on Elliptic's blockchain analytics solutions Spotlight series Self-paced compliance training Fundamentals Blockchain basics Country guides Glossary Webinar Crypto regulation in 2026: How to prepare Crypto regulation in 2026: How to prepare Watch on demand Insights & Community Resources Insights and research From quick guides to trend forecasting and deep analysis Customer stories Real results, big impact.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -209,6 +286,13 @@
         "relationship_type": "listed_as_north_korean_controlled",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "FBI confirms North Korea’s Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Data and intelligence Blockchain Analytics Due diligence dashboards Screening and monitoring Law enforcement Trace illicit activity and recover assets How we help law enforcement Blockchain analytics Screening and monitoring Investigations Spotlight Operation Atlantic Operation Atlantic How Elliptic helped trace $45M+ in stolen crypto Products Products Lens Real-time multi-asset wallet & transaction screening Discovery VASP screening & entity due diligence Investigator Single-click cross-chain investigations Ecosystem monitoring Visualizations for crypto exposure trend analysis Platform The Elliptic difference Issuer due diligence Asset due diligence Data Fabric Elliptic’s copilot API documentation ROI Compliance efficency calculator Compliance efficency calculator See how much your business could save Training & Certifications Courses Crypto certification Master wallet screening, transaction monitoring and deep investigations Product certifications Turn your team into experts on Elliptic's blockchain analytics solutions Spotlight series Self-paced compliance training Fundamentals Blockchain basics Country guides Glossary Webinar Crypto regulation in 2026: How to prepare Crypto regulation in 2026: How to prepare Watch on demand Insights & Community Resources Insights and research From quick guides to trend forecasting and deep analysis Customer stories Real results, big impact.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -219,6 +303,13 @@
           "SRC-002",
           "SRC-003",
           "SRC-004"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-002",
+            "quote": "Much of the value stolen from DeFi protocols can be attributed to bad actors affiliated with North Korea, especially elite hacking units like Lazarus Group.",
+            "claim_status": "journalistic_report"
+          }
         ]
       }
     ],
@@ -230,7 +321,14 @@
           "SRC-002"
         ],
         "description": "Elliptic reported the Ronin exploiter address as Lazarus-linked, while the FBI later described North Korean-controlled Harmony wallets and named Lazarus/APT38. The sources provide attribution at different points in time and with different wallet sets; they do not prove that every address in either incident is the same wallet.",
-        "reconciliation": "Report Lazarus/APT38 as the actor assessment supported by the FBI and Elliptic, but keep the Ronin exploiter address and FBI-listed Harmony wallets as separate evidence objects. Trace laundering hops independently rather than collapsing them into one address."
+        "reconciliation": "Report Lazarus/APT38 as the actor assessment supported by the FBI and Elliptic, but keep the Ronin exploiter address and FBI-listed Harmony wallets as separate evidence objects. Trace laundering hops independently rather than collapsing them into one address.",
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "FBI confirms North Korea’s Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Data and intelligence Blockchain Analytics Due diligence dashboards Screening and monitoring Law enforcement Trace illicit activity and recover assets How we help law enforcement Blockchain analytics Screening and monitoring Investigations Spotlight Operation Atlantic Operation Atlantic How Elliptic helped trace $45M+ in stolen crypto Products Products Lens Real-time multi-asset wallet & transaction screening Discovery VASP screening & entity due diligence Investigator Single-click cross-chain investigations Ecosystem monitoring Visualizations for crypto exposure trend analysis Platform The Elliptic difference Issuer due diligence Asset due diligence Data Fabric Elliptic’s copilot API documentation ROI Compliance efficency calculator Compliance efficency calculator See how much your business could save Training & Certifications Courses Crypto certification Master wallet screening, transaction monitoring and deep investigations Product certifications Turn your team into experts on Elliptic's blockchain analytics solutions Spotlight series Self-paced compliance training Fundamentals Blockchain basics Country guides Glossary Webinar Crypto regulation in 2026: How to prepare Crypto regulation in 2026: How to prepare Watch on demand Insights & Community Resources Insights and research From quick guides to trend forecasting and deep analysis Customer stories Real results, big impact.",
+            "claim_status": "journalistic_report"
+          }
+        ]
       }
     ],
     "reasoning_proof_chains": [
@@ -240,7 +338,14 @@
           "ENT-001"
         ],
         "premise_relations": [],
-        "conclusion": "Identify the primary target and gather independent public sources."
+        "conclusion": "Identify the primary target and gather independent public sources.",
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "FBI confirms North Korea’s Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Data and intelligence Blockchain Analytics Due diligence dashboards Screening and monitoring Law enforcement Trace illicit activity and recover assets How we help law enforcement Blockchain analytics Screening and monitoring Investigations Spotlight Operation Atlantic Operation Atlantic How Elliptic helped trace $45M+ in stolen crypto Products Products Lens Real-time multi-asset wallet & transaction screening Discovery VASP screening & entity due diligence Investigator Single-click cross-chain investigations Ecosystem monitoring Visualizations for crypto exposure trend analysis Platform The Elliptic difference Issuer due diligence Asset due diligence Data Fabric Elliptic’s copilot API documentation ROI Compliance efficency calculator Compliance efficency calculator See how much your business could save Training & Certifications Courses Crypto certification Master wallet screening, transaction monitoring and deep investigations Product certifications Turn your team into experts on Elliptic's blockchain analytics solutions Spotlight series Self-paced compliance training Fundamentals Blockchain basics Country guides Glossary Webinar Crypto regulation in 2026: How to prepare Crypto regulation in 2026: How to prepare Watch on demand Insights & Community Resources Insights and research From quick guides to trend forecasting and deep analysis Customer stories Real results, big impact.",
+            "claim_status": "journalistic_report"
+          }
+        ]
       },
       {
         "step_index": 2,
@@ -255,7 +360,14 @@
           "attributed_to_theft_from",
           "attributed_to_theft_from"
         ],
-        "conclusion": "Link aliases, organizations, people, platforms, or infrastructure across sources."
+        "conclusion": "Link aliases, organizations, people, platforms, or infrastructure across sources.",
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "FBI confirms North Korea’s Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Data and intelligence Blockchain Analytics Due diligence dashboards Screening and monitoring Law enforcement Trace illicit activity and recover assets How we help law enforcement Blockchain analytics Screening and monitoring Investigations Spotlight Operation Atlantic Operation Atlantic How Elliptic helped trace $45M+ in stolen crypto Products Products Lens Real-time multi-asset wallet & transaction screening Discovery VASP screening & entity due diligence Investigator Single-click cross-chain investigations Ecosystem monitoring Visualizations for crypto exposure trend analysis Platform The Elliptic difference Issuer due diligence Asset due diligence Data Fabric Elliptic’s copilot API documentation ROI Compliance efficency calculator Compliance efficency calculator See how much your business could save Training & Certifications Courses Crypto certification Master wallet screening, transaction monitoring and deep investigations Product certifications Turn your team into experts on Elliptic's blockchain analytics solutions Spotlight series Self-paced compliance training Fundamentals Blockchain basics Country guides Glossary Webinar Crypto regulation in 2026: How to prepare Crypto regulation in 2026: How to prepare Watch on demand Insights & Community Resources Insights and research From quick guides to trend forecasting and deep analysis Customer stories Real results, big impact.",
+            "claim_status": "journalistic_report"
+          }
+        ]
       },
       {
         "step_index": 3,
@@ -269,7 +381,14 @@
           "listed_as_north_korean_controlled",
           "laundered_funds_through"
         ],
-        "conclusion": "Produce traceable expected findings while preserving caveats."
+        "conclusion": "Produce traceable expected findings while preserving caveats.",
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "As the affected exchanges publicly announced that they would work with law enforcement to establish their identity, the attacker changed their laundering strategy to instead make use of Tornado Cash – a popular smart contract-based mixer on the Ethereum blockchain.",
+            "claim_status": "journalistic_report"
+          }
+        ]
       }
     ],
     "key_findings": [
@@ -281,6 +400,13 @@
           "ENT-002",
           "ENT-003",
           "ENT-004"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "FBI confirms North Korea’s Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Data and intelligence Blockchain Analytics Due diligence dashboards Screening and monitoring Law enforcement Trace illicit activity and recover assets How we help law enforcement Blockchain analytics Screening and monitoring Investigations Spotlight Operation Atlantic Operation Atlantic How Elliptic helped trace $45M+ in stolen crypto Products Products Lens Real-time multi-asset wallet & transaction screening Discovery VASP screening & entity due diligence Investigator Single-click cross-chain investigations Ecosystem monitoring Visualizations for crypto exposure trend analysis Platform The Elliptic difference Issuer due diligence Asset due diligence Data Fabric Elliptic’s copilot API documentation ROI Compliance efficency calculator Compliance efficency calculator See how much your business could save Training & Certifications Courses Crypto certification Master wallet screening, transaction monitoring and deep investigations Product certifications Turn your team into experts on Elliptic's blockchain analytics solutions Spotlight series Self-paced compliance training Fundamentals Blockchain basics Country guides Glossary Webinar Crypto regulation in 2026: How to prepare Crypto regulation in 2026: How to prepare Watch on demand Insights & Community Resources Insights and research From quick guides to trend forecasting and deep analysis Customer stories Real results, big impact.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -290,6 +416,13 @@
           "ENT-005",
           "ENT-006",
           "ENT-007"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "FBI confirms North Korea’s Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Data and intelligence Blockchain Analytics Due diligence dashboards Screening and monitoring Law enforcement Trace illicit activity and recover assets How we help law enforcement Blockchain analytics Screening and monitoring Investigations Spotlight Operation Atlantic Operation Atlantic How Elliptic helped trace $45M+ in stolen crypto Products Products Lens Real-time multi-asset wallet & transaction screening Discovery VASP screening & entity due diligence Investigator Single-click cross-chain investigations Ecosystem monitoring Visualizations for crypto exposure trend analysis Platform The Elliptic difference Issuer due diligence Asset due diligence Data Fabric Elliptic’s copilot API documentation ROI Compliance efficency calculator Compliance efficency calculator See how much your business could save Training & Certifications Courses Crypto certification Master wallet screening, transaction monitoring and deep investigations Product certifications Turn your team into experts on Elliptic's blockchain analytics solutions Spotlight series Self-paced compliance training Fundamentals Blockchain basics Country guides Glossary Webinar Crypto regulation in 2026: How to prepare Crypto regulation in 2026: How to prepare Watch on demand Insights & Community Resources Insights and research From quick guides to trend forecasting and deep analysis Customer stories Real results, big impact.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -301,6 +434,13 @@
           "ENT-005",
           "ENT-006",
           "ENT-007"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "FBI confirms North Korea’s Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Data and intelligence Blockchain Analytics Due diligence dashboards Screening and monitoring Law enforcement Trace illicit activity and recover assets How we help law enforcement Blockchain analytics Screening and monitoring Investigations Spotlight Operation Atlantic Operation Atlantic How Elliptic helped trace $45M+ in stolen crypto Products Products Lens Real-time multi-asset wallet & transaction screening Discovery VASP screening & entity due diligence Investigator Single-click cross-chain investigations Ecosystem monitoring Visualizations for crypto exposure trend analysis Platform The Elliptic difference Issuer due diligence Asset due diligence Data Fabric Elliptic’s copilot API documentation ROI Compliance efficency calculator Compliance efficency calculator See how much your business could save Training & Certifications Courses Crypto certification Master wallet screening, transaction monitoring and deep investigations Product certifications Turn your team into experts on Elliptic's blockchain analytics solutions Spotlight series Self-paced compliance training Fundamentals Blockchain basics Country guides Glossary Webinar Crypto regulation in 2026: How to prepare Crypto regulation in 2026: How to prepare Watch on demand Insights & Community Resources Insights and research From quick guides to trend forecasting and deep analysis Customer stories Real results, big impact.",
+            "claim_status": "journalistic_report"
+          }
         ]
       }
     ],

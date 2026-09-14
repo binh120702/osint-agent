@@ -113,6 +113,13 @@
           "SRC-002",
           "SRC-003",
           "SRC-004"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "INTERNET RESEARCH AGENCY LLC \nA/K/A MEDIASINTEZ LLC A/K/A \nGLAVSET LLC A/K/A MIXINFO \nLLC A/K/A AZIMUT LLC A/K/A \nNOVINFO LLC, \nCONCORD MANAGEMENT AND \nCONSULTING LLC, \nCONCORD CATERING, \nYEVGENIY VIKTOROVICH \nPRIGOZHIN, \nMIKHAIL IVANOVICH BYSTROV, \nMIKHAIL LEONIDOVICH BURCHIK \nA/K/A MIKHAIL ABRAMOV, \nALEKSANDRA YURYEVNA \nKRYLOVA, \nANNA VLADISLAVOVNA \nBOGACHEVA, \nSERGEY PAVLOVICH POLOZOV, \nMARIA ANATOLYEVNA BOVDA \nA/K/A MARIA ANATOLYEVNA \nBELYAEVA, \nROBERT SERGEYEVICH BOVDA, \nDZHEYKHUN NASIMI OGLY \nASLANOV A/K/A JAYHOON \nASLANOV A/K/A JAY ASLANOV, \nVADIM VLADIMIROVICH \nPODKOPAEV, \nGLEB IGOREVICH VASILCHENKO, \nIRINA VIKTOROVNA KAVERZINA, \nand \nVLADIMIR VENKOV.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -121,6 +128,13 @@
         "value": "Project Lakhta",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "interference operation that it referred to as “Project Lakhta.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -129,6 +143,13 @@
         "value": "Yevgeniy Viktorovich Prigozhin",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Defendant YEVGENIY VIKTOROVICH PRIGOZHIN (Пригожин Евгений \nВикторович) is a Russian national who controlled CONCORD.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -137,6 +158,13 @@
         "value": "Concord Management and Consulting LLC",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Defendants CONCORD MANAGEMENT AND CONSULTING LLC (Конкорд \nМенеджмент и Консалтинг) and CONCORD CATERING are related Russian entities with \nvarious Russian government contracts.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -145,6 +173,13 @@
         "value": "Concord Catering",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "CONCORD CATERING, \nYEVGENIY VIKTOROVICH \nPRIGOZHIN, \nMIKHAIL IVANOVICH BYSTROV, \nMIKHAIL LEONIDOVICH BURCHIK \nA/K/A MIKHAIL ABRAMOV, \nALEKSANDRA YURYEVNA \nKRYLOVA, \nANNA VLADISLAVOVNA \nBOGACHEVA, \nSERGEY PAVLOVICH POLOZOV, \nMARIA ANATOLYEVNA BOVDA \nA/K/A MARIA ANATOLYEVNA \nBELYAEVA, \nROBERT SERGEYEVICH BOVDA, \nDZHEYKHUN NASIMI OGLY \nASLANOV A/K/A JAYHOON \nASLANOV A/K/A JAY ASLANOV, \nVADIM VLADIMIROVICH \nPODKOPAEV, \nGLEB IGOREVICH VASILCHENKO, \nIRINA VIKTOROVNA KAVERZINA, \nand \nVLADIMIR VENKOV.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -154,6 +189,13 @@
         "source_references": [
           "SRC-001",
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "(U) The IRA is an entity headquartered in St.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -164,6 +206,13 @@
           "SRC-001",
           "SRC-003",
           "SRC-004"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "platforms such as YouTube, Facebook, Instagram, and Twitter.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -174,6 +223,13 @@
           "SRC-001",
           "SRC-003",
           "SRC-004"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "platforms such as YouTube, Facebook, Instagram, and Twitter.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -182,6 +238,13 @@
         "value": "Instagram",
         "source_references": [
           "SRC-004"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-004",
+            "quote": "In this analysis, we investigate how the IRA exploited the tools and platforms of Facebook, Instagram, Twitter, and YouTube to impact US users.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -190,6 +253,13 @@
         "value": "YouTube",
         "source_references": [
           "SRC-004"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-004",
+            "quote": "In this analysis, we investigate how the IRA exploited the tools and platforms of Facebook, Instagram, Twitter, and YouTube to impact US users.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -199,6 +269,13 @@
         "source_references": [
           "SRC-002",
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-002",
+            "quote": "\" The Senate committee found that the Internet Research Agency sought to harm Democrat Hillary Clinton and support Donald Trump \"at the direction of the Kremlin.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -208,6 +285,13 @@
         "source_references": [
           "SRC-002",
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-002",
+            "quote": "\" The Senate committee found that the Internet Research Agency sought to harm Democrat Hillary Clinton and support Donald Trump \"at the direction of the Kremlin.",
+            "claim_status": "journalistic_report"
+          }
         ]
       }
     ],
@@ -218,6 +302,13 @@
         "relationship_type": "part_of_operation",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "INTERNET RESEARCH AGENCY LLC \nA/K/A MEDIASINTEZ LLC A/K/A \nGLAVSET LLC A/K/A MIXINFO \nLLC A/K/A AZIMUT LLC A/K/A \nNOVINFO LLC, \nCONCORD MANAGEMENT AND \nCONSULTING LLC, \nCONCORD CATERING, \nYEVGENIY VIKTOROVICH \nPRIGOZHIN, \nMIKHAIL IVANOVICH BYSTROV, \nMIKHAIL LEONIDOVICH BURCHIK \nA/K/A MIKHAIL ABRAMOV, \nALEKSANDRA YURYEVNA \nKRYLOVA, \nANNA VLADISLAVOVNA \nBOGACHEVA, \nSERGEY PAVLOVICH POLOZOV, \nMARIA ANATOLYEVNA BOVDA \nA/K/A MARIA ANATOLYEVNA \nBELYAEVA, \nROBERT SERGEYEVICH BOVDA, \nDZHEYKHUN NASIMI OGLY \nASLANOV A/K/A JAYHOON \nASLANOV A/K/A JAY ASLANOV, \nVADIM VLADIMIROVICH \nPODKOPAEV, \nGLEB IGOREVICH VASILCHENKO, \nIRINA VIKTOROVNA KAVERZINA, \nand \nVLADIMIR VENKOV.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -226,6 +317,13 @@
         "relationship_type": "funded_or_controlled",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Defendant YEVGENIY VIKTOROVICH PRIGOZHIN (Пригожин Евгений \nВикторович) is a Russian national who controlled CONCORD.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -234,6 +332,13 @@
         "relationship_type": "funding_or_support_company",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Defendants CONCORD MANAGEMENT AND CONSULTING LLC (Конкорд \nМенеджмент и Консалтинг) and CONCORD CATERING are related Russian entities with \nvarious Russian government contracts.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -242,6 +347,13 @@
         "relationship_type": "funding_or_support_company",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "CONCORD CATERING, \nYEVGENIY VIKTOROVICH \nPRIGOZHIN, \nMIKHAIL IVANOVICH BYSTROV, \nMIKHAIL LEONIDOVICH BURCHIK \nA/K/A MIKHAIL ABRAMOV, \nALEKSANDRA YURYEVNA \nKRYLOVA, \nANNA VLADISLAVOVNA \nBOGACHEVA, \nSERGEY PAVLOVICH POLOZOV, \nMARIA ANATOLYEVNA BOVDA \nA/K/A MARIA ANATOLYEVNA \nBELYAEVA, \nROBERT SERGEYEVICH BOVDA, \nDZHEYKHUN NASIMI OGLY \nASLANOV A/K/A JAYHOON \nASLANOV A/K/A JAY ASLANOV, \nVADIM VLADIMIROVICH \nPODKOPAEV, \nGLEB IGOREVICH VASILCHENKO, \nIRINA VIKTOROVNA KAVERZINA, \nand \nVLADIMIR VENKOV.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -251,6 +363,13 @@
         "source_references": [
           "SRC-001",
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "(U) THE INTERNET RESEARCH AGENCY .",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -260,6 +379,13 @@
         "source_references": [
           "SRC-003",
           "SRC-004"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "(U) THE INTERNET RESEARCH AGENCY .",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -269,6 +395,13 @@
         "source_references": [
           "SRC-003",
           "SRC-004"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-003",
+            "quote": "(U) THE INTERNET RESEARCH AGENCY .",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -277,6 +410,13 @@
         "relationship_type": "used_platform",
         "source_references": [
           "SRC-004"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-004",
+            "quote": "Abstract Russia’s Internet Research Agency (IRA) launched an extended attack on the United States by using computational propaganda to misinform and polarize US voters.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -285,6 +425,13 @@
         "relationship_type": "used_platform",
         "source_references": [
           "SRC-004"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-004",
+            "quote": "Abstract Russia’s Internet Research Agency (IRA) launched an extended attack on the United States by using computational propaganda to misinform and polarize US voters.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -294,6 +441,13 @@
         "source_references": [
           "SRC-002",
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-002",
+            "quote": "Using Facebook pages, Instagram content and Twitter posts, Russian information operatives working for the Internet Research Agency had an \"overwhelming operational emphasis on race .",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -303,6 +457,13 @@
         "source_references": [
           "SRC-002",
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-002",
+            "quote": "Using Facebook pages, Instagram content and Twitter posts, Russian information operatives working for the Internet Research Agency had an \"overwhelming operational emphasis on race .",
+            "claim_status": "journalistic_report"
+          }
         ]
       }
     ],
@@ -314,7 +475,14 @@
           "SRC-002"
         ],
         "description": "The DOJ indictment describes a Russian influence operation using fake personas and concealed funding, while Senate reporting focuses on the campaign's content, audience targeting, and political effects. Neither source supports the claim that every divisive online post was created by the IRA.",
-        "reconciliation": "Use DOJ records for organizational and funding attribution and the Senate report for tactics and assessed objectives. Preserve uncertainty for unattributed content and distinguish the IRA's stated objectives from the broader social effects."
+        "reconciliation": "Use DOJ records for organizational and funding attribution and the Senate report for tactics and assessed objectives. Preserve uncertainty for unattributed content and distinguish the IRA's stated objectives from the broader social effects.",
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "INDICTMENT  \nThe  Grand  Jury  for  the  District  of  Columbia  charges:  \nIntroduction  \n1.",
+            "claim_status": "journalistic_report"
+          }
+        ]
       }
     ],
     "reasoning_proof_chains": [
@@ -324,7 +492,14 @@
           "ENT-001"
         ],
         "premise_relations": [],
-        "conclusion": "Identify the primary target and gather independent public sources."
+        "conclusion": "Identify the primary target and gather independent public sources.",
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "INTERNET RESEARCH AGENCY LLC \nA/K/A MEDIASINTEZ LLC A/K/A \nGLAVSET LLC A/K/A MIXINFO \nLLC A/K/A AZIMUT LLC A/K/A \nNOVINFO LLC, \nCONCORD MANAGEMENT AND \nCONSULTING LLC, \nCONCORD CATERING, \nYEVGENIY VIKTOROVICH \nPRIGOZHIN, \nMIKHAIL IVANOVICH BYSTROV, \nMIKHAIL LEONIDOVICH BURCHIK \nA/K/A MIKHAIL ABRAMOV, \nALEKSANDRA YURYEVNA \nKRYLOVA, \nANNA VLADISLAVOVNA \nBOGACHEVA, \nSERGEY PAVLOVICH POLOZOV, \nMARIA ANATOLYEVNA BOVDA \nA/K/A MARIA ANATOLYEVNA \nBELYAEVA, \nROBERT SERGEYEVICH BOVDA, \nDZHEYKHUN NASIMI OGLY \nASLANOV A/K/A JAYHOON \nASLANOV A/K/A JAY ASLANOV, \nVADIM VLADIMIROVICH \nPODKOPAEV, \nGLEB IGOREVICH VASILCHENKO, \nIRINA VIKTOROVNA KAVERZINA, \nand \nVLADIMIR VENKOV.",
+            "claim_status": "journalistic_report"
+          }
+        ]
       },
       {
         "step_index": 2,
@@ -339,7 +514,14 @@
           "funded_or_controlled",
           "funding_or_support_company"
         ],
-        "conclusion": "Link aliases, organizations, people, platforms, or infrastructure across sources."
+        "conclusion": "Link aliases, organizations, people, platforms, or infrastructure across sources.",
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "INTERNET RESEARCH AGENCY LLC \nA/K/A MEDIASINTEZ LLC A/K/A \nGLAVSET LLC A/K/A MIXINFO \nLLC A/K/A AZIMUT LLC A/K/A \nNOVINFO LLC, \nCONCORD MANAGEMENT AND \nCONSULTING LLC, \nCONCORD CATERING, \nYEVGENIY VIKTOROVICH \nPRIGOZHIN, \nMIKHAIL IVANOVICH BYSTROV, \nMIKHAIL LEONIDOVICH BURCHIK \nA/K/A MIKHAIL ABRAMOV, \nALEKSANDRA YURYEVNA \nKRYLOVA, \nANNA VLADISLAVOVNA \nBOGACHEVA, \nSERGEY PAVLOVICH POLOZOV, \nMARIA ANATOLYEVNA BOVDA \nA/K/A MARIA ANATOLYEVNA \nBELYAEVA, \nROBERT SERGEYEVICH BOVDA, \nDZHEYKHUN NASIMI OGLY \nASLANOV A/K/A JAYHOON \nASLANOV A/K/A JAY ASLANOV, \nVADIM VLADIMIROVICH \nPODKOPAEV, \nGLEB IGOREVICH VASILCHENKO, \nIRINA VIKTOROVNA KAVERZINA, \nand \nVLADIMIR VENKOV.",
+            "claim_status": "journalistic_report"
+          }
+        ]
       },
       {
         "step_index": 3,
@@ -353,7 +535,14 @@
           "targeted_against",
           "supported_or_promoted"
         ],
-        "conclusion": "Produce traceable expected findings while preserving caveats."
+        "conclusion": "Produce traceable expected findings while preserving caveats.",
+        "evidence": [
+          {
+            "source_id": "SRC-004",
+            "quote": "In this analysis, we investigate how the IRA exploited the tools and platforms of Facebook, Instagram, Twitter, and YouTube to impact US users.",
+            "claim_status": "journalistic_report"
+          }
+        ]
       }
     ],
     "key_findings": [
@@ -366,6 +555,13 @@
           "ENT-003",
           "ENT-004",
           "ENT-005"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "social media accounts and other sources of information about the 2016 U.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -377,6 +573,13 @@
           "ENT-008",
           "ENT-009",
           "ENT-010"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "organization  engaged  in  operations  to  interfere  with  elections  and  political  processes.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -386,6 +589,13 @@
           "ENT-011",
           "ENT-012",
           "ENT-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "included  a  statement  that  Facebook  had  “shared  [its]  findings  with  US  authorities  \ninvestigating  these  issues.",
+            "claim_status": "journalistic_report"
+          }
         ]
       }
     ],

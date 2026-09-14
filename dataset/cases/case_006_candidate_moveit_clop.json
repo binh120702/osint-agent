@@ -63,6 +63,13 @@
         "source_references": [
           "SRC-001",
           "SRC-002"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threat Intelligence Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft June 2, 2023 Mandiant Written by: Nader Zaveri, Jeremy Kennelly, Genevieve Stark, Matthew McWhirt, Dan Nutting, Kimberly Goody, Justin Moore, Joe Pisano, Zander Work, Peter Ukhanov, Juraj Sucik, Will Silverstone, Zach Schramm, Greg Blaum, Ollie Styles, Nicholas Bennett, Josh Murchie UPDATE (June 9): On June 6, 2023, Mandiant merged UNC4857 into FIN11 based on targeting, infrastructure, certificate and data leak site (DLS) overlaps.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -72,6 +79,13 @@
         "source_references": [
           "SRC-001",
           "SRC-002"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "This vulnerability was announced by Progress Software Corporation on May 31, 2023 and has been assigned CVE-2023-34362.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -80,6 +94,13 @@
         "value": "LEMURLOOT",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Following exploitation of the vulnerability, the threat actors are deploying a newly discovered LEMURLOOT web shell with filenames that masquerade as human.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -88,6 +109,13 @@
         "value": "UNC4857",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threat Intelligence Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft June 2, 2023 Mandiant Written by: Nader Zaveri, Jeremy Kennelly, Genevieve Stark, Matthew McWhirt, Dan Nutting, Kimberly Goody, Justin Moore, Joe Pisano, Zander Work, Peter Ukhanov, Juraj Sucik, Will Silverstone, Zach Schramm, Greg Blaum, Ollie Styles, Nicholas Bennett, Josh Murchie UPDATE (June 9): On June 6, 2023, Mandiant merged UNC4857 into FIN11 based on targeting, infrastructure, certificate and data leak site (DLS) overlaps.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -96,6 +124,13 @@
         "value": "FIN11",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threat Intelligence Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft June 2, 2023 Mandiant Written by: Nader Zaveri, Jeremy Kennelly, Genevieve Stark, Matthew McWhirt, Dan Nutting, Kimberly Goody, Justin Moore, Joe Pisano, Zander Work, Peter Ukhanov, Juraj Sucik, Will Silverstone, Zach Schramm, Greg Blaum, Ollie Styles, Nicholas Bennett, Josh Murchie UPDATE (June 9): On June 6, 2023, Mandiant merged UNC4857 into FIN11 based on targeting, infrastructure, certificate and data leak site (DLS) overlaps.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -104,6 +139,13 @@
         "value": "CL0P",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Then on June 6, 2023, a post on the CL0P^_-LEAKS data leak site (DLS) claimed responsibility for this activity and threatened to post stolen data if victims did not pay an extortion fee.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -112,6 +154,13 @@
         "value": "Mandiant",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threat Intelligence Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft June 2, 2023 Mandiant Written by: Nader Zaveri, Jeremy Kennelly, Genevieve Stark, Matthew McWhirt, Dan Nutting, Kimberly Goody, Justin Moore, Joe Pisano, Zander Work, Peter Ukhanov, Juraj Sucik, Will Silverstone, Zach Schramm, Greg Blaum, Ollie Styles, Nicholas Bennett, Josh Murchie UPDATE (June 9): On June 6, 2023, Mandiant merged UNC4857 into FIN11 based on targeting, infrastructure, certificate and data leak site (DLS) overlaps.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -120,6 +169,13 @@
         "value": "NVD",
         "source_references": [
           "SRC-002"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-002",
+            "quote": "NVD - cve-2023-34362 You are viewing this page in an unauthorized frame window.",
+            "claim_status": "journalistic_report"
+          }
         ]
       }
     ],
@@ -131,6 +187,13 @@
         "source_references": [
           "SRC-001",
           "SRC-002"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "This vulnerability was announced by Progress Software Corporation on May 31, 2023 and has been assigned CVE-2023-34362.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -139,6 +202,13 @@
         "relationship_type": "exploited",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threat Intelligence Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft June 2, 2023 Mandiant Written by: Nader Zaveri, Jeremy Kennelly, Genevieve Stark, Matthew McWhirt, Dan Nutting, Kimberly Goody, Justin Moore, Joe Pisano, Zander Work, Peter Ukhanov, Juraj Sucik, Will Silverstone, Zach Schramm, Greg Blaum, Ollie Styles, Nicholas Bennett, Josh Murchie UPDATE (June 9): On June 6, 2023, Mandiant merged UNC4857 into FIN11 based on targeting, infrastructure, certificate and data leak site (DLS) overlaps.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -147,6 +217,13 @@
         "relationship_type": "deployed",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threat Intelligence Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft June 2, 2023 Mandiant Written by: Nader Zaveri, Jeremy Kennelly, Genevieve Stark, Matthew McWhirt, Dan Nutting, Kimberly Goody, Justin Moore, Joe Pisano, Zander Work, Peter Ukhanov, Juraj Sucik, Will Silverstone, Zach Schramm, Greg Blaum, Ollie Styles, Nicholas Bennett, Josh Murchie UPDATE (June 9): On June 6, 2023, Mandiant merged UNC4857 into FIN11 based on targeting, infrastructure, certificate and data leak site (DLS) overlaps.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -155,6 +232,13 @@
         "relationship_type": "merged_into",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threat Intelligence Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft June 2, 2023 Mandiant Written by: Nader Zaveri, Jeremy Kennelly, Genevieve Stark, Matthew McWhirt, Dan Nutting, Kimberly Goody, Justin Moore, Joe Pisano, Zander Work, Peter Ukhanov, Juraj Sucik, Will Silverstone, Zach Schramm, Greg Blaum, Ollie Styles, Nicholas Bennett, Josh Murchie UPDATE (June 9): On June 6, 2023, Mandiant merged UNC4857 into FIN11 based on targeting, infrastructure, certificate and data leak site (DLS) overlaps.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -163,6 +247,13 @@
         "relationship_type": "linked_to_extortion_brand",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threat Intelligence Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft June 2, 2023 Mandiant Written by: Nader Zaveri, Jeremy Kennelly, Genevieve Stark, Matthew McWhirt, Dan Nutting, Kimberly Goody, Justin Moore, Joe Pisano, Zander Work, Peter Ukhanov, Juraj Sucik, Will Silverstone, Zach Schramm, Greg Blaum, Ollie Styles, Nicholas Bennett, Josh Murchie UPDATE (June 9): On June 6, 2023, Mandiant merged UNC4857 into FIN11 based on targeting, infrastructure, certificate and data leak site (DLS) overlaps.",
+            "claim_status": "journalistic_report"
+          }
         ]
       }
     ],
@@ -174,7 +265,14 @@
           "SRC-002"
         ],
         "description": "CVE and vendor advisories establish a vulnerability and exploitation window, while Mandiant's reporting identifies LEMURLOOT and links the activity to UNC4857/FIN11. CL0P's leak-site behavior is an extortion and victim-notification pivot, not by itself proof that every exploit was performed by the same operator.",
-        "reconciliation": "Separate vulnerability facts, observed web-shell behavior, actor tracking labels, and extortion branding. Report the UNC4857-to-FIN11 relationship with its source and caveat rather than flattening all labels into CL0P."
+        "reconciliation": "Separate vulnerability facts, observed web-shell behavior, actor tracking labels, and extortion branding. Report the UNC4857-to-FIN11 relationship with its source and caveat rather than flattening all labels into CL0P.",
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threat Intelligence Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft June 2, 2023 Mandiant Written by: Nader Zaveri, Jeremy Kennelly, Genevieve Stark, Matthew McWhirt, Dan Nutting, Kimberly Goody, Justin Moore, Joe Pisano, Zander Work, Peter Ukhanov, Juraj Sucik, Will Silverstone, Zach Schramm, Greg Blaum, Ollie Styles, Nicholas Bennett, Josh Murchie UPDATE (June 9): On June 6, 2023, Mandiant merged UNC4857 into FIN11 based on targeting, infrastructure, certificate and data leak site (DLS) overlaps.",
+            "claim_status": "journalistic_report"
+          }
+        ]
       }
     ],
     "reasoning_proof_chains": [
@@ -184,7 +282,14 @@
           "ENT-001"
         ],
         "premise_relations": [],
-        "conclusion": "Identify the primary target and gather independent public sources."
+        "conclusion": "Identify the primary target and gather independent public sources.",
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threat Intelligence Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft June 2, 2023 Mandiant Written by: Nader Zaveri, Jeremy Kennelly, Genevieve Stark, Matthew McWhirt, Dan Nutting, Kimberly Goody, Justin Moore, Joe Pisano, Zander Work, Peter Ukhanov, Juraj Sucik, Will Silverstone, Zach Schramm, Greg Blaum, Ollie Styles, Nicholas Bennett, Josh Murchie UPDATE (June 9): On June 6, 2023, Mandiant merged UNC4857 into FIN11 based on targeting, infrastructure, certificate and data leak site (DLS) overlaps.",
+            "claim_status": "journalistic_report"
+          }
+        ]
       },
       {
         "step_index": 2,
@@ -199,7 +304,14 @@
           "exploited",
           "deployed"
         ],
-        "conclusion": "Link aliases, organizations, people, platforms, or infrastructure across sources."
+        "conclusion": "Link aliases, organizations, people, platforms, or infrastructure across sources.",
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threat Intelligence Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft June 2, 2023 Mandiant Written by: Nader Zaveri, Jeremy Kennelly, Genevieve Stark, Matthew McWhirt, Dan Nutting, Kimberly Goody, Justin Moore, Joe Pisano, Zander Work, Peter Ukhanov, Juraj Sucik, Will Silverstone, Zach Schramm, Greg Blaum, Ollie Styles, Nicholas Bennett, Josh Murchie UPDATE (June 9): On June 6, 2023, Mandiant merged UNC4857 into FIN11 based on targeting, infrastructure, certificate and data leak site (DLS) overlaps.",
+            "claim_status": "journalistic_report"
+          }
+        ]
       },
       {
         "step_index": 3,
@@ -213,7 +325,14 @@
           "merged_into",
           "linked_to_extortion_brand"
         ],
-        "conclusion": "Produce traceable expected findings while preserving caveats."
+        "conclusion": "Produce traceable expected findings while preserving caveats.",
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Then on June 6, 2023, a post on the CL0P^_-LEAKS data leak site (DLS) claimed responsibility for this activity and threatened to post stolen data if victims did not pay an extortion fee.",
+            "claim_status": "journalistic_report"
+          }
+        ]
       }
     ],
     "key_findings": [
@@ -223,6 +342,13 @@
         "supporting_entities": [
           "ENT-001",
           "ENT-002"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "This vulnerability was announced by Progress Software Corporation on May 31, 2023 and has been assigned CVE-2023-34362.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -231,6 +357,13 @@
         "supporting_entities": [
           "ENT-003",
           "ENT-007"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threat Intelligence Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft June 2, 2023 Mandiant Written by: Nader Zaveri, Jeremy Kennelly, Genevieve Stark, Matthew McWhirt, Dan Nutting, Kimberly Goody, Justin Moore, Joe Pisano, Zander Work, Peter Ukhanov, Juraj Sucik, Will Silverstone, Zach Schramm, Greg Blaum, Ollie Styles, Nicholas Bennett, Josh Murchie UPDATE (June 9): On June 6, 2023, Mandiant merged UNC4857 into FIN11 based on targeting, infrastructure, certificate and data leak site (DLS) overlaps.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -240,6 +373,13 @@
           "ENT-004",
           "ENT-005",
           "ENT-006"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "The seemingly opportunistic nature of this campaign and the subsequent data theft is consistent with activity we’ve seen from extortion actors; however, victims did not initially receive any ransom demands.",
+            "claim_status": "journalistic_report"
+          }
         ]
       }
     ],

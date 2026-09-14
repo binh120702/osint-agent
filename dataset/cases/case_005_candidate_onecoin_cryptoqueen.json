@@ -64,6 +64,13 @@
         "source_references": [
           "SRC-001",
           "SRC-002"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "gov Office of Public Affairs News Press Releases Justice Department Announces Compensation Process For OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture MENU News All News Blogs Photo Galleries Podcasts Press Releases Speeches Videos Archived Press Releases Archived News Press Release Justice Department Announces Compensation Process for OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture Monday, April 13, 2026 Share Facebook X LinkedIn Email For Immediate Release Office of Public Affairs Today, the Department of Justice announced the beginning of the remission compensation process to provide recovery for victims of the international investment scheme involving OneCoin Ltd.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -73,6 +80,13 @@
         "source_references": [
           "SRC-001",
           "SRC-002"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Between 2014 and 2019, Ruja Ignatova and Karl Sebastian Greenwood, co-founders of OneCoin Ltd.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -81,6 +95,13 @@
         "value": "Cryptoqueen",
         "source_references": [
           "SRC-002"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-002",
+            "quote": "Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison | ArentFox Schiff Skip to main content About Careers Innovation Locations ArentFox Schiff Main navigation Attorneys Industries & Practices Insights Search the Site Search the Site Toggle Main Menu close menu Main navigation Attorneys Industries & Practices Insights Blogs Alerts Events News The Fine Print Fashion Counsel Press Releases Health Care Counsel Blog Managing Automotive Blog AI Law Blog Customs & Import Compliance B",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -89,6 +110,13 @@
         "value": "Konstantin Ignatov",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Office of Public Affairs | Justice Department Announces Compensation Process for OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture | United States Department of Justice Skip to main content An official website of the United States government Here's how you know Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you’ve safely connected to th",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -97,6 +125,13 @@
         "value": "Karl Sebastian Greenwood",
         "source_references": [
           "SRC-002"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-002",
+            "quote": "Dearington Share This Page Email LinkedIn X Facebook Headlines that Matter for Companies and Executives in Regulated Industries Off Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison Karl Sebastian Greenwood, a citizen of Sweden and the United Kingdom and co-founder of the cryptocurrency OneCoin, was sentenced to 20 years in prison for his alleged role in a $4 billion fraud scheme.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -106,6 +141,13 @@
         "source_references": [
           "SRC-001",
           "SRC-002"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "OneCoin, which began operations in 2014 and was based in Sofia, Bulgaria, marketed and sold a fraudulent cryptocurrency by the same name through a global multi-level-marketing (MLM) network.",
+            "claim_status": "journalistic_report"
+          }
         ]
       }
     ],
@@ -117,6 +159,13 @@
         "source_references": [
           "SRC-001",
           "SRC-002"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Between 2014 and 2019, Ruja Ignatova and Karl Sebastian Greenwood, co-founders of OneCoin Ltd.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -125,6 +174,13 @@
         "relationship_type": "co_founded",
         "source_references": [
           "SRC-002"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-002",
+            "quote": "Dearington Share This Page Email LinkedIn X Facebook Headlines that Matter for Companies and Executives in Regulated Industries Off Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison Karl Sebastian Greenwood, a citizen of Sweden and the United Kingdom and co-founder of the cryptocurrency OneCoin, was sentenced to 20 years in prison for his alleged role in a $4 billion fraud scheme.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -133,6 +189,13 @@
         "relationship_type": "led_or_promoted",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "gov Office of Public Affairs News Press Releases Justice Department Announces Compensation Process For OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture MENU News All News Blogs Photo Galleries Podcasts Press Releases Speeches Videos Archived Press Releases Archived News Press Release Justice Department Announces Compensation Process for OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture Monday, April 13, 2026 Share Facebook X LinkedIn Email For Immediate Release Office of Public Affairs Today, the Department of Justice announced the beginning of the remission compensation process to provide recovery for victims of the international investment scheme involving OneCoin Ltd.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -142,6 +205,13 @@
         "source_references": [
           "SRC-001",
           "SRC-002"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "gov Office of Public Affairs News Press Releases Justice Department Announces Compensation Process For OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture MENU News All News Blogs Photo Galleries Podcasts Press Releases Speeches Videos Archived Press Releases Archived News Press Release Justice Department Announces Compensation Process for OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture Monday, April 13, 2026 Share Facebook X LinkedIn Email For Immediate Release Office of Public Affairs Today, the Department of Justice announced the beginning of the remission compensation process to provide recovery for victims of the international investment scheme involving OneCoin Ltd.",
+            "claim_status": "journalistic_report"
+          }
         ]
       }
     ],
@@ -153,7 +223,14 @@
           "SRC-002"
         ],
         "description": "DOJ charging and forfeiture records characterize OneCoin as a fraudulent scheme, while promotional and property records present the founders and associated companies through a legitimate-business narrative. The public record also distinguishes missing founder Ruja Ignatova from later prosecuted participants.",
-        "reconciliation": "Use DOJ records for the alleged fraud mechanics and criminal posture, and use ICIJ/property records only for ownership and asset pivots. Do not infer that an offshore company or property is itself proof of fraud or that every promoter had the same role."
+        "reconciliation": "Use DOJ records for the alleged fraud mechanics and criminal posture, and use ICIJ/property records only for ownership and asset pivots. Do not infer that an offshore company or property is itself proof of fraud or that every promoter had the same role.",
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Office of Public Affairs | Justice Department Announces Compensation Process for OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture | United States Department of Justice Skip to main content An official website of the United States government Here's how you know Here's how you know Official websites use .",
+            "claim_status": "journalistic_report"
+          }
+        ]
       }
     ],
     "reasoning_proof_chains": [
@@ -163,7 +240,14 @@
           "ENT-001"
         ],
         "premise_relations": [],
-        "conclusion": "Identify the primary target and gather independent public sources."
+        "conclusion": "Identify the primary target and gather independent public sources.",
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "gov Office of Public Affairs News Press Releases Justice Department Announces Compensation Process For OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture MENU News All News Blogs Photo Galleries Podcasts Press Releases Speeches Videos Archived Press Releases Archived News Press Release Justice Department Announces Compensation Process for OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture Monday, April 13, 2026 Share Facebook X LinkedIn Email For Immediate Release Office of Public Affairs Today, the Department of Justice announced the beginning of the remission compensation process to provide recovery for victims of the international investment scheme involving OneCoin Ltd.",
+            "claim_status": "journalistic_report"
+          }
+        ]
       },
       {
         "step_index": 2,
@@ -178,7 +262,14 @@
           "co_founded",
           "co_founded"
         ],
-        "conclusion": "Link aliases, organizations, people, platforms, or infrastructure across sources."
+        "conclusion": "Link aliases, organizations, people, platforms, or infrastructure across sources.",
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "gov Office of Public Affairs News Press Releases Justice Department Announces Compensation Process For OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture MENU News All News Blogs Photo Galleries Podcasts Press Releases Speeches Videos Archived Press Releases Archived News Press Release Justice Department Announces Compensation Process for OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture Monday, April 13, 2026 Share Facebook X LinkedIn Email For Immediate Release Office of Public Affairs Today, the Department of Justice announced the beginning of the remission compensation process to provide recovery for victims of the international investment scheme involving OneCoin Ltd.",
+            "claim_status": "journalistic_report"
+          }
+        ]
       }
     ],
     "key_findings": [
@@ -189,6 +280,13 @@
           "ENT-001",
           "ENT-002",
           "ENT-005"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Office of Public Affairs | Justice Department Announces Compensation Process for OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture | United States Department of Justice Skip to main content An official website of the United States government Here's how you know Here's how you know Official websites use .",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -198,6 +296,13 @@
           "ENT-002",
           "ENT-004",
           "ENT-005"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Between 2014 and 2019, Ruja Ignatova and Karl Sebastian Greenwood, co-founders of OneCoin Ltd.",
+            "claim_status": "journalistic_report"
+          }
         ]
       }
     ],

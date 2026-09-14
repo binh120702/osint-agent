@@ -62,6 +62,13 @@
         "value": "Guccifer 2.0",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "“DCLeaks” and “Guccifer 2.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -70,6 +77,13 @@
         "value": "dcleaks.com",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "registered the domain dcleaks.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -78,6 +92,13 @@
         "value": "GRU Unit 74455",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "IN THE UNITED STATES DISTRICT COURT\nFOR THE DISTRICT OF COLUMBIA\nUNITED STATES OF AMERICA\nV.\nVIKTOR BORISOVICH NETYKSHO,\nBORIS ALEKSEYEVICH ANTONOV,\nDMITRIY SERGEYEVICH BADIN,\nIVAN SERGEYEVICH YERMAKOV,\nALEKSEY VIKTOROVICH\nLUKASHEV,\nSERGEY ALEKSANDROVICH\nMORGACHEV,\nNIKOLAY YURYEVICH KOZACHEK,\nPAVEL VYACHESLAVOVICH\nYERSHOV,\nARTEM ANDREYEVICH\nMALYSHEV,\nALEKSANDR VLADIMIROVICH\nOSADCHUK,\nALEKSEY ALEKSANDROVICH\nPOTEMKJN, and\nANATOLIY SERGEYEVICH\nKOVALEV,\nDefendants. *\n*\n*\n*\n*\n*\n*\n*\n*\n*\n*\n*\n%\n*\n*\n*\n*\n",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -86,6 +107,13 @@
         "value": "GRU Unit 26165",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "IN THE UNITED STATES DISTRICT COURT\nFOR THE DISTRICT OF COLUMBIA\nUNITED STATES OF AMERICA\nV.\nVIKTOR BORISOVICH NETYKSHO,\nBORIS ALEKSEYEVICH ANTONOV,\nDMITRIY SERGEYEVICH BADIN,\nIVAN SERGEYEVICH YERMAKOV,\nALEKSEY VIKTOROVICH\nLUKASHEV,\nSERGEY ALEKSANDROVICH\nMORGACHEV,\nNIKOLAY YURYEVICH KOZACHEK,\nPAVEL VYACHESLAVOVICH\nYERSHOV,\nARTEM ANDREYEVICH\nMALYSHEV,\nALEKSANDR VLADIMIROVICH\nOSADCHUK,\nALEKSEY ALEKSANDROVICH\nPOTEMKJN, and\nANATOLIY SERGEYEVICH\nKOVALEV,\nDefendants. *\n*\n*\n*\n*\n*\n*\n*\n*\n*\n*\n*\n%\n*\n*\n*\n*\n",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -95,6 +123,13 @@
         "source_references": [
           "SRC-001",
           "SRC-002"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "the Democratic National Committee (DNC) servers had been hacked by\n“sophisticated” hacker groups.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -103,6 +138,13 @@
         "value": "FANCY BEAR",
         "source_references": [
           "SRC-002"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-002",
+            "quote": "We deployed our IR team and technology and immediately identified two sophisticated adversaries on the network – COZY BEAR and FANCY BEAR ….",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -111,6 +153,13 @@
         "value": "COZY BEAR",
         "source_references": [
           "SRC-002"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-002",
+            "quote": "We deployed our IR team and technology and immediately identified two sophisticated adversaries on the network – COZY BEAR and FANCY BEAR ….",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -119,6 +168,13 @@
         "value": "CrowdStrike",
         "source_references": [
           "SRC-002"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-002",
+            "quote": "CrowdStrike’s work with the Democratic National Committee: Setting the record straight Blog Featured CrowdStrike Named Strongest Overall Leader in 2026 Frost Radar™: Cloud Workload Protection Platforms Aug 20, 2026 Benchmaxxing: When the Benchmark Becomes the Target Aug 19, 2026 Teaching AI to Reason Through Detection Triage Aug 17, 2026 August 2026 Patch Tuesday: One Exploited Zero-Day and 62 Critical Vulnerabilities Among 415 CVEs Aug 11, 2026 Recent CrowdStrike Named Strongest Overall Leader in 2026 Frost Radar™: Cloud Workload Protection Platforms Aug 20, 2026 Benchmaxxing: When the Benchmark Becomes the Target Aug 19, 2026 Teaching AI to Reason Through Detection Triage Aug 17, 2026 August 2026 Patch Tuesday: One Exploited Zero-Day and 62 Critical Vulnerabilities Among 415 CVEs Aug 11, 2026 Video Video Highlights the 4 Key Steps to Successful Incident Response Dec 02, 2019 Helping Non-Security Stakeholders Understand ATT&CK in 10 Minutes or Less [VIDEO] Feb 21, 2019 Analyzing Targeted Intrusions Through the ATT&CK Framework Lens [VIDEO] Jan 22, 2019 Qatar’s Commercial Bank Chooses CrowdStrike Falcon®: A Partnership Based on Trust [VIDEO] Aug 20, 2018 Category Agentic SOC Agentic SOC Teaching AI to Reason Through Detection Triage 08/17/26 How AI-leading Security Teams Are Building the Agentic SOC 07/06/26 New Claude Integration Brings Audit Data into the Falcon Platform 05/21/26 How Charlotte AI AgentWorks Fuels Security's Agentic Ecosystem 03/25/26 Cloud & Application Security Cloud & Application Security CrowdStrike Named Strongest Overall Leader in 2026 Frost Radar™: Cloud Workload Protection Platforms 08/20/26 Falcon Cloud Security July 2026 Release: Helping Security Teams Move Faster in the Cloud 07/29/26 Falcon Cloud Security June 2026 Release: Updates for Azure and Google Cloud 06/29/26 94% of Organizations Report Cloud Breaches: CrowdStrike State of CDR Survey 06/22/26 Threat Hunting & Intel Threat Hunting & Intel CrowdStrike 2026 Threat Hunting Report: Exploitation Window Closes as AI Use Accelerates 08/03/26 Inside Astaroth's New Spambot Component 07/29/26 CrowdStrike 2026 Technology Threat Landscape Report: China’s Ambitions Fuel Attacks 06/09/26 Disrupting Glassworm: Inside CrowdStrike’s Takedown of a Developer-Targeting Botnet 05/26/26 Endpoint Security & XDR Endpoint Security & XDR Falcon Secure Access Sets the Standard for Zero Trust Browser Security 07/08/26 Browser Security: Zero-Days Are Only Part of the Problem 06/30/26 New Abuse of the ClickOnce Technology, Part 2: Stop Threat Actors from Clicking Once and Staying Forever 06/18/26 New Abuse of the ClickOnce Technology, Part 1: The Inner Workings of ClickOnce Application Deployment 06/18/26 Engineering & Tech Engineering & Tech EMBER2024: Advancing the Training of Cybersecurity ML Models Against Evasive Malware 09/03/25 Falcon Platform Prevents COOKIE SPIDER’s SHAMOS Delivery on macOS 08/20/25 CrowdStrike’s Approach to Better Machine Learning Evaluation Using Strategic Data Splitting 08/11/25 CrowdStrike Researchers Develop Custom XGBoost Objective to Improve ML Model Release Stability 03/20/25 Executive Viewpoint Executive Viewpoint Beyond the Model: Harnessing Frontier AI for Stronger Cyber Defense 07/20/26 Frontier AI Is Collapsing the Exploit Window.",
+            "claim_status": "journalistic_report"
+          }
         ]
       }
     ],
@@ -129,6 +185,13 @@
         "relationship_type": "operated_or_assisted_persona",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "“DCLeaks” and “Guccifer 2.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -137,6 +200,13 @@
         "relationship_type": "operated_or_assisted_release_site",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "registered the domain dcleaks.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -145,6 +215,13 @@
         "relationship_type": "hacked_network",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "the Democratic National Committee (DNC) servers had been hacked by\n“sophisticated” hacker groups.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -153,6 +230,13 @@
         "relationship_type": "identified_in_network",
         "source_references": [
           "SRC-002"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-002",
+            "quote": "We deployed our IR team and technology and immediately identified two sophisticated adversaries on the network – COZY BEAR and FANCY BEAR ….",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -161,6 +245,13 @@
         "relationship_type": "identified_in_network",
         "source_references": [
           "SRC-002"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-002",
+            "quote": "We deployed our IR team and technology and immediately identified two sophisticated adversaries on the network – COZY BEAR and FANCY BEAR ….",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -169,6 +260,13 @@
         "relationship_type": "investigated_breach_of",
         "source_references": [
           "SRC-002"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-002",
+            "quote": "CrowdStrike’s work with the Democratic National Committee: Setting the record straight Blog Featured CrowdStrike Named Strongest Overall Leader in 2026 Frost Radar™: Cloud Workload Protection Platforms Aug 20, 2026 Benchmaxxing: When the Benchmark Becomes the Target Aug 19, 2026 Teaching AI to Reason Through Detection Triage Aug 17, 2026 August 2026 Patch Tuesday: One Exploited Zero-Day and 62 Critical Vulnerabilities Among 415 CVEs Aug 11, 2026 Recent CrowdStrike Named Strongest Overall Leader in 2026 Frost Radar™: Cloud Workload Protection Platforms Aug 20, 2026 Benchmaxxing: When the Benchmark Becomes the Target Aug 19, 2026 Teaching AI to Reason Through Detection Triage Aug 17, 2026 August 2026 Patch Tuesday: One Exploited Zero-Day and 62 Critical Vulnerabilities Among 415 CVEs Aug 11, 2026 Video Video Highlights the 4 Key Steps to Successful Incident Response Dec 02, 2019 Helping Non-Security Stakeholders Understand ATT&CK in 10 Minutes or Less [VIDEO] Feb 21, 2019 Analyzing Targeted Intrusions Through the ATT&CK Framework Lens [VIDEO] Jan 22, 2019 Qatar’s Commercial Bank Chooses CrowdStrike Falcon®: A Partnership Based on Trust [VIDEO] Aug 20, 2018 Category Agentic SOC Agentic SOC Teaching AI to Reason Through Detection Triage 08/17/26 How AI-leading Security Teams Are Building the Agentic SOC 07/06/26 New Claude Integration Brings Audit Data into the Falcon Platform 05/21/26 How Charlotte AI AgentWorks Fuels Security's Agentic Ecosystem 03/25/26 Cloud & Application Security Cloud & Application Security CrowdStrike Named Strongest Overall Leader in 2026 Frost Radar™: Cloud Workload Protection Platforms 08/20/26 Falcon Cloud Security July 2026 Release: Helping Security Teams Move Faster in the Cloud 07/29/26 Falcon Cloud Security June 2026 Release: Updates for Azure and Google Cloud 06/29/26 94% of Organizations Report Cloud Breaches: CrowdStrike State of CDR Survey 06/22/26 Threat Hunting & Intel Threat Hunting & Intel CrowdStrike 2026 Threat Hunting Report: Exploitation Window Closes as AI Use Accelerates 08/03/26 Inside Astaroth's New Spambot Component 07/29/26 CrowdStrike 2026 Technology Threat Landscape Report: China’s Ambitions Fuel Attacks 06/09/26 Disrupting Glassworm: Inside CrowdStrike’s Takedown of a Developer-Targeting Botnet 05/26/26 Endpoint Security & XDR Endpoint Security & XDR Falcon Secure Access Sets the Standard for Zero Trust Browser Security 07/08/26 Browser Security: Zero-Days Are Only Part of the Problem 06/30/26 New Abuse of the ClickOnce Technology, Part 2: Stop Threat Actors from Clicking Once and Staying Forever 06/18/26 New Abuse of the ClickOnce Technology, Part 1: The Inner Workings of ClickOnce Application Deployment 06/18/26 Engineering & Tech Engineering & Tech EMBER2024: Advancing the Training of Cybersecurity ML Models Against Evasive Malware 09/03/25 Falcon Platform Prevents COOKIE SPIDER’s SHAMOS Delivery on macOS 08/20/25 CrowdStrike’s Approach to Better Machine Learning Evaluation Using Strategic Data Splitting 08/11/25 CrowdStrike Researchers Develop Custom XGBoost Objective to Improve ML Model Release Stability 03/20/25 Executive Viewpoint Executive Viewpoint Beyond the Model: Harnessing Frontier AI for Stronger Cyber Defense 07/20/26 Frontier AI Is Collapsing the Exploit Window.",
+            "claim_status": "journalistic_report"
+          }
         ]
       }
     ],
@@ -180,7 +278,14 @@
           "SRC-002"
         ],
         "description": "Guccifer 2.0 and DCLeaks presented themselves as independent personas, while the DOJ indictment alleges that GRU conspirators operated fictitious personas and used them to release stolen material. CrowdStrike's earlier incident-response report identified Russian intelligence-affiliated activity in the DNC network but did not itself identify every release persona.",
-        "reconciliation": "Use the indictment for the persona-control allegation and CrowdStrike for the earlier network intrusion evidence. State the legal posture as indictment allegations, and do not treat the persona's public self-description as exculpatory evidence."
+        "reconciliation": "Use the indictment for the persona-control allegation and CrowdStrike for the earlier network intrusion evidence. State the legal posture as indictment allegations, and do not treat the persona's public self-description as exculpatory evidence.",
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "“DCLeaks” and “Guccifer 2.",
+            "claim_status": "journalistic_report"
+          }
+        ]
       }
     ],
     "reasoning_proof_chains": [
@@ -190,7 +295,14 @@
           "ENT-001"
         ],
         "premise_relations": [],
-        "conclusion": "Identify the primary target and gather independent public sources."
+        "conclusion": "Identify the primary target and gather independent public sources.",
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "“DCLeaks” and “Guccifer 2.",
+            "claim_status": "journalistic_report"
+          }
+        ]
       },
       {
         "step_index": 2,
@@ -205,7 +317,14 @@
           "operated_or_assisted_release_site",
           "hacked_network"
         ],
-        "conclusion": "Link aliases, organizations, people, platforms, or infrastructure across sources."
+        "conclusion": "Link aliases, organizations, people, platforms, or infrastructure across sources.",
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "“DCLeaks” and “Guccifer 2.",
+            "claim_status": "journalistic_report"
+          }
+        ]
       },
       {
         "step_index": 3,
@@ -219,7 +338,14 @@
           "identified_in_network",
           "investigated_breach_of"
         ],
-        "conclusion": "Produce traceable expected findings while preserving caveats."
+        "conclusion": "Produce traceable expected findings while preserving caveats.",
+        "evidence": [
+          {
+            "source_id": "SRC-002",
+            "quote": "We deployed our IR team and technology and immediately identified two sophisticated adversaries on the network – COZY BEAR and FANCY BEAR ….",
+            "claim_status": "journalistic_report"
+          }
+        ]
       }
     ],
     "key_findings": [
@@ -230,6 +356,13 @@
           "ENT-001",
           "ENT-002",
           "ENT-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "INDICTMENT\nThe Grand Jury for the District of Columbia charges:\nCOUNT ONE\n(Conspiracy to Commit an Offense Against the United States)\n1.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -240,6 +373,13 @@
           "ENT-006",
           "ENT-007",
           "ENT-008"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "In response to Company 1’s efforts, the Conspirators took countermeasures to maintain\naccess to the DCCC and DNC networks.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -249,6 +389,13 @@
           "ENT-001",
           "ENT-002",
           "ENT-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "They did so using fictitious online personas, including\n\n“DCLeaks” and “Guccifer 2.",
+            "claim_status": "journalistic_report"
+          }
         ]
       }
     ],

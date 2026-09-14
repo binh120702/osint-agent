@@ -108,6 +108,13 @@
           "SRC-002",
           "SRC-003",
           "SRC-004"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Conti – Rewards For Justice An official website of the United States Government Home About All Reward Offers Program Overview Success Stories Map Frequently Asked Questions TOR Best practices Terrorism Acts of Terror Terrorism Financing Terrorism - Individuals Organizations Hostages/Kidnapping Hostages/Kidnapping North Korea North Korea North Korea - Individual Malicious Cyber Activities Critical Infrastructure Critical Infrastructure - Individual Election Interference Election Interference Election Interference - Individual EN Submit a tip × Search × Languages English العربية ( Arabic ) हिन्दी ( Bengali ) 简体中文 ( Simplified Chinese ) Français ( French ) Deutsch ( German ) Ελληνικα ( Greek ) עברית ( Hebrew ) हिन्दी ( Hindi ) Bahasa Indonesia ( Indonesian ) 한국어 ( Korean ) کوردی ( Kurdish ) Bahasa Melayu ( Malay ) فارسی ( Persian ) Português ( Brazilian Portuguese ) ਪੰਜਾਬੀ ( Punjabi ) Русский ( Russian ) Soomaali ( Somali ) Español ( Spanish ) ไทย ( Thai ) Türkçe ( Turkish ) اردو ( Urdu ) አማርኛ ( Amharic ) پښتو ( Pashto ) Tagalog Українська ( Ukrainian ) Tiếng Việt ( Vietnamese ) မြန်မာဘာသာ ( Burmese ) ភាសាខ្មែរ ( Khmer ) ລາວ ( Lao ) Hausa سنڌي ( Sindhi ) 日本語 ( Japanese ) Kiswahili ( Swahili ) 繁體中文 ( Traditional Chinese ) Submit a tip Home About All Reward Offers Program Overview Success Stories Map Frequently Asked Questions TOR Best practices Terrorism Acts of Terror Terrorism Financing Terrorism - Individuals Organizations Hostages/Kidnapping Hostages/Kidnapping North Korea North Korea North Korea - Individual Malicious Cyber Activities Critical Infrastructure Critical Infrastructure - Individual Election Interference Election Interference Election Interference - Individual Conti Europe and Eurasia Reward Up to $10 million Do your part submit a tip About Rewards for Justice is offering a reward of up to $10 million for information leading to the identification or location of any person who, while acting at the direction or under the control of a foreign government, participates in malicious cyber activities against U.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -116,6 +123,13 @@
         "value": "Wizard Spider",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Conti (also known as Wizard Spider), is a Russian government-linked ransomware-as-a-service (RaaS) group that has targeted U.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -125,6 +139,13 @@
         "source_references": [
           "SRC-001",
           "SRC-002"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Malicious cyber actors known by their online aliases of “Target,” “Reshaev,” “Professor,” “Tramp,” and “Dandis” are believed to be linked to the Conti ransomware group.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -133,6 +154,13 @@
         "value": "Stern",
         "source_references": [
           "SRC-002"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-002",
+            "quote": "Conversations between two operators, “Stern” and “Bentley” discuss the use of third parties for malicious documents, favoring certain providers over others.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -142,6 +170,13 @@
         "source_references": [
           "SRC-001",
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Conti-linked Malicious Cyber Threat Actor “Dandis” “Professor” “Tramp” “Reshaev” “T arget” Images: Posters: Associated Location(s): Russia Online Aliases: “Target”<br>“Reshaev”<br>“Professor”<br>“Tramp”<br>“Dandis” Associated Cyberthreat Organization: Conti<br>Wizard Spider Associated Malicious Cyber Application: Conti ransomware-as-a-service (RaaS)<br>TrickBot<br>IcedID<br>Cobalt Strike<br>ZLoader Printer friendly view SUBMIT A TIP Do your part.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -150,6 +185,13 @@
         "value": "Maksim Galochkin",
         "source_references": [
           "SRC-004"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-004",
+            "quote": "Attorneys Middle District of Tennessee Conti Ransomware Conti Ransomware Share Facebook X LinkedIn Email Conti Ransomware Case Number: 3:23-CR-00092 Defendant(s): Maksim Galochkin, Maksim Rudenskiy, Mikhail Tsarev, and Andrey Zhuykov Case Number: 3:23-CR-00088 Defendant(s): Oleksii Lytvynenko Conti ransomware was a malicious software that affected more than 900 businesses, nonprofits, governments, and other victims in the United States and around the world.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -158,6 +200,13 @@
         "value": "Oleksii Lytvynenko",
         "source_references": [
           "SRC-004"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-004",
+            "quote": "Attorneys Middle District of Tennessee Conti Ransomware Conti Ransomware Share Facebook X LinkedIn Email Conti Ransomware Case Number: 3:23-CR-00092 Defendant(s): Maksim Galochkin, Maksim Rudenskiy, Mikhail Tsarev, and Andrey Zhuykov Case Number: 3:23-CR-00088 Defendant(s): Oleksii Lytvynenko Conti ransomware was a malicious software that affected more than 900 businesses, nonprofits, governments, and other victims in the United States and around the world.",
+            "claim_status": "journalistic_report"
+          }
         ]
       }
     ],
@@ -168,6 +217,13 @@
         "relationship_type": "also_known_as",
         "source_references": [
           "SRC-001"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Conti – Rewards For Justice An official website of the United States Government Home About All Reward Offers Program Overview Success Stories Map Frequently Asked Questions TOR Best practices Terrorism Acts of Terror Terrorism Financing Terrorism - Individuals Organizations Hostages/Kidnapping Hostages/Kidnapping North Korea North Korea North Korea - Individual Malicious Cyber Activities Critical Infrastructure Critical Infrastructure - Individual Election Interference Election Interference Election Interference - Individual EN Submit a tip × Search × Languages English العربية ( Arabic ) हिन्दी ( Bengali ) 简体中文 ( Simplified Chinese ) Français ( French ) Deutsch ( German ) Ελληνικα ( Greek ) עברית ( Hebrew ) हिन्दी ( Hindi ) Bahasa Indonesia ( Indonesian ) 한국어 ( Korean ) کوردی ( Kurdish ) Bahasa Melayu ( Malay ) فارسی ( Persian ) Português ( Brazilian Portuguese ) ਪੰਜਾਬੀ ( Punjabi ) Русский ( Russian ) Soomaali ( Somali ) Español ( Spanish ) ไทย ( Thai ) Türkçe ( Turkish ) اردو ( Urdu ) አማርኛ ( Amharic ) پښتو ( Pashto ) Tagalog Українська ( Ukrainian ) Tiếng Việt ( Vietnamese ) မြန်မာဘာသာ ( Burmese ) ភាសាខ្មែរ ( Khmer ) ລາວ ( Lao ) Hausa سنڌي ( Sindhi ) 日本語 ( Japanese ) Kiswahili ( Swahili ) 繁體中文 ( Traditional Chinese ) Submit a tip Home About All Reward Offers Program Overview Success Stories Map Frequently Asked Questions TOR Best practices Terrorism Acts of Terror Terrorism Financing Terrorism - Individuals Organizations Hostages/Kidnapping Hostages/Kidnapping North Korea North Korea North Korea - Individual Malicious Cyber Activities Critical Infrastructure Critical Infrastructure - Individual Election Interference Election Interference Election Interference - Individual Conti Europe and Eurasia Reward Up to $10 million Do your part submit a tip About Rewards for Justice is offering a reward of up to $10 million for information leading to the identification or location of any person who, while acting at the direction or under the control of a foreign government, participates in malicious cyber activities against U.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -177,6 +233,13 @@
         "source_references": [
           "SRC-001",
           "SRC-002"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Malicious cyber actors known by their online aliases of “Target,” “Reshaev,” “Professor,” “Tramp,” and “Dandis” are believed to be linked to the Conti ransomware group.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -185,6 +248,13 @@
         "relationship_type": "internal_handle_in_leaked_chats",
         "source_references": [
           "SRC-002"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-002",
+            "quote": "Conversations between two operators, “Stern” and “Bentley” discuss the use of third parties for malicious documents, favoring certain providers over others.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -194,6 +264,13 @@
         "source_references": [
           "SRC-001",
           "SRC-003"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Conti – Rewards For Justice An official website of the United States Government Home About All Reward Offers Program Overview Success Stories Map Frequently Asked Questions TOR Best practices Terrorism Acts of Terror Terrorism Financing Terrorism - Individuals Organizations Hostages/Kidnapping Hostages/Kidnapping North Korea North Korea North Korea - Individual Malicious Cyber Activities Critical Infrastructure Critical Infrastructure - Individual Election Interference Election Interference Election Interference - Individual EN Submit a tip × Search × Languages English العربية ( Arabic ) हिन्दी ( Bengali ) 简体中文 ( Simplified Chinese ) Français ( French ) Deutsch ( German ) Ελληνικα ( Greek ) עברית ( Hebrew ) हिन्दी ( Hindi ) Bahasa Indonesia ( Indonesian ) 한국어 ( Korean ) کوردی ( Kurdish ) Bahasa Melayu ( Malay ) فارسی ( Persian ) Português ( Brazilian Portuguese ) ਪੰਜਾਬੀ ( Punjabi ) Русский ( Russian ) Soomaali ( Somali ) Español ( Spanish ) ไทย ( Thai ) Türkçe ( Turkish ) اردو ( Urdu ) አማርኛ ( Amharic ) پښتو ( Pashto ) Tagalog Українська ( Ukrainian ) Tiếng Việt ( Vietnamese ) မြန်မာဘာသာ ( Burmese ) ភាសាខ្មែរ ( Khmer ) ລາວ ( Lao ) Hausa سنڌي ( Sindhi ) 日本語 ( Japanese ) Kiswahili ( Swahili ) 繁體中文 ( Traditional Chinese ) Submit a tip Home About All Reward Offers Program Overview Success Stories Map Frequently Asked Questions TOR Best practices Terrorism Acts of Terror Terrorism Financing Terrorism - Individuals Organizations Hostages/Kidnapping Hostages/Kidnapping North Korea North Korea North Korea - Individual Malicious Cyber Activities Critical Infrastructure Critical Infrastructure - Individual Election Interference Election Interference Election Interference - Individual Conti Europe and Eurasia Reward Up to $10 million Do your part submit a tip About Rewards for Justice is offering a reward of up to $10 million for information leading to the identification or location of any person who, while acting at the direction or under the control of a foreign government, participates in malicious cyber activities against U.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -202,6 +279,13 @@
         "relationship_type": "charged_in_related_conspiracy",
         "source_references": [
           "SRC-004"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-004",
+            "quote": "Attorneys Middle District of Tennessee Conti Ransomware Conti Ransomware Share Facebook X LinkedIn Email Conti Ransomware Case Number: 3:23-CR-00092 Defendant(s): Maksim Galochkin, Maksim Rudenskiy, Mikhail Tsarev, and Andrey Zhuykov Case Number: 3:23-CR-00088 Defendant(s): Oleksii Lytvynenko Conti ransomware was a malicious software that affected more than 900 businesses, nonprofits, governments, and other victims in the United States and around the world.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -210,6 +294,13 @@
         "relationship_type": "charged_in_related_conspiracy",
         "source_references": [
           "SRC-004"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-004",
+            "quote": "Attorneys Middle District of Tennessee Conti Ransomware Conti Ransomware Share Facebook X LinkedIn Email Conti Ransomware Case Number: 3:23-CR-00092 Defendant(s): Maksim Galochkin, Maksim Rudenskiy, Mikhail Tsarev, and Andrey Zhuykov Case Number: 3:23-CR-00088 Defendant(s): Oleksii Lytvynenko Conti ransomware was a malicious software that affected more than 900 businesses, nonprofits, governments, and other victims in the United States and around the world.",
+            "claim_status": "journalistic_report"
+          }
         ]
       }
     ],
@@ -221,7 +312,14 @@
           "SRC-002"
         ],
         "description": "The leaked chats describe Conti as an organized, salaried operation with internal departments and handles, while the FBI/CISA advisories describe the observable criminal activity as a ransomware variant and intrusion campaign. The public materials therefore differ in analytic level: organization versus malware/campaign label.",
-        "reconciliation": "Treat these as complementary rather than mutually exclusive. Report Conti as an organized ransomware operation/RaaS ecosystem, and use the FBI/CISA material for victimology and tradecraft. Do not infer that every internal handle is a legally identified defendant."
+        "reconciliation": "Treat these as complementary rather than mutually exclusive. Report Conti as an organized ransomware operation/RaaS ecosystem, and use the FBI/CISA material for victimology and tradecraft. Do not infer that every internal handle is a legally identified defendant.",
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Conti – Rewards For Justice An official website of the United States Government Home About All Reward Offers Program Overview Success Stories Map Frequently Asked Questions TOR Best practices Terrorism Acts of Terror Terrorism Financing Terrorism - Individuals Organizations Hostages/Kidnapping Hostages/Kidnapping North Korea North Korea North Korea - Individual Malicious Cyber Activities Critical Infrastructure Critical Infrastructure - Individual Election Interference Election Interference Election Interference - Individual EN Submit a tip × Search × Languages English العربية ( Arabic ) हिन्दी ( Bengali ) 简体中文 ( Simplified Chinese ) Français ( French ) Deutsch ( German ) Ελληνικα ( Greek ) עברית ( Hebrew ) हिन्दी ( Hindi ) Bahasa Indonesia ( Indonesian ) 한국어 ( Korean ) کوردی ( Kurdish ) Bahasa Melayu ( Malay ) فارسی ( Persian ) Português ( Brazilian Portuguese ) ਪੰਜਾਬੀ ( Punjabi ) Русский ( Russian ) Soomaali ( Somali ) Español ( Spanish ) ไทย ( Thai ) Türkçe ( Turkish ) اردو ( Urdu ) አማርኛ ( Amharic ) پښتو ( Pashto ) Tagalog Українська ( Ukrainian ) Tiếng Việt ( Vietnamese ) မြန်မာဘာသာ ( Burmese ) ភាសាខ្មែរ ( Khmer ) ລາວ ( Lao ) Hausa سنڌي ( Sindhi ) 日本語 ( Japanese ) Kiswahili ( Swahili ) 繁體中文 ( Traditional Chinese ) Submit a tip Home About All Reward Offers Program Overview Success Stories Map Frequently Asked Questions TOR Best practices Terrorism Acts of Terror Terrorism Financing Terrorism - Individuals Organizations Hostages/Kidnapping Hostages/Kidnapping North Korea North Korea North Korea - Individual Malicious Cyber Activities Critical Infrastructure Critical Infrastructure - Individual Election Interference Election Interference Election Interference - Individual Conti Europe and Eurasia Reward Up to $10 million Do your part submit a tip About Rewards for Justice is offering a reward of up to $10 million for information leading to the identification or location of any person who, while acting at the direction or under the control of a foreign government, participates in malicious cyber activities against U.",
+            "claim_status": "journalistic_report"
+          }
+        ]
       }
     ],
     "reasoning_proof_chains": [
@@ -231,7 +329,14 @@
           "ENT-001"
         ],
         "premise_relations": [],
-        "conclusion": "Establish from FBI/CISA reporting that Conti denotes a large ransomware operation and that its activity includes encryption, exfiltration, and extortion."
+        "conclusion": "Establish from FBI/CISA reporting that Conti denotes a large ransomware operation and that its activity includes encryption, exfiltration, and extortion.",
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Conti – Rewards For Justice An official website of the United States Government Home About All Reward Offers Program Overview Success Stories Map Frequently Asked Questions TOR Best practices Terrorism Acts of Terror Terrorism Financing Terrorism - Individuals Organizations Hostages/Kidnapping Hostages/Kidnapping North Korea North Korea North Korea - Individual Malicious Cyber Activities Critical Infrastructure Critical Infrastructure - Individual Election Interference Election Interference Election Interference - Individual EN Submit a tip × Search × Languages English العربية ( Arabic ) हिन्दी ( Bengali ) 简体中文 ( Simplified Chinese ) Français ( French ) Deutsch ( German ) Ελληνικα ( Greek ) עברית ( Hebrew ) हिन्दी ( Hindi ) Bahasa Indonesia ( Indonesian ) 한국어 ( Korean ) کوردی ( Kurdish ) Bahasa Melayu ( Malay ) فارسی ( Persian ) Português ( Brazilian Portuguese ) ਪੰਜਾਬੀ ( Punjabi ) Русский ( Russian ) Soomaali ( Somali ) Español ( Spanish ) ไทย ( Thai ) Türkçe ( Turkish ) اردو ( Urdu ) አማርኛ ( Amharic ) پښتو ( Pashto ) Tagalog Українська ( Ukrainian ) Tiếng Việt ( Vietnamese ) မြန်မာဘာသာ ( Burmese ) ភាសាខ្មែរ ( Khmer ) ລາວ ( Lao ) Hausa سنڌي ( Sindhi ) 日本語 ( Japanese ) Kiswahili ( Swahili ) 繁體中文 ( Traditional Chinese ) Submit a tip Home About All Reward Offers Program Overview Success Stories Map Frequently Asked Questions TOR Best practices Terrorism Acts of Terror Terrorism Financing Terrorism - Individuals Organizations Hostages/Kidnapping Hostages/Kidnapping North Korea North Korea North Korea - Individual Malicious Cyber Activities Critical Infrastructure Critical Infrastructure - Individual Election Interference Election Interference Election Interference - Individual Conti Europe and Eurasia Reward Up to $10 million Do your part submit a tip About Rewards for Justice is offering a reward of up to $10 million for information leading to the identification or location of any person who, while acting at the direction or under the control of a foreign government, participates in malicious cyber activities against U.",
+            "claim_status": "journalistic_report"
+          }
+        ]
       },
       {
         "step_index": 2,
@@ -246,7 +351,14 @@
           "linked_alias_to_group",
           "internal_handle_in_leaked_chats"
         ],
-        "conclusion": "Join the Rewards for Justice alias Wizard Spider and the leaked internal handle Stern to the Conti investigation, while preserving that the handle linkage is not a legal identity attribution."
+        "conclusion": "Join the Rewards for Justice alias Wizard Spider and the leaked internal handle Stern to the Conti investigation, while preserving that the handle linkage is not a legal identity attribution.",
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Conti – Rewards For Justice An official website of the United States Government Home About All Reward Offers Program Overview Success Stories Map Frequently Asked Questions TOR Best practices Terrorism Acts of Terror Terrorism Financing Terrorism - Individuals Organizations Hostages/Kidnapping Hostages/Kidnapping North Korea North Korea North Korea - Individual Malicious Cyber Activities Critical Infrastructure Critical Infrastructure - Individual Election Interference Election Interference Election Interference - Individual EN Submit a tip × Search × Languages English العربية ( Arabic ) हिन्दी ( Bengali ) 简体中文 ( Simplified Chinese ) Français ( French ) Deutsch ( German ) Ελληνικα ( Greek ) עברית ( Hebrew ) हिन्दी ( Hindi ) Bahasa Indonesia ( Indonesian ) 한국어 ( Korean ) کوردی ( Kurdish ) Bahasa Melayu ( Malay ) فارسی ( Persian ) Português ( Brazilian Portuguese ) ਪੰਜਾਬੀ ( Punjabi ) Русский ( Russian ) Soomaali ( Somali ) Español ( Spanish ) ไทย ( Thai ) Türkçe ( Turkish ) اردو ( Urdu ) አማርኛ ( Amharic ) پښتو ( Pashto ) Tagalog Українська ( Ukrainian ) Tiếng Việt ( Vietnamese ) မြန်မာဘာသာ ( Burmese ) ភាសាខ្មែរ ( Khmer ) ລາວ ( Lao ) Hausa سنڌي ( Sindhi ) 日本語 ( Japanese ) Kiswahili ( Swahili ) 繁體中文 ( Traditional Chinese ) Submit a tip Home About All Reward Offers Program Overview Success Stories Map Frequently Asked Questions TOR Best practices Terrorism Acts of Terror Terrorism Financing Terrorism - Individuals Organizations Hostages/Kidnapping Hostages/Kidnapping North Korea North Korea North Korea - Individual Malicious Cyber Activities Critical Infrastructure Critical Infrastructure - Individual Election Interference Election Interference Election Interference - Individual Conti Europe and Eurasia Reward Up to $10 million Do your part submit a tip About Rewards for Justice is offering a reward of up to $10 million for information leading to the identification or location of any person who, while acting at the direction or under the control of a foreign government, participates in malicious cyber activities against U.",
+            "claim_status": "journalistic_report"
+          }
+        ]
       },
       {
         "step_index": 3,
@@ -260,7 +372,14 @@
           "charged_in_related_conspiracy",
           "charged_in_related_conspiracy"
         ],
-        "conclusion": "Use DOJ charging records as a separate legal pivot for named defendants and avoid equating charges, leaked handles, and convictions."
+        "conclusion": "Use DOJ charging records as a separate legal pivot for named defendants and avoid equating charges, leaked handles, and convictions.",
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Conti-linked Malicious Cyber Threat Actor “Dandis” “Professor” “Tramp” “Reshaev” “T arget” Images: Posters: Associated Location(s): Russia Online Aliases: “Target”<br>“Reshaev”<br>“Professor”<br>“Tramp”<br>“Dandis” Associated Cyberthreat Organization: Conti<br>Wizard Spider Associated Malicious Cyber Application: Conti ransomware-as-a-service (RaaS)<br>TrickBot<br>IcedID<br>Cobalt Strike<br>ZLoader Printer friendly view SUBMIT A TIP Do your part.",
+            "claim_status": "journalistic_report"
+          }
+        ]
       }
     ],
     "key_findings": [
@@ -271,6 +390,13 @@
           "ENT-001",
           "ENT-002",
           "ENT-005"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Conti – Rewards For Justice An official website of the United States Government Home About All Reward Offers Program Overview Success Stories Map Frequently Asked Questions TOR Best practices Terrorism Acts of Terror Terrorism Financing Terrorism - Individuals Organizations Hostages/Kidnapping Hostages/Kidnapping North Korea North Korea North Korea - Individual Malicious Cyber Activities Critical Infrastructure Critical Infrastructure - Individual Election Interference Election Interference Election Interference - Individual EN Submit a tip × Search × Languages English العربية ( Arabic ) हिन्दी ( Bengali ) 简体中文 ( Simplified Chinese ) Français ( French ) Deutsch ( German ) Ελληνικα ( Greek ) עברית ( Hebrew ) हिन्दी ( Hindi ) Bahasa Indonesia ( Indonesian ) 한국어 ( Korean ) کوردی ( Kurdish ) Bahasa Melayu ( Malay ) فارسی ( Persian ) Português ( Brazilian Portuguese ) ਪੰਜਾਬੀ ( Punjabi ) Русский ( Russian ) Soomaali ( Somali ) Español ( Spanish ) ไทย ( Thai ) Türkçe ( Turkish ) اردو ( Urdu ) አማርኛ ( Amharic ) پښتو ( Pashto ) Tagalog Українська ( Ukrainian ) Tiếng Việt ( Vietnamese ) မြန်မာဘာသာ ( Burmese ) ភាសាខ្មែរ ( Khmer ) ລາວ ( Lao ) Hausa سنڌي ( Sindhi ) 日本語 ( Japanese ) Kiswahili ( Swahili ) 繁體中文 ( Traditional Chinese ) Submit a tip Home About All Reward Offers Program Overview Success Stories Map Frequently Asked Questions TOR Best practices Terrorism Acts of Terror Terrorism Financing Terrorism - Individuals Organizations Hostages/Kidnapping Hostages/Kidnapping North Korea North Korea North Korea - Individual Malicious Cyber Activities Critical Infrastructure Critical Infrastructure - Individual Election Interference Election Interference Election Interference - Individual Conti Europe and Eurasia Reward Up to $10 million Do your part submit a tip About Rewards for Justice is offering a reward of up to $10 million for information leading to the identification or location of any person who, while acting at the direction or under the control of a foreign government, participates in malicious cyber activities against U.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -279,6 +405,13 @@
         "supporting_entities": [
           "ENT-003",
           "ENT-004"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Anyone with information on the malicious cyber activity of the cyber threat actors known as “Target,” “Reshaev,” “Professor,” “Tramp,” and “Dandis” should contact Rewards for Justice via the Tor-based tips-reporting channel at: he5dybnt7sr6cm32xt77pazmtm65flqy6irivtflruqfc5ep7eiodiad.",
+            "claim_status": "journalistic_report"
+          }
         ]
       },
       {
@@ -288,6 +421,13 @@
           "ENT-003",
           "ENT-006",
           "ENT-007"
+        ],
+        "evidence": [
+          {
+            "source_id": "SRC-001",
+            "quote": "Conti – Rewards For Justice An official website of the United States Government Home About All Reward Offers Program Overview Success Stories Map Frequently Asked Questions TOR Best practices Terrorism Acts of Terror Terrorism Financing Terrorism - Individuals Organizations Hostages/Kidnapping Hostages/Kidnapping North Korea North Korea North Korea - Individual Malicious Cyber Activities Critical Infrastructure Critical Infrastructure - Individual Election Interference Election Interference Election Interference - Individual EN Submit a tip × Search × Languages English العربية ( Arabic ) हिन्दी ( Bengali ) 简体中文 ( Simplified Chinese ) Français ( French ) Deutsch ( German ) Ελληνικα ( Greek ) עברית ( Hebrew ) हिन्दी ( Hindi ) Bahasa Indonesia ( Indonesian ) 한국어 ( Korean ) کوردی ( Kurdish ) Bahasa Melayu ( Malay ) فارسی ( Persian ) Português ( Brazilian Portuguese ) ਪੰਜਾਬੀ ( Punjabi ) Русский ( Russian ) Soomaali ( Somali ) Español ( Spanish ) ไทย ( Thai ) Türkçe ( Turkish ) اردو ( Urdu ) አማርኛ ( Amharic ) پښتو ( Pashto ) Tagalog Українська ( Ukrainian ) Tiếng Việt ( Vietnamese ) မြန်မာဘာသာ ( Burmese ) ភាសាខ្មែរ ( Khmer ) ລາວ ( Lao ) Hausa سنڌي ( Sindhi ) 日本語 ( Japanese ) Kiswahili ( Swahili ) 繁體中文 ( Traditional Chinese ) Submit a tip Home About All Reward Offers Program Overview Success Stories Map Frequently Asked Questions TOR Best practices Terrorism Acts of Terror Terrorism Financing Terrorism - Individuals Organizations Hostages/Kidnapping Hostages/Kidnapping North Korea North Korea North Korea - Individual Malicious Cyber Activities Critical Infrastructure Critical Infrastructure - Individual Election Interference Election Interference Election Interference - Individual Conti Europe and Eurasia Reward Up to $10 million Do your part submit a tip About Rewards for Justice is offering a reward of up to $10 million for information leading to the identification or location of any person who, while acting at the direction or under the control of a foreign government, participates in malicious cyber activities against U.",
+            "claim_status": "journalistic_report"
+          }
         ]
       }
     ],
