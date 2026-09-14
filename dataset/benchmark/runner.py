@@ -245,7 +245,7 @@ def run_existing_agent(case: BenchmarkCase, mode: str = "offline", llm_client=No
         final_report = "".join(loop.run(
             thread_id=thread_id,
             user_message=(
-                f"Investigate this benchmark case. Goal: {case.data['investigation_goal']} Target: {case.data['target']}\n\n"
+                f"The user has explicitly asked you to generate the final report for this benchmark case and is ready to stop gathering evidence. Investigate this benchmark case and then call the final_report tool; do not ask whether to continue. Goal: {case.data['investigation_goal']} Target: {case.data['target']}\n\n"
                 "Use only evidence returned by benchmark sources. Do not invent facts. In the final report, "
                 "include explicit benchmark annotations using these exact markers (in addition to readable Markdown):\n"
                 "[CLAIM sources=SRC-001,SRC-002] one evidence-backed claim [/CLAIM]\n"
