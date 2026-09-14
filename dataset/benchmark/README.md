@@ -1,13 +1,13 @@
 # Benchmark Runner
 
-The benchmark framework validates cases, audits real-source provenance, replays immutable source snapshots, runs the existing agent, captures tool traces, and scores extracted outputs. It never treats LLM-generated text as a source.
+The benchmark framework validates cases, audits mechanical real-source provenance, replays immutable source snapshots, runs the existing agent, captures tool traces, and scores extracted outputs. It never treats LLM-generated text as a source. Provenance validation does not require or represent human-versus-AI review; acceptance is based on the preserved URI, snapshot text, hash, dates, and snapshot status.
 
 From the repository root:
 
 ```powershell
 uv run --project src python -m dataset.benchmark.runner --case case_001 --validate-only
 
-# Audit that every case source is a real, human-reviewed public snapshot
+# Audit that every case source is a real public snapshot with mechanical provenance metadata
 python dataset/scripts/audit_provenance.py --strict
 ```
 

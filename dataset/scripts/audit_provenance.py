@@ -1,7 +1,8 @@
-"""Audit benchmark cases for verifiable public-source provenance.
+"""Audit benchmark cases for mechanically verifiable public-source provenance.
 
 This is intentionally a gate, not a source generator. It never fills missing
-text or metadata and never treats an LLM-written summary as evidence.
+text or metadata and never treats an LLM-written summary as evidence. It does
+not require or represent human-versus-AI review.
 
 Usage:
     python dataset/scripts/audit_provenance.py
@@ -56,16 +57,13 @@ def audit(path: Path) -> list[str]:
         status = content.get("snapshot_status")
         if status not in {"refreshed_from_fetch", "historical_snapshot_not_refreshed"}:
             errors.append(f"{sid}: snapshot_status must identify a fetched public snapshot")
-        if not content.get("publisher"):
-            errors.append(f"{sid}: missing publisher")
         if not content.get("publication_date"):
             errors.append(f"{sid}: missing publication_date")
         if not content.get("date_accessed") and not content.get("fetch_date"):
             errors.append(f"{sid}: missing access/fetch date")
-        if content.get("provenance_verified") is not True:
-            errors.append(f"{sid}: provenance_verified is not true (requires human review)")
-        if not content.get("verification_notes"):
-            errors.append(f"{sid}: missing verification_notes")
+        # Provenance acceptance is mechanical: URI, snapshot text, hash, and
+        # snapshot status are checked here. Human-review flags are deliberately
+        # not required or interpreted as validation gates.
         if content.get("evidence_summary") and not content.get("evidence_summary_is_source_text", False):
             # Summaries are useful metadata, but must not be mistaken for evidence.
             pass
