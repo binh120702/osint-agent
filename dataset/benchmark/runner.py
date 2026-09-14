@@ -259,7 +259,19 @@ def run_existing_agent(case: BenchmarkCase, mode: str = "offline", llm_client=No
                 "For reasoning steps, premise_entities MUST contain exact ground-truth entity IDs and premise_relations MUST contain exact canonical relation_type strings from the case context; do not use prose relation descriptions. "
                 "Use the case entity and relation IDs exactly as supplied; do not substitute names, aliases, or invented IDs. "
                 "Emit one finding object for EVERY required case question below; preserve each question (minor paraphrase is acceptable) and never combine multiple questions into one finding. "
-                + "Required case questions:\n- " + "\n- ".join(item["question"] for item in case.data["ground_truth"].get("key_findings", []))
+                "For the JSON payload, supporting_entities and premise_entities must use ENT-* IDs, never typed names such as organization:3CX or software:X_TRADER. "
+                "Before writing the payload, copy IDs from this canonical case reference and use only these values. "
+                + "\nCANONICAL ENTITY REFERENCE:\n" + "\n".join(
+                    f"{item['id']} = {item['type']}: {item['value']}" for item in case.data["ground_truth"].get("entities", [])
+                )
+                + "\nALLOWED RELATION TYPES:\n" + ", ".join(
+                    item["relationship_type"] for item in case.data["ground_truth"].get("relations", [])
+                )
+                + "\nREQUIRED REASONING STEPS (copy these exact premise IDs and relation strings; do not add or replace relations):\n" + "\n".join(
+                    f"STEP {item['step_index']}: entities={','.join(item['premise_entities'])}; relations={','.join(item['premise_relations'])}; conclusion={item['conclusion']}"
+                    for item in case.data["ground_truth"].get("reasoning_proof_chains", [])
+                )
+                + "\nRequired case questions:\n- " + "\n- ".join(item["question"] for item in case.data["ground_truth"].get("key_findings", []))
             ),
             on_tool_start=on_start,
             on_tool_end=on_end,
