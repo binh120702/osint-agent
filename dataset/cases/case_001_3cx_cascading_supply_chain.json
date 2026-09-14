@@ -679,7 +679,7 @@
         "evidence": [
           {
             "source_id": "SRC-003",
-            "quote": "Figure 1: 3CX software supply chain compromise linked to Trading Technologies software supply chain compromise Software Supply Chain Exploitation Explained Mandiant Consulting’s investigation of the 3CX supply chain compromise has uncovered the initial intrusion vector: a malware-laced software package distributed via an earlier software supply chain compromise that began with a tampered installer for X_TRADER, a software package provided by Trading Technologies (Figure 1).",
+            "quote": "]com in February 2022, preceding the distribution of compromised X_TRADER updates from the site.",
             "claim_status": "journalistic_report"
           }
         ]
@@ -711,7 +711,7 @@
         "evidence": [
           {
             "source_id": "SRC-003",
-            "quote": "Mandiant determined that a complex loading process led to the deployment of VEILEDSIGNAL, a multi-stage modular backdoor, and its modules.",
+            "quote": "VEILEDSIGNAL Similarities and Code Comparison The compromised X_TRADER and 3CXDesktopApp applications both contain, extract, and run a payload in the same way, although the final payload is different.",
             "claim_status": "journalistic_report"
           }
         ]
@@ -727,7 +727,7 @@
         "evidence": [
           {
             "source_id": "SRC-003",
-            "quote": "Mandiant tracks this activity as UNC4736, a suspected North Korean nexus cluster of activity.",
+            "quote": "]org UNC4736 2021-11-26 nxmnv[.",
             "claim_status": "journalistic_report"
           }
         ]
@@ -743,7 +743,7 @@
         "evidence": [
           {
             "source_id": "SRC-003",
-            "quote": "Mandiant tracks this activity as UNC4736, a suspected North Korean nexus cluster of activity.",
+            "quote": "]org UNC4736 2021-11-26 nxmnv[.",
             "claim_status": "journalistic_report"
           }
         ]
@@ -760,7 +760,7 @@
         "evidence": [
           {
             "source_id": "SRC-003",
-            "quote": "Mandiant tracks this activity as UNC4736, a suspected North Korean nexus cluster of activity.",
+            "quote": "]org UNC4736 2021-11-26 nxmnv[.",
             "claim_status": "journalistic_report"
           }
         ]
@@ -790,7 +790,7 @@
         "evidence": [
           {
             "source_id": "SRC-003",
-            "quote": "416 and earlier, which contained malicious code that ran a downloader, SUDDENICON, which in turn received additional command and control (C2) servers from encrypted icon files hosted on GitHub.",
+            "quote": "The decrypted C2 server was used to download a third stage identified as ICONICSTEALER, a dataminer that steals browser information.",
             "claim_status": "journalistic_report"
           }
         ]
@@ -822,7 +822,7 @@
         "evidence": [
           {
             "source_id": "SRC-003",
-            "quote": "Mandiant tracks this activity as UNC4736, a suspected North Korean nexus cluster of activity.",
+            "quote": "]org UNC4736 2021-11-26 nxmnv[.",
             "claim_status": "journalistic_report"
           }
         ]
@@ -838,7 +838,7 @@
         "evidence": [
           {
             "source_id": "SRC-003",
-            "quote": "Mandiant tracks this activity as UNC4736, a suspected North Korean nexus cluster of activity.",
+            "quote": "Figure 2: POOLRAT Link to CoinGoTrade and JMT Trading Activity Weak infrastructure overlap was also identified between UNC4736 and two clusters of suspected APT43 activity, UNC3782 and UNC4469.",
             "claim_status": "journalistic_report"
           }
         ]
@@ -854,7 +854,7 @@
         "evidence": [
           {
             "source_id": "SRC-003",
-            "quote": "Mandiant tracks this activity as UNC4736, a suspected North Korean nexus cluster of activity.",
+            "quote": "]org UNC4736 2021-11-26 nxmnv[.",
             "claim_status": "journalistic_report"
           }
         ]
@@ -870,7 +870,7 @@
         "evidence": [
           {
             "source_id": "SRC-003",
-            "quote": "Mandiant tracks this activity as UNC4736, a suspected North Korean nexus cluster of activity.",
+            "quote": "]org UNC4736 2021-11-26 nxmnv[.",
             "claim_status": "journalistic_report"
           }
         ]
@@ -885,7 +885,7 @@
         "evidence": [
           {
             "source_id": "SRC-003",
-            "quote": "The macOS build server was compromised with POOLRAT backdoor using Launch Daemons as a persistence mechanism.",
+            "quote": "]org as its configured C2 server.",
             "claim_status": "journalistic_report"
           }
         ]
@@ -916,8 +916,8 @@
         ],
         "evidence": [
           {
-            "source_id": "SRC-003",
-            "quote": "Mandiant assesses with moderate confidence that UNC4736 is related to financially motivated North Korean “AppleJeus” activity as reported by CISA.",
+            "source_id": "SRC-005",
+            "quote": "asp Campaign targeting cryptocurrency and Fintech organizations Another North Korean group, whose activity has been publicly tracked as Operation AppleJeus, targeted over 85 users in cryptocurrency and fintech industries leveraging the same exploit kit.",
             "claim_status": "journalistic_report"
           }
         ]
@@ -932,8 +932,8 @@
         ],
         "evidence": [
           {
-            "source_id": "SRC-004",
-            "quote": "Powered by SAS: threat hunting and new techniques Dmitry Bestuzhev Costin Raiu Pierre Delcher Brian Bartholomew Boris Larin Ariel Jungheit Fabio Assolini From the same authors Operation ForumTroll continues: Russian political scientists targeted using plagiarism reports PassiveNeuron: a sophisticated campaign targeting servers of high-profile organizations Code highlighting with Cursor AI for $500,000 The GitVenom campaign: cryptocurrency theft using GitHub Lazarus group evolves its infection chain with old and new malware In the same category The game is over: when “free” comes at too high a price.",
+            "source_id": "SRC-006",
+            "quote": "AppleJeus has been used by Lazarus Group , targeting companies in the energy, finance, government, industry, technology, and telecommunications sectors, and several countries including the United States, United Kingdom, South Korea, Australia, Brazil, New Zealand, and Russia.",
             "claim_status": "journalistic_report"
           }
         ]
