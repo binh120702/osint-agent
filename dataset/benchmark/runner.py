@@ -29,6 +29,10 @@ from .retrieval_metrics import score_retrieval
 RESULTS_ROOT = Path(__file__).resolve().parent.parent / "results"
 
 
+class _FinalReportComplete(Exception):
+    """Stop the benchmark agent after the final-report tool returns."""
+
+
 def _capture_neo4j_output(thread_id: str) -> tuple[list[dict[str, Any]], list[dict[str, Any]]] | None:
     """Read the persisted graph so scoring is independent of tool formatting."""
     try:
@@ -220,6 +224,7 @@ def run_existing_agent(case: BenchmarkCase, mode: str = "offline", llm_client=No
 
     calls: list[dict[str, Any]] = []
     active_call: dict[str, Any] | None = None
+    final_report_result = ""
 
     def on_start(name: str, args: dict[str, Any]):
         nonlocal active_call
@@ -233,6 +238,10 @@ def run_existing_agent(case: BenchmarkCase, mode: str = "offline", llm_client=No
             calls.append(active_call)
         active_call["result"] = result
         active_call["duration_ms"] = round((time.time() - active_call["started_at"]) * 1000, 2)
+        if name == "final_report":
+            nonlocal final_report_result
+            final_report_result = result
+            raise _FinalReportComplete()
 
     thread_id = f"benchmark-{case.case_id.lower()}-{uuid.uuid4().hex[:8]}"
     if mode not in {"offline", "live"}:
@@ -242,7 +251,8 @@ def run_existing_agent(case: BenchmarkCase, mode: str = "offline", llm_client=No
     if context:
         context.__enter__()
     try:
-        final_report = "".join(loop.run(
+        try:
+            final_report = "".join(loop.run(
             thread_id=thread_id,
             user_message=(
                 f"The user has explicitly asked you to generate the final report for this benchmark case and is ready to stop gathering evidence. Investigate this benchmark case and then call the final_report tool; do not ask whether to continue. Goal: {case.data['investigation_goal']} Target: {case.data['target']}\n\n"
@@ -276,7 +286,15 @@ def run_existing_agent(case: BenchmarkCase, mode: str = "offline", llm_client=No
             on_tool_start=on_start,
             on_tool_end=on_end,
             llm_client=llm_client,
-        ))
+            ))
+        except _FinalReportComplete:
+            final_report = final_report_result
+        except Exception as exc:
+            # Preserve a machine-readable partial artifact when a provider or
+            # tool fails before final_report; callers can distinguish this from
+            # an empty but successful report.
+            final_report = ""
+            calls.append({"name": "__runtime_failure__", "result": str(exc), "duration_ms": 0})
     finally:
         if context:
             context.__exit__(None, None, None)
@@ -286,7 +304,7 @@ def run_existing_agent(case: BenchmarkCase, mode: str = "offline", llm_client=No
                              "search_calls": sum(x.get("name") == "engine_search_tool" for x in calls),
                              "fetch_calls": sum(x.get("name") in {"get_url_content", "deep_search"} for x in calls),
                              "knowledge_base_calls": sum(x.get("name") == "knowledge_agent" for x in calls),
-                             "termination_reason": "final_report" if final_report else "empty_report"}}
+                             "termination_reason": "final_report" if final_report else ("runtime_failure" if any(x.get("name") == "__runtime_failure__" for x in calls) else "empty_report")}}
     trace["output"] = _extract_output(trace, case)
     trace["output"]["operational"] = dict(trace["operational"])
     if graph_source == "neo4j":

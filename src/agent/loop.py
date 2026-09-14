@@ -217,7 +217,10 @@ def run(
                     result = tool_fn.invoke(tc.arguments)
                     if not isinstance(result, str):
                         result = json.dumps(result, default=str)
-                    result = _truncate(result)
+                    # Preserve completed final reports in full so their
+                    # fenced JSON payload remains parseable by benchmark callers.
+                    if tc.name != "final_report":
+                        result = _truncate(result)
                     logger.info("⚙️ Tool '%s' execution complete. Result preview: %s", tc.name, result[:200] + ("..." if len(result) > 200 else ""))
                 except Exception as exc:
                     result = f"Tool '{tc.name}' raised an error: {exc}"
@@ -350,7 +353,10 @@ def run_streaming(
                         result = tool_fn.invoke(tc.arguments)
                         if not isinstance(result, str):
                             result = json.dumps(result, default=str)
-                        result = _truncate(result)
+                        # Preserve completed final reports in full so their
+                        # fenced JSON payload remains parseable by benchmark callers.
+                        if tc.name != "final_report":
+                            result = _truncate(result)
                         logger.info("⚙️ Tool '%s' execution complete. Result preview: %s", tc.name, result[:200] + ("..." if len(result) > 200 else ""))
                     except Exception as exc:
                         result = f"Tool '{tc.name}' raised an error: {exc}"

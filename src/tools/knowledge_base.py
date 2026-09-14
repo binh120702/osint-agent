@@ -756,18 +756,23 @@ def knowledge_agent(text: str, source_url: str = "", source_title: str = "") -> 
                 {"type": str(entry.get("type", "")).strip(), "description": str(entry.get("description", "")).strip()}
             )
 
+    system_prompt = _knowledge_agent_system_prompt(normalized_entities, normalized_relations)
     messages = [
-        SystemMessage(content=_knowledge_agent_system_prompt(normalized_entities, normalized_relations)),
+        SystemMessage(content=system_prompt),
         HumanMessage(content=text),
     ]
-    
-    response = ACTIVE_LLM_CLIENT.invoke(messages)
-    content = getattr(response, "content", str(response))
-    if not isinstance(content, str):
-        # Some providers return structured content blocks instead of a plain
-        # string. Preserve the response in a form the parser can inspect.
-        content = json.dumps(content, ensure_ascii=False, default=str)
-    
+
+    def invoke_content(request_messages: list[Any]) -> str:
+        response = ACTIVE_LLM_CLIENT.invoke(request_messages)
+        value = getattr(response, "content", str(response))
+        if not isinstance(value, str):
+            # Some providers return structured content blocks instead of a
+            # plain string. Preserve the response in a form the parser can inspect.
+            value = json.dumps(value, ensure_ascii=False, default=str)
+        return value
+
+    content = invoke_content(messages)
+
     thread_id = current_kb_namespace()
     subject_id = _current_subject_id()
     driver = get_neo4j_driver()
@@ -790,22 +795,43 @@ def knowledge_agent(text: str, source_url: str = "", source_title: str = "") -> 
         if not isinstance(data, dict):
             raise ValueError("Knowledge Agent response must be a JSON object")
     except (json.JSONDecodeError, ValueError, TypeError):
-        # Fallback: store raw content in Neo4j if it is not valid JSON
-        with driver.session() as session:
-            session.run(
-                "MERGE (e:Entity {thread_id: $thread_id, type: 'RAW', value: $value}) "
-                "SET e:Raw, e.notes = $notes, e.created_at = timestamp()",
-                thread_id=thread_id, value=content[:200], notes=content
-            )
-            if subject_id:
+        # A provider can occasionally return an unrelated or malformed answer
+        # despite the structured-output prompt. Give it one bounded correction
+        # attempt; never infer graph data from malformed output.
+        retry_messages = [
+            SystemMessage(content=system_prompt + "\n\nIMPORTANT: Your previous response was invalid. Return ONLY one valid JSON object matching the schema above; do not include prose, markdown, or unrelated content."),
+            HumanMessage(content=text),
+        ]
+        retry_content = invoke_content(retry_messages)
+        retry_cleaned = retry_content.strip()
+        if retry_cleaned.startswith("```json"):
+            retry_cleaned = retry_cleaned[7:]
+        if retry_cleaned.endswith("```"):
+            retry_cleaned = retry_cleaned[:-3]
+        try:
+            data = json.loads(retry_cleaned.strip())
+            if isinstance(data, str):
+                data = json.loads(data)
+            if not isinstance(data, dict):
+                raise ValueError("Knowledge Agent response must be a JSON object")
+            content = retry_content
+        except (json.JSONDecodeError, ValueError, TypeError):
+            # Fallback: store raw content in Neo4j if neither response is valid JSON.
+            with driver.session() as session:
                 session.run(
-                    "CREATE (ev:Evidence {evidence_id: $evidence_id, subject_id: $subject_id, "
-                    "thread_id: $thread_id, claim: $claim, source_url: $source_url, "
-                    "source_title: $source_title, confidence: 0.5, status: 'pending', created_at: timestamp()})",
-                    evidence_id=f"EVD-{uuid.uuid4().hex[:12].upper()}", subject_id=subject_id,
-                    thread_id=thread_id, claim=content, source_url=source_url, source_title=source_title,
+                    "MERGE (e:Entity {thread_id: $thread_id, type: 'RAW', value: $value}) "
+                    "SET e:Raw, e.notes = $notes, e.created_at = timestamp()",
+                    thread_id=thread_id, value=content[:200], notes=content
                 )
-        return json.dumps({"status": "stored_raw", "raw": content}, indent=2)
+                if subject_id:
+                    session.run(
+                        "CREATE (ev:Evidence {evidence_id: $evidence_id, subject_id: $subject_id, "
+                        "thread_id: $thread_id, claim: $claim, source_url: $source_url, "
+                        "source_title: $source_title, confidence: 0.5, status: 'pending', created_at: timestamp()})",
+                        evidence_id=f"EVD-{uuid.uuid4().hex[:12].upper()}", subject_id=subject_id,
+                        thread_id=thread_id, claim=content, source_url=source_url, source_title=source_title,
+                    )
+            return json.dumps({"status": "stored_raw", "raw": content}, indent=2)
 
     extracted_entities = data.get("entities", [])
     extracted_relations = data.get("relations", [])
