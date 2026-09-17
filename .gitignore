@@ -16,3 +16,10 @@ outputs/candidate-runs/*/runs/
 outputs/candidate-runs/*/__pycache__/
 outputs/candidate-runs/*/*.log
 outputs/candidate-runs/*/all-progress.json
+
+# Local planning and paper-writing artifacts
+.plan/
+.plans/
+outputs/.plan/
+outputs/.plans/
+latex/
