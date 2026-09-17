@@ -8,6 +8,7 @@ src/kmap/
 src/data/
 src/.agents/
 dataset/results/
+.pi/
 
 # Local candidate checkouts and benchmark run artifacts
 outputs/candidate-runs/*/source/
