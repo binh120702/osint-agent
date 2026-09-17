@@ -1,0 +1,9 @@
+FROM python:3.11-slim
+WORKDIR /opt/openosint
+COPY source/ /opt/openosint/
+RUN pip install --no-cache-dir '.[openai]' pytest pytest-asyncio && pip freeze > /opt/dependencies.txt
+COPY adapter.py replay.py /opt/benchmark/
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
+USER 65534:65534
+WORKDIR /opt/benchmark
+CMD ["python", "adapter.py"]

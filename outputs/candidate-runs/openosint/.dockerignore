@@ -1,0 +1,6 @@
+source/.git
+source/.env
+source/**/__pycache__
+source/node_modules
+runs
+*.log

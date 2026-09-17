@@ -8,3 +8,10 @@ src/kmap/
 src/data/
 src/.agents/
 dataset/results/
+
+# Local candidate checkouts and benchmark run artifacts
+outputs/candidate-runs/*/source/
+outputs/candidate-runs/*/runs/
+outputs/candidate-runs/*/__pycache__/
+outputs/candidate-runs/*/*.log
+outputs/candidate-runs/*/all-progress.json
