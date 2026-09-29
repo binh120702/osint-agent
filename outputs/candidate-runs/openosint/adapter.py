@@ -2,6 +2,7 @@
 from __future__ import annotations
 import asyncio
 import json
+import os
 import time
 from pathlib import Path
 from types import SimpleNamespace
@@ -30,7 +31,7 @@ def main():
         temp.write_text(json.dumps(kwargs, ensure_ascii=False))
         temp.rename(io / (stem + '.json'))
         response_path = io / (stem.replace('request', 'response') + '.json')
-        deadline = time.monotonic() + 240
+        deadline = time.monotonic() + int(os.environ.get("BENCHMARK_RESPONSE_TIMEOUT", "240"))
         while not response_path.exists():
             if time.monotonic() > deadline:
                 raise TimeoutError('host inference bridge response timeout')

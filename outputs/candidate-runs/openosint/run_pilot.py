@@ -15,8 +15,13 @@ root = Path(__file__).resolve().parent
 p = argparse.ArgumentParser()
 p.add_argument('--run-dir', default='OSINT-001')
 p.add_argument('--prepare-from')
+p.add_argument('--timeout', type=int, default=900)
+p.add_argument('--max-requests', type=int, default=20)
+p.add_argument('--bridge-python', default=sys.executable)
+p.add_argument('--bridge-script', default=str(root/'inference_bridge.py'))
 a = p.parse_args()
-run = root / 'runs' / a.run_dir
+run_arg = Path(a.run_dir)
+run = run_arg if run_arg.is_absolute() else root / 'runs' / run_arg
 if a.prepare_from:
     import shutil
     run.mkdir(parents=True, exist_ok=False)
@@ -31,14 +36,15 @@ model = os.environ.get('OPENAI_MODEL_ID', values.get('OPENAI_MODEL_ID', ''))
 if provider != 'openai' or model != 'gpt-5.6-luna':
     raise SystemExit('Configured provider/model differs from the approved pilot specification.')
 image = subprocess.check_output(['docker', 'image', 'inspect', 'osint-bench-openosint:1ab71de', '--format', '{{.Id}}'], text=True).strip()
-name = 'osint-openosint-pilot-' + str(int(time.time()))
+run_token = hashlib.sha1(str(run.resolve()).encode('utf-8')).hexdigest()[:12]
+name = 'osint-openosint-pilot-' + run_token + '-' + str(int(time.time()))
 command = ['docker', 'run', '--name', name, '--network', 'none', '--read-only', '--tmpfs', '/tmp:rw,noexec,nosuid,size=256m', '--security-opt', 'no-new-privileges', '--cap-drop', 'ALL', '--memory', '2g', '--cpus', '2', '--pids-limit', '128', '--mount', f'type=bind,source={run / "input"},target=/input,readonly', '--mount', f'type=bind,source={io},target=/io', image]
-manifest = {'started_at': datetime.now(timezone.utc).isoformat(), 'model': model, 'provider': provider, 'upstream_commit': '1ab71de6cdb1e6f5423c46e154b7a838b233aae2', 'image_id': image, 'network': 'none; host file bridge permits inference only', 'credential_in_container': False, 'maximum_requests': 20, 'sdk_max_retries_per_request': 0, 'maximum_completion_tokens_per_request': 4096, 'temperature': 0, 'timeout_seconds': 900, 'docker_command': command, 'files': {f.name: hashlib.sha256(f.read_bytes()).hexdigest() for f in (root/'adapter.py', root/'inference_bridge.py', root/'replay.py', run/'input/case.json')}, 'evaluation': 'assisted; canonical entities and expected proof conclusions supplied; not blind', 'status': 'running'}
+manifest = {'started_at': datetime.now(timezone.utc).isoformat(), 'model': model, 'provider': provider, 'upstream_commit': '1ab71de6cdb1e6f5423c46e154b7a838b233aae2', 'image_id': image, 'network': 'none; host file bridge permits inference only', 'credential_in_container': False, 'maximum_requests': a.max_requests, 'sdk_max_retries_per_request': 0, 'maximum_completion_tokens_per_request': 4096, 'temperature': 0, 'timeout_seconds': a.timeout, 'docker_command': command, 'files': {f.name: hashlib.sha256(f.read_bytes()).hexdigest() for f in (root/'adapter.py', root/'inference_bridge.py', root/'replay.py', run/'input/case.json')}, 'evaluation': 'assisted; canonical entities and expected proof conclusions supplied; not blind', 'status': 'running'}
 (run/'manifest.json').write_text(json.dumps(manifest, indent=2))
 with (run/'bridge.log').open('w', encoding='utf-8') as bridge_log, (run/'container.log').open('w', encoding='utf-8') as log:
-    bridge = subprocess.Popen([sys.executable, str(root/'inference_bridge.py'), '--io', str(io), '--model', model, '--max-requests', '20', '--timeout', '900'], stdout=bridge_log, stderr=subprocess.STDOUT)
+    bridge = subprocess.Popen([a.bridge_python, a.bridge_script, '--io', str(io), '--model', model, '--max-requests', str(a.max_requests), '--timeout', str(a.timeout)], stdout=bridge_log, stderr=subprocess.STDOUT)
     try:
-        completed = subprocess.run(command, stdout=log, stderr=subprocess.STDOUT, timeout=920)
+        completed = subprocess.run(command, stdout=log, stderr=subprocess.STDOUT, timeout=a.timeout + 20)
         manifest.update(status='completed' if completed.returncode == 0 else 'failed', exit_code=completed.returncode)
     except subprocess.TimeoutExpired:
         subprocess.run(['docker', 'stop', '-t', '5', name], capture_output=True)
