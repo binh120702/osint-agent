@@ -24,12 +24,30 @@ outputs/.plan/
 outputs/.plans/
 latex/
 # Local benchmark run artifacts
-outputs/multi-iteration-runs/
+outputs/multi-iteration-runs/*
+!outputs/multi-iteration-runs/baseline-v15-structured-contract/
+outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/
+!outputs/multi-iteration-runs/baseline-v15-structured-contract/scoring/
+!outputs/multi-iteration-runs/baseline-v15-structured-contract/scoring/common-contract-aggregate.json
+!outputs/multi-iteration-runs/openosint-v6-contract-10workers/
+outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-*/
+!outputs/multi-iteration-runs/openosint-v6-contract-10workers/scoring/
+!outputs/multi-iteration-runs/openosint-v6-contract-10workers/scoring/common-contract-aggregate.json
 
 # Local output Markdown artifacts
 outputs/**/*.md
 # Experimental benchmark scripts and candidate output trees
 outputs/candidate-runs/*
+!outputs/candidate-runs/gpt-researcher/
+outputs/candidate-runs/gpt-researcher/source/
+outputs/candidate-runs/gpt-researcher/runs/
+!outputs/candidate-runs/gpt-researcher/scoring/
+!outputs/candidate-runs/gpt-researcher/scoring/common-contract-aggregate.json
+!outputs/candidate-runs/open-deep-research/
+outputs/candidate-runs/open-deep-research/source/
+outputs/candidate-runs/open-deep-research/runs/
+!outputs/candidate-runs/open-deep-research/scoring/
+!outputs/candidate-runs/open-deep-research/scoring/common-contract-aggregate.json
 outputs/*.py
 outputs/*.json
 package-lock.json
