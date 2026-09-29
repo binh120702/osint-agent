@@ -4,7 +4,7 @@ import time
 from dotenv import load_dotenv
 from agent.tool_decorator import tool
 
-from llms.client_factory import ACTIVE_LLM_CLIENT
+# Loaded lazily by describe_image to keep metadata/config imports lightweight.
 
 
 load_dotenv()
@@ -34,6 +34,7 @@ def describe_image(image_url: str) -> str:
 
     for attempt in range(1, max_retries + 1):
         try:
+            from llms.client_factory import ACTIVE_LLM_CLIENT
             description_text = ACTIVE_LLM_CLIENT.describe_image(
                 image_url=image_url, prompt=IMAGE_DESCRIPTION_PROMPT
             )

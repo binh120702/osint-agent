@@ -6,11 +6,17 @@ import os
 import time
 from pathlib import Path
 
-from bs4 import BeautifulSoup
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service as ChromeService
-from selenium.webdriver.common.by import By
+try:
+    from bs4 import BeautifulSoup
+except ImportError:  # Optional dependency; only needed by HTML/EXIF paths.
+    BeautifulSoup = None
+try:
+    from selenium import webdriver
+    from selenium.webdriver.chrome.options import Options
+    from selenium.webdriver.chrome.service import Service as ChromeService
+    from selenium.webdriver.common.by import By
+except ImportError:  # Optional dependency; only needed by browser crawling.
+    webdriver = Options = ChromeService = By = None
 
 
 def _create_driver(headless: bool = True):

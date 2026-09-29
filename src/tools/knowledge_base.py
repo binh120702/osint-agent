@@ -11,7 +11,8 @@ from contextvars import ContextVar
 from agent.messages import SystemMessage, HumanMessage
 from agent.tool_decorator import tool
 
-from llms.client_factory import ACTIVE_LLM_CLIENT
+# Loaded lazily in the one code path that invokes the model so configuration helpers
+# remain importable in lightweight benchmark/test environments.
 from tools.image_descriptor import describe_image
 from tools.osint_multimedia import getEXIFdata
 
@@ -325,17 +326,18 @@ Return a single JSON object containing both entities and relations using this ex
 }}
 
 Extraction Rules:
-1. Be concise but complete. Extract all key details.
-2. Values should be stable identifiers where possible (e.g., usernames, domain names, URLs, email addresses) rather than conversational text.
-3. Only extract relations that are explicitly supported by the text.
+1. Be selective and evidence-first. Extract only entities and relationships that are central to the supplied observation or required to support an explicit claim; do not attempt to enumerate every noun, date, document label, or keyword.
+2. Prefer stable identity-bearing values (for example names, handles, domains, URLs, hashes, case numbers, malware families, and products) over conversational phrases. Do not create an entity merely because a phrase is descriptive, appears in a citation, or is mentioned as background context.
+3. Only extract a relation when the text explicitly states or directly entails that relation and the source/target are independently meaningful entities. A shared sentence or source citation is not evidence of a relationship.
 4. Ensure the source and target values in the "relations" array exist exactly in the "entities" array.
 5. If you detect images, classify them as type "image" and use their URL, path, or filename as the value.
 6. Extract metadata only when the input explicitly supports it. Do not infer or invent metadata.
 7. Metadata keys must be one of the fields listed for the entity type. Use arrays only when multiple distinct values are supported.
 8. Prefer the most specific allowed relationship type that is explicitly supported by the text. Do not replace a specific relationship with `associated_with`, `mentions`, or `other_relation` merely because the specific type is unfamiliar.
 9. Relationship direction matters: preserve the actor/source entity as `from` and the acted-on/target entity as `to`.
-10. Use `associated_with` only when the text establishes an association but does not support any more specific allowed relationship. Never emit a relation solely because two entities occur in the same passage.
+10. Treat `mentions`, `associated_with`, and `other_relation` as last-resort relations. Use them only when the text explicitly asserts that relationship and no specific allowed type applies; never emit one for co-occurrence, citation proximity, or a document mentioning an entity.
 11. For relationships not covered by the allowed list, omit the relation rather than inventing a generic edge.
+12. When uncertain whether an incidental entity or edge is supported, omit it. A smaller graph with source-grounded observations is preferred to speculative coverage.
 """
 
 
@@ -763,6 +765,7 @@ def knowledge_agent(text: str, source_url: str = "", source_title: str = "") -> 
     ]
 
     def invoke_content(request_messages: list[Any]) -> str:
+        from llms.client_factory import ACTIVE_LLM_CLIENT
         response = ACTIVE_LLM_CLIENT.invoke(request_messages)
         value = getattr(response, "content", str(response))
         if not isinstance(value, str):
