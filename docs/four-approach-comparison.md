@@ -1,13 +1,13 @@
 # Four-Approach Comparison
 
-This document summarizes the common contract-track evaluation.
+This document summarizes the common contract-track evaluation. The baseline results below use the complete 10-iteration run: 10 iterations x 10 cases = 100 outputs.
 
 ## Results: completed-output view
 
 | Approach | Finding F1 | Contradiction F1 | Reasoning | Report quality | Source precision | Source recall |
 |---|---:|---:|---:|---:|---:|---:|
-| **Baseline v15** | 0.9167 | 0.7333 | **0.9708** | **0.9500** | **1.0000** | **1.0000** |
-| **OpenOSINT v6** | **0.9500** | 0.4711 | 0.8360 | 0.8725 | 0.9800 | 0.9083 |
+| **Baseline v15 (10 iterations)** | **0.9917** | 0.7450 | **0.9819** | **0.9600** | **1.0000** | **1.0000** |
+| **OpenOSINT v6 (10 iterations)** | 0.9500 | 0.4711 | 0.8360 | 0.8725 | 0.9800 | 0.9083 |
 | **GPT Researcher** | 0.4393 | **0.8167** | 0.5385 | 0.8417 | **1.0000** | 0.9639 |
 | **Open Deep Research** | 0.2333 | 0.6000 | 0.6397 | 0.6833 | 0.9000 | 0.9000 |
 
@@ -17,15 +17,15 @@ This view includes only outputs that passed the structured validity checks.
 
 | Approach | Finding F1 | Contradiction F1 | Reasoning | Report quality | Source precision | Source recall |
 |---|---:|---:|---:|---:|---:|---:|
-| **Baseline v15** | 0.9167 | 0.7333 | **0.9708** | **0.9500** | **1.0000** | **1.0000** |
-| **OpenOSINT v6** | **0.9430** | 0.5475 | 0.8062 | 0.8871 | 0.9737 | 0.8958 |
+| **Baseline v15 (10 iterations)** | **0.9917** | 0.7450 | **0.9819** | **0.9600** | **1.0000** | **1.0000** |
+| **OpenOSINT v6 (10 iterations)** | 0.9430 | 0.5475 | 0.8062 | 0.8871 | 0.9737 | 0.8958 |
 | **GPT Researcher** | 0.4393 | **0.8167** | 0.5385 | 0.8417 | **1.0000** | 0.9639 |
 | **Open Deep Research** | 0.2916 | 0.5000 | 0.7106 | 0.6771 | 0.8750 | 0.8750 |
 
 ## Simple summary
 
 - **Best overall balance:** Baseline v15
-- **Best finding score:** OpenOSINT v6
+- **Best finding score:** Baseline v15
 - **Best contradiction score:** GPT Researcher
 - **Best reasoning score:** Baseline v15
 - **Best report quality:** Baseline v15
@@ -36,7 +36,7 @@ This view includes only outputs that passed the structured validity checks.
 
 | Approach | Completed outputs | Valid outputs | Terminal failures | Validity rate |
 |---|---:|---:|---:|---:|
-| **Baseline v15** | 10 | 10 | 0 | 100.00% |
+| **Baseline v15** | 100 | 100 | 0 | 100.00% |
 | **OpenOSINT v6** | 98 | 74 | 2 | 75.51% |
 | **GPT Researcher** | Historical single-run artifacts | Not separately reported | Not separately reported | Not directly comparable |
 | **Open Deep Research** | Historical single-run artifacts | Not separately reported | Not separately reported | Not directly comparable |

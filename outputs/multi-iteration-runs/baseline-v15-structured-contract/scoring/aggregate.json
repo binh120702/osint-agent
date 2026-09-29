@@ -6,14 +6,14 @@
       "iteration": 1,
       "case_id": "OSINT-001",
       "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-01/OSINT-001/candidate-result.json",
-      "artifact_sha256": "63ca6bbb7fc502f4ea4f5567a5588a01978a2dfae819c602fe93ed4f167e23a5",
+      "artifact_sha256": "268628d62b7ffd6caf32b6a4b1ddfe3b2902e90f4b532f8e7c278fee27660722",
       "structured_output_valid": true,
       "structured_output_errors": [],
       "metrics": {
-        "finding_f1": 0.16666666666666666,
-        "contradiction_f1": 0.3333333333333333,
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
         "reasoning": 1.0,
-        "report_quality": 0.8333333333333334,
+        "report_quality": 0.9166666666666666,
         "source_precision": 1.0,
         "source_recall": 1.0
       }
@@ -22,7 +22,7 @@
       "iteration": 1,
       "case_id": "OSINT-002",
       "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-01/OSINT-002/candidate-result.json",
-      "artifact_sha256": "8baa901df47a6a027ab4d7d8ca7d154c0d85b89b000d482a1b54dcfda03d1148",
+      "artifact_sha256": "ca4ee3510b3aa1f625b5e8986675ccc770208e657642a8538603472f5be08d63",
       "structured_output_valid": true,
       "structured_output_errors": [],
       "metrics": {
@@ -38,14 +38,14 @@
       "iteration": 1,
       "case_id": "OSINT-003",
       "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-01/OSINT-003/candidate-result.json",
-      "artifact_sha256": "935bd3add54cd18c24e56700c442750c92de0a3212f7fa16f74f1b2c50563dfc",
+      "artifact_sha256": "16064d2d8a4caff909cdb366813199439c532db01d7b0d3159d5126475e0f789",
       "structured_output_valid": true,
       "structured_output_errors": [],
       "metrics": {
         "finding_f1": 1.0,
-        "contradiction_f1": 1.0,
-        "reasoning": 0.8333333333333334,
-        "report_quality": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
         "source_precision": 1.0,
         "source_recall": 1.0
       }
@@ -54,7 +54,7 @@
       "iteration": 1,
       "case_id": "OSINT-004",
       "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-01/OSINT-004/candidate-result.json",
-      "artifact_sha256": "a768142846570da8949f4e5b8a19589a98d7c752f5b119093e009c9c1fa08841",
+      "artifact_sha256": "3db8344e2ccf70e97ed7f6a00f4e709bdfa0915b0147eca234a724df59a07459",
       "structured_output_valid": true,
       "structured_output_errors": [],
       "metrics": {
@@ -70,13 +70,13 @@
       "iteration": 1,
       "case_id": "OSINT-005",
       "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-01/OSINT-005/candidate-result.json",
-      "artifact_sha256": "9fbc9ca706e4c88ed37f97de0a60ab4a24fff711af27c9b52eac52b4cd9e6606",
+      "artifact_sha256": "55c98abb7d46e51db364734e825fd2356320494c571ef91562df3be4203154ac",
       "structured_output_valid": true,
       "structured_output_errors": [],
       "metrics": {
         "finding_f1": 1.0,
         "contradiction_f1": 1.0,
-        "reasoning": 0.875,
+        "reasoning": 0.75,
         "report_quality": 1.0,
         "source_precision": 1.0,
         "source_recall": 1.0
@@ -86,7 +86,7 @@
       "iteration": 1,
       "case_id": "OSINT-006",
       "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-01/OSINT-006/candidate-result.json",
-      "artifact_sha256": "1ea58c482c17bb2f80c95b5b1c98222649d0febd350e240fe35f350e85ef31be",
+      "artifact_sha256": "f382eb09310944ff2954507dea5e415fe9f94a629ff991baea4256fbc0271e9a",
       "structured_output_valid": true,
       "structured_output_errors": [],
       "metrics": {
@@ -102,7 +102,7 @@
       "iteration": 1,
       "case_id": "OSINT-007",
       "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-01/OSINT-007/candidate-result.json",
-      "artifact_sha256": "c489c822537c4ce29f335d570946f6a52440e3e2c6072ddf48856885c2eb26bd",
+      "artifact_sha256": "82d04efa8af796d4fb2096126fb2dac2034277a588349621b3afd9f049d89400",
       "structured_output_valid": true,
       "structured_output_errors": [],
       "metrics": {
@@ -118,7 +118,7 @@
       "iteration": 1,
       "case_id": "OSINT-008",
       "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-01/OSINT-008/candidate-result.json",
-      "artifact_sha256": "537c193f2339f4095b5b219730269a293c6c6d162ab33a6e151d7b4ea96a11f2",
+      "artifact_sha256": "2e7e5077917af34bfbcba069814904777d9601d2a906a91bf653e8d8acb5a9da",
       "structured_output_valid": true,
       "structured_output_errors": [],
       "metrics": {
@@ -134,7 +134,119 @@
       "iteration": 1,
       "case_id": "OSINT-009",
       "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-01/OSINT-009/candidate-result.json",
-      "artifact_sha256": "493ad92258eb3326e08f2f134cc7b4f4b987050d46f31c5c8974d4f85dc94600",
+      "artifact_sha256": "dd80d758962683c9963f0b2d14ccfce6615021e48eaf06e596a8ae425add2362",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-01/OSINT-010/candidate-result.json",
+      "artifact_sha256": "867c1e981ca8fbf94223cf82c2af0d61a18dac15042e50ede56739d1807319e0",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 0.736111111111111,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-02/OSINT-001/candidate-result.json",
+      "artifact_sha256": "d6a551a7b7348861514952d5cc894288c5be3d45c9568a83532fbf4bf38bf89a",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.6666666666666666,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-02/OSINT-002/candidate-result.json",
+      "artifact_sha256": "0904e0a652eefe51ba9e01aded4ba5d26ccd97eadd3c90388324c42955e6b19a",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 0.9444444444444443,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-02/OSINT-003/candidate-result.json",
+      "artifact_sha256": "98b618fc4f127e2239cd2a285301229d7c07c82a92335cbdcbb4f07a46dad082",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 0.7777777777777777,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-02/OSINT-004/candidate-result.json",
+      "artifact_sha256": "ffbf395843230b4a620554292e55c09d2fa8114f0be88e87c8804a80e3c86161",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-02/OSINT-005/candidate-result.json",
+      "artifact_sha256": "8e2d4c7e8ea32f254aa3629408bb76ad0108cb95545d25ec654134c576db4ffa",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-02/OSINT-006/candidate-result.json",
+      "artifact_sha256": "e4b8d16b3947a1165f74611ff7e3008f1cddf1345dba915de1c5192cdf10fea4",
       "structured_output_valid": true,
       "structured_output_errors": [],
       "metrics": {
@@ -147,10 +259,1338 @@
       }
     },
     {
-      "iteration": 1,
+      "iteration": 2,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-02/OSINT-007/candidate-result.json",
+      "artifact_sha256": "7e524fc2d7a00c358d3ac27adc97c200e93b7eb5f0be7e8d84f37ef1ce3ce266",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-02/OSINT-008/candidate-result.json",
+      "artifact_sha256": "83cbf86e2f420b462c1830d1d06b030ddfba346c1d1ee93dff7cede64ad9742f",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-02/OSINT-009/candidate-result.json",
+      "artifact_sha256": "6aa5ba172d22241f2dab7b030bd54b3d136c374565bb052b30cf755fded06054",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 2,
       "case_id": "OSINT-010",
-      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-01/OSINT-010/candidate-result.json",
-      "artifact_sha256": "25aceafaf1506a723e39bfe8726c994d6a125aab91f8bb34578f5f004c09a030",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-02/OSINT-010/candidate-result.json",
+      "artifact_sha256": "cfbd802452462e9c9e24a68afccbf038f571d959ce366e2d7d860cc7f2b8768e",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-03/OSINT-001/candidate-result.json",
+      "artifact_sha256": "6014b521cee153ef688a7573b755acb03d5ff56617c564cfd996c5456e6d03a3",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-03/OSINT-002/candidate-result.json",
+      "artifact_sha256": "a98df42f4d68656e8f893f14e7df30bea67eab814968dbb507f48cb056cf04c7",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-03/OSINT-003/candidate-result.json",
+      "artifact_sha256": "a6dc0d884c3b359b1da2e3f1e23a23effd479317c7c4f22c5c0d77f7d4aadf67",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 0.9166666666666666,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-03/OSINT-004/candidate-result.json",
+      "artifact_sha256": "ba07078f6b520f5cc762440faae446f7a27d960bd9501450820d98b454b0ced1",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-03/OSINT-005/candidate-result.json",
+      "artifact_sha256": "dfbdc7d0fa1985c7387bc8e02409c8948119edb94adabe772149e863e21cf076",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-03/OSINT-006/candidate-result.json",
+      "artifact_sha256": "513e50235bd52f9e0d7874ddef04dffea3b22bb3db965eb9949d1c3583459cc1",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-03/OSINT-007/candidate-result.json",
+      "artifact_sha256": "b67f5df80665cf38650a9e069a15bb38a9e7008dd380090744339172a482bfb4",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-03/OSINT-008/candidate-result.json",
+      "artifact_sha256": "ea4c03bf3d9dafc17e1c31749f92edbb26ca7456181513e6a537f2f3e1f7bfc4",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 0.5694444444444444,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-03/OSINT-009/candidate-result.json",
+      "artifact_sha256": "c1a3612ea442703dab1bba224922cf54daede2d7214aa7bd83663abf4c361fd1",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-03/OSINT-010/candidate-result.json",
+      "artifact_sha256": "c1b443b6609af82be0dbdc476a8397f46f1c8fda65c0624700ac14a673ea0685",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-04/OSINT-001/candidate-result.json",
+      "artifact_sha256": "0121b68b56f279cb86c9dab2bca30fac6636dafade28f8e81aa305ad4b7a81a6",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.6666666666666666,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-04/OSINT-002/candidate-result.json",
+      "artifact_sha256": "b8d4b5173d0280942d25df639fe949374e25a1726357b27d96c0ad1336dbb442",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-04/OSINT-003/candidate-result.json",
+      "artifact_sha256": "670e6bbbec0670ec4e5568ad108258ba4caee30689c070b2ca044c7755f2e7d9",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-04/OSINT-004/candidate-result.json",
+      "artifact_sha256": "8669e7c98673becaa1cfbff2079a594a2c3f9a6097d82ead5ed91ce57892dad5",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-04/OSINT-005/candidate-result.json",
+      "artifact_sha256": "1831e2e45ec1240f4c96a875cff52e08d0bfe3fca8d88249eec3f40f021d12aa",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-04/OSINT-006/candidate-result.json",
+      "artifact_sha256": "6585d63ca048e5929db9236b083d617710690ef2f274e8f0251047145a04687a",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-04/OSINT-007/candidate-result.json",
+      "artifact_sha256": "73805d902aa3a53eb60cdf5b8690298ccbe2ce9c0cc3c24d3babafbed1d89bde",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-04/OSINT-008/candidate-result.json",
+      "artifact_sha256": "6fea8e57a1a27b5b0c485b6a6ae655dd525188a734d3cd7e6e03cb273890cb6b",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-04/OSINT-009/candidate-result.json",
+      "artifact_sha256": "56a3318d5cf8b1c4cc0b27ca9c0220ea3a44249557cf5b1795becea0b145b27e",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-04/OSINT-010/candidate-result.json",
+      "artifact_sha256": "4996d45fd26189952d4ad5c89e9e850a0862971dec4c87f9366009e0fbf12593",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-05/OSINT-001/candidate-result.json",
+      "artifact_sha256": "6e41c17adb991ca1631b677fd4ef4d10dc1fc53ad134cb75cf0f0306ad255e20",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.6666666666666666,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-05/OSINT-002/candidate-result.json",
+      "artifact_sha256": "0cdf77603c76cbaf14a14a46470fffa3cf05cf1568b503585c2f2a1224ca17bb",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-05/OSINT-003/candidate-result.json",
+      "artifact_sha256": "ac90def77abd21c7c7e1f09f57775e284aedbf14a8b158dcc59d0f152d71fc77",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 0.9166666666666666,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-05/OSINT-004/candidate-result.json",
+      "artifact_sha256": "dc0142596d85f2676c0eb852acb0d681efb18dacbd8c6979f4ecb5a694bea923",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-05/OSINT-005/candidate-result.json",
+      "artifact_sha256": "e4a319dc593edbf4220ff05386ce290a89d40ccd25e6466f28eb9b3cc14aed3a",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-05/OSINT-006/candidate-result.json",
+      "artifact_sha256": "deebade3a7af9552149a876ac67b090a2edb5a3f874f9ce0c934ced5ab770b98",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-05/OSINT-007/candidate-result.json",
+      "artifact_sha256": "69f752e7d76d17ba75c3bc81704f383581be112fb3612c5a55b5cdebf586f81e",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-05/OSINT-008/candidate-result.json",
+      "artifact_sha256": "ae600dfebd9538a5389b6170d161203fcd5d6cc997c891bdbede3a7d14f1f3a7",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-05/OSINT-009/candidate-result.json",
+      "artifact_sha256": "8c58854ca9c4257c4a6c13123c8184a1060bee68d1b03ce87d98392753852cfb",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-05/OSINT-010/candidate-result.json",
+      "artifact_sha256": "40869b60d95c988289d5ca562bb40c5e542f245dd0aa240d243645eddb1915cb",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-06/OSINT-001/candidate-result.json",
+      "artifact_sha256": "04e3a4023694df3ca75239de985b0ac0ecabc81427a3b8e3f66b204e70e4b8a6",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-06/OSINT-002/candidate-result.json",
+      "artifact_sha256": "2bb0835c8b30d9e9c868a350a04382b162d96a23e2df4a77d3955c3513a6ee72",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-06/OSINT-003/candidate-result.json",
+      "artifact_sha256": "fb2b1d64278e7b48e4f6594300ce98f93e1cb01bb5f1d0e1337732edb91f22ee",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 0.9166666666666666,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-06/OSINT-004/candidate-result.json",
+      "artifact_sha256": "ea2b87f433073360fb6d609f6f6b1b3eedae34403889fa79707cf1147348cc16",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-06/OSINT-005/candidate-result.json",
+      "artifact_sha256": "5f51971c91a73e79fa71fba380cdf32d862c3173c3ce99e7de60fbeff9fdadc0",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-06/OSINT-006/candidate-result.json",
+      "artifact_sha256": "44cfeaad30ddb121f6d751bda1f22facce00071e4453ae63f702fbe2043d0df0",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-06/OSINT-007/candidate-result.json",
+      "artifact_sha256": "cbb22be308748e3768c4d3468115a66056d37f6b2e0f3aa094071d21233cef68",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-06/OSINT-008/candidate-result.json",
+      "artifact_sha256": "8e5c7311fc0d8273b13f42336890301bd1b2e3cc31f30bd07c854d8dbc2f58f0",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-06/OSINT-009/candidate-result.json",
+      "artifact_sha256": "8af7d030a943f7937dd758ba2afba40c3a6a6b3b905de39b42b8c691162d196b",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-06/OSINT-010/candidate-result.json",
+      "artifact_sha256": "12d537a6fb0e728e11d3c2b9d9d11891bef7ca7d079b5cb555a786314c699092",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-07/OSINT-001/candidate-result.json",
+      "artifact_sha256": "c281d1c438b8b5991c7c3ce492257585171bffebfe0455f2205b6b59da55087a",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-07/OSINT-002/candidate-result.json",
+      "artifact_sha256": "65dbfad680fce20f491be041a30ce7b9dd558caa6d2d3189d57489eef3e616c3",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-07/OSINT-003/candidate-result.json",
+      "artifact_sha256": "a695cdfed0a4e60af554b27ea8a4a6a23b415830cac9112b1d950c2758e7aeae",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-07/OSINT-004/candidate-result.json",
+      "artifact_sha256": "70453d7afa02c944ae694f233ebaf853489141a696237920bc39499cd3486297",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-07/OSINT-005/candidate-result.json",
+      "artifact_sha256": "c9470a09012e2818b9675821b5aaa9d023658a0047db5093a8f74936ff03617b",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.5,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.875,
+        "report_quality": 0.75,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-07/OSINT-006/candidate-result.json",
+      "artifact_sha256": "4d75f0ebc082c2c788d36bae5c588c647a3062a7cbfb62ffef0135cb352db637",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-07/OSINT-007/candidate-result.json",
+      "artifact_sha256": "06cb8c297d22cec9cd2db24fa1a10409f0b7f558f50fd091aa1607daaa0bb067",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-07/OSINT-008/candidate-result.json",
+      "artifact_sha256": "4cf00cb1cb04541772e7a626d7e9dadfa8b6c2332b2627b38858f63941bded37",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-07/OSINT-009/candidate-result.json",
+      "artifact_sha256": "e80d46f85c30095afcc5077f9dfaf7927ef4ee440c92e66bc13f499615a0548b",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-07/OSINT-010/candidate-result.json",
+      "artifact_sha256": "1a437a24c032386550cfe08c5282124b7faaf21b589a0403362ab023313a7cbe",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-08/OSINT-001/candidate-result.json",
+      "artifact_sha256": "4ff48d1fa6cf8d7725a08acf30ba65e2ad68c8e3bed8159605fea4d520b83b89",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.6666666666666666,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-08/OSINT-002/candidate-result.json",
+      "artifact_sha256": "33d97914285a37276f15f99377cce4c56820387ceb7371c3dd7c16067f031be8",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-08/OSINT-003/candidate-result.json",
+      "artifact_sha256": "b391053a7d38ac1a28a1bd0b136f39b0b3101612c89c9ad1215f533f945d7d2a",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-08/OSINT-004/candidate-result.json",
+      "artifact_sha256": "92866dc1edf4c94bed4412b20326dc6a22261924411197535e6ae38f27d5beee",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-08/OSINT-005/candidate-result.json",
+      "artifact_sha256": "93cd8ac421aa7463121f76d9bd2b11d28c64d802c933627e7c94d7219aed49d7",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-08/OSINT-006/candidate-result.json",
+      "artifact_sha256": "6d3c924c6aee54db894e16148f5e793604250db66d463c8087950c28b64d4b99",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-08/OSINT-007/candidate-result.json",
+      "artifact_sha256": "af6fa528c1d37da3f1ac390d1764248c17f26ec969bd9054c45ace846ec88423",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-08/OSINT-008/candidate-result.json",
+      "artifact_sha256": "a52df8c2b2aadbe551edf8a945e2798cb625b9a303ff37e6848b008e51c47db2",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-08/OSINT-009/candidate-result.json",
+      "artifact_sha256": "79cb42b92369bf54d3581f57f0b49a0f8ea0b1db72f30278e4492578cb79069d",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-08/OSINT-010/candidate-result.json",
+      "artifact_sha256": "1ea079514afc4b91515ee4202ba411f983920426f365130c600bee10a3415a77",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-09/OSINT-001/candidate-result.json",
+      "artifact_sha256": "fc4889a41af33a033dd3d61dc1999d077f05672d8b2dcca3e537036eb01f7667",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-09/OSINT-002/candidate-result.json",
+      "artifact_sha256": "de87b596a0bd5e1e3e9b6e82962656fb654b99ebd330ae7a9b32f592ce3b7a0a",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-09/OSINT-003/candidate-result.json",
+      "artifact_sha256": "f0f18afb6e8fd1e1abfe16e14b71c0d64711de2d7555c174e5b9f42f4c4784c3",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 0.9166666666666666,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-09/OSINT-004/candidate-result.json",
+      "artifact_sha256": "2b0b4e23843dbee20cbdb3d69f3bae9f06d866730cede224751e8a831e8a524a",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-09/OSINT-005/candidate-result.json",
+      "artifact_sha256": "8a486591f94964ce0ab624e29839fb22188aec0d45c39f8aa82fcc8cd99d8d21",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-09/OSINT-006/candidate-result.json",
+      "artifact_sha256": "6e5563d30afd702efee0bfcfbee879a2ec2a4c211047d7f6672ad6ed8f07dc3f",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-09/OSINT-007/candidate-result.json",
+      "artifact_sha256": "fa8abc162c4c94174803698bc97804f661d8543db7036a2a9f6eab4e7874e10a",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-09/OSINT-008/candidate-result.json",
+      "artifact_sha256": "665d4285f1ae79b32c61e81ecd8eb8821645b547851ce98e752c6544b1def3a0",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-09/OSINT-009/candidate-result.json",
+      "artifact_sha256": "d31467346459b8bde349ac545eb6875fb8cf09aa06190c0ec070af0f318e6429",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-09/OSINT-010/candidate-result.json",
+      "artifact_sha256": "2fe7cd8b5330ccc31f9170285ec2feff88ccb31afb7240a6d60d945c7c339e32",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-10/OSINT-001/candidate-result.json",
+      "artifact_sha256": "9e5cf38ad3ca1acf5087e1bcce497538ec86833ed219f11411398e41ee511ae3",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-10/OSINT-002/candidate-result.json",
+      "artifact_sha256": "99d1be9f8aa2b0f06721313eef18a1348375a007de89346e1c9bf914d05ed76f",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-10/OSINT-003/candidate-result.json",
+      "artifact_sha256": "ea73790fbebf0b78c7651824a67d56425621bf6ce124548d933661961e2ab979",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-10/OSINT-004/candidate-result.json",
+      "artifact_sha256": "899a15106d9c96cf9eb40ab5ecca4046c2c03fc6d16275ee0756895ef28d2336",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-10/OSINT-005/candidate-result.json",
+      "artifact_sha256": "aa71a7847575a9d8c892c297decaeeb994afdbe5b1f2a6aa79553c383f2327f9",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 0.875,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-10/OSINT-006/candidate-result.json",
+      "artifact_sha256": "616e11a2aed2c95c1e58b5779cd53273d52844857b81d4c7e52f462a275a0744",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-10/OSINT-007/candidate-result.json",
+      "artifact_sha256": "05333bd7fc26b02f476e7e84574b5c3fb332cd0e70de0d4ab78843669ef65d24",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-10/OSINT-008/candidate-result.json",
+      "artifact_sha256": "3286a0bb2ff29c85e3d265a3ffee67ba1f69044cdbdf1cecb3d359a041167701",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-10/OSINT-009/candidate-result.json",
+      "artifact_sha256": "a29b05df29011c1911ed281b63f3a732c79678caab0e72fc6e28c68b446ed31e",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-10/OSINT-010/candidate-result.json",
+      "artifact_sha256": "02b402ac28b10f33e5b6a50754638a99f850983db9ec61e60c23dcfc22c621d7",
       "structured_output_valid": true,
       "structured_output_errors": [],
       "metrics": {
@@ -164,19 +1604,19 @@
     }
   ],
   "completed_output": {
-    "n_rows": 10,
+    "n_rows": 100,
     "metrics": {
       "finding_f1": {
-        "mean": 0.9166666666666666
+        "mean": 0.9916666666666667
       },
       "contradiction_f1": {
-        "mean": 0.7333333333333333
+        "mean": 0.745
       },
       "reasoning": {
-        "mean": 0.9708333333333334
+        "mean": 0.9819444444444444
       },
       "report_quality": {
-        "mean": 0.95
+        "mean": 0.96
       },
       "source_precision": {
         "mean": 1.0
@@ -187,19 +1627,19 @@
     }
   },
   "valid_only": {
-    "n_rows": 10,
+    "n_rows": 100,
     "metrics": {
       "finding_f1": {
-        "mean": 0.9166666666666666
+        "mean": 0.9916666666666667
       },
       "contradiction_f1": {
-        "mean": 0.7333333333333333
+        "mean": 0.745
       },
       "reasoning": {
-        "mean": 0.9708333333333334
+        "mean": 0.9819444444444444
       },
       "report_quality": {
-        "mean": 0.95
+        "mean": 0.96
       },
       "source_precision": {
         "mean": 1.0
