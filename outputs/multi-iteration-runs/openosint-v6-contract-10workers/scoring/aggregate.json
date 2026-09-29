@@ -1,0 +1,1426 @@
+{
+  "protocol": "openosint-v6-contract",
+  "benchmark_snapshot_sha256": "561e463eac51c71d83b97cf20c706395f8ecb3763fdec6d77715c17da9156bd0",
+  "rows": [
+    {
+      "iteration": 1,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-01/OSINT-001/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.3333333333333333,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 0.625
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-01/OSINT-002/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.8070175438596491,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-01/OSINT-003/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-01/OSINT-004/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 0.6666666666666666,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-01/OSINT-005/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-01/OSINT-006/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-01/OSINT-007/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": false
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-01/OSINT-008/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-01/OSINT-009/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 0.3333333333333333,
+        "contradiction_f1": 0.3333333333333333,
+        "reasoning": 1.0,
+        "report_quality": 0.75,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": false
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-01/OSINT-010/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.25,
+        "reasoning": 0.24338624338624337,
+        "report_quality": 0.75,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": false
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-02/OSINT-001/attempt-02/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.2222222222222222,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 0.625
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-02/OSINT-002/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.5398110661268556,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-02/OSINT-003/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.5502645502645502,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 0.75
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-02/OSINT-004/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 0.6666666666666666,
+        "contradiction_f1": 1.0,
+        "reasoning": 0.24338624338624337,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-02/OSINT-005/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 0.6666666666666666,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-02/OSINT-006/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-02/OSINT-007/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": false
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-02/OSINT-008/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 0.4656084656084656,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-02/OSINT-009/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.3333333333333333,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 0.75
+      },
+      "structured_output_valid": false
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-02/OSINT-010/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.25,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": false
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-03/OSINT-001/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.2222222222222222,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 0.5
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-03/OSINT-002/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.6518218623481782,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-03/OSINT-003/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-03/OSINT-004/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-03/OSINT-005/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-03/OSINT-006/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.3333333333333333,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": false
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-03/OSINT-007/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": false
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-03/OSINT-008/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 0.5026455026455027,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-03/OSINT-009/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-03/OSINT-010/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.3333333333333333,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": false
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-04/OSINT-001/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.3333333333333333,
+        "reasoning": 0.9333333333333332,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 0.625
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-04/OSINT-002/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-04/OSINT-003/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-04/OSINT-004/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 0.6666666666666666,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-04/OSINT-005/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-04/OSINT-006/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-04/OSINT-007/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.25,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": false
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-04/OSINT-008/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-04/OSINT-009/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.3333333333333333,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": false
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-04/OSINT-010/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.25,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 0.75
+      },
+      "structured_output_valid": false
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-05/OSINT-001/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.3333333333333333,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 0.625
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-05/OSINT-002/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 0.7253711201079622,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-05/OSINT-003/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.6084656084656085,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 0.75
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-05/OSINT-004/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-05/OSINT-005/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-05/OSINT-006/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-05/OSINT-007/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": false
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-05/OSINT-008/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-05/OSINT-009/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-05/OSINT-010/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.3333333333333333,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 0.75
+      },
+      "structured_output_valid": false
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-06/OSINT-002/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 0.6039136302294197,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-06/OSINT-003/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 0.25925925925925924,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 0.75
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-06/OSINT-004/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-06/OSINT-005/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-06/OSINT-006/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-06/OSINT-007/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-06/OSINT-008/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-06/OSINT-009/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-06/OSINT-010/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 0.25925925925925924,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 0.75
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-07/OSINT-002/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 0.9649122807017544,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-07/OSINT-003/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.6666666666666666,
+        "reasoning": 0.3703703703703704,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 0.75
+      },
+      "structured_output_valid": false
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-07/OSINT-004/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 0.6666666666666666,
+        "contradiction_f1": 1.0,
+        "reasoning": 0.39153439153439146,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-07/OSINT-005/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.3333333333333333,
+        "report_quality": 0.75,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-07/OSINT-006/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-07/OSINT-007/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": false
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-07/OSINT-008/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 0.4021164021164021,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-07/OSINT-009/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.3333333333333333,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": false
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-07/OSINT-010/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.25,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": false
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-08/OSINT-001/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.2222222222222222,
+        "reasoning": 0.9368055555555556,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 0.625
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-08/OSINT-002/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.3333333333333333,
+        "reasoning": 0.7172739541160594,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": false
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-08/OSINT-003/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 0.6666666666666666,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 0.75
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-08/OSINT-004/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-08/OSINT-005/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-08/OSINT-006/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.3333333333333333,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": false
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-08/OSINT-007/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": false
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-08/OSINT-008/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 0.12169312169312169,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-08/OSINT-009/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-08/OSINT-010/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 0.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-09/OSINT-001/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.2222222222222222,
+        "reasoning": 0.8095394736842105,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 0.5555555555555556
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-09/OSINT-002/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-09/OSINT-003/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-09/OSINT-004/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-09/OSINT-005/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-09/OSINT-006/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-09/OSINT-007/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.25,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": false
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-09/OSINT-008/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 0.6666666666666666,
+        "contradiction_f1": 1.0,
+        "reasoning": 0.5343915343915344,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-09/OSINT-009/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 0.8518518518518517,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-09/OSINT-010/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.3333333333333333,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 0.75
+      },
+      "structured_output_valid": false
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-10/OSINT-001/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.2222222222222222,
+        "reasoning": 0.9583333333333334,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 0.625
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-10/OSINT-002/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.5910931174089069,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-10/OSINT-003/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 0.19576719576719573,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-10/OSINT-004/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 0.6666666666666666,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-10/OSINT-005/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-10/OSINT-006/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-10/OSINT-007/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": false
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-10/OSINT-008/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 0.3650793650793651,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-10/OSINT-009/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/openosint-v6-contract-10workers/iteration-10/OSINT-010/attempt-01/io/candidate-result.json",
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      },
+      "structured_output_valid": true
+    }
+  ],
+  "completed_output": {
+    "n_rows": 98,
+    "metrics": {
+      "finding_f1": {
+        "mean": 0.9693877551020408
+      },
+      "contradiction_f1": {
+        "mean": 0.4807256235827665
+      },
+      "reasoning": {
+        "mean": 0.8531051595498427
+      },
+      "report_quality": {
+        "mean": 0.886904761904762
+      },
+      "source_precision": {
+        "mean": 1.0
+      },
+      "source_recall": {
+        "mean": 0.9418934240362812
+      }
+    }
+  },
+  "valid_only": {
+    "n_rows": 74,
+    "metrics": {
+      "finding_f1": {
+        "mean": 0.9684684684684686
+      },
+      "contradiction_f1": {
+        "mean": 0.5623123123123124
+      },
+      "reasoning": {
+        "mean": 0.8280172306488096
+      },
+      "report_quality": {
+        "mean": 0.9065315315315314
+      },
+      "source_precision": {
+        "mean": 1.0
+      },
+      "source_recall": {
+        "mean": 0.93993993993994
+      }
+    }
+  },
+  "validity_rate": 0.7551020408163265,
+  "terminal_failures": 0
+}

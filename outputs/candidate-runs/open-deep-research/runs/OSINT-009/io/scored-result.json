@@ -1,0 +1,523 @@
+{
+  "case_id": "OSINT-009",
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "artifact": "outputs/candidate-runs/open-deep-research/runs/OSINT-009/io/candidate-result.json",
+  "artifact_sha256": "84a537188e1000c1768a4318396fff3a892021f4e1f56ec837b1a4affe648457",
+  "manifest_sha256": "84a537188e1000c1768a4318396fff3a892021f4e1f56ec837b1a4affe648457",
+  "manifest_hash_match": true,
+  "report_sha256": "eb0571907b174219809b68c3372ea7e7a450b2a8ddd294eb28fe3c75dbff639f",
+  "status": "completed",
+  "output_summary": {
+    "available_source_references": [
+      "SRC-001",
+      "SRC-002",
+      "SRC-003",
+      "SRC-004"
+    ],
+    "source_references": [
+      "SRC-001",
+      "SRC-002",
+      "SRC-003",
+      "SRC-004"
+    ],
+    "key_findings": [
+      {
+        "question": "",
+        "answer": "The supplied reporting supports a source-reported relationship between King Abdullah II, offshore or front-company structures, the British Virgin Islands, Alcogal compliance records, and luxury properties in Malibu, Washington, DC, London, and other United Kingdom locations.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-006",
+          "ENT-007",
+          "ENT-008",
+          "ENT-009",
+          "ENT-010"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "question": "",
+        "answer": "The Guardian links Alcogal to internal compliance and beneficial-ownership records concerning the reported beneficial owner of 16 companies holding assets in the United States, the United Kingdom, and Jersey.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-006",
+          "ENT-007"
+        ],
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "",
+        "answer": "The British Virgin Islands are supported as an offshore incorporation jurisdiction and as the location of the BOSS beneficial-ownership system referenced by Alcogal.",
+        "supporting_entities": [
+          "ENT-007"
+        ],
+        "source_references": [
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "question": "",
+        "answer": "The supported canonical property locations are Malibu, California; Washington, DC; and London, with additional United Kingdom property reported in Ascot.",
+        "supporting_entities": [
+          "ENT-008",
+          "ENT-009",
+          "ENT-010"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "question": "",
+        "answer": "Guinevere Enterprises Ltd., Zayer Ltd., Victoria Loraine, and Andrew Evans are not expressly named or connected in the supplied source snapshots, so no source-supported relationships involving them are mapped.",
+        "supporting_entities": [
+          "ENT-002",
+          "ENT-003",
+          "ENT-004",
+          "ENT-005"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "question": "",
+        "answer": "The supplied SRC-004 snapshot reproduces the Al Jazeera article body and therefore does not provide independent ICIJ-specific text within the constrained evidence set.",
+        "supporting_entities": [
+          "ENT-001"
+        ],
+        "source_references": [
+          "SRC-003",
+          "SRC-004"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "claim": "Deutsche Welle reported 14 houses and flats in the United States and United Kingdom, purchased between 2003 and 2017 for more than EUR 91 million or approximately USD 106 million through 36 front companies registered in tax havens.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "The Guardian reported that King Abdullah II's property holdings exceeded USD 100 million and that ownership was disguised through offshore companies incorporated in the British Virgin Islands.",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "claim": "The Guardian reported that an Alcogal memorandum identified Abdullah Al Hussein, born January 30, 1962 and using a Raghadan Palace address, as beneficial owner of 16 companies holding assets in the United States, the United Kingdom, and Jersey.",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "claim": "Al Jazeera and the duplicated ICIJ source record reported three Malibu beachfront mansions acquired through three offshore companies for USD 68 million, three Washington, DC, luxury apartments, a house in Ascot, and multimillion-dollar apartments in central London.",
+        "source_references": [
+          "SRC-003",
+          "SRC-004"
+        ]
+      }
+    ],
+    "reasoning_steps": [
+      1,
+      2,
+      3
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "CONTRA-001",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ],
+        "description": "The reporting documents offshore ownership and secrecy, while the King's representatives stated that the structures served privacy and security, that the properties were personally funded, and that no public money or aid intended for public use had been misused. Offshore ownership and secrecy are documented; illegality is not established by those facts alone."
+      }
+    ],
+    "structured_output_valid": false,
+    "structured_output_complete": true,
+    "structured_output_errors": [
+      "finding has empty question",
+      "finding has empty question",
+      "finding has empty question",
+      "finding has empty question",
+      "finding has empty question",
+      "finding has empty question",
+      "reasoning step 2 uses non-canonical relation owned_or_connected_to_front_company supported only for the source-reported offshore structures",
+      "reasoning step 2 uses non-canonical relation adviser_to not supported for ENT-004 or ENT-005"
+    ]
+  },
+  "metrics": {
+    "finding_f1": 0.2222222222222222,
+    "contradiction_grounded_f1": 1.0,
+    "reasoning_grounded_score": 0.5079365079365079,
+    "report_quality": 0.75,
+    "source_precision": 1.0,
+    "source_recall": 1.0,
+    "entity_f1": "not_applicable",
+    "relation_f1": "not_applicable"
+  },
+  "full_metrics": {
+    "output_validation": {
+      "valid": false,
+      "errors": [
+        "finding has empty question",
+        "finding has empty question",
+        "finding has empty question",
+        "finding has empty question",
+        "finding has empty question",
+        "finding has empty question",
+        "reasoning step 2 uses non-canonical relation owned_or_connected_to_front_company supported only for the source-reported offshore structures",
+        "reasoning step 2 uses non-canonical relation adviser_to not supported for ENT-004 or ENT-005"
+      ]
+    },
+    "entities": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 10,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "missing": [
+        [
+          "location",
+          "british virgin islands"
+        ],
+        [
+          "location",
+          "london"
+        ],
+        [
+          "location",
+          "malibu, california"
+        ],
+        [
+          "location",
+          "washington, dc"
+        ],
+        [
+          "organization",
+          "alcogal"
+        ],
+        [
+          "organization",
+          "guinevere enterprises ltd."
+        ],
+        [
+          "organization",
+          "zayer ltd."
+        ],
+        [
+          "person",
+          "andrew evans"
+        ],
+        [
+          "person",
+          "king abdullah ii"
+        ],
+        [
+          "person",
+          "victoria loraine"
+        ]
+      ],
+      "unexpected": []
+    },
+    "relations": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "missing": [
+        [
+          [
+            "organization",
+            "alcogal"
+          ],
+          "offshore_service_provider_for",
+          [
+            "person",
+            "king abdullah ii"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "guinevere enterprises ltd."
+          ],
+          "incorporated_in",
+          [
+            "location",
+            "british virgin islands"
+          ]
+        ],
+        [
+          [
+            "person",
+            "andrew evans"
+          ],
+          "wealth_manager_or_record_keeper_for",
+          [
+            "person",
+            "king abdullah ii"
+          ]
+        ],
+        [
+          [
+            "person",
+            "king abdullah ii"
+          ],
+          "owned_or_connected_to_front_company",
+          [
+            "organization",
+            "guinevere enterprises ltd."
+          ]
+        ],
+        [
+          [
+            "person",
+            "king abdullah ii"
+          ],
+          "owned_or_connected_to_front_company",
+          [
+            "organization",
+            "zayer ltd."
+          ]
+        ],
+        [
+          [
+            "person",
+            "king abdullah ii"
+          ],
+          "owned_property_in",
+          [
+            "location",
+            "london"
+          ]
+        ],
+        [
+          [
+            "person",
+            "king abdullah ii"
+          ],
+          "owned_property_in",
+          [
+            "location",
+            "malibu, california"
+          ]
+        ],
+        [
+          [
+            "person",
+            "king abdullah ii"
+          ],
+          "owned_property_in",
+          [
+            "location",
+            "washington, dc"
+          ]
+        ],
+        [
+          [
+            "person",
+            "victoria loraine"
+          ],
+          "adviser_to",
+          [
+            "person",
+            "king abdullah ii"
+          ]
+        ]
+      ],
+      "unexpected": [],
+      "semantic_mapping": {
+        "also_known_as": "alias_of",
+        "alias_of": "alias_of",
+        "co_founded": "founded",
+        "founded": "founded",
+        "based_in": "located_in",
+        "located_in": "located_in",
+        "performed_special_audit": "audited",
+        "audited": "audited",
+        "former_coo_of": "executive_of",
+        "executive_of": "executive_of",
+        "provided_software": "provided",
+        "distributed_as_installer": "distributed",
+        "contained_malware": "contained",
+        "trojanized": "compromised",
+        "associated_with": "associated_with",
+        "linked_to": "associated_with",
+        "uses_or_is_associated_with": "associated_with"
+      }
+    },
+    "contradictions": {
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "details": [
+        {
+          "contradiction_id": "CONTRA-001",
+          "source_references_correct": true,
+          "source_reference_recall": 1.0
+        }
+      ],
+      "missing": [],
+      "unexpected": [],
+      "grounded_recall": 1.0,
+      "grounded_f1": 1.0
+    },
+    "key_findings": {
+      "score": 0.19999999999999998,
+      "precision": 0.16666666666666666,
+      "recall": 0.3333333333333333,
+      "f1": 0.2222222222222222,
+      "predicted": 6,
+      "expected": 3,
+      "matched": 1,
+      "details": [
+        {
+          "question": "What offshore ownership pattern should be reconstructed?",
+          "status": "missing",
+          "score": 0.0
+        },
+        {
+          "question": "Which jurisdictions and locations matter?",
+          "status": "matched",
+          "score": 0.6,
+          "semantic": 0.6,
+          "supporting_entity_recall": 1.0,
+          "source_recall": 1.0,
+          "has_source_references": true
+        },
+        {
+          "question": "What caveat should be preserved?",
+          "status": "missing",
+          "score": 0.0
+        }
+      ]
+    },
+    "source_traceability": {
+      "correct_sources": [
+        "SRC-001",
+        "SRC-002",
+        "SRC-003",
+        "SRC-004"
+      ],
+      "unknown_sources": [],
+      "unavailable_sources": [],
+      "source_precision": 1.0,
+      "source_recall": 1.0,
+      "ratio": 1.0,
+      "claim_level": {
+        "claims": 4,
+        "traceable_claims": 4,
+        "ratio": 1.0,
+        "unknown_sources": [],
+        "unavailable_sources": []
+      },
+      "finding_level": {
+        "findings": 6,
+        "traceable_findings": 6,
+        "ratio": 1.0
+      }
+    },
+    "reasoning_coverage": {
+      "covered": [
+        1,
+        2,
+        3
+      ],
+      "invalid": [],
+      "total": 3,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "ratio": 1.0,
+      "status": "structured_step_ids"
+    },
+    "report_quality": {
+      "score": 0.75,
+      "checks": {
+        "non_empty": true,
+        "structured_output_complete": true,
+        "structured_output_valid": false,
+        "findings_present": true,
+        "findings_match": false,
+        "claims_traceable": true,
+        "contradictions_complete": true,
+        "contradictions_grounded": true,
+        "finding_sources_grounded": true,
+        "reasoning_conclusions_grounded": true,
+        "uncertainty_language": true,
+        "readable_length": false
+      },
+      "scale": "deterministic rubric 0-1"
+    },
+    "reasoning_quality": {
+      "covered": 3,
+      "expected": 3,
+      "coverage": 1.0,
+      "semantic_similarity": 0.544973544973545,
+      "premise_grounding": 0.8333333333333334,
+      "grounded_score": 0.5079365079365079,
+      "method": "premise_ids_plus_token_entailment_proxy",
+      "details": [
+        {
+          "id": 1,
+          "premise_score": 1.0,
+          "entity_recall": 1.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 0.5555555555555556,
+          "invalid_premise_entities": [],
+          "invalid_premise_relations": [],
+          "grounded_score": 0.5555555555555556
+        },
+        {
+          "id": 2,
+          "premise_score": 0.5,
+          "entity_recall": 1.0,
+          "relation_recall": 0.0,
+          "conclusion_similarity": 0.2222222222222222,
+          "invalid_premise_entities": [],
+          "invalid_premise_relations": [
+            "adviser_to not supported for ent-004 or ent-005",
+            "owned_or_connected_to_front_company supported only for the source-reported offshore structures"
+          ],
+          "grounded_score": 0.1111111111111111
+        },
+        {
+          "id": 3,
+          "premise_score": 1.0,
+          "entity_recall": 1.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 0.8571428571428571,
+          "invalid_premise_entities": [],
+          "invalid_premise_relations": [],
+          "grounded_score": 0.8571428571428571
+        }
+      ]
+    },
+    "operational": {}
+  }
+}

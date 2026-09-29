@@ -1,0 +1,79 @@
+{
+  "completed": 1,
+  "valid": 1,
+  "total": 1,
+  "metrics": {
+    "finding_f1": {
+      "completed": {
+        "mean": 1.0,
+        "population_sd": null,
+        "n": 1
+      },
+      "valid_only": {
+        "mean": 1.0,
+        "population_sd": null,
+        "n": 1
+      }
+    },
+    "contradiction_grounded_f1": {
+      "completed": {
+        "mean": 0.2222222222222222,
+        "population_sd": null,
+        "n": 1
+      },
+      "valid_only": {
+        "mean": 0.2222222222222222,
+        "population_sd": null,
+        "n": 1
+      }
+    },
+    "reasoning_grounded_score": {
+      "completed": {
+        "mean": 1.0,
+        "population_sd": null,
+        "n": 1
+      },
+      "valid_only": {
+        "mean": 1.0,
+        "population_sd": null,
+        "n": 1
+      }
+    },
+    "report_quality": {
+      "completed": {
+        "mean": 0.8333333333333334,
+        "population_sd": null,
+        "n": 1
+      },
+      "valid_only": {
+        "mean": 0.8333333333333334,
+        "population_sd": null,
+        "n": 1
+      }
+    },
+    "source_precision": {
+      "completed": {
+        "mean": 1.0,
+        "population_sd": null,
+        "n": 1
+      },
+      "valid_only": {
+        "mean": 1.0,
+        "population_sd": null,
+        "n": 1
+      }
+    },
+    "source_recall": {
+      "completed": {
+        "mean": 0.625,
+        "population_sd": null,
+        "n": 1
+      },
+      "valid_only": {
+        "mean": 0.625,
+        "population_sd": null,
+        "n": 1
+      }
+    }
+  }
+}

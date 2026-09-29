@@ -1,0 +1,132 @@
+{
+  "case_id": "OSINT-002",
+  "candidate": "assafelovic/gpt-researcher",
+  "adaptation": "native-workflow-snapshot-retriever-file-inference-v1",
+  "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-002/io/candidate-result.json",
+  "artifact_sha256": "ec5bdb8286580604dbb05995a88c21ee2d6b52baa8b0d9e770c3173331a8342d",
+  "output_summary": {
+    "source_references": [
+      "SRC-001",
+      "SRC-002",
+      "SRC-003",
+      "SRC-004"
+    ],
+    "key_findings": [
+      {
+        "question": "What is Conti and what activity is attributed to it?",
+        "answer": "Conti is described in the supplied evidence as a ransomware group/RaaS operation or ransomware variant associated with attacks affecting businesses, nonprofits, governments, and critical infrastructure. The reported activity includes stealing or exfiltrating files, encrypting systems or data, and using the threat of publication or sale of stolen data to pressure victims for payment.",
+        "supporting_entities": [
+          "ENT-001"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-004"
+        ]
+      },
+      {
+        "question": "How are Wizard Spider, Target, and Stern connected to the Conti investigation?",
+        "answer": "Conti is also known as Wizard Spider. Target is listed among online aliases of actors believed to be linked to Conti. Stern appears in leaked Conti communications as an internal operator handle. The supplied evidence does not establish Stern’s legal identity, and an internal handle should not be equated with a legal attribution.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-003",
+          "ENT-004"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "What is the relationship between Conti, TrickBot, and the named defendants?",
+        "answer": "TrickBot is presented as part of the associated malware ecosystem or as a malware outfit linked to Conti. DOJ records separately identify Maksim Galochkin and Oleksii Lytvynenko as defendants in Conti-related cases. These malware associations and charging records should not be treated as proof that a named defendant was a particular leaked-chat handle or as equivalent to a conviction.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-005",
+          "ENT-006",
+          "ENT-007"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-003",
+          "SRC-004"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "claim": "Conti is also known as Wizard Spider and is described as a Russian government-linked ransomware-as-a-service group targeting U.S. and Western critical infrastructure.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "Conti operators typically steal victims’ files and encrypt servers and workstations to pressure victims for ransom; unpaid stolen data may be sold or published.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "Leaked-chat reporting describes Conti as a structured, business-like operation with interviews, salary negotiations, departments, budgets, and specialized personnel.",
+        "source_references": [
+          "SRC-002",
+          "SRC-003"
+        ]
+      },
+      {
+        "claim": "The leaked-chat reporting identifies Stern as an operator who discussed malicious-document providers and ransomware-delivery logistics with Bentley; this supports an internal handle association with Conti, not a legal identity attribution.",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "claim": "Rewards for Justice lists Target among online aliases of malicious cyber actors believed to be linked to the Conti ransomware group.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "TrickBot is listed as an associated malicious cyber application on the Rewards for Justice Conti page, while CIS states that Conti appeared to have ties to other malware outfits, most notably TrickBot.",
+        "source_references": [
+          "SRC-001",
+          "SRC-003"
+        ]
+      },
+      {
+        "claim": "DOJ records identify Maksim Galochkin and Oleksii Lytvynenko as defendants in separate Conti-related cases; the records describe charges and, for Lytvynenko, a guilty plea to conspiracy to commit wire fraud, while distinguishing charges from convictions and noting the presumption of innocence for charged defendants.",
+        "source_references": [
+          "SRC-004"
+        ]
+      }
+    ],
+    "reasoning_steps": [
+      1,
+      2,
+      3
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "CONTRA-001",
+        "description": "The supplied evidence supports an analytic-level distinction: leaked-chat reporting describes Conti as an organized, business-like operation with internal roles and handles, while government and cybersecurity reporting describes Conti through its ransomware, RaaS, malware, and intrusion activity. The snapshot does not independently identify the cited FBI/CISA advisories, so that specific source attribution is not established here.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003"
+        ]
+      }
+    ],
+    "structured_output_valid": true,
+    "structured_output_complete": true,
+    "structured_output_errors": []
+  },
+  "metrics": {
+    "finding_f1": 0.6666666666666666,
+    "contradiction_grounded_f1": 1.0,
+    "reasoning_grounded_score": 0.6342780026990553,
+    "report_quality": 0.9166666666666666,
+    "source_precision": 1.0,
+    "source_recall": 1.0,
+    "entity_f1": "not_applicable",
+    "relation_f1": "not_applicable"
+  }
+}

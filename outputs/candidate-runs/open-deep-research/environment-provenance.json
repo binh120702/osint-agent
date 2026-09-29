@@ -1,0 +1,59 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "source_revision": "1b7d2e80db9faa586165c60e09096dbbfd483a64",
+  "source_snapshot": "outputs/candidate-runs/open-deep-research/source/",
+  "source_revision_file": "outputs/candidate-runs/open-deep-research/source-revision.txt",
+  "recorded_at_utc": "2026-09-21T18:40:25Z",
+  "host_runtime": {
+    "operating_system": "Windows 11",
+    "python": "3.14.6",
+    "execution_environment": "isolated candidate runtime; executable path intentionally not embedded"
+  },
+  "source_metadata": {
+    "project_version": "0.0.16",
+    "requires_python": ">=3.10",
+    "license": "MIT",
+    "declared_dependencies": "outputs/candidate-runs/open-deep-research/source/pyproject.toml",
+    "lockfile": "outputs/candidate-runs/open-deep-research/source/uv.lock"
+  },
+  "candidate_import_validation": {
+    "native_graph_type": "CompiledStateGraph",
+    "status": "passed"
+  },
+  "adapter": {
+    "implementation": "outputs/candidate-runs/open-deep-research/adapter.py",
+    "run_case": "outputs/candidate-runs/open-deep-research/run_case.py",
+    "run_all": "outputs/candidate-runs/open-deep-research/run_all.py",
+    "inference_bridge": "outputs/candidate-runs/open-deep-research/inference_bridge.py",
+    "scorer": "outputs/candidate-runs/open-deep-research/score_structured.py",
+    "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+    "retrieval_policy": "immutable benchmark snapshot replay only; no live target collection",
+    "credential_policy": "provider credentials remain host-side and are not passed to candidate code"
+  },
+  "inference": {
+    "model": "gpt-5.6-luna",
+    "transport": "file-based host inference bridge",
+    "max_requests": 80,
+    "request_response_artifacts": "outputs/candidate-runs/open-deep-research/runs/<CASE>/io/"
+  },
+  "validation": {
+    "adapter_compile": "python -m py_compile outputs/candidate-runs/open-deep-research/*.py (passed)",
+    "scoring_api": "dataset/benchmark/scoring.py::score_case(case, output)",
+    "structured_contract_audit": "outputs/candidate-runs/open-deep-research/scoring-audit.md",
+    "retrieval_judgments": "not_annotated"
+  },
+  "batch": {
+    "manifest": "outputs/candidate-runs/open-deep-research/runs/all-manifest.json",
+    "manifest_created_at_utc": "2026-09-21T18:40:25Z",
+    "cases_total": 10,
+    "processes_completed": 10,
+    "process_exit_codes_all_zero": true,
+    "cases_with_reports": 9,
+    "valid_structured_outputs": 6,
+    "complete_structured_outputs": 9,
+    "manifest_hash_matches": 10,
+    "report_failure_cases": ["OSINT-003"],
+    "report_failure": "Error generating final report: APITimeoutError: Request timed out."
+  },
+  "dependency_reproducibility_note": "The candidate source lockfile is preserved, and the required runtime dependencies were installed in the isolated execution environment used for the batch. A complete package freeze and the runtime executable path were not preserved in this repository record; this is a remaining reproducibility limitation."
+}

@@ -1,0 +1,446 @@
+{
+  "case_id": "OSINT-007",
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "artifact": "outputs/candidate-runs/open-deep-research/runs/OSINT-007/io/candidate-result.json",
+  "artifact_sha256": "0ea9160cb134456021468c677ac844d9221b5f6ca1862203208583f19d4feb85",
+  "manifest_sha256": "0ea9160cb134456021468c677ac844d9221b5f6ca1862203208583f19d4feb85",
+  "manifest_hash_match": true,
+  "report_sha256": "671e3fde4d28419cfb5cd3c74268f3ca193cf73a7ca840ad4eb6ebe8db588f2f",
+  "status": "completed",
+  "output_summary": {
+    "available_source_references": [
+      "SRC-001",
+      "SRC-002",
+      "SRC-003",
+      "SRC-004"
+    ],
+    "source_references": [
+      "SRC-001",
+      "SRC-002",
+      "SRC-003",
+      "SRC-004"
+    ],
+    "key_findings": [
+      {
+        "question": "How did the alleged operation combine Ponzi-style mechanics and recruitment?",
+        "answer": "The sources support an alleged high-return membership model funded and expanded through public promotion, reinvestment incentives, and multi-level referral commissions; the mining-revenue explanation was alleged by the DOJ and SEC to be unsupported.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-003",
+          "ENT-004"
+        ],
+        "source_references": [
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "question": "What roles are supported for the named people?",
+        "answer": "ENT-001 is supported as Sam Lee / Xue Lee and alleged co-founder; ENT-002 is supported as Brenda Chunga / Bitcoin Beautee and promoter; ENT-003 is supported as Rodney Burton and promoter, while the alias Bitcoin Rodney is not independently reproduced in the supplied source text reviewed here.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-003"
+        ],
+        "source_references": [
+          "SRC-002",
+          "SRC-004"
+        ]
+      },
+      {
+        "question": "What continuity exists across the Hyper-branded organizations?",
+        "answer": "The sources support branding and operational continuity across HyperFund, HyperVerse, and HyperNation, including alleged aliases, shared promotional context, and participant migration, but do not prove identical legal entities or uninterrupted ownership.",
+        "supporting_entities": [
+          "ENT-004",
+          "ENT-005",
+          "ENT-006"
+        ],
+        "source_references": [
+          "SRC-002",
+          "SRC-003"
+        ]
+      },
+      {
+        "question": "What is established about Steven Reece Lewis?",
+        "answer": "Steven Reece Lewis was presented as HyperVerse CEO with an impressive biography, but the cited investigation could not verify the claimed education, employment, corporate history, or broader identity record.",
+        "supporting_entities": [
+          "ENT-005",
+          "ENT-007"
+        ],
+        "source_references": [
+          "SRC-003"
+        ]
+      },
+      {
+        "question": "What is supported about investor funds and mining revenue?",
+        "answer": "The DOJ and SEC support an allegation that HyperFund lacked genuine large-scale mining operations or other real revenue sufficient to support its promises and instead relied on funds received from investors; the supplied sources do not provide a transaction-level forensic accounting.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-004"
+        ],
+        "source_references": [
+          "SRC-002",
+          "SRC-004"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "claim": "HyperFund was allegedly promoted through membership or investment contracts offering high daily returns that were presented as supported by crypto-mining revenue, while the DOJ and SEC alleged that genuine mining operations or other real revenue did not support the payments and that investor funds supplied the real revenue source.",
+        "source_references": [
+          "SRC-002",
+          "SRC-004"
+        ]
+      },
+      {
+        "claim": "Sam Lee / Xue Lee was identified as an alleged co-founder or senior figure, Brenda Chunga / Bitcoin Beautee as a promoter, and Rodney Burton as a promoter; the sources do not independently reproduce the canonical alias Bitcoin Rodney.",
+        "source_references": [
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "claim": "HyperFund, HyperVerse, and HyperNation were presented as connected names or entities within a shared Hyper-branded ecosystem, but the supplied sources do not establish that they were identical legal entities.",
+        "source_references": [
+          "SRC-002",
+          "SRC-003"
+        ]
+      },
+      {
+        "claim": "Steven Reece Lewis was publicly presented as HyperVerse’s CEO with claimed academic and corporate credentials, but The Guardian reported that those credentials and his institutional history could not be independently verified.",
+        "source_references": [
+          "SRC-003"
+        ]
+      },
+      {
+        "claim": "The recruitment funnel allegedly moved from public launch events and promotional messaging to membership purchases, promised returns, reinvestment incentives, referral commissions, and later migration toward HyperNation after withdrawal problems.",
+        "source_references": [
+          "SRC-003"
+        ]
+      }
+    ],
+    "reasoning_steps": [
+      1,
+      2,
+      3
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "CONTRA-001",
+        "source_references": [
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ],
+        "description": "Promotional material presented Steven Reece Lewis as HyperVerse CEO, while The Guardian reported that his claimed credentials and identity could not be verified; separately, the SEC and DOJ alleged that HyperFund relied on investor funds rather than genuine mining revenue. The supplied SEC and DOJ pages support the funding allegation more directly than the specific claim that they themselves alleged a false CEO identity."
+      }
+    ],
+    "structured_output_valid": true,
+    "structured_output_complete": true,
+    "structured_output_errors": []
+  },
+  "metrics": {
+    "finding_f1": 0.25,
+    "contradiction_grounded_f1": 0.5,
+    "reasoning_grounded_score": 1.0,
+    "report_quality": 0.75,
+    "source_precision": 1.0,
+    "source_recall": 1.0,
+    "entity_f1": "not_applicable",
+    "relation_f1": "not_applicable"
+  },
+  "full_metrics": {
+    "output_validation": {
+      "valid": true,
+      "errors": []
+    },
+    "entities": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "missing": [
+        [
+          "organization",
+          "hyperfund"
+        ],
+        [
+          "organization",
+          "hypernation"
+        ],
+        [
+          "organization",
+          "hyperverse"
+        ],
+        [
+          "person",
+          "brenda indah chunga / bitcoin beautee"
+        ],
+        [
+          "person",
+          "rodney burton / bitcoin rodney"
+        ],
+        [
+          "person",
+          "steven reece lewis"
+        ],
+        [
+          "person",
+          "xue samuel lee / sam lee"
+        ]
+      ],
+      "unexpected": []
+    },
+    "relations": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 6,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "missing": [
+        [
+          [
+            "organization",
+            "hyperfund"
+          ],
+          "rebranded_as",
+          [
+            "organization",
+            "hyperverse"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "hyperverse"
+          ],
+          "rebranded_as",
+          [
+            "organization",
+            "hypernation"
+          ]
+        ],
+        [
+          [
+            "person",
+            "brenda indah chunga / bitcoin beautee"
+          ],
+          "promoted",
+          [
+            "organization",
+            "hyperfund"
+          ]
+        ],
+        [
+          [
+            "person",
+            "rodney burton / bitcoin rodney"
+          ],
+          "promoted",
+          [
+            "organization",
+            "hyperfund"
+          ]
+        ],
+        [
+          [
+            "person",
+            "steven reece lewis"
+          ],
+          "presented_as_ceo",
+          [
+            "organization",
+            "hyperverse"
+          ]
+        ],
+        [
+          [
+            "person",
+            "xue samuel lee / sam lee"
+          ],
+          "co_founded_or_promoted",
+          [
+            "organization",
+            "hyperfund"
+          ]
+        ]
+      ],
+      "unexpected": [],
+      "semantic_mapping": {
+        "also_known_as": "alias_of",
+        "alias_of": "alias_of",
+        "co_founded": "founded",
+        "founded": "founded",
+        "based_in": "located_in",
+        "located_in": "located_in",
+        "performed_special_audit": "audited",
+        "audited": "audited",
+        "former_coo_of": "executive_of",
+        "executive_of": "executive_of",
+        "provided_software": "provided",
+        "distributed_as_installer": "distributed",
+        "contained_malware": "contained",
+        "trojanized": "compromised",
+        "associated_with": "associated_with",
+        "linked_to": "associated_with",
+        "uses_or_is_associated_with": "associated_with"
+      }
+    },
+    "contradictions": {
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "details": [
+        {
+          "contradiction_id": "CONTRA-001",
+          "source_references_correct": false,
+          "source_reference_recall": 0.5
+        }
+      ],
+      "missing": [],
+      "unexpected": [],
+      "grounded_recall": 0.5,
+      "grounded_f1": 0.5
+    },
+    "key_findings": {
+      "score": 0.12307692307692308,
+      "precision": 0.2,
+      "recall": 0.3333333333333333,
+      "f1": 0.25,
+      "predicted": 5,
+      "expected": 3,
+      "matched": 1,
+      "details": [
+        {
+          "question": "What was the alleged business model?",
+          "status": "missing",
+          "score": 0.0
+        },
+        {
+          "question": "How did the network evolve its branding?",
+          "status": "matched",
+          "score": 0.36923076923076925,
+          "semantic": 0.46153846153846156,
+          "supporting_entity_recall": 0.3333333333333333,
+          "source_recall": 1.0,
+          "has_source_references": true
+        },
+        {
+          "question": "What identity-linking task makes the case valuable?",
+          "status": "missing",
+          "score": 0.0
+        }
+      ]
+    },
+    "source_traceability": {
+      "correct_sources": [
+        "SRC-001",
+        "SRC-002",
+        "SRC-003",
+        "SRC-004"
+      ],
+      "unknown_sources": [],
+      "unavailable_sources": [],
+      "source_precision": 1.0,
+      "source_recall": 1.0,
+      "ratio": 1.0,
+      "claim_level": {
+        "claims": 5,
+        "traceable_claims": 5,
+        "ratio": 1.0,
+        "unknown_sources": [],
+        "unavailable_sources": []
+      },
+      "finding_level": {
+        "findings": 5,
+        "traceable_findings": 5,
+        "ratio": 1.0
+      }
+    },
+    "reasoning_coverage": {
+      "covered": [
+        1,
+        2,
+        3
+      ],
+      "invalid": [],
+      "total": 3,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "ratio": 1.0,
+      "status": "structured_step_ids"
+    },
+    "report_quality": {
+      "score": 0.75,
+      "checks": {
+        "non_empty": true,
+        "structured_output_complete": true,
+        "structured_output_valid": true,
+        "findings_present": true,
+        "findings_match": false,
+        "claims_traceable": true,
+        "contradictions_complete": true,
+        "contradictions_grounded": false,
+        "finding_sources_grounded": true,
+        "reasoning_conclusions_grounded": true,
+        "uncertainty_language": true,
+        "readable_length": false
+      },
+      "scale": "deterministic rubric 0-1"
+    },
+    "reasoning_quality": {
+      "covered": 3,
+      "expected": 3,
+      "coverage": 1.0,
+      "semantic_similarity": 1.0,
+      "premise_grounding": 1.0,
+      "grounded_score": 1.0,
+      "method": "premise_ids_plus_token_entailment_proxy",
+      "details": [
+        {
+          "id": 1,
+          "premise_score": 1.0,
+          "entity_recall": 1.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 1.0,
+          "invalid_premise_entities": [],
+          "invalid_premise_relations": [],
+          "grounded_score": 1.0
+        },
+        {
+          "id": 2,
+          "premise_score": 1.0,
+          "entity_recall": 1.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 1.0,
+          "invalid_premise_entities": [],
+          "invalid_premise_relations": [],
+          "grounded_score": 1.0
+        },
+        {
+          "id": 3,
+          "premise_score": 1.0,
+          "entity_recall": 1.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 1.0,
+          "invalid_premise_entities": [],
+          "invalid_premise_relations": [],
+          "grounded_score": 1.0
+        }
+      ]
+    },
+    "operational": {}
+  }
+}

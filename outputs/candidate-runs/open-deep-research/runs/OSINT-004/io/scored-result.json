@@ -1,0 +1,462 @@
+{
+  "case_id": "OSINT-004",
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "artifact": "outputs/candidate-runs/open-deep-research/runs/OSINT-004/io/candidate-result.json",
+  "artifact_sha256": "4a95f42ff4877dca275114157007c356b1c1a6cb9f3777ee82d34c62080a385c",
+  "manifest_sha256": "4a95f42ff4877dca275114157007c356b1c1a6cb9f3777ee82d34c62080a385c",
+  "manifest_hash_match": true,
+  "report_sha256": "77dd7c68f5b283cb845b022a279034cb6392aac6c67fd25468265f08a8123549",
+  "status": "completed",
+  "output_summary": {
+    "available_source_references": [
+      "SRC-001",
+      "SRC-002"
+    ],
+    "source_references": [
+      "SRC-001",
+      "SRC-002"
+    ],
+    "key_findings": [
+      {
+        "question": "Can Guccifer 2.0 and DCLeaks be treated as independent personas?",
+        "answer": "No, not as independent operational personas on the supplied evidence. The DOJ indictment alleges that the same GRU conspirators created and used both personas, that Unit 74455 assisted releases through both, and that the operations used overlapping infrastructure and financing. They remained distinct public identities or release channels, but the evidence supports common operational control rather than independent operation.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-003"
+        ],
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "question": "What is the explicit link between Guccifer 2.0, DCLeaks, and GRU Unit 74455?",
+        "answer": "The indictment alleges that Unit 74455 assisted the release of stolen documents through both personas, promoted those releases, and administered infrastructure and social-media accounts used to assist the release operations.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-003"
+        ],
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "question": "What is the explicit link between GRU Unit 26165 and the DNC network?",
+        "answer": "The indictment alleges that Unit 26165 had primary responsibility for hacking the DCCC and DNC and associated Clinton Campaign email accounts. It alleges that GRU conspirators accessed DNC computers, installed and monitored malware, stole DNC emails and other documents, and moved stolen data outside the network.",
+        "supporting_entities": [
+          "ENT-004",
+          "ENT-005"
+        ],
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "question": "What did CrowdStrike identify in the DNC network?",
+        "answer": "CrowdStrike states that its incident-response team investigated the DNC breach and identified COZY BEAR and FANCY BEAR as two separate Russian intelligence-affiliated adversaries on the DNC network. COZY BEAR was identified as present from summer 2015, while FANCY BEAR separately breached the network in April 2016.",
+        "supporting_entities": [
+          "ENT-005",
+          "ENT-006",
+          "ENT-007",
+          "ENT-008"
+        ],
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "Did CrowdStrike identify Guccifer 2.0 or DCLeaks as the operators of the DNC intrusion?",
+        "answer": "No. CrowdStrike stated that it was still examining whether the Guccifer 2.0 posting was part of a Russian intelligence disinformation campaign and was investigating the authenticity and origin of the documents. SRC-002 does not identify DCLeaks or Guccifer 2.0 as the operators identified inside the DNC network.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-005",
+          "ENT-008"
+        ],
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "Is a contradiction record warranted?",
+        "answer": "No direct source contradiction is warranted. The DOJ indictment addresses alleged GRU control of release personas, release infrastructure, DNC hacking, and election interference. CrowdStrike addresses earlier incident-response identification of Russian intelligence-affiliated activity inside the DNC network and does not purport to identify every later release persona. The sources are complementary rather than contradictory.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-003",
+          "ENT-004",
+          "ENT-005",
+          "ENT-006",
+          "ENT-007",
+          "ENT-008"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "claim": "The indictment alleges that GRU Units 26165 and 74455 conducted cyber operations involving staged releases of documents stolen through computer intrusions and that the operations were intended to interfere with the 2016 United States presidential election.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "The indictment alleges that the conspirators hacked the DCCC and DNC networks, stole emails and other documents, and staged releases using fictitious online personas including DCLeaks and Guccifer 2.0.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "The indictment alleges that Unit 26165 had primary responsibility for hacking the DCCC and DNC and the email accounts of individuals affiliated with the Clinton Campaign.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "The indictment alleges that Unit 74455 assisted in the release of stolen documents through the DCLeaks and Guccifer 2.0 personas, promoted those releases, and administered infrastructure and social-media accounts used to assist the release operations.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "The indictment alleges that dcleaks.com was registered, launched, and used to release stolen emails and documents, and that Guccifer 2.0 and DCLeaks operations used overlapping computer infrastructure and financing.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "CrowdStrike states that its incident-response team investigated a suspected breach of the DNC network and identified two separate Russian intelligence-affiliated adversaries, COZY BEAR and FANCY BEAR, on that network.",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "claim": "CrowdStrike states that, after a Guccifer 2.0 WordPress post claimed responsibility for the DNC breach, CrowdStrike was still examining whether the posting was part of a Russian intelligence disinformation campaign and was investigating the authenticity and origin of the documents.",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "claim": "CrowdStrike states that it identified no collaboration or awareness between COZY BEAR and FANCY BEAR, even though both separately compromised the same DNC systems and separately engaged in theft of identical credentials.",
+        "source_references": [
+          "SRC-002"
+        ]
+      }
+    ],
+    "reasoning_steps": [
+      1,
+      2,
+      3
+    ],
+    "contradictions": [],
+    "structured_output_valid": true,
+    "structured_output_complete": true,
+    "structured_output_errors": []
+  },
+  "metrics": {
+    "finding_f1": 0.4444444444444444,
+    "contradiction_grounded_f1": 0.0,
+    "reasoning_grounded_score": 0.2962962962962963,
+    "report_quality": 0.5833333333333334,
+    "source_precision": 1.0,
+    "source_recall": 1.0,
+    "entity_f1": "not_applicable",
+    "relation_f1": "not_applicable"
+  },
+  "full_metrics": {
+    "output_validation": {
+      "valid": true,
+      "errors": []
+    },
+    "entities": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "missing": [
+        [
+          "alias",
+          "cozy bear"
+        ],
+        [
+          "alias",
+          "fancy bear"
+        ],
+        [
+          "alias",
+          "guccifer 2.0"
+        ],
+        [
+          "domain",
+          "dcleaks.com"
+        ],
+        [
+          "organization",
+          "crowdstrike"
+        ],
+        [
+          "organization",
+          "democratic national committee"
+        ],
+        [
+          "organization",
+          "gru unit 26165"
+        ],
+        [
+          "organization",
+          "gru unit 74455"
+        ]
+      ],
+      "unexpected": []
+    },
+    "relations": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 6,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "missing": [
+        [
+          [
+            "alias",
+            "cozy bear"
+          ],
+          "identified_in_network",
+          [
+            "organization",
+            "democratic national committee"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "fancy bear"
+          ],
+          "identified_in_network",
+          [
+            "organization",
+            "democratic national committee"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "crowdstrike"
+          ],
+          "investigated_breach_of",
+          [
+            "organization",
+            "democratic national committee"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "gru unit 26165"
+          ],
+          "hacked_network",
+          [
+            "organization",
+            "democratic national committee"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "gru unit 74455"
+          ],
+          "operated_or_assisted_persona",
+          [
+            "alias",
+            "guccifer 2.0"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "gru unit 74455"
+          ],
+          "operated_or_assisted_release_site",
+          [
+            "domain",
+            "dcleaks.com"
+          ]
+        ]
+      ],
+      "unexpected": [],
+      "semantic_mapping": {
+        "also_known_as": "alias_of",
+        "alias_of": "alias_of",
+        "co_founded": "founded",
+        "founded": "founded",
+        "based_in": "located_in",
+        "located_in": "located_in",
+        "performed_special_audit": "audited",
+        "audited": "audited",
+        "former_coo_of": "executive_of",
+        "executive_of": "executive_of",
+        "provided_software": "provided",
+        "distributed_as_installer": "distributed",
+        "contained_malware": "contained",
+        "trojanized": "compromised",
+        "associated_with": "associated_with",
+        "linked_to": "associated_with",
+        "uses_or_is_associated_with": "associated_with"
+      }
+    },
+    "contradictions": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "details": [],
+      "missing": [
+        "CONTRA-001"
+      ],
+      "unexpected": [],
+      "grounded_recall": 0.0,
+      "grounded_f1": 0.0
+    },
+    "key_findings": {
+      "score": 0.3684210526315789,
+      "precision": 0.3333333333333333,
+      "recall": 0.6666666666666666,
+      "f1": 0.4444444444444444,
+      "predicted": 6,
+      "expected": 3,
+      "matched": 2,
+      "details": [
+        {
+          "question": "Was Guccifer 2.0 an independent lone hacker persona?",
+          "status": "matched",
+          "score": 0.5263157894736842,
+          "semantic": 0.5263157894736842,
+          "supporting_entity_recall": 1.0,
+          "source_recall": 1.0,
+          "has_source_references": true
+        },
+        {
+          "question": "What independent evidence predates the indictment?",
+          "status": "matched",
+          "score": 0.5789473684210527,
+          "semantic": 0.5789473684210527,
+          "supporting_entity_recall": 1.0,
+          "source_recall": 1.0,
+          "has_source_references": true
+        },
+        {
+          "question": "What contradiction should the agent resolve?",
+          "status": "missing",
+          "score": 0.0
+        }
+      ]
+    },
+    "source_traceability": {
+      "correct_sources": [
+        "SRC-001",
+        "SRC-002"
+      ],
+      "unknown_sources": [],
+      "unavailable_sources": [],
+      "source_precision": 1.0,
+      "source_recall": 1.0,
+      "ratio": 1.0,
+      "claim_level": {
+        "claims": 8,
+        "traceable_claims": 8,
+        "ratio": 1.0,
+        "unknown_sources": [],
+        "unavailable_sources": []
+      },
+      "finding_level": {
+        "findings": 6,
+        "traceable_findings": 6,
+        "ratio": 1.0
+      }
+    },
+    "reasoning_coverage": {
+      "covered": [
+        1,
+        2,
+        3
+      ],
+      "invalid": [],
+      "total": 3,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "ratio": 1.0,
+      "status": "structured_step_ids"
+    },
+    "report_quality": {
+      "score": 0.5833333333333334,
+      "checks": {
+        "non_empty": true,
+        "structured_output_complete": true,
+        "structured_output_valid": true,
+        "findings_present": true,
+        "findings_match": false,
+        "claims_traceable": true,
+        "contradictions_complete": false,
+        "contradictions_grounded": false,
+        "finding_sources_grounded": true,
+        "reasoning_conclusions_grounded": false,
+        "uncertainty_language": true,
+        "readable_length": false
+      },
+      "scale": "deterministic rubric 0-1"
+    },
+    "reasoning_quality": {
+      "covered": 3,
+      "expected": 3,
+      "coverage": 1.0,
+      "semantic_similarity": 0.2962962962962963,
+      "premise_grounding": 1.0,
+      "grounded_score": 0.2962962962962963,
+      "method": "premise_ids_plus_token_entailment_proxy",
+      "details": [
+        {
+          "id": 1,
+          "premise_score": 1.0,
+          "entity_recall": 1.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 0.7777777777777778,
+          "invalid_premise_entities": [],
+          "invalid_premise_relations": [],
+          "grounded_score": 0.7777777777777778
+        },
+        {
+          "id": 2,
+          "premise_score": 1.0,
+          "entity_recall": 1.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 0.1111111111111111,
+          "invalid_premise_entities": [],
+          "invalid_premise_relations": [],
+          "grounded_score": 0.1111111111111111
+        },
+        {
+          "id": 3,
+          "premise_score": 1.0,
+          "entity_recall": 1.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 0.0,
+          "invalid_premise_entities": [],
+          "invalid_premise_relations": [],
+          "grounded_score": 0.0
+        }
+      ]
+    },
+    "operational": {}
+  }
+}

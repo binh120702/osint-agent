@@ -1,0 +1,420 @@
+{
+  "case_id": "OSINT-008",
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "artifact": "outputs/candidate-runs/open-deep-research/runs/OSINT-008/io/candidate-result.json",
+  "artifact_sha256": "dfb1907087478d3ed843101e0eb86cc4c83b69eae2d2ad99d38976a6ff6a7c8b",
+  "manifest_sha256": "dfb1907087478d3ed843101e0eb86cc4c83b69eae2d2ad99d38976a6ff6a7c8b",
+  "manifest_hash_match": true,
+  "report_sha256": "6d079b91af86e211bad0ca1d10ea55abd8d1807e1f9488893500a6e05cf6426a",
+  "status": "completed",
+  "output_summary": {
+    "available_source_references": [
+      "SRC-001",
+      "SRC-002"
+    ],
+    "source_references": [
+      "SRC-001",
+      "SRC-002"
+    ],
+    "key_findings": [
+      {
+        "question": "How should the April 22 and April 28 Wirecard statements be interpreted?",
+        "answer": "The April 22 statement was provisional because the audit was not complete and the wording said no evidence had been found so far. The supplied SRC-001 body is dated April 28 and separately reports no incriminating evidence while acknowledging forensic data limitations.",
+        "supporting_entities": [],
+        "source_references": []
+      },
+      {
+        "question": "What does the later KPMG evidence establish?",
+        "answer": "The later evidence establishes unresolved verification problems concerning approximately EUR 1 billion in trust accounts, escrow-account existence and classification, TPA revenues, third-party documentation, and bank confirmations. It does not establish that every disputed revenue item was conclusively fictitious or genuine.",
+        "supporting_entities": [],
+        "source_references": []
+      },
+      {
+        "question": "How does the EUR 1.9 billion disclosure fit the chronology?",
+        "answer": "On June 22, 2020, Wirecard assumed that EUR 1.9 billion in previously reported trust-account balances probably did not exist and indicated that the Third Party business might also be incorrect; bankruptcy followed on June 25.",
+        "supporting_entities": [],
+        "source_references": []
+      },
+      {
+        "question": "What does the evidence support about audit and supervisory failure?",
+        "answer": "SRC-002 describes late detection by EY and oversight bodies, failures across five lines of defense, and a supervisory architecture marked by delay, divided authority, voluntary information flows, and contested legal responsibility.",
+        "supporting_entities": [],
+        "source_references": []
+      },
+      {
+        "question": "What is supported about Jan Marsalek and Belarus?",
+        "answer": "Neither supplied source mentions Jan Marsalek or Belarus. The evidence therefore does not support claims about Marsalek’s resignation, departure, disappearance, flight, or any connection to Belarus.",
+        "supporting_entities": [],
+        "source_references": []
+      },
+      {
+        "question": "Does the supplied evidence establish a direct contradiction?",
+        "answer": "No direct contradiction is established because the April 22 statement was expressly provisional. The evidence does support a qualified tension between early public reassurance and later non-verification of trust-account balances and missing-cash disclosure.",
+        "supporting_entities": [],
+        "source_references": []
+      }
+    ],
+    "claims": [
+      {
+        "claim": "On April 22, 2020, Wirecard stated that the KPMG special audit was not yet complete but that no evidence of balance-sheet manipulation had been found so far.",
+        "source_references": []
+      },
+      {
+        "claim": "The supplied April 28, 2020 Wirecard announcement stated that incriminating evidence for public allegations of balance-sheet forgery had not been identified and that no significant findings required adjustment of the 2016–2018 annual accounts.",
+        "source_references": []
+      },
+      {
+        "claim": "Wirecard stated that not all data needed to prove certain Third Party Acquiring revenues had been obtained because the relevant data were primarily controlled by third parties.",
+        "source_references": []
+      },
+      {
+        "claim": "KPMG was unable to locate approximately EUR 1 billion in trust accounts, could neither refute nor confirm the allegations, and urged further investigations.",
+        "source_references": []
+      },
+      {
+        "claim": "KPMG could not verify the existence of the escrow accounts and questioned whether they were properly classified under IFRS as cash or cash equivalents.",
+        "source_references": []
+      },
+      {
+        "claim": "On June 22, 2020, Wirecard’s board assumed that EUR 1.9 billion in previously reported trust-account balances probably did not exist and indicated that the Third Party business might also be incorrect as previously described.",
+        "source_references": []
+      },
+      {
+        "claim": "On June 25, 2020, Wirecard filed for bankruptcy because of impending insolvency and over-indebtedness, while EY reported indications of a sophisticated fraud and refused to sign off the 2019 accounts after identifying forged bank confirmations.",
+        "source_references": []
+      },
+      {
+        "claim": "BaFin filed complaints concerning deceptive ad-hoc announcements, accounting fraud, and market manipulation through incorrect disclosures, and later directed or initiated examinations involving Wirecard accounts.",
+        "source_references": []
+      }
+    ],
+    "reasoning_steps": [
+      1,
+      2,
+      3
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "CONTRA-001",
+        "source_references": [],
+        "description": "Qualified only: the supplied sources support the April 2020 public response that no incriminating balance-sheet evidence had been identified while audit limitations remained, followed by later uncertainty concerning trust-account balances and the EUR 1.9 billion disclosure. The portion of the canonical description referring to the resignation or flight of Jan Marsalek is not supported by SRC-001 or SRC-002."
+      }
+    ],
+    "structured_output_valid": true,
+    "structured_output_complete": true,
+    "structured_output_errors": []
+  },
+  "metrics": {
+    "finding_f1": 0.2222222222222222,
+    "contradiction_grounded_f1": 0.0,
+    "reasoning_grounded_score": 1.0,
+    "report_quality": 0.5833333333333334,
+    "source_precision": 1.0,
+    "source_recall": 1.0,
+    "entity_f1": "not_applicable",
+    "relation_f1": "not_applicable"
+  },
+  "full_metrics": {
+    "output_validation": {
+      "valid": true,
+      "errors": []
+    },
+    "entities": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "missing": [
+        [
+          "alias",
+          "eur 1.9 billion missing cash"
+        ],
+        [
+          "alias",
+          "third party acquiring business"
+        ],
+        [
+          "location",
+          "belarus"
+        ],
+        [
+          "organization",
+          "bafin"
+        ],
+        [
+          "organization",
+          "ey"
+        ],
+        [
+          "organization",
+          "kpmg"
+        ],
+        [
+          "organization",
+          "wirecard ag"
+        ],
+        [
+          "person",
+          "jan marsalek"
+        ]
+      ],
+      "unexpected": []
+    },
+    "relations": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "missing": [
+        [
+          [
+            "alias",
+            "third party acquiring business"
+          ],
+          "business_area_under_audit",
+          [
+            "organization",
+            "wirecard ag"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "bafin"
+          ],
+          "supervised_or_inquired_about",
+          [
+            "organization",
+            "wirecard ag"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "ey"
+          ],
+          "audited",
+          [
+            "organization",
+            "wirecard ag"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "kpmg"
+          ],
+          "audited",
+          [
+            "organization",
+            "wirecard ag"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "wirecard ag"
+          ],
+          "disclosed_missing_cash",
+          [
+            "alias",
+            "eur 1.9 billion missing cash"
+          ]
+        ],
+        [
+          [
+            "person",
+            "jan marsalek"
+          ],
+          "absconded_to",
+          [
+            "location",
+            "belarus"
+          ]
+        ],
+        [
+          [
+            "person",
+            "jan marsalek"
+          ],
+          "executive_of",
+          [
+            "organization",
+            "wirecard ag"
+          ]
+        ]
+      ],
+      "unexpected": [],
+      "semantic_mapping": {
+        "also_known_as": "alias_of",
+        "alias_of": "alias_of",
+        "co_founded": "founded",
+        "founded": "founded",
+        "based_in": "located_in",
+        "located_in": "located_in",
+        "performed_special_audit": "audited",
+        "audited": "audited",
+        "former_coo_of": "executive_of",
+        "executive_of": "executive_of",
+        "provided_software": "provided",
+        "distributed_as_installer": "distributed",
+        "contained_malware": "contained",
+        "trojanized": "compromised",
+        "associated_with": "associated_with",
+        "linked_to": "associated_with",
+        "uses_or_is_associated_with": "associated_with"
+      }
+    },
+    "contradictions": {
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "details": [
+        {
+          "contradiction_id": "CONTRA-001",
+          "source_references_correct": false,
+          "source_reference_recall": 0.0
+        }
+      ],
+      "missing": [],
+      "unexpected": [],
+      "grounded_recall": 0.0,
+      "grounded_f1": 0.0
+    },
+    "key_findings": {
+      "score": 0.05977011494252874,
+      "precision": 0.16666666666666666,
+      "recall": 0.3333333333333333,
+      "f1": 0.2222222222222222,
+      "predicted": 6,
+      "expected": 3,
+      "matched": 1,
+      "details": [
+        {
+          "question": "What contradiction should an investigator reconcile?",
+          "status": "matched",
+          "score": 0.17931034482758623,
+          "semantic": 0.4482758620689655,
+          "supporting_entity_recall": 0.0,
+          "source_recall": 0.0,
+          "has_source_references": false
+        },
+        {
+          "question": "Which institutions form the oversight chain?",
+          "status": "missing",
+          "score": 0.0
+        },
+        {
+          "question": "Why is Marsalek a key entity?",
+          "status": "missing",
+          "score": 0.0
+        }
+      ]
+    },
+    "source_traceability": {
+      "correct_sources": [
+        "SRC-001",
+        "SRC-002"
+      ],
+      "unknown_sources": [],
+      "unavailable_sources": [],
+      "source_precision": 1.0,
+      "source_recall": 1.0,
+      "ratio": 0.0,
+      "claim_level": {
+        "claims": 8,
+        "traceable_claims": 0,
+        "ratio": 0.0,
+        "unknown_sources": [],
+        "unavailable_sources": []
+      },
+      "finding_level": {
+        "findings": 6,
+        "traceable_findings": 0,
+        "ratio": 0.0
+      }
+    },
+    "reasoning_coverage": {
+      "covered": [
+        1,
+        2,
+        3
+      ],
+      "invalid": [],
+      "total": 3,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "ratio": 1.0,
+      "status": "structured_step_ids"
+    },
+    "report_quality": {
+      "score": 0.5833333333333334,
+      "checks": {
+        "non_empty": true,
+        "structured_output_complete": true,
+        "structured_output_valid": true,
+        "findings_present": true,
+        "findings_match": false,
+        "claims_traceable": false,
+        "contradictions_complete": true,
+        "contradictions_grounded": false,
+        "finding_sources_grounded": false,
+        "reasoning_conclusions_grounded": true,
+        "uncertainty_language": true,
+        "readable_length": false
+      },
+      "scale": "deterministic rubric 0-1"
+    },
+    "reasoning_quality": {
+      "covered": 3,
+      "expected": 3,
+      "coverage": 1.0,
+      "semantic_similarity": 1.0,
+      "premise_grounding": 1.0,
+      "grounded_score": 1.0,
+      "method": "premise_ids_plus_token_entailment_proxy",
+      "details": [
+        {
+          "id": 1,
+          "premise_score": 1.0,
+          "entity_recall": 1.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 1.0,
+          "invalid_premise_entities": [],
+          "invalid_premise_relations": [],
+          "grounded_score": 1.0
+        },
+        {
+          "id": 2,
+          "premise_score": 1.0,
+          "entity_recall": 1.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 1.0,
+          "invalid_premise_entities": [],
+          "invalid_premise_relations": [],
+          "grounded_score": 1.0
+        },
+        {
+          "id": 3,
+          "premise_score": 1.0,
+          "entity_recall": 1.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 1.0,
+          "invalid_premise_entities": [],
+          "invalid_premise_relations": [],
+          "grounded_score": 1.0
+        }
+      ]
+    },
+    "operational": {}
+  }
+}

@@ -1,0 +1,792 @@
+{
+  "case_id": "OSINT-001",
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "artifact": "outputs/candidate-runs/open-deep-research/runs/OSINT-001/io/candidate-result.json",
+  "artifact_sha256": "175b3f0a1200da33b5aa58373c34c6eb160faaf74068982636e5484ecf2c4421",
+  "manifest_sha256": "175b3f0a1200da33b5aa58373c34c6eb160faaf74068982636e5484ecf2c4421",
+  "manifest_hash_match": true,
+  "report_sha256": "20acbe4938b6dec5be98be7080c0997509c776b6280da2355cc5427a5563ac3e",
+  "status": "completed",
+  "output_summary": {
+    "available_source_references": [
+      "SRC-001",
+      "SRC-002",
+      "SRC-003",
+      "SRC-004",
+      "SRC-005",
+      "SRC-006",
+      "SRC-007",
+      "SRC-008"
+    ],
+    "source_references": [
+      "SRC-001",
+      "SRC-002",
+      "SRC-003",
+      "SRC-004",
+      "SRC-005",
+      "SRC-006",
+      "SRC-007",
+      "SRC-008",
+      "SRC-009"
+    ],
+    "key_findings": [
+      {
+        "question": "How was the 3CX DesktopApp compromise confirmed?",
+        "answer": "The supplied sources directly support that 3CX DesktopApp was trojanized and distributed through a software-supply-chain compromise affecting Windows and macOS installations; Windows version 18.12.416 and earlier is identified, while the exact macOS version range is not supplied.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004",
+          "SRC-008"
+        ]
+      },
+      {
+        "question": "What was the upstream intrusion vector?",
+        "answer": "The upstream vector was a tampered Trading Technologies X_TRADER installer, X_TRADER_r7.17.90p608.exe, which deployed VEILEDSIGNAL; the original alteration mechanism used against the Trading Technologies package remains unknown.",
+        "supporting_entities": [
+          "ENT-003",
+          "ENT-004",
+          "ENT-005",
+          "ENT-006"
+        ],
+        "source_references": [
+          "SRC-003",
+          "SRC-005",
+          "SRC-008"
+        ]
+      },
+      {
+        "question": "How did the intrusion propagate into 3CX?",
+        "answer": "VEILEDSIGNAL entered through an X_TRADER installation on a 3CX employee system, after which the attackers moved through the 3CX environment, reached the development server, and used Fast Reverse Proxy for lateral movement; the complete internal path is not disclosed.",
+        "supporting_entities": [
+          "ENT-006",
+          "ENT-001",
+          "ENT-013"
+        ],
+        "source_references": [
+          "SRC-003",
+          "SRC-008"
+        ]
+      },
+      {
+        "question": "How were the Windows and macOS build environments compromised?",
+        "answer": "The attacker compromised both build platforms, using TAXHAUL and COLDCAT on the Windows build environment and POOLRAT on the macOS build server; the later connection to DesktopApp trojanization is supported by chronology but the exact build modifications are not fully described.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-014",
+          "ENT-015",
+          "ENT-016"
+        ],
+        "source_references": [
+          "SRC-003"
+        ]
+      },
+      {
+        "question": "What staged malware chain was delivered by the trojanized application?",
+        "answer": "The trojanized 3CX DesktopApp executed SUDDENICON, retrieved encrypted icon files hosted on GitHub, extracted command-and-control information, and downloaded the follow-on payload ICONICSTEALER; the evidence does not establish that every infected installation reached every stage.",
+        "supporting_entities": [
+          "ENT-002",
+          "ENT-010",
+          "ENT-011",
+          "ENT-019"
+        ],
+        "source_references": [
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "question": "Which threat activity cluster was the compromise publicly attributed to?",
+        "answer": "Mandiant tracked the activity as UNC4736, a suspected North Korean-nexus cluster with overlap to financially motivated AppleJeus and Lazarus-related activity involving Gopuram and cryptocurrency-focused targeting; the evidence supports overlap rather than an unqualified identity equation.",
+        "supporting_entities": [
+          "ENT-007",
+          "ENT-008",
+          "ENT-009",
+          "ENT-012",
+          "ENT-025"
+        ],
+        "source_references": [
+          "SRC-002",
+          "SRC-003",
+          "SRC-004",
+          "SRC-005",
+          "SRC-006",
+          "SRC-007",
+          "SRC-008"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "claim": "3CX DesktopApp was used as the trojanized software vehicle in a supply-chain compromise affecting Windows and macOS installations; the supplied evidence directly identifies Windows version 18.12.416 and earlier, while the complete macOS version range remains unspecified.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004",
+          "SRC-008"
+        ]
+      },
+      {
+        "claim": "The upstream intrusion vector was a tampered Trading Technologies X_TRADER installer, identified as X_TRADER_r7.17.90p608.exe, which deployed the VEILEDSIGNAL backdoor.",
+        "source_references": [
+          "SRC-003",
+          "SRC-008"
+        ]
+      },
+      {
+        "claim": "The compromised X_TRADER installation on a 3CX employee system enabled movement into the 3CX corporate environment, including access to the development environment; Fast Reverse Proxy was used for lateral movement.",
+        "source_references": [
+          "SRC-003",
+          "SRC-008"
+        ]
+      },
+      {
+        "claim": "The attacker compromised both the Windows and macOS 3CX build environments, using TAXHAUL and COLDCAT on Windows and POOLRAT on macOS; the chronology supports, but does not fully detail, the inference that build-environment access enabled later 3CX DesktopApp trojanization.",
+        "source_references": [
+          "SRC-003"
+        ]
+      },
+      {
+        "claim": "The trojanized 3CX DesktopApp executed SUDDENICON, which retrieved encrypted icon files hosted on GitHub, obtained command-and-control information, and enabled download of the follow-on information stealer ICONICSTEALER.",
+        "source_references": [
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "claim": "The strongest supported public attribution is UNC4736 as a suspected North Korean-nexus cluster with overlap to AppleJeus- and Lazarus-related cryptocurrency-focused activity; the evidence does not establish that UNC4736 is definitively identical to Lazarus Group.",
+        "source_references": [
+          "SRC-002",
+          "SRC-003",
+          "SRC-004",
+          "SRC-005",
+          "SRC-006",
+          "SRC-007",
+          "SRC-008"
+        ]
+      },
+      {
+        "claim": "The corrupted 3CX software had potentially broad initial reach, while follow-on execution was selective and Gopuram was observed on fewer than ten machines in Kaspersky telemetry.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-004",
+          "SRC-008"
+        ]
+      }
+    ],
+    "reasoning_steps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "CONTRA-001",
+        "source_references": [
+          "SRC-009",
+          "SRC-003",
+          "SRC-008"
+        ],
+        "description": "The initial alert described a bundled library compiled into the Electron application through Git, while later 3CX and Mandiant reporting identified a trojanized Trading Technologies X_TRADER installer that compromised a 3CX employee system and led into the corporate development and build environment; the supplied evidence preserves both descriptions without resolving them speculatively."
+      },
+      {
+        "contradiction_id": "CONTRA-002",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-004",
+          "SRC-008"
+        ],
+        "description": "Public reporting described potentially broad exposure of 3CX software used by many organizations, while 3CX and Kaspersky reporting described selective follow-on execution and Gopuram deployment on fewer than ten observed machines; the evidence preserves both the broad-reach and selective-execution propositions without deriving a single victim count."
+      }
+    ],
+    "structured_output_valid": true,
+    "structured_output_complete": true,
+    "structured_output_errors": []
+  },
+  "metrics": {
+    "finding_f1": 0.16666666666666666,
+    "contradiction_grounded_f1": 0.5,
+    "reasoning_grounded_score": 1.0,
+    "report_quality": 0.75,
+    "source_precision": 1.0,
+    "source_recall": 1.0,
+    "entity_f1": "not_applicable",
+    "relation_f1": "not_applicable"
+  },
+  "full_metrics": {
+    "output_validation": {
+      "valid": true,
+      "errors": []
+    },
+    "entities": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 25,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "missing": [
+        [
+          "alias",
+          "3cx desktopapp"
+        ],
+        [
+          "alias",
+          "applejeus"
+        ],
+        [
+          "alias",
+          "coldcat"
+        ],
+        [
+          "alias",
+          "cryptocurrency and fintech targets"
+        ],
+        [
+          "alias",
+          "fast reverse proxy"
+        ],
+        [
+          "alias",
+          "gopuram"
+        ],
+        [
+          "alias",
+          "iconicstealer"
+        ],
+        [
+          "alias",
+          "lazarus group"
+        ],
+        [
+          "alias",
+          "operation applejeus"
+        ],
+        [
+          "alias",
+          "poolrat"
+        ],
+        [
+          "alias",
+          "suddenicon"
+        ],
+        [
+          "alias",
+          "taxhaul"
+        ],
+        [
+          "alias",
+          "unc4736"
+        ],
+        [
+          "alias",
+          "veiledsignal"
+        ],
+        [
+          "alias",
+          "x_trader"
+        ],
+        [
+          "alias",
+          "x_trader_r7.17.90p608.exe"
+        ],
+        [
+          "domain",
+          "download.tradingtechnologies.com"
+        ],
+        [
+          "domain",
+          "github.com"
+        ],
+        [
+          "domain",
+          "journalide.org"
+        ],
+        [
+          "domain",
+          "www.tradingtechnologies.com"
+        ],
+        [
+          "organization",
+          "3cx"
+        ],
+        [
+          "organization",
+          "google threat analysis group"
+        ],
+        [
+          "organization",
+          "kaspersky"
+        ],
+        [
+          "organization",
+          "mandiant"
+        ],
+        [
+          "organization",
+          "trading technologies international, inc."
+        ]
+      ],
+      "unexpected": []
+    },
+    "relations": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 19,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "missing": [
+        [
+          [
+            "alias",
+            "3cx desktopapp"
+          ],
+          "executed_downloader",
+          [
+            "alias",
+            "suddenicon"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "applejeus"
+          ],
+          "targeted",
+          [
+            "alias",
+            "cryptocurrency and fintech targets"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "lazarus group"
+          ],
+          "associated_with",
+          [
+            "alias",
+            "applejeus"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "poolrat"
+          ],
+          "configured_c2_domain",
+          [
+            "domain",
+            "journalide.org"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "suddenicon"
+          ],
+          "downloaded_follow_on_payload",
+          [
+            "alias",
+            "iconicstealer"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "suddenicon"
+          ],
+          "retrieved_c2_data_from_encrypted_icon_files_hosted_on",
+          [
+            "domain",
+            "github.com"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "unc4736"
+          ],
+          "compromised",
+          [
+            "alias",
+            "3cx desktopapp"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "unc4736"
+          ],
+          "compromised_build_environment_of",
+          [
+            "organization",
+            "3cx"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "unc4736"
+          ],
+          "overlaps_with_north_korean_lazarus_related_activity",
+          [
+            "alias",
+            "lazarus group"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "unc4736"
+          ],
+          "used_for_lateral_movement",
+          [
+            "alias",
+            "fast reverse proxy"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "unc4736"
+          ],
+          "used_on_macos_build_server",
+          [
+            "alias",
+            "poolrat"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "unc4736"
+          ],
+          "used_on_windows_build_environment",
+          [
+            "alias",
+            "coldcat"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "unc4736"
+          ],
+          "used_on_windows_build_environment",
+          [
+            "alias",
+            "taxhaul"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "unc4736"
+          ],
+          "used_or_deployed",
+          [
+            "alias",
+            "veiledsignal"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "veiledsignal"
+          ],
+          "enabled_initial_compromise_of_employee_system_leading_to_corporate_access",
+          [
+            "organization",
+            "3cx"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "x_trader"
+          ],
+          "distributed",
+          [
+            "alias",
+            "x_trader_r7.17.90p608.exe"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "x_trader_r7.17.90p608.exe"
+          ],
+          "contained",
+          [
+            "alias",
+            "veiledsignal"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "google threat analysis group"
+          ],
+          "reported_prior_compromise_of",
+          [
+            "domain",
+            "www.tradingtechnologies.com"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "trading technologies international, inc."
+          ],
+          "provided",
+          [
+            "alias",
+            "x_trader"
+          ]
+        ]
+      ],
+      "unexpected": [],
+      "semantic_mapping": {
+        "also_known_as": "alias_of",
+        "alias_of": "alias_of",
+        "co_founded": "founded",
+        "founded": "founded",
+        "based_in": "located_in",
+        "located_in": "located_in",
+        "performed_special_audit": "audited",
+        "audited": "audited",
+        "former_coo_of": "executive_of",
+        "executive_of": "executive_of",
+        "provided_software": "provided",
+        "distributed_as_installer": "distributed",
+        "contained_malware": "contained",
+        "trojanized": "compromised",
+        "associated_with": "associated_with",
+        "linked_to": "associated_with",
+        "uses_or_is_associated_with": "associated_with"
+      }
+    },
+    "contradictions": {
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "details": [
+        {
+          "contradiction_id": "CONTRA-001",
+          "source_references_correct": false,
+          "source_reference_recall": 0.3333333333333333
+        },
+        {
+          "contradiction_id": "CONTRA-002",
+          "source_references_correct": false,
+          "source_reference_recall": 0.6666666666666666
+        }
+      ],
+      "missing": [],
+      "unexpected": [],
+      "grounded_recall": 0.5,
+      "grounded_f1": 0.5
+    },
+    "key_findings": {
+      "score": 0.05125,
+      "precision": 0.16666666666666666,
+      "recall": 0.16666666666666666,
+      "f1": 0.16666666666666666,
+      "predicted": 6,
+      "expected": 6,
+      "matched": 1,
+      "details": [
+        {
+          "question": "What was the initial intrusion vector that led to the 3CX compromise?",
+          "status": "matched",
+          "score": 0.3075,
+          "semantic": 0.375,
+          "supporting_entity_recall": 0.4,
+          "source_recall": 1.0,
+          "has_source_references": true
+        },
+        {
+          "question": "Why is this incident considered a cascading software supply chain compromise?",
+          "status": "missing",
+          "score": 0.0
+        },
+        {
+          "question": "Which 3CX software was affected and how did the malware stage operate?",
+          "status": "missing",
+          "score": 0.0
+        },
+        {
+          "question": "What public attribution should an investigator report?",
+          "status": "missing",
+          "score": 0.0
+        },
+        {
+          "question": "Was the campaign broadly exposed or selectively exploited?",
+          "status": "missing",
+          "score": 0.0
+        },
+        {
+          "question": "Which prior public evidence connected Trading Technologies to North Korean cryptocurrency-focused activity?",
+          "status": "missing",
+          "score": 0.0
+        }
+      ]
+    },
+    "source_traceability": {
+      "correct_sources": [
+        "SRC-001",
+        "SRC-002",
+        "SRC-003",
+        "SRC-004",
+        "SRC-005",
+        "SRC-006",
+        "SRC-007",
+        "SRC-008",
+        "SRC-009"
+      ],
+      "unknown_sources": [],
+      "unavailable_sources": [
+        "SRC-009"
+      ],
+      "source_precision": 1.0,
+      "source_recall": 1.0,
+      "ratio": 1.0,
+      "claim_level": {
+        "claims": 7,
+        "traceable_claims": 7,
+        "ratio": 1.0,
+        "unknown_sources": [],
+        "unavailable_sources": []
+      },
+      "finding_level": {
+        "findings": 6,
+        "traceable_findings": 6,
+        "ratio": 1.0
+      }
+    },
+    "reasoning_coverage": {
+      "covered": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "invalid": [],
+      "total": 6,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "ratio": 1.0,
+      "status": "structured_step_ids"
+    },
+    "report_quality": {
+      "score": 0.75,
+      "checks": {
+        "non_empty": true,
+        "structured_output_complete": true,
+        "structured_output_valid": true,
+        "findings_present": true,
+        "findings_match": false,
+        "claims_traceable": true,
+        "contradictions_complete": true,
+        "contradictions_grounded": false,
+        "finding_sources_grounded": true,
+        "reasoning_conclusions_grounded": true,
+        "uncertainty_language": true,
+        "readable_length": false
+      },
+      "scale": "deterministic rubric 0-1"
+    },
+    "reasoning_quality": {
+      "covered": 6,
+      "expected": 6,
+      "coverage": 1.0,
+      "semantic_similarity": 1.0,
+      "premise_grounding": 1.0,
+      "grounded_score": 1.0,
+      "method": "premise_ids_plus_token_entailment_proxy",
+      "details": [
+        {
+          "id": 1,
+          "premise_score": 1.0,
+          "entity_recall": 1.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 1.0,
+          "invalid_premise_entities": [],
+          "invalid_premise_relations": [],
+          "grounded_score": 1.0
+        },
+        {
+          "id": 2,
+          "premise_score": 1.0,
+          "entity_recall": 1.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 1.0,
+          "invalid_premise_entities": [],
+          "invalid_premise_relations": [],
+          "grounded_score": 1.0
+        },
+        {
+          "id": 3,
+          "premise_score": 1.0,
+          "entity_recall": 1.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 1.0,
+          "invalid_premise_entities": [],
+          "invalid_premise_relations": [],
+          "grounded_score": 1.0
+        },
+        {
+          "id": 4,
+          "premise_score": 1.0,
+          "entity_recall": 1.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 1.0,
+          "invalid_premise_entities": [],
+          "invalid_premise_relations": [],
+          "grounded_score": 1.0
+        },
+        {
+          "id": 5,
+          "premise_score": 1.0,
+          "entity_recall": 1.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 1.0,
+          "invalid_premise_entities": [],
+          "invalid_premise_relations": [],
+          "grounded_score": 1.0
+        },
+        {
+          "id": 6,
+          "premise_score": 1.0,
+          "entity_recall": 1.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 1.0,
+          "invalid_premise_entities": [],
+          "invalid_premise_relations": [],
+          "grounded_score": 1.0
+        }
+      ]
+    },
+    "operational": {}
+  }
+}

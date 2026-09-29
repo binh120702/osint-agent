@@ -1,0 +1,121 @@
+{
+  "case_id": "OSINT-004",
+  "candidate": "assafelovic/gpt-researcher",
+  "adaptation": "native-workflow-snapshot-retriever-file-inference-v1",
+  "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-004/io/candidate-result.json",
+  "artifact_sha256": "047dbab7ca72441a0c45d81a8ac15de98db765ad4c41f100f3fb993f99fb9bcf",
+  "output_summary": {
+    "source_references": [
+      "SRC-001",
+      "SRC-002"
+    ],
+    "key_findings": [
+      {
+        "question": "What does the supplied evidence establish about Guccifer 2.0, DCLeaks, and the GRU units?",
+        "answer": "The DOJ indictment alleges that GRU conspirators hacked election-related networks, including the Democratic National Committee, and staged releases through the fictitious personas Guccifer 2.0 and DCLeaks. It further alleges that Unit 26165 conducted the DCCC and DNC intrusions, while Unit 74455 assisted with releases through those personas.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-003",
+          "ENT-004",
+          "ENT-005"
+        ],
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "question": "What infrastructure is directly associated with DCLeaks?",
+        "answer": "The indictment alleges that the conspirators registered and operated dcleaks.com to release stolen emails, funded it with cryptocurrency, and used overlapping infrastructure and financing for DCLeaks and Guccifer 2.0 operations.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-003",
+          "ENT-004"
+        ],
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "question": "What did CrowdStrike report about activity in the DNC network?",
+        "answer": "CrowdStrike reports that it was engaged by the DNC to investigate a suspected breach and identified COZY BEAR and FANCY BEAR as two separate Russian intelligence-affiliated adversaries on the network. The report describes this as CrowdStrike’s incident-response finding and does not itself identify every release persona.",
+        "supporting_entities": [
+          "ENT-005",
+          "ENT-006",
+          "ENT-007",
+          "ENT-008"
+        ],
+        "source_references": [
+          "SRC-002"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "source_references": [
+          "SRC-001"
+        ],
+        "text": "The DOJ indictment alleges that GRU Units 26165 and 74455 conducted cyber operations involving staged releases of documents stolen through intrusions targeting the 2016 U.S. presidential election."
+      },
+      {
+        "source_references": [
+          "SRC-001"
+        ],
+        "text": "The indictment alleges that fictitious online personas, including DCLeaks and Guccifer 2.0, were used to release stolen emails and documents, and that Unit 74455 assisted with releases through those personas."
+      },
+      {
+        "source_references": [
+          "SRC-001"
+        ],
+        "text": "The indictment identifies dcleaks.com as infrastructure registered and used by the conspirators to release stolen emails, and states that Guccifer 2.0 and DCLeaks operations used overlapping computer infrastructure and financing."
+      },
+      {
+        "source_references": [
+          "SRC-001"
+        ],
+        "text": "The indictment alleges that Unit 26165 had primary responsibility for hacking the DCCC and DNC, while Unit 74455 assisted with document releases and their promotion."
+      },
+      {
+        "source_references": [
+          "SRC-002"
+        ],
+        "text": "CrowdStrike states that it investigated a suspected breach of the Democratic National Committee network and identified two separate Russian intelligence-affiliated adversaries, COZY BEAR and FANCY BEAR, on the network."
+      },
+      {
+        "source_references": [
+          "SRC-002"
+        ],
+        "text": "CrowdStrike’s account states that COZY BEAR activity at the DNC dated to summer 2015 and that FANCY BEAR separately breached the network in April 2016."
+      }
+    ],
+    "reasoning_steps": [
+      1,
+      2,
+      3
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "CONTRA-001",
+        "description": "Guccifer 2.0 and DCLeaks presented themselves as independent personas, while the DOJ indictment alleges that GRU conspirators operated fictitious personas and used them to release stolen material. CrowdStrike's earlier incident-response report identified Russian intelligence-affiliated activity in the DNC network but did not itself identify every release persona.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      }
+    ],
+    "structured_output_valid": true,
+    "structured_output_complete": true,
+    "structured_output_errors": []
+  },
+  "metrics": {
+    "finding_f1": 0.6666666666666666,
+    "contradiction_grounded_f1": 1.0,
+    "reasoning_grounded_score": 0.3544973544973545,
+    "report_quality": 0.8333333333333334,
+    "source_precision": 1.0,
+    "source_recall": 1.0,
+    "entity_f1": "not_applicable",
+    "relation_f1": "not_applicable"
+  }
+}

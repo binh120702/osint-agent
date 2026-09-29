@@ -1,0 +1,99 @@
+{
+  "case_id": "OSINT-008",
+  "candidate": "assafelovic/gpt-researcher",
+  "adaptation": "native-workflow-snapshot-retriever-file-inference-v1",
+  "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-008/io/candidate-result.json",
+  "artifact_sha256": "07bace233aea47223089689136de8408cfa6ada4e62cd1e8b0a99f5a519f5455",
+  "output_summary": {
+    "source_references": [
+      "SRC-001",
+      "SRC-002"
+    ],
+    "key_findings": [
+      {
+        "question": "What did Wirecard AG publicly report about KPMG’s special investigation?",
+        "answer": "Wirecard AG reported that KPMG had not identified incriminating evidence of balance-sheet forgery and had found no significant findings requiring adjustment of the 2016–2018 annual accounts. The announcement also stated that data limitations remained because some required information was controlled by third parties.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-008"
+        ],
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "question": "What later evidence challenged the earlier public position?",
+        "answer": "The SAFE policy paper states that KPMG could not verify approximately EUR 1 billion in foreign bank accounts, that EY had previously issued unqualified opinions on Wirecard’s financials, and that Wirecard later acknowledged EUR 1.9 billion in missing financial assets.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-003",
+          "ENT-007",
+          "ENT-008"
+        ],
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "What supervisory lessons does the supplied evidence identify?",
+        "answer": "The SAFE policy paper concludes that multiple lines of defence failed in one way or another and recommends stronger investigative and enforcement powers, clearer accountability and independence for BaFin, and reform of Germany’s two-step financial-reporting enforcement structure.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-005"
+        ],
+        "source_references": [
+          "SRC-002"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "source_references": [
+          "SRC-001"
+        ],
+        "text": "Wirecard AG stated on 28 April 2020 that KPMG had not identified incriminating evidence for the public allegations of balance-sheet forgery, while noting that not all data required for forensic verification could be obtained because relevant data were controlled by third parties."
+      },
+      {
+        "source_references": [
+          "SRC-002"
+        ],
+        "text": "The SAFE policy paper reports that KPMG was unable to verify approximately EUR 1 billion in foreign bank accounts and that Wirecard later acknowledged EUR 1.9 billion in missing financial assets."
+      },
+      {
+        "source_references": [
+          "SRC-002"
+        ],
+        "text": "The SAFE policy paper identifies weaknesses across Wirecard’s internal controls, supervisory board, external audit, financial-reporting oversight, and market supervision, and recommends reforms including stronger BaFin powers and accountability."
+      }
+    ],
+    "reasoning_steps": [
+      1,
+      2,
+      3
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "CONTRA-001",
+        "description": "The supplied evidence supports the contrast between Wirecard’s April 2020 statement that no incriminating balance-sheet evidence had been identified, subject to audit limitations, and the later disclosure that EUR 1.9 billion in financial assets were missing. The supplied snapshot does not contain evidence confirming the resignation or flight of Jan Marsalek.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      }
+    ],
+    "structured_output_valid": true,
+    "structured_output_complete": true,
+    "structured_output_errors": []
+  },
+  "metrics": {
+    "finding_f1": 0.0,
+    "contradiction_grounded_f1": 1.0,
+    "reasoning_grounded_score": 0.2854938271604938,
+    "report_quality": 0.8333333333333334,
+    "source_precision": 1.0,
+    "source_recall": 1.0,
+    "entity_f1": "not_applicable",
+    "relation_f1": "not_applicable"
+  }
+}

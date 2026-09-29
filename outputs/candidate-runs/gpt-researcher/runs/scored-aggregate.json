@@ -1,0 +1,30 @@
+{
+  "candidate": "assafelovic/gpt-researcher",
+  "adaptation": "native-workflow-snapshot-retriever-file-inference-v1",
+  "cases_completed": 10,
+  "cases_total": 10,
+  "valid_structured_outputs": 9,
+  "complete_structured_outputs": 10,
+  "metrics": {
+    "finding_f1": 0.43928571428571433,
+    "contradiction_grounded_f1": 0.8166666666666667,
+    "reasoning_grounded_score": 0.5385380295468015,
+    "report_quality": 0.8333333333333334,
+    "source_precision": 1.0,
+    "source_recall": 0.9638888888888889,
+    "entity_f1": "not_applicable",
+    "relation_f1": "not_applicable"
+  },
+  "case_results": [
+    "OSINT-001",
+    "OSINT-002",
+    "OSINT-003",
+    "OSINT-004",
+    "OSINT-005",
+    "OSINT-006",
+    "OSINT-007",
+    "OSINT-008",
+    "OSINT-009",
+    "OSINT-010"
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "case_id": "OSINT-010",
+  "candidate": "assafelovic/gpt-researcher",
+  "adaptation": "native-workflow-snapshot-retriever-file-inference-v1",
+  "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-010/io/candidate-result.json",
+  "artifact_sha256": "ce062f8f801416d79f819a1b50628e95ede1df48be81a2b1d7fc19fa7fb19d6a",
+  "output_summary": {
+    "source_references": [
+      "SRC-001",
+      "SRC-002",
+      "SRC-003",
+      "SRC-004"
+    ],
+    "key_findings": [
+      {
+        "question": "What organization is the primary subject of the supplied evidence?",
+        "answer": "The primary subject is the Internet Research Agency, described as a Russian organization based in or operating from St. Petersburg, Russia, that conducted foreign-influence and election-interference operations.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-006"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-003"
+        ]
+      },
+      {
+        "question": "How are Project Lakhta, Prigozhin, Concord Management and Consulting LLC, and Concord Catering connected?",
+        "answer": "The DOJ indictment states that Concord Management and Consulting LLC and Concord Catering were the Internet Research Agency’s primary funding source, that Yevgeniy Viktorovich Prigozhin controlled Concord, and that the funding formed part of the larger Concord-funded operation called Project Lakhta.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-003",
+          "ENT-004",
+          "ENT-005"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-003"
+        ]
+      },
+      {
+        "question": "How did the operation use social-media platforms?",
+        "answer": "The operation used false U.S. personas, pages, groups, advertisements, posts, and other platform features across Facebook, Twitter, Instagram, and YouTube. The supplied Senate material describes substantial organic posting, audience cultivation, cross-platform activity, and engagement tracking.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-007",
+          "ENT-008",
+          "ENT-009",
+          "ENT-010"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "question": "Which 2016 presidential candidates were specifically affected by the described IRA messaging?",
+        "answer": "The supplied evidence describes efforts to harm Hillary Clinton’s electoral prospects and support or promote Donald Trump. It also describes broader efforts involving divisive social issues, voter-suppression narratives, and messages directed at multiple audiences.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-011",
+          "ENT-012"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "question": "What caveat applies to attributing divisive online content to the IRA?",
+        "answer": "The evidence supports attribution of the described accounts, posts, advertisements, and operations to the IRA or to Russian influence activity in the cited investigations and reporting; it does not support the claim that every divisive online post was created by the IRA.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-007",
+          "ENT-008",
+          "ENT-009",
+          "ENT-010"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "source_references": [
+          "SRC-001"
+        ],
+        "claim": "The Internet Research Agency was described in the DOJ indictment as a Russian organization conducting operations to interfere with U.S. elections and political processes, including the 2016 presidential election."
+      },
+      {
+        "source_references": [
+          "SRC-001"
+        ],
+        "claim": "The DOJ indictment states that Yevgeniy Viktorovich Prigozhin and companies he controlled, including Concord Management and Consulting LLC and Concord Catering, funded the Internet Research Agency’s operations."
+      },
+      {
+        "source_references": [
+          "SRC-001"
+        ],
+        "claim": "The indictment identifies Project Lakhta as a larger Concord-funded interference operation that included components targeting foreign audiences, including the United States."
+      },
+      {
+        "source_references": [
+          "SRC-001"
+        ],
+        "claim": "The Internet Research Agency operated from St. Petersburg, Russia, and used fictitious U.S. personas, false accounts, advertisements, and social-media pages to reach U.S. audiences."
+      },
+      {
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ],
+        "claim": "The supplied Senate reporting describes IRA activity across Facebook, Twitter, Instagram, and YouTube, with emphasis on divisive issues, racial targeting, audience engagement, and political effects."
+      },
+      {
+        "source_references": [
+          "SRC-001",
+          "SRC-003"
+        ],
+        "claim": "The supplied evidence describes IRA activity that disparaged Hillary Clinton and supported or promoted Donald Trump during the 2016 presidential election period."
+      }
+    ],
+    "reasoning_steps": [
+      1,
+      2,
+      3
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "CONTRA-001",
+        "description": "The DOJ indictment describes a Russian influence operation using fake personas and concealed funding, while Senate reporting focuses on the campaign's content, audience targeting, and political effects. Neither source supports the claim that every divisive online post was created by the IRA.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ]
+      }
+    ],
+    "structured_output_valid": true,
+    "structured_output_complete": true,
+    "structured_output_errors": []
+  },
+  "metrics": {
+    "finding_f1": 0.7499999999999999,
+    "contradiction_grounded_f1": 1.0,
+    "reasoning_grounded_score": 0.48677248677248675,
+    "report_quality": 0.8333333333333334,
+    "source_precision": 1.0,
+    "source_recall": 1.0,
+    "entity_f1": "not_applicable",
+    "relation_f1": "not_applicable"
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "protocol": "common-contract-track-v1",
+  "candidate": "gpt-researcher",
+  "benchmark_snapshot_sha256": "561e463eac51c71d83b97cf20c706395f8ecb3763fdec6d77715c17da9156bd0",
+  "rows": [
+    {
+      "iteration": 1,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-001/io/candidate-result.json",
+      "artifact_sha256": "519061c9f19bfebf9b666c59b37145a34bab4a710312a9a713f0df63993241fa",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.16666666666666666,
+        "contradiction_f1": 0.6666666666666666,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 0.8888888888888888
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-002/io/candidate-result.json",
+      "artifact_sha256": "ec5bdb8286580604dbb05995a88c21ee2d6b52baa8b0d9e770c3173331a8342d",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.6666666666666666,
+        "contradiction_f1": 1.0,
+        "reasoning": 0.6342780026990553,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-003/io/candidate-result.json",
+      "artifact_sha256": "340acbef95e624e7f7a62eea2ead14884d427923f9c9eda1a0a48b39ef514c03",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.28571428571428575,
+        "contradiction_f1": 0.5,
+        "reasoning": 0.4444444444444444,
+        "report_quality": 0.75,
+        "source_precision": 1.0,
+        "source_recall": 0.75
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-004/io/candidate-result.json",
+      "artifact_sha256": "047dbab7ca72441a0c45d81a8ac15de98db765ad4c41f100f3fb993f99fb9bcf",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.6666666666666666,
+        "contradiction_f1": 1.0,
+        "reasoning": 0.3544973544973545,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-005/io/candidate-result.json",
+      "artifact_sha256": "7378020abb1b197c7afa9618a639d5edf0efeef0d8fbe5d69e28986d3d00424f",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.28571428571428575,
+        "contradiction_f1": 1.0,
+        "reasoning": 0.6666666666666666,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-006/io/candidate-result.json",
+      "artifact_sha256": "04d1f24c908ea5ccb61633767d42a9c9a23a35f1f97035074df0cc235e4321da",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.5714285714285715,
+        "contradiction_f1": 1.0,
+        "reasoning": 0.48677248677248675,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-007/io/candidate-result.json",
+      "artifact_sha256": "8e66ae9397684225ca561910346e60e9dbaa4bc584ae5324ef9e7ff323eaf2b2",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.5,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.5767195767195767,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-008/io/candidate-result.json",
+      "artifact_sha256": "07bace233aea47223089689136de8408cfa6ada4e62cd1e8b0a99f5a519f5455",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 0.2854938271604938,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-009/io/candidate-result.json",
+      "artifact_sha256": "8c1e7b55e58b7549d9ae2c181644588a5165af1cbaa64553b285440aad5e71f9",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.5,
+        "contradiction_f1": 1.0,
+        "reasoning": 0.44973544973544977,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-010/io/candidate-result.json",
+      "artifact_sha256": "ce062f8f801416d79f819a1b50628e95ede1df48be81a2b1d7fc19fa7fb19d6a",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.7499999999999999,
+        "contradiction_f1": 1.0,
+        "reasoning": 0.48677248677248675,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    }
+  ],
+  "completed_output": {
+    "n_rows": 10,
+    "metrics": {
+      "finding_f1": {
+        "mean": 0.43928571428571433
+      },
+      "contradiction_f1": {
+        "mean": 0.8166666666666667
+      },
+      "reasoning": {
+        "mean": 0.5385380295468015
+      },
+      "report_quality": {
+        "mean": 0.8416666666666666
+      },
+      "source_precision": {
+        "mean": 1.0
+      },
+      "source_recall": {
+        "mean": 0.9638888888888889
+      }
+    }
+  },
+  "valid_only": {
+    "n_rows": 10,
+    "metrics": {
+      "finding_f1": {
+        "mean": 0.43928571428571433
+      },
+      "contradiction_f1": {
+        "mean": 0.8166666666666667
+      },
+      "reasoning": {
+        "mean": 0.5385380295468015
+      },
+      "report_quality": {
+        "mean": 0.8416666666666666
+      },
+      "source_precision": {
+        "mean": 1.0
+      },
+      "source_recall": {
+        "mean": 0.9638888888888889
+      }
+    }
+  },
+  "validity_rate": 1.0
+}

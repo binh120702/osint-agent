@@ -1,0 +1,174 @@
+{
+  "case_id": "OSINT-001",
+  "candidate": "assafelovic/gpt-researcher",
+  "adaptation": "native-workflow-snapshot-retriever-file-inference-v1",
+  "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-001-smoke/io/candidate-result.json",
+  "artifact_sha256": "d8f9168f2fafa53d2660844fed0fc0a7e1f0a1e943fb8e8bc86054241a1d52b0",
+  "output_summary": {
+    "source_references": [
+      "SRC-001",
+      "SRC-002",
+      "SRC-003",
+      "SRC-004",
+      "SRC-005",
+      "SRC-006",
+      "SRC-007",
+      "SRC-008",
+      "SRC-009"
+    ],
+    "key_findings": [
+      {
+        "question": "What was the primary compromise?",
+        "answer": "The 3CX DesktopApp was trojanized in a software supply-chain compromise affecting specified Windows and macOS Electron app versions.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-003",
+          "SRC-009"
+        ]
+      },
+      {
+        "question": "What was the upstream initial-access vector?",
+        "answer": "The initial vector was an earlier compromise of Trading Technologies software: a tampered X_TRADER installer, X_TRADER_r7.17.90p608.exe, deployed the VEILEDSIGNAL backdoor and was later installed on a 3CX employee system.",
+        "supporting_entities": [
+          "ENT-003",
+          "ENT-004",
+          "ENT-005",
+          "ENT-006"
+        ],
+        "source_references": [
+          "SRC-003",
+          "SRC-008"
+        ]
+      },
+      {
+        "question": "How did the attacker reach the 3CX build environment?",
+        "answer": "The attacker used Fast Reverse Proxy for lateral movement within 3CX, eventually compromising both Windows and macOS build environments and deploying TAXHAUL, COLDCAT, and POOLRAT.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-006",
+          "ENT-013",
+          "ENT-014",
+          "ENT-015",
+          "ENT-016"
+        ],
+        "source_references": [
+          "SRC-003"
+        ]
+      },
+      {
+        "question": "What was the 3CX malware execution chain?",
+        "answer": "The trojanized 3CX DesktopApp executed SUDDENICON, which obtained C2 information from encrypted icon files hosted on GitHub and downloaded ICONICSTEALER, a data miner that collected browser information.",
+        "supporting_entities": [
+          "ENT-002",
+          "ENT-010",
+          "ENT-011",
+          "ENT-019"
+        ],
+        "source_references": [
+          "SRC-003"
+        ]
+      },
+      {
+        "question": "What attribution and targeting assessment is supported?",
+        "answer": "The reporting identifies UNC4736 as a suspected North Korean-nexus cluster and describes overlap with Lazarus/AppleJeus activity, including a sustained focus on cryptocurrency and fintech-related services.",
+        "supporting_entities": [
+          "ENT-007",
+          "ENT-008",
+          "ENT-009",
+          "ENT-012",
+          "ENT-025"
+        ],
+        "source_references": [
+          "SRC-003",
+          "SRC-004",
+          "SRC-005",
+          "SRC-006",
+          "SRC-007"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "source_references": [
+          "SRC-003",
+          "SRC-009"
+        ],
+        "claim": "3CX DesktopApp was distributed in trojanized Windows and macOS versions, including Windows versions 18.12.407 and 18.12.416 and macOS versions 18.11.1213, 18.12.402, 18.12.407, and 18.12.416."
+      },
+      {
+        "source_references": [
+          "SRC-003"
+        ],
+        "claim": "The upstream intrusion vector was a tampered X_TRADER installer, X_TRADER_r7.17.90p608.exe, provided through the Trading Technologies website and containing VEILEDSIGNAL."
+      },
+      {
+        "source_references": [
+          "SRC-003"
+        ],
+        "claim": "The compromised X_TRADER installation enabled lateral movement within 3CX through the use of a compiled Fast Reverse Proxy project, after which both Windows and macOS build environments were compromised."
+      },
+      {
+        "source_references": [
+          "SRC-003"
+        ],
+        "claim": "The 3CX malware chain involved SUDDENICON, encrypted icon files hosted on GitHub, and the subsequent ICONICSTEALER payload."
+      },
+      {
+        "source_references": [
+          "SRC-003",
+          "SRC-004",
+          "SRC-005",
+          "SRC-006",
+          "SRC-007"
+        ],
+        "claim": "Mandiant tracked the activity as UNC4736, assessed it as a suspected North Korean-nexus cluster, and reported overlap with AppleJeus and Lazarus-related cryptocurrency-focused activity."
+      }
+    ],
+    "reasoning_steps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "CONTRA-001",
+        "description": "The initial public reporting focused on the trojanized 3CX application and its observed malicious behavior, while later Mandiant reporting identified the upstream intrusion vector as a trojanized Trading Technologies X_TRADER installer that compromised a 3CX employee system and led into the 3CX build environment.",
+        "source_references": [
+          "SRC-001",
+          "SRC-003",
+          "SRC-008"
+        ]
+      },
+      {
+        "contradiction_id": "CONTRA-002",
+        "description": "Public reporting described a potentially broad compromise affecting many 3CX users, while Kaspersky reported that Gopuram was deployed to fewer than ten observed machines and that follow-on activity selectively targeted cryptocurrency-related organizations.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-004",
+          "SRC-008"
+        ]
+      }
+    ],
+    "structured_output_valid": true,
+    "structured_output_complete": true,
+    "structured_output_errors": []
+  },
+  "metrics": {
+    "finding_f1": 0.3636363636363636,
+    "contradiction_grounded_f1": 0.6666666666666666,
+    "reasoning_grounded_score": 1.0,
+    "report_quality": 0.8333333333333334,
+    "source_precision": 1.0,
+    "source_recall": 1.0,
+    "entity_f1": "not_applicable",
+    "relation_f1": "not_applicable"
+  }
+}

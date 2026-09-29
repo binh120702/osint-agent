@@ -1,0 +1,478 @@
+{
+  "case_id": "OSINT-005",
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "artifact": "outputs/candidate-runs/open-deep-research/runs/OSINT-005/io/candidate-result.json",
+  "artifact_sha256": "17fc4fac31148c17d3819083fe05b01badbf68925e222bd9752f0c1e2f83fefa",
+  "manifest_sha256": "17fc4fac31148c17d3819083fe05b01badbf68925e222bd9752f0c1e2f83fefa",
+  "manifest_hash_match": true,
+  "report_sha256": "1d0886d8faf2828bfa227e4325ac34d77701009a2b017d258cb2a67816210037",
+  "status": "completed",
+  "output_summary": {
+    "available_source_references": [
+      "SRC-001",
+      "SRC-002"
+    ],
+    "source_references": [
+      "SRC-001",
+      "SRC-002"
+    ],
+    "key_findings": [
+      {
+        "question": "What is the documented OneCoin scheme?",
+        "answer": "The canonical sources describe OneCoin Ltd. as a Bulgaria-based cryptocurrency operation that began in 2014, was based in Sofia, marketed and sold a cryptocurrency called OneCoin through a global MLM network, and was characterized by the DOJ as a fraudulent international investment scheme that caused more than $4 billion in investor losses.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-005",
+          "ENT-007"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "What role is documented for Ruja Ignatova?",
+        "answer": "Ruja Ignatova is documented as a co-founder of OneCoin Ltd. and as one of the people identified by the DOJ as having orchestrated the international investment scheme.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "What role is documented for Karl Sebastian Greenwood?",
+        "answer": "Karl Sebastian Greenwood is documented as a co-founder of OneCoin, a top MLM distributor, a person charged in connection with the scheme, and a person sentenced to 20 years in prison and ordered to pay approximately $300,000 in forfeiture.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-005"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "What is the supported Sofia connection?",
+        "answer": "OneCoin Ltd. is documented as based in Sofia, Bulgaria, and OneCoin is documented as beginning operations in Bulgaria in 2014. The sources do not document an individual Sofia connection for Ruja Ignatova, Konstantin Ignatov, or Karl Sebastian Greenwood.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-004",
+          "ENT-005",
+          "ENT-007"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "Is Cryptoqueen supported as Ruja Ignatova’s alias?",
+        "answer": "The supplied canonical source text does not identify Ruja Ignatova as Cryptoqueen, so the relation ENT-002 also_known_as ENT-003 is not established by the evidence.",
+        "supporting_entities": [
+          "ENT-002",
+          "ENT-003"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "What role is documented for Konstantin Ignatov?",
+        "answer": "No role, prosecution, sentence, co-founder relationship, alias relationship, or supported Sofia connection for Konstantin Ignatov is documented in the supplied canonical source text.",
+        "supporting_entities": [
+          "ENT-004"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "What is established about Ruja Ignatova’s current status?",
+        "answer": "The sources establish only that AFS Law described Ruja Ignatova as remaining at large on September 15, 2023, and that the DOJ described the FBI as continuing to pursue and locate her on April 13, 2026. Her precise status as of September 22, 2026 is unresolved in the supplied evidence.",
+        "supporting_entities": [
+          "ENT-002"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "How should Ruja Ignatova be distinguished from later prosecuted participants?",
+        "answer": "Ruja Ignatova is identified as a co-founder who remained at large or was being pursued, while Karl Sebastian Greenwood is identified as a prosecuted participant who was sentenced to 20 years in prison and ordered to pay forfeiture.",
+        "supporting_entities": [
+          "ENT-002",
+          "ENT-005"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "claim": "Between 2014 and 2019, Ruja Ignatova and Karl Sebastian Greenwood, co-founders of OneCoin Ltd., and others orchestrated a large, international cryptocurrency investment scheme defrauding investors from around the globe.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "OneCoin began operations in 2014, was based in Sofia, Bulgaria, and marketed and sold a fraudulent cryptocurrency by the same name through a global multi-level-marketing network.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "As a result of misrepresentations made about OneCoin, victims invested over $4 billion worldwide in the fraudulent cryptocurrency.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "The Department of Justice filed OneCoin-related prosecutions in the Southern District of New York, several key figures involved in the scheme had been sentenced, and the Department pursued criminal forfeiture of property derived from the proceeds of the fraud scheme.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "More than $40 million in forfeited assets were available for victim compensation.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "Karl Sebastian Greenwood, a citizen of Sweden and the United Kingdom and co-founder of OneCoin, was sentenced to 20 years in prison for his alleged role in a $4 billion fraud scheme.",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "claim": "The government charged Greenwood and others with making misrepresentations about OneCoin to secure more than $4 billion from approximately 3.5 million investors.",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "claim": "Greenwood was alleged to have claimed that OneCoin’s value was based on market supply and demand, although its value was actually set arbitrarily without regard to market forces, and he claimed to have a private blockchain although no public verifiable blockchain existed.",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "claim": "Greenwood was described as OneCoin’s top MLM distributor and was alleged to have earned 5% of monthly OneCoin sales, totaling more than $300 million.",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "claim": "Greenwood was ordered to pay approximately $300,000 in forfeiture in addition to his 20-year prison term.",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "claim": "The DOJ stated that the FBI continued pursuing Ruja Ignatova, described her as an FBI Top Ten Fugitive, and sought information locating her.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "AFS Law stated that Ruja Ignatova, OneCoin’s other co-founder, remained at large and had been added to the FBI’s Top Ten Most Wanted List in June 2022.",
+        "source_references": [
+          "SRC-002"
+        ]
+      }
+    ],
+    "reasoning_steps": [
+      1,
+      2
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "CONTRA-001",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ],
+        "description": "SRC-001 and SRC-002 characterize OneCoin through enforcement facts as a fraudulent scheme and describe prosecutions, sentencing, and criminal forfeiture. The supplied evidence contains no promotional or property record presenting the founders or associated companies through a legitimate-business narrative. The proposed contradiction is therefore not fully evidenced in this snapshot; only the enforcement side is supported."
+      }
+    ],
+    "structured_output_valid": false,
+    "structured_output_complete": true,
+    "structured_output_errors": [
+      "reasoning step 2 uses non-canonical relation also_known_as"
+    ]
+  },
+  "metrics": {
+    "finding_f1": 0.4,
+    "contradiction_grounded_f1": 1.0,
+    "reasoning_grounded_score": 0.38888888888888884,
+    "report_quality": 0.6666666666666666,
+    "source_precision": 1.0,
+    "source_recall": 1.0,
+    "entity_f1": "not_applicable",
+    "relation_f1": "not_applicable"
+  },
+  "full_metrics": {
+    "output_validation": {
+      "valid": false,
+      "errors": [
+        "reasoning step 2 uses non-canonical relation also_known_as"
+      ]
+    },
+    "entities": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 6,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "missing": [
+        [
+          "alias",
+          "cryptoqueen"
+        ],
+        [
+          "location",
+          "sofia, bulgaria"
+        ],
+        [
+          "organization",
+          "onecoin ltd."
+        ],
+        [
+          "person",
+          "karl sebastian greenwood"
+        ],
+        [
+          "person",
+          "konstantin ignatov"
+        ],
+        [
+          "person",
+          "ruja ignatova"
+        ]
+      ],
+      "unexpected": []
+    },
+    "relations": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 4,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "missing": [
+        [
+          [
+            "organization",
+            "onecoin ltd."
+          ],
+          "located_in",
+          [
+            "location",
+            "sofia, bulgaria"
+          ]
+        ],
+        [
+          [
+            "person",
+            "karl sebastian greenwood"
+          ],
+          "founded",
+          [
+            "organization",
+            "onecoin ltd."
+          ]
+        ],
+        [
+          [
+            "person",
+            "konstantin ignatov"
+          ],
+          "led_or_promoted",
+          [
+            "organization",
+            "onecoin ltd."
+          ]
+        ],
+        [
+          [
+            "person",
+            "ruja ignatova"
+          ],
+          "founded",
+          [
+            "organization",
+            "onecoin ltd."
+          ]
+        ]
+      ],
+      "unexpected": [],
+      "semantic_mapping": {
+        "also_known_as": "alias_of",
+        "alias_of": "alias_of",
+        "co_founded": "founded",
+        "founded": "founded",
+        "based_in": "located_in",
+        "located_in": "located_in",
+        "performed_special_audit": "audited",
+        "audited": "audited",
+        "former_coo_of": "executive_of",
+        "executive_of": "executive_of",
+        "provided_software": "provided",
+        "distributed_as_installer": "distributed",
+        "contained_malware": "contained",
+        "trojanized": "compromised",
+        "associated_with": "associated_with",
+        "linked_to": "associated_with",
+        "uses_or_is_associated_with": "associated_with"
+      }
+    },
+    "contradictions": {
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "details": [
+        {
+          "contradiction_id": "CONTRA-001",
+          "source_references_correct": true,
+          "source_reference_recall": 1.0
+        }
+      ],
+      "missing": [],
+      "unexpected": [],
+      "grounded_recall": 1.0,
+      "grounded_f1": 1.0
+    },
+    "key_findings": {
+      "score": 0.5277777777777778,
+      "precision": 0.25,
+      "recall": 1.0,
+      "f1": 0.4,
+      "predicted": 8,
+      "expected": 2,
+      "matched": 2,
+      "details": [
+        {
+          "question": "What was OneCoin core misrepresentation?",
+          "status": "matched",
+          "score": 0.5555555555555556,
+          "semantic": 0.5555555555555556,
+          "supporting_entity_recall": 1.0,
+          "source_recall": 1.0,
+          "has_source_references": true
+        },
+        {
+          "question": "Who were key network actors?",
+          "status": "matched",
+          "score": 0.5,
+          "semantic": 0.5,
+          "supporting_entity_recall": 1.0,
+          "source_recall": 1.0,
+          "has_source_references": true
+        }
+      ]
+    },
+    "source_traceability": {
+      "correct_sources": [
+        "SRC-001",
+        "SRC-002"
+      ],
+      "unknown_sources": [],
+      "unavailable_sources": [],
+      "source_precision": 1.0,
+      "source_recall": 1.0,
+      "ratio": 1.0,
+      "claim_level": {
+        "claims": 12,
+        "traceable_claims": 12,
+        "ratio": 1.0,
+        "unknown_sources": [],
+        "unavailable_sources": []
+      },
+      "finding_level": {
+        "findings": 8,
+        "traceable_findings": 8,
+        "ratio": 1.0
+      }
+    },
+    "reasoning_coverage": {
+      "covered": [
+        1,
+        2
+      ],
+      "invalid": [],
+      "total": 2,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "ratio": 1.0,
+      "status": "structured_step_ids"
+    },
+    "report_quality": {
+      "score": 0.6666666666666666,
+      "checks": {
+        "non_empty": true,
+        "structured_output_complete": true,
+        "structured_output_valid": false,
+        "findings_present": true,
+        "findings_match": false,
+        "claims_traceable": true,
+        "contradictions_complete": true,
+        "contradictions_grounded": true,
+        "finding_sources_grounded": true,
+        "reasoning_conclusions_grounded": false,
+        "uncertainty_language": true,
+        "readable_length": false
+      },
+      "scale": "deterministic rubric 0-1"
+    },
+    "reasoning_quality": {
+      "covered": 2,
+      "expected": 2,
+      "coverage": 1.0,
+      "semantic_similarity": 0.38888888888888884,
+      "premise_grounding": 1.0,
+      "grounded_score": 0.38888888888888884,
+      "method": "premise_ids_plus_token_entailment_proxy",
+      "details": [
+        {
+          "id": 1,
+          "premise_score": 1.0,
+          "entity_recall": 1.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 0.6666666666666666,
+          "invalid_premise_entities": [],
+          "invalid_premise_relations": [],
+          "grounded_score": 0.6666666666666666
+        },
+        {
+          "id": 2,
+          "premise_score": 1.0,
+          "entity_recall": 1.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 0.1111111111111111,
+          "invalid_premise_entities": [],
+          "invalid_premise_relations": [
+            "also_known_as"
+          ],
+          "grounded_score": 0.1111111111111111
+        }
+      ]
+    },
+    "operational": {}
+  }
+}

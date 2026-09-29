@@ -1,0 +1,37 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-003",
+  "report": "Error generating final report: APITimeoutError: Request timed out.",
+  "context": [],
+  "visited_urls": [
+    "https://www.chainalysis.com/blog/axie-infinity-ronin-bridge-dprk-hack-seizure/",
+    "https://www.elliptic.co/insights/540-million-stolen-from-the-ronin-defi-bridge",
+    "https://www.elliptic.co/insights/fbi-confirms-north-korea-s-lazarus-group-as-hackers-behind-100-million-harmony-horizon-bridge-theft",
+    "https://www.elliptic.co/resources/harmony-horizon-bridge-hack"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "SRC-001 Elliptic FBI confirmation report Harmony Horizon Bridge theft Lazarus Group APT38",
+        "SRC-002 Chainalysis Axie Infinity Ronin Bridge DPRK hack seizure Lazarus Group",
+        "SRC-003 Elliptic Ronin DeFi bridge theft Lazarus-linked Ethereum address",
+        "SRC-004 Elliptic Harmony Horizon Bridge hack Tornado Cash FBI wallets"
+      ],
+      "max_results": 10,
+      "topic": "general"
+    },
+    {
+      "queries": [
+        "site:elliptic.co/insights/fbi-confirms-north-korea-s-lazarus-group-as-hackers-behind-100-million-harmony-horizon-bridge-theft APT38 FBI wallets North Korean controlled",
+        "site:elliptic.co/resources/harmony-horizon-bridge-hack APT38 wallets North Korean controlled Tornado Cash",
+        "site:chainalysis.com/blog/axie-infinity-ronin-bridge-dprk-hack-seizure APT38 Lazarus wallets",
+        "site:elliptic.co/insights/540-million-stolen-from-the-ronin-defi-bridge APT38 address Lazarus"
+      ],
+      "max_results": 10,
+      "topic": "general"
+    }
+  ],
+  "request_count": 10,
+  "duration_seconds": 441.1750530999998
+}

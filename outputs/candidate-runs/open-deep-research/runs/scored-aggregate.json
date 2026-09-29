@@ -1,0 +1,5016 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "source_revision": "1b7d2e80db9faa586165c60e09096dbbfd483a64",
+  "model": "gpt-5.6-luna",
+  "cases_completed": 10,
+  "cases_total": 10,
+  "cases_with_reports": 9,
+  "valid_structured_outputs": 6,
+  "complete_structured_outputs": 9,
+  "manifest_hash_matches": 10,
+  "metrics": {
+    "finding_f1": 0.2776984127,
+    "contradiction_grounded_f1": 0.6,
+    "reasoning_grounded_score": 0.6396825397,
+    "report_quality": 0.6583333333,
+    "source_precision": 0.9,
+    "source_recall": 0.9,
+    "entity_f1": "not_applicable",
+    "relation_f1": "not_applicable"
+  },
+  "case_results": [
+    "OSINT-001",
+    "OSINT-002",
+    "OSINT-003",
+    "OSINT-004",
+    "OSINT-005",
+    "OSINT-006",
+    "OSINT-007",
+    "OSINT-008",
+    "OSINT-009",
+    "OSINT-010"
+  ],
+  "cases": [
+    {
+      "case_id": "OSINT-001",
+      "candidate": "langchain-ai/open_deep_research",
+      "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+      "artifact": "outputs/candidate-runs/open-deep-research/runs/OSINT-001/io/candidate-result.json",
+      "artifact_sha256": "175b3f0a1200da33b5aa58373c34c6eb160faaf74068982636e5484ecf2c4421",
+      "manifest_sha256": "175b3f0a1200da33b5aa58373c34c6eb160faaf74068982636e5484ecf2c4421",
+      "manifest_hash_match": true,
+      "report_sha256": "20acbe4938b6dec5be98be7080c0997509c776b6280da2355cc5427a5563ac3e",
+      "status": "completed",
+      "output_summary": {
+        "available_source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004",
+          "SRC-005",
+          "SRC-006",
+          "SRC-007",
+          "SRC-008"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004",
+          "SRC-005",
+          "SRC-006",
+          "SRC-007",
+          "SRC-008",
+          "SRC-009"
+        ],
+        "key_findings": [
+          {
+            "question": "How was the 3CX DesktopApp compromise confirmed?",
+            "answer": "The supplied sources directly support that 3CX DesktopApp was trojanized and distributed through a software-supply-chain compromise affecting Windows and macOS installations; Windows version 18.12.416 and earlier is identified, while the exact macOS version range is not supplied.",
+            "supporting_entities": [
+              "ENT-001",
+              "ENT-002"
+            ],
+            "source_references": [
+              "SRC-001",
+              "SRC-002",
+              "SRC-003",
+              "SRC-004",
+              "SRC-008"
+            ]
+          },
+          {
+            "question": "What was the upstream intrusion vector?",
+            "answer": "The upstream vector was a tampered Trading Technologies X_TRADER installer, X_TRADER_r7.17.90p608.exe, which deployed VEILEDSIGNAL; the original alteration mechanism used against the Trading Technologies package remains unknown.",
+            "supporting_entities": [
+              "ENT-003",
+              "ENT-004",
+              "ENT-005",
+              "ENT-006"
+            ],
+            "source_references": [
+              "SRC-003",
+              "SRC-005",
+              "SRC-008"
+            ]
+          },
+          {
+            "question": "How did the intrusion propagate into 3CX?",
+            "answer": "VEILEDSIGNAL entered through an X_TRADER installation on a 3CX employee system, after which the attackers moved through the 3CX environment, reached the development server, and used Fast Reverse Proxy for lateral movement; the complete internal path is not disclosed.",
+            "supporting_entities": [
+              "ENT-006",
+              "ENT-001",
+              "ENT-013"
+            ],
+            "source_references": [
+              "SRC-003",
+              "SRC-008"
+            ]
+          },
+          {
+            "question": "How were the Windows and macOS build environments compromised?",
+            "answer": "The attacker compromised both build platforms, using TAXHAUL and COLDCAT on the Windows build environment and POOLRAT on the macOS build server; the later connection to DesktopApp trojanization is supported by chronology but the exact build modifications are not fully described.",
+            "supporting_entities": [
+              "ENT-001",
+              "ENT-014",
+              "ENT-015",
+              "ENT-016"
+            ],
+            "source_references": [
+              "SRC-003"
+            ]
+          },
+          {
+            "question": "What staged malware chain was delivered by the trojanized application?",
+            "answer": "The trojanized 3CX DesktopApp executed SUDDENICON, retrieved encrypted icon files hosted on GitHub, extracted command-and-control information, and downloaded the follow-on payload ICONICSTEALER; the evidence does not establish that every infected installation reached every stage.",
+            "supporting_entities": [
+              "ENT-002",
+              "ENT-010",
+              "ENT-011",
+              "ENT-019"
+            ],
+            "source_references": [
+              "SRC-003",
+              "SRC-004"
+            ]
+          },
+          {
+            "question": "Which threat activity cluster was the compromise publicly attributed to?",
+            "answer": "Mandiant tracked the activity as UNC4736, a suspected North Korean-nexus cluster with overlap to financially motivated AppleJeus and Lazarus-related activity involving Gopuram and cryptocurrency-focused targeting; the evidence supports overlap rather than an unqualified identity equation.",
+            "supporting_entities": [
+              "ENT-007",
+              "ENT-008",
+              "ENT-009",
+              "ENT-012",
+              "ENT-025"
+            ],
+            "source_references": [
+              "SRC-002",
+              "SRC-003",
+              "SRC-004",
+              "SRC-005",
+              "SRC-006",
+              "SRC-007",
+              "SRC-008"
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "claim": "3CX DesktopApp was used as the trojanized software vehicle in a supply-chain compromise affecting Windows and macOS installations; the supplied evidence directly identifies Windows version 18.12.416 and earlier, while the complete macOS version range remains unspecified.",
+            "source_references": [
+              "SRC-001",
+              "SRC-002",
+              "SRC-003",
+              "SRC-004",
+              "SRC-008"
+            ]
+          },
+          {
+            "claim": "The upstream intrusion vector was a tampered Trading Technologies X_TRADER installer, identified as X_TRADER_r7.17.90p608.exe, which deployed the VEILEDSIGNAL backdoor.",
+            "source_references": [
+              "SRC-003",
+              "SRC-008"
+            ]
+          },
+          {
+            "claim": "The compromised X_TRADER installation on a 3CX employee system enabled movement into the 3CX corporate environment, including access to the development environment; Fast Reverse Proxy was used for lateral movement.",
+            "source_references": [
+              "SRC-003",
+              "SRC-008"
+            ]
+          },
+          {
+            "claim": "The attacker compromised both the Windows and macOS 3CX build environments, using TAXHAUL and COLDCAT on Windows and POOLRAT on macOS; the chronology supports, but does not fully detail, the inference that build-environment access enabled later 3CX DesktopApp trojanization.",
+            "source_references": [
+              "SRC-003"
+            ]
+          },
+          {
+            "claim": "The trojanized 3CX DesktopApp executed SUDDENICON, which retrieved encrypted icon files hosted on GitHub, obtained command-and-control information, and enabled download of the follow-on information stealer ICONICSTEALER.",
+            "source_references": [
+              "SRC-003",
+              "SRC-004"
+            ]
+          },
+          {
+            "claim": "The strongest supported public attribution is UNC4736 as a suspected North Korean-nexus cluster with overlap to AppleJeus- and Lazarus-related cryptocurrency-focused activity; the evidence does not establish that UNC4736 is definitively identical to Lazarus Group.",
+            "source_references": [
+              "SRC-002",
+              "SRC-003",
+              "SRC-004",
+              "SRC-005",
+              "SRC-006",
+              "SRC-007",
+              "SRC-008"
+            ]
+          },
+          {
+            "claim": "The corrupted 3CX software had potentially broad initial reach, while follow-on execution was selective and Gopuram was observed on fewer than ten machines in Kaspersky telemetry.",
+            "source_references": [
+              "SRC-001",
+              "SRC-002",
+              "SRC-004",
+              "SRC-008"
+            ]
+          }
+        ],
+        "reasoning_steps": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "contradictions": [
+          {
+            "contradiction_id": "CONTRA-001",
+            "source_references": [
+              "SRC-009",
+              "SRC-003",
+              "SRC-008"
+            ],
+            "description": "The initial alert described a bundled library compiled into the Electron application through Git, while later 3CX and Mandiant reporting identified a trojanized Trading Technologies X_TRADER installer that compromised a 3CX employee system and led into the corporate development and build environment; the supplied evidence preserves both descriptions without resolving them speculatively."
+          },
+          {
+            "contradiction_id": "CONTRA-002",
+            "source_references": [
+              "SRC-001",
+              "SRC-002",
+              "SRC-004",
+              "SRC-008"
+            ],
+            "description": "Public reporting described potentially broad exposure of 3CX software used by many organizations, while 3CX and Kaspersky reporting described selective follow-on execution and Gopuram deployment on fewer than ten observed machines; the evidence preserves both the broad-reach and selective-execution propositions without deriving a single victim count."
+          }
+        ],
+        "structured_output_valid": true,
+        "structured_output_complete": true,
+        "structured_output_errors": []
+      },
+      "metrics": {
+        "finding_f1": 0.16666666666666666,
+        "contradiction_grounded_f1": 0.5,
+        "reasoning_grounded_score": 1.0,
+        "report_quality": 0.75,
+        "source_precision": 1.0,
+        "source_recall": 1.0,
+        "entity_f1": "not_applicable",
+        "relation_f1": "not_applicable"
+      },
+      "full_metrics": {
+        "output_validation": {
+          "valid": true,
+          "errors": []
+        },
+        "entities": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 25,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missing": [
+            [
+              "alias",
+              "3cx desktopapp"
+            ],
+            [
+              "alias",
+              "applejeus"
+            ],
+            [
+              "alias",
+              "coldcat"
+            ],
+            [
+              "alias",
+              "cryptocurrency and fintech targets"
+            ],
+            [
+              "alias",
+              "fast reverse proxy"
+            ],
+            [
+              "alias",
+              "gopuram"
+            ],
+            [
+              "alias",
+              "iconicstealer"
+            ],
+            [
+              "alias",
+              "lazarus group"
+            ],
+            [
+              "alias",
+              "operation applejeus"
+            ],
+            [
+              "alias",
+              "poolrat"
+            ],
+            [
+              "alias",
+              "suddenicon"
+            ],
+            [
+              "alias",
+              "taxhaul"
+            ],
+            [
+              "alias",
+              "unc4736"
+            ],
+            [
+              "alias",
+              "veiledsignal"
+            ],
+            [
+              "alias",
+              "x_trader"
+            ],
+            [
+              "alias",
+              "x_trader_r7.17.90p608.exe"
+            ],
+            [
+              "domain",
+              "download.tradingtechnologies.com"
+            ],
+            [
+              "domain",
+              "github.com"
+            ],
+            [
+              "domain",
+              "journalide.org"
+            ],
+            [
+              "domain",
+              "www.tradingtechnologies.com"
+            ],
+            [
+              "organization",
+              "3cx"
+            ],
+            [
+              "organization",
+              "google threat analysis group"
+            ],
+            [
+              "organization",
+              "kaspersky"
+            ],
+            [
+              "organization",
+              "mandiant"
+            ],
+            [
+              "organization",
+              "trading technologies international, inc."
+            ]
+          ],
+          "unexpected": []
+        },
+        "relations": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 19,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missing": [
+            [
+              [
+                "alias",
+                "3cx desktopapp"
+              ],
+              "executed_downloader",
+              [
+                "alias",
+                "suddenicon"
+              ]
+            ],
+            [
+              [
+                "alias",
+                "applejeus"
+              ],
+              "targeted",
+              [
+                "alias",
+                "cryptocurrency and fintech targets"
+              ]
+            ],
+            [
+              [
+                "alias",
+                "lazarus group"
+              ],
+              "associated_with",
+              [
+                "alias",
+                "applejeus"
+              ]
+            ],
+            [
+              [
+                "alias",
+                "poolrat"
+              ],
+              "configured_c2_domain",
+              [
+                "domain",
+                "journalide.org"
+              ]
+            ],
+            [
+              [
+                "alias",
+                "suddenicon"
+              ],
+              "downloaded_follow_on_payload",
+              [
+                "alias",
+                "iconicstealer"
+              ]
+            ],
+            [
+              [
+                "alias",
+                "suddenicon"
+              ],
+              "retrieved_c2_data_from_encrypted_icon_files_hosted_on",
+              [
+                "domain",
+                "github.com"
+              ]
+            ],
+            [
+              [
+                "alias",
+                "unc4736"
+              ],
+              "compromised",
+              [
+                "alias",
+                "3cx desktopapp"
+              ]
+            ],
+            [
+              [
+                "alias",
+                "unc4736"
+              ],
+              "compromised_build_environment_of",
+              [
+                "organization",
+                "3cx"
+              ]
+            ],
+            [
+              [
+                "alias",
+                "unc4736"
+              ],
+              "overlaps_with_north_korean_lazarus_related_activity",
+              [
+                "alias",
+                "lazarus group"
+              ]
+            ],
+            [
+              [
+                "alias",
+                "unc4736"
+              ],
+              "used_for_lateral_movement",
+              [
+                "alias",
+                "fast reverse proxy"
+              ]
+            ],
+            [
+              [
+                "alias",
+                "unc4736"
+              ],
+              "used_on_macos_build_server",
+              [
+                "alias",
+                "poolrat"
+              ]
+            ],
+            [
+              [
+                "alias",
+                "unc4736"
+              ],
+              "used_on_windows_build_environment",
+              [
+                "alias",
+                "coldcat"
+              ]
+            ],
+            [
+              [
+                "alias",
+                "unc4736"
+              ],
+              "used_on_windows_build_environment",
+              [
+                "alias",
+                "taxhaul"
+              ]
+            ],
+            [
+              [
+                "alias",
+                "unc4736"
+              ],
+              "used_or_deployed",
+              [
+                "alias",
+                "veiledsignal"
+              ]
+            ],
+            [
+              [
+                "alias",
+                "veiledsignal"
+              ],
+              "enabled_initial_compromise_of_employee_system_leading_to_corporate_access",
+              [
+                "organization",
+                "3cx"
+              ]
+            ],
+            [
+              [
+                "alias",
+                "x_trader"
+              ],
+              "distributed",
+              [
+                "alias",
+                "x_trader_r7.17.90p608.exe"
+              ]
+            ],
+            [
+              [
+                "alias",
+                "x_trader_r7.17.90p608.exe"
+              ],
+              "contained",
+              [
+                "alias",
+                "veiledsignal"
+              ]
+            ],
+            [
+              [
+                "organization",
+                "google threat analysis group"
+              ],
+              "reported_prior_compromise_of",
+              [
+                "domain",
+                "www.tradingtechnologies.com"
+              ]
+            ],
+            [
+              [
+                "organization",
+                "trading technologies international, inc."
+              ],
+              "provided",
+              [
+                "alias",
+                "x_trader"
+              ]
+            ]
+          ],
+          "unexpected": [],
+          "semantic_mapping": {
+            "also_known_as": "alias_of",
+            "alias_of": "alias_of",
+            "co_founded": "founded",
+            "founded": "founded",
+            "based_in": "located_in",
+            "located_in": "located_in",
+            "performed_special_audit": "audited",
+            "audited": "audited",
+            "former_coo_of": "executive_of",
+            "executive_of": "executive_of",
+            "provided_software": "provided",
+            "distributed_as_installer": "distributed",
+            "contained_malware": "contained",
+            "trojanized": "compromised",
+            "associated_with": "associated_with",
+            "linked_to": "associated_with",
+            "uses_or_is_associated_with": "associated_with"
+          }
+        },
+        "contradictions": {
+          "true_positive": 2,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "details": [
+            {
+              "contradiction_id": "CONTRA-001",
+              "source_references_correct": false,
+              "source_reference_recall": 0.3333333333333333
+            },
+            {
+              "contradiction_id": "CONTRA-002",
+              "source_references_correct": false,
+              "source_reference_recall": 0.6666666666666666
+            }
+          ],
+          "missing": [],
+          "unexpected": [],
+          "grounded_recall": 0.5,
+          "grounded_f1": 0.5
+        },
+        "key_findings": {
+          "score": 0.05125,
+          "precision": 0.16666666666666666,
+          "recall": 0.16666666666666666,
+          "f1": 0.16666666666666666,
+          "predicted": 6,
+          "expected": 6,
+          "matched": 1,
+          "details": [
+            {
+              "question": "What was the initial intrusion vector that led to the 3CX compromise?",
+              "status": "matched",
+              "score": 0.3075,
+              "semantic": 0.375,
+              "supporting_entity_recall": 0.4,
+              "source_recall": 1.0,
+              "has_source_references": true
+            },
+            {
+              "question": "Why is this incident considered a cascading software supply chain compromise?",
+              "status": "missing",
+              "score": 0.0
+            },
+            {
+              "question": "Which 3CX software was affected and how did the malware stage operate?",
+              "status": "missing",
+              "score": 0.0
+            },
+            {
+              "question": "What public attribution should an investigator report?",
+              "status": "missing",
+              "score": 0.0
+            },
+            {
+              "question": "Was the campaign broadly exposed or selectively exploited?",
+              "status": "missing",
+              "score": 0.0
+            },
+            {
+              "question": "Which prior public evidence connected Trading Technologies to North Korean cryptocurrency-focused activity?",
+              "status": "missing",
+              "score": 0.0
+            }
+          ]
+        },
+        "source_traceability": {
+          "correct_sources": [
+            "SRC-001",
+            "SRC-002",
+            "SRC-003",
+            "SRC-004",
+            "SRC-005",
+            "SRC-006",
+            "SRC-007",
+            "SRC-008",
+            "SRC-009"
+          ],
+          "unknown_sources": [],
+          "unavailable_sources": [
+            "SRC-009"
+          ],
+          "source_precision": 1.0,
+          "source_recall": 1.0,
+          "ratio": 1.0,
+          "claim_level": {
+            "claims": 7,
+            "traceable_claims": 7,
+            "ratio": 1.0,
+            "unknown_sources": [],
+            "unavailable_sources": []
+          },
+          "finding_level": {
+            "findings": 6,
+            "traceable_findings": 6,
+            "ratio": 1.0
+          }
+        },
+        "reasoning_coverage": {
+          "covered": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "invalid": [],
+          "total": 6,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "ratio": 1.0,
+          "status": "structured_step_ids"
+        },
+        "report_quality": {
+          "score": 0.75,
+          "checks": {
+            "non_empty": true,
+            "structured_output_complete": true,
+            "structured_output_valid": true,
+            "findings_present": true,
+            "findings_match": false,
+            "claims_traceable": true,
+            "contradictions_complete": true,
+            "contradictions_grounded": false,
+            "finding_sources_grounded": true,
+            "reasoning_conclusions_grounded": true,
+            "uncertainty_language": true,
+            "readable_length": false
+          },
+          "scale": "deterministic rubric 0-1"
+        },
+        "reasoning_quality": {
+          "covered": 6,
+          "expected": 6,
+          "coverage": 1.0,
+          "semantic_similarity": 1.0,
+          "premise_grounding": 1.0,
+          "grounded_score": 1.0,
+          "method": "premise_ids_plus_token_entailment_proxy",
+          "details": [
+            {
+              "id": 1,
+              "premise_score": 1.0,
+              "entity_recall": 1.0,
+              "relation_recall": 1.0,
+              "conclusion_similarity": 1.0,
+              "invalid_premise_entities": [],
+              "invalid_premise_relations": [],
+              "grounded_score": 1.0
+            },
+            {
+              "id": 2,
+              "premise_score": 1.0,
+              "entity_recall": 1.0,
+              "relation_recall": 1.0,
+              "conclusion_similarity": 1.0,
+              "invalid_premise_entities": [],
+              "invalid_premise_relations": [],
+              "grounded_score": 1.0
+            },
+            {
+              "id": 3,
+              "premise_score": 1.0,
+              "entity_recall": 1.0,
+              "relation_recall": 1.0,
+              "conclusion_similarity": 1.0,
+              "invalid_premise_entities": [],
+              "invalid_premise_relations": [],
+              "grounded_score": 1.0
+            },
+            {
+              "id": 4,
+              "premise_score": 1.0,
+              "entity_recall": 1.0,
+              "relation_recall": 1.0,
+              "conclusion_similarity": 1.0,
+              "invalid_premise_entities": [],
+              "invalid_premise_relations": [],
+              "grounded_score": 1.0
+            },
+            {
+              "id": 5,
+              "premise_score": 1.0,
+              "entity_recall": 1.0,
+              "relation_recall": 1.0,
+              "conclusion_similarity": 1.0,
+              "invalid_premise_entities": [],
+              "invalid_premise_relations": [],
+              "grounded_score": 1.0
+            },
+            {
+              "id": 6,
+              "premise_score": 1.0,
+              "entity_recall": 1.0,
+              "relation_recall": 1.0,
+              "conclusion_similarity": 1.0,
+              "invalid_premise_entities": [],
+              "invalid_premise_relations": [],
+              "grounded_score": 1.0
+            }
+          ]
+        },
+        "operational": {}
+      }
+    },
+    {
+      "case_id": "OSINT-002",
+      "candidate": "langchain-ai/open_deep_research",
+      "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+      "artifact": "outputs/candidate-runs/open-deep-research/runs/OSINT-002/io/candidate-result.json",
+      "artifact_sha256": "1c442d752f3fb6f9e3eac3473754d6fa6e917262ef97b65652714c29865eabf2",
+      "manifest_sha256": "1c442d752f3fb6f9e3eac3473754d6fa6e917262ef97b65652714c29865eabf2",
+      "manifest_hash_match": true,
+      "report_sha256": "7c89f060b47d7eb618abf1d671c26b67d499390a4c15037ce48713eecee39bcc",
+      "status": "completed",
+      "output_summary": {
+        "available_source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ],
+        "key_findings": [
+          {
+            "question": "How do the supplied sources characterize Conti?",
+            "answer": "The evidence supports describing Conti as a large ransomware-as-a-service operation involving encryption, data exfiltration, and extortion, while preserving Conti as an organizational label rather than reducing it to a malware name.",
+            "supporting_entities": [
+              "ENT-001"
+            ],
+            "source_references": [
+              "SRC-001"
+            ]
+          },
+          {
+            "question": "What do the leaked chats reveal about Conti’s internal structure?",
+            "answer": "The leaked chats reveal an organized, salaried operation with departments, roles, and internal handles. Target is linked through the leaked-chat evidence, while Stern is retained only as an internal handle and is not assigned a legal identity.",
+            "supporting_entities": [
+              "ENT-001",
+              "ENT-003",
+              "ENT-004"
+            ],
+            "source_references": [
+              "SRC-002",
+              "SRC-003"
+            ]
+          },
+          {
+            "question": "How are aliases and law-enforcement records connected?",
+            "answer": "Wizard Spider is linked to the Conti investigation through Rewards for Justice, while TrickBot, Maksim Galochkin, and Oleksii Lytvynenko are addressed separately through DOJ material. These relationships do not establish that aliases, malware, charges, and convictions are interchangeable.",
+            "supporting_entities": [
+              "ENT-001",
+              "ENT-002",
+              "ENT-005",
+              "ENT-006",
+              "ENT-007"
+            ],
+            "source_references": [
+              "SRC-001",
+              "SRC-004"
+            ]
+          },
+          {
+            "question": "What is the correct interpretation of the apparent source tension?",
+            "answer": "The tension is primarily a difference in analytic level: leaked chats describe an organization with salaries, departments, roles, and handles, while FBI/CISA-facing descriptions characterize observable activity as a ransomware variant and intrusion campaign.",
+            "supporting_entities": [
+              "ENT-001"
+            ],
+            "source_references": [
+              "SRC-001",
+              "SRC-002",
+              "SRC-003"
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "claim": "Conti (ENT-001) is characterized as a large ransomware operation involving encryption, data exfiltration, and extortion.",
+            "source_references": [
+              "SRC-001"
+            ]
+          },
+          {
+            "claim": "The leaked internal chats characterize Conti as an organized, salaried operation with departments, roles, and internal handles, including Target (ENT-003) and Stern (ENT-004) as names appearing in the leaked-chat evidence.",
+            "source_references": [
+              "SRC-002",
+              "SRC-003"
+            ]
+          },
+          {
+            "claim": "Wizard Spider (ENT-002) is linked to the Conti investigation through Rewards for Justice; the linkage is preserved as an alias or organizational connection and is not treated as a legal-identity attribution.",
+            "source_references": [
+              "SRC-001"
+            ]
+          },
+          {
+            "claim": "DOJ records separately address TrickBot (ENT-005), Maksim Galochkin (ENT-006), and Oleksii Lytvynenko (ENT-007) in relation to malware-ecosystem and alleged related-conspiracy activity; charges, leaked handles, and convictions are not equated.",
+            "source_references": [
+              "SRC-004"
+            ]
+          }
+        ],
+        "reasoning_steps": [
+          1,
+          2,
+          3
+        ],
+        "contradictions": [
+          {
+            "contradiction_id": "CONTRA-001",
+            "source_references": [
+              "SRC-001",
+              "SRC-002",
+              "SRC-003"
+            ],
+            "description": "The leaked chats describe Conti as an organized, salaried operation with internal departments and handles, while the FBI/CISA advisories describe the observable criminal activity as a ransomware variant and intrusion campaign. The public materials therefore differ in analytic level: organization versus malware/campaign label."
+          }
+        ],
+        "structured_output_valid": true,
+        "structured_output_complete": true,
+        "structured_output_errors": []
+      },
+      "metrics": {
+        "finding_f1": 0.5714285714285715,
+        "contradiction_grounded_f1": 1.0,
+        "reasoning_grounded_score": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0,
+        "entity_f1": "not_applicable",
+        "relation_f1": "not_applicable"
+      },
+      "full_metrics": {
+        "output_validation": {
+          "valid": true,
+          "errors": []
+        },
+        "entities": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 7,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missing": [
+            [
+              "alias",
+              "conti"
+            ],
+            [
+              "alias",
+              "stern"
+            ],
+            [
+              "alias",
+              "target"
+            ],
+            [
+              "alias",
+              "trickbot"
+            ],
+            [
+              "alias",
+              "wizard spider"
+            ],
+            [
+              "person",
+              "maksim galochkin"
+            ],
+            [
+              "person",
+              "oleksii lytvynenko"
+            ]
+          ],
+          "unexpected": []
+        },
+        "relations": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 6,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missing": [
+            [
+              [
+                "alias",
+                "conti"
+              ],
+              "alias_of",
+              [
+                "alias",
+                "wizard spider"
+              ]
+            ],
+            [
+              [
+                "alias",
+                "conti"
+              ],
+              "associated_with_malware_ecosystem",
+              [
+                "alias",
+                "trickbot"
+              ]
+            ],
+            [
+              [
+                "alias",
+                "stern"
+              ],
+              "internal_handle_in_leaked_chats",
+              [
+                "alias",
+                "conti"
+              ]
+            ],
+            [
+              [
+                "alias",
+                "target"
+              ],
+              "linked_alias_to_group",
+              [
+                "alias",
+                "conti"
+              ]
+            ],
+            [
+              [
+                "person",
+                "maksim galochkin"
+              ],
+              "charged_in_related_conspiracy",
+              [
+                "alias",
+                "conti"
+              ]
+            ],
+            [
+              [
+                "person",
+                "oleksii lytvynenko"
+              ],
+              "charged_in_related_conspiracy",
+              [
+                "alias",
+                "conti"
+              ]
+            ]
+          ],
+          "unexpected": [],
+          "semantic_mapping": {
+            "also_known_as": "alias_of",
+            "alias_of": "alias_of",
+            "co_founded": "founded",
+            "founded": "founded",
+            "based_in": "located_in",
+            "located_in": "located_in",
+            "performed_special_audit": "audited",
+            "audited": "audited",
+            "former_coo_of": "executive_of",
+            "executive_of": "executive_of",
+            "provided_software": "provided",
+            "distributed_as_installer": "distributed",
+            "contained_malware": "contained",
+            "trojanized": "compromised",
+            "associated_with": "associated_with",
+            "linked_to": "associated_with",
+            "uses_or_is_associated_with": "associated_with"
+          }
+        },
+        "contradictions": {
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "details": [
+            {
+              "contradiction_id": "CONTRA-001",
+              "source_references_correct": true,
+              "source_reference_recall": 1.0
+            }
+          ],
+          "missing": [],
+          "unexpected": [],
+          "grounded_recall": 1.0,
+          "grounded_f1": 1.0
+        },
+        "key_findings": {
+          "score": 0.27499999999999997,
+          "precision": 0.5,
+          "recall": 0.6666666666666666,
+          "f1": 0.5714285714285715,
+          "predicted": 4,
+          "expected": 3,
+          "matched": 2,
+          "details": [
+            {
+              "question": "What was Conti operating as?",
+              "status": "missing",
+              "score": 0.0
+            },
+            {
+              "question": "Which public sources expose internal structure?",
+              "status": "matched",
+              "score": 0.375,
+              "semantic": 0.375,
+              "supporting_entity_recall": 1.0,
+              "source_recall": 1.0,
+              "has_source_references": true
+            },
+            {
+              "question": "How do law-enforcement records add attribution pivots?",
+              "status": "matched",
+              "score": 0.44999999999999996,
+              "semantic": 0.5,
+              "supporting_entity_recall": 0.6666666666666666,
+              "source_recall": 1.0,
+              "has_source_references": true
+            }
+          ]
+        },
+        "source_traceability": {
+          "correct_sources": [
+            "SRC-001",
+            "SRC-002",
+            "SRC-003",
+            "SRC-004"
+          ],
+          "unknown_sources": [],
+          "unavailable_sources": [],
+          "source_precision": 1.0,
+          "source_recall": 1.0,
+          "ratio": 1.0,
+          "claim_level": {
+            "claims": 4,
+            "traceable_claims": 4,
+            "ratio": 1.0,
+            "unknown_sources": [],
+            "unavailable_sources": []
+          },
+          "finding_level": {
+            "findings": 4,
+            "traceable_findings": 4,
+            "ratio": 1.0
+          }
+        },
+        "reasoning_coverage": {
+          "covered": [
+            1,
+            2,
+            3
+          ],
+          "invalid": [],
+          "total": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "ratio": 1.0,
+          "status": "structured_step_ids"
+        },
+        "report_quality": {
+          "score": 0.9166666666666666,
+          "checks": {
+            "non_empty": true,
+            "structured_output_complete": true,
+            "structured_output_valid": true,
+            "findings_present": true,
+            "findings_match": false,
+            "claims_traceable": true,
+            "contradictions_complete": true,
+            "contradictions_grounded": true,
+            "finding_sources_grounded": true,
+            "reasoning_conclusions_grounded": true,
+            "uncertainty_language": true,
+            "readable_length": true
+          },
+          "scale": "deterministic rubric 0-1"
+        },
+        "reasoning_quality": {
+          "covered": 3,
+          "expected": 3,
+          "coverage": 1.0,
+          "semantic_similarity": 1.0,
+          "premise_grounding": 1.0,
+          "grounded_score": 1.0,
+          "method": "premise_ids_plus_token_entailment_proxy",
+          "details": [
+            {
+              "id": 1,
+              "premise_score": 1.0,
+              "entity_recall": 1.0,
+              "relation_recall": 1.0,
+              "conclusion_similarity": 1.0,
+              "invalid_premise_entities": [],
+              "invalid_premise_relations": [],
+              "grounded_score": 1.0
+            },
+            {
+              "id": 2,
+              "premise_score": 1.0,
+              "entity_recall": 1.0,
+              "relation_recall": 1.0,
+              "conclusion_similarity": 1.0,
+              "invalid_premise_entities": [],
+              "invalid_premise_relations": [],
+              "grounded_score": 1.0
+            },
+            {
+              "id": 3,
+              "premise_score": 1.0,
+              "entity_recall": 1.0,
+              "relation_recall": 1.0,
+              "conclusion_similarity": 1.0,
+              "invalid_premise_entities": [],
+              "invalid_premise_relations": [],
+              "grounded_score": 1.0
+            }
+          ]
+        },
+        "operational": {}
+      }
+    },
+    {
+      "case_id": "OSINT-003",
+      "candidate": "langchain-ai/open_deep_research",
+      "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+      "artifact": "outputs/candidate-runs/open-deep-research/runs/OSINT-003/io/candidate-result.json",
+      "artifact_sha256": "f8b28d9fb64fb98829df8f0cc5d5edf6d307fa6eb6c7a02a38bc8c3514f14bda",
+      "manifest_sha256": "f8b28d9fb64fb98829df8f0cc5d5edf6d307fa6eb6c7a02a38bc8c3514f14bda",
+      "manifest_hash_match": true,
+      "report_sha256": "420d16fa158012e26d48311fac123e7c1ec2e293fa8fb26d6521fcd6d345a0f7",
+      "status": "report_failure",
+      "output_summary": {
+        "available_source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ],
+        "source_references": [],
+        "key_findings": [],
+        "claims": [],
+        "reasoning_steps": [],
+        "contradictions": [],
+        "structured_output_valid": false,
+        "structured_output_complete": false,
+        "structured_output_errors": []
+      },
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_grounded_f1": 0.0,
+        "reasoning_grounded_score": 0.0,
+        "report_quality": 0.08333333333333333,
+        "source_precision": 0.0,
+        "source_recall": 0.0,
+        "entity_f1": "not_applicable",
+        "relation_f1": "not_applicable"
+      },
+      "full_metrics": {
+        "output_validation": {
+          "valid": false,
+          "errors": []
+        },
+        "entities": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 7,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missing": [
+            [
+              "alias",
+              "apt38"
+            ],
+            [
+              "alias",
+              "lazarus group"
+            ],
+            [
+              "alias",
+              "tornado cash"
+            ],
+            [
+              "crypto_wallet",
+              "fbi-listed harmony wallets"
+            ],
+            [
+              "crypto_wallet",
+              "ronin exploiter ethereum address"
+            ],
+            [
+              "organization",
+              "harmony horizon bridge"
+            ],
+            [
+              "organization",
+              "ronin network"
+            ]
+          ],
+          "unexpected": []
+        },
+        "relations": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 6,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missing": [
+            [
+              [
+                "alias",
+                "lazarus group"
+              ],
+              "alias_of",
+              [
+                "alias",
+                "apt38"
+              ]
+            ],
+            [
+              [
+                "alias",
+                "lazarus group"
+              ],
+              "attributed_to_theft_from",
+              [
+                "organization",
+                "harmony horizon bridge"
+              ]
+            ],
+            [
+              [
+                "alias",
+                "lazarus group"
+              ],
+              "attributed_to_theft_from",
+              [
+                "organization",
+                "ronin network"
+              ]
+            ],
+            [
+              [
+                "alias",
+                "lazarus group"
+              ],
+              "laundered_funds_through",
+              [
+                "alias",
+                "tornado cash"
+              ]
+            ],
+            [
+              [
+                "crypto_wallet",
+                "fbi-listed harmony wallets"
+              ],
+              "listed_as_north_korean_controlled",
+              [
+                "alias",
+                "lazarus group"
+              ]
+            ],
+            [
+              [
+                "crypto_wallet",
+                "ronin exploiter ethereum address"
+              ],
+              "listed_as_lazarus_controlled",
+              [
+                "alias",
+                "lazarus group"
+              ]
+            ]
+          ],
+          "unexpected": [],
+          "semantic_mapping": {
+            "also_known_as": "alias_of",
+            "alias_of": "alias_of",
+            "co_founded": "founded",
+            "founded": "founded",
+            "based_in": "located_in",
+            "located_in": "located_in",
+            "performed_special_audit": "audited",
+            "audited": "audited",
+            "former_coo_of": "executive_of",
+            "executive_of": "executive_of",
+            "provided_software": "provided",
+            "distributed_as_installer": "distributed",
+            "contained_malware": "contained",
+            "trojanized": "compromised",
+            "associated_with": "associated_with",
+            "linked_to": "associated_with",
+            "uses_or_is_associated_with": "associated_with"
+          }
+        },
+        "contradictions": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "details": [],
+          "missing": [
+            "CONTRA-001"
+          ],
+          "unexpected": [],
+          "grounded_recall": 0.0,
+          "grounded_f1": 0.0
+        },
+        "key_findings": {
+          "score": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "predicted": 0,
+          "expected": 3,
+          "matched": 0,
+          "details": [
+            {
+              "question": "What actor connects the Ronin and Harmony thefts?",
+              "status": "missing",
+              "score": 0.0
+            },
+            {
+              "question": "What financial pivot links the cases?",
+              "status": "missing",
+              "score": 0.0
+            },
+            {
+              "question": "What should be traced in a benchmark run?",
+              "status": "missing",
+              "score": 0.0
+            }
+          ]
+        },
+        "source_traceability": {
+          "correct_sources": [],
+          "unknown_sources": [],
+          "unavailable_sources": [],
+          "source_precision": 0.0,
+          "source_recall": 0.0,
+          "ratio": 0.0,
+          "claim_level": {
+            "claims": 0,
+            "traceable_claims": 0,
+            "ratio": 0.0,
+            "status": "no_structured_claims"
+          },
+          "finding_level": {
+            "findings": 0,
+            "traceable_findings": 0,
+            "ratio": 0.0
+          }
+        },
+        "reasoning_coverage": {
+          "covered": [],
+          "invalid": [],
+          "total": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "ratio": 0.0,
+          "status": "no_structured_steps"
+        },
+        "report_quality": {
+          "score": 0.08333333333333333,
+          "checks": {
+            "non_empty": true,
+            "structured_output_complete": false,
+            "structured_output_valid": false,
+            "findings_present": false,
+            "findings_match": false,
+            "claims_traceable": false,
+            "contradictions_complete": false,
+            "contradictions_grounded": false,
+            "finding_sources_grounded": false,
+            "reasoning_conclusions_grounded": false,
+            "uncertainty_language": false,
+            "readable_length": false
+          },
+          "scale": "deterministic rubric 0-1"
+        },
+        "reasoning_quality": {
+          "covered": 0,
+          "expected": 3,
+          "coverage": 0.0,
+          "semantic_similarity": 0.0,
+          "premise_grounding": 0.0,
+          "grounded_score": 0.0,
+          "method": "premise_ids_plus_token_entailment_proxy",
+          "details": []
+        },
+        "operational": {}
+      }
+    },
+    {
+      "case_id": "OSINT-004",
+      "candidate": "langchain-ai/open_deep_research",
+      "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+      "artifact": "outputs/candidate-runs/open-deep-research/runs/OSINT-004/io/candidate-result.json",
+      "artifact_sha256": "4a95f42ff4877dca275114157007c356b1c1a6cb9f3777ee82d34c62080a385c",
+      "manifest_sha256": "4a95f42ff4877dca275114157007c356b1c1a6cb9f3777ee82d34c62080a385c",
+      "manifest_hash_match": true,
+      "report_sha256": "77dd7c68f5b283cb845b022a279034cb6392aac6c67fd25468265f08a8123549",
+      "status": "completed",
+      "output_summary": {
+        "available_source_references": [
+          "SRC-001",
+          "SRC-002"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ],
+        "key_findings": [
+          {
+            "question": "Can Guccifer 2.0 and DCLeaks be treated as independent personas?",
+            "answer": "No, not as independent operational personas on the supplied evidence. The DOJ indictment alleges that the same GRU conspirators created and used both personas, that Unit 74455 assisted releases through both, and that the operations used overlapping infrastructure and financing. They remained distinct public identities or release channels, but the evidence supports common operational control rather than independent operation.",
+            "supporting_entities": [
+              "ENT-001",
+              "ENT-002",
+              "ENT-003"
+            ],
+            "source_references": [
+              "SRC-001"
+            ]
+          },
+          {
+            "question": "What is the explicit link between Guccifer 2.0, DCLeaks, and GRU Unit 74455?",
+            "answer": "The indictment alleges that Unit 74455 assisted the release of stolen documents through both personas, promoted those releases, and administered infrastructure and social-media accounts used to assist the release operations.",
+            "supporting_entities": [
+              "ENT-001",
+              "ENT-002",
+              "ENT-003"
+            ],
+            "source_references": [
+              "SRC-001"
+            ]
+          },
+          {
+            "question": "What is the explicit link between GRU Unit 26165 and the DNC network?",
+            "answer": "The indictment alleges that Unit 26165 had primary responsibility for hacking the DCCC and DNC and associated Clinton Campaign email accounts. It alleges that GRU conspirators accessed DNC computers, installed and monitored malware, stole DNC emails and other documents, and moved stolen data outside the network.",
+            "supporting_entities": [
+              "ENT-004",
+              "ENT-005"
+            ],
+            "source_references": [
+              "SRC-001"
+            ]
+          },
+          {
+            "question": "What did CrowdStrike identify in the DNC network?",
+            "answer": "CrowdStrike states that its incident-response team investigated the DNC breach and identified COZY BEAR and FANCY BEAR as two separate Russian intelligence-affiliated adversaries on the DNC network. COZY BEAR was identified as present from summer 2015, while FANCY BEAR separately breached the network in April 2016.",
+            "supporting_entities": [
+              "ENT-005",
+              "ENT-006",
+              "ENT-007",
+              "ENT-008"
+            ],
+            "source_references": [
+              "SRC-002"
+            ]
+          },
+          {
+            "question": "Did CrowdStrike identify Guccifer 2.0 or DCLeaks as the operators of the DNC intrusion?",
+            "answer": "No. CrowdStrike stated that it was still examining whether the Guccifer 2.0 posting was part of a Russian intelligence disinformation campaign and was investigating the authenticity and origin of the documents. SRC-002 does not identify DCLeaks or Guccifer 2.0 as the operators identified inside the DNC network.",
+            "supporting_entities": [
+              "ENT-001",
+              "ENT-002",
+              "ENT-005",
+              "ENT-008"
+            ],
+            "source_references": [
+              "SRC-002"
+            ]
+          },
+          {
+            "question": "Is a contradiction record warranted?",
+            "answer": "No direct source contradiction is warranted. The DOJ indictment addresses alleged GRU control of release personas, release infrastructure, DNC hacking, and election interference. CrowdStrike addresses earlier incident-response identification of Russian intelligence-affiliated activity inside the DNC network and does not purport to identify every later release persona. The sources are complementary rather than contradictory.",
+            "supporting_entities": [
+              "ENT-001",
+              "ENT-002",
+              "ENT-003",
+              "ENT-004",
+              "ENT-005",
+              "ENT-006",
+              "ENT-007",
+              "ENT-008"
+            ],
+            "source_references": [
+              "SRC-001",
+              "SRC-002"
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "claim": "The indictment alleges that GRU Units 26165 and 74455 conducted cyber operations involving staged releases of documents stolen through computer intrusions and that the operations were intended to interfere with the 2016 United States presidential election.",
+            "source_references": [
+              "SRC-001"
+            ]
+          },
+          {
+            "claim": "The indictment alleges that the conspirators hacked the DCCC and DNC networks, stole emails and other documents, and staged releases using fictitious online personas including DCLeaks and Guccifer 2.0.",
+            "source_references": [
+              "SRC-001"
+            ]
+          },
+          {
+            "claim": "The indictment alleges that Unit 26165 had primary responsibility for hacking the DCCC and DNC and the email accounts of individuals affiliated with the Clinton Campaign.",
+            "source_references": [
+              "SRC-001"
+            ]
+          },
+          {
+            "claim": "The indictment alleges that Unit 74455 assisted in the release of stolen documents through the DCLeaks and Guccifer 2.0 personas, promoted those releases, and administered infrastructure and social-media accounts used to assist the release operations.",
+            "source_references": [
+              "SRC-001"
+            ]
+          },
+          {
+            "claim": "The indictment alleges that dcleaks.com was registered, launched, and used to release stolen emails and documents, and that Guccifer 2.0 and DCLeaks operations used overlapping computer infrastructure and financing.",
+            "source_references": [
+              "SRC-001"
+            ]
+          },
+          {
+            "claim": "CrowdStrike states that its incident-response team investigated a suspected breach of the DNC network and identified two separate Russian intelligence-affiliated adversaries, COZY BEAR and FANCY BEAR, on that network.",
+            "source_references": [
+              "SRC-002"
+            ]
+          },
+          {
+            "claim": "CrowdStrike states that, after a Guccifer 2.0 WordPress post claimed responsibility for the DNC breach, CrowdStrike was still examining whether the posting was part of a Russian intelligence disinformation campaign and was investigating the authenticity and origin of the documents.",
+            "source_references": [
+              "SRC-002"
+            ]
+          },
+          {
+            "claim": "CrowdStrike states that it identified no collaboration or awareness between COZY BEAR and FANCY BEAR, even though both separately compromised the same DNC systems and separately engaged in theft of identical credentials.",
+            "source_references": [
+              "SRC-002"
+            ]
+          }
+        ],
+        "reasoning_steps": [
+          1,
+          2,
+          3
+        ],
+        "contradictions": [],
+        "structured_output_valid": true,
+        "structured_output_complete": true,
+        "structured_output_errors": []
+      },
+      "metrics": {
+        "finding_f1": 0.4444444444444444,
+        "contradiction_grounded_f1": 0.0,
+        "reasoning_grounded_score": 0.2962962962962963,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0,
+        "entity_f1": "not_applicable",
+        "relation_f1": "not_applicable"
+      },
+      "full_metrics": {
+        "output_validation": {
+          "valid": true,
+          "errors": []
+        },
+        "entities": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 8,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missing": [
+            [
+              "alias",
+              "cozy bear"
+            ],
+            [
+              "alias",
+              "fancy bear"
+            ],
+            [
+              "alias",
+              "guccifer 2.0"
+            ],
+            [
+              "domain",
+              "dcleaks.com"
+            ],
+            [
+              "organization",
+              "crowdstrike"
+            ],
+            [
+              "organization",
+              "democratic national committee"
+            ],
+            [
+              "organization",
+              "gru unit 26165"
+            ],
+            [
+              "organization",
+              "gru unit 74455"
+            ]
+          ],
+          "unexpected": []
+        },
+        "relations": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 6,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missing": [
+            [
+              [
+                "alias",
+                "cozy bear"
+              ],
+              "identified_in_network",
+              [
+                "organization",
+                "democratic national committee"
+              ]
+            ],
+            [
+              [
+                "alias",
+                "fancy bear"
+              ],
+              "identified_in_network",
+              [
+                "organization",
+                "democratic national committee"
+              ]
+            ],
+            [
+              [
+                "organization",
+                "crowdstrike"
+              ],
+              "investigated_breach_of",
+              [
+                "organization",
+                "democratic national committee"
+              ]
+            ],
+            [
+              [
+                "organization",
+                "gru unit 26165"
+              ],
+              "hacked_network",
+              [
+                "organization",
+                "democratic national committee"
+              ]
+            ],
+            [
+              [
+                "organization",
+                "gru unit 74455"
+              ],
+              "operated_or_assisted_persona",
+              [
+                "alias",
+                "guccifer 2.0"
+              ]
+            ],
+            [
+              [
+                "organization",
+                "gru unit 74455"
+              ],
+              "operated_or_assisted_release_site",
+              [
+                "domain",
+                "dcleaks.com"
+              ]
+            ]
+          ],
+          "unexpected": [],
+          "semantic_mapping": {
+            "also_known_as": "alias_of",
+            "alias_of": "alias_of",
+            "co_founded": "founded",
+            "founded": "founded",
+            "based_in": "located_in",
+            "located_in": "located_in",
+            "performed_special_audit": "audited",
+            "audited": "audited",
+            "former_coo_of": "executive_of",
+            "executive_of": "executive_of",
+            "provided_software": "provided",
+            "distributed_as_installer": "distributed",
+            "contained_malware": "contained",
+            "trojanized": "compromised",
+            "associated_with": "associated_with",
+            "linked_to": "associated_with",
+            "uses_or_is_associated_with": "associated_with"
+          }
+        },
+        "contradictions": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "details": [],
+          "missing": [
+            "CONTRA-001"
+          ],
+          "unexpected": [],
+          "grounded_recall": 0.0,
+          "grounded_f1": 0.0
+        },
+        "key_findings": {
+          "score": 0.3684210526315789,
+          "precision": 0.3333333333333333,
+          "recall": 0.6666666666666666,
+          "f1": 0.4444444444444444,
+          "predicted": 6,
+          "expected": 3,
+          "matched": 2,
+          "details": [
+            {
+              "question": "Was Guccifer 2.0 an independent lone hacker persona?",
+              "status": "matched",
+              "score": 0.5263157894736842,
+              "semantic": 0.5263157894736842,
+              "supporting_entity_recall": 1.0,
+              "source_recall": 1.0,
+              "has_source_references": true
+            },
+            {
+              "question": "What independent evidence predates the indictment?",
+              "status": "matched",
+              "score": 0.5789473684210527,
+              "semantic": 0.5789473684210527,
+              "supporting_entity_recall": 1.0,
+              "source_recall": 1.0,
+              "has_source_references": true
+            },
+            {
+              "question": "What contradiction should the agent resolve?",
+              "status": "missing",
+              "score": 0.0
+            }
+          ]
+        },
+        "source_traceability": {
+          "correct_sources": [
+            "SRC-001",
+            "SRC-002"
+          ],
+          "unknown_sources": [],
+          "unavailable_sources": [],
+          "source_precision": 1.0,
+          "source_recall": 1.0,
+          "ratio": 1.0,
+          "claim_level": {
+            "claims": 8,
+            "traceable_claims": 8,
+            "ratio": 1.0,
+            "unknown_sources": [],
+            "unavailable_sources": []
+          },
+          "finding_level": {
+            "findings": 6,
+            "traceable_findings": 6,
+            "ratio": 1.0
+          }
+        },
+        "reasoning_coverage": {
+          "covered": [
+            1,
+            2,
+            3
+          ],
+          "invalid": [],
+          "total": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "ratio": 1.0,
+          "status": "structured_step_ids"
+        },
+        "report_quality": {
+          "score": 0.5833333333333334,
+          "checks": {
+            "non_empty": true,
+            "structured_output_complete": true,
+            "structured_output_valid": true,
+            "findings_present": true,
+            "findings_match": false,
+            "claims_traceable": true,
+            "contradictions_complete": false,
+            "contradictions_grounded": false,
+            "finding_sources_grounded": true,
+            "reasoning_conclusions_grounded": false,
+            "uncertainty_language": true,
+            "readable_length": false
+          },
+          "scale": "deterministic rubric 0-1"
+        },
+        "reasoning_quality": {
+          "covered": 3,
+          "expected": 3,
+          "coverage": 1.0,
+          "semantic_similarity": 0.2962962962962963,
+          "premise_grounding": 1.0,
+          "grounded_score": 0.2962962962962963,
+          "method": "premise_ids_plus_token_entailment_proxy",
+          "details": [
+            {
+              "id": 1,
+              "premise_score": 1.0,
+              "entity_recall": 1.0,
+              "relation_recall": 1.0,
+              "conclusion_similarity": 0.7777777777777778,
+              "invalid_premise_entities": [],
+              "invalid_premise_relations": [],
+              "grounded_score": 0.7777777777777778
+            },
+            {
+              "id": 2,
+              "premise_score": 1.0,
+              "entity_recall": 1.0,
+              "relation_recall": 1.0,
+              "conclusion_similarity": 0.1111111111111111,
+              "invalid_premise_entities": [],
+              "invalid_premise_relations": [],
+              "grounded_score": 0.1111111111111111
+            },
+            {
+              "id": 3,
+              "premise_score": 1.0,
+              "entity_recall": 1.0,
+              "relation_recall": 1.0,
+              "conclusion_similarity": 0.0,
+              "invalid_premise_entities": [],
+              "invalid_premise_relations": [],
+              "grounded_score": 0.0
+            }
+          ]
+        },
+        "operational": {}
+      }
+    },
+    {
+      "case_id": "OSINT-005",
+      "candidate": "langchain-ai/open_deep_research",
+      "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+      "artifact": "outputs/candidate-runs/open-deep-research/runs/OSINT-005/io/candidate-result.json",
+      "artifact_sha256": "17fc4fac31148c17d3819083fe05b01badbf68925e222bd9752f0c1e2f83fefa",
+      "manifest_sha256": "17fc4fac31148c17d3819083fe05b01badbf68925e222bd9752f0c1e2f83fefa",
+      "manifest_hash_match": true,
+      "report_sha256": "1d0886d8faf2828bfa227e4325ac34d77701009a2b017d258cb2a67816210037",
+      "status": "completed",
+      "output_summary": {
+        "available_source_references": [
+          "SRC-001",
+          "SRC-002"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ],
+        "key_findings": [
+          {
+            "question": "What is the documented OneCoin scheme?",
+            "answer": "The canonical sources describe OneCoin Ltd. as a Bulgaria-based cryptocurrency operation that began in 2014, was based in Sofia, marketed and sold a cryptocurrency called OneCoin through a global MLM network, and was characterized by the DOJ as a fraudulent international investment scheme that caused more than $4 billion in investor losses.",
+            "supporting_entities": [
+              "ENT-001",
+              "ENT-002",
+              "ENT-005",
+              "ENT-007"
+            ],
+            "source_references": [
+              "SRC-001",
+              "SRC-002"
+            ]
+          },
+          {
+            "question": "What role is documented for Ruja Ignatova?",
+            "answer": "Ruja Ignatova is documented as a co-founder of OneCoin Ltd. and as one of the people identified by the DOJ as having orchestrated the international investment scheme.",
+            "supporting_entities": [
+              "ENT-001",
+              "ENT-002"
+            ],
+            "source_references": [
+              "SRC-001",
+              "SRC-002"
+            ]
+          },
+          {
+            "question": "What role is documented for Karl Sebastian Greenwood?",
+            "answer": "Karl Sebastian Greenwood is documented as a co-founder of OneCoin, a top MLM distributor, a person charged in connection with the scheme, and a person sentenced to 20 years in prison and ordered to pay approximately $300,000 in forfeiture.",
+            "supporting_entities": [
+              "ENT-001",
+              "ENT-005"
+            ],
+            "source_references": [
+              "SRC-001",
+              "SRC-002"
+            ]
+          },
+          {
+            "question": "What is the supported Sofia connection?",
+            "answer": "OneCoin Ltd. is documented as based in Sofia, Bulgaria, and OneCoin is documented as beginning operations in Bulgaria in 2014. The sources do not document an individual Sofia connection for Ruja Ignatova, Konstantin Ignatov, or Karl Sebastian Greenwood.",
+            "supporting_entities": [
+              "ENT-001",
+              "ENT-002",
+              "ENT-004",
+              "ENT-005",
+              "ENT-007"
+            ],
+            "source_references": [
+              "SRC-001",
+              "SRC-002"
+            ]
+          },
+          {
+            "question": "Is Cryptoqueen supported as Ruja Ignatova’s alias?",
+            "answer": "The supplied canonical source text does not identify Ruja Ignatova as Cryptoqueen, so the relation ENT-002 also_known_as ENT-003 is not established by the evidence.",
+            "supporting_entities": [
+              "ENT-002",
+              "ENT-003"
+            ],
+            "source_references": [
+              "SRC-001",
+              "SRC-002"
+            ]
+          },
+          {
+            "question": "What role is documented for Konstantin Ignatov?",
+            "answer": "No role, prosecution, sentence, co-founder relationship, alias relationship, or supported Sofia connection for Konstantin Ignatov is documented in the supplied canonical source text.",
+            "supporting_entities": [
+              "ENT-004"
+            ],
+            "source_references": [
+              "SRC-001",
+              "SRC-002"
+            ]
+          },
+          {
+            "question": "What is established about Ruja Ignatova’s current status?",
+            "answer": "The sources establish only that AFS Law described Ruja Ignatova as remaining at large on September 15, 2023, and that the DOJ described the FBI as continuing to pursue and locate her on April 13, 2026. Her precise status as of September 22, 2026 is unresolved in the supplied evidence.",
+            "supporting_entities": [
+              "ENT-002"
+            ],
+            "source_references": [
+              "SRC-001",
+              "SRC-002"
+            ]
+          },
+          {
+            "question": "How should Ruja Ignatova be distinguished from later prosecuted participants?",
+            "answer": "Ruja Ignatova is identified as a co-founder who remained at large or was being pursued, while Karl Sebastian Greenwood is identified as a prosecuted participant who was sentenced to 20 years in prison and ordered to pay forfeiture.",
+            "supporting_entities": [
+              "ENT-002",
+              "ENT-005"
+            ],
+            "source_references": [
+              "SRC-001",
+              "SRC-002"
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "claim": "Between 2014 and 2019, Ruja Ignatova and Karl Sebastian Greenwood, co-founders of OneCoin Ltd., and others orchestrated a large, international cryptocurrency investment scheme defrauding investors from around the globe.",
+            "source_references": [
+              "SRC-001"
+            ]
+          },
+          {
+            "claim": "OneCoin began operations in 2014, was based in Sofia, Bulgaria, and marketed and sold a fraudulent cryptocurrency by the same name through a global multi-level-marketing network.",
+            "source_references": [
+              "SRC-001"
+            ]
+          },
+          {
+            "claim": "As a result of misrepresentations made about OneCoin, victims invested over $4 billion worldwide in the fraudulent cryptocurrency.",
+            "source_references": [
+              "SRC-001"
+            ]
+          },
+          {
+            "claim": "The Department of Justice filed OneCoin-related prosecutions in the Southern District of New York, several key figures involved in the scheme had been sentenced, and the Department pursued criminal forfeiture of property derived from the proceeds of the fraud scheme.",
+            "source_references": [
+              "SRC-001"
+            ]
+          },
+          {
+            "claim": "More than $40 million in forfeited assets were available for victim compensation.",
+            "source_references": [
+              "SRC-001"
+            ]
+          },
+          {
+            "claim": "Karl Sebastian Greenwood, a citizen of Sweden and the United Kingdom and co-founder of OneCoin, was sentenced to 20 years in prison for his alleged role in a $4 billion fraud scheme.",
+            "source_references": [
+              "SRC-002"
+            ]
+          },
+          {
+            "claim": "The government charged Greenwood and others with making misrepresentations about OneCoin to secure more than $4 billion from approximately 3.5 million investors.",
+            "source_references": [
+              "SRC-002"
+            ]
+          },
+          {
+            "claim": "Greenwood was alleged to have claimed that OneCoin’s value was based on market supply and demand, although its value was actually set arbitrarily without regard to market forces, and he claimed to have a private blockchain although no public verifiable blockchain existed.",
+            "source_references": [
+              "SRC-002"
+            ]
+          },
+          {
+            "claim": "Greenwood was described as OneCoin’s top MLM distributor and was alleged to have earned 5% of monthly OneCoin sales, totaling more than $300 million.",
+            "source_references": [
+              "SRC-002"
+            ]
+          },
+          {
+            "claim": "Greenwood was ordered to pay approximately $300,000 in forfeiture in addition to his 20-year prison term.",
+            "source_references": [
+              "SRC-002"
+            ]
+          },
+          {
+            "claim": "The DOJ stated that the FBI continued pursuing Ruja Ignatova, described her as an FBI Top Ten Fugitive, and sought information locating her.",
+            "source_references": [
+              "SRC-001"
+            ]
+          },
+          {
+            "claim": "AFS Law stated that Ruja Ignatova, OneCoin’s other co-founder, remained at large and had been added to the FBI’s Top Ten Most Wanted List in June 2022.",
+            "source_references": [
+              "SRC-002"
+            ]
+          }
+        ],
+        "reasoning_steps": [
+          1,
+          2
+        ],
+        "contradictions": [
+          {
+            "contradiction_id": "CONTRA-001",
+            "source_references": [
+              "SRC-001",
+              "SRC-002"
+            ],
+            "description": "SRC-001 and SRC-002 characterize OneCoin through enforcement facts as a fraudulent scheme and describe prosecutions, sentencing, and criminal forfeiture. The supplied evidence contains no promotional or property record presenting the founders or associated companies through a legitimate-business narrative. The proposed contradiction is therefore not fully evidenced in this snapshot; only the enforcement side is supported."
+          }
+        ],
+        "structured_output_valid": false,
+        "structured_output_complete": true,
+        "structured_output_errors": [
+          "reasoning step 2 uses non-canonical relation also_known_as"
+        ]
+      },
+      "metrics": {
+        "finding_f1": 0.4,
+        "contradiction_grounded_f1": 1.0,
+        "reasoning_grounded_score": 0.38888888888888884,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0,
+        "entity_f1": "not_applicable",
+        "relation_f1": "not_applicable"
+      },
+      "full_metrics": {
+        "output_validation": {
+          "valid": false,
+          "errors": [
+            "reasoning step 2 uses non-canonical relation also_known_as"
+          ]
+        },
+        "entities": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 6,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missing": [
+            [
+              "alias",
+              "cryptoqueen"
+            ],
+            [
+              "location",
+              "sofia, bulgaria"
+            ],
+            [
+              "organization",
+              "onecoin ltd."
+            ],
+            [
+              "person",
+              "karl sebastian greenwood"
+            ],
+            [
+              "person",
+              "konstantin ignatov"
+            ],
+            [
+              "person",
+              "ruja ignatova"
+            ]
+          ],
+          "unexpected": []
+        },
+        "relations": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 4,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missing": [
+            [
+              [
+                "organization",
+                "onecoin ltd."
+              ],
+              "located_in",
+              [
+                "location",
+                "sofia, bulgaria"
+              ]
+            ],
+            [
+              [
+                "person",
+                "karl sebastian greenwood"
+              ],
+              "founded",
+              [
+                "organization",
+                "onecoin ltd."
+              ]
+            ],
+            [
+              [
+                "person",
+                "konstantin ignatov"
+              ],
+              "led_or_promoted",
+              [
+                "organization",
+                "onecoin ltd."
+              ]
+            ],
+            [
+              [
+                "person",
+                "ruja ignatova"
+              ],
+              "founded",
+              [
+                "organization",
+                "onecoin ltd."
+              ]
+            ]
+          ],
+          "unexpected": [],
+          "semantic_mapping": {
+            "also_known_as": "alias_of",
+            "alias_of": "alias_of",
+            "co_founded": "founded",
+            "founded": "founded",
+            "based_in": "located_in",
+            "located_in": "located_in",
+            "performed_special_audit": "audited",
+            "audited": "audited",
+            "former_coo_of": "executive_of",
+            "executive_of": "executive_of",
+            "provided_software": "provided",
+            "distributed_as_installer": "distributed",
+            "contained_malware": "contained",
+            "trojanized": "compromised",
+            "associated_with": "associated_with",
+            "linked_to": "associated_with",
+            "uses_or_is_associated_with": "associated_with"
+          }
+        },
+        "contradictions": {
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "details": [
+            {
+              "contradiction_id": "CONTRA-001",
+              "source_references_correct": true,
+              "source_reference_recall": 1.0
+            }
+          ],
+          "missing": [],
+          "unexpected": [],
+          "grounded_recall": 1.0,
+          "grounded_f1": 1.0
+        },
+        "key_findings": {
+          "score": 0.5277777777777778,
+          "precision": 0.25,
+          "recall": 1.0,
+          "f1": 0.4,
+          "predicted": 8,
+          "expected": 2,
+          "matched": 2,
+          "details": [
+            {
+              "question": "What was OneCoin core misrepresentation?",
+              "status": "matched",
+              "score": 0.5555555555555556,
+              "semantic": 0.5555555555555556,
+              "supporting_entity_recall": 1.0,
+              "source_recall": 1.0,
+              "has_source_references": true
+            },
+            {
+              "question": "Who were key network actors?",
+              "status": "matched",
+              "score": 0.5,
+              "semantic": 0.5,
+              "supporting_entity_recall": 1.0,
+              "source_recall": 1.0,
+              "has_source_references": true
+            }
+          ]
+        },
+        "source_traceability": {
+          "correct_sources": [
+            "SRC-001",
+            "SRC-002"
+          ],
+          "unknown_sources": [],
+          "unavailable_sources": [],
+          "source_precision": 1.0,
+          "source_recall": 1.0,
+          "ratio": 1.0,
+          "claim_level": {
+            "claims": 12,
+            "traceable_claims": 12,
+            "ratio": 1.0,
+            "unknown_sources": [],
+            "unavailable_sources": []
+          },
+          "finding_level": {
+            "findings": 8,
+            "traceable_findings": 8,
+            "ratio": 1.0
+          }
+        },
+        "reasoning_coverage": {
+          "covered": [
+            1,
+            2
+          ],
+          "invalid": [],
+          "total": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "ratio": 1.0,
+          "status": "structured_step_ids"
+        },
+        "report_quality": {
+          "score": 0.6666666666666666,
+          "checks": {
+            "non_empty": true,
+            "structured_output_complete": true,
+            "structured_output_valid": false,
+            "findings_present": true,
+            "findings_match": false,
+            "claims_traceable": true,
+            "contradictions_complete": true,
+            "contradictions_grounded": true,
+            "finding_sources_grounded": true,
+            "reasoning_conclusions_grounded": false,
+            "uncertainty_language": true,
+            "readable_length": false
+          },
+          "scale": "deterministic rubric 0-1"
+        },
+        "reasoning_quality": {
+          "covered": 2,
+          "expected": 2,
+          "coverage": 1.0,
+          "semantic_similarity": 0.38888888888888884,
+          "premise_grounding": 1.0,
+          "grounded_score": 0.38888888888888884,
+          "method": "premise_ids_plus_token_entailment_proxy",
+          "details": [
+            {
+              "id": 1,
+              "premise_score": 1.0,
+              "entity_recall": 1.0,
+              "relation_recall": 1.0,
+              "conclusion_similarity": 0.6666666666666666,
+              "invalid_premise_entities": [],
+              "invalid_premise_relations": [],
+              "grounded_score": 0.6666666666666666
+            },
+            {
+              "id": 2,
+              "premise_score": 1.0,
+              "entity_recall": 1.0,
+              "relation_recall": 1.0,
+              "conclusion_similarity": 0.1111111111111111,
+              "invalid_premise_entities": [],
+              "invalid_premise_relations": [
+                "also_known_as"
+              ],
+              "grounded_score": 0.1111111111111111
+            }
+          ]
+        },
+        "operational": {}
+      }
+    },
+    {
+      "case_id": "OSINT-006",
+      "candidate": "langchain-ai/open_deep_research",
+      "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+      "artifact": "outputs/candidate-runs/open-deep-research/runs/OSINT-006/io/candidate-result.json",
+      "artifact_sha256": "16d160260a47e3a0179dffa16a906df388298733dd09f39d64c560e54c91c877",
+      "manifest_sha256": "16d160260a47e3a0179dffa16a906df388298733dd09f39d64c560e54c91c877",
+      "manifest_hash_match": true,
+      "report_sha256": "f97155e6bb6b47d90d16c5c83344f3787f987cd5b5a016d9ccb9fb5ed3164f43",
+      "status": "completed",
+      "output_summary": {
+        "available_source_references": [
+          "SRC-001",
+          "SRC-002"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ],
+        "key_findings": [
+          {
+            "question": "What is the supported end-to-end exploitation sequence?",
+            "answer": "The snapshot supports a sequence from exploitation of CVE-2023-34362 against MOVEit Transfer, through LEMURLOOT deployment and data theft, to Mandiant's initial UNC4857 attribution, later FIN11 merge, and a subsequent CL0P-linked leak-site extortion claim.",
+            "supporting_entities": [
+              "ENT-001",
+              "ENT-002",
+              "ENT-003",
+              "ENT-004",
+              "ENT-005",
+              "ENT-006",
+              "ENT-007",
+              "ENT-008"
+            ],
+            "source_references": [
+              "SRC-001",
+              "SRC-002"
+            ]
+          },
+          {
+            "question": "What does the source establish about LEMURLOOT?",
+            "answer": "LEMURLOOT was a MOVEit-tailored C# web shell deployed after exploitation, with capabilities for file retrieval, database interaction, configuration extraction, Azure Blob credential extraction, and account manipulation.",
+            "supporting_entities": [
+              "ENT-001",
+              "ENT-003",
+              "ENT-007"
+            ],
+            "source_references": [
+              "SRC-001"
+            ]
+          },
+          {
+            "question": "What does the source establish about attribution?",
+            "answer": "Mandiant initially attributed the activity to UNC4857 and later merged that cluster into FIN11 based on targeting, infrastructure, certificate, and data-leak-site overlaps. This is analytic attribution and does not prove that every exploit was performed by one operator.",
+            "supporting_entities": [
+              "ENT-004",
+              "ENT-005",
+              "ENT-007"
+            ],
+            "source_references": [
+              "SRC-001"
+            ]
+          },
+          {
+            "question": "What is the traceable CL0P finding?",
+            "answer": "The CL0P^_-LEAKS data leak site claimed responsibility on June 6, 2023 and threatened publication of stolen data unless victims paid an extortion fee. The traceable relation is linked_to_extortion_brand, representing a later extortion and victim-notification pivot rather than standalone proof of exploit authorship.",
+            "supporting_entities": [
+              "ENT-006",
+              "ENT-007",
+              "ENT-004",
+              "ENT-005"
+            ],
+            "source_references": [
+              "SRC-001"
+            ]
+          },
+          {
+            "question": "What is the role of NVD?",
+            "answer": "NVD records the technical vulnerability, affected-version context, exploitation-in-the-wild notation, CVSS severity, CWE-89 classification, and record metadata. NVD does not independently prove a specific actor, malware deployment, victim compromise, or extortion event.",
+            "supporting_entities": [
+              "ENT-008",
+              "ENT-001",
+              "ENT-002"
+            ],
+            "source_references": [
+              "SRC-002"
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "claim": "CVE-2023-34362 was a critical SQL injection vulnerability in the MOVEit Transfer web application and was exploited in the wild during May and June 2023.",
+            "source_references": [
+              "SRC-002"
+            ]
+          },
+          {
+            "claim": "Mandiant's earliest observed exploitation date was May 27, 2023, before Progress publicly announced the vulnerability on May 31, 2023.",
+            "source_references": [
+              "SRC-001",
+              "SRC-002"
+            ]
+          },
+          {
+            "claim": "Following exploitation, actors deployed the LEMURLOOT web shell using filenames that masqueraded as the legitimate MOVEit component human.aspx.",
+            "source_references": [
+              "SRC-001"
+            ]
+          },
+          {
+            "claim": "LEMURLOOT could retrieve files, enumerate folders, extract MOVEit and Azure Blob configuration information, interact with the database, and create or delete a MOVEit user account.",
+            "source_references": [
+              "SRC-001"
+            ]
+          },
+          {
+            "claim": "Mandiant initially attributed the activity to UNC4857 and later merged UNC4857 into FIN11 based on targeting, infrastructure, certificate, and data-leak-site overlaps.",
+            "source_references": [
+              "SRC-001"
+            ]
+          },
+          {
+            "claim": "A CL0P^_-LEAKS post claimed responsibility on June 6, 2023 and threatened to publish stolen data unless victims paid an extortion fee.",
+            "source_references": [
+              "SRC-001"
+            ]
+          },
+          {
+            "claim": "The CL0P leak-site activity is an extortion and victim-notification pivot and does not by itself prove that every exploit was performed by the same operator.",
+            "source_references": [
+              "SRC-001"
+            ]
+          },
+          {
+            "claim": "NVD supplies vulnerability and metadata context but does not independently prove actor identity, LEMURLOOT deployment, victim-specific data theft, or extortion contact.",
+            "source_references": [
+              "SRC-002"
+            ]
+          }
+        ],
+        "reasoning_steps": [
+          1,
+          2,
+          3
+        ],
+        "contradictions": [
+          {
+            "contradiction_id": "CONTRA-001",
+            "source_references": [
+              "SRC-001",
+              "SRC-002"
+            ],
+            "description": "CVE and vendor advisories establish a vulnerability and exploitation window, while Mandiant's reporting identifies LEMURLOOT and links the activity to UNC4857/FIN11. CL0P's leak-site behavior is an extortion and victim-notification pivot, not by itself proof that every exploit was performed by the same operator."
+          }
+        ],
+        "structured_output_valid": true,
+        "structured_output_complete": true,
+        "structured_output_errors": []
+      },
+      "metrics": {
+        "finding_f1": 0.5,
+        "contradiction_grounded_f1": 1.0,
+        "reasoning_grounded_score": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0,
+        "entity_f1": "not_applicable",
+        "relation_f1": "not_applicable"
+      },
+      "full_metrics": {
+        "output_validation": {
+          "valid": true,
+          "errors": []
+        },
+        "entities": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 8,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missing": [
+            [
+              "alias",
+              "cl0p"
+            ],
+            [
+              "alias",
+              "cve-2023-34362"
+            ],
+            [
+              "alias",
+              "fin11"
+            ],
+            [
+              "alias",
+              "lemurloot"
+            ],
+            [
+              "alias",
+              "moveit transfer"
+            ],
+            [
+              "alias",
+              "unc4857"
+            ],
+            [
+              "organization",
+              "mandiant"
+            ],
+            [
+              "organization",
+              "nvd"
+            ]
+          ],
+          "unexpected": []
+        },
+        "relations": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 5,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missing": [
+            [
+              [
+                "alias",
+                "cve-2023-34362"
+              ],
+              "affects",
+              [
+                "alias",
+                "moveit transfer"
+              ]
+            ],
+            [
+              [
+                "alias",
+                "fin11"
+              ],
+              "linked_to_extortion_brand",
+              [
+                "alias",
+                "cl0p"
+              ]
+            ],
+            [
+              [
+                "alias",
+                "unc4857"
+              ],
+              "deployed",
+              [
+                "alias",
+                "lemurloot"
+              ]
+            ],
+            [
+              [
+                "alias",
+                "unc4857"
+              ],
+              "exploited",
+              [
+                "alias",
+                "cve-2023-34362"
+              ]
+            ],
+            [
+              [
+                "alias",
+                "unc4857"
+              ],
+              "merged_into",
+              [
+                "alias",
+                "fin11"
+              ]
+            ]
+          ],
+          "unexpected": [],
+          "semantic_mapping": {
+            "also_known_as": "alias_of",
+            "alias_of": "alias_of",
+            "co_founded": "founded",
+            "founded": "founded",
+            "based_in": "located_in",
+            "located_in": "located_in",
+            "performed_special_audit": "audited",
+            "audited": "audited",
+            "former_coo_of": "executive_of",
+            "executive_of": "executive_of",
+            "provided_software": "provided",
+            "distributed_as_installer": "distributed",
+            "contained_malware": "contained",
+            "trojanized": "compromised",
+            "associated_with": "associated_with",
+            "linked_to": "associated_with",
+            "uses_or_is_associated_with": "associated_with"
+          }
+        },
+        "contradictions": {
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "details": [
+            {
+              "contradiction_id": "CONTRA-001",
+              "source_references_correct": true,
+              "source_reference_recall": 1.0
+            }
+          ],
+          "missing": [],
+          "unexpected": [],
+          "grounded_recall": 1.0,
+          "grounded_f1": 1.0
+        },
+        "key_findings": {
+          "score": 0.3047008547008547,
+          "precision": 0.4,
+          "recall": 0.6666666666666666,
+          "f1": 0.5,
+          "predicted": 5,
+          "expected": 3,
+          "matched": 2,
+          "details": [
+            {
+              "question": "What vulnerability enabled the campaign?",
+              "status": "missing",
+              "score": 0.0
+            },
+            {
+              "question": "What malware/tooling should be extracted?",
+              "status": "matched",
+              "score": 0.5333333333333333,
+              "semantic": 0.5333333333333333,
+              "supporting_entity_recall": 1.0,
+              "source_recall": 1.0,
+              "has_source_references": true
+            },
+            {
+              "question": "How should attribution be represented?",
+              "status": "matched",
+              "score": 0.38076923076923075,
+              "semantic": 0.4230769230769231,
+              "supporting_entity_recall": 0.6666666666666666,
+              "source_recall": 1.0,
+              "has_source_references": true
+            }
+          ]
+        },
+        "source_traceability": {
+          "correct_sources": [
+            "SRC-001",
+            "SRC-002"
+          ],
+          "unknown_sources": [],
+          "unavailable_sources": [],
+          "source_precision": 1.0,
+          "source_recall": 1.0,
+          "ratio": 1.0,
+          "claim_level": {
+            "claims": 8,
+            "traceable_claims": 8,
+            "ratio": 1.0,
+            "unknown_sources": [],
+            "unavailable_sources": []
+          },
+          "finding_level": {
+            "findings": 5,
+            "traceable_findings": 5,
+            "ratio": 1.0
+          }
+        },
+        "reasoning_coverage": {
+          "covered": [
+            1,
+            2,
+            3
+          ],
+          "invalid": [],
+          "total": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "ratio": 1.0,
+          "status": "structured_step_ids"
+        },
+        "report_quality": {
+          "score": 0.8333333333333334,
+          "checks": {
+            "non_empty": true,
+            "structured_output_complete": true,
+            "structured_output_valid": true,
+            "findings_present": true,
+            "findings_match": false,
+            "claims_traceable": true,
+            "contradictions_complete": true,
+            "contradictions_grounded": true,
+            "finding_sources_grounded": true,
+            "reasoning_conclusions_grounded": true,
+            "uncertainty_language": true,
+            "readable_length": false
+          },
+          "scale": "deterministic rubric 0-1"
+        },
+        "reasoning_quality": {
+          "covered": 3,
+          "expected": 3,
+          "coverage": 1.0,
+          "semantic_similarity": 1.0,
+          "premise_grounding": 1.0,
+          "grounded_score": 1.0,
+          "method": "premise_ids_plus_token_entailment_proxy",
+          "details": [
+            {
+              "id": 1,
+              "premise_score": 1.0,
+              "entity_recall": 1.0,
+              "relation_recall": 1.0,
+              "conclusion_similarity": 1.0,
+              "invalid_premise_entities": [],
+              "invalid_premise_relations": [],
+              "grounded_score": 1.0
+            },
+            {
+              "id": 2,
+              "premise_score": 1.0,
+              "entity_recall": 1.0,
+              "relation_recall": 1.0,
+              "conclusion_similarity": 1.0,
+              "invalid_premise_entities": [],
+              "invalid_premise_relations": [],
+              "grounded_score": 1.0
+            },
+            {
+              "id": 3,
+              "premise_score": 1.0,
+              "entity_recall": 1.0,
+              "relation_recall": 1.0,
+              "conclusion_similarity": 1.0,
+              "invalid_premise_entities": [],
+              "invalid_premise_relations": [],
+              "grounded_score": 1.0
+            }
+          ]
+        },
+        "operational": {}
+      }
+    },
+    {
+      "case_id": "OSINT-007",
+      "candidate": "langchain-ai/open_deep_research",
+      "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+      "artifact": "outputs/candidate-runs/open-deep-research/runs/OSINT-007/io/candidate-result.json",
+      "artifact_sha256": "0ea9160cb134456021468c677ac844d9221b5f6ca1862203208583f19d4feb85",
+      "manifest_sha256": "0ea9160cb134456021468c677ac844d9221b5f6ca1862203208583f19d4feb85",
+      "manifest_hash_match": true,
+      "report_sha256": "671e3fde4d28419cfb5cd3c74268f3ca193cf73a7ca840ad4eb6ebe8db588f2f",
+      "status": "completed",
+      "output_summary": {
+        "available_source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ],
+        "key_findings": [
+          {
+            "question": "How did the alleged operation combine Ponzi-style mechanics and recruitment?",
+            "answer": "The sources support an alleged high-return membership model funded and expanded through public promotion, reinvestment incentives, and multi-level referral commissions; the mining-revenue explanation was alleged by the DOJ and SEC to be unsupported.",
+            "supporting_entities": [
+              "ENT-001",
+              "ENT-002",
+              "ENT-003",
+              "ENT-004"
+            ],
+            "source_references": [
+              "SRC-002",
+              "SRC-003",
+              "SRC-004"
+            ]
+          },
+          {
+            "question": "What roles are supported for the named people?",
+            "answer": "ENT-001 is supported as Sam Lee / Xue Lee and alleged co-founder; ENT-002 is supported as Brenda Chunga / Bitcoin Beautee and promoter; ENT-003 is supported as Rodney Burton and promoter, while the alias Bitcoin Rodney is not independently reproduced in the supplied source text reviewed here.",
+            "supporting_entities": [
+              "ENT-001",
+              "ENT-002",
+              "ENT-003"
+            ],
+            "source_references": [
+              "SRC-002",
+              "SRC-004"
+            ]
+          },
+          {
+            "question": "What continuity exists across the Hyper-branded organizations?",
+            "answer": "The sources support branding and operational continuity across HyperFund, HyperVerse, and HyperNation, including alleged aliases, shared promotional context, and participant migration, but do not prove identical legal entities or uninterrupted ownership.",
+            "supporting_entities": [
+              "ENT-004",
+              "ENT-005",
+              "ENT-006"
+            ],
+            "source_references": [
+              "SRC-002",
+              "SRC-003"
+            ]
+          },
+          {
+            "question": "What is established about Steven Reece Lewis?",
+            "answer": "Steven Reece Lewis was presented as HyperVerse CEO with an impressive biography, but the cited investigation could not verify the claimed education, employment, corporate history, or broader identity record.",
+            "supporting_entities": [
+              "ENT-005",
+              "ENT-007"
+            ],
+            "source_references": [
+              "SRC-003"
+            ]
+          },
+          {
+            "question": "What is supported about investor funds and mining revenue?",
+            "answer": "The DOJ and SEC support an allegation that HyperFund lacked genuine large-scale mining operations or other real revenue sufficient to support its promises and instead relied on funds received from investors; the supplied sources do not provide a transaction-level forensic accounting.",
+            "supporting_entities": [
+              "ENT-001",
+              "ENT-002",
+              "ENT-004"
+            ],
+            "source_references": [
+              "SRC-002",
+              "SRC-004"
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "claim": "HyperFund was allegedly promoted through membership or investment contracts offering high daily returns that were presented as supported by crypto-mining revenue, while the DOJ and SEC alleged that genuine mining operations or other real revenue did not support the payments and that investor funds supplied the real revenue source.",
+            "source_references": [
+              "SRC-002",
+              "SRC-004"
+            ]
+          },
+          {
+            "claim": "Sam Lee / Xue Lee was identified as an alleged co-founder or senior figure, Brenda Chunga / Bitcoin Beautee as a promoter, and Rodney Burton as a promoter; the sources do not independently reproduce the canonical alias Bitcoin Rodney.",
+            "source_references": [
+              "SRC-002",
+              "SRC-003",
+              "SRC-004"
+            ]
+          },
+          {
+            "claim": "HyperFund, HyperVerse, and HyperNation were presented as connected names or entities within a shared Hyper-branded ecosystem, but the supplied sources do not establish that they were identical legal entities.",
+            "source_references": [
+              "SRC-002",
+              "SRC-003"
+            ]
+          },
+          {
+            "claim": "Steven Reece Lewis was publicly presented as HyperVerse’s CEO with claimed academic and corporate credentials, but The Guardian reported that those credentials and his institutional history could not be independently verified.",
+            "source_references": [
+              "SRC-003"
+            ]
+          },
+          {
+            "claim": "The recruitment funnel allegedly moved from public launch events and promotional messaging to membership purchases, promised returns, reinvestment incentives, referral commissions, and later migration toward HyperNation after withdrawal problems.",
+            "source_references": [
+              "SRC-003"
+            ]
+          }
+        ],
+        "reasoning_steps": [
+          1,
+          2,
+          3
+        ],
+        "contradictions": [
+          {
+            "contradiction_id": "CONTRA-001",
+            "source_references": [
+              "SRC-002",
+              "SRC-003",
+              "SRC-004"
+            ],
+            "description": "Promotional material presented Steven Reece Lewis as HyperVerse CEO, while The Guardian reported that his claimed credentials and identity could not be verified; separately, the SEC and DOJ alleged that HyperFund relied on investor funds rather than genuine mining revenue. The supplied SEC and DOJ pages support the funding allegation more directly than the specific claim that they themselves alleged a false CEO identity."
+          }
+        ],
+        "structured_output_valid": true,
+        "structured_output_complete": true,
+        "structured_output_errors": []
+      },
+      "metrics": {
+        "finding_f1": 0.25,
+        "contradiction_grounded_f1": 0.5,
+        "reasoning_grounded_score": 1.0,
+        "report_quality": 0.75,
+        "source_precision": 1.0,
+        "source_recall": 1.0,
+        "entity_f1": "not_applicable",
+        "relation_f1": "not_applicable"
+      },
+      "full_metrics": {
+        "output_validation": {
+          "valid": true,
+          "errors": []
+        },
+        "entities": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 7,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missing": [
+            [
+              "organization",
+              "hyperfund"
+            ],
+            [
+              "organization",
+              "hypernation"
+            ],
+            [
+              "organization",
+              "hyperverse"
+            ],
+            [
+              "person",
+              "brenda indah chunga / bitcoin beautee"
+            ],
+            [
+              "person",
+              "rodney burton / bitcoin rodney"
+            ],
+            [
+              "person",
+              "steven reece lewis"
+            ],
+            [
+              "person",
+              "xue samuel lee / sam lee"
+            ]
+          ],
+          "unexpected": []
+        },
+        "relations": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 6,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missing": [
+            [
+              [
+                "organization",
+                "hyperfund"
+              ],
+              "rebranded_as",
+              [
+                "organization",
+                "hyperverse"
+              ]
+            ],
+            [
+              [
+                "organization",
+                "hyperverse"
+              ],
+              "rebranded_as",
+              [
+                "organization",
+                "hypernation"
+              ]
+            ],
+            [
+              [
+                "person",
+                "brenda indah chunga / bitcoin beautee"
+              ],
+              "promoted",
+              [
+                "organization",
+                "hyperfund"
+              ]
+            ],
+            [
+              [
+                "person",
+                "rodney burton / bitcoin rodney"
+              ],
+              "promoted",
+              [
+                "organization",
+                "hyperfund"
+              ]
+            ],
+            [
+              [
+                "person",
+                "steven reece lewis"
+              ],
+              "presented_as_ceo",
+              [
+                "organization",
+                "hyperverse"
+              ]
+            ],
+            [
+              [
+                "person",
+                "xue samuel lee / sam lee"
+              ],
+              "co_founded_or_promoted",
+              [
+                "organization",
+                "hyperfund"
+              ]
+            ]
+          ],
+          "unexpected": [],
+          "semantic_mapping": {
+            "also_known_as": "alias_of",
+            "alias_of": "alias_of",
+            "co_founded": "founded",
+            "founded": "founded",
+            "based_in": "located_in",
+            "located_in": "located_in",
+            "performed_special_audit": "audited",
+            "audited": "audited",
+            "former_coo_of": "executive_of",
+            "executive_of": "executive_of",
+            "provided_software": "provided",
+            "distributed_as_installer": "distributed",
+            "contained_malware": "contained",
+            "trojanized": "compromised",
+            "associated_with": "associated_with",
+            "linked_to": "associated_with",
+            "uses_or_is_associated_with": "associated_with"
+          }
+        },
+        "contradictions": {
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "details": [
+            {
+              "contradiction_id": "CONTRA-001",
+              "source_references_correct": false,
+              "source_reference_recall": 0.5
+            }
+          ],
+          "missing": [],
+          "unexpected": [],
+          "grounded_recall": 0.5,
+          "grounded_f1": 0.5
+        },
+        "key_findings": {
+          "score": 0.12307692307692308,
+          "precision": 0.2,
+          "recall": 0.3333333333333333,
+          "f1": 0.25,
+          "predicted": 5,
+          "expected": 3,
+          "matched": 1,
+          "details": [
+            {
+              "question": "What was the alleged business model?",
+              "status": "missing",
+              "score": 0.0
+            },
+            {
+              "question": "How did the network evolve its branding?",
+              "status": "matched",
+              "score": 0.36923076923076925,
+              "semantic": 0.46153846153846156,
+              "supporting_entity_recall": 0.3333333333333333,
+              "source_recall": 1.0,
+              "has_source_references": true
+            },
+            {
+              "question": "What identity-linking task makes the case valuable?",
+              "status": "missing",
+              "score": 0.0
+            }
+          ]
+        },
+        "source_traceability": {
+          "correct_sources": [
+            "SRC-001",
+            "SRC-002",
+            "SRC-003",
+            "SRC-004"
+          ],
+          "unknown_sources": [],
+          "unavailable_sources": [],
+          "source_precision": 1.0,
+          "source_recall": 1.0,
+          "ratio": 1.0,
+          "claim_level": {
+            "claims": 5,
+            "traceable_claims": 5,
+            "ratio": 1.0,
+            "unknown_sources": [],
+            "unavailable_sources": []
+          },
+          "finding_level": {
+            "findings": 5,
+            "traceable_findings": 5,
+            "ratio": 1.0
+          }
+        },
+        "reasoning_coverage": {
+          "covered": [
+            1,
+            2,
+            3
+          ],
+          "invalid": [],
+          "total": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "ratio": 1.0,
+          "status": "structured_step_ids"
+        },
+        "report_quality": {
+          "score": 0.75,
+          "checks": {
+            "non_empty": true,
+            "structured_output_complete": true,
+            "structured_output_valid": true,
+            "findings_present": true,
+            "findings_match": false,
+            "claims_traceable": true,
+            "contradictions_complete": true,
+            "contradictions_grounded": false,
+            "finding_sources_grounded": true,
+            "reasoning_conclusions_grounded": true,
+            "uncertainty_language": true,
+            "readable_length": false
+          },
+          "scale": "deterministic rubric 0-1"
+        },
+        "reasoning_quality": {
+          "covered": 3,
+          "expected": 3,
+          "coverage": 1.0,
+          "semantic_similarity": 1.0,
+          "premise_grounding": 1.0,
+          "grounded_score": 1.0,
+          "method": "premise_ids_plus_token_entailment_proxy",
+          "details": [
+            {
+              "id": 1,
+              "premise_score": 1.0,
+              "entity_recall": 1.0,
+              "relation_recall": 1.0,
+              "conclusion_similarity": 1.0,
+              "invalid_premise_entities": [],
+              "invalid_premise_relations": [],
+              "grounded_score": 1.0
+            },
+            {
+              "id": 2,
+              "premise_score": 1.0,
+              "entity_recall": 1.0,
+              "relation_recall": 1.0,
+              "conclusion_similarity": 1.0,
+              "invalid_premise_entities": [],
+              "invalid_premise_relations": [],
+              "grounded_score": 1.0
+            },
+            {
+              "id": 3,
+              "premise_score": 1.0,
+              "entity_recall": 1.0,
+              "relation_recall": 1.0,
+              "conclusion_similarity": 1.0,
+              "invalid_premise_entities": [],
+              "invalid_premise_relations": [],
+              "grounded_score": 1.0
+            }
+          ]
+        },
+        "operational": {}
+      }
+    },
+    {
+      "case_id": "OSINT-008",
+      "candidate": "langchain-ai/open_deep_research",
+      "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+      "artifact": "outputs/candidate-runs/open-deep-research/runs/OSINT-008/io/candidate-result.json",
+      "artifact_sha256": "dfb1907087478d3ed843101e0eb86cc4c83b69eae2d2ad99d38976a6ff6a7c8b",
+      "manifest_sha256": "dfb1907087478d3ed843101e0eb86cc4c83b69eae2d2ad99d38976a6ff6a7c8b",
+      "manifest_hash_match": true,
+      "report_sha256": "6d079b91af86e211bad0ca1d10ea55abd8d1807e1f9488893500a6e05cf6426a",
+      "status": "completed",
+      "output_summary": {
+        "available_source_references": [
+          "SRC-001",
+          "SRC-002"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ],
+        "key_findings": [
+          {
+            "question": "How should the April 22 and April 28 Wirecard statements be interpreted?",
+            "answer": "The April 22 statement was provisional because the audit was not complete and the wording said no evidence had been found so far. The supplied SRC-001 body is dated April 28 and separately reports no incriminating evidence while acknowledging forensic data limitations.",
+            "supporting_entities": [],
+            "source_references": []
+          },
+          {
+            "question": "What does the later KPMG evidence establish?",
+            "answer": "The later evidence establishes unresolved verification problems concerning approximately EUR 1 billion in trust accounts, escrow-account existence and classification, TPA revenues, third-party documentation, and bank confirmations. It does not establish that every disputed revenue item was conclusively fictitious or genuine.",
+            "supporting_entities": [],
+            "source_references": []
+          },
+          {
+            "question": "How does the EUR 1.9 billion disclosure fit the chronology?",
+            "answer": "On June 22, 2020, Wirecard assumed that EUR 1.9 billion in previously reported trust-account balances probably did not exist and indicated that the Third Party business might also be incorrect; bankruptcy followed on June 25.",
+            "supporting_entities": [],
+            "source_references": []
+          },
+          {
+            "question": "What does the evidence support about audit and supervisory failure?",
+            "answer": "SRC-002 describes late detection by EY and oversight bodies, failures across five lines of defense, and a supervisory architecture marked by delay, divided authority, voluntary information flows, and contested legal responsibility.",
+            "supporting_entities": [],
+            "source_references": []
+          },
+          {
+            "question": "What is supported about Jan Marsalek and Belarus?",
+            "answer": "Neither supplied source mentions Jan Marsalek or Belarus. The evidence therefore does not support claims about Marsalek’s resignation, departure, disappearance, flight, or any connection to Belarus.",
+            "supporting_entities": [],
+            "source_references": []
+          },
+          {
+            "question": "Does the supplied evidence establish a direct contradiction?",
+            "answer": "No direct contradiction is established because the April 22 statement was expressly provisional. The evidence does support a qualified tension between early public reassurance and later non-verification of trust-account balances and missing-cash disclosure.",
+            "supporting_entities": [],
+            "source_references": []
+          }
+        ],
+        "claims": [
+          {
+            "claim": "On April 22, 2020, Wirecard stated that the KPMG special audit was not yet complete but that no evidence of balance-sheet manipulation had been found so far.",
+            "source_references": []
+          },
+          {
+            "claim": "The supplied April 28, 2020 Wirecard announcement stated that incriminating evidence for public allegations of balance-sheet forgery had not been identified and that no significant findings required adjustment of the 2016–2018 annual accounts.",
+            "source_references": []
+          },
+          {
+            "claim": "Wirecard stated that not all data needed to prove certain Third Party Acquiring revenues had been obtained because the relevant data were primarily controlled by third parties.",
+            "source_references": []
+          },
+          {
+            "claim": "KPMG was unable to locate approximately EUR 1 billion in trust accounts, could neither refute nor confirm the allegations, and urged further investigations.",
+            "source_references": []
+          },
+          {
+            "claim": "KPMG could not verify the existence of the escrow accounts and questioned whether they were properly classified under IFRS as cash or cash equivalents.",
+            "source_references": []
+          },
+          {
+            "claim": "On June 22, 2020, Wirecard’s board assumed that EUR 1.9 billion in previously reported trust-account balances probably did not exist and indicated that the Third Party business might also be incorrect as previously described.",
+            "source_references": []
+          },
+          {
+            "claim": "On June 25, 2020, Wirecard filed for bankruptcy because of impending insolvency and over-indebtedness, while EY reported indications of a sophisticated fraud and refused to sign off the 2019 accounts after identifying forged bank confirmations.",
+            "source_references": []
+          },
+          {
+            "claim": "BaFin filed complaints concerning deceptive ad-hoc announcements, accounting fraud, and market manipulation through incorrect disclosures, and later directed or initiated examinations involving Wirecard accounts.",
+            "source_references": []
+          }
+        ],
+        "reasoning_steps": [
+          1,
+          2,
+          3
+        ],
+        "contradictions": [
+          {
+            "contradiction_id": "CONTRA-001",
+            "source_references": [],
+            "description": "Qualified only: the supplied sources support the April 2020 public response that no incriminating balance-sheet evidence had been identified while audit limitations remained, followed by later uncertainty concerning trust-account balances and the EUR 1.9 billion disclosure. The portion of the canonical description referring to the resignation or flight of Jan Marsalek is not supported by SRC-001 or SRC-002."
+          }
+        ],
+        "structured_output_valid": true,
+        "structured_output_complete": true,
+        "structured_output_errors": []
+      },
+      "metrics": {
+        "finding_f1": 0.2222222222222222,
+        "contradiction_grounded_f1": 0.0,
+        "reasoning_grounded_score": 1.0,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0,
+        "entity_f1": "not_applicable",
+        "relation_f1": "not_applicable"
+      },
+      "full_metrics": {
+        "output_validation": {
+          "valid": true,
+          "errors": []
+        },
+        "entities": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 8,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missing": [
+            [
+              "alias",
+              "eur 1.9 billion missing cash"
+            ],
+            [
+              "alias",
+              "third party acquiring business"
+            ],
+            [
+              "location",
+              "belarus"
+            ],
+            [
+              "organization",
+              "bafin"
+            ],
+            [
+              "organization",
+              "ey"
+            ],
+            [
+              "organization",
+              "kpmg"
+            ],
+            [
+              "organization",
+              "wirecard ag"
+            ],
+            [
+              "person",
+              "jan marsalek"
+            ]
+          ],
+          "unexpected": []
+        },
+        "relations": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 7,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missing": [
+            [
+              [
+                "alias",
+                "third party acquiring business"
+              ],
+              "business_area_under_audit",
+              [
+                "organization",
+                "wirecard ag"
+              ]
+            ],
+            [
+              [
+                "organization",
+                "bafin"
+              ],
+              "supervised_or_inquired_about",
+              [
+                "organization",
+                "wirecard ag"
+              ]
+            ],
+            [
+              [
+                "organization",
+                "ey"
+              ],
+              "audited",
+              [
+                "organization",
+                "wirecard ag"
+              ]
+            ],
+            [
+              [
+                "organization",
+                "kpmg"
+              ],
+              "audited",
+              [
+                "organization",
+                "wirecard ag"
+              ]
+            ],
+            [
+              [
+                "organization",
+                "wirecard ag"
+              ],
+              "disclosed_missing_cash",
+              [
+                "alias",
+                "eur 1.9 billion missing cash"
+              ]
+            ],
+            [
+              [
+                "person",
+                "jan marsalek"
+              ],
+              "absconded_to",
+              [
+                "location",
+                "belarus"
+              ]
+            ],
+            [
+              [
+                "person",
+                "jan marsalek"
+              ],
+              "executive_of",
+              [
+                "organization",
+                "wirecard ag"
+              ]
+            ]
+          ],
+          "unexpected": [],
+          "semantic_mapping": {
+            "also_known_as": "alias_of",
+            "alias_of": "alias_of",
+            "co_founded": "founded",
+            "founded": "founded",
+            "based_in": "located_in",
+            "located_in": "located_in",
+            "performed_special_audit": "audited",
+            "audited": "audited",
+            "former_coo_of": "executive_of",
+            "executive_of": "executive_of",
+            "provided_software": "provided",
+            "distributed_as_installer": "distributed",
+            "contained_malware": "contained",
+            "trojanized": "compromised",
+            "associated_with": "associated_with",
+            "linked_to": "associated_with",
+            "uses_or_is_associated_with": "associated_with"
+          }
+        },
+        "contradictions": {
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "details": [
+            {
+              "contradiction_id": "CONTRA-001",
+              "source_references_correct": false,
+              "source_reference_recall": 0.0
+            }
+          ],
+          "missing": [],
+          "unexpected": [],
+          "grounded_recall": 0.0,
+          "grounded_f1": 0.0
+        },
+        "key_findings": {
+          "score": 0.05977011494252874,
+          "precision": 0.16666666666666666,
+          "recall": 0.3333333333333333,
+          "f1": 0.2222222222222222,
+          "predicted": 6,
+          "expected": 3,
+          "matched": 1,
+          "details": [
+            {
+              "question": "What contradiction should an investigator reconcile?",
+              "status": "matched",
+              "score": 0.17931034482758623,
+              "semantic": 0.4482758620689655,
+              "supporting_entity_recall": 0.0,
+              "source_recall": 0.0,
+              "has_source_references": false
+            },
+            {
+              "question": "Which institutions form the oversight chain?",
+              "status": "missing",
+              "score": 0.0
+            },
+            {
+              "question": "Why is Marsalek a key entity?",
+              "status": "missing",
+              "score": 0.0
+            }
+          ]
+        },
+        "source_traceability": {
+          "correct_sources": [
+            "SRC-001",
+            "SRC-002"
+          ],
+          "unknown_sources": [],
+          "unavailable_sources": [],
+          "source_precision": 1.0,
+          "source_recall": 1.0,
+          "ratio": 0.0,
+          "claim_level": {
+            "claims": 8,
+            "traceable_claims": 0,
+            "ratio": 0.0,
+            "unknown_sources": [],
+            "unavailable_sources": []
+          },
+          "finding_level": {
+            "findings": 6,
+            "traceable_findings": 0,
+            "ratio": 0.0
+          }
+        },
+        "reasoning_coverage": {
+          "covered": [
+            1,
+            2,
+            3
+          ],
+          "invalid": [],
+          "total": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "ratio": 1.0,
+          "status": "structured_step_ids"
+        },
+        "report_quality": {
+          "score": 0.5833333333333334,
+          "checks": {
+            "non_empty": true,
+            "structured_output_complete": true,
+            "structured_output_valid": true,
+            "findings_present": true,
+            "findings_match": false,
+            "claims_traceable": false,
+            "contradictions_complete": true,
+            "contradictions_grounded": false,
+            "finding_sources_grounded": false,
+            "reasoning_conclusions_grounded": true,
+            "uncertainty_language": true,
+            "readable_length": false
+          },
+          "scale": "deterministic rubric 0-1"
+        },
+        "reasoning_quality": {
+          "covered": 3,
+          "expected": 3,
+          "coverage": 1.0,
+          "semantic_similarity": 1.0,
+          "premise_grounding": 1.0,
+          "grounded_score": 1.0,
+          "method": "premise_ids_plus_token_entailment_proxy",
+          "details": [
+            {
+              "id": 1,
+              "premise_score": 1.0,
+              "entity_recall": 1.0,
+              "relation_recall": 1.0,
+              "conclusion_similarity": 1.0,
+              "invalid_premise_entities": [],
+              "invalid_premise_relations": [],
+              "grounded_score": 1.0
+            },
+            {
+              "id": 2,
+              "premise_score": 1.0,
+              "entity_recall": 1.0,
+              "relation_recall": 1.0,
+              "conclusion_similarity": 1.0,
+              "invalid_premise_entities": [],
+              "invalid_premise_relations": [],
+              "grounded_score": 1.0
+            },
+            {
+              "id": 3,
+              "premise_score": 1.0,
+              "entity_recall": 1.0,
+              "relation_recall": 1.0,
+              "conclusion_similarity": 1.0,
+              "invalid_premise_entities": [],
+              "invalid_premise_relations": [],
+              "grounded_score": 1.0
+            }
+          ]
+        },
+        "operational": {}
+      }
+    },
+    {
+      "case_id": "OSINT-009",
+      "candidate": "langchain-ai/open_deep_research",
+      "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+      "artifact": "outputs/candidate-runs/open-deep-research/runs/OSINT-009/io/candidate-result.json",
+      "artifact_sha256": "84a537188e1000c1768a4318396fff3a892021f4e1f56ec837b1a4affe648457",
+      "manifest_sha256": "84a537188e1000c1768a4318396fff3a892021f4e1f56ec837b1a4affe648457",
+      "manifest_hash_match": true,
+      "report_sha256": "eb0571907b174219809b68c3372ea7e7a450b2a8ddd294eb28fe3c75dbff639f",
+      "status": "completed",
+      "output_summary": {
+        "available_source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ],
+        "key_findings": [
+          {
+            "question": "",
+            "answer": "The supplied reporting supports a source-reported relationship between King Abdullah II, offshore or front-company structures, the British Virgin Islands, Alcogal compliance records, and luxury properties in Malibu, Washington, DC, London, and other United Kingdom locations.",
+            "supporting_entities": [
+              "ENT-001",
+              "ENT-006",
+              "ENT-007",
+              "ENT-008",
+              "ENT-009",
+              "ENT-010"
+            ],
+            "source_references": [
+              "SRC-001",
+              "SRC-002",
+              "SRC-003",
+              "SRC-004"
+            ]
+          },
+          {
+            "question": "",
+            "answer": "The Guardian links Alcogal to internal compliance and beneficial-ownership records concerning the reported beneficial owner of 16 companies holding assets in the United States, the United Kingdom, and Jersey.",
+            "supporting_entities": [
+              "ENT-001",
+              "ENT-006",
+              "ENT-007"
+            ],
+            "source_references": [
+              "SRC-002"
+            ]
+          },
+          {
+            "question": "",
+            "answer": "The British Virgin Islands are supported as an offshore incorporation jurisdiction and as the location of the BOSS beneficial-ownership system referenced by Alcogal.",
+            "supporting_entities": [
+              "ENT-007"
+            ],
+            "source_references": [
+              "SRC-002",
+              "SRC-003",
+              "SRC-004"
+            ]
+          },
+          {
+            "question": "",
+            "answer": "The supported canonical property locations are Malibu, California; Washington, DC; and London, with additional United Kingdom property reported in Ascot.",
+            "supporting_entities": [
+              "ENT-008",
+              "ENT-009",
+              "ENT-010"
+            ],
+            "source_references": [
+              "SRC-001",
+              "SRC-002",
+              "SRC-003",
+              "SRC-004"
+            ]
+          },
+          {
+            "question": "",
+            "answer": "Guinevere Enterprises Ltd., Zayer Ltd., Victoria Loraine, and Andrew Evans are not expressly named or connected in the supplied source snapshots, so no source-supported relationships involving them are mapped.",
+            "supporting_entities": [
+              "ENT-002",
+              "ENT-003",
+              "ENT-004",
+              "ENT-005"
+            ],
+            "source_references": [
+              "SRC-001",
+              "SRC-002",
+              "SRC-003",
+              "SRC-004"
+            ]
+          },
+          {
+            "question": "",
+            "answer": "The supplied SRC-004 snapshot reproduces the Al Jazeera article body and therefore does not provide independent ICIJ-specific text within the constrained evidence set.",
+            "supporting_entities": [
+              "ENT-001"
+            ],
+            "source_references": [
+              "SRC-003",
+              "SRC-004"
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "claim": "Deutsche Welle reported 14 houses and flats in the United States and United Kingdom, purchased between 2003 and 2017 for more than EUR 91 million or approximately USD 106 million through 36 front companies registered in tax havens.",
+            "source_references": [
+              "SRC-001"
+            ]
+          },
+          {
+            "claim": "The Guardian reported that King Abdullah II's property holdings exceeded USD 100 million and that ownership was disguised through offshore companies incorporated in the British Virgin Islands.",
+            "source_references": [
+              "SRC-002"
+            ]
+          },
+          {
+            "claim": "The Guardian reported that an Alcogal memorandum identified Abdullah Al Hussein, born January 30, 1962 and using a Raghadan Palace address, as beneficial owner of 16 companies holding assets in the United States, the United Kingdom, and Jersey.",
+            "source_references": [
+              "SRC-002"
+            ]
+          },
+          {
+            "claim": "Al Jazeera and the duplicated ICIJ source record reported three Malibu beachfront mansions acquired through three offshore companies for USD 68 million, three Washington, DC, luxury apartments, a house in Ascot, and multimillion-dollar apartments in central London.",
+            "source_references": [
+              "SRC-003",
+              "SRC-004"
+            ]
+          }
+        ],
+        "reasoning_steps": [
+          1,
+          2,
+          3
+        ],
+        "contradictions": [
+          {
+            "contradiction_id": "CONTRA-001",
+            "source_references": [
+              "SRC-001",
+              "SRC-002",
+              "SRC-003",
+              "SRC-004"
+            ],
+            "description": "The reporting documents offshore ownership and secrecy, while the King's representatives stated that the structures served privacy and security, that the properties were personally funded, and that no public money or aid intended for public use had been misused. Offshore ownership and secrecy are documented; illegality is not established by those facts alone."
+          }
+        ],
+        "structured_output_valid": false,
+        "structured_output_complete": true,
+        "structured_output_errors": [
+          "finding has empty question",
+          "finding has empty question",
+          "finding has empty question",
+          "finding has empty question",
+          "finding has empty question",
+          "finding has empty question",
+          "reasoning step 2 uses non-canonical relation owned_or_connected_to_front_company supported only for the source-reported offshore structures",
+          "reasoning step 2 uses non-canonical relation adviser_to not supported for ENT-004 or ENT-005"
+        ]
+      },
+      "metrics": {
+        "finding_f1": 0.2222222222222222,
+        "contradiction_grounded_f1": 1.0,
+        "reasoning_grounded_score": 0.5079365079365079,
+        "report_quality": 0.75,
+        "source_precision": 1.0,
+        "source_recall": 1.0,
+        "entity_f1": "not_applicable",
+        "relation_f1": "not_applicable"
+      },
+      "full_metrics": {
+        "output_validation": {
+          "valid": false,
+          "errors": [
+            "finding has empty question",
+            "finding has empty question",
+            "finding has empty question",
+            "finding has empty question",
+            "finding has empty question",
+            "finding has empty question",
+            "reasoning step 2 uses non-canonical relation owned_or_connected_to_front_company supported only for the source-reported offshore structures",
+            "reasoning step 2 uses non-canonical relation adviser_to not supported for ENT-004 or ENT-005"
+          ]
+        },
+        "entities": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 10,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missing": [
+            [
+              "location",
+              "british virgin islands"
+            ],
+            [
+              "location",
+              "london"
+            ],
+            [
+              "location",
+              "malibu, california"
+            ],
+            [
+              "location",
+              "washington, dc"
+            ],
+            [
+              "organization",
+              "alcogal"
+            ],
+            [
+              "organization",
+              "guinevere enterprises ltd."
+            ],
+            [
+              "organization",
+              "zayer ltd."
+            ],
+            [
+              "person",
+              "andrew evans"
+            ],
+            [
+              "person",
+              "king abdullah ii"
+            ],
+            [
+              "person",
+              "victoria loraine"
+            ]
+          ],
+          "unexpected": []
+        },
+        "relations": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 9,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missing": [
+            [
+              [
+                "organization",
+                "alcogal"
+              ],
+              "offshore_service_provider_for",
+              [
+                "person",
+                "king abdullah ii"
+              ]
+            ],
+            [
+              [
+                "organization",
+                "guinevere enterprises ltd."
+              ],
+              "incorporated_in",
+              [
+                "location",
+                "british virgin islands"
+              ]
+            ],
+            [
+              [
+                "person",
+                "andrew evans"
+              ],
+              "wealth_manager_or_record_keeper_for",
+              [
+                "person",
+                "king abdullah ii"
+              ]
+            ],
+            [
+              [
+                "person",
+                "king abdullah ii"
+              ],
+              "owned_or_connected_to_front_company",
+              [
+                "organization",
+                "guinevere enterprises ltd."
+              ]
+            ],
+            [
+              [
+                "person",
+                "king abdullah ii"
+              ],
+              "owned_or_connected_to_front_company",
+              [
+                "organization",
+                "zayer ltd."
+              ]
+            ],
+            [
+              [
+                "person",
+                "king abdullah ii"
+              ],
+              "owned_property_in",
+              [
+                "location",
+                "london"
+              ]
+            ],
+            [
+              [
+                "person",
+                "king abdullah ii"
+              ],
+              "owned_property_in",
+              [
+                "location",
+                "malibu, california"
+              ]
+            ],
+            [
+              [
+                "person",
+                "king abdullah ii"
+              ],
+              "owned_property_in",
+              [
+                "location",
+                "washington, dc"
+              ]
+            ],
+            [
+              [
+                "person",
+                "victoria loraine"
+              ],
+              "adviser_to",
+              [
+                "person",
+                "king abdullah ii"
+              ]
+            ]
+          ],
+          "unexpected": [],
+          "semantic_mapping": {
+            "also_known_as": "alias_of",
+            "alias_of": "alias_of",
+            "co_founded": "founded",
+            "founded": "founded",
+            "based_in": "located_in",
+            "located_in": "located_in",
+            "performed_special_audit": "audited",
+            "audited": "audited",
+            "former_coo_of": "executive_of",
+            "executive_of": "executive_of",
+            "provided_software": "provided",
+            "distributed_as_installer": "distributed",
+            "contained_malware": "contained",
+            "trojanized": "compromised",
+            "associated_with": "associated_with",
+            "linked_to": "associated_with",
+            "uses_or_is_associated_with": "associated_with"
+          }
+        },
+        "contradictions": {
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "details": [
+            {
+              "contradiction_id": "CONTRA-001",
+              "source_references_correct": true,
+              "source_reference_recall": 1.0
+            }
+          ],
+          "missing": [],
+          "unexpected": [],
+          "grounded_recall": 1.0,
+          "grounded_f1": 1.0
+        },
+        "key_findings": {
+          "score": 0.19999999999999998,
+          "precision": 0.16666666666666666,
+          "recall": 0.3333333333333333,
+          "f1": 0.2222222222222222,
+          "predicted": 6,
+          "expected": 3,
+          "matched": 1,
+          "details": [
+            {
+              "question": "What offshore ownership pattern should be reconstructed?",
+              "status": "missing",
+              "score": 0.0
+            },
+            {
+              "question": "Which jurisdictions and locations matter?",
+              "status": "matched",
+              "score": 0.6,
+              "semantic": 0.6,
+              "supporting_entity_recall": 1.0,
+              "source_recall": 1.0,
+              "has_source_references": true
+            },
+            {
+              "question": "What caveat should be preserved?",
+              "status": "missing",
+              "score": 0.0
+            }
+          ]
+        },
+        "source_traceability": {
+          "correct_sources": [
+            "SRC-001",
+            "SRC-002",
+            "SRC-003",
+            "SRC-004"
+          ],
+          "unknown_sources": [],
+          "unavailable_sources": [],
+          "source_precision": 1.0,
+          "source_recall": 1.0,
+          "ratio": 1.0,
+          "claim_level": {
+            "claims": 4,
+            "traceable_claims": 4,
+            "ratio": 1.0,
+            "unknown_sources": [],
+            "unavailable_sources": []
+          },
+          "finding_level": {
+            "findings": 6,
+            "traceable_findings": 6,
+            "ratio": 1.0
+          }
+        },
+        "reasoning_coverage": {
+          "covered": [
+            1,
+            2,
+            3
+          ],
+          "invalid": [],
+          "total": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "ratio": 1.0,
+          "status": "structured_step_ids"
+        },
+        "report_quality": {
+          "score": 0.75,
+          "checks": {
+            "non_empty": true,
+            "structured_output_complete": true,
+            "structured_output_valid": false,
+            "findings_present": true,
+            "findings_match": false,
+            "claims_traceable": true,
+            "contradictions_complete": true,
+            "contradictions_grounded": true,
+            "finding_sources_grounded": true,
+            "reasoning_conclusions_grounded": true,
+            "uncertainty_language": true,
+            "readable_length": false
+          },
+          "scale": "deterministic rubric 0-1"
+        },
+        "reasoning_quality": {
+          "covered": 3,
+          "expected": 3,
+          "coverage": 1.0,
+          "semantic_similarity": 0.544973544973545,
+          "premise_grounding": 0.8333333333333334,
+          "grounded_score": 0.5079365079365079,
+          "method": "premise_ids_plus_token_entailment_proxy",
+          "details": [
+            {
+              "id": 1,
+              "premise_score": 1.0,
+              "entity_recall": 1.0,
+              "relation_recall": 1.0,
+              "conclusion_similarity": 0.5555555555555556,
+              "invalid_premise_entities": [],
+              "invalid_premise_relations": [],
+              "grounded_score": 0.5555555555555556
+            },
+            {
+              "id": 2,
+              "premise_score": 0.5,
+              "entity_recall": 1.0,
+              "relation_recall": 0.0,
+              "conclusion_similarity": 0.2222222222222222,
+              "invalid_premise_entities": [],
+              "invalid_premise_relations": [
+                "adviser_to not supported for ent-004 or ent-005",
+                "owned_or_connected_to_front_company supported only for the source-reported offshore structures"
+              ],
+              "grounded_score": 0.1111111111111111
+            },
+            {
+              "id": 3,
+              "premise_score": 1.0,
+              "entity_recall": 1.0,
+              "relation_recall": 1.0,
+              "conclusion_similarity": 0.8571428571428571,
+              "invalid_premise_entities": [],
+              "invalid_premise_relations": [],
+              "grounded_score": 0.8571428571428571
+            }
+          ]
+        },
+        "operational": {}
+      }
+    },
+    {
+      "case_id": "OSINT-010",
+      "candidate": "langchain-ai/open_deep_research",
+      "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+      "artifact": "outputs/candidate-runs/open-deep-research/runs/OSINT-010/io/candidate-result.json",
+      "artifact_sha256": "bb382dd5aef4e7e062278b58f7c873390a7426fa8177ce1584de22c47293e121",
+      "manifest_sha256": "bb382dd5aef4e7e062278b58f7c873390a7426fa8177ce1584de22c47293e121",
+      "manifest_hash_match": true,
+      "report_sha256": "ac9b0ffd988e14a6796d397340835055d7b53b34eb287f655a24ed230b2b1872",
+      "status": "completed",
+      "output_summary": {
+        "available_source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ],
+        "key_findings": [
+          {
+            "question": "What was ENT-001 and where was it based?",
+            "answer": "ENT-001 was a Russian political and electoral interference organization based operationally in ENT-006, St. Petersburg, Russia.",
+            "supporting_entities": [
+              "ENT-001",
+              "ENT-006"
+            ],
+            "source_references": [
+              "SRC-001",
+              "SRC-003",
+              "SRC-004"
+            ]
+          },
+          {
+            "question": "How was ENT-001 related to ENT-002, ENT-003, ENT-004, and ENT-005?",
+            "answer": "ENT-001 operated within ENT-002 Project Lakhta; ENT-003 controlled ENT-004 and supported ENT-001; and ENT-004 and ENT-005 collectively funded and oversaw ENT-001 through CONCORD.",
+            "supporting_entities": [
+              "ENT-001",
+              "ENT-002",
+              "ENT-003",
+              "ENT-004",
+              "ENT-005"
+            ],
+            "source_references": [
+              "SRC-001",
+              "SRC-003"
+            ]
+          },
+          {
+            "question": "Which platforms did ENT-001 use?",
+            "answer": "ENT-001 used Facebook, Twitter, Instagram, and YouTube through coordinated pages, groups, accounts, advertisements, hashtags, videos, events, direct messages, and cross-platform promotion.",
+            "supporting_entities": [
+              "ENT-001",
+              "ENT-007",
+              "ENT-008",
+              "ENT-009",
+              "ENT-010"
+            ],
+            "source_references": [
+              "SRC-001",
+              "SRC-003",
+              "SRC-004"
+            ]
+          },
+          {
+            "question": "What were the primary political and demographic targets?",
+            "answer": "ENT-011 was the strongest candidate-level target, ENT-012 was the strongest documented candidate-level beneficiary before the election, and African-Americans were the strongest demographic target.",
+            "supporting_entities": [
+              "ENT-001",
+              "ENT-011",
+              "ENT-012"
+            ],
+            "source_references": [
+              "SRC-001",
+              "SRC-002",
+              "SRC-003"
+            ]
+          },
+          {
+            "question": "How did the operation work?",
+            "answer": "ENT-001 combined deceptive personas, concealed funding, hidden infrastructure, audience research, platform-specific content, engagement measurement, cross-platform networks, paid promotion, organic posting, and offline mobilization.",
+            "supporting_entities": [
+              "ENT-001",
+              "ENT-006",
+              "ENT-007",
+              "ENT-008",
+              "ENT-009",
+              "ENT-010"
+            ],
+            "source_references": [
+              "SRC-001",
+              "SRC-003",
+              "SRC-004"
+            ]
+          },
+          {
+            "question": "What political objectives are directly supported?",
+            "answer": "The sources support objectives of harming Hillary Clinton, supporting Donald Trump before the election, suppressing or diverting likely Clinton voters, spreading distrust, and intensifying social and political division.",
+            "supporting_entities": [
+              "ENT-001",
+              "ENT-011",
+              "ENT-012"
+            ],
+            "source_references": [
+              "SRC-001",
+              "SRC-002",
+              "SRC-003"
+            ]
+          },
+          {
+            "question": "What were the platform-specific operational emphases?",
+            "answer": "Facebook emphasized pages, groups, advertisements, and events; Instagram emphasized visual engagement and identity-based audiences; Twitter emphasized volume, hashtags, personas, and amplification; YouTube emphasized race, police brutality, and Black Lives Matter content.",
+            "supporting_entities": [
+              "ENT-001",
+              "ENT-007",
+              "ENT-008",
+              "ENT-009",
+              "ENT-010"
+            ],
+            "source_references": [
+              "SRC-003",
+              "SRC-004"
+            ]
+          },
+          {
+            "question": "What effects are documented?",
+            "answer": "The evidence documents large-scale exposure and engagement, audience growth, event promotion, recruitment of real U.S. persons, petitions, information collection, self-defense training, voter-suppression messaging, and continued post-election activity.",
+            "supporting_entities": [
+              "ENT-001",
+              "ENT-007",
+              "ENT-008",
+              "ENT-009",
+              "ENT-010"
+            ],
+            "source_references": [
+              "SRC-001",
+              "SRC-003",
+              "SRC-004"
+            ]
+          },
+          {
+            "question": "What caveats must be preserved?",
+            "answer": "The indictment is a charging document, the Senate datasets were incomplete, platform attribution was not independently verified in every case, other Russian actors operated separately, and the evidence does not establish that every divisive online post was created by ENT-001.",
+            "supporting_entities": [
+              "ENT-001",
+              "ENT-002",
+              "ENT-003",
+              "ENT-004",
+              "ENT-005",
+              "ENT-006",
+              "ENT-007",
+              "ENT-008",
+              "ENT-009",
+              "ENT-010",
+              "ENT-011",
+              "ENT-012"
+            ],
+            "source_references": [
+              "SRC-001",
+              "SRC-002",
+              "SRC-003",
+              "SRC-004"
+            ]
+          }
+        ],
+        "claims": [
+          {
+            "claim": "ENT-001 was a St. Petersburg-based Russian organization engaged in political and electoral interference.",
+            "source_references": [
+              "SRC-001"
+            ]
+          },
+          {
+            "claim": "ENT-001 operated within ENT-002 Project Lakhta and was funded and overseen through the CONCORD structure involving ENT-003, ENT-004, and ENT-005.",
+            "source_references": [
+              "SRC-001",
+              "SRC-003"
+            ]
+          },
+          {
+            "claim": "The funding structure concealed CONCORD's involvement through software-support labels and affiliate bank accounts.",
+            "source_references": [
+              "SRC-001"
+            ]
+          },
+          {
+            "claim": "ENT-001 used fake U.S. personas, stolen identities, U.S.-based servers, virtual private networks, false email accounts, advertisements, organic content, and direct contact with real U.S. persons.",
+            "source_references": [
+              "SRC-001",
+              "SRC-003"
+            ]
+          },
+          {
+            "claim": "ENT-001 used Facebook, Twitter, Instagram, and YouTube with different platform-specific operational emphases.",
+            "source_references": [
+              "SRC-001",
+              "SRC-003",
+              "SRC-004"
+            ]
+          },
+          {
+            "claim": "The strongest candidate-level target was ENT-011, while ENT-012 was supported or promoted, especially before the election.",
+            "source_references": [
+              "SRC-001",
+              "SRC-002",
+              "SRC-003"
+            ]
+          },
+          {
+            "claim": "African-Americans were the strongest documented demographic target, with race and police-related content receiving exceptional operational emphasis.",
+            "source_references": [
+              "SRC-002",
+              "SRC-003"
+            ]
+          },
+          {
+            "claim": "The campaign used voter-suppression narratives, third-party promotion, anti-Clinton messages, pro-Trump messages, and rally coordination.",
+            "source_references": [
+              "SRC-001",
+              "SRC-003"
+            ]
+          },
+          {
+            "claim": "The operation continued and expanded after Election Day 2016 and used both pro-Trump and anti-Trump activity to sustain polarization.",
+            "source_references": [
+              "SRC-003",
+              "SRC-004"
+            ]
+          },
+          {
+            "claim": "The DOJ indictment emphasizes fake personas and concealed funding, while Senate reporting emphasizes content, audience targeting, platform data, and political effects.",
+            "source_references": [
+              "SRC-001",
+              "SRC-002",
+              "SRC-003",
+              "SRC-004"
+            ]
+          }
+        ],
+        "reasoning_steps": [
+          1,
+          2,
+          3
+        ],
+        "contradictions": [
+          {
+            "contradiction_id": "CONTRA-001",
+            "source_references": [
+              "SRC-001",
+              "SRC-002",
+              "SRC-003",
+              "SRC-004"
+            ],
+            "description": "The DOJ indictment describes a Russian influence operation using fake personas and concealed funding, while Senate reporting focuses on the campaign's content, audience targeting, and political effects. Neither source supports the claim that every divisive online post was created by the IRA."
+          }
+        ],
+        "structured_output_valid": false,
+        "structured_output_complete": true,
+        "structured_output_errors": [
+          "reasoning step 1 uses non-canonical relation ENT-001 targeted_against ENT-011",
+          "reasoning step 1 uses non-canonical relation ENT-001 supported_or_promoted ENT-012",
+          "reasoning step 1 uses non-canonical relation ENT-001 used_platform ENT-007",
+          "reasoning step 1 uses non-canonical relation ENT-001 used_platform ENT-008",
+          "reasoning step 1 uses non-canonical relation ENT-001 used_platform ENT-009",
+          "reasoning step 1 uses non-canonical relation ENT-001 used_platform ENT-010",
+          "reasoning step 2 uses non-canonical relation ENT-001 part_of_operation ENT-002",
+          "reasoning step 2 uses non-canonical relation ENT-003 funded_or_controlled ENT-004",
+          "reasoning step 2 uses non-canonical relation ENT-003 supported_or_promoted ENT-001",
+          "reasoning step 2 uses non-canonical relation ENT-004 funding_or_support_company ENT-001",
+          "reasoning step 2 uses non-canonical relation ENT-005 funding_or_support_company ENT-001",
+          "reasoning step 2 uses non-canonical relation ENT-001 based_in ENT-006",
+          "reasoning step 2 uses non-canonical relation ENT-001 used_platform ENT-007",
+          "reasoning step 2 uses non-canonical relation ENT-001 used_platform ENT-008",
+          "reasoning step 2 uses non-canonical relation ENT-001 used_platform ENT-009",
+          "reasoning step 2 uses non-canonical relation ENT-001 used_platform ENT-010",
+          "reasoning step 3 uses non-canonical relation source_traceability",
+          "reasoning step 3 uses non-canonical relation documented_fact_vs_reasonable_inference",
+          "reasoning step 3 uses non-canonical relation incomplete_scope",
+          "reasoning step 3 uses non-canonical relation other_russian_vectors",
+          "reasoning step 3 uses non-canonical relation dataset_limitations"
+        ]
+      },
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_grounded_f1": 1.0,
+        "reasoning_grounded_score": 0.2037037037037037,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0,
+        "entity_f1": "not_applicable",
+        "relation_f1": "not_applicable"
+      },
+      "full_metrics": {
+        "output_validation": {
+          "valid": false,
+          "errors": [
+            "reasoning step 1 uses non-canonical relation ENT-001 targeted_against ENT-011",
+            "reasoning step 1 uses non-canonical relation ENT-001 supported_or_promoted ENT-012",
+            "reasoning step 1 uses non-canonical relation ENT-001 used_platform ENT-007",
+            "reasoning step 1 uses non-canonical relation ENT-001 used_platform ENT-008",
+            "reasoning step 1 uses non-canonical relation ENT-001 used_platform ENT-009",
+            "reasoning step 1 uses non-canonical relation ENT-001 used_platform ENT-010",
+            "reasoning step 2 uses non-canonical relation ENT-001 part_of_operation ENT-002",
+            "reasoning step 2 uses non-canonical relation ENT-003 funded_or_controlled ENT-004",
+            "reasoning step 2 uses non-canonical relation ENT-003 supported_or_promoted ENT-001",
+            "reasoning step 2 uses non-canonical relation ENT-004 funding_or_support_company ENT-001",
+            "reasoning step 2 uses non-canonical relation ENT-005 funding_or_support_company ENT-001",
+            "reasoning step 2 uses non-canonical relation ENT-001 based_in ENT-006",
+            "reasoning step 2 uses non-canonical relation ENT-001 used_platform ENT-007",
+            "reasoning step 2 uses non-canonical relation ENT-001 used_platform ENT-008",
+            "reasoning step 2 uses non-canonical relation ENT-001 used_platform ENT-009",
+            "reasoning step 2 uses non-canonical relation ENT-001 used_platform ENT-010",
+            "reasoning step 3 uses non-canonical relation source_traceability",
+            "reasoning step 3 uses non-canonical relation documented_fact_vs_reasonable_inference",
+            "reasoning step 3 uses non-canonical relation incomplete_scope",
+            "reasoning step 3 uses non-canonical relation other_russian_vectors",
+            "reasoning step 3 uses non-canonical relation dataset_limitations"
+          ]
+        },
+        "entities": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 12,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missing": [
+            [
+              "alias",
+              "project lakhta"
+            ],
+            [
+              "location",
+              "st. petersburg, russia"
+            ],
+            [
+              "organization",
+              "concord catering"
+            ],
+            [
+              "organization",
+              "concord management and consulting llc"
+            ],
+            [
+              "organization",
+              "facebook"
+            ],
+            [
+              "organization",
+              "instagram"
+            ],
+            [
+              "organization",
+              "internet research agency"
+            ],
+            [
+              "organization",
+              "twitter"
+            ],
+            [
+              "organization",
+              "youtube"
+            ],
+            [
+              "person",
+              "donald trump"
+            ],
+            [
+              "person",
+              "hillary clinton"
+            ],
+            [
+              "person",
+              "yevgeniy viktorovich prigozhin"
+            ]
+          ],
+          "unexpected": []
+        },
+        "relations": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 11,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missing": [
+            [
+              [
+                "organization",
+                "concord catering"
+              ],
+              "funding_or_support_company",
+              [
+                "organization",
+                "internet research agency"
+              ]
+            ],
+            [
+              [
+                "organization",
+                "concord management and consulting llc"
+              ],
+              "funding_or_support_company",
+              [
+                "organization",
+                "internet research agency"
+              ]
+            ],
+            [
+              [
+                "organization",
+                "internet research agency"
+              ],
+              "located_in",
+              [
+                "location",
+                "st. petersburg, russia"
+              ]
+            ],
+            [
+              [
+                "organization",
+                "internet research agency"
+              ],
+              "part_of_operation",
+              [
+                "alias",
+                "project lakhta"
+              ]
+            ],
+            [
+              [
+                "organization",
+                "internet research agency"
+              ],
+              "supported_or_promoted",
+              [
+                "person",
+                "donald trump"
+              ]
+            ],
+            [
+              [
+                "organization",
+                "internet research agency"
+              ],
+              "targeted_against",
+              [
+                "person",
+                "hillary clinton"
+              ]
+            ],
+            [
+              [
+                "organization",
+                "internet research agency"
+              ],
+              "used_platform",
+              [
+                "organization",
+                "facebook"
+              ]
+            ],
+            [
+              [
+                "organization",
+                "internet research agency"
+              ],
+              "used_platform",
+              [
+                "organization",
+                "instagram"
+              ]
+            ],
+            [
+              [
+                "organization",
+                "internet research agency"
+              ],
+              "used_platform",
+              [
+                "organization",
+                "twitter"
+              ]
+            ],
+            [
+              [
+                "organization",
+                "internet research agency"
+              ],
+              "used_platform",
+              [
+                "organization",
+                "youtube"
+              ]
+            ],
+            [
+              [
+                "person",
+                "yevgeniy viktorovich prigozhin"
+              ],
+              "funded_or_controlled",
+              [
+                "organization",
+                "internet research agency"
+              ]
+            ]
+          ],
+          "unexpected": [],
+          "semantic_mapping": {
+            "also_known_as": "alias_of",
+            "alias_of": "alias_of",
+            "co_founded": "founded",
+            "founded": "founded",
+            "based_in": "located_in",
+            "located_in": "located_in",
+            "performed_special_audit": "audited",
+            "audited": "audited",
+            "former_coo_of": "executive_of",
+            "executive_of": "executive_of",
+            "provided_software": "provided",
+            "distributed_as_installer": "distributed",
+            "contained_malware": "contained",
+            "trojanized": "compromised",
+            "associated_with": "associated_with",
+            "linked_to": "associated_with",
+            "uses_or_is_associated_with": "associated_with"
+          }
+        },
+        "contradictions": {
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "details": [
+            {
+              "contradiction_id": "CONTRA-001",
+              "source_references_correct": true,
+              "source_reference_recall": 1.0
+            }
+          ],
+          "missing": [],
+          "unexpected": [],
+          "grounded_recall": 1.0,
+          "grounded_f1": 1.0
+        },
+        "key_findings": {
+          "score": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "predicted": 9,
+          "expected": 3,
+          "matched": 0,
+          "details": [
+            {
+              "question": "What organization was behind the influence operation?",
+              "status": "missing",
+              "score": 0.0
+            },
+            {
+              "question": "What tactics should be extracted?",
+              "status": "missing",
+              "score": 0.0
+            },
+            {
+              "question": "What objectives should be reported carefully?",
+              "status": "missing",
+              "score": 0.0
+            }
+          ]
+        },
+        "source_traceability": {
+          "correct_sources": [
+            "SRC-001",
+            "SRC-002",
+            "SRC-003",
+            "SRC-004"
+          ],
+          "unknown_sources": [],
+          "unavailable_sources": [],
+          "source_precision": 1.0,
+          "source_recall": 1.0,
+          "ratio": 1.0,
+          "claim_level": {
+            "claims": 10,
+            "traceable_claims": 10,
+            "ratio": 1.0,
+            "unknown_sources": [],
+            "unavailable_sources": []
+          },
+          "finding_level": {
+            "findings": 9,
+            "traceable_findings": 9,
+            "ratio": 1.0
+          }
+        },
+        "reasoning_coverage": {
+          "covered": [
+            1,
+            2,
+            3
+          ],
+          "invalid": [],
+          "total": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "ratio": 1.0,
+          "status": "structured_step_ids"
+        },
+        "report_quality": {
+          "score": 0.6666666666666666,
+          "checks": {
+            "non_empty": true,
+            "structured_output_complete": true,
+            "structured_output_valid": false,
+            "findings_present": true,
+            "findings_match": false,
+            "claims_traceable": true,
+            "contradictions_complete": true,
+            "contradictions_grounded": true,
+            "finding_sources_grounded": true,
+            "reasoning_conclusions_grounded": false,
+            "uncertainty_language": true,
+            "readable_length": false
+          },
+          "scale": "deterministic rubric 0-1"
+        },
+        "reasoning_quality": {
+          "covered": 3,
+          "expected": 3,
+          "coverage": 1.0,
+          "semantic_similarity": 0.25925925925925924,
+          "premise_grounding": 0.6666666666666666,
+          "grounded_score": 0.2037037037037037,
+          "method": "premise_ids_plus_token_entailment_proxy",
+          "details": [
+            {
+              "id": 1,
+              "premise_score": 1.0,
+              "entity_recall": 1.0,
+              "relation_recall": 1.0,
+              "conclusion_similarity": 0.4444444444444444,
+              "invalid_premise_entities": [],
+              "invalid_premise_relations": [
+                "ent-001 supported_or_promoted ent-012",
+                "ent-001 targeted_against ent-011",
+                "ent-001 used_platform ent-007",
+                "ent-001 used_platform ent-008",
+                "ent-001 used_platform ent-009",
+                "ent-001 used_platform ent-010"
+              ],
+              "grounded_score": 0.4444444444444444
+            },
+            {
+              "id": 2,
+              "premise_score": 0.5,
+              "entity_recall": 1.0,
+              "relation_recall": 0.0,
+              "conclusion_similarity": 0.3333333333333333,
+              "invalid_premise_entities": [],
+              "invalid_premise_relations": [
+                "ent-001 based_in ent-006",
+                "ent-001 part_of_operation ent-002",
+                "ent-001 used_platform ent-007",
+                "ent-001 used_platform ent-008",
+                "ent-001 used_platform ent-009",
+                "ent-001 used_platform ent-010",
+                "ent-003 funded_or_controlled ent-004",
+                "ent-003 supported_or_promoted ent-001",
+                "ent-004 funding_or_support_company ent-001",
+                "ent-005 funding_or_support_company ent-001"
+              ],
+              "grounded_score": 0.16666666666666666
+            },
+            {
+              "id": 3,
+              "premise_score": 0.5,
+              "entity_recall": 1.0,
+              "relation_recall": 0.0,
+              "conclusion_similarity": 0.0,
+              "invalid_premise_entities": [],
+              "invalid_premise_relations": [
+                "dataset_limitations",
+                "documented_fact_vs_reasonable_inference",
+                "incomplete_scope",
+                "other_russian_vectors",
+                "source_traceability"
+              ],
+              "grounded_score": 0.0
+            }
+          ]
+        },
+        "operational": {}
+      }
+    }
+  ]
+}

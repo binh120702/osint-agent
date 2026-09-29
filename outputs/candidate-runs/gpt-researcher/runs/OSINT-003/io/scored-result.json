@@ -1,0 +1,120 @@
+{
+  "case_id": "OSINT-003",
+  "candidate": "assafelovic/gpt-researcher",
+  "adaptation": "native-workflow-snapshot-retriever-file-inference-v1",
+  "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-003/io/candidate-result.json",
+  "artifact_sha256": "340acbef95e624e7f7a62eea2ead14884d427923f9c9eda1a0a48b39ef514c03",
+  "output_summary": {
+    "source_references": [
+      "SRC-001",
+      "SRC-002",
+      "SRC-003"
+    ],
+    "key_findings": [
+      {
+        "question": "Which group was publicly attributed with the Ronin Network theft?",
+        "answer": "The supplied sources attribute the Ronin Network bridge theft to Lazarus Group. Elliptic reported that the Ronin exploiter’s Ethereum address was listed by OFAC as owned by Lazarus Group; Chainalysis described Lazarus Group’s role in the theft and subsequent laundering.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-003",
+          "ENT-005"
+        ],
+        "source_references": [
+          "SRC-002",
+          "SRC-003"
+        ]
+      },
+      {
+        "question": "Which group was publicly attributed with the Harmony Horizon Bridge theft?",
+        "answer": "Elliptic reported that the FBI confirmed Lazarus Group was behind the June 2022 Harmony Horizon Bridge hack, which involved approximately $99.7 million in stolen assets.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-004"
+        ],
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "question": "What laundering service was associated with funds from the Ronin and Harmony thefts?",
+        "answer": "The supplied sources associate Tornado Cash with laundering funds from both incidents. Elliptic reported that Harmony and Ronin funds were sent through Tornado Cash, while Chainalysis described Tornado Cash as part of the laundering process for Ronin-related funds.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-007"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003"
+        ]
+      },
+      {
+        "question": "What is supported about the listed wallet sets?",
+        "answer": "Elliptic’s supplied Ronin article supports that the Ronin exploiter’s Ethereum address was listed by OFAC as Lazarus-controlled. The supplied snapshot does not provide evidence identifying a separate set of FBI-listed Harmony wallets or establish that the wallet sets from the two incidents are identical.",
+        "supporting_entities": [
+          "ENT-005",
+          "ENT-006"
+        ],
+        "source_references": [
+          "SRC-003"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "text": "Elliptic reported that OFAC listed the Ronin exploiter’s Ethereum address as owned by Lazarus Group, a North Korean state hacking group.",
+        "source_references": [
+          "SRC-003"
+        ]
+      },
+      {
+        "text": "Chainalysis reported that Lazarus Group gained access to five of nine Ronin validator keys and that more than $30 million in cryptocurrency stolen by North Korean-linked hackers had been seized.",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "text": "Elliptic reported that the FBI confirmed Lazarus Group was behind the June 2022 Harmony Horizon Bridge hack, in which approximately $99.7 million was stolen.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "text": "Elliptic and Chainalysis reported that Tornado Cash was used in laundering funds associated with the Ronin and Harmony thefts.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003"
+        ]
+      }
+    ],
+    "reasoning_steps": [
+      1,
+      2,
+      3
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "CONTRA-001",
+        "description": "Elliptic reported the Ronin exploiter address as Lazarus-linked, while the FBI later described North Korean-controlled Harmony wallets and named Lazarus/APT38. The sources provide attribution at different points in time and with different wallet sets; they do not prove that every address in either incident is the same wallet. The supplied source text supports the differing incident-specific attribution context, but does not independently reproduce the APT38 designation or a complete FBI Harmony-wallet list.",
+        "source_references": [
+          "SRC-001",
+          "SRC-003"
+        ]
+      }
+    ],
+    "structured_output_valid": true,
+    "structured_output_complete": true,
+    "structured_output_errors": []
+  },
+  "metrics": {
+    "finding_f1": 0.28571428571428575,
+    "contradiction_grounded_f1": 0.5,
+    "reasoning_grounded_score": 0.4444444444444444,
+    "report_quality": 0.75,
+    "source_precision": 1.0,
+    "source_recall": 0.75,
+    "entity_f1": "not_applicable",
+    "relation_f1": "not_applicable"
+  }
+}

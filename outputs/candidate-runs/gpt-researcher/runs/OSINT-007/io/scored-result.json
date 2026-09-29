@@ -1,0 +1,153 @@
+{
+  "case_id": "OSINT-007",
+  "candidate": "assafelovic/gpt-researcher",
+  "adaptation": "native-workflow-snapshot-retriever-file-inference-v1",
+  "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-007/io/candidate-result.json",
+  "artifact_sha256": "8e66ae9397684225ca561910346e60e9dbaa4bc584ae5324ef9e7ff323eaf2b2",
+  "output_summary": {
+    "source_references": [
+      "SRC-001",
+      "SRC-002",
+      "SRC-003",
+      "SRC-004"
+    ],
+    "key_findings": [
+      {
+        "question": "Who is the primary target and what independent public sources describe the case?",
+        "answer": "Xue Samuel Lee / Sam Lee is the primary target identified in the supplied evidence. CNBC and DOJ records describe criminal allegations involving Lee and HyperFund; the SEC complaint describes related civil allegations; and The Guardian provides independent reporting concerning HyperVerse’s promotion and the purported identity of its CEO. The criminal allegations remain allegations, and the DOJ source states that defendants are presumed innocent until proven guilty.",
+        "supporting_entities": [
+          "ENT-001"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "question": "How are the principal people connected to HyperFund?",
+        "answer": "The supplied records identify Lee as an alleged co-founder of HyperFund, Chunga as a HyperFund promoter and top U.S. promoter, and Burton as a HyperFund promoter. Chunga is also identified as “Bitcoin Beautee,” and Burton as “Bitcoin Rodney.”",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-003",
+          "ENT-004"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-004"
+        ]
+      },
+      {
+        "question": "What operational claims were made about HyperFund and what did authorities allege instead?",
+        "answer": "HyperFund promotional materials allegedly promised passive returns of 0.5%–1% per day, potentially doubling or tripling an investment, and attributed payments partly to large-scale crypto mining. The DOJ and SEC materials allege that HyperFund did not conduct the claimed large-scale mining, lacked a legitimate revenue source sufficient to support the promised returns, and used new investor funds to pay withdrawals. These are allegations in the government records.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-004"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-004"
+        ]
+      },
+      {
+        "question": "What was the relationship among HyperFund, HyperVerse, and HyperNation?",
+        "answer": "The SEC complaint states that HyperFund was rebranded as HyperVerse in or about December 2021 and then as HyperNation in or about May 2022. The Guardian reported that a promoter described HyperVerse and HyperNation as “one big entity” and that members were encouraged to migrate to HyperNation after withdrawal problems. The SEC complaint states that HyperFund and its rebranded iterations were defunct.",
+        "supporting_entities": [
+          "ENT-004",
+          "ENT-005",
+          "ENT-006"
+        ],
+        "source_references": [
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "question": "Who was Steven Reece Lewis and what evidence bears on his claimed role?",
+        "answer": "HyperVerse promotional material presented Steven Reece Lewis as its CEO during a December 2021 launch. The SEC complaint alleges that the person presented as Lewis was a paid actor portraying a fabricated character and was not the CEO. The Guardian reported that universities, corporate registers, the SEC, Adobe filings, and Goldman Sachs records did not verify the claimed qualifications or employment history, while noting that Lewis’s identity could not be independently verified.",
+        "supporting_entities": [
+          "ENT-005",
+          "ENT-007"
+        ],
+        "source_references": [
+          "SRC-003",
+          "SRC-004"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "claim": "HyperFund was alleged by U.S. authorities to be a worldwide cryptocurrency fraud, pyramid, and Ponzi scheme that raised approximately $1.7–$1.9 billion.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-004"
+        ]
+      },
+      {
+        "claim": "Xue Samuel Lee / Sam Lee was identified as a co-founder of HyperFund, while Brenda Indah Chunga / Bitcoin Beautee and Rodney Burton / Bitcoin Rodney were identified as promoters.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-004"
+        ]
+      },
+      {
+        "claim": "HyperFund promotional materials promised daily returns of approximately 0.5%–1%, allegedly attributed in part to large-scale cryptocurrency mining; the SEC complaint alleges that such mining operations did not exist and that investor withdrawals were funded by later deposits.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-004"
+        ]
+      },
+      {
+        "claim": "HyperFund was rebranded as HyperVerse in late 2021 and subsequently as HyperNation in May 2022; the SEC complaint states that the projects were later defunct.",
+        "source_references": [
+          "SRC-002",
+          "SRC-004"
+        ]
+      },
+      {
+        "claim": "Steven Reece Lewis was presented as HyperVerse’s CEO, but the SEC complaint alleges that the person presented under that name was a paid actor portraying a fabricated character; The Guardian separately reported that his claimed qualifications and identity could not be verified.",
+        "source_references": [
+          "SRC-003",
+          "SRC-004"
+        ]
+      }
+    ],
+    "reasoning_steps": [
+      1,
+      2,
+      3
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "CONTRA-001",
+        "description": "Promotional material presented Steven Reece Lewis as the CEO of HyperVerse, while SEC and DOJ records allege that the scheme used a false or unsubstantiated executive identity and relied on investor funds rather than mining revenue. The rebrand names also make one organization appear to be several projects.",
+        "source_references": [
+          "SRC-003",
+          "SRC-004"
+        ]
+      }
+    ],
+    "structured_output_valid": true,
+    "structured_output_complete": true,
+    "structured_output_errors": []
+  },
+  "metrics": {
+    "finding_f1": 0.5,
+    "contradiction_grounded_f1": 0.0,
+    "reasoning_grounded_score": 0.5767195767195767,
+    "report_quality": 0.8333333333333334,
+    "source_precision": 1.0,
+    "source_recall": 1.0,
+    "entity_f1": "not_applicable",
+    "relation_f1": "not_applicable"
+  }
+}

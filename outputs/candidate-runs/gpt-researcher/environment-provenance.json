@@ -1,0 +1,25 @@
+{
+  "candidate": "assafelovic/gpt-researcher",
+  "source_revision": "6f998577d547b1e54ec662dac63583aa11e3b84b",
+  "source_snapshot": "source/",
+  "python_required": ">=3.11",
+  "compile_validation": "python -m compileall -q source (passed)",
+  "candidate_dependencies": "source/pyproject.toml and source/requirements.txt",
+  "model_policy": "bounded host-side OpenAI-compatible bridge; no candidate credentials",
+  "retrieval_policy": "immutable benchmark snapshot replay only; no live target collection",
+  "native_workflow": ["GPTResearcher", "conduct_research", "write_report", "visited source tracking"],
+  "adaptation": "explicit-benchmark-contract-v1",
+  "reproducibility_risks": [
+    "large and moving dependency surface",
+    "LLM/provider and search-retriever version sensitivity",
+    "native production defaults expect external services",
+    "snapshot replay is a harness boundary and not full production web-stack equivalence",
+    "native output is Markdown/string rather than independently validated entity/relation graph"
+  ],
+  "artifacts": {
+    "selection": "selection.md",
+    "revision": "source-revision.txt",
+    "hashes": "source-hashes.sha256",
+    "shortlist": "../candidate-shortlist.md"
+  }
+}

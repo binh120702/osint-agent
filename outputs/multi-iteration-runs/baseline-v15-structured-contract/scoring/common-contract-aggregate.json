@@ -1,0 +1,214 @@
+{
+  "protocol": "common-contract-track-v1",
+  "candidate": "baseline",
+  "benchmark_snapshot_sha256": "561e463eac51c71d83b97cf20c706395f8ecb3763fdec6d77715c17da9156bd0",
+  "rows": [
+    {
+      "iteration": 1,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-01/OSINT-001/candidate-result.json",
+      "artifact_sha256": "63ca6bbb7fc502f4ea4f5567a5588a01978a2dfae819c602fe93ed4f167e23a5",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.16666666666666666,
+        "contradiction_f1": 0.3333333333333333,
+        "reasoning": 1.0,
+        "report_quality": 0.8333333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-01/OSINT-002/candidate-result.json",
+      "artifact_sha256": "8baa901df47a6a027ab4d7d8ca7d154c0d85b89b000d482a1b54dcfda03d1148",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-01/OSINT-003/candidate-result.json",
+      "artifact_sha256": "935bd3add54cd18c24e56700c442750c92de0a3212f7fa16f74f1b2c50563dfc",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 0.8333333333333334,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-01/OSINT-004/candidate-result.json",
+      "artifact_sha256": "a768142846570da8949f4e5b8a19589a98d7c752f5b119093e009c9c1fa08841",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-01/OSINT-005/candidate-result.json",
+      "artifact_sha256": "9fbc9ca706e4c88ed37f97de0a60ab4a24fff711af27c9b52eac52b4cd9e6606",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 0.875,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-01/OSINT-006/candidate-result.json",
+      "artifact_sha256": "1ea58c482c17bb2f80c95b5b1c98222649d0febd350e240fe35f350e85ef31be",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-01/OSINT-007/candidate-result.json",
+      "artifact_sha256": "c489c822537c4ce29f335d570946f6a52440e3e2c6072ddf48856885c2eb26bd",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-01/OSINT-008/candidate-result.json",
+      "artifact_sha256": "537c193f2339f4095b5b219730269a293c6c6d162ab33a6e151d7b4ea96a11f2",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 1.0,
+        "reasoning": 1.0,
+        "report_quality": 1.0,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-01/OSINT-009/candidate-result.json",
+      "artifact_sha256": "493ad92258eb3326e08f2f134cc7b4f4b987050d46f31c5c8974d4f85dc94600",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/baseline-v15-structured-contract/baseline/iteration-01/OSINT-010/candidate-result.json",
+      "artifact_sha256": "25aceafaf1506a723e39bfe8726c994d6a125aab91f8bb34578f5f004c09a030",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 1.0,
+        "contradiction_f1": 0.5,
+        "reasoning": 1.0,
+        "report_quality": 0.9166666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    }
+  ],
+  "completed_output": {
+    "n_rows": 10,
+    "metrics": {
+      "finding_f1": {
+        "mean": 0.9166666666666666
+      },
+      "contradiction_f1": {
+        "mean": 0.7333333333333333
+      },
+      "reasoning": {
+        "mean": 0.9708333333333334
+      },
+      "report_quality": {
+        "mean": 0.95
+      },
+      "source_precision": {
+        "mean": 1.0
+      },
+      "source_recall": {
+        "mean": 1.0
+      }
+    }
+  },
+  "valid_only": {
+    "n_rows": 10,
+    "metrics": {
+      "finding_f1": {
+        "mean": 0.9166666666666666
+      },
+      "contradiction_f1": {
+        "mean": 0.7333333333333333
+      },
+      "reasoning": {
+        "mean": 0.9708333333333334
+      },
+      "report_quality": {
+        "mean": 0.95
+      },
+      "source_precision": {
+        "mean": 1.0
+      },
+      "source_recall": {
+        "mean": 1.0
+      }
+    }
+  },
+  "validity_rate": 1.0
+}

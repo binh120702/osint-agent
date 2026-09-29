@@ -1,0 +1,426 @@
+{
+  "case_id": "OSINT-002",
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "artifact": "outputs/candidate-runs/open-deep-research/runs/OSINT-002/io/candidate-result.json",
+  "artifact_sha256": "1c442d752f3fb6f9e3eac3473754d6fa6e917262ef97b65652714c29865eabf2",
+  "manifest_sha256": "1c442d752f3fb6f9e3eac3473754d6fa6e917262ef97b65652714c29865eabf2",
+  "manifest_hash_match": true,
+  "report_sha256": "7c89f060b47d7eb618abf1d671c26b67d499390a4c15037ce48713eecee39bcc",
+  "status": "completed",
+  "output_summary": {
+    "available_source_references": [
+      "SRC-001",
+      "SRC-002",
+      "SRC-003",
+      "SRC-004"
+    ],
+    "source_references": [
+      "SRC-001",
+      "SRC-002",
+      "SRC-003",
+      "SRC-004"
+    ],
+    "key_findings": [
+      {
+        "question": "How do the supplied sources characterize Conti?",
+        "answer": "The evidence supports describing Conti as a large ransomware-as-a-service operation involving encryption, data exfiltration, and extortion, while preserving Conti as an organizational label rather than reducing it to a malware name.",
+        "supporting_entities": [
+          "ENT-001"
+        ],
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "question": "What do the leaked chats reveal about Conti’s internal structure?",
+        "answer": "The leaked chats reveal an organized, salaried operation with departments, roles, and internal handles. Target is linked through the leaked-chat evidence, while Stern is retained only as an internal handle and is not assigned a legal identity.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-003",
+          "ENT-004"
+        ],
+        "source_references": [
+          "SRC-002",
+          "SRC-003"
+        ]
+      },
+      {
+        "question": "How are aliases and law-enforcement records connected?",
+        "answer": "Wizard Spider is linked to the Conti investigation through Rewards for Justice, while TrickBot, Maksim Galochkin, and Oleksii Lytvynenko are addressed separately through DOJ material. These relationships do not establish that aliases, malware, charges, and convictions are interchangeable.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-005",
+          "ENT-006",
+          "ENT-007"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-004"
+        ]
+      },
+      {
+        "question": "What is the correct interpretation of the apparent source tension?",
+        "answer": "The tension is primarily a difference in analytic level: leaked chats describe an organization with salaries, departments, roles, and handles, while FBI/CISA-facing descriptions characterize observable activity as a ransomware variant and intrusion campaign.",
+        "supporting_entities": [
+          "ENT-001"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "claim": "Conti (ENT-001) is characterized as a large ransomware operation involving encryption, data exfiltration, and extortion.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "The leaked internal chats characterize Conti as an organized, salaried operation with departments, roles, and internal handles, including Target (ENT-003) and Stern (ENT-004) as names appearing in the leaked-chat evidence.",
+        "source_references": [
+          "SRC-002",
+          "SRC-003"
+        ]
+      },
+      {
+        "claim": "Wizard Spider (ENT-002) is linked to the Conti investigation through Rewards for Justice; the linkage is preserved as an alias or organizational connection and is not treated as a legal-identity attribution.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "DOJ records separately address TrickBot (ENT-005), Maksim Galochkin (ENT-006), and Oleksii Lytvynenko (ENT-007) in relation to malware-ecosystem and alleged related-conspiracy activity; charges, leaked handles, and convictions are not equated.",
+        "source_references": [
+          "SRC-004"
+        ]
+      }
+    ],
+    "reasoning_steps": [
+      1,
+      2,
+      3
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "CONTRA-001",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003"
+        ],
+        "description": "The leaked chats describe Conti as an organized, salaried operation with internal departments and handles, while the FBI/CISA advisories describe the observable criminal activity as a ransomware variant and intrusion campaign. The public materials therefore differ in analytic level: organization versus malware/campaign label."
+      }
+    ],
+    "structured_output_valid": true,
+    "structured_output_complete": true,
+    "structured_output_errors": []
+  },
+  "metrics": {
+    "finding_f1": 0.5714285714285715,
+    "contradiction_grounded_f1": 1.0,
+    "reasoning_grounded_score": 1.0,
+    "report_quality": 0.9166666666666666,
+    "source_precision": 1.0,
+    "source_recall": 1.0,
+    "entity_f1": "not_applicable",
+    "relation_f1": "not_applicable"
+  },
+  "full_metrics": {
+    "output_validation": {
+      "valid": true,
+      "errors": []
+    },
+    "entities": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "missing": [
+        [
+          "alias",
+          "conti"
+        ],
+        [
+          "alias",
+          "stern"
+        ],
+        [
+          "alias",
+          "target"
+        ],
+        [
+          "alias",
+          "trickbot"
+        ],
+        [
+          "alias",
+          "wizard spider"
+        ],
+        [
+          "person",
+          "maksim galochkin"
+        ],
+        [
+          "person",
+          "oleksii lytvynenko"
+        ]
+      ],
+      "unexpected": []
+    },
+    "relations": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 6,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "missing": [
+        [
+          [
+            "alias",
+            "conti"
+          ],
+          "alias_of",
+          [
+            "alias",
+            "wizard spider"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "conti"
+          ],
+          "associated_with_malware_ecosystem",
+          [
+            "alias",
+            "trickbot"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "stern"
+          ],
+          "internal_handle_in_leaked_chats",
+          [
+            "alias",
+            "conti"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "target"
+          ],
+          "linked_alias_to_group",
+          [
+            "alias",
+            "conti"
+          ]
+        ],
+        [
+          [
+            "person",
+            "maksim galochkin"
+          ],
+          "charged_in_related_conspiracy",
+          [
+            "alias",
+            "conti"
+          ]
+        ],
+        [
+          [
+            "person",
+            "oleksii lytvynenko"
+          ],
+          "charged_in_related_conspiracy",
+          [
+            "alias",
+            "conti"
+          ]
+        ]
+      ],
+      "unexpected": [],
+      "semantic_mapping": {
+        "also_known_as": "alias_of",
+        "alias_of": "alias_of",
+        "co_founded": "founded",
+        "founded": "founded",
+        "based_in": "located_in",
+        "located_in": "located_in",
+        "performed_special_audit": "audited",
+        "audited": "audited",
+        "former_coo_of": "executive_of",
+        "executive_of": "executive_of",
+        "provided_software": "provided",
+        "distributed_as_installer": "distributed",
+        "contained_malware": "contained",
+        "trojanized": "compromised",
+        "associated_with": "associated_with",
+        "linked_to": "associated_with",
+        "uses_or_is_associated_with": "associated_with"
+      }
+    },
+    "contradictions": {
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "details": [
+        {
+          "contradiction_id": "CONTRA-001",
+          "source_references_correct": true,
+          "source_reference_recall": 1.0
+        }
+      ],
+      "missing": [],
+      "unexpected": [],
+      "grounded_recall": 1.0,
+      "grounded_f1": 1.0
+    },
+    "key_findings": {
+      "score": 0.27499999999999997,
+      "precision": 0.5,
+      "recall": 0.6666666666666666,
+      "f1": 0.5714285714285715,
+      "predicted": 4,
+      "expected": 3,
+      "matched": 2,
+      "details": [
+        {
+          "question": "What was Conti operating as?",
+          "status": "missing",
+          "score": 0.0
+        },
+        {
+          "question": "Which public sources expose internal structure?",
+          "status": "matched",
+          "score": 0.375,
+          "semantic": 0.375,
+          "supporting_entity_recall": 1.0,
+          "source_recall": 1.0,
+          "has_source_references": true
+        },
+        {
+          "question": "How do law-enforcement records add attribution pivots?",
+          "status": "matched",
+          "score": 0.44999999999999996,
+          "semantic": 0.5,
+          "supporting_entity_recall": 0.6666666666666666,
+          "source_recall": 1.0,
+          "has_source_references": true
+        }
+      ]
+    },
+    "source_traceability": {
+      "correct_sources": [
+        "SRC-001",
+        "SRC-002",
+        "SRC-003",
+        "SRC-004"
+      ],
+      "unknown_sources": [],
+      "unavailable_sources": [],
+      "source_precision": 1.0,
+      "source_recall": 1.0,
+      "ratio": 1.0,
+      "claim_level": {
+        "claims": 4,
+        "traceable_claims": 4,
+        "ratio": 1.0,
+        "unknown_sources": [],
+        "unavailable_sources": []
+      },
+      "finding_level": {
+        "findings": 4,
+        "traceable_findings": 4,
+        "ratio": 1.0
+      }
+    },
+    "reasoning_coverage": {
+      "covered": [
+        1,
+        2,
+        3
+      ],
+      "invalid": [],
+      "total": 3,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "ratio": 1.0,
+      "status": "structured_step_ids"
+    },
+    "report_quality": {
+      "score": 0.9166666666666666,
+      "checks": {
+        "non_empty": true,
+        "structured_output_complete": true,
+        "structured_output_valid": true,
+        "findings_present": true,
+        "findings_match": false,
+        "claims_traceable": true,
+        "contradictions_complete": true,
+        "contradictions_grounded": true,
+        "finding_sources_grounded": true,
+        "reasoning_conclusions_grounded": true,
+        "uncertainty_language": true,
+        "readable_length": true
+      },
+      "scale": "deterministic rubric 0-1"
+    },
+    "reasoning_quality": {
+      "covered": 3,
+      "expected": 3,
+      "coverage": 1.0,
+      "semantic_similarity": 1.0,
+      "premise_grounding": 1.0,
+      "grounded_score": 1.0,
+      "method": "premise_ids_plus_token_entailment_proxy",
+      "details": [
+        {
+          "id": 1,
+          "premise_score": 1.0,
+          "entity_recall": 1.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 1.0,
+          "invalid_premise_entities": [],
+          "invalid_premise_relations": [],
+          "grounded_score": 1.0
+        },
+        {
+          "id": 2,
+          "premise_score": 1.0,
+          "entity_recall": 1.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 1.0,
+          "invalid_premise_entities": [],
+          "invalid_premise_relations": [],
+          "grounded_score": 1.0
+        },
+        {
+          "id": 3,
+          "premise_score": 1.0,
+          "entity_recall": 1.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 1.0,
+          "invalid_premise_entities": [],
+          "invalid_premise_relations": [],
+          "grounded_score": 1.0
+        }
+      ]
+    },
+    "operational": {}
+  }
+}

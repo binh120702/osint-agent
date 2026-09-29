@@ -1,0 +1,124 @@
+{
+  "case_id": "OSINT-006",
+  "candidate": "assafelovic/gpt-researcher",
+  "adaptation": "native-workflow-snapshot-retriever-file-inference-v1",
+  "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-006/io/candidate-result.json",
+  "artifact_sha256": "04d1f24c908ea5ccb61633767d42a9c9a23a35f1f97035074df0cc235e4321da",
+  "output_summary": {
+    "source_references": [
+      "SRC-001",
+      "SRC-002"
+    ],
+    "key_findings": [
+      {
+        "question": "What was the primary target and vulnerability?",
+        "answer": "MOVEit Transfer was targeted through CVE-2023-34362, a critical SQL injection vulnerability affecting vulnerable and unpatched versions. The vulnerability could permit unauthenticated database access and was exploited over HTTP or HTTPS.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "What malware was deployed and what could it do?",
+        "answer": "LEMURLOOT was deployed as a C# web shell tailored to MOVEit Transfer. It could retrieve files, query file and folder information, extract Azure storage configuration data, and create or delete a “Health Check Service” user.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-003"
+        ],
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "question": "What attribution is supported by the snapshot?",
+        "answer": "Mandiant initially attributed the activity to UNC4857 and subsequently merged UNC4857 into FIN11 based on overlaps in targeting, infrastructure, certificates, and data-leak-site activity.",
+        "supporting_entities": [
+          "ENT-003",
+          "ENT-004",
+          "ENT-005",
+          "ENT-007"
+        ],
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "question": "What is the relationship between the CL0P leak-site activity and operator attribution?",
+        "answer": "The CL0P^_-LEAKS site claimed responsibility and threatened extortion after the exploitation was observed. This supports an extortion pivot, but does not by itself prove that every exploit was performed by the same operator.",
+        "supporting_entities": [
+          "ENT-005",
+          "ENT-006",
+          "ENT-007"
+        ],
+        "source_references": [
+          "SRC-001"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "source_references": [
+          "SRC-001"
+        ],
+        "text": "Mandiant observed wide exploitation of a zero-day vulnerability in MOVEit Transfer for subsequent data theft, with earliest evidence in its engagements occurring on May 27, 2023."
+      },
+      {
+        "source_references": [
+          "SRC-002"
+        ],
+        "text": "CVE-2023-34362 is a SQL injection vulnerability in MOVEit Transfer that could allow an unauthenticated attacker to access the database and potentially alter or delete database elements."
+      },
+      {
+        "source_references": [
+          "SRC-001"
+        ],
+        "text": "Following exploitation, actors deployed the LEMURLOOT web shell, tailored to interact with MOVEit Transfer."
+      },
+      {
+        "source_references": [
+          "SRC-001"
+        ],
+        "text": "Mandiant initially attributed the activity to UNC4857 and later merged UNC4857 into FIN11 based on targeting, infrastructure, certificate, and data-leak-site overlaps."
+      },
+      {
+        "source_references": [
+          "SRC-001"
+        ],
+        "text": "The CL0P^_-LEAKS data-leak site claimed responsibility and threatened to publish stolen data unless victims paid an extortion fee."
+      }
+    ],
+    "reasoning_steps": [
+      1,
+      2,
+      3
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "CONTRA-001",
+        "description": "CVE and vendor advisories establish a vulnerability and exploitation window, while Mandiant's reporting identifies LEMURLOOT and links the activity to UNC4857/FIN11. CL0P's leak-site behavior is an extortion and victim-notification pivot, not by itself proof that every exploit was performed by the same operator.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      }
+    ],
+    "structured_output_valid": true,
+    "structured_output_complete": true,
+    "structured_output_errors": []
+  },
+  "metrics": {
+    "finding_f1": 0.5714285714285715,
+    "contradiction_grounded_f1": 1.0,
+    "reasoning_grounded_score": 0.48677248677248675,
+    "report_quality": 0.8333333333333334,
+    "source_precision": 1.0,
+    "source_recall": 1.0,
+    "entity_f1": "not_applicable",
+    "relation_f1": "not_applicable"
+  }
+}

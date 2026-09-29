@@ -1,0 +1,703 @@
+{
+  "case_id": "OSINT-010",
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "artifact": "outputs/candidate-runs/open-deep-research/runs/OSINT-010/io/candidate-result.json",
+  "artifact_sha256": "bb382dd5aef4e7e062278b58f7c873390a7426fa8177ce1584de22c47293e121",
+  "manifest_sha256": "bb382dd5aef4e7e062278b58f7c873390a7426fa8177ce1584de22c47293e121",
+  "manifest_hash_match": true,
+  "report_sha256": "ac9b0ffd988e14a6796d397340835055d7b53b34eb287f655a24ed230b2b1872",
+  "status": "completed",
+  "output_summary": {
+    "available_source_references": [
+      "SRC-001",
+      "SRC-002",
+      "SRC-003",
+      "SRC-004"
+    ],
+    "source_references": [
+      "SRC-001",
+      "SRC-002",
+      "SRC-003",
+      "SRC-004"
+    ],
+    "key_findings": [
+      {
+        "question": "What was ENT-001 and where was it based?",
+        "answer": "ENT-001 was a Russian political and electoral interference organization based operationally in ENT-006, St. Petersburg, Russia.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-006"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "question": "How was ENT-001 related to ENT-002, ENT-003, ENT-004, and ENT-005?",
+        "answer": "ENT-001 operated within ENT-002 Project Lakhta; ENT-003 controlled ENT-004 and supported ENT-001; and ENT-004 and ENT-005 collectively funded and oversaw ENT-001 through CONCORD.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-003",
+          "ENT-004",
+          "ENT-005"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-003"
+        ]
+      },
+      {
+        "question": "Which platforms did ENT-001 use?",
+        "answer": "ENT-001 used Facebook, Twitter, Instagram, and YouTube through coordinated pages, groups, accounts, advertisements, hashtags, videos, events, direct messages, and cross-platform promotion.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-007",
+          "ENT-008",
+          "ENT-009",
+          "ENT-010"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "question": "What were the primary political and demographic targets?",
+        "answer": "ENT-011 was the strongest candidate-level target, ENT-012 was the strongest documented candidate-level beneficiary before the election, and African-Americans were the strongest demographic target.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-011",
+          "ENT-012"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003"
+        ]
+      },
+      {
+        "question": "How did the operation work?",
+        "answer": "ENT-001 combined deceptive personas, concealed funding, hidden infrastructure, audience research, platform-specific content, engagement measurement, cross-platform networks, paid promotion, organic posting, and offline mobilization.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-006",
+          "ENT-007",
+          "ENT-008",
+          "ENT-009",
+          "ENT-010"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "question": "What political objectives are directly supported?",
+        "answer": "The sources support objectives of harming Hillary Clinton, supporting Donald Trump before the election, suppressing or diverting likely Clinton voters, spreading distrust, and intensifying social and political division.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-011",
+          "ENT-012"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003"
+        ]
+      },
+      {
+        "question": "What were the platform-specific operational emphases?",
+        "answer": "Facebook emphasized pages, groups, advertisements, and events; Instagram emphasized visual engagement and identity-based audiences; Twitter emphasized volume, hashtags, personas, and amplification; YouTube emphasized race, police brutality, and Black Lives Matter content.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-007",
+          "ENT-008",
+          "ENT-009",
+          "ENT-010"
+        ],
+        "source_references": [
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "question": "What effects are documented?",
+        "answer": "The evidence documents large-scale exposure and engagement, audience growth, event promotion, recruitment of real U.S. persons, petitions, information collection, self-defense training, voter-suppression messaging, and continued post-election activity.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-007",
+          "ENT-008",
+          "ENT-009",
+          "ENT-010"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "question": "What caveats must be preserved?",
+        "answer": "The indictment is a charging document, the Senate datasets were incomplete, platform attribution was not independently verified in every case, other Russian actors operated separately, and the evidence does not establish that every divisive online post was created by ENT-001.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-003",
+          "ENT-004",
+          "ENT-005",
+          "ENT-006",
+          "ENT-007",
+          "ENT-008",
+          "ENT-009",
+          "ENT-010",
+          "ENT-011",
+          "ENT-012"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "claim": "ENT-001 was a St. Petersburg-based Russian organization engaged in political and electoral interference.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "ENT-001 operated within ENT-002 Project Lakhta and was funded and overseen through the CONCORD structure involving ENT-003, ENT-004, and ENT-005.",
+        "source_references": [
+          "SRC-001",
+          "SRC-003"
+        ]
+      },
+      {
+        "claim": "The funding structure concealed CONCORD's involvement through software-support labels and affiliate bank accounts.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "ENT-001 used fake U.S. personas, stolen identities, U.S.-based servers, virtual private networks, false email accounts, advertisements, organic content, and direct contact with real U.S. persons.",
+        "source_references": [
+          "SRC-001",
+          "SRC-003"
+        ]
+      },
+      {
+        "claim": "ENT-001 used Facebook, Twitter, Instagram, and YouTube with different platform-specific operational emphases.",
+        "source_references": [
+          "SRC-001",
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "claim": "The strongest candidate-level target was ENT-011, while ENT-012 was supported or promoted, especially before the election.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003"
+        ]
+      },
+      {
+        "claim": "African-Americans were the strongest documented demographic target, with race and police-related content receiving exceptional operational emphasis.",
+        "source_references": [
+          "SRC-002",
+          "SRC-003"
+        ]
+      },
+      {
+        "claim": "The campaign used voter-suppression narratives, third-party promotion, anti-Clinton messages, pro-Trump messages, and rally coordination.",
+        "source_references": [
+          "SRC-001",
+          "SRC-003"
+        ]
+      },
+      {
+        "claim": "The operation continued and expanded after Election Day 2016 and used both pro-Trump and anti-Trump activity to sustain polarization.",
+        "source_references": [
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "claim": "The DOJ indictment emphasizes fake personas and concealed funding, while Senate reporting emphasizes content, audience targeting, platform data, and political effects.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ]
+      }
+    ],
+    "reasoning_steps": [
+      1,
+      2,
+      3
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "CONTRA-001",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ],
+        "description": "The DOJ indictment describes a Russian influence operation using fake personas and concealed funding, while Senate reporting focuses on the campaign's content, audience targeting, and political effects. Neither source supports the claim that every divisive online post was created by the IRA."
+      }
+    ],
+    "structured_output_valid": false,
+    "structured_output_complete": true,
+    "structured_output_errors": [
+      "reasoning step 1 uses non-canonical relation ENT-001 targeted_against ENT-011",
+      "reasoning step 1 uses non-canonical relation ENT-001 supported_or_promoted ENT-012",
+      "reasoning step 1 uses non-canonical relation ENT-001 used_platform ENT-007",
+      "reasoning step 1 uses non-canonical relation ENT-001 used_platform ENT-008",
+      "reasoning step 1 uses non-canonical relation ENT-001 used_platform ENT-009",
+      "reasoning step 1 uses non-canonical relation ENT-001 used_platform ENT-010",
+      "reasoning step 2 uses non-canonical relation ENT-001 part_of_operation ENT-002",
+      "reasoning step 2 uses non-canonical relation ENT-003 funded_or_controlled ENT-004",
+      "reasoning step 2 uses non-canonical relation ENT-003 supported_or_promoted ENT-001",
+      "reasoning step 2 uses non-canonical relation ENT-004 funding_or_support_company ENT-001",
+      "reasoning step 2 uses non-canonical relation ENT-005 funding_or_support_company ENT-001",
+      "reasoning step 2 uses non-canonical relation ENT-001 based_in ENT-006",
+      "reasoning step 2 uses non-canonical relation ENT-001 used_platform ENT-007",
+      "reasoning step 2 uses non-canonical relation ENT-001 used_platform ENT-008",
+      "reasoning step 2 uses non-canonical relation ENT-001 used_platform ENT-009",
+      "reasoning step 2 uses non-canonical relation ENT-001 used_platform ENT-010",
+      "reasoning step 3 uses non-canonical relation source_traceability",
+      "reasoning step 3 uses non-canonical relation documented_fact_vs_reasonable_inference",
+      "reasoning step 3 uses non-canonical relation incomplete_scope",
+      "reasoning step 3 uses non-canonical relation other_russian_vectors",
+      "reasoning step 3 uses non-canonical relation dataset_limitations"
+    ]
+  },
+  "metrics": {
+    "finding_f1": 0.0,
+    "contradiction_grounded_f1": 1.0,
+    "reasoning_grounded_score": 0.2037037037037037,
+    "report_quality": 0.6666666666666666,
+    "source_precision": 1.0,
+    "source_recall": 1.0,
+    "entity_f1": "not_applicable",
+    "relation_f1": "not_applicable"
+  },
+  "full_metrics": {
+    "output_validation": {
+      "valid": false,
+      "errors": [
+        "reasoning step 1 uses non-canonical relation ENT-001 targeted_against ENT-011",
+        "reasoning step 1 uses non-canonical relation ENT-001 supported_or_promoted ENT-012",
+        "reasoning step 1 uses non-canonical relation ENT-001 used_platform ENT-007",
+        "reasoning step 1 uses non-canonical relation ENT-001 used_platform ENT-008",
+        "reasoning step 1 uses non-canonical relation ENT-001 used_platform ENT-009",
+        "reasoning step 1 uses non-canonical relation ENT-001 used_platform ENT-010",
+        "reasoning step 2 uses non-canonical relation ENT-001 part_of_operation ENT-002",
+        "reasoning step 2 uses non-canonical relation ENT-003 funded_or_controlled ENT-004",
+        "reasoning step 2 uses non-canonical relation ENT-003 supported_or_promoted ENT-001",
+        "reasoning step 2 uses non-canonical relation ENT-004 funding_or_support_company ENT-001",
+        "reasoning step 2 uses non-canonical relation ENT-005 funding_or_support_company ENT-001",
+        "reasoning step 2 uses non-canonical relation ENT-001 based_in ENT-006",
+        "reasoning step 2 uses non-canonical relation ENT-001 used_platform ENT-007",
+        "reasoning step 2 uses non-canonical relation ENT-001 used_platform ENT-008",
+        "reasoning step 2 uses non-canonical relation ENT-001 used_platform ENT-009",
+        "reasoning step 2 uses non-canonical relation ENT-001 used_platform ENT-010",
+        "reasoning step 3 uses non-canonical relation source_traceability",
+        "reasoning step 3 uses non-canonical relation documented_fact_vs_reasonable_inference",
+        "reasoning step 3 uses non-canonical relation incomplete_scope",
+        "reasoning step 3 uses non-canonical relation other_russian_vectors",
+        "reasoning step 3 uses non-canonical relation dataset_limitations"
+      ]
+    },
+    "entities": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 12,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "missing": [
+        [
+          "alias",
+          "project lakhta"
+        ],
+        [
+          "location",
+          "st. petersburg, russia"
+        ],
+        [
+          "organization",
+          "concord catering"
+        ],
+        [
+          "organization",
+          "concord management and consulting llc"
+        ],
+        [
+          "organization",
+          "facebook"
+        ],
+        [
+          "organization",
+          "instagram"
+        ],
+        [
+          "organization",
+          "internet research agency"
+        ],
+        [
+          "organization",
+          "twitter"
+        ],
+        [
+          "organization",
+          "youtube"
+        ],
+        [
+          "person",
+          "donald trump"
+        ],
+        [
+          "person",
+          "hillary clinton"
+        ],
+        [
+          "person",
+          "yevgeniy viktorovich prigozhin"
+        ]
+      ],
+      "unexpected": []
+    },
+    "relations": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 11,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "missing": [
+        [
+          [
+            "organization",
+            "concord catering"
+          ],
+          "funding_or_support_company",
+          [
+            "organization",
+            "internet research agency"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "concord management and consulting llc"
+          ],
+          "funding_or_support_company",
+          [
+            "organization",
+            "internet research agency"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "internet research agency"
+          ],
+          "located_in",
+          [
+            "location",
+            "st. petersburg, russia"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "internet research agency"
+          ],
+          "part_of_operation",
+          [
+            "alias",
+            "project lakhta"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "internet research agency"
+          ],
+          "supported_or_promoted",
+          [
+            "person",
+            "donald trump"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "internet research agency"
+          ],
+          "targeted_against",
+          [
+            "person",
+            "hillary clinton"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "internet research agency"
+          ],
+          "used_platform",
+          [
+            "organization",
+            "facebook"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "internet research agency"
+          ],
+          "used_platform",
+          [
+            "organization",
+            "instagram"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "internet research agency"
+          ],
+          "used_platform",
+          [
+            "organization",
+            "twitter"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "internet research agency"
+          ],
+          "used_platform",
+          [
+            "organization",
+            "youtube"
+          ]
+        ],
+        [
+          [
+            "person",
+            "yevgeniy viktorovich prigozhin"
+          ],
+          "funded_or_controlled",
+          [
+            "organization",
+            "internet research agency"
+          ]
+        ]
+      ],
+      "unexpected": [],
+      "semantic_mapping": {
+        "also_known_as": "alias_of",
+        "alias_of": "alias_of",
+        "co_founded": "founded",
+        "founded": "founded",
+        "based_in": "located_in",
+        "located_in": "located_in",
+        "performed_special_audit": "audited",
+        "audited": "audited",
+        "former_coo_of": "executive_of",
+        "executive_of": "executive_of",
+        "provided_software": "provided",
+        "distributed_as_installer": "distributed",
+        "contained_malware": "contained",
+        "trojanized": "compromised",
+        "associated_with": "associated_with",
+        "linked_to": "associated_with",
+        "uses_or_is_associated_with": "associated_with"
+      }
+    },
+    "contradictions": {
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "details": [
+        {
+          "contradiction_id": "CONTRA-001",
+          "source_references_correct": true,
+          "source_reference_recall": 1.0
+        }
+      ],
+      "missing": [],
+      "unexpected": [],
+      "grounded_recall": 1.0,
+      "grounded_f1": 1.0
+    },
+    "key_findings": {
+      "score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "predicted": 9,
+      "expected": 3,
+      "matched": 0,
+      "details": [
+        {
+          "question": "What organization was behind the influence operation?",
+          "status": "missing",
+          "score": 0.0
+        },
+        {
+          "question": "What tactics should be extracted?",
+          "status": "missing",
+          "score": 0.0
+        },
+        {
+          "question": "What objectives should be reported carefully?",
+          "status": "missing",
+          "score": 0.0
+        }
+      ]
+    },
+    "source_traceability": {
+      "correct_sources": [
+        "SRC-001",
+        "SRC-002",
+        "SRC-003",
+        "SRC-004"
+      ],
+      "unknown_sources": [],
+      "unavailable_sources": [],
+      "source_precision": 1.0,
+      "source_recall": 1.0,
+      "ratio": 1.0,
+      "claim_level": {
+        "claims": 10,
+        "traceable_claims": 10,
+        "ratio": 1.0,
+        "unknown_sources": [],
+        "unavailable_sources": []
+      },
+      "finding_level": {
+        "findings": 9,
+        "traceable_findings": 9,
+        "ratio": 1.0
+      }
+    },
+    "reasoning_coverage": {
+      "covered": [
+        1,
+        2,
+        3
+      ],
+      "invalid": [],
+      "total": 3,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "ratio": 1.0,
+      "status": "structured_step_ids"
+    },
+    "report_quality": {
+      "score": 0.6666666666666666,
+      "checks": {
+        "non_empty": true,
+        "structured_output_complete": true,
+        "structured_output_valid": false,
+        "findings_present": true,
+        "findings_match": false,
+        "claims_traceable": true,
+        "contradictions_complete": true,
+        "contradictions_grounded": true,
+        "finding_sources_grounded": true,
+        "reasoning_conclusions_grounded": false,
+        "uncertainty_language": true,
+        "readable_length": false
+      },
+      "scale": "deterministic rubric 0-1"
+    },
+    "reasoning_quality": {
+      "covered": 3,
+      "expected": 3,
+      "coverage": 1.0,
+      "semantic_similarity": 0.25925925925925924,
+      "premise_grounding": 0.6666666666666666,
+      "grounded_score": 0.2037037037037037,
+      "method": "premise_ids_plus_token_entailment_proxy",
+      "details": [
+        {
+          "id": 1,
+          "premise_score": 1.0,
+          "entity_recall": 1.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 0.4444444444444444,
+          "invalid_premise_entities": [],
+          "invalid_premise_relations": [
+            "ent-001 supported_or_promoted ent-012",
+            "ent-001 targeted_against ent-011",
+            "ent-001 used_platform ent-007",
+            "ent-001 used_platform ent-008",
+            "ent-001 used_platform ent-009",
+            "ent-001 used_platform ent-010"
+          ],
+          "grounded_score": 0.4444444444444444
+        },
+        {
+          "id": 2,
+          "premise_score": 0.5,
+          "entity_recall": 1.0,
+          "relation_recall": 0.0,
+          "conclusion_similarity": 0.3333333333333333,
+          "invalid_premise_entities": [],
+          "invalid_premise_relations": [
+            "ent-001 based_in ent-006",
+            "ent-001 part_of_operation ent-002",
+            "ent-001 used_platform ent-007",
+            "ent-001 used_platform ent-008",
+            "ent-001 used_platform ent-009",
+            "ent-001 used_platform ent-010",
+            "ent-003 funded_or_controlled ent-004",
+            "ent-003 supported_or_promoted ent-001",
+            "ent-004 funding_or_support_company ent-001",
+            "ent-005 funding_or_support_company ent-001"
+          ],
+          "grounded_score": 0.16666666666666666
+        },
+        {
+          "id": 3,
+          "premise_score": 0.5,
+          "entity_recall": 1.0,
+          "relation_recall": 0.0,
+          "conclusion_similarity": 0.0,
+          "invalid_premise_entities": [],
+          "invalid_premise_relations": [
+            "dataset_limitations",
+            "documented_fact_vs_reasonable_inference",
+            "incomplete_scope",
+            "other_russian_vectors",
+            "source_traceability"
+          ],
+          "grounded_score": 0.0
+        }
+      ]
+    },
+    "operational": {}
+  }
+}

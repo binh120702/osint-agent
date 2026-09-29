@@ -1,0 +1,31 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-001",
+  "report": "Error generating final report: APITimeoutError: Request timed out.",
+  "context": [],
+  "visited_urls": [
+    "https://attack.mitre.org/groups/G0032/",
+    "https://attack.mitre.org/software/S0584/",
+    "https://blog.google/threat-analysis-group/countering-threats-north-korea/",
+    "https://cloud.google.com/blog/topics/threat-intelligence/3cx-software-supply-chain-compromise",
+    "https://securelist.com/gopuram-backdoor-deployed-through-3cx-supply-chain-attack/109344/",
+    "https://www.csa.gov.sg/alerts-and-advisories/alerts/al-2023-040/",
+    "https://www.cybersecuritydive.com/news/supply-chain-attack-3cx-desktop-thousands/646432/",
+    "https://www.wired.com/story/3cx-supply-chain-attack-north-korea-cryptocurrency-targets/",
+    "https://www.wired.com/story/3cx-supply-chain-attack-times-two"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "SRC-001 SRC-002 SRC-003 3CX DesktopApp compromise 2023 trojanized X_TRADER_r7.17.90p608.exe VEILEDSIGNAL",
+        "SRC-004 SRC-005 SRC-006 3CX DesktopApp UNC4736 Gopuram Operation AppleJeus Fast Reverse Proxy",
+        "SRC-007 SRC-008 SRC-009 3CX Mandiant Kaspersky Gopuram fewer than ten machines SUDDENICON ICONICSTEALER"
+      ],
+      "max_results": 10,
+      "topic": "general"
+    }
+  ],
+  "request_count": 11,
+  "duration_seconds": 647.5932310999997
+}

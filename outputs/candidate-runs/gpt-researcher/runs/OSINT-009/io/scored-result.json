@@ -1,0 +1,154 @@
+{
+  "case_id": "OSINT-009",
+  "candidate": "assafelovic/gpt-researcher",
+  "adaptation": "native-workflow-snapshot-retriever-file-inference-v1",
+  "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-009/io/candidate-result.json",
+  "artifact_sha256": "8c1e7b55e58b7549d9ae2c181644588a5165af1cbaa64553b285440aad5e71f9",
+  "output_summary": {
+    "source_references": [
+      "SRC-001",
+      "SRC-002",
+      "SRC-003",
+      "SRC-004"
+    ],
+    "key_findings": [
+      {
+        "question": "What offshore property holdings were attributed to King Abdullah II?",
+        "answer": "Reporting attributed a luxury property portfolio to King Abdullah II, including three Malibu properties, three Washington, DC condominiums, and multiple United Kingdom properties including holdings in London; the ownership was described as being structured through offshore companies registered in jurisdictions including the British Virgin Islands.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-007",
+          "ENT-008",
+          "ENT-009",
+          "ENT-010"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "question": "What was the reported scale of the property portfolio?",
+        "answer": "The reporting described the portfolio as worth more than $100 million. DW reported 14 houses and flats in the United States and United Kingdom valued at more than €91 million, while Al Jazeera reported a property empire of approximately $100 million.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-008",
+          "ENT-009",
+          "ENT-010"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "question": "What evidence linked the offshore structures to King Abdullah II?",
+        "answer": "The Guardian reported that an Alcogal memorandum identified a Jordanian client named Abdullah Al Hussein, born on 30 January 1962 and associated with Raghadan Palace, as the beneficial owner of 16 companies holding assets in the United States, United Kingdom, and Jersey.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-006",
+          "ENT-007"
+        ],
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "What explanations or denials were provided by the King's representatives?",
+        "answer": "The King's representatives said the properties were funded from personal wealth, used for privacy, security, diplomatic visits, and consultations, and not funded by the state treasury, foreign aid, grants, or loans. They denied misuse of public funds.",
+        "supporting_entities": [
+          "ENT-001"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "question": "Do the supplied sources establish that the offshore ownership was illegal?",
+        "answer": "No. The supplied reporting states that offshore ownership and the use of companies to acquire property are not inherently illegal, and the reported facts alone do not establish illegality or misuse of public funds.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-007"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "claim": "King Abdullah II was reported as owning or controlling offshore structures used to acquire luxury properties in the United States and United Kingdom.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "claim": "The reported properties included holdings in Malibu, California; Washington, DC; and London.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ]
+      },
+      {
+        "claim": "The Guardian reported that Alcogal records identified a Jordanian client matching King Abdullah II's name, birth date, and royal-palace address as the beneficial owner of 16 companies holding assets in the United States, United Kingdom, and Jersey.",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "claim": "The supplied reporting documents offshore ownership and secrecy but does not, by those facts alone, establish illegality or misuse of public funds.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ]
+      }
+    ],
+    "reasoning_steps": [
+      1,
+      2,
+      3
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "CONTRA-001",
+        "description": "Pandora Papers reporting describes offshore companies and luxury properties associated with King Abdullah II, while the King's representatives said the structures were used for privacy and security and denied misuse of public funds. Offshore ownership and secrecy are documented; illegality is not established by those facts alone.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003",
+          "SRC-004"
+        ]
+      }
+    ],
+    "structured_output_valid": true,
+    "structured_output_complete": true,
+    "structured_output_errors": []
+  },
+  "metrics": {
+    "finding_f1": 0.5,
+    "contradiction_grounded_f1": 1.0,
+    "reasoning_grounded_score": 0.44973544973544977,
+    "report_quality": 0.8333333333333334,
+    "source_precision": 1.0,
+    "source_recall": 1.0,
+    "entity_f1": "not_applicable",
+    "relation_f1": "not_applicable"
+  }
+}

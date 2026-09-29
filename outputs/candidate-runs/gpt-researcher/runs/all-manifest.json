@@ -1,0 +1,90 @@
+{
+  "candidate": "assafelovic/gpt-researcher",
+  "source_revision": "6f998577d547b1e54ec662dac63583aa11e3b84b",
+  "adaptation": "native-workflow-snapshot-retriever-file-inference-v1",
+  "model": "gpt-5.6-luna",
+  "max_requests": 40,
+  "cases": [
+    {
+      "case_id": "OSINT-001",
+      "status": "completed",
+      "exit_code": 0,
+      "duration_seconds": 98.42202496528625,
+      "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-001/io/candidate-result.json",
+      "sha256": "519061c9f19bfebf9b666c59b37145a34bab4a710312a9a713f0df63993241fa"
+    },
+    {
+      "case_id": "OSINT-002",
+      "status": "completed",
+      "exit_code": 0,
+      "duration_seconds": 136.6386694908142,
+      "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-002/io/candidate-result.json",
+      "sha256": "ec5bdb8286580604dbb05995a88c21ee2d6b52baa8b0d9e770c3173331a8342d"
+    },
+    {
+      "case_id": "OSINT-003",
+      "status": "completed",
+      "exit_code": 0,
+      "duration_seconds": 105.21092653274536,
+      "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-003/io/candidate-result.json",
+      "sha256": "340acbef95e624e7f7a62eea2ead14884d427923f9c9eda1a0a48b39ef514c03"
+    },
+    {
+      "case_id": "OSINT-004",
+      "status": "completed",
+      "exit_code": 0,
+      "duration_seconds": 109.35480260848999,
+      "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-004/io/candidate-result.json",
+      "sha256": "047dbab7ca72441a0c45d81a8ac15de98db765ad4c41f100f3fb993f99fb9bcf"
+    },
+    {
+      "case_id": "OSINT-005",
+      "status": "completed",
+      "exit_code": 0,
+      "duration_seconds": 102.99300861358643,
+      "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-005/io/candidate-result.json",
+      "sha256": "7378020abb1b197c7afa9618a639d5edf0efeef0d8fbe5d69e28986d3d00424f"
+    },
+    {
+      "case_id": "OSINT-006",
+      "status": "completed",
+      "exit_code": 0,
+      "duration_seconds": 120.25264930725098,
+      "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-006/io/candidate-result.json",
+      "sha256": "04d1f24c908ea5ccb61633767d42a9c9a23a35f1f97035074df0cc235e4321da"
+    },
+    {
+      "case_id": "OSINT-007",
+      "status": "completed",
+      "exit_code": 0,
+      "duration_seconds": 127.06888365745544,
+      "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-007/io/candidate-result.json",
+      "sha256": "8e66ae9397684225ca561910346e60e9dbaa4bc584ae5324ef9e7ff323eaf2b2"
+    },
+    {
+      "case_id": "OSINT-008",
+      "status": "completed",
+      "exit_code": 0,
+      "duration_seconds": 98.45296454429626,
+      "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-008/io/candidate-result.json",
+      "sha256": "07bace233aea47223089689136de8408cfa6ada4e62cd1e8b0a99f5a519f5455"
+    },
+    {
+      "case_id": "OSINT-009",
+      "status": "completed",
+      "exit_code": 0,
+      "duration_seconds": 122.5689148902893,
+      "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-009/io/candidate-result.json",
+      "sha256": "8c1e7b55e58b7549d9ae2c181644588a5165af1cbaa64553b285440aad5e71f9"
+    },
+    {
+      "case_id": "OSINT-010",
+      "status": "completed",
+      "exit_code": 0,
+      "duration_seconds": 144.792724609375,
+      "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-010/io/candidate-result.json",
+      "sha256": "ce062f8f801416d79f819a1b50628e95ede1df48be81a2b1d7fc19fa7fb19d6a"
+    }
+  ],
+  "created_at_utc": "2026-09-20T17:20:16Z"
+}

@@ -1,0 +1,453 @@
+{
+  "case_id": "OSINT-006",
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "artifact": "outputs/candidate-runs/open-deep-research/runs/OSINT-006/io/candidate-result.json",
+  "artifact_sha256": "16d160260a47e3a0179dffa16a906df388298733dd09f39d64c560e54c91c877",
+  "manifest_sha256": "16d160260a47e3a0179dffa16a906df388298733dd09f39d64c560e54c91c877",
+  "manifest_hash_match": true,
+  "report_sha256": "f97155e6bb6b47d90d16c5c83344f3787f987cd5b5a016d9ccb9fb5ed3164f43",
+  "status": "completed",
+  "output_summary": {
+    "available_source_references": [
+      "SRC-001",
+      "SRC-002"
+    ],
+    "source_references": [
+      "SRC-001",
+      "SRC-002"
+    ],
+    "key_findings": [
+      {
+        "question": "What is the supported end-to-end exploitation sequence?",
+        "answer": "The snapshot supports a sequence from exploitation of CVE-2023-34362 against MOVEit Transfer, through LEMURLOOT deployment and data theft, to Mandiant's initial UNC4857 attribution, later FIN11 merge, and a subsequent CL0P-linked leak-site extortion claim.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-003",
+          "ENT-004",
+          "ENT-005",
+          "ENT-006",
+          "ENT-007",
+          "ENT-008"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "What does the source establish about LEMURLOOT?",
+        "answer": "LEMURLOOT was a MOVEit-tailored C# web shell deployed after exploitation, with capabilities for file retrieval, database interaction, configuration extraction, Azure Blob credential extraction, and account manipulation.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-003",
+          "ENT-007"
+        ],
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "question": "What does the source establish about attribution?",
+        "answer": "Mandiant initially attributed the activity to UNC4857 and later merged that cluster into FIN11 based on targeting, infrastructure, certificate, and data-leak-site overlaps. This is analytic attribution and does not prove that every exploit was performed by one operator.",
+        "supporting_entities": [
+          "ENT-004",
+          "ENT-005",
+          "ENT-007"
+        ],
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "question": "What is the traceable CL0P finding?",
+        "answer": "The CL0P^_-LEAKS data leak site claimed responsibility on June 6, 2023 and threatened publication of stolen data unless victims paid an extortion fee. The traceable relation is linked_to_extortion_brand, representing a later extortion and victim-notification pivot rather than standalone proof of exploit authorship.",
+        "supporting_entities": [
+          "ENT-006",
+          "ENT-007",
+          "ENT-004",
+          "ENT-005"
+        ],
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "question": "What is the role of NVD?",
+        "answer": "NVD records the technical vulnerability, affected-version context, exploitation-in-the-wild notation, CVSS severity, CWE-89 classification, and record metadata. NVD does not independently prove a specific actor, malware deployment, victim compromise, or extortion event.",
+        "supporting_entities": [
+          "ENT-008",
+          "ENT-001",
+          "ENT-002"
+        ],
+        "source_references": [
+          "SRC-002"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "claim": "CVE-2023-34362 was a critical SQL injection vulnerability in the MOVEit Transfer web application and was exploited in the wild during May and June 2023.",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "claim": "Mandiant's earliest observed exploitation date was May 27, 2023, before Progress publicly announced the vulnerability on May 31, 2023.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "claim": "Following exploitation, actors deployed the LEMURLOOT web shell using filenames that masqueraded as the legitimate MOVEit component human.aspx.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "LEMURLOOT could retrieve files, enumerate folders, extract MOVEit and Azure Blob configuration information, interact with the database, and create or delete a MOVEit user account.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "Mandiant initially attributed the activity to UNC4857 and later merged UNC4857 into FIN11 based on targeting, infrastructure, certificate, and data-leak-site overlaps.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "A CL0P^_-LEAKS post claimed responsibility on June 6, 2023 and threatened to publish stolen data unless victims paid an extortion fee.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "The CL0P leak-site activity is an extortion and victim-notification pivot and does not by itself prove that every exploit was performed by the same operator.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "NVD supplies vulnerability and metadata context but does not independently prove actor identity, LEMURLOOT deployment, victim-specific data theft, or extortion contact.",
+        "source_references": [
+          "SRC-002"
+        ]
+      }
+    ],
+    "reasoning_steps": [
+      1,
+      2,
+      3
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "CONTRA-001",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ],
+        "description": "CVE and vendor advisories establish a vulnerability and exploitation window, while Mandiant's reporting identifies LEMURLOOT and links the activity to UNC4857/FIN11. CL0P's leak-site behavior is an extortion and victim-notification pivot, not by itself proof that every exploit was performed by the same operator."
+      }
+    ],
+    "structured_output_valid": true,
+    "structured_output_complete": true,
+    "structured_output_errors": []
+  },
+  "metrics": {
+    "finding_f1": 0.5,
+    "contradiction_grounded_f1": 1.0,
+    "reasoning_grounded_score": 1.0,
+    "report_quality": 0.8333333333333334,
+    "source_precision": 1.0,
+    "source_recall": 1.0,
+    "entity_f1": "not_applicable",
+    "relation_f1": "not_applicable"
+  },
+  "full_metrics": {
+    "output_validation": {
+      "valid": true,
+      "errors": []
+    },
+    "entities": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "missing": [
+        [
+          "alias",
+          "cl0p"
+        ],
+        [
+          "alias",
+          "cve-2023-34362"
+        ],
+        [
+          "alias",
+          "fin11"
+        ],
+        [
+          "alias",
+          "lemurloot"
+        ],
+        [
+          "alias",
+          "moveit transfer"
+        ],
+        [
+          "alias",
+          "unc4857"
+        ],
+        [
+          "organization",
+          "mandiant"
+        ],
+        [
+          "organization",
+          "nvd"
+        ]
+      ],
+      "unexpected": []
+    },
+    "relations": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "missing": [
+        [
+          [
+            "alias",
+            "cve-2023-34362"
+          ],
+          "affects",
+          [
+            "alias",
+            "moveit transfer"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "fin11"
+          ],
+          "linked_to_extortion_brand",
+          [
+            "alias",
+            "cl0p"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "unc4857"
+          ],
+          "deployed",
+          [
+            "alias",
+            "lemurloot"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "unc4857"
+          ],
+          "exploited",
+          [
+            "alias",
+            "cve-2023-34362"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "unc4857"
+          ],
+          "merged_into",
+          [
+            "alias",
+            "fin11"
+          ]
+        ]
+      ],
+      "unexpected": [],
+      "semantic_mapping": {
+        "also_known_as": "alias_of",
+        "alias_of": "alias_of",
+        "co_founded": "founded",
+        "founded": "founded",
+        "based_in": "located_in",
+        "located_in": "located_in",
+        "performed_special_audit": "audited",
+        "audited": "audited",
+        "former_coo_of": "executive_of",
+        "executive_of": "executive_of",
+        "provided_software": "provided",
+        "distributed_as_installer": "distributed",
+        "contained_malware": "contained",
+        "trojanized": "compromised",
+        "associated_with": "associated_with",
+        "linked_to": "associated_with",
+        "uses_or_is_associated_with": "associated_with"
+      }
+    },
+    "contradictions": {
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "details": [
+        {
+          "contradiction_id": "CONTRA-001",
+          "source_references_correct": true,
+          "source_reference_recall": 1.0
+        }
+      ],
+      "missing": [],
+      "unexpected": [],
+      "grounded_recall": 1.0,
+      "grounded_f1": 1.0
+    },
+    "key_findings": {
+      "score": 0.3047008547008547,
+      "precision": 0.4,
+      "recall": 0.6666666666666666,
+      "f1": 0.5,
+      "predicted": 5,
+      "expected": 3,
+      "matched": 2,
+      "details": [
+        {
+          "question": "What vulnerability enabled the campaign?",
+          "status": "missing",
+          "score": 0.0
+        },
+        {
+          "question": "What malware/tooling should be extracted?",
+          "status": "matched",
+          "score": 0.5333333333333333,
+          "semantic": 0.5333333333333333,
+          "supporting_entity_recall": 1.0,
+          "source_recall": 1.0,
+          "has_source_references": true
+        },
+        {
+          "question": "How should attribution be represented?",
+          "status": "matched",
+          "score": 0.38076923076923075,
+          "semantic": 0.4230769230769231,
+          "supporting_entity_recall": 0.6666666666666666,
+          "source_recall": 1.0,
+          "has_source_references": true
+        }
+      ]
+    },
+    "source_traceability": {
+      "correct_sources": [
+        "SRC-001",
+        "SRC-002"
+      ],
+      "unknown_sources": [],
+      "unavailable_sources": [],
+      "source_precision": 1.0,
+      "source_recall": 1.0,
+      "ratio": 1.0,
+      "claim_level": {
+        "claims": 8,
+        "traceable_claims": 8,
+        "ratio": 1.0,
+        "unknown_sources": [],
+        "unavailable_sources": []
+      },
+      "finding_level": {
+        "findings": 5,
+        "traceable_findings": 5,
+        "ratio": 1.0
+      }
+    },
+    "reasoning_coverage": {
+      "covered": [
+        1,
+        2,
+        3
+      ],
+      "invalid": [],
+      "total": 3,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "ratio": 1.0,
+      "status": "structured_step_ids"
+    },
+    "report_quality": {
+      "score": 0.8333333333333334,
+      "checks": {
+        "non_empty": true,
+        "structured_output_complete": true,
+        "structured_output_valid": true,
+        "findings_present": true,
+        "findings_match": false,
+        "claims_traceable": true,
+        "contradictions_complete": true,
+        "contradictions_grounded": true,
+        "finding_sources_grounded": true,
+        "reasoning_conclusions_grounded": true,
+        "uncertainty_language": true,
+        "readable_length": false
+      },
+      "scale": "deterministic rubric 0-1"
+    },
+    "reasoning_quality": {
+      "covered": 3,
+      "expected": 3,
+      "coverage": 1.0,
+      "semantic_similarity": 1.0,
+      "premise_grounding": 1.0,
+      "grounded_score": 1.0,
+      "method": "premise_ids_plus_token_entailment_proxy",
+      "details": [
+        {
+          "id": 1,
+          "premise_score": 1.0,
+          "entity_recall": 1.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 1.0,
+          "invalid_premise_entities": [],
+          "invalid_premise_relations": [],
+          "grounded_score": 1.0
+        },
+        {
+          "id": 2,
+          "premise_score": 1.0,
+          "entity_recall": 1.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 1.0,
+          "invalid_premise_entities": [],
+          "invalid_premise_relations": [],
+          "grounded_score": 1.0
+        },
+        {
+          "id": 3,
+          "premise_score": 1.0,
+          "entity_recall": 1.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 1.0,
+          "invalid_premise_entities": [],
+          "invalid_premise_relations": [],
+          "grounded_score": 1.0
+        }
+      ]
+    },
+    "operational": {}
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "case_id": "OSINT-005",
+  "candidate": "assafelovic/gpt-researcher",
+  "adaptation": "native-workflow-snapshot-retriever-file-inference-v1",
+  "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-005/io/candidate-result.json",
+  "artifact_sha256": "7378020abb1b197c7afa9618a639d5edf0efeef0d8fbe5d69e28986d3d00424f",
+  "output_summary": {
+    "source_references": [
+      "SRC-001",
+      "SRC-002"
+    ],
+    "key_findings": [
+      {
+        "question": "What organization is the primary subject of the supplied sources?",
+        "answer": "The primary subject is OneCoin Ltd., described in the sources as a cryptocurrency enterprise that operated through a global multi-level-marketing network and was characterized by prosecutors and the DOJ as fraudulent.",
+        "supporting_entities": [
+          "ENT-001"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "What relationships between the identified people and OneCoin Ltd. are supported by the sources?",
+        "answer": "Ruja Ignatova and Karl Sebastian Greenwood are identified as co-founders of OneCoin Ltd. The sources state that Greenwood was sentenced to 20 years in prison and that Ignatova remains at large.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002",
+          "ENT-005"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "What location is associated with OneCoin Ltd.?",
+        "answer": "The sources state that OneCoin began operations in Bulgaria; the DOJ specifically identifies Sofia, Bulgaria, as its base.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-007"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "Is the alias “Cryptoqueen” corroborated by the supplied source text?",
+        "answer": "No. The supplied source text identifies Ruja Ignatova but does not use or corroborate the alias “Cryptoqueen.”",
+        "supporting_entities": [
+          "ENT-003"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "Is Konstantin Ignatov’s relationship to OneCoin supported by the supplied source text?",
+        "answer": "No. The supplied source text does not identify Konstantin Ignatov or describe a relationship between him and OneCoin Ltd.",
+        "supporting_entities": [
+          "ENT-004"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "source_references": [
+          "SRC-001"
+        ],
+        "claim": "The DOJ describes OneCoin Ltd. as an international fraudulent cryptocurrency investment scheme that operated from 2014 to 2019 and caused victims to invest more than $4 billion worldwide."
+      },
+      {
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ],
+        "claim": "Ruja Ignatova and Karl Sebastian Greenwood are identified as co-founders of OneCoin Ltd.; Greenwood was sentenced to 20 years in prison, while Ignatova remains at large."
+      },
+      {
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ],
+        "claim": "OneCoin began operations in Bulgaria, and the DOJ identifies Sofia, Bulgaria, as the organization’s base."
+      }
+    ],
+    "reasoning_steps": [
+      1,
+      2
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "CONTRA-001",
+        "description": "The supplied sources support the characterization of OneCoin as a fraudulent scheme and distinguish missing founder Ruja Ignatova from later prosecuted participant Karl Sebastian Greenwood. However, the supplied snapshot does not contain promotional or property records presenting the founders or associated companies through a legitimate-business narrative.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      }
+    ],
+    "structured_output_valid": false,
+    "structured_output_complete": true,
+    "structured_output_errors": [
+      "reasoning step 2 uses non-canonical relation also_known_as"
+    ]
+  },
+  "metrics": {
+    "finding_f1": 0.28571428571428575,
+    "contradiction_grounded_f1": 1.0,
+    "reasoning_grounded_score": 0.6666666666666666,
+    "report_quality": 0.8333333333333334,
+    "source_precision": 1.0,
+    "source_recall": 1.0,
+    "entity_f1": "not_applicable",
+    "relation_f1": "not_applicable"
+  }
+}

@@ -1,0 +1,277 @@
+{
+  "case_id": "OSINT-003",
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "artifact": "outputs/candidate-runs/open-deep-research/runs/OSINT-003/io/candidate-result.json",
+  "artifact_sha256": "f8b28d9fb64fb98829df8f0cc5d5edf6d307fa6eb6c7a02a38bc8c3514f14bda",
+  "manifest_sha256": "f8b28d9fb64fb98829df8f0cc5d5edf6d307fa6eb6c7a02a38bc8c3514f14bda",
+  "manifest_hash_match": true,
+  "report_sha256": "420d16fa158012e26d48311fac123e7c1ec2e293fa8fb26d6521fcd6d345a0f7",
+  "status": "report_failure",
+  "output_summary": {
+    "available_source_references": [
+      "SRC-001",
+      "SRC-002",
+      "SRC-003",
+      "SRC-004"
+    ],
+    "source_references": [],
+    "key_findings": [],
+    "claims": [],
+    "reasoning_steps": [],
+    "contradictions": [],
+    "structured_output_valid": false,
+    "structured_output_complete": false,
+    "structured_output_errors": []
+  },
+  "metrics": {
+    "finding_f1": 0.0,
+    "contradiction_grounded_f1": 0.0,
+    "reasoning_grounded_score": 0.0,
+    "report_quality": 0.08333333333333333,
+    "source_precision": 0.0,
+    "source_recall": 0.0,
+    "entity_f1": "not_applicable",
+    "relation_f1": "not_applicable"
+  },
+  "full_metrics": {
+    "output_validation": {
+      "valid": false,
+      "errors": []
+    },
+    "entities": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "missing": [
+        [
+          "alias",
+          "apt38"
+        ],
+        [
+          "alias",
+          "lazarus group"
+        ],
+        [
+          "alias",
+          "tornado cash"
+        ],
+        [
+          "crypto_wallet",
+          "fbi-listed harmony wallets"
+        ],
+        [
+          "crypto_wallet",
+          "ronin exploiter ethereum address"
+        ],
+        [
+          "organization",
+          "harmony horizon bridge"
+        ],
+        [
+          "organization",
+          "ronin network"
+        ]
+      ],
+      "unexpected": []
+    },
+    "relations": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 6,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "missing": [
+        [
+          [
+            "alias",
+            "lazarus group"
+          ],
+          "alias_of",
+          [
+            "alias",
+            "apt38"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "lazarus group"
+          ],
+          "attributed_to_theft_from",
+          [
+            "organization",
+            "harmony horizon bridge"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "lazarus group"
+          ],
+          "attributed_to_theft_from",
+          [
+            "organization",
+            "ronin network"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "lazarus group"
+          ],
+          "laundered_funds_through",
+          [
+            "alias",
+            "tornado cash"
+          ]
+        ],
+        [
+          [
+            "crypto_wallet",
+            "fbi-listed harmony wallets"
+          ],
+          "listed_as_north_korean_controlled",
+          [
+            "alias",
+            "lazarus group"
+          ]
+        ],
+        [
+          [
+            "crypto_wallet",
+            "ronin exploiter ethereum address"
+          ],
+          "listed_as_lazarus_controlled",
+          [
+            "alias",
+            "lazarus group"
+          ]
+        ]
+      ],
+      "unexpected": [],
+      "semantic_mapping": {
+        "also_known_as": "alias_of",
+        "alias_of": "alias_of",
+        "co_founded": "founded",
+        "founded": "founded",
+        "based_in": "located_in",
+        "located_in": "located_in",
+        "performed_special_audit": "audited",
+        "audited": "audited",
+        "former_coo_of": "executive_of",
+        "executive_of": "executive_of",
+        "provided_software": "provided",
+        "distributed_as_installer": "distributed",
+        "contained_malware": "contained",
+        "trojanized": "compromised",
+        "associated_with": "associated_with",
+        "linked_to": "associated_with",
+        "uses_or_is_associated_with": "associated_with"
+      }
+    },
+    "contradictions": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "details": [],
+      "missing": [
+        "CONTRA-001"
+      ],
+      "unexpected": [],
+      "grounded_recall": 0.0,
+      "grounded_f1": 0.0
+    },
+    "key_findings": {
+      "score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "predicted": 0,
+      "expected": 3,
+      "matched": 0,
+      "details": [
+        {
+          "question": "What actor connects the Ronin and Harmony thefts?",
+          "status": "missing",
+          "score": 0.0
+        },
+        {
+          "question": "What financial pivot links the cases?",
+          "status": "missing",
+          "score": 0.0
+        },
+        {
+          "question": "What should be traced in a benchmark run?",
+          "status": "missing",
+          "score": 0.0
+        }
+      ]
+    },
+    "source_traceability": {
+      "correct_sources": [],
+      "unknown_sources": [],
+      "unavailable_sources": [],
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "ratio": 0.0,
+      "claim_level": {
+        "claims": 0,
+        "traceable_claims": 0,
+        "ratio": 0.0,
+        "status": "no_structured_claims"
+      },
+      "finding_level": {
+        "findings": 0,
+        "traceable_findings": 0,
+        "ratio": 0.0
+      }
+    },
+    "reasoning_coverage": {
+      "covered": [],
+      "invalid": [],
+      "total": 3,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "ratio": 0.0,
+      "status": "no_structured_steps"
+    },
+    "report_quality": {
+      "score": 0.08333333333333333,
+      "checks": {
+        "non_empty": true,
+        "structured_output_complete": false,
+        "structured_output_valid": false,
+        "findings_present": false,
+        "findings_match": false,
+        "claims_traceable": false,
+        "contradictions_complete": false,
+        "contradictions_grounded": false,
+        "finding_sources_grounded": false,
+        "reasoning_conclusions_grounded": false,
+        "uncertainty_language": false,
+        "readable_length": false
+      },
+      "scale": "deterministic rubric 0-1"
+    },
+    "reasoning_quality": {
+      "covered": 0,
+      "expected": 3,
+      "coverage": 0.0,
+      "semantic_similarity": 0.0,
+      "premise_grounding": 0.0,
+      "grounded_score": 0.0,
+      "method": "premise_ids_plus_token_entailment_proxy",
+      "details": []
+    },
+    "operational": {}
+  }
+}

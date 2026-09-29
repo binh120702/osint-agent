@@ -1,0 +1,185 @@
+{
+  "case_id": "OSINT-001",
+  "candidate": "assafelovic/gpt-researcher",
+  "adaptation": "native-workflow-snapshot-retriever-file-inference-v1",
+  "artifact": "outputs/candidate-runs/gpt-researcher/runs/OSINT-001/io/candidate-result.json",
+  "artifact_sha256": "519061c9f19bfebf9b666c59b37145a34bab4a710312a9a713f0df63993241fa",
+  "output_summary": {
+    "source_references": [
+      "SRC-001",
+      "SRC-002",
+      "SRC-003",
+      "SRC-004",
+      "SRC-005",
+      "SRC-006",
+      "SRC-007",
+      "SRC-009"
+    ],
+    "key_findings": [
+      {
+        "question": "What was the primary incident?",
+        "answer": "A trojanized version of 3CX DesktopApp distributed malware through the application's legitimate update or installer mechanism. Reported affected versions included specific Windows and macOS Electron releases.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-002"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-003",
+          "SRC-009"
+        ]
+      },
+      {
+        "question": "What was the upstream initial-access vector?",
+        "answer": "The upstream vector was a tampered Trading Technologies X_TRADER installer, identified as X_TRADER_r7.17.90p608.exe, which led to deployment of the VEILEDSIGNAL modular backdoor.",
+        "supporting_entities": [
+          "ENT-003",
+          "ENT-004",
+          "ENT-005",
+          "ENT-006"
+        ],
+        "source_references": [
+          "SRC-003"
+        ]
+      },
+      {
+        "question": "How did the actor move from the upstream compromise into 3CX?",
+        "answer": "The compromised X_TRADER installation was present on a 3CX employee system. The actor used Fast Reverse Proxy for lateral movement, harvested credentials, and moved through the 3CX environment.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-006",
+          "ENT-013"
+        ],
+        "source_references": [
+          "SRC-003"
+        ]
+      },
+      {
+        "question": "How was the 3CX build environment compromised?",
+        "answer": "The attacker compromised both Windows and macOS build environments. TAXHAUL and COLDCAT were deployed on the Windows build environment, while POOLRAT was identified on the macOS build server.",
+        "supporting_entities": [
+          "ENT-001",
+          "ENT-014",
+          "ENT-015",
+          "ENT-016"
+        ],
+        "source_references": [
+          "SRC-003"
+        ]
+      },
+      {
+        "question": "What was the 3CX DesktopApp malware chain?",
+        "answer": "The trojanized application executed SUDDENICON, retrieved C2 data from encrypted icon files hosted on GitHub, and downloaded the third-stage ICONICSTEALER payload.",
+        "supporting_entities": [
+          "ENT-002",
+          "ENT-010",
+          "ENT-011",
+          "ENT-019"
+        ],
+        "source_references": [
+          "SRC-003"
+        ]
+      },
+      {
+        "question": "What attribution and targeting conclusions are supported?",
+        "answer": "The activity was attributed or linked in public reporting to UNC4736 and suspected North Korean operators. Mandiant identified overlap with AppleJeus-related activity, while Kaspersky linked Gopuram activity to Lazarus Group and observed targeting of cryptocurrency companies.",
+        "supporting_entities": [
+          "ENT-007",
+          "ENT-008",
+          "ENT-009",
+          "ENT-012",
+          "ENT-025"
+        ],
+        "source_references": [
+          "SRC-002",
+          "SRC-003",
+          "SRC-004",
+          "SRC-005",
+          "SRC-006",
+          "SRC-007"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "source_references": [
+          "SRC-001",
+          "SRC-009"
+        ],
+        "claim": "The 3CX DesktopApp supply-chain compromise affected specific Windows and macOS Electron app versions, including Windows versions 18.12.407 and 18.12.416 and macOS versions 18.11.1213, 18.12.402, 18.12.407, and 18.12.416."
+      },
+      {
+        "source_references": [
+          "SRC-003"
+        ],
+        "claim": "The initial compromise vector of 3CX's network was traced to malicious software downloaded from the Trading Technologies website, specifically a tampered X_TRADER installer containing VEILEDSIGNAL."
+      },
+      {
+        "source_references": [
+          "SRC-003"
+        ],
+        "claim": "The compromised X_TRADER installation enabled lateral movement within the 3CX organization through a compiled version of Fast Reverse Proxy, ultimately reaching both Windows and macOS build environments."
+      },
+      {
+        "source_references": [
+          "SRC-003"
+        ],
+        "claim": "The trojanized 3CX DesktopApp used a staged chain in which SUDDENICON obtained C2 servers from encrypted icon files hosted on GitHub and downloaded ICONICSTEALER, which collected browser information."
+      },
+      {
+        "source_references": [
+          "SRC-003",
+          "SRC-004"
+        ],
+        "claim": "The activity was tracked by Mandiant as UNC4736, assessed as a suspected North Korean-nexus cluster, and showed overlap with AppleJeus-related activity; Kaspersky assessed the campaign as likely associated with Lazarus Group based on Gopuram and AppleJeus links."
+      },
+      {
+        "source_references": [
+          "SRC-002",
+          "SRC-004"
+        ],
+        "claim": "The compromise had potentially broad exposure because trojanized 3CX software was used by many organizations, but follow-on Gopuram deployment was selective, with Kaspersky observing fewer than ten infected machines and a specific interest in cryptocurrency companies."
+      }
+    ],
+    "reasoning_steps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "CONTRA-001",
+        "description": "The initial 3CX alert described the visible issue as appearing to involve a bundled library compiled into the Electron app via Git, whereas later 3CX/Mandiant reporting identified the upstream intrusion vector as a trojanized Trading Technologies X_TRADER installer that compromised a 3CX employee system and led into the corporate build environment.",
+        "source_references": [
+          "SRC-001",
+          "SRC-003"
+        ]
+      },
+      {
+        "contradiction_id": "CONTRA-002",
+        "description": "Public reporting described a potentially broad compromise of 3CX software used by many enterprise customers, while 3CX and Kaspersky reported that follow-on payload execution was selective and that Gopuram was deployed to fewer than ten observed machines.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-004"
+        ]
+      }
+    ],
+    "structured_output_valid": true,
+    "structured_output_complete": true,
+    "structured_output_errors": []
+  },
+  "metrics": {
+    "finding_f1": 0.16666666666666666,
+    "contradiction_grounded_f1": 0.6666666666666666,
+    "reasoning_grounded_score": 1.0,
+    "report_quality": 0.8333333333333334,
+    "source_precision": 1.0,
+    "source_recall": 0.8888888888888888,
+    "entity_f1": "not_applicable",
+    "relation_f1": "not_applicable"
+  }
+}
