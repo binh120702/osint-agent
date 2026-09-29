@@ -11,6 +11,7 @@ from .replay import SourceReplay
 from .scoring import score_case
 from .case_quality import audit
 from .runner import _report_output
+from .report_adapter import adapt_report_output
 
 
 class BenchmarkFrameworkTests(unittest.TestCase):
@@ -66,6 +67,29 @@ class BenchmarkFrameworkTests(unittest.TestCase):
         self.assertGreater(scores["key_findings"]["f1"], 0.0)
         self.assertLess(scores["report_quality"]["score"], 1.0)
 
+    def test_report_adapter_normalizes_case_aliases_without_inventing_values(self):
+        parsed = {
+            "key_findings": [{"question": "q", "answer": "a", "entities": ["3CX"], "sources": ["https://example.org/not-in-case"]}],
+            "claims": [], "contradictions": [], "reasoning_step_details": [], "reasoning_steps": [],
+        }
+        adapted = adapt_report_output(self.case, parsed)
+        self.assertEqual(adapted["key_findings"][0]["supporting_entities"], ["ENT-001"])
+        self.assertEqual(adapted["key_findings"][0]["source_references"], ["https://example.org/not-in-case"])
+
+    def test_report_adapter_recovers_legacy_finding_alias_and_unique_question(self):
+        expected = self.case.data["ground_truth"]["key_findings"][0]
+        adapted = adapt_report_output(self.case, {"key_findings": [{"finding": expected["answer"]}], "contradictions": []})
+        self.assertEqual(adapted["key_findings"][0]["answer"], expected["answer"])
+        self.assertEqual(adapted["key_findings"][0]["question"], expected["question"])
+
+
+        parsed = {"key_findings": [], "claims": [], "contradictions": [], "reasoning_steps": [],
+                  "reasoning_step_details": [{"step": "STEP 1", "entities": ["3CX"], "relations": ["made_up"], "conclusion": "x"}]}
+        adapted = adapt_report_output(self.case, parsed)
+        self.assertEqual(adapted["reasoning_step_details"][0]["id"], 1)
+        self.assertEqual(adapted["reasoning_step_details"][0]["premise_entities"], ["ENT-001"])
+        self.assertEqual(adapted["reasoning_step_details"][0]["premise_relations"], ["made_up"])
+
     def test_json_report_payload_is_parsed_and_completeness_is_explicit(self):
         report = "Report\n```json\n" + __import__("json").dumps({
             "findings": [], "claims": [], "reasoning_steps": [], "contradictions": []
@@ -80,6 +104,12 @@ class BenchmarkFrameworkTests(unittest.TestCase):
         source = inspect.getsource(runner.run_existing_agent)
         self.assertIn("one finding object for EVERY required case question", source)
         self.assertIn("Required case questions", source)
+
+    def test_final_report_prompt_does_not_request_second_confirmation(self):
+        source = (SRC_ROOT / "tools" / "final_report.py").read_text(encoding="utf-8")
+        self.assertIn("Generate the final report immediately", source)
+        self.assertIn("Copy the supplied conclusion verbatim", source)
+        self.assertNotIn("confirmed that they are ready to stop gathering new information", source)
 
     def test_prose_only_report_is_incomplete_not_valid_benchmark_output(self):
         parsed = _report_output(self.case, "A prose-only report with no payload.")
@@ -103,6 +133,37 @@ class BenchmarkFrameworkTests(unittest.TestCase):
         self.assertLess(scores["contradictions"]["f1"], 1.0)
         self.assertEqual(scores["contradictions"]["grounded_recall"], 0.0)
 
+    def test_nested_json_report_payload_is_parsed_without_truncation(self):
+        import json
+        payload = {
+            "findings": [{"question": "q", "answer": "a", "supporting_entities": ["ENT-001"], "source_references": ["SRC-001"]}],
+            "claims": [], "reasoning_steps": [], "contradictions": []
+        }
+        parsed = _report_output(self.case, "```json\n" + json.dumps(payload) + "\n```")
+        self.assertTrue(parsed["structured_output_complete"])
+        self.assertEqual(parsed["key_findings"][0]["supporting_entities"], ["ENT-001"])
+
+    def test_unfenced_nested_json_report_payload_is_parsed(self):
+        import json
+        payload = {"findings": [{"question": "q", "answer": "nested {text}"}], "claims": [], "reasoning_steps": [], "contradictions": []}
+        parsed = _report_output(self.case, "Narrative before payload: " + json.dumps(payload))
+        self.assertTrue(parsed["structured_output_complete"])
+        self.assertEqual(parsed["key_findings"][0]["answer"], "nested {text}")
+
+    def test_json_report_alias_fields_and_step_labels_are_normalized(self):
+        import json
+        payload = {
+            "findings": [{"question": "q", "answer": "a", "entities": [], "sources": []}],
+            "claims": [{"claim": "c", "sources": []}],
+            "reasoning_steps": [{"step": "STEP 1", "entities": [], "relations": [], "conclusion": "x"}],
+            "contradictions": [{"id": self.case.data["ground_truth"]["contradictions"][0]["contradiction_id"], "sources": [], "description": "d"}],
+        }
+        parsed = _report_output(self.case, "```json\n" + json.dumps(payload) + "\n```")
+        self.assertEqual(parsed["reasoning_steps"], [1])
+        self.assertEqual(parsed["reasoning_step_details"][0]["premise_entities"], [])
+        self.assertFalse(parsed["structured_output_valid"])
+        self.assertTrue(any("missing required proof steps" in error for error in parsed["structured_output_errors"]))
+
     def test_missing_reasoning_steps_invalidates_structured_report(self):
         import json
         payload = {"findings": [], "claims": [], "reasoning_steps": [{"id": 1, "conclusion": "x", "premise_entities": [], "premise_relations": []}], "contradictions": []}
@@ -116,6 +177,21 @@ class BenchmarkFrameworkTests(unittest.TestCase):
         parsed = _report_output(self.case, "```json\n" + json.dumps(payload) + "\n```")
         self.assertFalse(parsed["structured_output_valid"])
         self.assertTrue(any("non-canonical relation" in error for error in parsed["structured_output_errors"]))
+
+    def test_adapter_accepts_case_declared_proof_relations(self):
+        case = load_case("case_005")
+        parsed = {
+            "findings": [], "claims": [], "contradictions": [],
+            "reasoning_steps": [1, 2],
+            "reasoning_step_details": [
+                {"id": 1, "premise_entities": ["ENT-001"], "premise_relations": [], "conclusion": "Identify the primary target and gather independent public sources."},
+                {"id": 2, "premise_entities": ["ENT-001", "ENT-002", "ENT-003", "ENT-004"], "premise_relations": ["also_known_as", "co_founded", "co_founded"], "conclusion": "Link aliases, organizations, people, platforms, or infrastructure across sources."},
+            ],
+        }
+        adapted = adapt_report_output(case, parsed)
+        self.assertTrue(adapted["structured_output_valid"])
+        self.assertEqual(adapted["structured_output_errors"], [])
+
 
     def test_invalid_reasoning_premises_are_reported(self):
         scores = score_case(self.case.data, {

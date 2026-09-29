@@ -23,5 +23,8 @@ outputs/candidate-runs/*/all-progress.json
 outputs/.plan/
 outputs/.plans/
 latex/
+# Local benchmark run artifacts
+outputs/multi-iteration-runs/
+
 # Local output Markdown artifacts
 outputs/**/*.md

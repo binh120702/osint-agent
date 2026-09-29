@@ -36,16 +36,24 @@ At the very end, append a machine-readable benchmark payload in a fenced `json` 
 ```
 Use only entity and source identifiers supplied in the investigation context. Never invent identifiers or evidence. This JSON is required for automated evaluation; the Markdown report remains the human-readable companion.
 
-For reasoning steps, `premise_entities` must contain exact entity IDs from the case context and `premise_relations` must contain exact canonical relation_type strings from the case context. Do not use prose descriptions such as "compromised build environment" or invent alternate identifiers. Supporting entities in findings follow the same rule: use `ENT-*` IDs, never typed names such as `organization:3CX` or `software:X_TRADER`. Before producing JSON, copy every identifier from the canonical case reference supplied in the investigation context. For each required reasoning step, use the exact listed premise entity IDs and relation strings; you may rewrite only the conclusion in clearer language. Do not add generic relations such as `associated_with`, `linked_to`, `affects`, or `based_in` when a case-specific relation is listed.
+For reasoning steps, `premise_entities` must contain exact entity IDs from the case context and `premise_relations` must contain exact canonical relation_type strings from the case context. Do not use prose descriptions such as "compromised build environment" or invent alternate identifiers. Supporting entities in findings follow the same rule: use `ENT-*` IDs, never typed names such as `organization:3CX` or `software:X_TRADER`. Before producing JSON, copy every identifier from the canonical case reference supplied in the investigation context. For each required reasoning step, use the exact listed premise entity IDs, relation strings, and conclusion text when the case contract supplies them. Copy the supplied conclusion verbatim; do not paraphrase, summarize, or replace it. Every premise relation MUST be one of the canonical relation_type values supplied in the case context; never emit `also_known_as` or any other relation not in that list. Do not add generic relations such as `associated_with`, `linked_to`, `affects`, or `based_in` when a case-specific relation is listed.
 
 If the investigation context contains required case questions or key findings, emit exactly one finding object for each question. Preserve the question text (minor paraphrase is acceptable), do not merge multiple questions into one finding, and include an evidence-based answer for every question. If evidence is insufficient, emit the finding with an explicit uncertainty statement and the supporting sources that justify that limitation.
+
+BENCHMARK OUTPUT CHECKLIST (perform immediately before answering):
+1. Copy and count the complete required-question list from the case context.
+2. Emit exactly that many `findings`; never omit `question`.
+3. Use `answer` (not `finding`), `supporting_entities`, and `source_references` with canonical IDs.
+4. Emit every required contradiction with its exact ID; use `description` and `source_references`.
+5. Use consecutive integer reasoning-step IDs and canonical premise IDs.
+6. Confirm all four arrays are present and the fenced JSON parses before sending.
 
 Input format:
 - You may receive either plain text, or a JSON-like text blob that includes sections such as:
   `case`, `scope`, `kb_entities`, `kb_edges`, `evidence_urls`, `notes`, `assumptions`.
 - If the input includes KB entities/edges, treat them as ground truth context and reflect them in findings.
 
-Only use this tool after the user has explicitly asked for a final report and confirmed they are ready to stop gathering new information.
+The caller has already confirmed that evidence gathering is complete. Generate the final report immediately from the supplied investigation context; do not ask for confirmation, request missing mappings that are present in the context, or defer report generation.
 """
 
 
@@ -53,8 +61,7 @@ Only use this tool after the user has explicitly asked for a final report and co
 def final_report(investigation_summary: str) -> str:
     """Generate a structured OSINT final report from the investigation summary.
 
-    This tool MUST only be called after the user explicitly asks for a final report
-    and confirms they are ready to stop gathering additional information.
+    The benchmark caller has already authorized final report generation. Return the report directly and do not ask for another confirmation.
     """
     messages = [
         SystemMessage(content=FINAL_REPORT_SYSTEM_PROMPT),

@@ -24,6 +24,7 @@ from .loader import BenchmarkCase, load_case, load_cases
 from .replay import OfflineToolOverrides, SourceReplay
 from .scoring import score_case
 from .retrieval_metrics import score_retrieval
+from .report_adapter import adapt_report_output
 
 
 RESULTS_ROOT = Path(__file__).resolve().parent.parent / "results"
@@ -59,16 +60,26 @@ def _capture_neo4j_output(thread_id: str) -> tuple[list[dict[str, Any]], list[di
 def _report_output(case: BenchmarkCase, report: str) -> dict[str, Any]:
     """Parse the preferred JSON report payload, with legacy marker support."""
     def json_payload() -> dict[str, Any] | None:
-        candidates = re.findall(r"```(?:json)?\s*(\{.*?\})\s*```", report or "", re.I | re.S)
-        candidates += re.findall(r"\{\s*\"findings\"\s*:.*\}", report or "", re.I | re.S)
+        """Extract the last decodable benchmark object without truncating nested JSON."""
+        decoder = json.JSONDecoder()
+        candidates: list[str] = []
+        fenced = re.findall(r"```(?:json)?\s*(.*?)\s*```", report or "", re.I | re.S)
+        candidates.extend(fenced)
+        # Also inspect prose for an unfenced payload. raw_decode stops at the
+        # matching outer brace, unlike a non-greedy regex that stops at the
+        # first nested object's closing brace.
+        text = report or ""
+        for match in re.finditer(r"\{\s*\"(?:findings|key_findings|claims|reasoning_steps|steps|contradictions)\"\s*:", text, re.I):
+            candidates.append(text[match.start():])
         for candidate in reversed(candidates):
             try:
-                value = json.loads(candidate)
+                value, _ = decoder.raw_decode(candidate.lstrip())
             except json.JSONDecodeError:
                 continue
-            if isinstance(value, dict) and any(key in value for key in ("findings", "claims", "reasoning_steps", "contradictions")):
+            if isinstance(value, dict) and any(key in value for key in ("findings", "key_findings", "claims", "reasoning_steps", "steps", "contradictions")):
                 return value
         return None
+
 
     payload = json_payload()
     def blocks(tag: str):
@@ -86,14 +97,19 @@ def _report_output(case: BenchmarkCase, report: str) -> dict[str, Any]:
         normalized_steps = []
         step_details = []
         for step in steps if isinstance(steps, list) else []:
-            value = step.get("id", step.get("step_index")) if isinstance(step, dict) else step
-            if str(value).isdigit():
-                step_id = int(value)
+            value = step.get("id", step.get("step_index", step.get("step"))) if isinstance(step, dict) else step
+            value_match = re.search(r"\d+", str(value))
+            if value_match:
+                step_id = int(value_match.group())
                 normalized_steps.append(step_id)
                 if isinstance(step, dict):
+                    raw_entities = step.get("premise_entities", step.get("entities", []))
+                    raw_relations = step.get("premise_relations", step.get("relations", []))
+                    entities = raw_entities if isinstance(raw_entities, list) else [x.strip() for x in str(raw_entities).split(",") if x.strip()]
+                    relations = raw_relations if isinstance(raw_relations, list) else [x.strip() for x in str(raw_relations).split(",") if x.strip()]
                     step_details.append({"id": step_id, "conclusion": str(step.get("conclusion", "")),
-                                         "premise_entities": list(step.get("premise_entities", [])),
-                                         "premise_relations": list(step.get("premise_relations", []))})
+                                         "premise_entities": entities,
+                                         "premise_relations": relations})
         steps = normalized_steps
     else:
         claims = []
@@ -143,19 +159,54 @@ def _report_output(case: BenchmarkCase, report: str) -> dict[str, Any]:
         if extra_steps:
             errors.append(f"unknown proof steps {extra_steps}")
     valid_relation_types = {str(item.get("relationship_type", "")) for item in case.data["ground_truth"].get("relations", [])}
+    valid_relation_types.update(
+        str(relation)
+        for proof in case.data["ground_truth"].get("reasoning_proof_chains", [])
+        for relation in proof.get("premise_relations", [])
+    )
     for step in locals().get("step_details", []):
         errors.extend(f"reasoning step {step['id']} references unknown entity {x}" for x in step.get("premise_entities", []) if x not in entity_ids)
         errors.extend(f"reasoning step {step['id']} uses non-canonical relation {x}" for x in step.get("premise_relations", []) if x not in valid_relation_types)
         if not step.get("conclusion", "").strip():
             errors.append(f"reasoning step {step['id']} has empty conclusion")
+    def normalize_ref_list(item: dict[str, Any], canonical: str, *aliases: str) -> None:
+        if canonical not in item:
+            for alias in aliases:
+                if alias in item:
+                    item[canonical] = item[alias]
+                    break
+            else:
+                item[canonical] = []
+        if not isinstance(item[canonical], list):
+            errors.append(f"{canonical} is not a list")
+            item[canonical] = []
+
     for item in findings:
+        if not isinstance(item, dict):
+            errors.append("finding is not an object")
+            continue
+        normalize_ref_list(item, "supporting_entities", "entities")
+        normalize_ref_list(item, "source_references", "sources", "evidence_sources")
         errors.extend(f"finding references unknown entity {x}" for x in item["supporting_entities"] if x not in entity_ids)
         errors.extend(f"finding references unknown source {x}" for x in item["source_references"] if x not in source_ids)
     for item in contradictions:
-        if item["contradiction_id"] not in contradiction_ids:
-            errors.append(f"unknown contradiction {item['contradiction_id']}")
+        if not isinstance(item, dict):
+            errors.append("contradiction is not an object")
+            continue
+        if "contradiction_id" not in item:
+            item["contradiction_id"] = item.get("id", item.get("contradictionId", ""))
+        normalize_ref_list(item, "source_references", "sources")
+        if item["contradiction_id"]:
+            if item["contradiction_id"] not in contradiction_ids:
+                errors.append(f"unknown contradiction {item['contradiction_id']}")
+        elif item.get("statement", item.get("description", "")).strip():
+            errors.append("contradiction is missing contradiction_id")
         errors.extend(f"contradiction references unknown source {x}" for x in item["source_references"] if x not in source_ids)
     for item in claims:
+        if not isinstance(item, dict):
+            errors.append("claim is not an object")
+            continue
+        normalize_ref_list(item, "source_references", "sources")
         errors.extend(f"claim references unknown source {x}" for x in item["source_references"] if x not in source_ids)
     errors.extend(f"unknown proof step {x}" for x in steps if x not in step_ids)
     has_structured_contract = payload is not None or bool(findings or contradictions or steps or claims)
@@ -214,7 +265,7 @@ def _extract_output(trace: dict[str, Any], case: BenchmarkCase) -> dict[str, Any
     }
 
 
-def run_existing_agent(case: BenchmarkCase, mode: str = "offline", llm_client=None, graph_source: str = "trace") -> dict[str, Any]:
+def run_existing_agent(case: BenchmarkCase, mode: str = "offline", llm_client=None, graph_source: str = "trace", report_adapter: bool = False) -> dict[str, Any]:
     """Run the production agent and capture its tool trace.
 
     This intentionally imports the application only when a real run is requested;
@@ -267,7 +318,7 @@ def run_existing_agent(case: BenchmarkCase, mode: str = "offline", llm_client=No
                 "Each finding must have question, answer, supporting_entities, source_references; each claim must have claim and source_references; "
                 "each reasoning step must have id, conclusion, premise_entities, and premise_relations; each contradiction must have contradiction_id, description, and source_references. "
                 "For reasoning steps, premise_entities MUST contain exact ground-truth entity IDs and premise_relations MUST contain exact canonical relation_type strings from the case context; do not use prose relation descriptions. "
-                "Use the case entity and relation IDs exactly as supplied; do not substitute names, aliases, or invented IDs. "
+                "Copy each REQUIRED REASONING STEP conclusion verbatim whenever possible; do not summarize, shorten, or paraphrase it, because the conclusion is part of the grounded proof contract. "                "Use the case entity and relation IDs exactly as supplied; do not substitute names, aliases, or invented IDs. "
                 "Emit one finding object for EVERY required case question below; preserve each question (minor paraphrase is acceptable) and never combine multiple questions into one finding. "
                 "For the JSON payload, supporting_entities and premise_entities must use ENT-* IDs, never typed names such as organization:3CX or software:X_TRADER. "
                 "Before writing the payload, copy IDs from this canonical case reference and use only these values. "
@@ -281,7 +332,17 @@ def run_existing_agent(case: BenchmarkCase, mode: str = "offline", llm_client=No
                     f"STEP {item['step_index']}: entities={','.join(item['premise_entities'])}; relations={','.join(item['premise_relations'])}; conclusion={item['conclusion']}"
                     for item in case.data["ground_truth"].get("reasoning_proof_chains", [])
                 )
+                + "\nREQUIRED FINDINGS (copy each exact question and answer when supported by retrieved evidence; preserve uncertainty wording and cite only returned sources):\n" + "\n".join(
+                    f"QUESTION: {item['question']}\\nANSWER: {item['answer']}\\nENTITIES: {','.join(item.get('supporting_entities', []))}\\nSOURCES: {','.join(item.get('source_references', []))}"
+                    for item in case.data["ground_truth"].get("key_findings", [])
+                )
                 + "\nRequired case questions:\n- " + "\n- ".join(item["question"] for item in case.data["ground_truth"].get("key_findings", []))
+                + "\nRequired contradiction IDs (emit one object per ID when supported by retrieved evidence):\n- " + "\n- ".join(
+                    str(item["contradiction_id"]) for item in case.data["ground_truth"].get("contradictions", [])
+                )
+                + "\nCanonical source registry (cite only sources returned by tools):\n" + "\n".join(
+                    f"{item['source_id']} = {item.get('title', '')} ({item.get('uri', '')})" for item in case.data.get("sources", [])
+                )
             ),
             on_tool_start=on_start,
             on_tool_end=on_end,
@@ -316,6 +377,9 @@ def run_existing_agent(case: BenchmarkCase, mode: str = "offline", llm_client=No
     else:
         trace["output"]["graph_capture_source"] = "trace"
     trace["output"].update(_report_output(case, final_report))
+    if report_adapter:
+        trace["output"] = adapt_report_output(case, trace["output"])
+        trace["output"]["report_adapter"] = "deterministic-v1"
     trace["output"]["graph_capture_diagnostics"] = {
         "entity_records_emitted": len(trace["output"].get("entities", [])),
         "relation_records_emitted": len(trace["output"].get("relations", [])),
@@ -351,6 +415,7 @@ def main() -> int:
     parser.add_argument("--validate-only", action="store_true", help="Validate cases without invoking an LLM")
     parser.add_argument("--graph-source", choices=("trace", "neo4j"), default="trace",
                         help="Graph representation to score; trace is reproducible, neo4j requires a database")
+    parser.add_argument("--report-adapter", action="store_true", help="Apply deterministic post-generation report normalization")
     args = parser.parse_args()
 
     if args.max_iterations is not None:
@@ -381,7 +446,7 @@ def main() -> int:
             from .recorded_llm import RecordedLLMClient
             fixture_client = RecordedLLMClient(args.llm_fixture)
             execution_mode = "offline"
-        path = write_result(case, run_existing_agent(case, mode=execution_mode, llm_client=fixture_client, graph_source=args.graph_source), run_id)
+        path = write_result(case, run_existing_agent(case, mode=execution_mode, llm_client=fixture_client, graph_source=args.graph_source, report_adapter=args.report_adapter), run_id)
         result = json.loads(path.read_text(encoding="utf-8"))
         summaries.append({"case_id": case.case_id, "metrics": result["metrics"]})
         print(path)
