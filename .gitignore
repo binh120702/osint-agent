@@ -29,7 +29,7 @@ outputs/multi-iteration-runs/
 # Local output Markdown artifacts
 outputs/**/*.md
 # Experimental benchmark scripts and candidate output trees
-outputs/candidate-runs/*/
+outputs/candidate-runs/*
 outputs/*.py
 outputs/*.json
 package-lock.json
