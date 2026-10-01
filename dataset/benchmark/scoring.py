@@ -2,9 +2,24 @@
 
 from __future__ import annotations
 
+import hashlib
+import json
+import math
+import os
 import re
+from pathlib import Path
 from typing import Any, Callable
 from urllib.parse import urlsplit, urlunsplit
+try:
+    from dotenv import load_dotenv
+    _env_path = Path(__file__).resolve().parents[2] / ".env"
+    load_dotenv(_env_path)
+    from dotenv import dotenv_values
+    for _key, _value in dotenv_values(_env_path).items():
+        if _value is not None:
+            os.environ.setdefault(_key, _value)
+except ImportError:
+    pass
 
 
 def normalize(value: Any) -> str:
@@ -217,7 +232,79 @@ def _token_similarity(left: str, right: str) -> float:
     return len(left_tokens & right_tokens) / len(right_tokens)
 
 
-def _reasoning_quality(case: dict[str, Any], output: dict[str, Any], judge: Callable[[str, str], float] | None = None) -> dict[str, Any]:
+_EMBEDDING_CACHE: dict[str, list[float]] = {}
+_EMBEDDING_MODEL = os.getenv("BENCHMARK_EMBEDDING_MODEL", "text-embedding-3-small")
+_BLIND_SEMANTIC_MODE = os.getenv("BLIND_SEMANTIC_MODE", "embedding").strip().lower()
+_BLIND_STEP_ALIGNMENT_THRESHOLD = float(os.getenv("BLIND_STEP_ALIGNMENT_THRESHOLD", "0.35"))
+
+def _embedding_vectors(texts: list[str]) -> list[list[float]]:
+    """Fetch deterministic evaluator embeddings using the configured OpenAI-compatible API."""
+    unique = list(dict.fromkeys(str(text) for text in texts))
+    missing = [text for text in unique if text not in _EMBEDDING_CACHE]
+    if missing:
+        from openai import OpenAI
+        client = OpenAI(api_key=os.environ["OPENAI_API_KEY"],
+                        base_url=os.getenv("OPENAI_API_BASE_URL", "https://api.openai.com/v1"),
+                        timeout=180, max_retries=2)
+        response = client.embeddings.create(model=_EMBEDDING_MODEL, input=missing)
+        for text, item in zip(missing, sorted(response.data, key=lambda value: value.index)):
+            _EMBEDDING_CACHE[text] = list(item.embedding)
+    return [_EMBEDDING_CACHE[text] for text in texts]
+
+def _cosine(left: list[float], right: list[float]) -> float:
+    numerator = sum(a * b for a, b in zip(left, right))
+    denominator = math.sqrt(sum(a * a for a in left)) * math.sqrt(sum(b * b for b in right))
+    return max(0.0, min(1.0, numerator / denominator)) if denominator else 0.0
+
+def _semantic_similarity_matrix(left: list[str], right: list[str]) -> list[list[float]]:
+    vectors = _embedding_vectors(left + right)
+    split = len(left)
+    return [[_cosine(vectors[i], vectors[split + j]) for j in range(len(right))] for i in range(split)]
+
+def _token_f1(left: str, right: str):
+    left_tokens = set(re.findall(r"[a-z0-9_]+", normalize(left)))
+    right_tokens = set(re.findall(r"[a-z0-9_]+", normalize(right)))
+    if not left_tokens or not right_tokens:
+        return 1.0 if not left_tokens and not right_tokens else 0.0
+    overlap = len(left_tokens & right_tokens)
+    precision, recall = overlap / len(left_tokens), overlap / len(right_tokens)
+    return 2 * precision * recall / (precision + recall) if precision + recall else 0.0
+
+def _blind_entity_aliases(case: dict[str, Any]) -> dict[str, str]:
+    aliases = {}
+    for item in case["ground_truth"].get("entities", []):
+        for value in (item["id"], item.get("value", ""), f"{item.get('type', '')}:{item.get('value', '')}"):
+            if str(value).strip(): aliases[normalize(value)] = str(item["id"])
+    return aliases
+
+def _blind_match_entities(values: Any, aliases: dict[str, str]) -> set[str]:
+    matched = set()
+    for value in values if isinstance(values, list) else []:
+        text = normalize(value)
+        if text in aliases:
+            matched.add(aliases[text]); continue
+        candidates = [(len(alias), entity_id) for alias, entity_id in aliases.items()
+                      if len(alias) >= 4 and (alias in text or text in alias)]
+        if candidates: matched.add(max(candidates)[1]
+)
+    return matched
+
+def _blind_relation_recall(actual: Any, expected: Any) -> float:
+    actual = [str(x) for x in actual if str(x).strip()] if isinstance(actual, list) else []
+    expected = [str(x) for x in expected if str(x).strip()] if isinstance(expected, list) else []
+    if not expected: return 1.0
+    if _BLIND_SEMANTIC_MODE == "token":
+        matrix = [[_token_f1(left, right) for right in expected] for left in actual] if actual else []
+    else:
+        matrix = _semantic_similarity_matrix(actual, expected) if actual else []
+    scores = sorted(((matrix[i][j], i, j) for i in range(len(actual)) for j in range(len(expected))), reverse=True)
+    used_a, used_e, total = set(), set(), 0.0
+    for score, i, j in scores:
+        if i not in used_a and j not in used_e and score >= 0.25:
+            used_a.add(i); used_e.add(j); total += score
+    return total / len(expected)
+
+def _reasoning_quality(case: dict[str, Any], output: dict[str, Any], judge: Callable[[str, str], float] | None = None, blind: bool = False) -> dict[str, Any]:
     expected_items = {int(item["step_index"]): item for item in case["ground_truth"].get("reasoning_proof_chains", [])}
     valid_entity_ids = {str(item["id"]) for item in case["ground_truth"].get("entities", [])}
     valid_relation_types = {normalize(item["relationship_type"]) for item in case["ground_truth"].get("relations", [])}
@@ -229,33 +316,57 @@ def _reasoning_quality(case: dict[str, Any], output: dict[str, Any], judge: Call
     details = {int(item["id"]): item for item in output.get("reasoning_step_details", [])
                if isinstance(item, dict) and str(item.get("id", "")).isdigit()}
     detail_rows = []
+    if blind:
+        actual_items = [item for item in output.get("reasoning_step_details", []) if isinstance(item, dict)]
+        candidate_conclusions = [actual.get("conclusion", "") for actual in actual_items]
+        expected_conclusions = [expected.get("conclusion", "") for expected in expected_items.values()]
+        if _BLIND_SEMANTIC_MODE == "token":
+            matrix = [[_token_f1(left, right) for right in expected_conclusions] for left in candidate_conclusions]
+        else:
+            matrix = _semantic_similarity_matrix(candidate_conclusions, expected_conclusions) if candidate_conclusions else []
+        expected_ids = list(expected_items)
+        candidates = sorted(((matrix[aid][ej], aid, expected_ids[ej])
+                            for aid in range(len(actual_items))
+                            for ej in range(len(expected_ids))), reverse=True)
+        used_a, used_e, matches = set(), set(), {}
+        for similarity, aid, eid in candidates:
+            if aid not in used_a and eid not in used_e and similarity >= _BLIND_STEP_ALIGNMENT_THRESHOLD:
+                used_a.add(aid); used_e.add(eid); matches[eid] = actual_items[aid]
+        aliases = _blind_entity_aliases(case)
+    else:
+        matches = {step_id: details.get(step_id) for step_id in expected_items if details.get(step_id)}
+        aliases = {}
     for step_id, expected in expected_items.items():
-        actual = details.get(step_id)
+        actual = matches.get(step_id) if blind else details.get(step_id)
         if not actual:
             continue
         expected_entities = set(expected.get("premise_entities", []))
         expected_relations = set(expected.get("premise_relations", []))
-        actual_entities = {str(value) for value in actual.get("premise_entities", [])}
-        actual_relations = {normalize(value) for value in actual.get("premise_relations", [])}
+        raw_entities = actual.get("premise_entities", [])
+        actual_entities = _blind_match_entities(raw_entities, aliases) if blind else {str(value) for value in raw_entities}
+        actual_relations = [str(value) for value in actual.get("premise_relations", [])]
         expected_relations = {normalize(value) for value in expected_relations}
         invalid_entities = sorted(actual_entities - set(
             item["id"] for item in case["ground_truth"].get("entities", [])
         ))
-        invalid_relations = sorted(actual_relations - valid_relation_types)
+        invalid_relations = [] if blind else sorted({normalize(x) for x in actual_relations} - valid_relation_types)
         entity_recall = len(actual_entities & expected_entities) / len(expected_entities) if expected_entities else 1.0
-        relation_recall = len(actual_relations & expected_relations) / len(expected_relations) if expected_relations else 1.0
-        premise_score = (entity_recall + relation_recall) / 2
-        conclusion_score = judge(actual.get("conclusion", ""), expected.get("conclusion", "")) if judge else _token_similarity(actual.get("conclusion", ""), expected.get("conclusion", ""))
+        relation_recall = _blind_relation_recall(actual_relations, list(expected_relations)) if blind else len(set(actual_relations) & expected_relations) / len(expected_relations) if expected_relations else 1.0
+        premise_score = (0.70 * entity_recall + 0.30 * relation_recall) if blind else (entity_recall + relation_recall) / 2
+        conclusion_score = judge(actual.get("conclusion", ""), expected.get("conclusion", "")) if judge else (_token_f1(actual.get("conclusion", ""), expected.get("conclusion", "")) if _BLIND_SEMANTIC_MODE == "token" else _cosine(*_embedding_vectors([actual.get("conclusion", ""), expected.get("conclusion", "")])) if blind else _token_similarity(actual.get("conclusion", ""), expected.get("conclusion", "")))
+        grounded_score = (0.50 * premise_score + 0.50 * conclusion_score) if blind else premise_score * conclusion_score
         detail_rows.append({"id": step_id, "premise_score": premise_score, "entity_recall": entity_recall,
                             "relation_recall": relation_recall, "conclusion_similarity": conclusion_score,
                             "invalid_premise_entities": invalid_entities, "invalid_premise_relations": invalid_relations,
-                            "grounded_score": premise_score * conclusion_score})
-    coverage = len(details.keys() & expected_items.keys()) / len(expected_items) if expected_items else 1.0
+                            "grounded_score": grounded_score})
+    coverage = len(matches) / len(expected_items) if blind else len(details.keys() & expected_items.keys()) / len(expected_items) if expected_items else 1.0
     grounded = sum(row["grounded_score"] for row in detail_rows) / len(detail_rows) if detail_rows else 0.0
+    coverage_factor = (0.5 + 0.5 * coverage) if blind else coverage
     return {"covered": len(detail_rows), "expected": len(expected_items), "coverage": coverage,
             "semantic_similarity": sum(row["conclusion_similarity"] for row in detail_rows) / len(detail_rows) if detail_rows else 0.0,
             "premise_grounding": sum(row["premise_score"] for row in detail_rows) / len(detail_rows) if detail_rows else 0.0,
-            "grounded_score": coverage * grounded, "method": "premise_ids_plus_token_entailment_proxy",
+            "grounded_score": coverage_factor * grounded, "method": f"blind_{_BLIND_SEMANTIC_MODE}_relaxed_step_alignment_v4_threshold_{_BLIND_STEP_ALIGNMENT_THRESHOLD:g}" if blind else "premise_ids_plus_token_entailment_proxy",
+            "formula": f"semantic_mode={_BLIND_SEMANTIC_MODE}; alignment_threshold={_BLIND_STEP_ALIGNMENT_THRESHOLD:g}; coverage_factor=(0.5+0.5*coverage); premise=0.7*entity+0.3*relation; step=0.5*premise+0.5*conclusion" if blind else "premise*conclusion",
             "details": detail_rows}
 
 
@@ -278,7 +389,7 @@ def _report_quality(report: str, output: dict[str, Any], finding_score: dict[str
     return {"score": sum(checks.values()) / len(checks), "checks": checks, "scale": "deterministic rubric 0-1"}
 
 
-def score_case(case: dict[str, Any], output: dict[str, Any], judge: Callable[[str, str], float] | None = None) -> dict[str, Any]:
+def score_case(case: dict[str, Any], output: dict[str, Any], judge: Callable[[str, str], float] | None = None, blind: bool = False) -> dict[str, Any]:
     source_lookup = {normalize_uri(item["uri"]): item["source_id"] for item in case.get("sources", [])}
     expected_sources = set(source_lookup.values())
     cited_sources = _source_ids(output, source_lookup)
@@ -293,7 +404,7 @@ def score_case(case: dict[str, Any], output: dict[str, Any], judge: Callable[[st
     finding_scores = _finding_scores(case, output, judge)
     claim_traceability = _claim_traceability(case, output)
     contradiction_scores = _contradiction_scores(case, output)
-    reasoning_quality = _reasoning_quality(case, output, judge)
+    reasoning_quality = _reasoning_quality(case, output, judge, blind=blind)
     predicted_findings = [item for item in output.get("key_findings", []) if isinstance(item, dict)]
     available_expected = available_sources & expected_sources
     finding_sources = [set(item.get("source_references", [])) for item in predicted_findings]

@@ -225,7 +225,7 @@ class SnapshotSearch:
 
 
 def _benchmark_contract(case: dict[str, Any]) -> str:
-    ground_truth = case.get("ground_truth", {})
+    return ""
     entities = json.dumps(
         [{"id": e.get("id"), "type": e.get("type"), "value": e.get("value")} for e in ground_truth.get("entities", [])],
         ensure_ascii=False,
@@ -299,8 +299,8 @@ def run(case: dict[str, Any], io: Path, model: str, max_requests: int = 80):
     filellm = FileLLM(io, model, max_requests)
     dr_mod.configurable_model = filellm
 
-    contract = _benchmark_contract(case)
-    prompt = f"{case['investigation_goal']}\n\n{contract}"
+    from dataset.benchmark.blind import blind_prompt
+    prompt = blind_prompt(case)
     config = {
         "configurable": {
             "search_api": "tavily",

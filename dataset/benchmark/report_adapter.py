@@ -24,10 +24,13 @@ def _lookup(value: Any, aliases: dict[str, str]) -> Any:
     return aliases.get(value.strip().casefold(), value)
 
 
-def adapt_report_output(case: BenchmarkCase, parsed: dict[str, Any]) -> dict[str, Any]:
+def adapt_report_output(case: BenchmarkCase, parsed: dict[str, Any], validation_mode: str = "assisted") -> dict[str, Any]:
     """Normalize a parsed report without adding unsupported content.
 
-    The runner remains the source of parsing/validation errors.  This function
+    In blind mode, hidden entity, contradiction, proof-step, and relation
+    registries are used only for scoring/normalization, never as validity
+    requirements.
+    The runner remains the source of parsing/validation errors. This function
     is deliberately a pure adapter so adapter-on and adapter-off results can be
     compared over identical preserved artifacts.
     """
@@ -168,25 +171,29 @@ def adapt_report_output(case: BenchmarkCase, parsed: dict[str, Any]) -> dict[str
     errors: list[str] = []
     for item in findings + claims:
         if isinstance(item, dict):
-            for ref in item.get("supporting_entities", []):
-                if ref not in allowed_entities:
-                    errors.append(f"unknown entity {ref}")
-            for ref in item.get("source_references", []):
-                if ref not in allowed_sources:
-                    errors.append(f"unknown source {ref}")
+            if validation_mode != "blind":
+                for ref in item.get("supporting_entities", []):
+                    if ref not in allowed_entities:
+                        errors.append(f"unknown entity {ref}")
+            if validation_mode != "blind":
+                for ref in item.get("source_references", []):
+                    if ref not in allowed_sources:
+                        errors.append(f"unknown source {ref}")
     for item in contradictions:
         if isinstance(item, dict):
-            if item.get("contradiction_id") not in allowed_contradictions:
+            if validation_mode != "blind" and item.get("contradiction_id") not in allowed_contradictions:
                 errors.append(f"unknown contradiction {item.get('contradiction_id', '')}")
-            errors.extend(f"unknown source {ref}" for ref in item.get("source_references", []) if ref not in allowed_sources)
+            if validation_mode != "blind":
+                errors.extend(f"unknown source {ref}" for ref in item.get("source_references", []) if ref not in allowed_sources)
     for item in details:
         if isinstance(item, dict):
-            if item.get("id") not in allowed_steps:
-                errors.append(f"unknown proof step {item.get('id')}")
-            errors.extend(f"unknown entity {ref}" for ref in item.get("premise_entities", []) if ref not in allowed_entities)
-            errors.extend(f"non-canonical relation {ref}" for ref in item.get("premise_relations", []) if ref not in {
-                str(r.get("relationship_type", "")) for r in case.data["ground_truth"].get("relations", [])
-            } and ref not in {
+            if validation_mode != "blind":
+                if item.get("id") not in allowed_steps:
+                    errors.append(f"unknown proof step {item.get('id')}")
+                errors.extend(f"unknown entity {ref}" for ref in item.get("premise_entities", []) if ref not in allowed_entities)
+                errors.extend(f"non-canonical relation {ref}" for ref in item.get("premise_relations", []) if ref not in {
+                    str(r.get("relationship_type", "")) for r in case.data["ground_truth"].get("relations", [])
+                } and ref not in {
                 str(relation) for proof in case.data["ground_truth"].get("reasoning_proof_chains", [])
                 for relation in proof.get("premise_relations", [])
             })

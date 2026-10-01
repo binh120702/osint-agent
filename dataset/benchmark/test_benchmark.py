@@ -1,5 +1,6 @@
 import unittest
 import sys
+import json
 from pathlib import Path
 
 SRC_ROOT = Path(__file__).resolve().parents[2] / "src"
@@ -12,12 +13,25 @@ from .scoring import score_case
 from .case_quality import audit
 from .runner import _report_output
 from .report_adapter import adapt_report_output
+from .blind import blind_case, blind_prompt
 
 
 class BenchmarkFrameworkTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.case = load_case("case_001")
+
+    def test_blind_case_withholds_ground_truth_and_contract_prompt(self):
+        public = blind_case(self.case.data)
+        self.assertNotIn("ground_truth", public)
+        self.assertNotIn("supports_findings", json.dumps(public))
+        self.assertNotIn("FIND-001", json.dumps(public))
+        self.assertNotIn("relations", public)
+        self.assertNotIn("key_findings", public)
+        self.assertNotIn("REQUIRED", blind_prompt(public))
+        self.assertNotIn("CANONICAL", blind_prompt(public))
+        self.assertEqual(public["case_id"], self.case.case_id)
+        self.assertEqual(public["sources"], blind_case(self.case.data)["sources"])
 
     def test_case_loads_and_hashes(self):
         self.assertEqual(self.case.case_id, "OSINT-001")
@@ -177,6 +191,28 @@ class BenchmarkFrameworkTests(unittest.TestCase):
         parsed = _report_output(self.case, "```json\n" + json.dumps(payload) + "\n```")
         self.assertFalse(parsed["structured_output_valid"])
         self.assertTrue(any("non-canonical relation" in error for error in parsed["structured_output_errors"]))
+
+    def test_blind_validation_does_not_require_hidden_ids(self):
+        import json
+        payload = {
+            "findings": [{"question": "q", "answer": "a", "supporting_entities": ["Trading Technologies"], "source_references": ["SRC-001"]}],
+            "claims": [],
+            "reasoning_steps": [{"id": 99, "conclusion": "x", "premise_entities": ["Trading Technologies"], "premise_relations": ["worked at"]}],
+            "contradictions": [{"id": "candidate-1", "description": "conflict", "source_references": ["SRC-001"]}],
+        }
+        report = "```json\n" + json.dumps(payload) + "\n```"
+        parsed = _report_output(self.case, report, validation_mode="blind")
+        self.assertTrue(parsed["structured_output_valid"])
+        self.assertEqual(parsed["structured_output_errors"], [])
+
+    def test_blind_validation_preserves_unknown_sources_for_scoring(self):
+        import json
+        payload = {"findings": [], "claims": [{"claim": "x", "source_references": ["S1"]}],
+                   "reasoning_steps": [], "contradictions": []}
+        parsed = _report_output(self.case, "```json\n" + json.dumps(payload) + "\n```", validation_mode="blind")
+        self.assertTrue(parsed["structured_output_valid"])
+        self.assertEqual(parsed["structured_output_errors"], [])
+        self.assertEqual(parsed["claims"][0]["source_references"], ["S1"])
 
     def test_adapter_accepts_case_declared_proof_relations(self):
         case = load_case("case_005")

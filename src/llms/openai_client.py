@@ -60,6 +60,7 @@ class OpenAIClient(LLMClient):
             model=self.model_name,
             messages=_messages_to_openai(messages),
             temperature=self.temperature,
+            reasoning_effort="none",
         )
         if tools:
             kwargs["tools"] = tools
@@ -86,6 +87,7 @@ class OpenAIClient(LLMClient):
             messages=_messages_to_openai(messages),
             temperature=self.temperature,
             stream=True,
+            reasoning_effort="none",
         )
         if tools:
             kwargs["tools"] = tools
@@ -144,6 +146,7 @@ class OpenAIClient(LLMClient):
             messages=_messages_to_openai(messages),
             temperature=self.temperature,
             stream=True,
+            reasoning_effort="none",
         )
         if tools:
             kwargs["tools"] = tools

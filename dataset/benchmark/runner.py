@@ -25,6 +25,7 @@ from .replay import OfflineToolOverrides, SourceReplay
 from .scoring import score_case
 from .retrieval_metrics import score_retrieval
 from .report_adapter import adapt_report_output
+from .blind import blind_prompt
 
 
 RESULTS_ROOT = Path(__file__).resolve().parent.parent / "results"
@@ -57,8 +58,13 @@ def _capture_neo4j_output(thread_id: str) -> tuple[list[dict[str, Any]], list[di
         return None
 
 
-def _report_output(case: BenchmarkCase, report: str) -> dict[str, Any]:
-    """Parse the preferred JSON report payload, with legacy marker support."""
+def _report_output(case: BenchmarkCase, report: str, validation_mode: str = "assisted") -> dict[str, Any]:
+    """Parse a report and validate its public contract.
+
+    Blind mode validates only properties the candidate could know: payload shape,
+    field types, and references to the supplied source registry.  Hidden
+    benchmark IDs are scored later, but must not determine validity.
+    """
     def json_payload() -> dict[str, Any] | None:
         """Extract the last decodable benchmark object without truncating nested JSON."""
         decoder = json.JSONDecoder()
@@ -151,7 +157,7 @@ def _report_output(case: BenchmarkCase, report: str) -> dict[str, Any]:
     contradiction_ids = {str(item["contradiction_id"]) for item in case.data["ground_truth"].get("contradictions", [])}
     step_ids = {int(item["step_index"]) for item in case.data["ground_truth"].get("reasoning_proof_chains", [])}
     expected_step_ids = {int(item["step_index"]) for item in case.data["ground_truth"].get("reasoning_proof_chains", [])}
-    if payload is not None and steps and expected_step_ids and set(steps) != expected_step_ids:
+    if validation_mode != "blind" and payload is not None and steps and expected_step_ids and set(steps) != expected_step_ids:
         missing_steps = sorted(expected_step_ids - set(steps))
         extra_steps = sorted(set(steps) - expected_step_ids)
         if missing_steps:
@@ -165,8 +171,9 @@ def _report_output(case: BenchmarkCase, report: str) -> dict[str, Any]:
         for relation in proof.get("premise_relations", [])
     )
     for step in locals().get("step_details", []):
-        errors.extend(f"reasoning step {step['id']} references unknown entity {x}" for x in step.get("premise_entities", []) if x not in entity_ids)
-        errors.extend(f"reasoning step {step['id']} uses non-canonical relation {x}" for x in step.get("premise_relations", []) if x not in valid_relation_types)
+        if validation_mode != "blind":
+            errors.extend(f"reasoning step {step['id']} references unknown entity {x}" for x in step.get("premise_entities", []) if x not in entity_ids)
+            errors.extend(f"reasoning step {step['id']} uses non-canonical relation {x}" for x in step.get("premise_relations", []) if x not in valid_relation_types)
         if not step.get("conclusion", "").strip():
             errors.append(f"reasoning step {step['id']} has empty conclusion")
     def normalize_ref_list(item: dict[str, Any], canonical: str, *aliases: str) -> None:
@@ -187,8 +194,10 @@ def _report_output(case: BenchmarkCase, report: str) -> dict[str, Any]:
             continue
         normalize_ref_list(item, "supporting_entities", "entities")
         normalize_ref_list(item, "source_references", "sources", "evidence_sources")
-        errors.extend(f"finding references unknown entity {x}" for x in item["supporting_entities"] if x not in entity_ids)
-        errors.extend(f"finding references unknown source {x}" for x in item["source_references"] if x not in source_ids)
+        if validation_mode != "blind":
+            errors.extend(f"finding references unknown entity {x}" for x in item["supporting_entities"] if x not in entity_ids)
+        if validation_mode != "blind":
+            errors.extend(f"finding references unknown source {x}" for x in item["source_references"] if x not in source_ids)
     for item in contradictions:
         if not isinstance(item, dict):
             errors.append("contradiction is not an object")
@@ -196,19 +205,23 @@ def _report_output(case: BenchmarkCase, report: str) -> dict[str, Any]:
         if "contradiction_id" not in item:
             item["contradiction_id"] = item.get("id", item.get("contradictionId", ""))
         normalize_ref_list(item, "source_references", "sources")
-        if item["contradiction_id"]:
-            if item["contradiction_id"] not in contradiction_ids:
-                errors.append(f"unknown contradiction {item['contradiction_id']}")
-        elif item.get("statement", item.get("description", "")).strip():
-            errors.append("contradiction is missing contradiction_id")
-        errors.extend(f"contradiction references unknown source {x}" for x in item["source_references"] if x not in source_ids)
+        if validation_mode != "blind":
+            if item["contradiction_id"]:
+                if item["contradiction_id"] not in contradiction_ids:
+                    errors.append(f"unknown contradiction {item['contradiction_id']}")
+            elif item.get("statement", item.get("description", "")).strip():
+                errors.append("contradiction is missing contradiction_id")
+        if validation_mode != "blind":
+            errors.extend(f"contradiction references unknown source {x}" for x in item["source_references"] if x not in source_ids)
     for item in claims:
         if not isinstance(item, dict):
             errors.append("claim is not an object")
             continue
         normalize_ref_list(item, "source_references", "sources")
-        errors.extend(f"claim references unknown source {x}" for x in item["source_references"] if x not in source_ids)
-    errors.extend(f"unknown proof step {x}" for x in steps if x not in step_ids)
+        if validation_mode != "blind":
+            errors.extend(f"claim references unknown source {x}" for x in item["source_references"] if x not in source_ids)
+    if validation_mode != "blind":
+        errors.extend(f"unknown proof step {x}" for x in steps if x not in step_ids)
     has_structured_contract = payload is not None or bool(findings or contradictions or steps or claims)
     return {"key_findings": findings, "contradictions": contradictions, "reasoning_steps": steps,
             "reasoning_step_details": locals().get("step_details", []), "claims": claims, "structured_output": has_structured_contract,
@@ -265,7 +278,7 @@ def _extract_output(trace: dict[str, Any], case: BenchmarkCase) -> dict[str, Any
     }
 
 
-def run_existing_agent(case: BenchmarkCase, mode: str = "offline", llm_client=None, graph_source: str = "trace", report_adapter: bool = False) -> dict[str, Any]:
+def run_existing_agent(case: BenchmarkCase, mode: str = "offline", llm_client=None, graph_source: str = "trace", report_adapter: bool = False, blind: bool = False) -> dict[str, Any]:
     """Run the production agent and capture its tool trace.
 
     This intentionally imports the application only when a real run is requested;
@@ -305,7 +318,7 @@ def run_existing_agent(case: BenchmarkCase, mode: str = "offline", llm_client=No
         try:
             final_report = "".join(loop.run(
             thread_id=thread_id,
-            user_message=(
+            user_message=(blind_prompt(case.data) if blind else (
                 f"The user has explicitly asked you to generate the final report for this benchmark case and is ready to stop gathering evidence. Investigate this benchmark case and then call the final_report tool; do not ask whether to continue. Goal: {case.data['investigation_goal']} Target: {case.data['target']}\n\n"
                 "Use only evidence returned by benchmark sources. Do not invent facts. In the final report, "
                 "include explicit benchmark annotations using these exact markers (in addition to readable Markdown):\n"
@@ -342,7 +355,7 @@ def run_existing_agent(case: BenchmarkCase, mode: str = "offline", llm_client=No
                 )
                 + "\nCanonical source registry (cite only sources returned by tools):\n" + "\n".join(
                     f"{item['source_id']} = {item.get('title', '')} ({item.get('uri', '')})" for item in case.data.get("sources", [])
-                )
+                ))
             ),
             on_tool_start=on_start,
             on_tool_end=on_end,
@@ -376,9 +389,9 @@ def run_existing_agent(case: BenchmarkCase, mode: str = "offline", llm_client=No
         trace["output"]["graph_capture_source"] = "neo4j"
     else:
         trace["output"]["graph_capture_source"] = "trace"
-    trace["output"].update(_report_output(case, final_report))
+    trace["output"].update(_report_output(case, final_report, validation_mode="blind" if blind else "assisted"))
     if report_adapter:
-        trace["output"] = adapt_report_output(case, trace["output"])
+        trace["output"] = adapt_report_output(case, trace["output"], validation_mode="blind" if blind else "assisted")
         trace["output"]["report_adapter"] = "deterministic-v1"
     trace["output"]["graph_capture_diagnostics"] = {
         "entity_records_emitted": len(trace["output"].get("entities", [])),
@@ -416,6 +429,7 @@ def main() -> int:
     parser.add_argument("--graph-source", choices=("trace", "neo4j"), default="trace",
                         help="Graph representation to score; trace is reproducible, neo4j requires a database")
     parser.add_argument("--report-adapter", action="store_true", help="Apply deterministic post-generation report normalization")
+    parser.add_argument("--blind", action="store_true", help="Withhold benchmark ground truth and contract annotations from the agent")
     args = parser.parse_args()
 
     if args.max_iterations is not None:
@@ -432,7 +446,7 @@ def main() -> int:
         return 0
 
     run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ") + "-" + uuid.uuid4().hex[:8]
-    manifest = {"run_id": run_id, "mode": args.mode, "graph_source": args.graph_source,
+    manifest = {"run_id": run_id, "mode": args.mode, "graph_source": args.graph_source, "evaluation_mode": "blind" if args.blind else "assisted",
                 "cases": [{"case_id": case.case_id, "sha256": case.sha256} for case in cases],
                 "platform": platform.platform(), "python": sys.version, "started_at": datetime.now(timezone.utc).isoformat()}
     manifest_path = RESULTS_ROOT / run_id / "manifest.json"
@@ -446,7 +460,7 @@ def main() -> int:
             from .recorded_llm import RecordedLLMClient
             fixture_client = RecordedLLMClient(args.llm_fixture)
             execution_mode = "offline"
-        path = write_result(case, run_existing_agent(case, mode=execution_mode, llm_client=fixture_client, graph_source=args.graph_source, report_adapter=args.report_adapter), run_id)
+        path = write_result(case, run_existing_agent(case, mode=execution_mode, llm_client=fixture_client, graph_source=args.graph_source, report_adapter=args.report_adapter, blind=args.blind), run_id)
         result = json.loads(path.read_text(encoding="utf-8"))
         summaries.append({"case_id": case.case_id, "metrics": result["metrics"]})
         print(path)

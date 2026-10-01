@@ -70,24 +70,9 @@ def run(case: dict[str, Any], io: Path, model: str, max_requests: int = 80):
     async def fixed_outline(query, *args, **kwargs):
         return [query]
     researcher_mod.plan_research_outline = fixed_outline
-    prompt = case["investigation_goal"]
-    gt = case.get("ground_truth", {})
-    entity_catalog = json.dumps([{"id": e.get("id"), "type": e.get("type"), "value": e.get("value")} for e in gt.get("entities", [])], ensure_ascii=False)
-    source_catalog = json.dumps([{"source_id": s.get("source_id"), "uri": s.get("uri")} for s in case.get("sources", [])], ensure_ascii=False)
-    contradiction_catalog = json.dumps([{ "contradiction_id": x.get("contradiction_id"), "description": x.get("description", "") } for x in gt.get("contradictions", [])], ensure_ascii=False)
-    step_catalog = json.dumps([{ "step_index": x.get("step_index"), "conclusion": x.get("conclusion", ""), "premise_entities": x.get("premise_entities", []), "premise_relations": x.get("premise_relations", []) } for x in gt.get("reasoning_proof_chains", [])], ensure_ascii=False)
-    contract = f"""
-Return the report with the following required benchmark contract. Use only the supplied snapshot evidence and preserve canonical IDs exactly as listed below. These catalogs are benchmark metadata, not evidence; cite source IDs only when the source text supports the statement.
-CANONICAL ENTITIES: {entity_catalog}
-CANONICAL SOURCES: {source_catalog}
-CANONICAL CONTRADICTIONS: {contradiction_catalog}
-CANONICAL PROOF STEPS: {step_catalog}
-[CLAIM] source_references=SRC-... claim text [/CLAIM]
-[FINDING] question=... entities=ENT-... sources=SRC-... finding text [/FINDING]
-[CONTRADICTION] contradiction_id=CONTRA-... sources=SRC-... description [/CONTRADICTION]
-[STEP] id=1 conclusion=... premise_entities=ENT-... premise_relations=... [/STEP]
-Then include a fenced JSON object with arrays named findings, claims, contradictions, reasoning_steps; each finding has question, answer, supporting_entities, source_references; claims have source_references; contradictions have contradiction_id, description, source_references; reasoning_steps have id, conclusion, premise_entities, premise_relations. Do not invent IDs or evidence. Include all required proof steps only when supported; if a step is unsupported, include it with an empty/qualified conclusion rather than inventing evidence.
-"""
+    from dataset.benchmark.blind import blind_prompt
+    prompt = blind_prompt(case)
+    contract = ""
     r = agent_mod.GPTResearcher(prompt, report_source="web", verbose=False, agent="research", role="OSINT researcher", headers={"retrievers":"custom"}, max_subtopics=3, mcp_strategy="disabled")
     start=time.monotonic(); context=asyncio.run(r.conduct_research()); report=asyncio.run(r.write_report(custom_prompt=contract))
     result={"candidate":"assafelovic/gpt-researcher", "adaptation":"native-workflow-snapshot-retriever-file-inference-v1", "case_id":case["case_id"], "report":report, "context":context, "visited_urls":sorted(r.visited_urls), "retriever_trace":SnapshotRetriever.trace, "request_count":filellm.count, "duration_seconds":time.monotonic()-start}

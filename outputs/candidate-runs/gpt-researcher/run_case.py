@@ -5,9 +5,10 @@ ROOT=Path(__file__).resolve().parents[3]
 sys.path.insert(0,str(ROOT))
 sys.path.insert(0,str(Path(__file__).parent))
 from dataset.benchmark.loader import load_case
+from dataset.benchmark.blind import blind_case
 from adapter import run
 p=argparse.ArgumentParser(); p.add_argument('case_id'); p.add_argument('--io',required=True); p.add_argument('--model',required=True); p.add_argument('--max-requests',type=int,default=80); a=p.parse_args()
-case=load_case(a.case_id).data
+case=blind_case(load_case(a.case_id).data)
 # Keep the native context-manager path, but avoid network-backed embedding compression
 # for immutable benchmark snapshots; this is a declared replay boundary.
 os.environ['COMPRESSION_THRESHOLD'] = str(max(10_000_000, sum(len(s.get('raw_text','')) for s in case.get('sources', [])) + 1))
