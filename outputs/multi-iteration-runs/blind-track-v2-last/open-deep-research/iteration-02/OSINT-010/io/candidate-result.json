@@ -1,0 +1,60 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-010",
+  "report": "Error generating final report: APITimeoutError: Request timed out.",
+  "context": [],
+  "visited_urls": [
+    "https://digitalcommons.unl.edu/senatedocs/1/",
+    "https://www.intelligence.senate.gov/wp-content/uploads/2024/08/sites-default-files-documents-report-volume2.pdf",
+    "https://www.justice.gov/d9/fieldable-panel-panes/basic-panes/attachments/2018/02/16/internet_research_agency_indictment.pdf",
+    "https://www.npr.org/2019/10/08/768319934/senate-report-russians-used-used-social-media-mostly-to-target-race-in-2016"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "Internet Research Agency 2016 US social media operation DOJ indictment Senate Intelligence Committee report platform disclosures Facebook Twitter Google Reddit source documents"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:about.fb.com IRA 2016 Russia accounts Facebook 470 pages 80,000 posts 2017 disclosure",
+        "site:blog.twitter.com Russia IRA 2016 accounts 3814 2018 disclosure",
+        "Google congressional testimony IRA 2016 accounts YouTube ads Russia platform disclosure",
+        "Reddit Russian IRA 2016 accounts disclosure"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:intelligence.senate.gov Volume 2 IRA Blacktivist Being Patriotic Heart of Texas Stop A.I. 2016 accounts pages ads",
+        "Senate Russia social media report IRA personas domains advertisements Facebook Twitter Instagram names"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "Facebook September 2017 470 accounts 3000 ads Russia Internet Research Agency official newsroom",
+        "Twitter January 2018 3814 accounts Russian state-backed information operations official blog",
+        "Google October 2017 18 channels 1108 videos Russian influence official testimony",
+        "Reddit 2017 Russian influence accounts official statement"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 10,
+  "duration_seconds": 368.7069838999887
+}

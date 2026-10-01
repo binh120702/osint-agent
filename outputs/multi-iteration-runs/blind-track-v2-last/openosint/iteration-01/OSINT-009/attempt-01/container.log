@@ -1,0 +1,9 @@
+Unexpected error in OpenAI-compatible agent loop.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/openosint/agent.py", line 1011, in run
+    response = await client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/benchmark/adapter.py", line 40, in create
+    raise RuntimeError(response['bridge_error'])
+RuntimeError: APITimeoutError: Request timed out.
+{"complete": false, "requests": 3, "tool_calls": 8, "report_chars": 0, "error": "APITimeoutError: Request timed out."}

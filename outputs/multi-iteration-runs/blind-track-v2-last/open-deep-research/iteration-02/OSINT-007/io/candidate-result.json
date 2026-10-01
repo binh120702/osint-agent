@@ -1,0 +1,41 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-007",
+  "report": "Error generating final report: APIConnectionError: Connection error.",
+  "context": [],
+  "visited_urls": [
+    "https://www.cnbc.com/2024/01/29/doj-and-sec-unveil-charges-in-1point9-billion-cryptocurrency-fraud-scheme.html",
+    "https://www.justice.gov/criminal/case/hyperfund-and-associated-cases",
+    "https://www.sec.gov/newsroom/press-releases/2024-11",
+    "https://www.theguardian.com/technology/2024/jan/04/chief-executive-of-collapsed-crypto-fund-hyperverse-does-not-appear-to-exist"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "HyperFund HyperVerse crypto fraud chronology entities leaders CEO Ryan Xu Sam Lee HyperTech HyperCapital HyperCommunity source",
+        "HyperVerse investigation ASIC SEC DOJ HyperFund pyramid scheme recruitment withdrawals promoters",
+        "HyperVerse CEO Steven Reece Lewis identity credentials investigation",
+        "HyperFund HyperVerse public promoters endorsements events"
+      ],
+      "max_results": 8,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:theguardian.com HyperVerse HyperFund investors lose millions how scheme worked Sam Lee Ryan Xu Blockchain Global regulators warnings",
+        "site:asic.gov.au HyperFund HyperVerse warning suspected pyramid scheme",
+        "HyperVerse launch event Steve Wozniak Chuck Norris endorsements Steven Reece Lewis source",
+        "SEC HyperFund complaint membership referral commissions HyperUnits 20 levels payment withdrawals"
+      ],
+      "max_results": 8,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 12,
+  "duration_seconds": 402.5455260000308
+}

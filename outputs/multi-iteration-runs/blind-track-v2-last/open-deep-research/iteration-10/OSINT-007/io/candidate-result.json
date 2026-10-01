@@ -1,0 +1,80 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-007",
+  "report": "Error generating final report: APITimeoutError: Request timed out.",
+  "context": [],
+  "visited_urls": [
+    "https://www.cnbc.com/2024/01/29/doj-and-sec-unveil-charges-in-1point9-billion-cryptocurrency-fraud-scheme.html",
+    "https://www.justice.gov/criminal/case/hyperfund-and-associated-cases",
+    "https://www.sec.gov/newsroom/press-releases/2024-11",
+    "https://www.theguardian.com/technology/2024/jan/04/chief-executive-of-collapsed-crypto-fund-hyperverse-does-not-appear-to-exist"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "HyperFund HyperVerse SEC DOJ CFTC court complaint CEO Steven Reece Sam Lee primary sources"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "HyperFund HyperVerse ASIC UK FCA parliament investigation official report promoters"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "HyperFund HyperVerse promised returns referral recruitment HyperVerse CEO Ryan Xu Steven Reece sources"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:asic.gov.au HyperVerse HyperFund HyperTech warning 2021 2022"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:fca.org.uk HyperFund HyperVerse HyperCapital warning"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "Australian Senate committee HyperVerse Sam Lee Blockchain Global report HyperFund"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "HyperVerse launch Steve Wozniak Chuck Norris Nigel Farage celebrity endorsements source"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 10,
+  "duration_seconds": 483.88854939996963
+}

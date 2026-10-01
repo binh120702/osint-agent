@@ -1,0 +1,61 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-007",
+  "report": "# HyperFund/HyperVerse: Evidence-Limited Research Report\n\n## Executive summary\n\nThe benchmark material supplied for this report does **not contain any substantive source results** about HyperFund, HyperVerse, their promoters, alleged operating model, corporate entities, rebrandings, or CEO identity.\n\nThe only returned material is an administrative research note stating that a broad evidence-gathering pass was intended, followed by an error stating: “Maximum retries exceeded.” No source IDs, URLs, documents, quotations, entity records, relationship records, or tool-derived findings were returned.\n\nAccordingly, no factual reconstruction of the alleged network can be responsibly made from the available benchmark evidence. The following topics remain **unestablished by the returned evidence**:\n\n- chronology of HyperFund or HyperVerse;\n- legal or corporate entities involved;\n- roles of promoters, founders, executives, or affiliates;\n- relationships among entities or individuals;\n- investor-recruitment methods;\n- public promotional activity;\n- investor-facing representations;\n- alleged crypto-Ponzi mechanics;\n- use of cryptocurrency, memberships, rewards, or referral structures;\n- organizational or brand rebrandings;\n- the identity, background, or credibility of any purported CEO;\n- regulatory, civil, or criminal findings;\n- whether any alleged conduct occurred, and who—if anyone—was responsible.\n\nNo allegation is treated as verified merely because it appears in the research brief. The brief identifies subjects for investigation, but it is not itself evidence establishing those subjects’ conduct, identities, or relationships.\n\n## Evidence status and limitations\n\n### Returned evidence\n\nThe supplied research record contains only:\n\n1. A reflection that a source-grounded investigation was planned.\n2. An error indicating that report synthesis failed after maximum retries.\n\nNeither item provides substantive evidence concerning HyperFund or HyperVerse. No source identifier was returned that could be cited under the requirement to use only benchmark-tool source IDs.\n\n### Consequence for factual findings\n\nBecause the required evidence is absent:\n\n- no dates can be verified;\n- no entity names beyond the labels “HyperFund” and “HyperVerse” can be established as legally distinct or related entities;\n- no person can be identified as a founder, promoter, executive, CEO, spokesperson, or affiliate;\n- no relationship name can be assigned between any person or entity;\n- no operational mechanism can be characterized as fact;\n- no rebranding sequence can be established;\n- no investor-facing claim can be attributed to a specific source;\n- no allegation can be corroborated or tested against a primary or otherwise identified source;\n- no contradiction between sources can be documented.\n\n## Assessment of the proposed fraud model\n\nThe research brief asks whether the network combined alleged crypto-Ponzi mechanics, public promoters, rebranding, and a questionable CEO persona. On the available record, each component is an **investigative hypothesis or allegation described by the brief**, not a benchmark-supported finding.\n\n### Alleged crypto-Ponzi mechanics\n\nThe returned evidence does not establish that HyperFund or HyperVerse:\n\n- promised fixed or unusually high returns;\n- paid earlier participants using funds from later participants;\n- relied on recruitment-based rewards;\n- operated a membership, package, token, or subscription structure;\n- used cryptocurrency deposits or withdrawals in any particular way; or\n- lacked a legitimate underlying revenue source.\n\nThe characterization of the operation as a “crypto-Ponzi” therefore cannot be verified from the available tool output.\n\n### Public promoters and recruitment\n\nNo evidence was returned identifying public promoters, influencers, speakers, affiliates, recruiters, or marketing campaigns. It is therefore not possible to establish:\n\n- who promoted the project;\n- what audiences were targeted;\n- whether promoters received compensation;\n- whether promoters recruited investors through events, social media, referral links, testimonials, or other methods;\n- what promoters allegedly represented to potential investors; or\n- whether any promoter knew, or should have known, of alleged misconduct.\n\n### Rebranding and organizational structure\n\nThe available material does not establish that HyperFund became HyperVerse, that either name represented a particular legal entity, or that the names reflected a formal reorganization, marketing change, successor operation, or continuation of the same enterprise.\n\nAny chronology connecting those names would require source evidence that was not returned.\n\n### CEO identity and credibility\n\nNo CEO name, biography, corporate appointment, professional history, public profile, or identity-verification evidence was returned. Consequently, the available material cannot establish:\n\n- who the purported CEO was;\n- whether the person existed under the stated identity;\n- whether the person held the claimed position;\n- whether the person had the claimed professional credentials;\n- whether the persona was fabricated, exaggerated, borrowed, or misleading; or\n- whether the CEO’s background affected investor recruitment.\n\nThe phrase “questionable CEO persona” remains an unverified characterization in the research brief.\n\n## Chronology\n\nNo chronology can be responsibly reconstructed from the returned evidence. In particular, the following sequence is unsupported:\n\n- creation or launch of HyperFund;\n- expansion or recruitment activity;\n- transition to or adoption of the HyperVerse name;\n- changes in leadership or public representation;\n- interruption of withdrawals or other operational events;\n- regulatory intervention or litigation;\n- collapse, shutdown, or continuation under another name.\n\nAny dates or sequence would have to come from source records that are not present in the supplied findings.\n\n## Entities, roles, and relationships\n\nThe only labels present in the available material are “HyperFund” and “HyperVerse.” The evidence does not establish whether these were:\n\n- companies;\n- platforms;\n- programs;\n- brands;\n- websites;\n- investment schemes;\n- token ecosystems;\n- informal organizational labels; or\n- names used by different entities.\n\nNo supported relationship can be stated between them. It would be speculative to describe either as a parent, subsidiary, successor, rebrand, affiliate, or continuation of the other.\n\nSimilarly, no individuals or organizations can be assigned roles or relationships. The report therefore does not infer identities, corporate connections, agency relationships, promoter status, or control relationships.\n\n## Verified evidence, allegations, assessments, and uncertainty\n\n### Verified from the returned material\n\n- A research pass was contemplated.\n- The supplied record reports that synthesis failed after maximum retries.\n- No substantive benchmark-source evidence is included in the material provided here.\n\n### Alleged or proposed by the research brief, but not verified\n\n- that HyperFund/HyperVerse operated as a crypto-Ponzi;\n- that public promoters recruited investors;\n- that the project used a network or referral structure;\n- that the organization rebranded;\n- that a questionable CEO persona was used;\n- that the elements operated together as a coordinated fraud network.\n\n### Unresolved\n\nAll substantive questions concerning chronology, entities, people, relationships, mechanisms, promotional claims, rebranding, and CEO credibility remain unresolved because the underlying source results were not returned.\n\n## Sources\n\nNo source IDs or source URLs were returned by the benchmark tools. Therefore, no source links can be provided without violating the requirement to cite only returned evidence.\n\n```json\n{\n  \"findings\": [\n    {\n      \"question\": \"What can be established from the returned benchmark evidence about the HyperFund/HyperVerse alleged crypto-fraud network?\",\n      \"answer\": \"No substantive facts about the network can be established. The returned material records only a planned evidence-gathering effort and a synthesis failure; it contains no source IDs, documents, quotations, entity records, relationship records, or tool-derived findings about HyperFund or HyperVerse.\",\n      \"supporting_entities\": [],\n      \"source_references\": []\n    }\n  ],\n  \"claims\": [],\n  \"reasoning_steps\": [\n    {\n      \"id\": \"RS-1\",\n      \"conclusion\": \"A factual reconstruction cannot be completed from the supplied benchmark output because no substantive evidence or source identifiers were returned.\",\n      \"premise_entities\": [],\n      \"premise_relations\": []\n    }\n  ],\n  \"contradictions\": []\n}\n```",
+  "context": [],
+  "visited_urls": [
+    "https://www.cnbc.com/2024/01/29/doj-and-sec-unveil-charges-in-1point9-billion-cryptocurrency-fraud-scheme.html",
+    "https://www.justice.gov/criminal/case/hyperfund-and-associated-cases",
+    "https://www.sec.gov/newsroom/press-releases/2024-11",
+    "https://www.theguardian.com/technology/2024/jan/04/chief-executive-of-collapsed-crypto-fund-hyperverse-does-not-appear-to-exist"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "HyperFund HyperVerse investigation regulator court filing chronology promoters CEO Sam Lee Ryan Xu evidence",
+        "HyperFund HyperVerse ASIC SEC FCA court documents Ponzi",
+        "HyperVerse HyperNation rebrand website promoters webinar"
+      ],
+      "max_results": 8,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:asic.gov.au HyperVerse HyperFund Blockchain Global Sam Lee Ryan Xu",
+        "site:fca.org.uk HyperFund HyperVerse HyperTech warning",
+        "site:justice.gov HyperFund indictment Sam Lee Brenda Chunga Rodney Burton plea sentencing"
+      ],
+      "max_results": 8,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "HyperFund HyperVerse promoters webinars conferences social media Bitcoin Rodney Bitcoin Beautee Guardian ABC Australia investigation",
+        "HyperVerse launch December 2021 Steven Reece Lewis Wozniak Chuck Norris promotional video",
+        "HyperFund HyperNation HyperVerse website terms company entity"
+      ],
+      "max_results": 8,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "HyperFund HyperVerse Australia regulator warning 2021 2022 suspected pyramid scheme ASIC FCA New Zealand FMA",
+        "HyperVerse Sam Lee Ryan Xu Blockchain Global HyperCapital HyperNation chronology",
+        "HyperFund HyperVerse investor conference webinar referral commissions 20 levels"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 12,
+  "duration_seconds": 659.1739185000188
+}

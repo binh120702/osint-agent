@@ -1,0 +1,57 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-004",
+  "report": "Error generating final report: APITimeoutError: Request timed out.",
+  "context": [],
+  "visited_urls": [
+    "https://www.crowdstrike.com/en-us/blog/bears-midst-intrusion-democratic-national-committee/",
+    "https://www.justice.gov/archives/opa/pr/grand-jury-indicts-12-russian-intelligence-officers-hacking-offenses-related-2016-election"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "Guccifer 2.0 DCLeaks indictment GRU Mueller technical evidence CrowdStrike report",
+        "site:justice.gov Guccifer 2.0 DCLeaks indictment 2018",
+        "Guccifer 2.0 persona DCLeaks Russian intelligence attribution technical analysis"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "Guccifer 2.0 interview claims Romanian hacker DCLeaks persona statements 2016 source",
+        "Guccifer 2.0 WordPress blog persona claims DCLeaks activities source",
+        "Guccifer 2.0 metadata Russian language VPN technical evidence report"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "Department of Justice indictment 2018 Guccifer 2.0 DCLeaks specific paragraphs Unit 74455 social media accounts infrastructure",
+        "2018 indictment Guccifer 2.0 DCLeaks bitcoin domains spearphishing paragraphs"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "Senate intelligence report Guccifer 2.0 DCLeaks GRU assessment PDF",
+        "ODNI assessment Guccifer 2.0 DCLeaks Russian intelligence 2017"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 11,
+  "duration_seconds": 460.9054388999939
+}

@@ -1,0 +1,224 @@
+{
+  "approach": "open-deep-research",
+  "iteration": 3,
+  "benchmark_cases": [
+    "OSINT-001",
+    "OSINT-002",
+    "OSINT-003",
+    "OSINT-004",
+    "OSINT-005",
+    "OSINT-006",
+    "OSINT-007",
+    "OSINT-008",
+    "OSINT-009",
+    "OSINT-010"
+  ],
+  "model": "gpt-5.6-luna",
+  "parallel_workers": 10,
+  "timeout_seconds": 1200,
+  "retry_timeout_seconds": 2400,
+  "started_at": "2026-09-30T18:46:48.157218+00:00",
+  "finished_at": "2026-09-30T18:57:51.078970+00:00",
+  "cases": [
+    {
+      "approach": "open-deep-research",
+      "iteration": 3,
+      "case_id": "OSINT-001",
+      "started_at": "2026-09-30T18:46:48.157218+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 654.4088744999608
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-03/OSINT-001/io/candidate-result.json",
+      "artifact_sha256": "27982746e30bf0a39547ebd8f8264e09bfa2d47bb929c79edd50b9656d7109ed",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T18:57:42.584936+00:00"
+    },
+    {
+      "approach": "open-deep-research",
+      "iteration": 3,
+      "case_id": "OSINT-002",
+      "started_at": "2026-09-30T18:46:48.157593+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 428.7097726999782
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-03/OSINT-002/io/candidate-result.json",
+      "artifact_sha256": "609a56ca43da9dab8f230893f5cf589bb5a8e283c69debf68ed4097fa2572a6b",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T18:53:56.885252+00:00"
+    },
+    {
+      "approach": "open-deep-research",
+      "iteration": 3,
+      "case_id": "OSINT-003",
+      "started_at": "2026-09-30T18:46:48.157870+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 419.3704089000239
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-03/OSINT-003/io/candidate-result.json",
+      "artifact_sha256": "d4e0962e82a43806d1896de777070293adecb81006c7a38e2e5a559be093926a",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T18:53:47.548964+00:00"
+    },
+    {
+      "approach": "open-deep-research",
+      "iteration": 3,
+      "case_id": "OSINT-004",
+      "started_at": "2026-09-30T18:46:48.158256+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 465.04019710002467
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-03/OSINT-004/io/candidate-result.json",
+      "artifact_sha256": "2e8524452cc37ac1d268335f047fb296d2d9e49827e0b6f21e6a35c035d31fa7",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T18:54:33.215724+00:00"
+    },
+    {
+      "approach": "open-deep-research",
+      "iteration": 3,
+      "case_id": "OSINT-005",
+      "started_at": "2026-09-30T18:46:48.158538+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 368.41635239997413
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-03/OSINT-005/io/candidate-result.json",
+      "artifact_sha256": "f3cd446a7dd8e1694cddc5ee6f5733420b027f3f8409213b0d1d6301f03d241e",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T18:52:56.594927+00:00"
+    },
+    {
+      "approach": "open-deep-research",
+      "iteration": 3,
+      "case_id": "OSINT-006",
+      "started_at": "2026-09-30T18:46:48.159214+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 612.1432071000454
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-03/OSINT-006/io/candidate-result.json",
+      "artifact_sha256": "73cc1dcaf6f3f7739eb9a7357f206ca4e30b74b85e1fd6eb406c29145e85a325",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T18:57:00.321762+00:00"
+    },
+    {
+      "approach": "open-deep-research",
+      "iteration": 3,
+      "case_id": "OSINT-007",
+      "started_at": "2026-09-30T18:46:48.160356+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 662.8980458999868
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-03/OSINT-007/io/candidate-result.json",
+      "artifact_sha256": "3c7c325e884fbc1a9eb13fe8e67a91adae3c66aca8854a25901616ebd7eb22b4",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T18:57:51.078970+00:00"
+    },
+    {
+      "approach": "open-deep-research",
+      "iteration": 3,
+      "case_id": "OSINT-008",
+      "started_at": "2026-09-30T18:46:48.160077+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 331.72583249997115
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-03/OSINT-008/io/candidate-result.json",
+      "artifact_sha256": "b31b6e53956b6ad879a043c278f1b0877ad9a27ba604cfd642d27653216e92fa",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T18:52:19.904400+00:00"
+    },
+    {
+      "approach": "open-deep-research",
+      "iteration": 3,
+      "case_id": "OSINT-009",
+      "started_at": "2026-09-30T18:46:48.160721+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 422.0972989000147
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-03/OSINT-009/io/candidate-result.json",
+      "artifact_sha256": "776301b0c92684032a3b1ad1e1a0e816bedb26a785728616a42565cfd7974858",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T18:53:50.275882+00:00"
+    },
+    {
+      "approach": "open-deep-research",
+      "iteration": 3,
+      "case_id": "OSINT-010",
+      "started_at": "2026-09-30T18:46:48.161293+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 354.8762659000349
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-03/OSINT-010/io/candidate-result.json",
+      "artifact_sha256": "bbbf2d7c4814914fcd7f42767ff513f4e87587607bc1eae1a9e2d679d072aeac",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T18:52:43.055577+00:00"
+    }
+  ]
+}

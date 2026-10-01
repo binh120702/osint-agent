@@ -1,0 +1,53 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-010",
+  "report": "Error generating final report: APITimeoutError: Request timed out.",
+  "context": [],
+  "visited_urls": [
+    "https://digitalcommons.unl.edu/senatedocs/1/",
+    "https://www.intelligence.senate.gov/wp-content/uploads/2024/08/sites-default-files-documents-report-volume2.pdf",
+    "https://www.justice.gov/d9/fieldable-panel-panes/basic-panes/attachments/2018/02/16/internet_research_agency_indictment.pdf",
+    "https://www.npr.org/2019/10/08/768319934/senate-report-russians-used-used-social-media-mostly-to-target-race-in-2016"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "Internet Research Agency 2016 social media operation DOJ indictment facts Senate findings platform disclosures personas pages groups handles accounts funding employees objectives timeline"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:justice.gov/d9/fieldable-panel-panes/basic-panes/attachments/2018/02/16/internet_research_agency_indictment.pdf Blacktivist Heart of Texas Being Patriotic United Muslims of America hashtag names ads rallies payments employees"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:intelligence.senate.gov/wp-content/uploads/2024/08/sites-default-files-documents-report-volume2.pdf IRA 2016 Blacktivist pages accounts handles Twitter Facebook Instagram YouTube paid advertisements rallies timeline"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "Facebook Twitter Instagram Reddit Google IRA Russian accounts 2016 platform disclosures exact account names Blacktivist Senate report"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 10,
+  "duration_seconds": 350.61944710003445
+}

@@ -1,0 +1,1558 @@
+{
+  "protocol": "common-contract-track-v1",
+  "candidate": "baseline",
+  "benchmark_snapshot_sha256": "561e463eac51c71d83b97cf20c706395f8ecb3763fdec6d77715c17da9156bd0",
+  "rows": [
+    {
+      "iteration": 1,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-01/OSINT-001/candidate-result.json",
+      "artifact_sha256": "dda30ed1f881b477b2ee374e3d3db86d3446d9525d12a3085061da30706c46c3",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.30769230769230765,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.46273278146664554,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 0.4444444444444444
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-01/OSINT-002/candidate-result.json",
+      "artifact_sha256": "3a5f56ce7d18b2385849610a6a6e1a4fab10c1ef385afd9ac59fb573a46aee1f",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.4444444444444444,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.6685614462430592,
+        "report_quality": 0.75,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-01/OSINT-003/candidate-result.json",
+      "artifact_sha256": "dde03b9136beeda1bc42e3bd5615c3d5283f27a5417063443f972f630a4d2e9f",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.5,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.34560562950333157,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-01/OSINT-004/candidate-result.json",
+      "artifact_sha256": "1bcae6e21216d6387e97debf632765416199630e1e4635644303acad3643dd05",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.4444444444444444,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.21601647885994735,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-01/OSINT-005/candidate-result.json",
+      "artifact_sha256": "8582b53a9f056e167935cf5cbde1f237a07adee8cdd91f35e14809f4ba47fd6e",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.22222222222222224,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.4191397995107783,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-01/OSINT-006/candidate-result.json",
+      "artifact_sha256": "c3eb0c7ab6cfe809f58a5891e2999b157e937ea7996c5253d191cfebf125e4c2",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.36363636363636365,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.3056604762173443,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-01/OSINT-007/candidate-result.json",
+      "artifact_sha256": "ca000e5ca18e9061aac973cfdcc940198eb69fafa86ee3ad269daee47c090135",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.28571428571428575,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.257778807658583,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-01/OSINT-008/candidate-result.json",
+      "artifact_sha256": "4dc762a72d827a4fc5dc05e9f6dcb93ebf6bb225462b57b53fc559f2ddf09305",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.2222222222222222,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.3647397762601828,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-01/OSINT-009/candidate-result.json",
+      "artifact_sha256": "d84b0420b6e3f6980c0908ee389c991bb088c592ad184bd46bc616ee3edc04e1",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.6666666666666666,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.22421733879311279,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-01/OSINT-010/candidate-result.json",
+      "artifact_sha256": "95871679f8e0f88710f2d6531ef3c4714dac1fde4d516badc8bc3aebfb4d17b3",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.4166666666666667,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-02/OSINT-001/candidate-result.json",
+      "artifact_sha256": "2cfeb919c56f916376c0ed7e51422c652c647da30c094ddfe3c8c18961e3ac82",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.25,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.4849508069028235,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 0.5555555555555556
+      }
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-02/OSINT-002/candidate-result.json",
+      "artifact_sha256": "3c28dcd97f4d7b4558bd3b7e98b6dc739e9971d9cc854d5888f13d751d352d27",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.2,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.6255491449262438,
+        "report_quality": 0.75,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-02/OSINT-003/candidate-result.json",
+      "artifact_sha256": "95c7ec76b330937cbb61cc2c11d0afcc1dfefc70ebb5e2a3ee61e3b16b659439",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.4,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.44628402162941433,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-02/OSINT-004/candidate-result.json",
+      "artifact_sha256": "26cae41dd91ce499808ae3c3ad7fca39acad6d293928d7367e76908c1847f7cf",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.2222222222222222,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.3589350796705091,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-02/OSINT-005/candidate-result.json",
+      "artifact_sha256": "7e811de9fda394feeb0d12375ffd7e9311126290ade4659857392f7f1fed5a0b",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.22222222222222224,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.42006799732646577,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-02/OSINT-006/candidate-result.json",
+      "artifact_sha256": "3605920a8fe1f6c6712d726209c14e3889a84a9496ae9793fb4ca954cfb6ecfe",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.16666666666666666,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-02/OSINT-007/candidate-result.json",
+      "artifact_sha256": "6e8407e3520ae74ea1b72e40527cd21420e620c8756f05a03d86ed5458360b39",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.36363636363636365,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.2440244688586748,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-02/OSINT-008/candidate-result.json",
+      "artifact_sha256": "8dd7fcabfc52b07be93ad076ac2462b92b180e9415f2948752acd1af2004fe41",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.2222222222222222,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.3620934069475359,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-02/OSINT-009/candidate-result.json",
+      "artifact_sha256": "495532de64210c3cea6fd2485c619f7f96498414fe9af689f4fe73637148abc0",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.2,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.4067110985473405,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-02/OSINT-010/candidate-result.json",
+      "artifact_sha256": "2ff9457370685c56284a2066e36aea654379bf35debc07cb0d18ebfeaf1ff4db",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.3723911721799444,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-03/OSINT-001/candidate-result.json",
+      "artifact_sha256": "0fd19442166a9390461cd416ab97077ab103a4babe636b46b776074d2ef1783b",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.1818181818181818,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.5054192725556116,
+        "report_quality": 0.75,
+        "source_precision": 1.0,
+        "source_recall": 0.6666666666666666
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-03/OSINT-002/candidate-result.json",
+      "artifact_sha256": "df5985c299a9e83848da04e442154a5a76f8e905c399431130e41b36e0e4343e",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.16666666666666666,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.5515795598607615,
+        "report_quality": 0.75,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-03/OSINT-003/candidate-result.json",
+      "artifact_sha256": "c4c94022c6240f197375c2d64dc101ad5af2b4578d001a19300e634ac7d20fdb",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.450469812111084,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-03/OSINT-004/candidate-result.json",
+      "artifact_sha256": "fa606b381b452e6086a45cd00fc816e27c7bb4f0d34f9e0132287a9104acf7f3",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.2222222222222222,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.2536600032316713,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-03/OSINT-005/candidate-result.json",
+      "artifact_sha256": "ec368d71c5efa7f8b7fbe8003305874eee955b0c124b7aa54a27709c99ec4cb9",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.22222222222222224,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.2164790026599104,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-03/OSINT-006/candidate-result.json",
+      "artifact_sha256": "bb2d43738894262c631896b5511b67b61f01821cd035637bfe1a6d3a2e4b18ac",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.5454545454545454,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.28802949630218644,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-03/OSINT-007/candidate-result.json",
+      "artifact_sha256": "71431b2baa665e8786968b42c7c0d34ebe3f8d605eafd5e7f4182c1808311a41",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.5,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.25092518890048204,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-03/OSINT-008/candidate-result.json",
+      "artifact_sha256": "58295f021cd922e08867b8673e7d94482976ae1621a097e16677cfdde0b5074e",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.2222222222222222,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.34140028519500093,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-03/OSINT-009/candidate-result.json",
+      "artifact_sha256": "29ced581bde19f881b6a224b61279ffe4991da61319c0fae25049fc6896cee76",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.4,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.2570950394561367,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-03/OSINT-010/candidate-result.json",
+      "artifact_sha256": "1e9d1d56ae8b2a09874f4d9bf77f9b240903ade413133e69390b01048e86175f",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.2,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.5353847292123014,
+        "report_quality": 0.75,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-04/OSINT-001/candidate-result.json",
+      "artifact_sha256": "b9fd431673cf99471bc25054d1009a1c32dead239631a7a95172c7e2bc55c012",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.4,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.5596739875388774,
+        "report_quality": 0.75,
+        "source_precision": 1.0,
+        "source_recall": 0.7777777777777778
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-04/OSINT-002/candidate-result.json",
+      "artifact_sha256": "1d9df4f3936b7c1d485fb34cc122a807547528adc67b4aa158876e4064bffc53",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.36363636363636365,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.6534032399547338,
+        "report_quality": 0.75,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-04/OSINT-003/candidate-result.json",
+      "artifact_sha256": "1ebc1fd600ba76d6d068cb667f49db63b2dbc3117f72b7090bbbcda13d41d9c1",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.2222222222222222,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.4043225622116234,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 0.75
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-04/OSINT-004/candidate-result.json",
+      "artifact_sha256": "5f85406dc9956be2b1e77542f700250cc54f7918e88de89a5a9103ccaf20932f",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.4444444444444444,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.2725159326470329,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-04/OSINT-005/candidate-result.json",
+      "artifact_sha256": "a4397338b14ed5ff39cf0b9e09b4c5445a09b348159119ee0c570470f20529d0",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.1818181818181818,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.42120659821923034,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-04/OSINT-006/candidate-result.json",
+      "artifact_sha256": "c519c25f638fe83323fd64788e3bdfa40ba2c7cc2c10957bdc9c988d7a7396f2",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.36363636363636365,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.3085106671405162,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-04/OSINT-007/candidate-result.json",
+      "artifact_sha256": "2457e47d2829389a1e9bc63d25eca866f2cffc75d630de35a3bf0b76d735ea3a",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.4,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.3899902879496807,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-04/OSINT-008/candidate-result.json",
+      "artifact_sha256": "049e8d265799de1dd2d578fe567f3fdb0a9ea6ed1fc9a13cc0bacb2a2636c438",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.2222222222222222,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.24434661903007585,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-04/OSINT-009/candidate-result.json",
+      "artifact_sha256": "7114d92212a9d5d143601ea77fc0b31bbe93ddfb6d22f1db8638137e8d20f913",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.33780030390903065,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-04/OSINT-010/candidate-result.json",
+      "artifact_sha256": "4d105c8480467349cffbe6ab301445e6ffe000bc24b3839788c0ddad7b23c3b9",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.5,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-05/OSINT-001/candidate-result.json",
+      "artifact_sha256": "7eb0b035c68190462a178f66a6cd97bade2288b0931e4c2ff1f58dc51b790f2d",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.30769230769230765,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.49734515684580477,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 0.6666666666666666
+      }
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-05/OSINT-002/candidate-result.json",
+      "artifact_sha256": "211a605607e5911104aa576781ace0ba0745c2ec6ca0111d2ea2540c0261f61b",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.2,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.6020742930451969,
+        "report_quality": 0.75,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-05/OSINT-003/candidate-result.json",
+      "artifact_sha256": "6f281cd9398f5c780d5a751184c8e0e0c82ecdcc7759c80a492b310f33cc9127",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.2,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.4309612456507866,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 0.75
+      }
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-05/OSINT-004/candidate-result.json",
+      "artifact_sha256": "06719a7158f20123905242615980f194fd38c082ae735da8bd50463c1a62510a",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.5,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.3502897779623393,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-05/OSINT-005/candidate-result.json",
+      "artifact_sha256": "777d577f51fbb77f381d84b13f894c0dd03b1adb9e775bbed493198f9e6ddf7b",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.22222222222222224,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.4297538027853377,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-05/OSINT-006/candidate-result.json",
+      "artifact_sha256": "75b29589076c9393c3d53f6e7cfb42dde6bce202082fe42e3ded89d5c368d93f",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.4681291112699488,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-05/OSINT-007/candidate-result.json",
+      "artifact_sha256": "d88a6ad3b5ebc91085180f92a27fd4d8e412fb3c11b2970b244e087967d042c1",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.4615384615384615,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.2571672935121845,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-05/OSINT-008/candidate-result.json",
+      "artifact_sha256": "44aba11b88e3e83e530c22e04dd0fb76c8517cbcb5461be768aaa4948f64ac32",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.4,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.326131323556362,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-05/OSINT-009/candidate-result.json",
+      "artifact_sha256": "f9443c5f99e263659fd09b815c3cf6310a754fa17e210ee9bb8c7a48ca999f37",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.2222222222222222,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.38172780162775183,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-05/OSINT-010/candidate-result.json",
+      "artifact_sha256": "24484e65a8f9f42d5c0c8e36b1d1ea8b988eb1a8c56c6f6b79008c2dceb17eba",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.36363636363636365,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.393643537439078,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-06/OSINT-001/candidate-result.json",
+      "artifact_sha256": "328bdb17cefee22d27c6c81cea12e6eae8dc34dd76c8a434b1720572b23bc8c1",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.16666666666666666,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.5226716616550386,
+        "report_quality": 0.75,
+        "source_precision": 1.0,
+        "source_recall": 0.4444444444444444
+      }
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-06/OSINT-002/candidate-result.json",
+      "artifact_sha256": "f1d141c326364f46a2027feacf33f466ebc60ba978b61b6bf3399d008b6b2e5f",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.4,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.7137171251271214,
+        "report_quality": 0.75,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-06/OSINT-003/candidate-result.json",
+      "artifact_sha256": "510fc9d079a0b6d83f014ebcea1fd14b545798f2a4d07bd5acafe07596a3e2f2",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.5714285714285715,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.42708257206156347,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-06/OSINT-004/candidate-result.json",
+      "artifact_sha256": "8e94e1300a58147cf0e1a3550c78f0e58925eb4dfe236f719136bc3b1e9bb6e5",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.25,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.3205812502616536,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-06/OSINT-005/candidate-result.json",
+      "artifact_sha256": "9cf8e39af5f648b191fb61effc8b93b9927b7f1cd5868e57cc5bf33db1d6fd73",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.16666666666666669,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.43808727018751387,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-06/OSINT-006/candidate-result.json",
+      "artifact_sha256": "e6685ced83d55230eea3de68b4c7fe6eec1a1142d53264fcf21fc0c5d4156980",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.36363636363636365,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.3038984168736536,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-06/OSINT-007/candidate-result.json",
+      "artifact_sha256": "aeefbdcb0385727dfce89344b6e6ae2c58100068bffe043f12d489d72b46d6b5",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.36363636363636365,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.44137212369120277,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-06/OSINT-008/candidate-result.json",
+      "artifact_sha256": "96e988188225d365b7b0acaeae32ccf82cb5c794806034fd12afffe979c3b969",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.4,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.37159289966032644,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-06/OSINT-009/candidate-result.json",
+      "artifact_sha256": "82c5d7030de164a25562e2ac3888314b59c302c628fdaf91db6e1a6ef8e67087",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.5454545454545454,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.34647947912804394,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-06/OSINT-010/candidate-result.json",
+      "artifact_sha256": "f1f868d2e5f7fdaf9b001cc4f88d74d002f358bc3a366eacbdc78ee812087452",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.5,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.3398985103535792,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-07/OSINT-001/candidate-result.json",
+      "artifact_sha256": "cf043fecbd736a6ce4430f44e387e543ca9650b7a07980265cc14302beb22741",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.3636363636363636,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.5551907581081365,
+        "report_quality": 0.75,
+        "source_precision": 1.0,
+        "source_recall": 0.7777777777777778
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-07/OSINT-002/candidate-result.json",
+      "artifact_sha256": "6036161f7b918abd199d6bd99eeb115cae47a0321c3e930c42f31f7a4809a56e",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.25,
+        "contradiction_f1": 0.2,
+        "reasoning": 0.38318247513893383,
+        "report_quality": 0.75,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-07/OSINT-003/candidate-result.json",
+      "artifact_sha256": "a26d40533fa0dcc2ef56d2cf4f3e99b8382f86cd28750c8b70e93d0f82643d9d",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-07/OSINT-004/candidate-result.json",
+      "artifact_sha256": "4308556b9d2d0fe0f13749ae69ea88b42d2042c2e18b7ca7a0f4a561e7e93b2c",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.28571428571428575,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-07/OSINT-005/candidate-result.json",
+      "artifact_sha256": "46586f4e4e6736c2836b98aec88bed9216a1c5e68e3c14fa5b0350e0f936c92d",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.4,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.4568991331890235,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-07/OSINT-006/candidate-result.json",
+      "artifact_sha256": "14537acde6da7f8be8654c06ffe00f5c1b5ae6f7b5062dd78fefb6dabbe17657",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.2,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.2584030065004516,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-07/OSINT-007/candidate-result.json",
+      "artifact_sha256": "54ea6156288f5ea18a0c23d1c01cff8a279331b0db71ece6aebd52fe5d76edd2",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.36363636363636365,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.24248098728119719,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-07/OSINT-008/candidate-result.json",
+      "artifact_sha256": "5561c78cf0b740ac5e8c0958bf0cd6e5d8c1cddf888677166f49a305d3d8681f",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.4444444444444444,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.41095210254098635,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-07/OSINT-009/candidate-result.json",
+      "artifact_sha256": "7eb271e4630eb228a0871670cd39ee12ad833a8f5b61fb3b6ae5874c38d48a7c",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.6,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.37191446675399115,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-07/OSINT-010/candidate-result.json",
+      "artifact_sha256": "18c9aa3e442417c937cb010f107d4aeb00beb119faa357e7f9ff6257001ff64f",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.3333333333333333,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.37975187782420305,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-08/OSINT-001/candidate-result.json",
+      "artifact_sha256": "4af38f8e86a1a91a030fed8cd321ee31bc85ff6bcbe8278249ced05c4a928c58",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.30769230769230765,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-08/OSINT-002/candidate-result.json",
+      "artifact_sha256": "5616f9e31ac606ae1bb1d789290ebf22a3b5bf591c00ca1db2ff4ccc6ded2eea",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.4444444444444444,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.6582862683072056,
+        "report_quality": 0.75,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-08/OSINT-004/candidate-result.json",
+      "artifact_sha256": "df5e2d4abcf3a7d92007d39872ad13f3c04d4a8a6ad6ccaee7a4828c0d23c975",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.5,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.3461455402540104,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-08/OSINT-005/candidate-result.json",
+      "artifact_sha256": "b80855199e3b8d3822b45a8a9186b37e5cd009a03c67aefa2c0fd33cca40b38c",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.1818181818181818,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.4132047712846482,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-08/OSINT-006/candidate-result.json",
+      "artifact_sha256": "660bc9f239b9148bced5a1dff8fa1755cd17f30620b9f5cfbf7f5681c0ae0093",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.2,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.39883057763130864,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-08/OSINT-007/candidate-result.json",
+      "artifact_sha256": "24002fe3e9e17adc38401238bace1b992e5126151b3683155715b6b2de35c81c",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.3333333333333333,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.25992288103451733,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-08/OSINT-008/candidate-result.json",
+      "artifact_sha256": "41dd390c574e1f62c4c1c2132eb267ba18f38d4f1a0c37adf079d52a16cf6cf4",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.16666666666666666,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-08/OSINT-009/candidate-result.json",
+      "artifact_sha256": "cca96ce93789c0a55960b1519491f059232c24ecbd78c2b1da7fe22cc713e829",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.18181818181818182,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.38095618306448503,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-09/OSINT-001/candidate-result.json",
+      "artifact_sha256": "e9b47df980eb635ec40e1c9583bd8d372d90dc19924ccb54b267b5922349626a",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.30769230769230765,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.39179025682512664,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 0.7777777777777778
+      }
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-09/OSINT-002/candidate-result.json",
+      "artifact_sha256": "c6033d8fcde6053ea214e46f8af7248fda4100323e92effa12a57ad3f121db0c",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.4,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.6691338720333707,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-09/OSINT-004/candidate-result.json",
+      "artifact_sha256": "deaa0aecc1d4909d598ab5967dc76488499747869e1fae50641983ecde4421ac",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.7499999999999999,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.24356973623235595,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-09/OSINT-005/candidate-result.json",
+      "artifact_sha256": "a497e7b8c588f351b9ad70e0f2317149e097049a65a8b6d856b6ba16dec8d768",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.1818181818181818,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.4423297610614466,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-09/OSINT-006/candidate-result.json",
+      "artifact_sha256": "441d785b21447b08b88abef228b6572e7be63133d21379bc46868d7ac006a289",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.2,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.36753808156998113,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-09/OSINT-007/candidate-result.json",
+      "artifact_sha256": "5c37c08951819a1ccd634e13cd239d9aed1c12954aec09d442de802f4767775d",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.18181818181818182,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.230268979370943,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-09/OSINT-008/candidate-result.json",
+      "artifact_sha256": "98e6c8182622e919921b8191f48ab23c6b8d31414267268a0ce3f1532cd724b5",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.2222222222222222,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.35415720038876475,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-09/OSINT-009/candidate-result.json",
+      "artifact_sha256": "f951c1b66a9af3e91bf9e96f6371851049f6a78f748bcf6f1f360fe86a2c0432",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.4166666666666667,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-10/OSINT-001/candidate-result.json",
+      "artifact_sha256": "c884822f2ef94cb31505c89c444070b4110454a7ee814becb8407c12db21b3e3",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.4,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.5625115769119796,
+        "report_quality": 0.75,
+        "source_precision": 1.0,
+        "source_recall": 0.5555555555555556
+      }
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-10/OSINT-002/candidate-result.json",
+      "artifact_sha256": "4a5eea406fbe1deab2b8089eac9cd594509bf7b13a5024abc8196e5eb4f3cce1",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.2,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.6505185559350036,
+        "report_quality": 0.75,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-10/OSINT-004/candidate-result.json",
+      "artifact_sha256": "00b05cf19e8196177dac22f47c4f3312d3c592a0a77dbb48b9e6541145138e75",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.25,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.3953161033053763,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-10/OSINT-005/candidate-result.json",
+      "artifact_sha256": "30ce4571206e606a1998167e17f044fa423fdc467ae91f176f4fbb501cf8f103",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.22222222222222224,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.4211607436490057,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-10/OSINT-006/candidate-result.json",
+      "artifact_sha256": "605e7a988a977aeb2a61614d216853dd2ad5e657993ce37ed033c157610909f2",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.3185969532349879,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-10/OSINT-007/candidate-result.json",
+      "artifact_sha256": "d7791914dd967619fd568bb22be4333a99d22377ebeaa525c5e2ff92865c65c3",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.6,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.23719666146394291,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-10/OSINT-008/candidate-result.json",
+      "artifact_sha256": "34776e55f16068fa9870debb5a1f279ce8aa124378a9c11edbde70b1714302d0",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.4444444444444444,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.3554342207056751,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-10/OSINT-009/candidate-result.json",
+      "artifact_sha256": "78e1ad065c5172e855e286c3d2aacd18be859c148c87dd78948ee8004ad70724",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.3333333333333333,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.3547480492391925,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    }
+  ],
+  "completed_output": {
+    "n_rows": 94,
+    "metrics": {
+      "finding_f1": {
+        "mean": 0.29238462483143335
+      },
+      "contradiction_f1": {
+        "mean": 0.002127659574468085
+      },
+      "reasoning": {
+        "mean": 0.36277307184172997
+      },
+      "report_quality": {
+        "mean": 0.6560283687943262
+      },
+      "source_precision": {
+        "mean": 0.9787234042553191
+      },
+      "source_recall": {
+        "mean": 0.9379432624113476
+      }
+    }
+  },
+  "valid_only": {
+    "n_rows": 94,
+    "metrics": {
+      "finding_f1": {
+        "mean": 0.29238462483143335
+      },
+      "contradiction_f1": {
+        "mean": 0.002127659574468085
+      },
+      "reasoning": {
+        "mean": 0.36277307184172997
+      },
+      "report_quality": {
+        "mean": 0.6560283687943262
+      },
+      "source_precision": {
+        "mean": 0.9787234042553191
+      },
+      "source_recall": {
+        "mean": 0.9379432624113476
+      }
+    }
+  },
+  "validity_rate": 1.0
+}

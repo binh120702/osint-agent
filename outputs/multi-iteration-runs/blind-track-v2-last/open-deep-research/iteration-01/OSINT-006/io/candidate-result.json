@@ -1,0 +1,49 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-006",
+  "report": "Error generating final report: APITimeoutError: Request timed out.",
+  "context": [],
+  "visited_urls": [
+    "https://nvd.nist.gov/vuln/detail/cve-2023-34362",
+    "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "MOVEit Transfer mass exploitation CVE-2023-34362 LEMURLOOT CL0P FIN11 chronology authoritative sources",
+        "site:progress.com MOVEit Transfer CVE-2023-34362 LEMURLOOT",
+        "site:mandiant.com MOVEit LEMURLOOT CL0P FIN11",
+        "site:cisa.gov MOVEit CVE-2023-34362"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "MOVEit exploitation chronology June 2023 LEMURLOOT Mandiant Microsoft Huntress Rapid7 Progress timeline",
+        "MOVEit Transfer CVE-2023-34362 Progress advisory May 31 June 2023 patches affected components",
+        "MOVEit LEMURLOOT infrastructure 5.252.188.0/22 RDP FIN11 CL0P overlaps"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "MOVEit mass exploitation attribution CL0P FIN11 UNC4857 government advisory 2023",
+        "MOVEit Transfer campaign LEMURLOOT attribution researchers vendors June 2023",
+        "CL0P MOVEit extortion leak site victims infrastructure overlap 2023"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 10,
+  "duration_seconds": 668.0674536000006
+}

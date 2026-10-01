@@ -1,0 +1,1978 @@
+{
+  "case_id": "OSINT-006",
+  "case_sha256": "bccd1f9d517bc90de434853c508839638537596d61a04ba257322308ed3bdcec",
+  "trace": {
+    "thread_id": "benchmark-osint-006-61eb3d12",
+    "tool_calls": [
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "MOVEit Transfer CVE disclosure LEMURLOOT FIN11 CL0P attribution extortion infrastructure"
+        },
+        "started_at": 1790787221.5033915,
+        "result": "{\n  \"query\": \"MOVEit Transfer CVE disclosure LEMURLOOT FIN11 CL0P attribution extortion infrastructure\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 2,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"CL0P Ransomware Gang Exploits CVE-2023-34362 MOVEit Vulnerability\",\n        \"url\": \"https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a\",\n        \"snippet\": \"Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threa\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      },\n      {\n        \"title\": \"NVD - CVE-2023-34362\",\n        \"url\": \"https://nvd.nist.gov/vuln/detail/cve-2023-34362\",\n        \"snippet\": \"NVD - cve-2023-34362 You are viewing this page in an unauthorized frame window. This is a potential security issue, you are being redirected to https://nvd.nist.gov An official website of the United States government Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. NVD MENU General Expand or Collapse NVD Dashboard News and Status Updates FAQ Visualizations Legal Disclaimer Vulnerabilities Expand or Collapse Search & Statistics Weakness Types Data Feeds Vendor Comments CVMAP Vulnerability Metrics Expand or Collapse CVSS v4.0 Calculators CVSS v3.x Calculators CVSS v2.0 Calculator Products Expand or Collapse CPE Dictionary CPE Search CPE Statistics SWID Developers Expand or Collapse Start Here Request an API Key Vulnerabilities Products Data S\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"CL0P Ransomware Gang Exploits CVE-2023-34362 MOVEit Vulnerability\",\n      \"url\": \"https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a\",\n      \"snippet\": \"Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threa\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    },\n    {\n      \"title\": \"NVD - CVE-2023-34362\",\n      \"url\": \"https://nvd.nist.gov/vuln/detail/cve-2023-34362\",\n      \"snippet\": \"NVD - cve-2023-34362 You are viewing this page in an unauthorized frame window. This is a potential security issue, you are being redirected to https://nvd.nist.gov An official website of the United States government Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. NVD MENU General Expand or Collapse NVD Dashboard News and Status Updates FAQ Visualizations Legal Disclaimer Vulnerabilities Expand or Collapse Search & Statistics Weakness Types Data Feeds Vendor Comments CVMAP Vulnerability Metrics Expand or Collapse CVSS v4.0 Calculators CVSS v3.x Calculators CVSS v2.0 Calculator Products Expand or Collapse CPE Dictionary CPE Search CPE Statistics SWID Developers Expand or Collapse Start Here Request an API Key Vulnerabilities Products Data S\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 3.19
+      },
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "site:mandiant.com MOVEit LEMURLOOT CL0P FIN11"
+        },
+        "started_at": 1790787221.507234,
+        "result": "{\n  \"query\": \"site:mandiant.com MOVEit LEMURLOOT CL0P FIN11\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 2,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"CL0P Ransomware Gang Exploits CVE-2023-34362 MOVEit Vulnerability\",\n        \"url\": \"https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a\",\n        \"snippet\": \"Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threa\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      },\n      {\n        \"title\": \"NVD - CVE-2023-34362\",\n        \"url\": \"https://nvd.nist.gov/vuln/detail/cve-2023-34362\",\n        \"snippet\": \"NVD - cve-2023-34362 You are viewing this page in an unauthorized frame window. This is a potential security issue, you are being redirected to https://nvd.nist.gov An official website of the United States government Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. NVD MENU General Expand or Collapse NVD Dashboard News and Status Updates FAQ Visualizations Legal Disclaimer Vulnerabilities Expand or Collapse Search & Statistics Weakness Types Data Feeds Vendor Comments CVMAP Vulnerability Metrics Expand or Collapse CVSS v4.0 Calculators CVSS v3.x Calculators CVSS v2.0 Calculator Products Expand or Collapse CPE Dictionary CPE Search CPE Statistics SWID Developers Expand or Collapse Start Here Request an API Key Vulnerabilities Products Data S\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"CL0P Ransomware Gang Exploits CVE-2023-34362 MOVEit Vulnerability\",\n      \"url\": \"https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a\",\n      \"snippet\": \"Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threa\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    },\n    {\n      \"title\": \"NVD - CVE-2023-34362\",\n      \"url\": \"https://nvd.nist.gov/vuln/detail/cve-2023-34362\",\n      \"snippet\": \"NVD - cve-2023-34362 You are viewing this page in an unauthorized frame window. This is a potential security issue, you are being redirected to https://nvd.nist.gov An official website of the United States government Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. NVD MENU General Expand or Collapse NVD Dashboard News and Status Updates FAQ Visualizations Legal Disclaimer Vulnerabilities Expand or Collapse Search & Statistics Weakness Types Data Feeds Vendor Comments CVMAP Vulnerability Metrics Expand or Collapse CVSS v4.0 Calculators CVSS v3.x Calculators CVSS v2.0 Calculator Products Expand or Collapse CPE Dictionary CPE Search CPE Statistics SWID Developers Expand or Collapse Start Here Request an API Key Vulnerabilities Products Data S\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 2.1
+      },
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "site:progress.com MOVEit Transfer CVE-2023-34362 disclosure"
+        },
+        "started_at": 1790787221.510055,
+        "result": "{\n  \"query\": \"site:progress.com MOVEit Transfer CVE-2023-34362 disclosure\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 2,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"NVD - CVE-2023-34362\",\n        \"url\": \"https://nvd.nist.gov/vuln/detail/cve-2023-34362\",\n        \"snippet\": \"NVD - cve-2023-34362 You are viewing this page in an unauthorized frame window. This is a potential security issue, you are being redirected to https://nvd.nist.gov An official website of the United States government Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. NVD MENU General Expand or Collapse NVD Dashboard News and Status Updates FAQ Visualizations Legal Disclaimer Vulnerabilities Expand or Collapse Search & Statistics Weakness Types Data Feeds Vendor Comments CVMAP Vulnerability Metrics Expand or Collapse CVSS v4.0 Calculators CVSS v3.x Calculators CVSS v2.0 Calculator Products Expand or Collapse CPE Dictionary CPE Search CPE Statistics SWID Developers Expand or Collapse Start Here Request an API Key Vulnerabilities Products Data S\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      },\n      {\n        \"title\": \"CL0P Ransomware Gang Exploits CVE-2023-34362 MOVEit Vulnerability\",\n        \"url\": \"https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a\",\n        \"snippet\": \"Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threa\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"NVD - CVE-2023-34362\",\n      \"url\": \"https://nvd.nist.gov/vuln/detail/cve-2023-34362\",\n      \"snippet\": \"NVD - cve-2023-34362 You are viewing this page in an unauthorized frame window. This is a potential security issue, you are being redirected to https://nvd.nist.gov An official website of the United States government Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. NVD MENU General Expand or Collapse NVD Dashboard News and Status Updates FAQ Visualizations Legal Disclaimer Vulnerabilities Expand or Collapse Search & Statistics Weakness Types Data Feeds Vendor Comments CVMAP Vulnerability Metrics Expand or Collapse CVSS v4.0 Calculators CVSS v3.x Calculators CVSS v2.0 Calculator Products Expand or Collapse CPE Dictionary CPE Search CPE Statistics SWID Developers Expand or Collapse Start Here Request an API Key Vulnerabilities Products Data S\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    },\n    {\n      \"title\": \"CL0P Ransomware Gang Exploits CVE-2023-34362 MOVEit Vulnerability\",\n      \"url\": \"https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a\",\n      \"snippet\": \"Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threa\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 2.46
+      },
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "CISA MOVEit CVE-2023-34362 CL0P LEMURLOOT"
+        },
+        "started_at": 1790787221.5131218,
+        "result": "{\n  \"query\": \"CISA MOVEit CVE-2023-34362 CL0P LEMURLOOT\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 2,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"NVD - CVE-2023-34362\",\n        \"url\": \"https://nvd.nist.gov/vuln/detail/cve-2023-34362\",\n        \"snippet\": \"NVD - cve-2023-34362 You are viewing this page in an unauthorized frame window. This is a potential security issue, you are being redirected to https://nvd.nist.gov An official website of the United States government Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. NVD MENU General Expand or Collapse NVD Dashboard News and Status Updates FAQ Visualizations Legal Disclaimer Vulnerabilities Expand or Collapse Search & Statistics Weakness Types Data Feeds Vendor Comments CVMAP Vulnerability Metrics Expand or Collapse CVSS v4.0 Calculators CVSS v3.x Calculators CVSS v2.0 Calculator Products Expand or Collapse CPE Dictionary CPE Search CPE Statistics SWID Developers Expand or Collapse Start Here Request an API Key Vulnerabilities Products Data S\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      },\n      {\n        \"title\": \"CL0P Ransomware Gang Exploits CVE-2023-34362 MOVEit Vulnerability\",\n        \"url\": \"https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a\",\n        \"snippet\": \"Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threa\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"NVD - CVE-2023-34362\",\n      \"url\": \"https://nvd.nist.gov/vuln/detail/cve-2023-34362\",\n      \"snippet\": \"NVD - cve-2023-34362 You are viewing this page in an unauthorized frame window. This is a potential security issue, you are being redirected to https://nvd.nist.gov An official website of the United States government Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. NVD MENU General Expand or Collapse NVD Dashboard News and Status Updates FAQ Visualizations Legal Disclaimer Vulnerabilities Expand or Collapse Search & Statistics Weakness Types Data Feeds Vendor Comments CVMAP Vulnerability Metrics Expand or Collapse CVSS v4.0 Calculators CVSS v3.x Calculators CVSS v2.0 Calculator Products Expand or Collapse CPE Dictionary CPE Search CPE Statistics SWID Developers Expand or Collapse Start Here Request an API Key Vulnerabilities Products Data S\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    },\n    {\n      \"title\": \"CL0P Ransomware Gang Exploits CVE-2023-34362 MOVEit Vulnerability\",\n      \"url\": \"https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a\",\n      \"snippet\": \"Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threa\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 1.68
+      },
+      {
+        "name": "deep_search",
+        "arguments": {
+          "pages": [
+            "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a"
+          ]
+        },
+        "started_at": 1790787251.1859927,
+        "result": "{\n  \"success\": true,\n  \"pages\": [\n    {\n      \"success\": true,\n      \"url\": \"https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a\",\n      \"source_id\": \"SRC-001\",\n      \"title\": \"CL0P Ransomware Gang Exploits CVE-2023-34362 MOVEit Vulnerability\",\n      \"content\": {\n        \"page_title\": \"CL0P Ransomware Gang Exploits CVE-2023-34362 MOVEit Vulnerability\",\n        \"fetch_error\": \"Forbidden\"\n      },\n      \"raw_text\": \"Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threat Intelligence Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft June 2, 2023 Mandiant Written by: Nader Zaveri, Jeremy Kennelly, Genevieve Stark, Matthew McWhirt, Dan Nutting, Kimberly Goody, Justin Moore, Joe Pisano, Zander Work, Peter Ukhanov, Juraj Sucik, Will Silverstone, Zach Schramm, Greg Blaum, Ollie Styles, Nicholas Bennett, Josh Murchie UPDATE (June 9): On June 6, 2023, Mandiant merged UNC4857 into FIN11 based on targeting, infrastructure, certificate and data leak site (DLS) overlaps. This blog post has been updated to reflect the new attribution and supporting evidence. Mandiant has observed wide exploitation of a zero-day vulnerability in the MOVEit Transfer secure managed file transfer software for subsequent data theft. This vulnerability was announced by Progress Software Corporation on May 31, 2023 and has been assigned CVE-2023-34362. Based on initial analysis from Mandiant incident response engagements, the earliest evidence of exploitation occurred on May 27, 2023 resulting in deployment of web shells and data theft. In some instances, data theft has occurred within minutes of the deployment of web shells. The seemingly opportunistic nature of this campaign and the subsequent data theft is consistent with activity we’ve seen from extortion actors; however, victims did not initially receive any ransom demands. Then on June 6, 2023, a post on the CL0P^_-LEAKS data leak site (DLS) claimed responsibility for this activity and threatened to post stolen data if victims did not pay an extortion fee. Mandiant initially attributed this activity to UNC4857, which has now been merged into FIN11 based on targeting, infrastructure, certificate, and DLS overlaps. This campaign has impacted organizations operating in a wide range of industries based in Canada, India, and the U.S., but the impact is almost certainly broader than Mandiant has directly observed. Following exploitation of the vulnerability, the threat actors are deploying a newly discovered LEMURLOOT web shell with filenames that masquerade as human.aspx, which is a legitimate component of the MOVEit Transfer software. Mandiant has observed several POST requests made to the legitimate guestaccess.aspx file before interaction with the LEMURLOOT webshell, indicating SQL injection attacks were directed towards that file. We have observed LEMURLOOT samples with the filenames human2.aspx and _human2.aspx. Various samples with the name human2.aspx were uploaded to VirusTotal beginning on May 28, 2023. Samples of LEMURLOOT have been uploaded to public repositories from several additional countries—including Italy, Pakistan, and Germany—suggesting that UNC4857 has also impacted organizations in these nations. LEMURLOOT provides functionality tailored to execute on a system running MOVEit Transfer software, including the ability to generate commands to enumerate files and folders, retrieve configuration information, and create or delete a user with a hard-coded name. Initial analysis suggests that the LEMURLOOT web shell is being used to steal data previously uploaded by the users of individual MOVEit Transfer systems. Mandiant is aware of multiple cases where large volumes of files have been stolen from victims' MOVEit transfer systems. LEMURLOOT can also steal Azure Storage Blob information, including credentials, from the MOVEit Transfer application settings, suggesting that actors exploiting this vulnerability may be stealing files from Azure in cases where victims are storing appliance data in Azure Blob storage, although it is unclear if theft is limited to data stored in this way. In many cases, the scanning and exploitation leading to the delivery of LEMURLOOT was sourced from IP addresses in the range 5.252.188.0/22, however interaction with the web shell and data theft came from different systems. Many of the hosts used to support these second-stage operations hosted RDP services with certificates generated between May 19 and 22, which is suggestive of when this infrastructure may have been staged. Analysis of this intrusion activity is ongoing and will be reflected on the CAMP.23.037 page within Mandiant Advantage; we will also update this blog post if and when additional information becomes available. Along with this blog post, Mandiant has produced a detailed MOVEit Containment and Hardening guide to assist organizations with this event. The document contains guidance on the following key items: Containment Measures Application and Infrastructure Hardening Logging and Hunting Recommendations LEMURLOOT Analysis LEMURLOOT is a web shell written in C# tailored to interact with the MOVEit Transfer platform. The malware authenticates incoming connections via a hard-coded password and can run commands that will download files from the MOVEit Transfer system, extract its Azure system settings, retrieve detailed record information, create and insert a particular user, or delete this same user. Data returned to the system interacting with LEMURLOOT is gzip compressed. Authentication and Database Connection LEMURLOOT first checks if an incoming HTTP request contains the header field X-siLock-Comment and a corresponding 36-character GUID-formatted value, which varies across samples. It effectively uses this GUID as a password and returns an HTTP 404 status code to clients that do not pass the expected header field and value. If the correct password is passed to LEMURLOOT, it sends a header response X-siLock-Comment and value comment, indicating the connection is successful and can accept tasking. The malware connects to a SQL server from the executing host using the settings retrieved using SystemSettings.DatabaseSettings(). It then processes data received from the connecting client, parsing expected commands from the following HTTP header fields: X-siLock-Step1, X-siLock-Step2, and X-siLock-Step3. X-siLock-Step1 Command Sequence If the value of the header field X-siLock-Step1 is -1, LEMURLOOT retrieves and returns the Azure system settings from MOVEit Transfer, including the configured Azure Blog storage account, and its associated key and container (AzureBlobStorageAccount, AzureBlobKey, and AzureBlobContainer). It then performs SQL queries to retrieve files, file size, folders, file owners, and institution name data. The resulting data is gzip compressed and returned to the client interacting with LEMURLOOT. If the X-siLock-Step1 header field value is -2, it deletes a user account with the LoginName and RealName set to \\\"Health Check Service\\\" using the SQL command in Figure 1. Note that this user is inserted using the following functionality. Delete FROM users WHERE RealName='Health Check Service' Figure 1: MOVEit user deletion command X-siLock-Step2 and X-siLock-Step3 Command Sequence If the value of header field X-siLock-Step1 is neither -1 or -2, the malware parses the values from header fields X-siLock-Step2 and X-siLock-Step3 and stores them in variables named fileid and folderid, respectively. If the values of fileid and folderid are not null, the malware retrieves the file from the local MOVEit Transfer system with these same values, gzip compresses it, and returns it to the connecting client. If the fileid and folderid variables are null, LEMURLOOT attempts to identify an existing account with permission level “30” and InstID = the value set from \\\"X-siLock-Step1\\\" otherwise it creates a new account with a randomly generated username and with LoginName and RealName values set to \\\"Health Check Service\\\" This account is inserted it into an active MOVEit application session. Attribution Mandiant initially attributed this activity to UNC4857, which has now been merged into FIN11 based on targeting, infrastructure, certificate, and data leak site (DLS) overlaps. The activity is reminiscent of prior mass exploitation events targeting file transfer software and leading to FIN11-attributed data theft extortion via the CL0P^_- LEAKS data leak site (DLS). FIN11-attributed data theft extortion has occurred following exploitation of multiple other file transfer systems. From late 2020 to early 2021, threat actors exploited multiple zero-day vulnerabilities in Accellion's legacy File Transfer Appliance (FTA) to install the DEWMODE web shell. Similarly, in early 2023, threat actors exploited GoAnywhere Managed File Transfer (MFT) vulnerability CVE-2023-0669. Mandiant has identified numerous overlaps in the ISPs, netblocks, and IP addresses used in this campaign and historical FIN11 operations. Notably, an IP address that was attempting exploitation of CVE-2023-34362 was used by FIN11 as early as mid-January 2023. At the time this system was first used by FIN11 it was hosting an RDP service on TCP port 3389. This service was still active and presenting the same x509 certificate when UNC4857's use of the system began. On June 5, 2023, Bleeping Computer claimed that someone affiliated with the CLOP ransomware group stated that they were behind incidents in which the MOVEit transfer system vulnerability was exploited for data theft. On June 6, 2023, a post on the CL0P^_- LEAKS DLS claimed responsibility for this activity (Figure 2). Figure 2: CL0P^_- LEAKS DLS post Implications Mandiant routinely observes threat actors with varying motivations targeting sensitive data. For example, state-sponsored threat actors have demonstrated ongoing interest in targeting entities with policy research, military and government files, intellectual property, and personally identifiable information. Cyber criminals can also directly monetize stolen data via extortion operations, post it for sale on underground forums, or leverage it in secondary operations such as business email compromise. Mandiant has not yet directly observed any extortion emails sent to confirmed victims. However, in prior cases where FIN11 exploited vulnerabilities in secure file transfer systems, the threat actors did not send extortion emails demanding a payment in return for not publishing the data on the CL0P^_- LEAKS DLS until several weeks later. It is plausible that FIN11 delayed sending the ransom emails in an attempt to extend the amount of time that the zero-day vulnerabilities remained undetected and thus increase the number of victims and/or capacity to negotiate with a large number of victims simultaneously. Although the CLOP brand has posted to their DLS suggesting victims should initiate contact, if their TTPs remain consistent it is likely that the group will begin to initiate contact with some impacted organizations in the coming days and/or weeks. Detections The following YARA rules are not intended to be used on production systems or to inform blocking rules without first being validated through an organization's own internal testing processes to ensure appropriate performance and limit the risk of false positives. These rules are intended to serve as a starting point for hunting efforts to identify LEMURLOOT payloads; however, they may need adjustment over time if the malware family changes. rule M_Webshell_LEMURLOOT_DLL_1 { meta: disclaimer = \\\"This rule is meant for hunting and is not tested to run in a production environment\\\" description = \\\"Detects the compiled DLLs generated from human2.aspx LEMURLOOT payloads.\\\" sample = \\\"c58c2c2ea608c83fad9326055a8271d47d8246dc9cb401e420c0971c67e19cbf\\\" date = \\\"2023/06/01\\\" version = \\\"1\\\" strings: $net = \\\"ASP.NET\\\" $human = \\\"Create_ASP_human2_aspx\\\" $s1 = \\\"X-siLock-Comment\\\" wide $s2 = \\\"X-siLock-Step3\\\" wide $s3 = \\\"X-siLock-Step2\\\" wide $s4 = \\\"Health Check Service\\\" wide $s5 = \\\"attachment; filename={0}\\\" wide condition: uint16(0) == 0x5A4D and uint32(uint32(0x3C)) == 0x00004550 and filesize < 15KB and $net and ( ($human and 2 of ($s*)) or (3 of ($s*)) ) } YARA rule for detecting compiled LEMURLOOT DLLs rule M_Webshell_LEMURLOOT_1 { meta: disclaimer = \\\"This rule is meant for hunting and is not tested to run in a production environment\\\" description = \\\"Detects the LEMURLOOT ASP.NET scripts\\\" md5 = \\\"b69e23cd45c8ac71652737ef44e15a34\\\" sample = \\\"cf23ea0d63b4c4c348865cefd70c35727ea8c82ba86d56635e488d816e60ea45x\\\" date = \\\"2023/06/01\\\" version = \\\"1\\\" strings: $head = \\\"<%@ Page\\\" $s1 = \\\"X-siLock-Comment\\\" $s2 = \\\"X-siLock-Step\\\" $s3 = \\\"Health Check Service\\\" $s4 = /pass, \\\\\\\"[a-z0-9]{8}-[a-z0-9]{4}/ $s5 = \\\"attachment;filename={0}\\\" condition: filesize > 5KB and filesize < 10KB and ( ($head in (0..50) and 2 of ($s*)) or (3 of ($s*)) ) } YARA rule for detecting LEMURLOOT ASP.NET scripts Indicators MD5 SHA256 00c6bce35c40ce1601aa06c4e808c0f1 38e69f4a6d2e81f28ed2dc6df0daf31e73ea365bd2cfc90ebc31441404cca264 04b474e8db353d368e2d791ba5dee6d6 3a977446ed70b02864ef8cfa3135d8b134c93ef868a4cc0aa5d3c2a74545725b 11eadcf3f1bc9b0ed6994c3ede299ce8 b1c299a9fe6076f370178de7b808f36135df16c4e438ef6453a39565ff2ec272 317552cac7035e35f7bdfc2162dfd29c c77438e8657518221613fbce451c664a75f05beea2184a3ae67f30ea71d34f37 359a1141a79480555aa996fd6d9e4af1 702421bcee1785d93271d311f0203da34cc936317e299575b06503945a6ea1e0 44d8e68c7c4e04ed3adacb5a88450552 387cee566aedbafa8c114ed1c6b98d8b9b65e9f178cf2f6ae2f5ac441082747a 45685c190c91ebe0966e8a0aeca31280 4359aead416b1b2df8ad9e53c497806403a2253b7e13c03317fc08ad3b0b95bf 538d6e172d18d4cebeac211873779ba5 daaa102d82550f97642887514093c98ccd51735e025995c2cc14718330a856f4 67fca3e84490dfdddf72e9ba558b589a 6015fed13c5510bbb89b0a5302c8b95a5b811982ff6de9930725c4630ec4011d 7d5e5537c5346d764f067f66cca426ba 9d1723777de67bc7e11678db800d2a32de3bcd6c40a629cd165e3f7bbace8ead 8cd6c75e6160b90de2a52c967b3d4846 c56bcb513248885673645ff1df44d3661a75cfacdce485535da898aa9ba320d4 8d88e451e39506ae258f3aa99da8db9a 0ea05169d111415903a1098110c34cdbbd390c23016cd4e179dd9ef507104495 911230b5dca1c43f6d22e65c66b0f6b1 d49cf23d83b2743c573ba383bf6f3c28da41ac5f745cde41ef8cd1344528c195 96d467fd9663cf2e5572f8529e54f13e 5b566de1aa4b2f79f579cdac6283b33e98fdc8c1cfa6211a787f8156848d67ff 9f3c306dabc3f349b343251f4443412c f0d85b65b9f6942c75271209138ab24a73da29a06bc6cc4faeddcb825058c09d a85299f78ab5dd05e7f0f11ecea165ea fe5f8388ccea7c548d587d1e2843921c038a9f4ddad3cb03f3aa8a45c29c6a2f b1bdad086567efd202babf56eac17e1d 9e89d9f045664996067a05610ea2b0ad4f7f502f73d84321fb07861348fdc24a b52e56bfc03878cc5cb9eae9d3896808 ea433739fb708f5d25c937925e499c8d2228bf245653ee89a6f3d26a5fd00b7a b69e23cd45c8ac71652737ef44e15a34 cf23ea0d63b4c4c348865cefd70c35727ea8c82ba86d56635e488d816e60ea45 bf7c1dd613101c0a95027249a5fcb759 2413b5d0750c23b07999ec33a5b4930be224b661aaf290a0118db803f31acbc5 c2db1091eb7bac28461877f736d86d83 348e435196dd795e1ec31169bd111c7ec964e5a6ab525a562b17f10de0ab031d d71a6b5ae3d89dc33cbbb6877e493d52 b9a0baf82feb08e42fa6ca53e9ec379e79fbe8362a7dac6150eb39c2d33d94ad ddd95f1c76a1d50b997b2e64274f386a a1269294254e958e0e58fc0fe887ebbc4201d5c266557f09c3f37542bd6d53d7 e9a5f0c7656329ced63d4c8742da51b4 48367d94ccb4411f15d7ef9c455c92125f3ad812f2363c4d2e949ce1b615429a eea4d43f9e3700ebcd61405776eb249a d477ec94e522b8d741f46b2c00291da05c72d21c359244ccb1c211c12b635899 fbba113d1d121220fa43f90b3a20870a 3ab73ea9aebf271e5f3ed701286701d0be688bf7ad4fb276cb4fbe35c8af8409 LEMURLOOT Samples Mandiant Security Validation Actions Organizations can validate their security controls using the following actions with Mandiant Security Validation . VID Name A106-469 Malicious File Transfer - LEMURLOOT, Download, Variant #1 A106-467 Malicious File Transfer - LEMURLOOT, Download, Variant #2 A106-472 Malicious File Transfer - LEMURLOOT, Download, Variant #3 A106-468 Web Application Vulnerability - FIN11, MOVEit Transfer SQL Injection CVE-2023-34362 A106-470 Web Shell Activity - FIN11, LEMURLOOT, Delete Database User A106-471 Web Shell Activity - FIN11, LEMURLOOT, Retrieve File S100-281 Malicious Activity Scenario - Campaign 23-037, FIN11 Utilizing a Critical Vulnerability in MOVEit Transfer Acknowledgements Beyond the listed authors are dozens of consultants and analysts who have already been working to help our clients with cases related to exploitation of CVE-2023-34362. We would also like to specifically thank Raymond Leong from the Mandiant FLARE team for his invaluable support. Posted in Threat Intelligence Related articles Threat Intelligence Going with the Flow(s): Distinct Clusters Target Individuals of Interest to Russia By Google Threat Intelligence Group • 27-minute read Threat Intelligence Staying Ahead of Adversarial AI Through Agentic Source Code Review By Mandiant • 12-minute read Threat Intelligence UNC6671 Rebrands: Multi-Brand Vishing Extortion Targets Financial Services and Enterprise Cloud Environments By Google Threat Intelligence Group • 36-minute read Threat Intelligence Batten Down Your Packages: Mitigation Guidance for Supply Chain Compromise By Google Threat Intelligence Group • 18-minute read Footer Links Follow us Google Cloud Google Cloud Products Privacy Terms Cookies management controls Help Language ‪English‬ ‪Deutsch‬ ‪Français‬ ‪한국어‬ ‪日本語‬\"\n    }\n  ],\n  \"query_trace\": [\n    {\n      \"query\": \"MOVEit Transfer CVE disclosure LEMURLOOT FIN11 CL0P attribution extortion infrastructure\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-001\",\n        \"SRC-002\"\n      ],\n      \"total\": 2\n    },\n    {\n      \"query\": \"site:mandiant.com MOVEit LEMURLOOT CL0P FIN11\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-001\",\n        \"SRC-002\"\n      ],\n      \"total\": 2\n    },\n    {\n      \"query\": \"site:progress.com MOVEit Transfer CVE-2023-34362 disclosure\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-002\",\n        \"SRC-001\"\n      ],\n      \"total\": 2\n    },\n    {\n      \"query\": \"CISA MOVEit CVE-2023-34362 CL0P LEMURLOOT\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-002\",\n        \"SRC-001\"\n      ],\n      \"total\": 2\n    }\n  ],\n  \"error\": null\n}",
+        "duration_ms": 0.37
+      },
+      {
+        "name": "deep_search",
+        "arguments": {
+          "pages": [
+            "https://nvd.nist.gov/vuln/detail/cve-2023-34362"
+          ]
+        },
+        "started_at": 1790787251.187578,
+        "result": "{\n  \"success\": true,\n  \"pages\": [\n    {\n      \"success\": true,\n      \"url\": \"https://nvd.nist.gov/vuln/detail/cve-2023-34362\",\n      \"source_id\": \"SRC-002\",\n      \"title\": \"NVD - CVE-2023-34362\",\n      \"content\": {\n        \"page_title\": \"NVD - CVE-2023-34362\"\n      },\n      \"raw_text\": \"NVD - cve-2023-34362 You are viewing this page in an unauthorized frame window. This is a potential security issue, you are being redirected to https://nvd.nist.gov An official website of the United States government Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. NVD MENU General Expand or Collapse NVD Dashboard News and Status Updates FAQ Visualizations Legal Disclaimer Vulnerabilities Expand or Collapse Search & Statistics Weakness Types Data Feeds Vendor Comments CVMAP Vulnerability Metrics Expand or Collapse CVSS v4.0 Calculators CVSS v3.x Calculators CVSS v2.0 Calculator Products Expand or Collapse CPE Dictionary CPE Search CPE Statistics SWID Developers Expand or Collapse Start Here Request an API Key Vulnerabilities Products Data Sources Terms of Use Contact NVD Other Sites Expand or Collapse Checklist (NCP) Repository Configurations (CCE) 800-53 Controls SCAP Search Expand or Collapse Vulnerability Search CPE Search Information Technology Laboratory National Vulnerability Database National Vulnerability Database NVD Vulnerabilities CVE-2023-34362 Detail Description In Progress MOVEit Transfer before 2021.0.6 (13.0.6), 2021.1.4 (13.1.4), 2022.0.4 (14.0.4), 2022.1.5 (14.1.5), and 2023.0.1 (15.0.1), a SQL injection vulnerability has been found in the MOVEit Transfer web application that could allow an unauthenticated attacker to gain access to MOVEit Transfer's database. Depending on the database engine being used (MySQL, Microsoft SQL Server, or Azure SQL), an attacker may be able to infer information about the structure and contents of the database, and execute SQL statements that alter or delete database elements. NOTE: this is exploited in the wild in May and June 2023; exploitation of unpatched systems can occur via HTTP or HTTPS. All versions (e.g., 2020.0 and 2019x) before the five explicitly mentioned versions are affected, including older unsupported versions. Metrics CVSS Version 4.0 CVSS Version 3.x CVSS Version 2.0 NVD enrichment efforts reference publicly available information to associate vector strings. CVSS information contributed by other sources is also displayed. CVSS 4.0 Severity and Vector Strings: NIST: NVD N/A NVD assessment not yet provided. CVSS 3.x Severity and Vector Strings: NIST: NVD Base Score: 9.8 CRITICAL Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H ADP: CISA-ADP Base Score: 9.8 CRITICAL Vector: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H CVSS 2.0 Severity and Vector Strings: NIST: NVD Base Score: N/A NVD assessment not yet provided. References to Advisories, Solutions, and Tools By selecting these links, you will be leaving NIST webspace. We have provided these links to other web sites because they may have information that would be of interest to you. No inferences should be drawn on account of other sites being referenced, or not, from this page. There may be other web sites that are more appropriate for your purpose. NIST does not necessarily endorse the views expressed, or concur with the facts presented on these sites. Further, NIST does not endorse any commercial products that may be mentioned on these sites. Please address comments about this page to [email protected] . URL Source(s) Tag(s) http://packetstormsecurity.com/files/172883/MOVEit-Transfer-SQL-Injection-Remote-Code-Execution.html CVE, MITRE Third Party Advisory VDB Entry http://packetstormsecurity.com/files/173110/MOVEit-SQL-Injection.html CVE, MITRE Exploit Third Party Advisory VDB Entry https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023 CVE, MITRE Vendor Advisory https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2023-34362 CISA-ADP US Government Resource This CVE is in CISA's Known Exploited Vulnerabilities Catalog Reference CISA's BOD 22-01 and Known Exploited Vulnerabilities Catalog for further guidance and requirements. Vulnerability Name Date Added Due Date Required Action Progress MOVEit Transfer SQL Injection Vulnerability 06/02/2023 06/23/2023 Apply updates per vendor instructions. Weakness Enumeration CWE-ID CWE Name Source CWE-89 Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') NIST CISA-ADP Known Affected Software Configurations Switch to CPE 2.2 CPEs loading, please wait. Denotes Vulnerable Software Are we missing a CPE here? Please let us know . Change History 17 change records found show changes CVE Modified by CISA-ADP 6/17/2026 2:03:28 AM Action Type Old Value New Value Added Affected Record truncated, showing 2048 of 2099 characters. View Entire Change Record [{\\\"vendor\\\":\\\"progress\\\",\\\"product\\\":\\\"moveit_transfer\\\",\\\"defaultStatus\\\":\\\"unknown\\\",\\\"cpes\\\":[\\\"cpe:2.3:a:progress:moveit_transfer:-:*:*:*:*:*:*:*\\\"],\\\"versions\\\":[{\\\"version\\\":\\\"0\\\",\\\"lessThan\\\":\\\"2020.0\\\",\\\"versionType\\\":\\\"custom\\\",\\\"status\\\":\\\"affected\\\"}]},{\\\"vendor\\\":\\\"progress\\\",\\\"product\\\":\\\"moveit_transfer\\\",\\\"defaultStatus\\\":\\\"unknown\\\",\\\"cpes\\\":[\\\"cpe:2.3:a:progress:moveit_transfer:2020.1:*:*:*:*:*:*:*\\\"],\\\"versions\\\":[{\\\"version\\\":\\\"2020.1\\\",\\\"status\\\":\\\"affected\\\"}]},{\\\"vendor\\\":\\\"progress\\\",\\\"product\\\":\\\"moveit_transfer\\\",\\\"defaultStatus\\\":\\\"unknown\\\",\\\"cpes\\\":[\\\"cpe:2.3:a:progress:moveit_transfer:2021.0:*:*:*:*:*:*:*\\\"],\\\"versions\\\":[{\\\"version\\\":\\\"2021.0\\\",\\\"lessThan\\\":\\\"2021.0.7\\\",\\\"versionType\\\":\\\"custom\\\",\\\"status\\\":\\\"affected\\\"}]},{\\\"vendor\\\":\\\"progress\\\",\\\"product\\\":\\\"moveit_transfer\\\",\\\"defaultStatus\\\":\\\"unknown\\\",\\\"cpes\\\":[\\\"cpe:2.3:a:progress:moveit_transfer:2021.1.0:*:*:*:*:*:*:*\\\"],\\\"versions\\\":[{\\\"version\\\":\\\"2021.1.0\\\",\\\"lessThan\\\":\\\"2021.1.5\\\",\\\"versionType\\\":\\\"custom\\\",\\\"status\\\":\\\"affected\\\"}]},{\\\"vendor\\\":\\\"progress\\\",\\\"product\\\":\\\"moveit_transfer\\\",\\\"defaultStatus\\\":\\\"unknown\\\",\\\"cpes\\\":[\\\"cpe:2.3:a:progress:moveit_transfer:2022.0.0:*:*:*:*:*:*:*\\\"],\\\"versions\\\":[{\\\"version\\\":\\\"2022.0.0\\\",\\\"lessThan\\\":\\\"2022.0.5\\\",\\\"versionType\\\":\\\"custom\\\",\\\"status\\\":\\\"affected\\\"}]},{\\\"vendor\\\":\\\"progress\\\",\\\"product\\\":\\\"moveit_transfer\\\",\\\"defaultStatus\\\":\\\"unknown\\\",\\\"cpes\\\":[\\\"cpe:2.3:a:progress:moveit_transfer:2022.1.0:*:*:*:*:*:*:*\\\"],\\\"versions\\\":[{\\\"version\\\":\\\"2022.1.0\\\",\\\"lessThan\\\":\\\"2022.1.6\\\",\\\"versionType\\\":\\\"custom\\\",\\\"status\\\":\\\"affected\\\"}]},{\\\"vendor\\\":\\\"progress\\\",\\\"product\\\":\\\"moveit_transfer\\\",\\\"defaultStatus\\\":\\\"unknown\\\",\\\"cpes\\\":[\\\"cpe:2.3:a:progress:moveit_transfer:2023.0.0:*:*:*:*:*:*:*\\\"],\\\"versions\\\":[{\\\"version\\\":\\\"2023.0.0\\\",\\\"lessThan\\\":\\\"2023.0.2\\\",\\\"versionType\\\":\\\"custom\\\",\\\"status\\\":\\\"affected\\\"}]},{\\\"vendor\\\":\\\"progress\\\",\\\"product\\\":\\\"moveit_cloud\\\",\\\"defaultStatus\\\":\\\"unknown\\\",\\\"cpes\\\":[\\\"cpe:2.3:a:progress:moveit_cloud:14.1.0.0:*:*:*:*:*:*:*\\\"],\\\"versions\\\":[{\\\"version\\\":\\\"14.1.0.0\\\",\\\"lessThanOrEqual\\\":\\\"14.1.6.97\\\",\\\"versionType\\\":\\\"custom\\\",\\\"status\\\":\\\"affected\\\"}]},{\\\"vendor\\\":\\\"progress\\\",\\\"product\\\":\\\"moveit_cloud\\\",\\\"defaultStatus\\\":\\\"unknown\\\",\\\"cpes\\\":[\\\"cpe:2.3:a:progress:moveit_cloud:14.0.5.45:*:*:*:*:*:*:*\\\"],\\\"versio Added SSVC {\\\"timestamp\\\":\\\"2024-06-27T03:55:18.412801Z\\\",\\\"id\\\":\\\"CVE-2023-34362\\\",\\\"options\\\":[{\\\"exploitation\\\":\\\"active\\\"},{\\\"automatable\\\":\\\"yes\\\"},{\\\"technicalImpact\\\":\\\"total\\\"}],\\\"role\\\":\\\"CISA Coordinator\\\",\\\"version\\\":\\\"2.0.3\\\"} CVE Modified by MITRE 6/17/2026 2:03:28 AM Action Type Old Value New Value Added Affected [{\\\"vendor\\\":\\\"n/a\\\",\\\"product\\\":\\\"n/a\\\",\\\"versions\\\":[{\\\"version\\\":\\\"n/a\\\",\\\"status\\\":\\\"affected\\\"}]}] Modified Analysis by NIST 10/27/2025 10:37:08 AM Action Type Old Value New Value Added Reference Type CISA-ADP: https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2023-34362 Types: US Government Resource CVE Modified by CISA-ADP 10/21/2025 7:16:03 PM Action Type Old Value New Value Added Reference https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2023-34362 CVE Modified by CISA-ADP 10/21/2025 4:19:33 PM Action Type Old Value New Value Removed Reference https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2023-34362 CVE Modified by CISA-ADP 10/21/2025 3:20:08 PM Action Type Old Value New Value Added Reference https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2023-34362 Modified Analysis by NIST 12/20/2024 12:49:01 PM Action Type Old Value New Value CVE Modified by CVE 11/21/2024 3:07:05 AM Action Type Old Value New Value Added Reference http://packetstormsecurity.com/files/172883/MOVEit-Transfer-SQL-Injection-Remote-Code-Execution.html Added Reference http://packetstormsecurity.com/files/173110/MOVEit-SQL-Injection.html Added Reference https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023 Modified Analysis by NIST 8/14/2024 11:37:26 AM Action Type Old Value New Value CVE Modified by CISA-ADP 7/02/2024 9:40:13 PM Action Type Old Value New Value Added CVSS V3.1 CISA-ADP AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H Added CWE CISA-ADP CWE-89 Modified Analysis by NIST 6/27/2024 3:15:29 PM Action Type Old Value New Value Changed CPE Configuration OR *cpe:2.3:a:progress:moveit_cloud:*:*:*:*:*:*:*:* versions up to (excluding) 14.0.5.45 *cpe:2.3:a:progress:moveit_cloud:*:*:*:*:*:*:*:* versions from (including) 14.1.0.0 up to (excluding) 14.1.6.97 *cpe:2.3:a:progress:moveit_cloud:*:*:*:*:*:*:*:* versions from (including) 15.0.0.0 up to (excluding) 15.0.2.39 *cpe:2.3:a:progress:moveit_transfer:*:*:*:*:*:*:*:* versions up to (including) 2020.1.6 *cpe:2.3:a:progress:moveit_transfer:*:*:*:*:*:*:*:* versions from (including) 2021.0 up to (excluding) 2021.0.7 *cpe:2.3:a:progress:moveit_transfer:*:*:*:*:*:*:*:* versions from (including) 2021.1.0 up to (excluding) 2021.1.5 *cpe:2.3:a:progress:moveit_transfer:*:*:*:*:*:*:*:* versions from (including) 2022.0.0 up to (excluding) 2022.0.5 *cpe:2.3:a:progress:moveit_transfer:*:*:*:*:*:*:*:* versions from (including) 2022.1.0 up to (excluding) 2022.1.6 *cpe:2.3:a:progress:moveit_transfer:*:*:*:*:*:*:*:* versions from (including) 2023.0.0 up to (excluding) 2023.0.2 OR *cpe:2.3:a:progress:moveit_cloud:*:*:*:*:*:*:*:* versions up to (excluding) 14.0.5.45 *cpe:2.3:a:progress:moveit_cloud:*:*:*:*:*:*:*:* versions from (including) 14.1.0.0 up to (excluding) 14.1.6.97 *cpe:2.3:a:progress:moveit_cloud:*:*:*:*:*:*:*:* versions from (including) 15.0.0.0 up to (excluding) 15.0.2.39 *cpe:2.3:a:progress:moveit_transfer:*:*:*:*:*:*:*:* versions up to (excluding) 2021.0.7 *cpe:2.3:a:progress:moveit_transfer:*:*:*:*:*:*:*:* versions from (including) 2021.1.0 up to (excluding) 2021.1.5 *cpe:2.3:a:progress:moveit_transfer:*:*:*:*:*:*:*:* versions from (including) 2022.0.0 up to (excluding) 2022.0.5 *cpe:2.3:a:progress:moveit_transfer:*:*:*:*:*:*:*:* versions from (including) 2022.1.0 up to (excluding) 2022.1.6 *cpe:2.3:a:progress:moveit_transfer:*:*:*:*:*:*:*:* versions from (including) 2023.0.0 up to (excluding) 2023.0.2 Changed Reference Type http://packetstormsecurity.com/files/173110/MOVEit-SQL-Injection.html No Types Assigned http://packetstormsecurity.com/files/173110/MOVEit-SQL-Injection.html Exploit, Third Party Advisory, VDB Entry CVE Modified by MITRE 5/14/2024 9:15:34 AM Action Type Old Value New Value CVE Modified by MITRE 6/23/2023 1:15:09 PM Action Type Old Value New Value Added Reference http://packetstormsecurity.com/files/173110/MOVEit-SQL-Injection.html [No Types Assigned] Modified Analysis by NIST 6/20/2023 11:39:41 AM Action Type Old Value New Value Changed Reference Type http://packetstormsecurity.com/files/172883/MOVEit-Transfer-SQL-Injection-Remote-Code-Execution.html No Types Assigned http://packetstormsecurity.com/files/172883/MOVEit-Transfer-SQL-Injection-Remote-Code-Execution.html Third Party Advisory, VDB Entry CVE Modified by MITRE 6/13/2023 8:15:12 PM Action Type Old Value New Value Added Reference http://packetstormsecurity.com/files/172883/MOVEit-Transfer-SQL-Injection-Remote-Code-Execution.html [No Types Assigned] Initial Analysis by NIST 6/12/2023 10:07:41 AM Action Type Old Value New Value Added CVSS V3.1 NIST AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H Added CWE NIST CWE-89 Added CPE Configuration OR *cpe:2.3:a:progress:moveit_cloud:*:*:*:*:*:*:*:* versions up to (excluding) 14.0.5.45 *cpe:2.3:a:progress:moveit_cloud:*:*:*:*:*:*:*:* versions from (including) 14.1.0.0 up to (excluding) 14.1.6.97 *cpe:2.3:a:progress:moveit_cloud:*:*:*:*:*:*:*:* versions from (including) 15.0.0.0 up to (excluding) 15.0.2.39 *cpe:2.3:a:progress:moveit_transfer:*:*:*:*:*:*:*:* versions up to (including) 2020.1.6 *cpe:2.3:a:progress:moveit_transfer:*:*:*:*:*:*:*:* versions from (including) 2021.0 up to (excluding) 2021.0.7 *cpe:2.3:a:progress:moveit_transfer:*:*:*:*:*:*:*:* versions from (including) 2021.1.0 up to (excluding) 2021.1.5 *cpe:2.3:a:progress:moveit_transfer:*:*:*:*:*:*:*:* versions from (including) 2022.0.0 up to (excluding) 2022.0.5 *cpe:2.3:a:progress:moveit_transfer:*:*:*:*:*:*:*:* versions from (including) 2022.1.0 up to (excluding) 2022.1.6 *cpe:2.3:a:progress:moveit_transfer:*:*:*:*:*:*:*:* versions from (including) 2023.0.0 up to (excluding) 2023.0.2 Changed Reference Type https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023 No Types Assigned https://community.progress.com/s/article/MOVEit-Transfer-Critical-Vulnerability-31May2023 Vendor Advisory CVE Modified by MITRE 6/05/2023 1:15:10 AM Action Type Old Value New Value Changed Description In Progress MOVEit Transfer before 2021.0.6 (13.0.6), 2021.1.4 (13.1.4), 2022.0.4 (14.0.4), 2022.1.5 (14.1.5), and 2023.0.1 (15.0.1), a SQL injection vulnerability has been found in the MOVEit Transfer web application that could allow an unauthenticated attacker to gain access to MOVEit Transfer's database. Depending on the database engine being used (MySQL, Microsoft SQL Server, or Azure SQL), an attacker may be able to infer information about the structure and contents of the database, and execute SQL statements that alter or delete database elements. NOTE: this is exploited in the wild in May and June 2023; exploitation of unpatched systems can occur via HTTP or HTTPS. In Progress MOVEit Transfer before 2021.0.6 (13.0.6), 2021.1.4 (13.1.4), 2022.0.4 (14.0.4), 2022.1.5 (14.1.5), and 2023.0.1 (15.0.1), a SQL injection vulnerability has been found in the MOVEit Transfer web application that could allow an unauthenticated attacker to gain access to MOVEit Transfer's database. Depending on the database engine being used (MySQL, Microsoft SQL Server, or Azure SQL), an attacker may be able to infer information about the structure and contents of the database, and execute SQL statements that alter or delete database elements. NOTE: this is exploited in the wild in May and June 2023; exploitation of unpatched systems can occur via HTTP or HTTPS. All versions (e.g., 2020.0 and 2019x) before the five explicitly mentioned versions are affected, including older unsupported versions. Quick Info CVE Dictionary Entry: CVE-2023-34362 NVD Published Date: 06/02/2023 NVD Last Modified: 06/17/2026 Source: MITRE X (link is external) facebook (link is external) linkedin (link is external) youtube (link is external) rss govdelivery (link is external) HEADQUARTERS 100 Bureau Drive Gaithersburg, MD 20899 (301) 975-2000 Webmaster | Contact Us | Our Other Offices Incident Response Assistance and Non-NVD Related Technical Cyber Security Questions: US-CERT Security Operations Center Email: [email protected] Phone: 1-888-282-0870 Site Privacy | Accessibility | Privacy Program | Copyrights | Vulnerability Disclosure | No Fear Act Policy | FOIA | Environmental Policy | Scientific Integrity | Information Quality Standards | Commerce.gov | Science.gov | USA.gov\"\n    }\n  ],\n  \"query_trace\": [\n    {\n      \"query\": \"MOVEit Transfer CVE disclosure LEMURLOOT FIN11 CL0P attribution extortion infrastructure\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-001\",\n        \"SRC-002\"\n      ],\n      \"total\": 2\n    },\n    {\n      \"query\": \"site:mandiant.com MOVEit LEMURLOOT CL0P FIN11\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-001\",\n        \"SRC-002\"\n      ],\n      \"total\": 2\n    },\n    {\n      \"query\": \"site:progress.com MOVEit Transfer CVE-2023-34362 disclosure\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-002\",\n        \"SRC-001\"\n      ],\n      \"total\": 2\n    },\n    {\n      \"query\": \"CISA MOVEit CVE-2023-34362 CL0P LEMURLOOT\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-002\",\n        \"SRC-001\"\n      ],\n      \"total\": 2\n    }\n  ],\n  \"error\": null\n}",
+        "duration_ms": 0.23
+      },
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "\"LEMURLOOT\" MOVEit"
+        },
+        "started_at": 1790787251.1885908,
+        "result": "{\n  \"query\": \"\\\"LEMURLOOT\\\" MOVEit\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 2,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"CL0P Ransomware Gang Exploits CVE-2023-34362 MOVEit Vulnerability\",\n        \"url\": \"https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a\",\n        \"snippet\": \"Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threa\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      },\n      {\n        \"title\": \"NVD - CVE-2023-34362\",\n        \"url\": \"https://nvd.nist.gov/vuln/detail/cve-2023-34362\",\n        \"snippet\": \"NVD - cve-2023-34362 You are viewing this page in an unauthorized frame window. This is a potential security issue, you are being redirected to https://nvd.nist.gov An official website of the United States government Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. NVD MENU General Expand or Collapse NVD Dashboard News and Status Updates FAQ Visualizations Legal Disclaimer Vulnerabilities Expand or Collapse Search & Statistics Weakness Types Data Feeds Vendor Comments CVMAP Vulnerability Metrics Expand or Collapse CVSS v4.0 Calculators CVSS v3.x Calculators CVSS v2.0 Calculator Products Expand or Collapse CPE Dictionary CPE Search CPE Statistics SWID Developers Expand or Collapse Start Here Request an API Key Vulnerabilities Products Data S\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"CL0P Ransomware Gang Exploits CVE-2023-34362 MOVEit Vulnerability\",\n      \"url\": \"https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a\",\n      \"snippet\": \"Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threa\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    },\n    {\n      \"title\": \"NVD - CVE-2023-34362\",\n      \"url\": \"https://nvd.nist.gov/vuln/detail/cve-2023-34362\",\n      \"snippet\": \"NVD - cve-2023-34362 You are viewing this page in an unauthorized frame window. This is a potential security issue, you are being redirected to https://nvd.nist.gov An official website of the United States government Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. NVD MENU General Expand or Collapse NVD Dashboard News and Status Updates FAQ Visualizations Legal Disclaimer Vulnerabilities Expand or Collapse Search & Statistics Weakness Types Data Feeds Vendor Comments CVMAP Vulnerability Metrics Expand or Collapse CVSS v4.0 Calculators CVSS v3.x Calculators CVSS v2.0 Calculator Products Expand or Collapse CPE Dictionary CPE Search CPE Statistics SWID Developers Expand or Collapse Start Here Request an API Key Vulnerabilities Products Data S\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 1.81
+      },
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "\"FIN11\" \"MOVEit\" CL0P"
+        },
+        "started_at": 1790787251.1912787,
+        "result": "{\n  \"query\": \"\\\"FIN11\\\" \\\"MOVEit\\\" CL0P\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 2,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"CL0P Ransomware Gang Exploits CVE-2023-34362 MOVEit Vulnerability\",\n        \"url\": \"https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a\",\n        \"snippet\": \"Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threa\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      },\n      {\n        \"title\": \"NVD - CVE-2023-34362\",\n        \"url\": \"https://nvd.nist.gov/vuln/detail/cve-2023-34362\",\n        \"snippet\": \"NVD - cve-2023-34362 You are viewing this page in an unauthorized frame window. This is a potential security issue, you are being redirected to https://nvd.nist.gov An official website of the United States government Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. NVD MENU General Expand or Collapse NVD Dashboard News and Status Updates FAQ Visualizations Legal Disclaimer Vulnerabilities Expand or Collapse Search & Statistics Weakness Types Data Feeds Vendor Comments CVMAP Vulnerability Metrics Expand or Collapse CVSS v4.0 Calculators CVSS v3.x Calculators CVSS v2.0 Calculator Products Expand or Collapse CPE Dictionary CPE Search CPE Statistics SWID Developers Expand or Collapse Start Here Request an API Key Vulnerabilities Products Data S\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"CL0P Ransomware Gang Exploits CVE-2023-34362 MOVEit Vulnerability\",\n      \"url\": \"https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a\",\n      \"snippet\": \"Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threa\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    },\n    {\n      \"title\": \"NVD - CVE-2023-34362\",\n      \"url\": \"https://nvd.nist.gov/vuln/detail/cve-2023-34362\",\n      \"snippet\": \"NVD - cve-2023-34362 You are viewing this page in an unauthorized frame window. This is a potential security issue, you are being redirected to https://nvd.nist.gov An official website of the United States government Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. NVD MENU General Expand or Collapse NVD Dashboard News and Status Updates FAQ Visualizations Legal Disclaimer Vulnerabilities Expand or Collapse Search & Statistics Weakness Types Data Feeds Vendor Comments CVMAP Vulnerability Metrics Expand or Collapse CVSS v4.0 Calculators CVSS v3.x Calculators CVSS v2.0 Calculator Products Expand or Collapse CPE Dictionary CPE Search CPE Statistics SWID Developers Expand or Collapse Start Here Request an API Key Vulnerabilities Products Data S\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 2.27
+      },
+      {
+        "name": "knowledge_agent",
+        "arguments": {
+          "source_title": "Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft / CISA advisory mirror",
+          "source_url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a",
+          "text": "SRC-001 deep-search content: Mandiant reported on June 2, 2023 that Progress announced the MOVEit Transfer vulnerability on May 31, 2023 and it was assigned CVE-2023-34362. Earliest observed exploitation was May 27, 2023, involving deployment of web shells and data theft; some theft occurred within minutes. On June 6, the CL0P^_-LEAKS data leak site claimed responsibility and threatened to publish stolen data unless an extortion fee was paid. Mandiant initially attributed activity to UNC4857, then on June 6 merged UNC4857 into FIN11 based on targeting, infrastructure, certificate, and data leak site overlaps. Actors deployed a newly discovered C# LEMURLOOT web shell, often masquerading as human.aspx, with observed variants human2.aspx and _human2.aspx. POST requests to guestaccess.aspx preceded webshell interaction, indicating SQL injection attacks directed at that file. LEMURLOOT could enumerate files/folders, retrieve configuration, create/delete a hard-coded Health Check Service user, download files, and extract Azure Blob storage settings/credentials. Large volumes of files were stolen in multiple cases. Scanning/exploitation often came from 5.252.188.0/22, while webshell interaction/data theft came from different systems. Many second-stage hosts exposed RDP and certificates generated May 19-22, suggesting staging. Mandiant identified overlaps in ISPs, netblocks and IP addresses with historical FIN11 operations; an IP attempting CVE exploitation had been used by FIN11 as early as mid-January 2023, hosting RDP on TCP 3389 and presenting the same x509 certificate when UNC4857 began using it. On June 5 Bleeping Computer reported an alleged CLOP-affiliated statement; on June 6 the CL0P^_-LEAKS site claimed responsibility. Mandiant had not directly observed extortion emails to confirmed victims and said delayed ransom emails were plausible based on prior FIN11 behavior. FIN11 had previously conducted data-theft extortion after exploiting Accellion FTA (DEWMODE webshell) and GoAnywhere MFT CVE-2023-0669. The source labels the activity as consistent with extortion actors, but some links remain attribution assessments."
+        },
+        "started_at": 1790787281.211488,
+        "result": "{\n  \"status\": \"ok\",\n  \"added_entities\": [\n    \"ORGANIZATION | Mandiant\",\n    \"ORGANIZATION | Progress\",\n    \"ORGANIZATION | UNC4857\",\n    \"ORGANIZATION | FIN11\",\n    \"PRODUCT | MOVEit Transfer\",\n    \"PRODUCT | CL0P^_-LEAKS\",\n    \"PRODUCT | Accellion FTA\",\n    \"PRODUCT | GoAnywhere MFT\",\n    \"KEYWORD | CVE-2023-34362\",\n    \"KEYWORD | CVE-2023-0669\",\n    \"SOFTWARE | LEMURLOOT\",\n    \"SOFTWARE | DEWMODE\",\n    \"FILE | human.aspx\",\n    \"FILE | human2.aspx\",\n    \"FILE | _human2.aspx\",\n    \"FILE | guestaccess.aspx\",\n    \"NETWORK | 5.252.188.0/22\",\n    \"EVENT | MOVEit Transfer exploitation activity\",\n    \"DATE | 2023-05-27\",\n    \"DATE | 2023-05-31\",\n    \"DATE | 2023-06-02\",\n    \"DATE | 2023-06-06\"\n  ],\n  \"added_edges\": [\n    \"PUBLISHED_BY | organization:Progress -> product:MOVEit Transfer\",\n    \"ASSOCIATED_WITH | keyword:CVE-2023-34362 -> product:MOVEit Transfer\",\n    \"ASSOCIATED_WITH | keyword:CVE-2023-0669 -> product:GoAnywhere MFT\",\n    \"OCCURRED_ON | event:MOVEit Transfer exploitation activity -> date:2023-05-27\",\n    \"EXPLOITED | event:MOVEit Transfer exploitation activity -> product:MOVEit Transfer\",\n    \"EXPLOITED | organization:UNC4857 -> product:MOVEit Transfer\",\n    \"EXPLOITED | organization:FIN11 -> product:Accellion FTA\",\n    \"EXPLOITED | organization:FIN11 -> product:GoAnywhere MFT\",\n    \"DEPLOYED | organization:UNC4857 -> software:LEMURLOOT\",\n    \"REBRANDED_AS | software:LEMURLOOT -> file:human.aspx\",\n    \"REBRANDED_AS | software:LEMURLOOT -> file:human2.aspx\",\n    \"REBRANDED_AS | software:LEMURLOOT -> file:_human2.aspx\",\n    \"TARGETED | file:guestaccess.aspx -> product:MOVEit Transfer\",\n    \"USES_INFRASTRUCTURE | event:MOVEit Transfer exploitation activity -> network:5.252.188.0/22\",\n    \"MERGED_INTO | organization:UNC4857 -> organization:FIN11\",\n    \"LINKED_TO_EXTORTION_BRAND | organization:FIN11 -> product:CL0P^_-LEAKS\",\n    \"CAPTURED_ON | product:CL0P^_-LEAKS -> date:2023-06-06\",\n    \"USED_OR_DEPLOYED | organization:FIN11 -> software:DEWMODE\"\n  ],\n  \"neo4j\": true\n}",
+        "duration_ms": 43433.76
+      },
+      {
+        "name": "knowledge_agent",
+        "arguments": {
+          "source_title": "NVD - CVE-2023-34362",
+          "source_url": "https://nvd.nist.gov/vuln/detail/cve-2023-34362",
+          "text": "SRC-002: NVD describes CVE-2023-34362 as an unauthenticated SQL injection vulnerability in the MOVEit Transfer web application, allowing database access and potentially inference of database structure/content and SQL statements that alter or delete database elements. It says exploitation in the wild occurred in May and June 2023, including via HTTP or HTTPS. Affected versions include MOVEit Transfer before 2021.0.6, 2021.1.4, 2022.0.4, 2022.1.5, and 2023.0.1, with older unsupported versions also affected. NVD lists published date 2023-06-02. CISA catalog entry says date added 2023-06-02, due date 2023-06-23, and required action apply vendor updates. NVD lists the Progress vendor advisory dated May 31, 2023 and CISA Known Exploited Vulnerabilities catalog reference."
+        },
+        "started_at": 1790787392.0759084,
+        "result": "{\n  \"status\": \"ok\",\n  \"added_entities\": [\n    \"OTHER | CVE-2023-34362\",\n    \"SOFTWARE | MOVEit Transfer\",\n    \"ORGANIZATION | Progress\",\n    \"ORGANIZATION | National Vulnerability Database (NVD)\",\n    \"ORGANIZATION | Cybersecurity and Infrastructure Security Agency (CISA)\",\n    \"DOCUMENT | NVD entry for CVE-2023-34362\",\n    \"DOCUMENT | CISA Known Exploited Vulnerabilities catalog entry for CVE-2023-34362\",\n    \"DOCUMENT | Progress vendor advisory for CVE-2023-34362\",\n    \"DATE | 2023-06-02\",\n    \"DATE | 2023-06-23\",\n    \"DATE | 2023-05-31\",\n    \"EVENT | In-the-wild exploitation of CVE-2023-34362\"\n  ],\n  \"added_edges\": [\n    \"AFFECTS | other:CVE-2023-34362 -> software:MOVEit Transfer\",\n    \"TARGETED | event:In-the-wild exploitation of CVE-2023-34362 -> other:CVE-2023-34362\",\n    \"OCCURRED_ON | event:In-the-wild exploitation of CVE-2023-34362 -> date:2023-06-02\",\n    \"PUBLISHED_BY | document:NVD entry for CVE-2023-34362 -> organization:National Vulnerability Database (NVD)\",\n    \"PUBLISHED_BY | document:CISA Known Exploited Vulnerabilities catalog entry for CVE-2023-34362 -> organization:Cybersecurity and Infrastructure Security Agency (CISA)\",\n    \"PUBLISHED_BY | document:Progress vendor advisory for CVE-2023-34362 -> organization:Progress\",\n    \"LINKED_TO | document:NVD entry for CVE-2023-34362 -> other:CVE-2023-34362\",\n    \"LINKED_TO | document:CISA Known Exploited Vulnerabilities catalog entry for CVE-2023-34362 -> other:CVE-2023-34362\",\n    \"LINKED_TO | document:Progress vendor advisory for CVE-2023-34362 -> other:CVE-2023-34362\"\n  ],\n  \"neo4j\": true\n}",
+        "duration_ms": 36142.52
+      },
+      {
+        "name": "kb_get",
+        "arguments": {},
+        "started_at": 1790787538.1595354,
+        "result": "DATE | 2023-05-27\nDATE | 2023-05-31\nDATE | 2023-06-02\nDATE | 2023-06-06\nDATE | 2023-06-23\nDOCUMENT | CISA Known Exploited Vulnerabilities catalog entry for CVE-2023-34362 | CISA catalog record; date added 2023-06-02, due date 2023-06-23, required action apply vendor updates.\nDOCUMENT | NVD entry for CVE-2023-34362 | NVD record describing the vulnerability and affected MOVEit Transfer versions.\nDOCUMENT | Progress vendor advisory for CVE-2023-34362 | Progress vendor advisory referenced by NVD; dated May 31, 2023.\nEVENT | In-the-wild exploitation of CVE-2023-34362 | Exploitation occurred during May and June 2023, including through HTTP or HTTPS.\nEVENT | MOVEit Transfer exploitation activity | Activity involving exploitation, webshell deployment, and theft of files.\nFILE | _human2.aspx | Observed LEMURLOOT variant.\nFILE | guestaccess.aspx | File targeted by SQL injection requests preceding webshell interaction.\nFILE | human.aspx | Filename commonly used to masquerade LEMURLOOT.\nFILE | human2.aspx | Observed LEMURLOOT variant.\nKEYWORD | CVE-2023-0669 | GoAnywhere MFT vulnerability referenced in FIN11's prior activity.\nKEYWORD | CVE-2023-34362 | Identifier assigned to the MOVEit Transfer vulnerability.\nNETWORK | 5.252.188.0/22 | Frequently observed source network for scanning and exploitation.\nORGANIZATION | Cybersecurity and Infrastructure Security Agency (CISA) | Maintains the Known Exploited Vulnerabilities catalog entry for CVE-2023-34362.\nORGANIZATION | FIN11 | Mandiant merged UNC4857 into FIN11 on June 6, 2023 based on operational overlaps.\nORGANIZATION | Mandiant | Reported on the MOVEit Transfer vulnerability and assessed the activity's attribution.\nORGANIZATION | National Vulnerability Database (NVD) | Source describing CVE-2023-34362 and listing its publication date.\nORGANIZATION | Progress | Announced the MOVEit Transfer vulnerability on May 31, 2023. | Vendor of MOVEit Transfer.\nORGANIZATION | UNC4857 | Initial Mandiant attribution for the MOVEit exploitation activity.\nOTHER | CVE-2023-34362 | Unauthenticated SQL injection vulnerability affecting MOVEit Transfer; exploited in the wild in May and June 2023.\nPRODUCT | Accellion FTA | Previously exploited by FIN11 in data-theft extortion activity.\nPRODUCT | CL0P^_-LEAKS | Data leak site that claimed responsibility and threatened publication of stolen data unless an extortion fee was paid.\nPRODUCT | GoAnywhere MFT | Previously exploited by FIN11 in data-theft extortion activity.\nPRODUCT | MOVEit Transfer\nSOFTWARE | DEWMODE | Web shell associated with FIN11 exploitation of Accellion FTA.\nSOFTWARE | LEMURLOOT | Newly discovered C# web shell used in the MOVEit exploitation activity.\nSOFTWARE | MOVEit Transfer | Web application affected by CVE-2023-34362.",
+        "duration_ms": 14.81
+      },
+      {
+        "name": "kb_get_edges",
+        "arguments": {
+          "limit": 100
+        },
+        "started_at": 1790787538.1754706,
+        "result": "linked_to | document:CISA Known Exploited Vulnerabilities catalog entry for CVE-2023-34362 -> other:CVE-2023-34362 | evidence: The CISA catalog entry concerns CVE-2023-34362.\npublished_by | document:CISA Known Exploited Vulnerabilities catalog entry for CVE-2023-34362 -> organization:Cybersecurity and Infrastructure Security Agency (CISA) | evidence: The entry is identified as a CISA Known Exploited Vulnerabilities catalog record.\nlinked_to | document:NVD entry for CVE-2023-34362 -> other:CVE-2023-34362 | evidence: The NVD entry is the record for CVE-2023-34362.\npublished_by | document:NVD entry for CVE-2023-34362 -> organization:National Vulnerability Database (NVD) | evidence: The document is the NVD entry describing the CVE.\nlinked_to | document:Progress vendor advisory for CVE-2023-34362 -> other:CVE-2023-34362 | evidence: The advisory addresses CVE-2023-34362.\npublished_by | document:Progress vendor advisory for CVE-2023-34362 -> organization:Progress | evidence: NVD identifies the advisory as a Progress vendor advisory.\noccurred_on | event:In-the-wild exploitation of CVE-2023-34362 -> date:2023-06-02 | evidence: The exploitation period included June 2023; 2023-06-02 is within the stated May–June period.\ntargeted | event:In-the-wild exploitation of CVE-2023-34362 -> other:CVE-2023-34362 | evidence: The event was exploitation of CVE-2023-34362 in the wild.\nexploited | event:MOVEit Transfer exploitation activity -> product:MOVEit Transfer | evidence: The activity exploited the MOVEit Transfer vulnerability.\noccurred_on | event:MOVEit Transfer exploitation activity -> date:2023-05-27 | evidence: Earliest observed exploitation occurred on May 27, 2023.\nuses_infrastructure | event:MOVEit Transfer exploitation activity -> network:5.252.188.0/22 | evidence: Scanning and exploitation often originated from 5.252.188.0/22.\ntargeted | file:guestaccess.aspx -> product:MOVEit Transfer | evidence: POST requests to guestaccess.aspx preceded webshell interaction during SQL injection attacks against MOVEit systems.\nassociated_with | keyword:CVE-2023-0669 -> product:GoAnywhere MFT | evidence: CVE-2023-0669 is the GoAnywhere MFT vulnerability referenced in the prior FIN11 activity.\nassociated_with | keyword:CVE-2023-34362 -> product:MOVEit Transfer | evidence: CVE-2023-34362 was assigned to the MOVEit Transfer vulnerability.\nexploited | organization:FIN11 -> product:Accellion FTA | evidence: FIN11 previously conducted data-theft extortion after exploiting Accellion FTA.\nexploited | organization:FIN11 -> product:GoAnywhere MFT | evidence: FIN11 previously exploited GoAnywhere MFT in data-theft extortion activity.\nlinked_to_extortion_brand | organization:FIN11 -> product:CL0P^_-LEAKS | evidence: The CL0P^_-LEAKS site claimed responsibility for the activity and threatened to publish stolen data for ransom.\nused_or_deployed | organization:FIN11 -> software:DEWMODE | evidence: DEWMODE was the web shell used in FIN11's prior Accellion FTA activity.\npublished_by | organization:Progress -> product:MOVEit Transfer | evidence: Progress announced the MOVEit Transfer vulnerability on May 31, 2023.\ndeployed | organization:UNC4857 -> software:LEMURLOOT | evidence: Actors attributed initially to UNC4857 deployed the LEMURLOOT web shell.\nexploited | organization:UNC4857 -> product:MOVEit Transfer | evidence: Mandiant initially attributed the MOVEit exploitation activity to UNC4857.\nmerged_into | organization:UNC4857 -> organization:FIN11 | evidence: On June 6, Mandiant merged UNC4857 into FIN11 based on targeting, infrastructure, certificate, and data leak site overlaps.\naffects | other:CVE-2023-34362 -> software:MOVEit Transfer | evidence: NVD describes CVE-2023-34362 as a vulnerability in the MOVEit Transfer web application.\ncaptured_on | product:CL0P^_-LEAKS -> date:2023-06-06 | evidence: The site claimed responsibility on June 6, 2023.\nrebranded_as | software:LEMURLOOT -> file:_human2.aspx | evidence: _human2.aspx was an observed LEMURLOOT variant.\nrebranded_as | software:LEMURLOOT -> file:human.aspx | evidence: LEMURLOOT often masqueraded as human.aspx.\nrebranded_as | software:LEMURLOOT -> file:human2.aspx | evidence: human2.aspx was an observed LEMURLOOT variant.",
+        "duration_ms": 12.66
+      }
+    ],
+    "final_report": "# Final OSINT Report: MOVEit Transfer / CL0P Mass Exploitation\n\n## Executive summary\n\nThe benchmark evidence supports the following sequence:\n\n1. **Progress disclosed a critical MOVEit Transfer vulnerability on May 31, 2023**, later identified as **CVE-2023-34362**. NVD describes it as an unauthenticated SQL-injection vulnerability that could expose or modify the MOVEit database.  \n2. **Exploitation began before public disclosure**: Mandiant reported the earliest observed exploitation on **May 27, 2023**, involving web-shell deployment and data theft.  \n3. Attackers deployed **LEMURLOOT**, a C# web shell tailored to MOVEit Transfer. It commonly masqueraded as `human.aspx`, with observed variants `human2.aspx` and `_human2.aspx`.  \n4. LEMURLOOT could enumerate files, retrieve configuration and Azure Blob Storage information, download files, and create or delete a “Health Check Service” account.  \n5. Mandiant initially attributed the campaign to **UNC4857**, then merged that activity into **FIN11** on June 6 based on targeting, infrastructure, certificate, and data-leak-site overlaps. This is an analyst attribution assessment, not independently proven actor identity.  \n6. The **CL0P^_-LEAKS** data-leak site claimed responsibility on June 6 and threatened publication of stolen data unless victims paid an extortion fee. The evidence therefore supports a link between the MOVEit campaign and CL0P-branded extortion infrastructure, while noting that Mandiant had not directly observed extortion emails sent to confirmed victims.\n\n---\n\n## Chronology\n\n| Date | Event | Assessment |\n|---|---|---|\n| **May 27, 2023** | Earliest exploitation observed by Mandiant; web shells were deployed and data theft occurred. | Direct observation reported by Mandiant. [SRC-001] |\n| **May 28, 2023** | Samples named `human2.aspx` appeared in VirusTotal. | Supporting malware-timeline evidence. [SRC-001] |\n| **May 31, 2023** | Progress announced the MOVEit vulnerability. | Vendor disclosure date reported by Mandiant and referenced by NVD. [SRC-001] [SRC-002] |\n| **June 2, 2023** | CVE-2023-34362 was published in NVD; CISA added it to the Known Exploited Vulnerabilities catalog. | Public vulnerability-record milestone. [SRC-002] |\n| **June 5, 2023** | Bleeping Computer reported an alleged CLOP-affiliated statement claiming involvement. | Allegation reported by Mandiant; not independently verified in the returned evidence. [SRC-001] |\n| **June 6, 2023** | CL0P^_-LEAKS claimed responsibility and threatened to publish stolen data unless an extortion fee was paid. | Directly reported site claim; actor identity remains an attribution issue. [SRC-001] |\n| **June 6, 2023** | Mandiant merged its UNC4857 attribution into FIN11 based on multiple overlaps. | Mandiant attribution assessment. [SRC-001] |\n\n---\n\n## Technical exploitation chain\n\n### Vulnerability and affected product\n\nNVD describes CVE-2023-34362 as an **unauthenticated SQL-injection vulnerability in the MOVEit Transfer web application**. Depending on the database engine, exploitation could allow an attacker to infer database structure and contents and execute SQL statements that alter or delete database elements. NVD states that exploitation occurred in the wild during May and June 2023 and could be conducted over HTTP or HTTPS. [SRC-002]\n\nThe affected product versions included multiple pre-patch MOVEit Transfer branches, including versions before:\n\n- 2021.0.6\n- 2021.1.4\n- 2022.0.4\n- 2022.1.5\n- 2023.0.1\n\nOlder unsupported versions were also reported as affected. [SRC-002]\n\nCISA’s catalog entry recorded a June 2, 2023 addition date, a June 23 remediation due date, and the required action to apply vendor updates. [SRC-002]\n\n### Initial access and web-shell deployment\n\nMandiant observed POST requests to the legitimate `guestaccess.aspx` file before interaction with the LEMURLOOT web shell. Mandiant assessed that this pattern indicated SQL-injection attacks directed at that file. [SRC-001]\n\nThe exploitation resulted in the deployment of **LEMURLOOT**, a newly discovered C# web shell tailored specifically to MOVEit Transfer. The malware was placed under filenames designed to resemble the legitimate `human.aspx` component. Observed filenames included:\n\n- `human.aspx`\n- `human2.aspx`\n- `_human2.aspx`\n\n[SRC-001]\n\n### LEMURLOOT capabilities\n\nAccording to Mandiant, LEMURLOOT:\n\n- Authenticated incoming connections using a hard-coded password-like GUID value.\n- Enumerated files and folders.\n- Retrieved MOVEit configuration information.\n- Retrieved database records and file metadata.\n- Downloaded files from the MOVEit system.\n- Created or deleted a user named **“Health Check Service.”**\n- Retrieved Azure Blob Storage settings, including storage-account information, keys, and containers.\n- Returned collected data in gzip-compressed form.\n\n[SRC-001]\n\nMandiant reported multiple cases involving the theft of large volumes of files from victims’ MOVEit systems. It also assessed that the web shell was being used to steal data previously uploaded by MOVEit users. [SRC-001]\n\n---\n\n## Infrastructure and operational indicators\n\nThe evidence identifies several infrastructure characteristics:\n\n- Scanning and exploitation frequently originated from the **5.252.188.0/22** network range. [SRC-001]\n- Interaction with the web shell and subsequent data theft came from different systems in some cases. [SRC-001]\n- Many second-stage systems hosted RDP services.\n- Certificates on several of those systems were generated between May 19 and May 22, suggesting possible staging before the campaign. This is an inference by Mandiant, not a confirmed staging date. [SRC-001]\n- Mandiant identified overlaps in ISPs, netblocks, and IP addresses between this campaign and historical FIN11 operations. [SRC-001]\n- One IP address attempting exploitation had reportedly been used by FIN11 as early as mid-January 2023. The same system hosted RDP on TCP port 3389 and presented the same X.509 certificate when later used by UNC4857. [SRC-001]\n\nThese indicators support Mandiant’s attribution assessment but do not, by themselves, establish the legal identity of the operators.\n\n---\n\n## Attribution and CL0P extortion infrastructure\n\n### UNC4857 to FIN11\n\nMandiant initially attributed the MOVEit activity to **UNC4857**. On June 6, 2023, it merged UNC4857 into **FIN11**, citing:\n\n- Targeting overlaps\n- Infrastructure overlaps\n- Certificate overlaps\n- Data leak site overlaps\n\n[SRC-001]\n\nThe evidence therefore supports the following attribution history:\n\n> Initial Mandiant label: **UNC4857** → revised Mandiant assessment: **FIN11**\n\nThis should be treated as a threat-intelligence assessment rather than a conclusive identification of the individuals responsible.\n\n### CL0P^_-LEAKS\n\nOn June 6, the **CL0P^_-LEAKS** data-leak site claimed responsibility for the MOVEit activity and threatened to publish stolen data unless victims paid an extortion fee. [SRC-001]\n\nMandiant described the campaign as consistent with prior FIN11-attributed data-theft extortion involving the CL0P^_-LEAKS site. Mandiant also cited FIN11-associated exploitation of:\n\n- Accellion FTA vulnerabilities, with deployment of the DEWMODE web shell.\n- GoAnywhere MFT vulnerability CVE-2023-0669.\n\n[SRC-001]\n\nThe returned evidence supports a **FIN11–CL0P^_-LEAKS operational linkage assessment**, but it does not independently prove that the CL0P brand, FIN11, and every operator involved were identical organizational entities.\n\n### Extortion timing and limits of evidence\n\nMandiant stated that victims did not initially receive ransom demands and that it had **not directly observed extortion emails sent to confirmed victims** at the time of reporting. It considered delayed ransom emails plausible based on prior FIN11 behavior, in which demands followed exploitation by several weeks. [SRC-001]\n\nAccordingly:\n\n- The CL0P^_-LEAKS responsibility and extortion threat are supported by the reported site post. [SRC-001]\n- Direct evidence of ransom emails to confirmed MOVEit victims was not present in the returned material. [SRC-001]\n- Any claim that every compromised organization received a demand, or that all stolen data was published, is unsupported by the available evidence.\n\n---\n\n## Findings\n\n### Finding 1 — What vulnerability enabled the campaign?\n\n**Answer:** CVE-2023-34362, an unauthenticated SQL-injection vulnerability in MOVEit Transfer, enabled database access and potentially database modification or deletion. It was exploitable over HTTP or HTTPS and was exploited in the wild during May and June 2023. [SRC-002]\n\n**Supporting entities:** CVE-2023-34362; MOVEit Transfer; Progress; NVD; CISA.\n\n### Finding 2 — Did exploitation precede public disclosure?\n\n**Answer:** Yes. Mandiant’s earliest observed exploitation was May 27, 2023, while Progress announced the vulnerability on May 31, 2023. [SRC-001]\n\n**Supporting entities:** MOVEit Transfer exploitation activity; Progress; CVE-2023-34362; dates 2023-05-27 and 2023-05-31.\n\n### Finding 3 — What malware was deployed?\n\n**Answer:** Attackers deployed LEMURLOOT, a C# web shell tailored to MOVEit Transfer. It commonly masqueraded as `human.aspx`, with observed variants `human2.aspx` and `_human2.aspx`. [SRC-001]\n\n**Supporting entities:** LEMURLOOT; human.aspx; human2.aspx; _human2.aspx; MOVEit Transfer.\n\n### Finding 4 — What did LEMURLOOT enable?\n\n**Answer:** LEMURLOOT enabled file and folder enumeration, configuration and database-record retrieval, file downloads, Azure Blob Storage information theft, and creation or deletion of a “Health Check Service” account. [SRC-001]\n\n**Supporting entities:** LEMURLOOT; MOVEit Transfer; Azure Blob Storage; Health Check Service.\n\n### Finding 5 — What was the initial and revised attribution?\n\n**Answer:** Mandiant initially attributed the activity to UNC4857 and later merged UNC4857 into FIN11 based on targeting, infrastructure, certificate, and data-leak-site overlaps. [SRC-001]\n\n**Supporting entities:** UNC4857; FIN11; Mandiant.\n\n### Finding 6 — How was CL0P-linked extortion infrastructure involved?\n\n**Answer:** The CL0P^_-LEAKS data-leak site claimed responsibility on June 6 and threatened to publish stolen data unless victims paid an extortion fee. Mandiant linked the activity to prior FIN11-attributed data-theft extortion patterns. [SRC-001]\n\n**Supporting entities:** CL0P^_-LEAKS; FIN11; MOVEit Transfer exploitation activity.\n\n### Finding 7 — What infrastructure was associated with the campaign?\n\n**Answer:** Scanning and exploitation often originated from 5.252.188.0/22. Second-stage systems commonly exposed RDP, and Mandiant identified infrastructure and certificate overlaps with historical FIN11 activity. [SRC-001]\n\n**Supporting entities:** 5.252.188.0/22; FIN11; MOVEit Transfer exploitation activity.\n\n---\n\n## Claims and confidence characterization\n\n- **High confidence:** CVE-2023-34362 affected MOVEit Transfer and was an unauthenticated SQL-injection vulnerability. [SRC-002]\n- **High confidence:** Exploitation was observed before Progress’s May 31 disclosure. [SRC-001]\n- **High confidence:** LEMURLOOT was deployed against MOVEit Transfer and was tailored to extract files and configuration data. [SRC-001]\n- **Moderate-to-high confidence:** The campaign was linked by Mandiant to FIN11 through infrastructure, targeting, certificate, and data-leak-site overlaps. [SRC-001]\n- **Moderate confidence:** The campaign was operationally connected to the CL0P extortion ecosystem through the CL0P^_-LEAKS claim and prior FIN11-associated activity. [SRC-001]\n- **Uncertain:** Whether the CL0P^_-LEAKS operators and FIN11 were organizationally identical. The returned evidence supports linkage, not definitive organizational identity. [SRC-001]\n- **Unsupported by returned evidence:** That all victims received ransom emails or that all stolen data was ultimately published. Mandiant explicitly stated it had not directly observed extortion emails to confirmed victims at the time of reporting. [SRC-001]\n\n```json\n{\n  \"findings\": [\n    {\n      \"question\": \"What vulnerability enabled the MOVEit campaign?\",\n      \"answer\": \"CVE-2023-34362 was an unauthenticated SQL-injection vulnerability in the MOVEit Transfer web application that could provide database access and potentially permit SQL statements altering or deleting database elements.\",\n      \"supporting_entities\": [\n        \"CVE-2023-34362\",\n        \"MOVEit Transfer\",\n        \"Progress\",\n        \"National Vulnerability Database (NVD)\",\n        \"Cybersecurity and Infrastructure Security Agency (CISA)\"\n      ],\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"question\": \"Did exploitation begin before public disclosure?\",\n      \"answer\": \"Yes. Mandiant reported earliest observed exploitation on 2023-05-27, before Progress announced the vulnerability on 2023-05-31.\",\n      \"supporting_entities\": [\n        \"MOVEit Transfer exploitation activity\",\n        \"Progress\",\n        \"2023-05-27\",\n        \"2023-05-31\"\n      ],\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"question\": \"What payload was deployed?\",\n      \"answer\": \"LEMURLOOT, a C# web shell tailored to MOVEit Transfer, was deployed. It commonly masqueraded as human.aspx, with observed variants human2.aspx and _human2.aspx.\",\n      \"supporting_entities\": [\n        \"LEMURLOOT\",\n        \"MOVEit Transfer\",\n        \"human.aspx\",\n        \"human2.aspx\",\n        \"_human2.aspx\"\n      ],\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"question\": \"What could LEMURLOOT do?\",\n      \"answer\": \"It could enumerate files and folders, retrieve configuration and record data, download files, obtain Azure Blob Storage information, and create or delete a Health Check Service account.\",\n      \"supporting_entities\": [\n        \"LEMURLOOT\",\n        \"MOVEit Transfer\",\n        \"guestaccess.aspx\"\n      ],\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"question\": \"How did attribution develop?\",\n      \"answer\": \"Mandiant initially attributed the activity to UNC4857 and later merged UNC4857 into FIN11 based on targeting, infrastructure, certificate, and data-leak-site overlaps.\",\n      \"supporting_entities\": [\n        \"UNC4857\",\n        \"FIN11\",\n        \"Mandiant\"\n      ],\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"question\": \"How was CL0P-linked extortion infrastructure involved?\",\n      \"answer\": \"The CL0P^_-LEAKS data-leak site claimed responsibility on 2023-06-06 and threatened to publish stolen data unless victims paid an extortion fee.\",\n      \"supporting_entities\": [\n        \"CL0P^_-LEAKS\",\n        \"FIN11\",\n        \"2023-06-06\"\n      ],\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"question\": \"What infrastructure indicators were reported?\",\n      \"answer\": \"Scanning and exploitation often originated from 5.252.188.0/22; second-stage systems commonly exposed RDP, and Mandiant identified infrastructure and certificate overlaps with historical FIN11 activity.\",\n      \"supporting_entities\": [\n        \"5.252.188.0/22\",\n        \"FIN11\",\n        \"MOVEit Transfer exploitation activity\"\n      ],\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    }\n  ],\n  \"claims\": [\n    {\n      \"claim\": \"CVE-2023-34362 was exploited in the wild during May and June 2023.\",\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"claim\": \"The MOVEit campaign involved data theft following deployment of web shells.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"claim\": \"LEMURLOOT was tailored to MOVEit Transfer and used to steal files and configuration information.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"claim\": \"Mandiant assessed that UNC4857 activity should be merged into FIN11.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"claim\": \"The CL0P^_-LEAKS site claimed responsibility and threatened extortion-related publication of stolen data.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"claim\": \"The FIN11 attribution and CL0P linkage are threat-intelligence assessments and should not be treated as conclusive proof of operator identity.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"claim\": \"Mandiant had not directly observed extortion emails sent to confirmed victims at the time of reporting.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    }\n  ],\n  \"reasoning_steps\": [\n    {\n      \"id\": \"RS-001\",\n      \"conclusion\": \"The campaign exploited MOVEit Transfer through CVE-2023-34362.\",\n      \"premise_entities\": [\n        \"CVE-2023-34362\",\n        \"MOVEit Transfer\",\n        \"MOVEit Transfer exploitation activity\"\n      ],\n      \"premise_relations\": [\n        \"affects\",\n        \"exploited\",\n        \"associated_with\"\n      ]\n    },\n    {\n      \"id\": \"RS-002\",\n      \"conclusion\": \"The exploitation chain included deployment of LEMURLOOT.\",\n      \"premise_entities\": [\n        \"UNC4857\",\n        \"LEMURLOOT\",\n        \"MOVEit Transfer\"\n      ],\n      \"premise_relations\": [\n        \"exploited\",\n        \"deployed\"\n      ]\n    },\n    {\n      \"id\": \"RS-003\",\n      \"conclusion\": \"The malware was designed to blend into MOVEit Transfer and facilitate data theft.\",\n      \"premise_entities\": [\n        \"LEMURLOOT\",\n        \"human.aspx\",\n        \"human2.aspx\",\n        \"_human2.aspx\",\n        \"MOVEit Transfer\"\n      ],\n      \"premise_relations\": [\n        \"rebranded_as\",\n        \"targeted\"\n      ]\n    },\n    {\n      \"id\": \"RS-004\",\n      \"conclusion\": \"Mandiant’s attribution evolved from UNC4857 to FIN11.\",\n      \"premise_entities\": [\n        \"UNC4857\",\n        \"FIN11\",\n        \"Mandiant\"\n      ],\n      \"premise_relations\": [\n        \"merged_into\"\n      ]\n    },\n    {\n      \"id\": \"RS-005\",\n      \"conclusion\": \"The campaign was linked to CL0P-branded extortion infrastructure.\",\n      \"premise_entities\": [\n        \"FIN11\",\n        \"CL0P^_-LEAKS\",\n        \"2023-06-06\"\n      ],\n      \"premise_relations\": [\n        \"linked_to_extortion_brand\",\n        \"captured_on\"\n      ]\n    },\n    {\n      \"id\": \"RS-006\",\n      \"conclusion\": \"Infrastructure overlaps contributed to the FIN11 attribution assessment.\",\n      \"premise_entities\": [\n        \"MOVEit Transfer exploitation activity\",\n        \"5.252.188.0/22\",\n        \"FIN11\"\n      ],\n      \"premise_relations\": [\n        \"uses_infrastructure\",\n        \"merged_into\"\n      ]\n    }\n  ],\n  \"contradictions\": [\n    {\n      \"contradiction_id\": \"C-001\",\n      \"description\": \"The activity was initially attributed to UNC4857 but later merged into FIN11. This is an attribution revision rather than proof that two independently identified groups were both responsible.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"contradiction_id\": \"C-002\",\n      \"description\": \"The campaign and CL0P^_-LEAKS site were associated with extortion, but Mandiant had not directly observed extortion emails sent to confirmed victims at the time of reporting.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"contradiction_id\": \"C-003\",\n      \"description\": \"A reported alleged CLOP-affiliated statement and the CL0P^_-LEAKS responsibility claim support attribution context, but the returned evidence does not independently verify that the speakers or site operators were identical to FIN11.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    }\n  ]\n}\n```",
+    "operational": {
+      "duration_ms": 517820.36,
+      "mode": "offline",
+      "iterations": 12,
+      "search_calls": 6,
+      "fetch_calls": 2,
+      "knowledge_base_calls": 2,
+      "termination_reason": "final_report"
+    },
+    "output": {
+      "entities": [
+        {
+          "type": "ORGANIZATION",
+          "value": "Mandiant"
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "Progress"
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "UNC4857"
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "FIN11"
+        },
+        {
+          "type": "PRODUCT",
+          "value": "MOVEit Transfer"
+        },
+        {
+          "type": "PRODUCT",
+          "value": "CL0P^_-LEAKS"
+        },
+        {
+          "type": "PRODUCT",
+          "value": "Accellion FTA"
+        },
+        {
+          "type": "PRODUCT",
+          "value": "GoAnywhere MFT"
+        },
+        {
+          "type": "KEYWORD",
+          "value": "CVE-2023-34362"
+        },
+        {
+          "type": "KEYWORD",
+          "value": "CVE-2023-0669"
+        },
+        {
+          "type": "SOFTWARE",
+          "value": "LEMURLOOT"
+        },
+        {
+          "type": "SOFTWARE",
+          "value": "DEWMODE"
+        },
+        {
+          "type": "FILE",
+          "value": "human.aspx"
+        },
+        {
+          "type": "FILE",
+          "value": "human2.aspx"
+        },
+        {
+          "type": "FILE",
+          "value": "_human2.aspx"
+        },
+        {
+          "type": "FILE",
+          "value": "guestaccess.aspx"
+        },
+        {
+          "type": "NETWORK",
+          "value": "5.252.188.0/22"
+        },
+        {
+          "type": "EVENT",
+          "value": "MOVEit Transfer exploitation activity"
+        },
+        {
+          "type": "DATE",
+          "value": "2023-05-27"
+        },
+        {
+          "type": "DATE",
+          "value": "2023-05-31"
+        },
+        {
+          "type": "DATE",
+          "value": "2023-06-02"
+        },
+        {
+          "type": "DATE",
+          "value": "2023-06-06"
+        },
+        {
+          "type": "OTHER",
+          "value": "CVE-2023-34362"
+        },
+        {
+          "type": "SOFTWARE",
+          "value": "MOVEit Transfer"
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "Progress"
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "National Vulnerability Database (NVD)"
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "Cybersecurity and Infrastructure Security Agency (CISA)"
+        },
+        {
+          "type": "DOCUMENT",
+          "value": "NVD entry for CVE-2023-34362"
+        },
+        {
+          "type": "DOCUMENT",
+          "value": "CISA Known Exploited Vulnerabilities catalog entry for CVE-2023-34362"
+        },
+        {
+          "type": "DOCUMENT",
+          "value": "Progress vendor advisory for CVE-2023-34362"
+        },
+        {
+          "type": "DATE",
+          "value": "2023-06-02"
+        },
+        {
+          "type": "DATE",
+          "value": "2023-06-23"
+        },
+        {
+          "type": "DATE",
+          "value": "2023-05-31"
+        },
+        {
+          "type": "EVENT",
+          "value": "In-the-wild exploitation of CVE-2023-34362"
+        }
+      ],
+      "relations": [
+        {
+          "relation_type": "PUBLISHED_BY",
+          "from_type": "organization",
+          "from_value": "Progress",
+          "to_type": "product",
+          "to_value": "MOVEit Transfer"
+        },
+        {
+          "relation_type": "ASSOCIATED_WITH",
+          "from_type": "keyword",
+          "from_value": "CVE-2023-34362",
+          "to_type": "product",
+          "to_value": "MOVEit Transfer"
+        },
+        {
+          "relation_type": "ASSOCIATED_WITH",
+          "from_type": "keyword",
+          "from_value": "CVE-2023-0669",
+          "to_type": "product",
+          "to_value": "GoAnywhere MFT"
+        },
+        {
+          "relation_type": "OCCURRED_ON",
+          "from_type": "event",
+          "from_value": "MOVEit Transfer exploitation activity",
+          "to_type": "date",
+          "to_value": "2023-05-27"
+        },
+        {
+          "relation_type": "EXPLOITED",
+          "from_type": "event",
+          "from_value": "MOVEit Transfer exploitation activity",
+          "to_type": "product",
+          "to_value": "MOVEit Transfer"
+        },
+        {
+          "relation_type": "EXPLOITED",
+          "from_type": "organization",
+          "from_value": "UNC4857",
+          "to_type": "product",
+          "to_value": "MOVEit Transfer"
+        },
+        {
+          "relation_type": "EXPLOITED",
+          "from_type": "organization",
+          "from_value": "FIN11",
+          "to_type": "product",
+          "to_value": "Accellion FTA"
+        },
+        {
+          "relation_type": "EXPLOITED",
+          "from_type": "organization",
+          "from_value": "FIN11",
+          "to_type": "product",
+          "to_value": "GoAnywhere MFT"
+        },
+        {
+          "relation_type": "DEPLOYED",
+          "from_type": "organization",
+          "from_value": "UNC4857",
+          "to_type": "software",
+          "to_value": "LEMURLOOT"
+        },
+        {
+          "relation_type": "REBRANDED_AS",
+          "from_type": "software",
+          "from_value": "LEMURLOOT",
+          "to_type": "file",
+          "to_value": "human.aspx"
+        },
+        {
+          "relation_type": "REBRANDED_AS",
+          "from_type": "software",
+          "from_value": "LEMURLOOT",
+          "to_type": "file",
+          "to_value": "human2.aspx"
+        },
+        {
+          "relation_type": "REBRANDED_AS",
+          "from_type": "software",
+          "from_value": "LEMURLOOT",
+          "to_type": "file",
+          "to_value": "_human2.aspx"
+        },
+        {
+          "relation_type": "TARGETED",
+          "from_type": "file",
+          "from_value": "guestaccess.aspx",
+          "to_type": "product",
+          "to_value": "MOVEit Transfer"
+        },
+        {
+          "relation_type": "USES_INFRASTRUCTURE",
+          "from_type": "event",
+          "from_value": "MOVEit Transfer exploitation activity",
+          "to_type": "network",
+          "to_value": "5.252.188.0/22"
+        },
+        {
+          "relation_type": "MERGED_INTO",
+          "from_type": "organization",
+          "from_value": "UNC4857",
+          "to_type": "organization",
+          "to_value": "FIN11"
+        },
+        {
+          "relation_type": "LINKED_TO_EXTORTION_BRAND",
+          "from_type": "organization",
+          "from_value": "FIN11",
+          "to_type": "product",
+          "to_value": "CL0P^_-LEAKS"
+        },
+        {
+          "relation_type": "CAPTURED_ON",
+          "from_type": "product",
+          "from_value": "CL0P^_-LEAKS",
+          "to_type": "date",
+          "to_value": "2023-06-06"
+        },
+        {
+          "relation_type": "USED_OR_DEPLOYED",
+          "from_type": "organization",
+          "from_value": "FIN11",
+          "to_type": "software",
+          "to_value": "DEWMODE"
+        },
+        {
+          "relation_type": "AFFECTS",
+          "from_type": "other",
+          "from_value": "CVE-2023-34362",
+          "to_type": "software",
+          "to_value": "MOVEit Transfer"
+        },
+        {
+          "relation_type": "TARGETED",
+          "from_type": "event",
+          "from_value": "In-the-wild exploitation of CVE-2023-34362",
+          "to_type": "other",
+          "to_value": "CVE-2023-34362"
+        },
+        {
+          "relation_type": "OCCURRED_ON",
+          "from_type": "event",
+          "from_value": "In-the-wild exploitation of CVE-2023-34362",
+          "to_type": "date",
+          "to_value": "2023-06-02"
+        },
+        {
+          "relation_type": "PUBLISHED_BY",
+          "from_type": "document",
+          "from_value": "NVD entry for CVE-2023-34362",
+          "to_type": "organization",
+          "to_value": "National Vulnerability Database (NVD)"
+        },
+        {
+          "relation_type": "PUBLISHED_BY",
+          "from_type": "document",
+          "from_value": "CISA Known Exploited Vulnerabilities catalog entry for CVE-2023-34362",
+          "to_type": "organization",
+          "to_value": "Cybersecurity and Infrastructure Security Agency (CISA)"
+        },
+        {
+          "relation_type": "PUBLISHED_BY",
+          "from_type": "document",
+          "from_value": "Progress vendor advisory for CVE-2023-34362",
+          "to_type": "organization",
+          "to_value": "Progress"
+        },
+        {
+          "relation_type": "LINKED_TO",
+          "from_type": "document",
+          "from_value": "NVD entry for CVE-2023-34362",
+          "to_type": "other",
+          "to_value": "CVE-2023-34362"
+        },
+        {
+          "relation_type": "LINKED_TO",
+          "from_type": "document",
+          "from_value": "CISA Known Exploited Vulnerabilities catalog entry for CVE-2023-34362",
+          "to_type": "other",
+          "to_value": "CVE-2023-34362"
+        },
+        {
+          "relation_type": "LINKED_TO",
+          "from_type": "document",
+          "from_value": "Progress vendor advisory for CVE-2023-34362",
+          "to_type": "other",
+          "to_value": "CVE-2023-34362"
+        }
+      ],
+      "source_references": [
+        "SRC-001",
+        "SRC-002"
+      ],
+      "citations": [
+        "SRC-001",
+        "SRC-002"
+      ],
+      "available_source_references": [
+        "SRC-001",
+        "SRC-002"
+      ],
+      "report": "# Final OSINT Report: MOVEit Transfer / CL0P Mass Exploitation\n\n## Executive summary\n\nThe benchmark evidence supports the following sequence:\n\n1. **Progress disclosed a critical MOVEit Transfer vulnerability on May 31, 2023**, later identified as **CVE-2023-34362**. NVD describes it as an unauthenticated SQL-injection vulnerability that could expose or modify the MOVEit database.  \n2. **Exploitation began before public disclosure**: Mandiant reported the earliest observed exploitation on **May 27, 2023**, involving web-shell deployment and data theft.  \n3. Attackers deployed **LEMURLOOT**, a C# web shell tailored to MOVEit Transfer. It commonly masqueraded as `human.aspx`, with observed variants `human2.aspx` and `_human2.aspx`.  \n4. LEMURLOOT could enumerate files, retrieve configuration and Azure Blob Storage information, download files, and create or delete a “Health Check Service” account.  \n5. Mandiant initially attributed the campaign to **UNC4857**, then merged that activity into **FIN11** on June 6 based on targeting, infrastructure, certificate, and data-leak-site overlaps. This is an analyst attribution assessment, not independently proven actor identity.  \n6. The **CL0P^_-LEAKS** data-leak site claimed responsibility on June 6 and threatened publication of stolen data unless victims paid an extortion fee. The evidence therefore supports a link between the MOVEit campaign and CL0P-branded extortion infrastructure, while noting that Mandiant had not directly observed extortion emails sent to confirmed victims.\n\n---\n\n## Chronology\n\n| Date | Event | Assessment |\n|---|---|---|\n| **May 27, 2023** | Earliest exploitation observed by Mandiant; web shells were deployed and data theft occurred. | Direct observation reported by Mandiant. [SRC-001] |\n| **May 28, 2023** | Samples named `human2.aspx` appeared in VirusTotal. | Supporting malware-timeline evidence. [SRC-001] |\n| **May 31, 2023** | Progress announced the MOVEit vulnerability. | Vendor disclosure date reported by Mandiant and referenced by NVD. [SRC-001] [SRC-002] |\n| **June 2, 2023** | CVE-2023-34362 was published in NVD; CISA added it to the Known Exploited Vulnerabilities catalog. | Public vulnerability-record milestone. [SRC-002] |\n| **June 5, 2023** | Bleeping Computer reported an alleged CLOP-affiliated statement claiming involvement. | Allegation reported by Mandiant; not independently verified in the returned evidence. [SRC-001] |\n| **June 6, 2023** | CL0P^_-LEAKS claimed responsibility and threatened to publish stolen data unless an extortion fee was paid. | Directly reported site claim; actor identity remains an attribution issue. [SRC-001] |\n| **June 6, 2023** | Mandiant merged its UNC4857 attribution into FIN11 based on multiple overlaps. | Mandiant attribution assessment. [SRC-001] |\n\n---\n\n## Technical exploitation chain\n\n### Vulnerability and affected product\n\nNVD describes CVE-2023-34362 as an **unauthenticated SQL-injection vulnerability in the MOVEit Transfer web application**. Depending on the database engine, exploitation could allow an attacker to infer database structure and contents and execute SQL statements that alter or delete database elements. NVD states that exploitation occurred in the wild during May and June 2023 and could be conducted over HTTP or HTTPS. [SRC-002]\n\nThe affected product versions included multiple pre-patch MOVEit Transfer branches, including versions before:\n\n- 2021.0.6\n- 2021.1.4\n- 2022.0.4\n- 2022.1.5\n- 2023.0.1\n\nOlder unsupported versions were also reported as affected. [SRC-002]\n\nCISA’s catalog entry recorded a June 2, 2023 addition date, a June 23 remediation due date, and the required action to apply vendor updates. [SRC-002]\n\n### Initial access and web-shell deployment\n\nMandiant observed POST requests to the legitimate `guestaccess.aspx` file before interaction with the LEMURLOOT web shell. Mandiant assessed that this pattern indicated SQL-injection attacks directed at that file. [SRC-001]\n\nThe exploitation resulted in the deployment of **LEMURLOOT**, a newly discovered C# web shell tailored specifically to MOVEit Transfer. The malware was placed under filenames designed to resemble the legitimate `human.aspx` component. Observed filenames included:\n\n- `human.aspx`\n- `human2.aspx`\n- `_human2.aspx`\n\n[SRC-001]\n\n### LEMURLOOT capabilities\n\nAccording to Mandiant, LEMURLOOT:\n\n- Authenticated incoming connections using a hard-coded password-like GUID value.\n- Enumerated files and folders.\n- Retrieved MOVEit configuration information.\n- Retrieved database records and file metadata.\n- Downloaded files from the MOVEit system.\n- Created or deleted a user named **“Health Check Service.”**\n- Retrieved Azure Blob Storage settings, including storage-account information, keys, and containers.\n- Returned collected data in gzip-compressed form.\n\n[SRC-001]\n\nMandiant reported multiple cases involving the theft of large volumes of files from victims’ MOVEit systems. It also assessed that the web shell was being used to steal data previously uploaded by MOVEit users. [SRC-001]\n\n---\n\n## Infrastructure and operational indicators\n\nThe evidence identifies several infrastructure characteristics:\n\n- Scanning and exploitation frequently originated from the **5.252.188.0/22** network range. [SRC-001]\n- Interaction with the web shell and subsequent data theft came from different systems in some cases. [SRC-001]\n- Many second-stage systems hosted RDP services.\n- Certificates on several of those systems were generated between May 19 and May 22, suggesting possible staging before the campaign. This is an inference by Mandiant, not a confirmed staging date. [SRC-001]\n- Mandiant identified overlaps in ISPs, netblocks, and IP addresses between this campaign and historical FIN11 operations. [SRC-001]\n- One IP address attempting exploitation had reportedly been used by FIN11 as early as mid-January 2023. The same system hosted RDP on TCP port 3389 and presented the same X.509 certificate when later used by UNC4857. [SRC-001]\n\nThese indicators support Mandiant’s attribution assessment but do not, by themselves, establish the legal identity of the operators.\n\n---\n\n## Attribution and CL0P extortion infrastructure\n\n### UNC4857 to FIN11\n\nMandiant initially attributed the MOVEit activity to **UNC4857**. On June 6, 2023, it merged UNC4857 into **FIN11**, citing:\n\n- Targeting overlaps\n- Infrastructure overlaps\n- Certificate overlaps\n- Data leak site overlaps\n\n[SRC-001]\n\nThe evidence therefore supports the following attribution history:\n\n> Initial Mandiant label: **UNC4857** → revised Mandiant assessment: **FIN11**\n\nThis should be treated as a threat-intelligence assessment rather than a conclusive identification of the individuals responsible.\n\n### CL0P^_-LEAKS\n\nOn June 6, the **CL0P^_-LEAKS** data-leak site claimed responsibility for the MOVEit activity and threatened to publish stolen data unless victims paid an extortion fee. [SRC-001]\n\nMandiant described the campaign as consistent with prior FIN11-attributed data-theft extortion involving the CL0P^_-LEAKS site. Mandiant also cited FIN11-associated exploitation of:\n\n- Accellion FTA vulnerabilities, with deployment of the DEWMODE web shell.\n- GoAnywhere MFT vulnerability CVE-2023-0669.\n\n[SRC-001]\n\nThe returned evidence supports a **FIN11–CL0P^_-LEAKS operational linkage assessment**, but it does not independently prove that the CL0P brand, FIN11, and every operator involved were identical organizational entities.\n\n### Extortion timing and limits of evidence\n\nMandiant stated that victims did not initially receive ransom demands and that it had **not directly observed extortion emails sent to confirmed victims** at the time of reporting. It considered delayed ransom emails plausible based on prior FIN11 behavior, in which demands followed exploitation by several weeks. [SRC-001]\n\nAccordingly:\n\n- The CL0P^_-LEAKS responsibility and extortion threat are supported by the reported site post. [SRC-001]\n- Direct evidence of ransom emails to confirmed MOVEit victims was not present in the returned material. [SRC-001]\n- Any claim that every compromised organization received a demand, or that all stolen data was published, is unsupported by the available evidence.\n\n---\n\n## Findings\n\n### Finding 1 — What vulnerability enabled the campaign?\n\n**Answer:** CVE-2023-34362, an unauthenticated SQL-injection vulnerability in MOVEit Transfer, enabled database access and potentially database modification or deletion. It was exploitable over HTTP or HTTPS and was exploited in the wild during May and June 2023. [SRC-002]\n\n**Supporting entities:** CVE-2023-34362; MOVEit Transfer; Progress; NVD; CISA.\n\n### Finding 2 — Did exploitation precede public disclosure?\n\n**Answer:** Yes. Mandiant’s earliest observed exploitation was May 27, 2023, while Progress announced the vulnerability on May 31, 2023. [SRC-001]\n\n**Supporting entities:** MOVEit Transfer exploitation activity; Progress; CVE-2023-34362; dates 2023-05-27 and 2023-05-31.\n\n### Finding 3 — What malware was deployed?\n\n**Answer:** Attackers deployed LEMURLOOT, a C# web shell tailored to MOVEit Transfer. It commonly masqueraded as `human.aspx`, with observed variants `human2.aspx` and `_human2.aspx`. [SRC-001]\n\n**Supporting entities:** LEMURLOOT; human.aspx; human2.aspx; _human2.aspx; MOVEit Transfer.\n\n### Finding 4 — What did LEMURLOOT enable?\n\n**Answer:** LEMURLOOT enabled file and folder enumeration, configuration and database-record retrieval, file downloads, Azure Blob Storage information theft, and creation or deletion of a “Health Check Service” account. [SRC-001]\n\n**Supporting entities:** LEMURLOOT; MOVEit Transfer; Azure Blob Storage; Health Check Service.\n\n### Finding 5 — What was the initial and revised attribution?\n\n**Answer:** Mandiant initially attributed the activity to UNC4857 and later merged UNC4857 into FIN11 based on targeting, infrastructure, certificate, and data-leak-site overlaps. [SRC-001]\n\n**Supporting entities:** UNC4857; FIN11; Mandiant.\n\n### Finding 6 — How was CL0P-linked extortion infrastructure involved?\n\n**Answer:** The CL0P^_-LEAKS data-leak site claimed responsibility on June 6 and threatened to publish stolen data unless victims paid an extortion fee. Mandiant linked the activity to prior FIN11-attributed data-theft extortion patterns. [SRC-001]\n\n**Supporting entities:** CL0P^_-LEAKS; FIN11; MOVEit Transfer exploitation activity.\n\n### Finding 7 — What infrastructure was associated with the campaign?\n\n**Answer:** Scanning and exploitation often originated from 5.252.188.0/22. Second-stage systems commonly exposed RDP, and Mandiant identified infrastructure and certificate overlaps with historical FIN11 activity. [SRC-001]\n\n**Supporting entities:** 5.252.188.0/22; FIN11; MOVEit Transfer exploitation activity.\n\n---\n\n## Claims and confidence characterization\n\n- **High confidence:** CVE-2023-34362 affected MOVEit Transfer and was an unauthenticated SQL-injection vulnerability. [SRC-002]\n- **High confidence:** Exploitation was observed before Progress’s May 31 disclosure. [SRC-001]\n- **High confidence:** LEMURLOOT was deployed against MOVEit Transfer and was tailored to extract files and configuration data. [SRC-001]\n- **Moderate-to-high confidence:** The campaign was linked by Mandiant to FIN11 through infrastructure, targeting, certificate, and data-leak-site overlaps. [SRC-001]\n- **Moderate confidence:** The campaign was operationally connected to the CL0P extortion ecosystem through the CL0P^_-LEAKS claim and prior FIN11-associated activity. [SRC-001]\n- **Uncertain:** Whether the CL0P^_-LEAKS operators and FIN11 were organizationally identical. The returned evidence supports linkage, not definitive organizational identity. [SRC-001]\n- **Unsupported by returned evidence:** That all victims received ransom emails or that all stolen data was ultimately published. Mandiant explicitly stated it had not directly observed extortion emails to confirmed victims at the time of reporting. [SRC-001]\n\n```json\n{\n  \"findings\": [\n    {\n      \"question\": \"What vulnerability enabled the MOVEit campaign?\",\n      \"answer\": \"CVE-2023-34362 was an unauthenticated SQL-injection vulnerability in the MOVEit Transfer web application that could provide database access and potentially permit SQL statements altering or deleting database elements.\",\n      \"supporting_entities\": [\n        \"CVE-2023-34362\",\n        \"MOVEit Transfer\",\n        \"Progress\",\n        \"National Vulnerability Database (NVD)\",\n        \"Cybersecurity and Infrastructure Security Agency (CISA)\"\n      ],\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"question\": \"Did exploitation begin before public disclosure?\",\n      \"answer\": \"Yes. Mandiant reported earliest observed exploitation on 2023-05-27, before Progress announced the vulnerability on 2023-05-31.\",\n      \"supporting_entities\": [\n        \"MOVEit Transfer exploitation activity\",\n        \"Progress\",\n        \"2023-05-27\",\n        \"2023-05-31\"\n      ],\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"question\": \"What payload was deployed?\",\n      \"answer\": \"LEMURLOOT, a C# web shell tailored to MOVEit Transfer, was deployed. It commonly masqueraded as human.aspx, with observed variants human2.aspx and _human2.aspx.\",\n      \"supporting_entities\": [\n        \"LEMURLOOT\",\n        \"MOVEit Transfer\",\n        \"human.aspx\",\n        \"human2.aspx\",\n        \"_human2.aspx\"\n      ],\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"question\": \"What could LEMURLOOT do?\",\n      \"answer\": \"It could enumerate files and folders, retrieve configuration and record data, download files, obtain Azure Blob Storage information, and create or delete a Health Check Service account.\",\n      \"supporting_entities\": [\n        \"LEMURLOOT\",\n        \"MOVEit Transfer\",\n        \"guestaccess.aspx\"\n      ],\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"question\": \"How did attribution develop?\",\n      \"answer\": \"Mandiant initially attributed the activity to UNC4857 and later merged UNC4857 into FIN11 based on targeting, infrastructure, certificate, and data-leak-site overlaps.\",\n      \"supporting_entities\": [\n        \"UNC4857\",\n        \"FIN11\",\n        \"Mandiant\"\n      ],\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"question\": \"How was CL0P-linked extortion infrastructure involved?\",\n      \"answer\": \"The CL0P^_-LEAKS data-leak site claimed responsibility on 2023-06-06 and threatened to publish stolen data unless victims paid an extortion fee.\",\n      \"supporting_entities\": [\n        \"CL0P^_-LEAKS\",\n        \"FIN11\",\n        \"2023-06-06\"\n      ],\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"question\": \"What infrastructure indicators were reported?\",\n      \"answer\": \"Scanning and exploitation often originated from 5.252.188.0/22; second-stage systems commonly exposed RDP, and Mandiant identified infrastructure and certificate overlaps with historical FIN11 activity.\",\n      \"supporting_entities\": [\n        \"5.252.188.0/22\",\n        \"FIN11\",\n        \"MOVEit Transfer exploitation activity\"\n      ],\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    }\n  ],\n  \"claims\": [\n    {\n      \"claim\": \"CVE-2023-34362 was exploited in the wild during May and June 2023.\",\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"claim\": \"The MOVEit campaign involved data theft following deployment of web shells.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"claim\": \"LEMURLOOT was tailored to MOVEit Transfer and used to steal files and configuration information.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"claim\": \"Mandiant assessed that UNC4857 activity should be merged into FIN11.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"claim\": \"The CL0P^_-LEAKS site claimed responsibility and threatened extortion-related publication of stolen data.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"claim\": \"The FIN11 attribution and CL0P linkage are threat-intelligence assessments and should not be treated as conclusive proof of operator identity.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"claim\": \"Mandiant had not directly observed extortion emails sent to confirmed victims at the time of reporting.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    }\n  ],\n  \"reasoning_steps\": [\n    {\n      \"id\": \"RS-001\",\n      \"conclusion\": \"The campaign exploited MOVEit Transfer through CVE-2023-34362.\",\n      \"premise_entities\": [\n        \"CVE-2023-34362\",\n        \"MOVEit Transfer\",\n        \"MOVEit Transfer exploitation activity\"\n      ],\n      \"premise_relations\": [\n        \"affects\",\n        \"exploited\",\n        \"associated_with\"\n      ]\n    },\n    {\n      \"id\": \"RS-002\",\n      \"conclusion\": \"The exploitation chain included deployment of LEMURLOOT.\",\n      \"premise_entities\": [\n        \"UNC4857\",\n        \"LEMURLOOT\",\n        \"MOVEit Transfer\"\n      ],\n      \"premise_relations\": [\n        \"exploited\",\n        \"deployed\"\n      ]\n    },\n    {\n      \"id\": \"RS-003\",\n      \"conclusion\": \"The malware was designed to blend into MOVEit Transfer and facilitate data theft.\",\n      \"premise_entities\": [\n        \"LEMURLOOT\",\n        \"human.aspx\",\n        \"human2.aspx\",\n        \"_human2.aspx\",\n        \"MOVEit Transfer\"\n      ],\n      \"premise_relations\": [\n        \"rebranded_as\",\n        \"targeted\"\n      ]\n    },\n    {\n      \"id\": \"RS-004\",\n      \"conclusion\": \"Mandiant’s attribution evolved from UNC4857 to FIN11.\",\n      \"premise_entities\": [\n        \"UNC4857\",\n        \"FIN11\",\n        \"Mandiant\"\n      ],\n      \"premise_relations\": [\n        \"merged_into\"\n      ]\n    },\n    {\n      \"id\": \"RS-005\",\n      \"conclusion\": \"The campaign was linked to CL0P-branded extortion infrastructure.\",\n      \"premise_entities\": [\n        \"FIN11\",\n        \"CL0P^_-LEAKS\",\n        \"2023-06-06\"\n      ],\n      \"premise_relations\": [\n        \"linked_to_extortion_brand\",\n        \"captured_on\"\n      ]\n    },\n    {\n      \"id\": \"RS-006\",\n      \"conclusion\": \"Infrastructure overlaps contributed to the FIN11 attribution assessment.\",\n      \"premise_entities\": [\n        \"MOVEit Transfer exploitation activity\",\n        \"5.252.188.0/22\",\n        \"FIN11\"\n      ],\n      \"premise_relations\": [\n        \"uses_infrastructure\",\n        \"merged_into\"\n      ]\n    }\n  ],\n  \"contradictions\": [\n    {\n      \"contradiction_id\": \"C-001\",\n      \"description\": \"The activity was initially attributed to UNC4857 but later merged into FIN11. This is an attribution revision rather than proof that two independently identified groups were both responsible.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"contradiction_id\": \"C-002\",\n      \"description\": \"The campaign and CL0P^_-LEAKS site were associated with extortion, but Mandiant had not directly observed extortion emails sent to confirmed victims at the time of reporting.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"contradiction_id\": \"C-003\",\n      \"description\": \"A reported alleged CLOP-affiliated statement and the CL0P^_-LEAKS responsibility claim support attribution context, but the returned evidence does not independently verify that the speakers or site operators were identical to FIN11.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    }\n  ]\n}\n```",
+      "operational": {
+        "duration_ms": 517820.36,
+        "mode": "offline",
+        "iterations": 12,
+        "search_calls": 6,
+        "fetch_calls": 2,
+        "knowledge_base_calls": 2,
+        "termination_reason": "final_report"
+      },
+      "graph_capture_source": "trace",
+      "key_findings": [
+        {
+          "question": "What vulnerability enabled the MOVEit campaign?",
+          "answer": "CVE-2023-34362 was an unauthenticated SQL-injection vulnerability in the MOVEit Transfer web application that could provide database access and potentially permit SQL statements altering or deleting database elements.",
+          "supporting_entities": [
+            "CVE-2023-34362",
+            "MOVEit Transfer",
+            "Progress",
+            "National Vulnerability Database (NVD)",
+            "Cybersecurity and Infrastructure Security Agency (CISA)"
+          ],
+          "source_references": [
+            "SRC-002"
+          ]
+        },
+        {
+          "question": "Did exploitation begin before public disclosure?",
+          "answer": "Yes. Mandiant reported earliest observed exploitation on 2023-05-27, before Progress announced the vulnerability on 2023-05-31.",
+          "supporting_entities": [
+            "MOVEit Transfer exploitation activity",
+            "Progress",
+            "2023-05-27",
+            "2023-05-31"
+          ],
+          "source_references": [
+            "SRC-001"
+          ]
+        },
+        {
+          "question": "What payload was deployed?",
+          "answer": "LEMURLOOT, a C# web shell tailored to MOVEit Transfer, was deployed. It commonly masqueraded as human.aspx, with observed variants human2.aspx and _human2.aspx.",
+          "supporting_entities": [
+            "LEMURLOOT",
+            "MOVEit Transfer",
+            "human.aspx",
+            "human2.aspx",
+            "_human2.aspx"
+          ],
+          "source_references": [
+            "SRC-001"
+          ]
+        },
+        {
+          "question": "What could LEMURLOOT do?",
+          "answer": "It could enumerate files and folders, retrieve configuration and record data, download files, obtain Azure Blob Storage information, and create or delete a Health Check Service account.",
+          "supporting_entities": [
+            "LEMURLOOT",
+            "MOVEit Transfer",
+            "guestaccess.aspx"
+          ],
+          "source_references": [
+            "SRC-001"
+          ]
+        },
+        {
+          "question": "How did attribution develop?",
+          "answer": "Mandiant initially attributed the activity to UNC4857 and later merged UNC4857 into FIN11 based on targeting, infrastructure, certificate, and data-leak-site overlaps.",
+          "supporting_entities": [
+            "UNC4857",
+            "FIN11",
+            "Mandiant"
+          ],
+          "source_references": [
+            "SRC-001"
+          ]
+        },
+        {
+          "question": "How was CL0P-linked extortion infrastructure involved?",
+          "answer": "The CL0P^_-LEAKS data-leak site claimed responsibility on 2023-06-06 and threatened to publish stolen data unless victims paid an extortion fee.",
+          "supporting_entities": [
+            "CL0P^_-LEAKS",
+            "FIN11",
+            "2023-06-06"
+          ],
+          "source_references": [
+            "SRC-001"
+          ]
+        },
+        {
+          "question": "What infrastructure indicators were reported?",
+          "answer": "Scanning and exploitation often originated from 5.252.188.0/22; second-stage systems commonly exposed RDP, and Mandiant identified infrastructure and certificate overlaps with historical FIN11 activity.",
+          "supporting_entities": [
+            "5.252.188.0/22",
+            "FIN11",
+            "MOVEit Transfer exploitation activity"
+          ],
+          "source_references": [
+            "SRC-001"
+          ]
+        }
+      ],
+      "contradictions": [
+        {
+          "contradiction_id": "C-001",
+          "description": "The activity was initially attributed to UNC4857 but later merged into FIN11. This is an attribution revision rather than proof that two independently identified groups were both responsible.",
+          "source_references": [
+            "SRC-001"
+          ]
+        },
+        {
+          "contradiction_id": "C-002",
+          "description": "The campaign and CL0P^_-LEAKS site were associated with extortion, but Mandiant had not directly observed extortion emails sent to confirmed victims at the time of reporting.",
+          "source_references": [
+            "SRC-001"
+          ]
+        },
+        {
+          "contradiction_id": "C-003",
+          "description": "A reported alleged CLOP-affiliated statement and the CL0P^_-LEAKS responsibility claim support attribution context, but the returned evidence does not independently verify that the speakers or site operators were identical to FIN11.",
+          "source_references": [
+            "SRC-001"
+          ]
+        }
+      ],
+      "reasoning_steps": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "reasoning_step_details": [
+        {
+          "id": 1,
+          "conclusion": "The campaign exploited MOVEit Transfer through CVE-2023-34362.",
+          "premise_entities": [
+            "CVE-2023-34362",
+            "MOVEit Transfer",
+            "MOVEit Transfer exploitation activity"
+          ],
+          "premise_relations": [
+            "affects",
+            "exploited",
+            "associated_with"
+          ]
+        },
+        {
+          "id": 2,
+          "conclusion": "The exploitation chain included deployment of LEMURLOOT.",
+          "premise_entities": [
+            "UNC4857",
+            "LEMURLOOT",
+            "MOVEit Transfer"
+          ],
+          "premise_relations": [
+            "exploited",
+            "deployed"
+          ]
+        },
+        {
+          "id": 3,
+          "conclusion": "The malware was designed to blend into MOVEit Transfer and facilitate data theft.",
+          "premise_entities": [
+            "LEMURLOOT",
+            "human.aspx",
+            "human2.aspx",
+            "_human2.aspx",
+            "MOVEit Transfer"
+          ],
+          "premise_relations": [
+            "rebranded_as",
+            "targeted"
+          ]
+        },
+        {
+          "id": 4,
+          "conclusion": "Mandiant’s attribution evolved from UNC4857 to FIN11.",
+          "premise_entities": [
+            "UNC4857",
+            "FIN11",
+            "Mandiant"
+          ],
+          "premise_relations": [
+            "merged_into"
+          ]
+        },
+        {
+          "id": 5,
+          "conclusion": "The campaign was linked to CL0P-branded extortion infrastructure.",
+          "premise_entities": [
+            "FIN11",
+            "CL0P^_-LEAKS",
+            "2023-06-06"
+          ],
+          "premise_relations": [
+            "linked_to_extortion_brand",
+            "captured_on"
+          ]
+        },
+        {
+          "id": 6,
+          "conclusion": "Infrastructure overlaps contributed to the FIN11 attribution assessment.",
+          "premise_entities": [
+            "MOVEit Transfer exploitation activity",
+            "5.252.188.0/22",
+            "FIN11"
+          ],
+          "premise_relations": [
+            "uses_infrastructure",
+            "merged_into"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "claim": "CVE-2023-34362 was exploited in the wild during May and June 2023.",
+          "source_references": [
+            "SRC-002"
+          ]
+        },
+        {
+          "claim": "The MOVEit campaign involved data theft following deployment of web shells.",
+          "source_references": [
+            "SRC-001"
+          ]
+        },
+        {
+          "claim": "LEMURLOOT was tailored to MOVEit Transfer and used to steal files and configuration information.",
+          "source_references": [
+            "SRC-001"
+          ]
+        },
+        {
+          "claim": "Mandiant assessed that UNC4857 activity should be merged into FIN11.",
+          "source_references": [
+            "SRC-001"
+          ]
+        },
+        {
+          "claim": "The CL0P^_-LEAKS site claimed responsibility and threatened extortion-related publication of stolen data.",
+          "source_references": [
+            "SRC-001"
+          ]
+        },
+        {
+          "claim": "The FIN11 attribution and CL0P linkage are threat-intelligence assessments and should not be treated as conclusive proof of operator identity.",
+          "source_references": [
+            "SRC-001"
+          ]
+        },
+        {
+          "claim": "Mandiant had not directly observed extortion emails sent to confirmed victims at the time of reporting.",
+          "source_references": [
+            "SRC-001"
+          ]
+        }
+      ],
+      "structured_output": true,
+      "structured_output_valid": true,
+      "structured_output_complete": true,
+      "missing_structured_sections": [],
+      "structured_output_errors": [],
+      "graph_capture_diagnostics": {
+        "entity_records_emitted": 34,
+        "relation_records_emitted": 27,
+        "knowledge_agent_calls": 2,
+        "relations_expected": 5,
+        "contradictions_expected": 1
+      }
+    }
+  },
+  "output": {
+    "entities": [
+      {
+        "type": "ORGANIZATION",
+        "value": "Mandiant"
+      },
+      {
+        "type": "ORGANIZATION",
+        "value": "Progress"
+      },
+      {
+        "type": "ORGANIZATION",
+        "value": "UNC4857"
+      },
+      {
+        "type": "ORGANIZATION",
+        "value": "FIN11"
+      },
+      {
+        "type": "PRODUCT",
+        "value": "MOVEit Transfer"
+      },
+      {
+        "type": "PRODUCT",
+        "value": "CL0P^_-LEAKS"
+      },
+      {
+        "type": "PRODUCT",
+        "value": "Accellion FTA"
+      },
+      {
+        "type": "PRODUCT",
+        "value": "GoAnywhere MFT"
+      },
+      {
+        "type": "KEYWORD",
+        "value": "CVE-2023-34362"
+      },
+      {
+        "type": "KEYWORD",
+        "value": "CVE-2023-0669"
+      },
+      {
+        "type": "SOFTWARE",
+        "value": "LEMURLOOT"
+      },
+      {
+        "type": "SOFTWARE",
+        "value": "DEWMODE"
+      },
+      {
+        "type": "FILE",
+        "value": "human.aspx"
+      },
+      {
+        "type": "FILE",
+        "value": "human2.aspx"
+      },
+      {
+        "type": "FILE",
+        "value": "_human2.aspx"
+      },
+      {
+        "type": "FILE",
+        "value": "guestaccess.aspx"
+      },
+      {
+        "type": "NETWORK",
+        "value": "5.252.188.0/22"
+      },
+      {
+        "type": "EVENT",
+        "value": "MOVEit Transfer exploitation activity"
+      },
+      {
+        "type": "DATE",
+        "value": "2023-05-27"
+      },
+      {
+        "type": "DATE",
+        "value": "2023-05-31"
+      },
+      {
+        "type": "DATE",
+        "value": "2023-06-02"
+      },
+      {
+        "type": "DATE",
+        "value": "2023-06-06"
+      },
+      {
+        "type": "OTHER",
+        "value": "CVE-2023-34362"
+      },
+      {
+        "type": "SOFTWARE",
+        "value": "MOVEit Transfer"
+      },
+      {
+        "type": "ORGANIZATION",
+        "value": "Progress"
+      },
+      {
+        "type": "ORGANIZATION",
+        "value": "National Vulnerability Database (NVD)"
+      },
+      {
+        "type": "ORGANIZATION",
+        "value": "Cybersecurity and Infrastructure Security Agency (CISA)"
+      },
+      {
+        "type": "DOCUMENT",
+        "value": "NVD entry for CVE-2023-34362"
+      },
+      {
+        "type": "DOCUMENT",
+        "value": "CISA Known Exploited Vulnerabilities catalog entry for CVE-2023-34362"
+      },
+      {
+        "type": "DOCUMENT",
+        "value": "Progress vendor advisory for CVE-2023-34362"
+      },
+      {
+        "type": "DATE",
+        "value": "2023-06-02"
+      },
+      {
+        "type": "DATE",
+        "value": "2023-06-23"
+      },
+      {
+        "type": "DATE",
+        "value": "2023-05-31"
+      },
+      {
+        "type": "EVENT",
+        "value": "In-the-wild exploitation of CVE-2023-34362"
+      }
+    ],
+    "relations": [
+      {
+        "relation_type": "PUBLISHED_BY",
+        "from_type": "organization",
+        "from_value": "Progress",
+        "to_type": "product",
+        "to_value": "MOVEit Transfer"
+      },
+      {
+        "relation_type": "ASSOCIATED_WITH",
+        "from_type": "keyword",
+        "from_value": "CVE-2023-34362",
+        "to_type": "product",
+        "to_value": "MOVEit Transfer"
+      },
+      {
+        "relation_type": "ASSOCIATED_WITH",
+        "from_type": "keyword",
+        "from_value": "CVE-2023-0669",
+        "to_type": "product",
+        "to_value": "GoAnywhere MFT"
+      },
+      {
+        "relation_type": "OCCURRED_ON",
+        "from_type": "event",
+        "from_value": "MOVEit Transfer exploitation activity",
+        "to_type": "date",
+        "to_value": "2023-05-27"
+      },
+      {
+        "relation_type": "EXPLOITED",
+        "from_type": "event",
+        "from_value": "MOVEit Transfer exploitation activity",
+        "to_type": "product",
+        "to_value": "MOVEit Transfer"
+      },
+      {
+        "relation_type": "EXPLOITED",
+        "from_type": "organization",
+        "from_value": "UNC4857",
+        "to_type": "product",
+        "to_value": "MOVEit Transfer"
+      },
+      {
+        "relation_type": "EXPLOITED",
+        "from_type": "organization",
+        "from_value": "FIN11",
+        "to_type": "product",
+        "to_value": "Accellion FTA"
+      },
+      {
+        "relation_type": "EXPLOITED",
+        "from_type": "organization",
+        "from_value": "FIN11",
+        "to_type": "product",
+        "to_value": "GoAnywhere MFT"
+      },
+      {
+        "relation_type": "DEPLOYED",
+        "from_type": "organization",
+        "from_value": "UNC4857",
+        "to_type": "software",
+        "to_value": "LEMURLOOT"
+      },
+      {
+        "relation_type": "REBRANDED_AS",
+        "from_type": "software",
+        "from_value": "LEMURLOOT",
+        "to_type": "file",
+        "to_value": "human.aspx"
+      },
+      {
+        "relation_type": "REBRANDED_AS",
+        "from_type": "software",
+        "from_value": "LEMURLOOT",
+        "to_type": "file",
+        "to_value": "human2.aspx"
+      },
+      {
+        "relation_type": "REBRANDED_AS",
+        "from_type": "software",
+        "from_value": "LEMURLOOT",
+        "to_type": "file",
+        "to_value": "_human2.aspx"
+      },
+      {
+        "relation_type": "TARGETED",
+        "from_type": "file",
+        "from_value": "guestaccess.aspx",
+        "to_type": "product",
+        "to_value": "MOVEit Transfer"
+      },
+      {
+        "relation_type": "USES_INFRASTRUCTURE",
+        "from_type": "event",
+        "from_value": "MOVEit Transfer exploitation activity",
+        "to_type": "network",
+        "to_value": "5.252.188.0/22"
+      },
+      {
+        "relation_type": "MERGED_INTO",
+        "from_type": "organization",
+        "from_value": "UNC4857",
+        "to_type": "organization",
+        "to_value": "FIN11"
+      },
+      {
+        "relation_type": "LINKED_TO_EXTORTION_BRAND",
+        "from_type": "organization",
+        "from_value": "FIN11",
+        "to_type": "product",
+        "to_value": "CL0P^_-LEAKS"
+      },
+      {
+        "relation_type": "CAPTURED_ON",
+        "from_type": "product",
+        "from_value": "CL0P^_-LEAKS",
+        "to_type": "date",
+        "to_value": "2023-06-06"
+      },
+      {
+        "relation_type": "USED_OR_DEPLOYED",
+        "from_type": "organization",
+        "from_value": "FIN11",
+        "to_type": "software",
+        "to_value": "DEWMODE"
+      },
+      {
+        "relation_type": "AFFECTS",
+        "from_type": "other",
+        "from_value": "CVE-2023-34362",
+        "to_type": "software",
+        "to_value": "MOVEit Transfer"
+      },
+      {
+        "relation_type": "TARGETED",
+        "from_type": "event",
+        "from_value": "In-the-wild exploitation of CVE-2023-34362",
+        "to_type": "other",
+        "to_value": "CVE-2023-34362"
+      },
+      {
+        "relation_type": "OCCURRED_ON",
+        "from_type": "event",
+        "from_value": "In-the-wild exploitation of CVE-2023-34362",
+        "to_type": "date",
+        "to_value": "2023-06-02"
+      },
+      {
+        "relation_type": "PUBLISHED_BY",
+        "from_type": "document",
+        "from_value": "NVD entry for CVE-2023-34362",
+        "to_type": "organization",
+        "to_value": "National Vulnerability Database (NVD)"
+      },
+      {
+        "relation_type": "PUBLISHED_BY",
+        "from_type": "document",
+        "from_value": "CISA Known Exploited Vulnerabilities catalog entry for CVE-2023-34362",
+        "to_type": "organization",
+        "to_value": "Cybersecurity and Infrastructure Security Agency (CISA)"
+      },
+      {
+        "relation_type": "PUBLISHED_BY",
+        "from_type": "document",
+        "from_value": "Progress vendor advisory for CVE-2023-34362",
+        "to_type": "organization",
+        "to_value": "Progress"
+      },
+      {
+        "relation_type": "LINKED_TO",
+        "from_type": "document",
+        "from_value": "NVD entry for CVE-2023-34362",
+        "to_type": "other",
+        "to_value": "CVE-2023-34362"
+      },
+      {
+        "relation_type": "LINKED_TO",
+        "from_type": "document",
+        "from_value": "CISA Known Exploited Vulnerabilities catalog entry for CVE-2023-34362",
+        "to_type": "other",
+        "to_value": "CVE-2023-34362"
+      },
+      {
+        "relation_type": "LINKED_TO",
+        "from_type": "document",
+        "from_value": "Progress vendor advisory for CVE-2023-34362",
+        "to_type": "other",
+        "to_value": "CVE-2023-34362"
+      }
+    ],
+    "source_references": [
+      "SRC-001",
+      "SRC-002"
+    ],
+    "citations": [
+      "SRC-001",
+      "SRC-002"
+    ],
+    "available_source_references": [
+      "SRC-001",
+      "SRC-002"
+    ],
+    "report": "# Final OSINT Report: MOVEit Transfer / CL0P Mass Exploitation\n\n## Executive summary\n\nThe benchmark evidence supports the following sequence:\n\n1. **Progress disclosed a critical MOVEit Transfer vulnerability on May 31, 2023**, later identified as **CVE-2023-34362**. NVD describes it as an unauthenticated SQL-injection vulnerability that could expose or modify the MOVEit database.  \n2. **Exploitation began before public disclosure**: Mandiant reported the earliest observed exploitation on **May 27, 2023**, involving web-shell deployment and data theft.  \n3. Attackers deployed **LEMURLOOT**, a C# web shell tailored to MOVEit Transfer. It commonly masqueraded as `human.aspx`, with observed variants `human2.aspx` and `_human2.aspx`.  \n4. LEMURLOOT could enumerate files, retrieve configuration and Azure Blob Storage information, download files, and create or delete a “Health Check Service” account.  \n5. Mandiant initially attributed the campaign to **UNC4857**, then merged that activity into **FIN11** on June 6 based on targeting, infrastructure, certificate, and data-leak-site overlaps. This is an analyst attribution assessment, not independently proven actor identity.  \n6. The **CL0P^_-LEAKS** data-leak site claimed responsibility on June 6 and threatened publication of stolen data unless victims paid an extortion fee. The evidence therefore supports a link between the MOVEit campaign and CL0P-branded extortion infrastructure, while noting that Mandiant had not directly observed extortion emails sent to confirmed victims.\n\n---\n\n## Chronology\n\n| Date | Event | Assessment |\n|---|---|---|\n| **May 27, 2023** | Earliest exploitation observed by Mandiant; web shells were deployed and data theft occurred. | Direct observation reported by Mandiant. [SRC-001] |\n| **May 28, 2023** | Samples named `human2.aspx` appeared in VirusTotal. | Supporting malware-timeline evidence. [SRC-001] |\n| **May 31, 2023** | Progress announced the MOVEit vulnerability. | Vendor disclosure date reported by Mandiant and referenced by NVD. [SRC-001] [SRC-002] |\n| **June 2, 2023** | CVE-2023-34362 was published in NVD; CISA added it to the Known Exploited Vulnerabilities catalog. | Public vulnerability-record milestone. [SRC-002] |\n| **June 5, 2023** | Bleeping Computer reported an alleged CLOP-affiliated statement claiming involvement. | Allegation reported by Mandiant; not independently verified in the returned evidence. [SRC-001] |\n| **June 6, 2023** | CL0P^_-LEAKS claimed responsibility and threatened to publish stolen data unless an extortion fee was paid. | Directly reported site claim; actor identity remains an attribution issue. [SRC-001] |\n| **June 6, 2023** | Mandiant merged its UNC4857 attribution into FIN11 based on multiple overlaps. | Mandiant attribution assessment. [SRC-001] |\n\n---\n\n## Technical exploitation chain\n\n### Vulnerability and affected product\n\nNVD describes CVE-2023-34362 as an **unauthenticated SQL-injection vulnerability in the MOVEit Transfer web application**. Depending on the database engine, exploitation could allow an attacker to infer database structure and contents and execute SQL statements that alter or delete database elements. NVD states that exploitation occurred in the wild during May and June 2023 and could be conducted over HTTP or HTTPS. [SRC-002]\n\nThe affected product versions included multiple pre-patch MOVEit Transfer branches, including versions before:\n\n- 2021.0.6\n- 2021.1.4\n- 2022.0.4\n- 2022.1.5\n- 2023.0.1\n\nOlder unsupported versions were also reported as affected. [SRC-002]\n\nCISA’s catalog entry recorded a June 2, 2023 addition date, a June 23 remediation due date, and the required action to apply vendor updates. [SRC-002]\n\n### Initial access and web-shell deployment\n\nMandiant observed POST requests to the legitimate `guestaccess.aspx` file before interaction with the LEMURLOOT web shell. Mandiant assessed that this pattern indicated SQL-injection attacks directed at that file. [SRC-001]\n\nThe exploitation resulted in the deployment of **LEMURLOOT**, a newly discovered C# web shell tailored specifically to MOVEit Transfer. The malware was placed under filenames designed to resemble the legitimate `human.aspx` component. Observed filenames included:\n\n- `human.aspx`\n- `human2.aspx`\n- `_human2.aspx`\n\n[SRC-001]\n\n### LEMURLOOT capabilities\n\nAccording to Mandiant, LEMURLOOT:\n\n- Authenticated incoming connections using a hard-coded password-like GUID value.\n- Enumerated files and folders.\n- Retrieved MOVEit configuration information.\n- Retrieved database records and file metadata.\n- Downloaded files from the MOVEit system.\n- Created or deleted a user named **“Health Check Service.”**\n- Retrieved Azure Blob Storage settings, including storage-account information, keys, and containers.\n- Returned collected data in gzip-compressed form.\n\n[SRC-001]\n\nMandiant reported multiple cases involving the theft of large volumes of files from victims’ MOVEit systems. It also assessed that the web shell was being used to steal data previously uploaded by MOVEit users. [SRC-001]\n\n---\n\n## Infrastructure and operational indicators\n\nThe evidence identifies several infrastructure characteristics:\n\n- Scanning and exploitation frequently originated from the **5.252.188.0/22** network range. [SRC-001]\n- Interaction with the web shell and subsequent data theft came from different systems in some cases. [SRC-001]\n- Many second-stage systems hosted RDP services.\n- Certificates on several of those systems were generated between May 19 and May 22, suggesting possible staging before the campaign. This is an inference by Mandiant, not a confirmed staging date. [SRC-001]\n- Mandiant identified overlaps in ISPs, netblocks, and IP addresses between this campaign and historical FIN11 operations. [SRC-001]\n- One IP address attempting exploitation had reportedly been used by FIN11 as early as mid-January 2023. The same system hosted RDP on TCP port 3389 and presented the same X.509 certificate when later used by UNC4857. [SRC-001]\n\nThese indicators support Mandiant’s attribution assessment but do not, by themselves, establish the legal identity of the operators.\n\n---\n\n## Attribution and CL0P extortion infrastructure\n\n### UNC4857 to FIN11\n\nMandiant initially attributed the MOVEit activity to **UNC4857**. On June 6, 2023, it merged UNC4857 into **FIN11**, citing:\n\n- Targeting overlaps\n- Infrastructure overlaps\n- Certificate overlaps\n- Data leak site overlaps\n\n[SRC-001]\n\nThe evidence therefore supports the following attribution history:\n\n> Initial Mandiant label: **UNC4857** → revised Mandiant assessment: **FIN11**\n\nThis should be treated as a threat-intelligence assessment rather than a conclusive identification of the individuals responsible.\n\n### CL0P^_-LEAKS\n\nOn June 6, the **CL0P^_-LEAKS** data-leak site claimed responsibility for the MOVEit activity and threatened to publish stolen data unless victims paid an extortion fee. [SRC-001]\n\nMandiant described the campaign as consistent with prior FIN11-attributed data-theft extortion involving the CL0P^_-LEAKS site. Mandiant also cited FIN11-associated exploitation of:\n\n- Accellion FTA vulnerabilities, with deployment of the DEWMODE web shell.\n- GoAnywhere MFT vulnerability CVE-2023-0669.\n\n[SRC-001]\n\nThe returned evidence supports a **FIN11–CL0P^_-LEAKS operational linkage assessment**, but it does not independently prove that the CL0P brand, FIN11, and every operator involved were identical organizational entities.\n\n### Extortion timing and limits of evidence\n\nMandiant stated that victims did not initially receive ransom demands and that it had **not directly observed extortion emails sent to confirmed victims** at the time of reporting. It considered delayed ransom emails plausible based on prior FIN11 behavior, in which demands followed exploitation by several weeks. [SRC-001]\n\nAccordingly:\n\n- The CL0P^_-LEAKS responsibility and extortion threat are supported by the reported site post. [SRC-001]\n- Direct evidence of ransom emails to confirmed MOVEit victims was not present in the returned material. [SRC-001]\n- Any claim that every compromised organization received a demand, or that all stolen data was published, is unsupported by the available evidence.\n\n---\n\n## Findings\n\n### Finding 1 — What vulnerability enabled the campaign?\n\n**Answer:** CVE-2023-34362, an unauthenticated SQL-injection vulnerability in MOVEit Transfer, enabled database access and potentially database modification or deletion. It was exploitable over HTTP or HTTPS and was exploited in the wild during May and June 2023. [SRC-002]\n\n**Supporting entities:** CVE-2023-34362; MOVEit Transfer; Progress; NVD; CISA.\n\n### Finding 2 — Did exploitation precede public disclosure?\n\n**Answer:** Yes. Mandiant’s earliest observed exploitation was May 27, 2023, while Progress announced the vulnerability on May 31, 2023. [SRC-001]\n\n**Supporting entities:** MOVEit Transfer exploitation activity; Progress; CVE-2023-34362; dates 2023-05-27 and 2023-05-31.\n\n### Finding 3 — What malware was deployed?\n\n**Answer:** Attackers deployed LEMURLOOT, a C# web shell tailored to MOVEit Transfer. It commonly masqueraded as `human.aspx`, with observed variants `human2.aspx` and `_human2.aspx`. [SRC-001]\n\n**Supporting entities:** LEMURLOOT; human.aspx; human2.aspx; _human2.aspx; MOVEit Transfer.\n\n### Finding 4 — What did LEMURLOOT enable?\n\n**Answer:** LEMURLOOT enabled file and folder enumeration, configuration and database-record retrieval, file downloads, Azure Blob Storage information theft, and creation or deletion of a “Health Check Service” account. [SRC-001]\n\n**Supporting entities:** LEMURLOOT; MOVEit Transfer; Azure Blob Storage; Health Check Service.\n\n### Finding 5 — What was the initial and revised attribution?\n\n**Answer:** Mandiant initially attributed the activity to UNC4857 and later merged UNC4857 into FIN11 based on targeting, infrastructure, certificate, and data-leak-site overlaps. [SRC-001]\n\n**Supporting entities:** UNC4857; FIN11; Mandiant.\n\n### Finding 6 — How was CL0P-linked extortion infrastructure involved?\n\n**Answer:** The CL0P^_-LEAKS data-leak site claimed responsibility on June 6 and threatened to publish stolen data unless victims paid an extortion fee. Mandiant linked the activity to prior FIN11-attributed data-theft extortion patterns. [SRC-001]\n\n**Supporting entities:** CL0P^_-LEAKS; FIN11; MOVEit Transfer exploitation activity.\n\n### Finding 7 — What infrastructure was associated with the campaign?\n\n**Answer:** Scanning and exploitation often originated from 5.252.188.0/22. Second-stage systems commonly exposed RDP, and Mandiant identified infrastructure and certificate overlaps with historical FIN11 activity. [SRC-001]\n\n**Supporting entities:** 5.252.188.0/22; FIN11; MOVEit Transfer exploitation activity.\n\n---\n\n## Claims and confidence characterization\n\n- **High confidence:** CVE-2023-34362 affected MOVEit Transfer and was an unauthenticated SQL-injection vulnerability. [SRC-002]\n- **High confidence:** Exploitation was observed before Progress’s May 31 disclosure. [SRC-001]\n- **High confidence:** LEMURLOOT was deployed against MOVEit Transfer and was tailored to extract files and configuration data. [SRC-001]\n- **Moderate-to-high confidence:** The campaign was linked by Mandiant to FIN11 through infrastructure, targeting, certificate, and data-leak-site overlaps. [SRC-001]\n- **Moderate confidence:** The campaign was operationally connected to the CL0P extortion ecosystem through the CL0P^_-LEAKS claim and prior FIN11-associated activity. [SRC-001]\n- **Uncertain:** Whether the CL0P^_-LEAKS operators and FIN11 were organizationally identical. The returned evidence supports linkage, not definitive organizational identity. [SRC-001]\n- **Unsupported by returned evidence:** That all victims received ransom emails or that all stolen data was ultimately published. Mandiant explicitly stated it had not directly observed extortion emails to confirmed victims at the time of reporting. [SRC-001]\n\n```json\n{\n  \"findings\": [\n    {\n      \"question\": \"What vulnerability enabled the MOVEit campaign?\",\n      \"answer\": \"CVE-2023-34362 was an unauthenticated SQL-injection vulnerability in the MOVEit Transfer web application that could provide database access and potentially permit SQL statements altering or deleting database elements.\",\n      \"supporting_entities\": [\n        \"CVE-2023-34362\",\n        \"MOVEit Transfer\",\n        \"Progress\",\n        \"National Vulnerability Database (NVD)\",\n        \"Cybersecurity and Infrastructure Security Agency (CISA)\"\n      ],\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"question\": \"Did exploitation begin before public disclosure?\",\n      \"answer\": \"Yes. Mandiant reported earliest observed exploitation on 2023-05-27, before Progress announced the vulnerability on 2023-05-31.\",\n      \"supporting_entities\": [\n        \"MOVEit Transfer exploitation activity\",\n        \"Progress\",\n        \"2023-05-27\",\n        \"2023-05-31\"\n      ],\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"question\": \"What payload was deployed?\",\n      \"answer\": \"LEMURLOOT, a C# web shell tailored to MOVEit Transfer, was deployed. It commonly masqueraded as human.aspx, with observed variants human2.aspx and _human2.aspx.\",\n      \"supporting_entities\": [\n        \"LEMURLOOT\",\n        \"MOVEit Transfer\",\n        \"human.aspx\",\n        \"human2.aspx\",\n        \"_human2.aspx\"\n      ],\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"question\": \"What could LEMURLOOT do?\",\n      \"answer\": \"It could enumerate files and folders, retrieve configuration and record data, download files, obtain Azure Blob Storage information, and create or delete a Health Check Service account.\",\n      \"supporting_entities\": [\n        \"LEMURLOOT\",\n        \"MOVEit Transfer\",\n        \"guestaccess.aspx\"\n      ],\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"question\": \"How did attribution develop?\",\n      \"answer\": \"Mandiant initially attributed the activity to UNC4857 and later merged UNC4857 into FIN11 based on targeting, infrastructure, certificate, and data-leak-site overlaps.\",\n      \"supporting_entities\": [\n        \"UNC4857\",\n        \"FIN11\",\n        \"Mandiant\"\n      ],\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"question\": \"How was CL0P-linked extortion infrastructure involved?\",\n      \"answer\": \"The CL0P^_-LEAKS data-leak site claimed responsibility on 2023-06-06 and threatened to publish stolen data unless victims paid an extortion fee.\",\n      \"supporting_entities\": [\n        \"CL0P^_-LEAKS\",\n        \"FIN11\",\n        \"2023-06-06\"\n      ],\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"question\": \"What infrastructure indicators were reported?\",\n      \"answer\": \"Scanning and exploitation often originated from 5.252.188.0/22; second-stage systems commonly exposed RDP, and Mandiant identified infrastructure and certificate overlaps with historical FIN11 activity.\",\n      \"supporting_entities\": [\n        \"5.252.188.0/22\",\n        \"FIN11\",\n        \"MOVEit Transfer exploitation activity\"\n      ],\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    }\n  ],\n  \"claims\": [\n    {\n      \"claim\": \"CVE-2023-34362 was exploited in the wild during May and June 2023.\",\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"claim\": \"The MOVEit campaign involved data theft following deployment of web shells.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"claim\": \"LEMURLOOT was tailored to MOVEit Transfer and used to steal files and configuration information.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"claim\": \"Mandiant assessed that UNC4857 activity should be merged into FIN11.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"claim\": \"The CL0P^_-LEAKS site claimed responsibility and threatened extortion-related publication of stolen data.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"claim\": \"The FIN11 attribution and CL0P linkage are threat-intelligence assessments and should not be treated as conclusive proof of operator identity.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"claim\": \"Mandiant had not directly observed extortion emails sent to confirmed victims at the time of reporting.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    }\n  ],\n  \"reasoning_steps\": [\n    {\n      \"id\": \"RS-001\",\n      \"conclusion\": \"The campaign exploited MOVEit Transfer through CVE-2023-34362.\",\n      \"premise_entities\": [\n        \"CVE-2023-34362\",\n        \"MOVEit Transfer\",\n        \"MOVEit Transfer exploitation activity\"\n      ],\n      \"premise_relations\": [\n        \"affects\",\n        \"exploited\",\n        \"associated_with\"\n      ]\n    },\n    {\n      \"id\": \"RS-002\",\n      \"conclusion\": \"The exploitation chain included deployment of LEMURLOOT.\",\n      \"premise_entities\": [\n        \"UNC4857\",\n        \"LEMURLOOT\",\n        \"MOVEit Transfer\"\n      ],\n      \"premise_relations\": [\n        \"exploited\",\n        \"deployed\"\n      ]\n    },\n    {\n      \"id\": \"RS-003\",\n      \"conclusion\": \"The malware was designed to blend into MOVEit Transfer and facilitate data theft.\",\n      \"premise_entities\": [\n        \"LEMURLOOT\",\n        \"human.aspx\",\n        \"human2.aspx\",\n        \"_human2.aspx\",\n        \"MOVEit Transfer\"\n      ],\n      \"premise_relations\": [\n        \"rebranded_as\",\n        \"targeted\"\n      ]\n    },\n    {\n      \"id\": \"RS-004\",\n      \"conclusion\": \"Mandiant’s attribution evolved from UNC4857 to FIN11.\",\n      \"premise_entities\": [\n        \"UNC4857\",\n        \"FIN11\",\n        \"Mandiant\"\n      ],\n      \"premise_relations\": [\n        \"merged_into\"\n      ]\n    },\n    {\n      \"id\": \"RS-005\",\n      \"conclusion\": \"The campaign was linked to CL0P-branded extortion infrastructure.\",\n      \"premise_entities\": [\n        \"FIN11\",\n        \"CL0P^_-LEAKS\",\n        \"2023-06-06\"\n      ],\n      \"premise_relations\": [\n        \"linked_to_extortion_brand\",\n        \"captured_on\"\n      ]\n    },\n    {\n      \"id\": \"RS-006\",\n      \"conclusion\": \"Infrastructure overlaps contributed to the FIN11 attribution assessment.\",\n      \"premise_entities\": [\n        \"MOVEit Transfer exploitation activity\",\n        \"5.252.188.0/22\",\n        \"FIN11\"\n      ],\n      \"premise_relations\": [\n        \"uses_infrastructure\",\n        \"merged_into\"\n      ]\n    }\n  ],\n  \"contradictions\": [\n    {\n      \"contradiction_id\": \"C-001\",\n      \"description\": \"The activity was initially attributed to UNC4857 but later merged into FIN11. This is an attribution revision rather than proof that two independently identified groups were both responsible.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"contradiction_id\": \"C-002\",\n      \"description\": \"The campaign and CL0P^_-LEAKS site were associated with extortion, but Mandiant had not directly observed extortion emails sent to confirmed victims at the time of reporting.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"contradiction_id\": \"C-003\",\n      \"description\": \"A reported alleged CLOP-affiliated statement and the CL0P^_-LEAKS responsibility claim support attribution context, but the returned evidence does not independently verify that the speakers or site operators were identical to FIN11.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    }\n  ]\n}\n```",
+    "operational": {
+      "duration_ms": 517820.36,
+      "mode": "offline",
+      "iterations": 12,
+      "search_calls": 6,
+      "fetch_calls": 2,
+      "knowledge_base_calls": 2,
+      "termination_reason": "final_report"
+    },
+    "graph_capture_source": "trace",
+    "key_findings": [
+      {
+        "question": "What vulnerability enabled the MOVEit campaign?",
+        "answer": "CVE-2023-34362 was an unauthenticated SQL-injection vulnerability in the MOVEit Transfer web application that could provide database access and potentially permit SQL statements altering or deleting database elements.",
+        "supporting_entities": [
+          "CVE-2023-34362",
+          "MOVEit Transfer",
+          "Progress",
+          "National Vulnerability Database (NVD)",
+          "Cybersecurity and Infrastructure Security Agency (CISA)"
+        ],
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "Did exploitation begin before public disclosure?",
+        "answer": "Yes. Mandiant reported earliest observed exploitation on 2023-05-27, before Progress announced the vulnerability on 2023-05-31.",
+        "supporting_entities": [
+          "MOVEit Transfer exploitation activity",
+          "Progress",
+          "2023-05-27",
+          "2023-05-31"
+        ],
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "question": "What payload was deployed?",
+        "answer": "LEMURLOOT, a C# web shell tailored to MOVEit Transfer, was deployed. It commonly masqueraded as human.aspx, with observed variants human2.aspx and _human2.aspx.",
+        "supporting_entities": [
+          "LEMURLOOT",
+          "MOVEit Transfer",
+          "human.aspx",
+          "human2.aspx",
+          "_human2.aspx"
+        ],
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "question": "What could LEMURLOOT do?",
+        "answer": "It could enumerate files and folders, retrieve configuration and record data, download files, obtain Azure Blob Storage information, and create or delete a Health Check Service account.",
+        "supporting_entities": [
+          "LEMURLOOT",
+          "MOVEit Transfer",
+          "guestaccess.aspx"
+        ],
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "question": "How did attribution develop?",
+        "answer": "Mandiant initially attributed the activity to UNC4857 and later merged UNC4857 into FIN11 based on targeting, infrastructure, certificate, and data-leak-site overlaps.",
+        "supporting_entities": [
+          "UNC4857",
+          "FIN11",
+          "Mandiant"
+        ],
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "question": "How was CL0P-linked extortion infrastructure involved?",
+        "answer": "The CL0P^_-LEAKS data-leak site claimed responsibility on 2023-06-06 and threatened to publish stolen data unless victims paid an extortion fee.",
+        "supporting_entities": [
+          "CL0P^_-LEAKS",
+          "FIN11",
+          "2023-06-06"
+        ],
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "question": "What infrastructure indicators were reported?",
+        "answer": "Scanning and exploitation often originated from 5.252.188.0/22; second-stage systems commonly exposed RDP, and Mandiant identified infrastructure and certificate overlaps with historical FIN11 activity.",
+        "supporting_entities": [
+          "5.252.188.0/22",
+          "FIN11",
+          "MOVEit Transfer exploitation activity"
+        ],
+        "source_references": [
+          "SRC-001"
+        ]
+      }
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "C-001",
+        "description": "The activity was initially attributed to UNC4857 but later merged into FIN11. This is an attribution revision rather than proof that two independently identified groups were both responsible.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "contradiction_id": "C-002",
+        "description": "The campaign and CL0P^_-LEAKS site were associated with extortion, but Mandiant had not directly observed extortion emails sent to confirmed victims at the time of reporting.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "contradiction_id": "C-003",
+        "description": "A reported alleged CLOP-affiliated statement and the CL0P^_-LEAKS responsibility claim support attribution context, but the returned evidence does not independently verify that the speakers or site operators were identical to FIN11.",
+        "source_references": [
+          "SRC-001"
+        ]
+      }
+    ],
+    "reasoning_steps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "reasoning_step_details": [
+      {
+        "id": 1,
+        "conclusion": "The campaign exploited MOVEit Transfer through CVE-2023-34362.",
+        "premise_entities": [
+          "CVE-2023-34362",
+          "MOVEit Transfer",
+          "MOVEit Transfer exploitation activity"
+        ],
+        "premise_relations": [
+          "affects",
+          "exploited",
+          "associated_with"
+        ]
+      },
+      {
+        "id": 2,
+        "conclusion": "The exploitation chain included deployment of LEMURLOOT.",
+        "premise_entities": [
+          "UNC4857",
+          "LEMURLOOT",
+          "MOVEit Transfer"
+        ],
+        "premise_relations": [
+          "exploited",
+          "deployed"
+        ]
+      },
+      {
+        "id": 3,
+        "conclusion": "The malware was designed to blend into MOVEit Transfer and facilitate data theft.",
+        "premise_entities": [
+          "LEMURLOOT",
+          "human.aspx",
+          "human2.aspx",
+          "_human2.aspx",
+          "MOVEit Transfer"
+        ],
+        "premise_relations": [
+          "rebranded_as",
+          "targeted"
+        ]
+      },
+      {
+        "id": 4,
+        "conclusion": "Mandiant’s attribution evolved from UNC4857 to FIN11.",
+        "premise_entities": [
+          "UNC4857",
+          "FIN11",
+          "Mandiant"
+        ],
+        "premise_relations": [
+          "merged_into"
+        ]
+      },
+      {
+        "id": 5,
+        "conclusion": "The campaign was linked to CL0P-branded extortion infrastructure.",
+        "premise_entities": [
+          "FIN11",
+          "CL0P^_-LEAKS",
+          "2023-06-06"
+        ],
+        "premise_relations": [
+          "linked_to_extortion_brand",
+          "captured_on"
+        ]
+      },
+      {
+        "id": 6,
+        "conclusion": "Infrastructure overlaps contributed to the FIN11 attribution assessment.",
+        "premise_entities": [
+          "MOVEit Transfer exploitation activity",
+          "5.252.188.0/22",
+          "FIN11"
+        ],
+        "premise_relations": [
+          "uses_infrastructure",
+          "merged_into"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "claim": "CVE-2023-34362 was exploited in the wild during May and June 2023.",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "claim": "The MOVEit campaign involved data theft following deployment of web shells.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "LEMURLOOT was tailored to MOVEit Transfer and used to steal files and configuration information.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "Mandiant assessed that UNC4857 activity should be merged into FIN11.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "The CL0P^_-LEAKS site claimed responsibility and threatened extortion-related publication of stolen data.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "The FIN11 attribution and CL0P linkage are threat-intelligence assessments and should not be treated as conclusive proof of operator identity.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "Mandiant had not directly observed extortion emails sent to confirmed victims at the time of reporting.",
+        "source_references": [
+          "SRC-001"
+        ]
+      }
+    ],
+    "structured_output": true,
+    "structured_output_valid": true,
+    "structured_output_complete": true,
+    "missing_structured_sections": [],
+    "structured_output_errors": [],
+    "graph_capture_diagnostics": {
+      "entity_records_emitted": 34,
+      "relation_records_emitted": 27,
+      "knowledge_agent_calls": 2,
+      "relations_expected": 5,
+      "contradictions_expected": 1
+    }
+  },
+  "metrics": {
+    "output_validation": {
+      "valid": true,
+      "errors": []
+    },
+    "entities": {
+      "true_positive": 6,
+      "false_positive": 23,
+      "false_negative": 2,
+      "precision": 0.20689655172413793,
+      "recall": 0.75,
+      "f1": 0.32432432432432434,
+      "missing": [
+        [
+          "alias",
+          "cl0p"
+        ],
+        [
+          "organization",
+          "nvd"
+        ]
+      ],
+      "unexpected": [
+        [
+          "date",
+          "2023-05-27"
+        ],
+        [
+          "date",
+          "2023-05-31"
+        ],
+        [
+          "date",
+          "2023-06-02"
+        ],
+        [
+          "date",
+          "2023-06-06"
+        ],
+        [
+          "date",
+          "2023-06-23"
+        ],
+        [
+          "document",
+          "cisa known exploited vulnerabilities catalog entry for cve-2023-34362"
+        ],
+        [
+          "document",
+          "nvd entry for cve-2023-34362"
+        ],
+        [
+          "document",
+          "progress vendor advisory for cve-2023-34362"
+        ],
+        [
+          "event",
+          "in-the-wild exploitation of cve-2023-34362"
+        ],
+        [
+          "event",
+          "moveit transfer exploitation activity"
+        ],
+        [
+          "file",
+          "_human2.aspx"
+        ],
+        [
+          "file",
+          "guestaccess.aspx"
+        ],
+        [
+          "file",
+          "human.aspx"
+        ],
+        [
+          "file",
+          "human2.aspx"
+        ],
+        [
+          "keyword",
+          "cve-2023-0669"
+        ],
+        [
+          "network",
+          "5.252.188.0/22"
+        ],
+        [
+          "organization",
+          "cybersecurity and infrastructure security agency (cisa)"
+        ],
+        [
+          "organization",
+          "national vulnerability database (nvd)"
+        ],
+        [
+          "organization",
+          "progress"
+        ],
+        [
+          "product",
+          "accellion fta"
+        ],
+        [
+          "product",
+          "cl0p^_-leaks"
+        ],
+        [
+          "product",
+          "goanywhere mft"
+        ],
+        [
+          "software",
+          "dewmode"
+        ]
+      ]
+    },
+    "relations": {
+      "true_positive": 3,
+      "false_positive": 24,
+      "false_negative": 2,
+      "precision": 0.1111111111111111,
+      "recall": 0.6,
+      "f1": 0.18750000000000003,
+      "missing": [
+        [
+          [
+            "alias",
+            "fin11"
+          ],
+          "linked_to_extortion_brand",
+          [
+            "alias",
+            "cl0p"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "unc4857"
+          ],
+          "exploited",
+          [
+            "alias",
+            "cve-2023-34362"
+          ]
+        ]
+      ],
+      "unexpected": [
+        [
+          [
+            "alias",
+            "cve-2023-34362"
+          ],
+          "associated_with",
+          [
+            "alias",
+            "moveit transfer"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "fin11"
+          ],
+          "exploited",
+          [
+            "product",
+            "accellion fta"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "fin11"
+          ],
+          "exploited",
+          [
+            "product",
+            "goanywhere mft"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "fin11"
+          ],
+          "linked_to_extortion_brand",
+          [
+            "product",
+            "cl0p^_-leaks"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "fin11"
+          ],
+          "used_or_deployed",
+          [
+            "software",
+            "dewmode"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "lemurloot"
+          ],
+          "rebranded_as",
+          [
+            "file",
+            "_human2.aspx"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "lemurloot"
+          ],
+          "rebranded_as",
+          [
+            "file",
+            "human.aspx"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "lemurloot"
+          ],
+          "rebranded_as",
+          [
+            "file",
+            "human2.aspx"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "unc4857"
+          ],
+          "exploited",
+          [
+            "alias",
+            "moveit transfer"
+          ]
+        ],
+        [
+          [
+            "document",
+            "cisa known exploited vulnerabilities catalog entry for cve-2023-34362"
+          ],
+          "associated_with",
+          [
+            "alias",
+            "cve-2023-34362"
+          ]
+        ],
+        [
+          [
+            "document",
+            "cisa known exploited vulnerabilities catalog entry for cve-2023-34362"
+          ],
+          "published_by",
+          [
+            "organization",
+            "cybersecurity and infrastructure security agency (cisa)"
+          ]
+        ],
+        [
+          [
+            "document",
+            "nvd entry for cve-2023-34362"
+          ],
+          "associated_with",
+          [
+            "alias",
+            "cve-2023-34362"
+          ]
+        ],
+        [
+          [
+            "document",
+            "nvd entry for cve-2023-34362"
+          ],
+          "published_by",
+          [
+            "organization",
+            "national vulnerability database (nvd)"
+          ]
+        ],
+        [
+          [
+            "document",
+            "progress vendor advisory for cve-2023-34362"
+          ],
+          "associated_with",
+          [
+            "alias",
+            "cve-2023-34362"
+          ]
+        ],
+        [
+          [
+            "document",
+            "progress vendor advisory for cve-2023-34362"
+          ],
+          "published_by",
+          [
+            "organization",
+            "progress"
+          ]
+        ],
+        [
+          [
+            "event",
+            "in-the-wild exploitation of cve-2023-34362"
+          ],
+          "occurred_on",
+          [
+            "date",
+            "2023-06-02"
+          ]
+        ],
+        [
+          [
+            "event",
+            "in-the-wild exploitation of cve-2023-34362"
+          ],
+          "targeted",
+          [
+            "alias",
+            "cve-2023-34362"
+          ]
+        ],
+        [
+          [
+            "event",
+            "moveit transfer exploitation activity"
+          ],
+          "exploited",
+          [
+            "alias",
+            "moveit transfer"
+          ]
+        ],
+        [
+          [
+            "event",
+            "moveit transfer exploitation activity"
+          ],
+          "occurred_on",
+          [
+            "date",
+            "2023-05-27"
+          ]
+        ],
+        [
+          [
+            "event",
+            "moveit transfer exploitation activity"
+          ],
+          "uses_infrastructure",
+          [
+            "network",
+            "5.252.188.0/22"
+          ]
+        ],
+        [
+          [
+            "file",
+            "guestaccess.aspx"
+          ],
+          "targeted",
+          [
+            "alias",
+            "moveit transfer"
+          ]
+        ],
+        [
+          [
+            "keyword",
+            "cve-2023-0669"
+          ],
+          "associated_with",
+          [
+            "product",
+            "goanywhere mft"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "progress"
+          ],
+          "published_by",
+          [
+            "alias",
+            "moveit transfer"
+          ]
+        ],
+        [
+          [
+            "product",
+            "cl0p^_-leaks"
+          ],
+          "captured_on",
+          [
+            "date",
+            "2023-06-06"
+          ]
+        ]
+      ],
+      "semantic_mapping": {
+        "also_known_as": "alias_of",
+        "alias_of": "alias_of",
+        "co_founded": "founded",
+        "founded": "founded",
+        "based_in": "located_in",
+        "located_in": "located_in",
+        "performed_special_audit": "audited",
+        "audited": "audited",
+        "former_coo_of": "executive_of",
+        "executive_of": "executive_of",
+        "provided_software": "provided",
+        "distributed_as_installer": "distributed",
+        "contained_malware": "contained",
+        "trojanized": "compromised",
+        "associated_with": "associated_with",
+        "linked_to": "associated_with",
+        "uses_or_is_associated_with": "associated_with"
+      }
+    },
+    "contradictions": {
+      "true_positive": 0,
+      "false_positive": 3,
+      "false_negative": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "details": [],
+      "missing": [
+        "CONTRA-001"
+      ],
+      "unexpected": [
+        "C-001",
+        "C-002",
+        "C-003"
+      ],
+      "grounded_recall": 0.0,
+      "grounded_f1": 0.0
+    },
+    "key_findings": {
+      "score": 0.1425925925925926,
+      "precision": 0.14285714285714285,
+      "recall": 0.3333333333333333,
+      "f1": 0.2,
+      "predicted": 7,
+      "expected": 3,
+      "matched": 1,
+      "details": [
+        {
+          "question": "What vulnerability enabled the campaign?",
+          "status": "matched",
+          "score": 0.4277777777777778,
+          "semantic": 0.6111111111111112,
+          "supporting_entity_recall": 0.0,
+          "source_recall": 1.0,
+          "has_source_references": true
+        },
+        {
+          "question": "What malware/tooling should be extracted?",
+          "status": "missing",
+          "score": 0.0
+        },
+        {
+          "question": "How should attribution be represented?",
+          "status": "missing",
+          "score": 0.0
+        }
+      ]
+    },
+    "source_traceability": {
+      "correct_sources": [
+        "SRC-001",
+        "SRC-002"
+      ],
+      "unknown_sources": [],
+      "unavailable_sources": [],
+      "source_precision": 1.0,
+      "source_recall": 1.0,
+      "ratio": 1.0,
+      "claim_level": {
+        "claims": 7,
+        "traceable_claims": 7,
+        "ratio": 1.0,
+        "unknown_sources": [],
+        "unavailable_sources": []
+      },
+      "finding_level": {
+        "findings": 7,
+        "traceable_findings": 7,
+        "ratio": 1.0
+      }
+    },
+    "reasoning_coverage": {
+      "covered": [
+        1,
+        2,
+        3
+      ],
+      "invalid": [
+        4,
+        5,
+        6
+      ],
+      "total": 3,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "ratio": 1.0,
+      "status": "structured_step_ids"
+    },
+    "report_quality": {
+      "score": 0.6666666666666666,
+      "checks": {
+        "non_empty": true,
+        "structured_output_complete": true,
+        "structured_output_valid": true,
+        "findings_present": true,
+        "findings_match": false,
+        "claims_traceable": true,
+        "contradictions_complete": false,
+        "contradictions_grounded": false,
+        "finding_sources_grounded": true,
+        "reasoning_conclusions_grounded": false,
+        "uncertainty_language": true,
+        "readable_length": true
+      },
+      "scale": "deterministic rubric 0-1"
+    },
+    "reasoning_quality": {
+      "covered": 3,
+      "expected": 3,
+      "coverage": 1.0,
+      "semantic_similarity": 0.037037037037037035,
+      "premise_grounding": 0.27777777777777773,
+      "grounded_score": 0.018518518518518517,
+      "method": "premise_ids_plus_token_entailment_proxy",
+      "formula": "premise*conclusion",
+      "details": [
+        {
+          "id": 1,
+          "premise_score": 0.5,
+          "entity_recall": 0.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 0.1111111111111111,
+          "invalid_premise_entities": [
+            "CVE-2023-34362",
+            "MOVEit Transfer",
+            "MOVEit Transfer exploitation activity"
+          ],
+          "invalid_premise_relations": [
+            "associated_with"
+          ],
+          "grounded_score": 0.05555555555555555
+        },
+        {
+          "id": 2,
+          "premise_score": 0.3333333333333333,
+          "entity_recall": 0.0,
+          "relation_recall": 0.6666666666666666,
+          "conclusion_similarity": 0.0,
+          "invalid_premise_entities": [
+            "LEMURLOOT",
+            "MOVEit Transfer",
+            "UNC4857"
+          ],
+          "invalid_premise_relations": [],
+          "grounded_score": 0.0
+        },
+        {
+          "id": 3,
+          "premise_score": 0.0,
+          "entity_recall": 0.0,
+          "relation_recall": 0.0,
+          "conclusion_similarity": 0.0,
+          "invalid_premise_entities": [
+            "LEMURLOOT",
+            "MOVEit Transfer",
+            "_human2.aspx",
+            "human.aspx",
+            "human2.aspx"
+          ],
+          "invalid_premise_relations": [
+            "rebranded_as",
+            "targeted"
+          ],
+          "grounded_score": 0.0
+        }
+      ]
+    },
+    "operational": {
+      "duration_ms": 517820.36,
+      "mode": "offline",
+      "iterations": 12,
+      "search_calls": 6,
+      "fetch_calls": 2,
+      "knowledge_base_calls": 2,
+      "termination_reason": "final_report"
+    },
+    "retrieval": {
+      "status": "not_annotated",
+      "topics": 0
+    }
+  }
+}

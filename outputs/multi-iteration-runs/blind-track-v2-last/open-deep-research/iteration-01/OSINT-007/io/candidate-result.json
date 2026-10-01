@@ -1,0 +1,58 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-007",
+  "report": "Error generating final report: APITimeoutError: Request timed out.",
+  "context": [],
+  "visited_urls": [
+    "https://www.cnbc.com/2024/01/29/doj-and-sec-unveil-charges-in-1point9-billion-cryptocurrency-fraud-scheme.html",
+    "https://www.justice.gov/criminal/case/hyperfund-and-associated-cases",
+    "https://www.sec.gov/newsroom/press-releases/2024-11",
+    "https://www.theguardian.com/technology/2024/jan/04/chief-executive-of-collapsed-crypto-fund-hyperverse-does-not-appear-to-exist"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "HyperFund HyperVerse fraud SEC DOJ court regulator allegations compensation withdrawals CEO Sam Lee sources",
+        "HyperFund HyperVerse investigation promoters biography Ryan Xu Sam Lee"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:sec.gov HyperFund complaint promoters Ryan Xu HyperVerse Steve Wozniak Chuck Norris",
+        "site:justice.gov HyperFund Sam Lee Brenda Chunga Rodney Burton plea sentencing",
+        "HyperFund HyperVerse regulators warning Australia UK New Zealand Canada pyramid"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "HyperVerse launch Steven Reece Lewis Steve Wozniak Chuck Norris promotion YouTube Twitter",
+        "HyperFund promoters Bitcoin Rodney Bitcoin Beautee compensation recruitment"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "HyperFund regulator warning suspected pyramid scheme UK FCA New Zealand FMA HyperVerse chronology",
+        "HyperFund HyperVerse court plea Brenda Chunga sentencing Sam Lee status 2025 2026 official"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 10,
+  "duration_seconds": 639.9412381000002
+}

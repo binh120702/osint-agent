@@ -1,0 +1,49 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-002",
+  "report": "Error generating final report: APITimeoutError: Request timed out.",
+  "context": [],
+  "visited_urls": [
+    "https://rewardsforjustice.net/rewards/conti/",
+    "https://www.cisecurity.org/insights/blog/the-conti-leaks-a-case-of-cybercrimes-commercialization",
+    "https://www.justice.gov/usao-mdtn/conti-ransomware-2",
+    "https://www.rapid7.com/blog/post/2022/03/01/conti-ransomware-group-internal-chats-leaked-over-russia-ukraine-conflict/"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "Conti ransomware public attribution record ransomware-as-a-service leaks chat logs law enforcement court documents aliases identities indictments sanctions",
+        "site:justice.gov Conti ransomware indictment",
+        "site:treasury.gov Conti ransomware sanctions"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:justice.gov Conti ransomware Tsarev Rudenskiy Galochkin Zhuykov indictment aliases",
+        "site:justice.gov Conti ransomware Oleksii Lytvynenko indictment",
+        "site:treasury.gov Conti ransomware sanctions Tsarev"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "Conti leaks internal organization leadership affiliates recruitment payments negotiations manuals infrastructure business records KrebsOnSecurity",
+        "Conti ransomware leaked manual affiliate recruitment payment split negotiation chats"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 11,
+  "duration_seconds": 575.3816541000269
+}

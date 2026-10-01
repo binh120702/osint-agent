@@ -1,0 +1,39 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-009",
+  "report": "# Pandora Papers: King Abdullah II’s Alleged Offshore Property Network\n\n## Evidence status\n\nThe supplied research record contains no benchmark-tool source IDs, documents, excerpts, URLs, entity IDs, relationship names, or tool-returned factual findings concerning King Abdullah II, Jordan, offshore companies, advisers, jurisdictions, or properties.\n\nThe only recorded research result states that an evidence-bounded reconstruction was required and that report synthesis failed after maximum retries. It does not provide substantive evidence that can support any factual or analytical claim about the reported network.\n\nAccordingly, no entities, relationships, jurisdictions, properties, ownership claims, alleged motivations, or intermediary roles can be responsibly reported here.\n\n## Findings that can be supported\n\n### Reported shell companies and other entities\n\nNo benchmark-returned evidence identifies any shell company or other entity associated with the alleged network.\n\n### People and organizations\n\nNo benchmark-returned evidence identifies King Abdullah II in connection with specific companies, advisers, intermediaries, professional firms, banks, trusts, foundations, or other organizations.\n\n### Jurisdictions\n\nNo benchmark-returned evidence identifies any jurisdiction in which an entity was incorporated, registered, managed, or used.\n\n### Real-estate properties\n\nNo benchmark-returned evidence identifies any luxury property, address, city, country, or real-estate asset connected to the alleged network.\n\n### Relationships\n\nNo benchmark-supported relationship names or relationship assertions were returned. In particular, the available record does not establish relationships involving:\n\n- King Abdullah II and any particular company;\n- any company and any adviser or intermediary;\n- any company and any jurisdiction;\n- any company and any property;\n- any adviser or intermediary and any property-holding structure.\n\n### Provenance and wording\n\nNo article text, publication title, publication date, URL, quoted wording, response statement, documentary record, or other provenance information was returned by the benchmark tools.\n\nTherefore, it is not possible to distinguish, on the supplied evidence, among:\n\n- documented facts;\n- allegations made by public reporting;\n- interpretations or assessments;\n- denials or responses;\n- unresolved uncertainty.\n\n## Conflicting or incomplete evidence\n\nThe research record is incomplete because it contains no substantive benchmark evidence. It does not contain conflicting factual accounts; rather, it contains no tool-returned factual accounts from which a conflict could be assessed.\n\nThe absence of returned evidence should not be treated as evidence that the reported allegations were false, nor as confirmation that they were true. It only means that the requested evidence-bounded mapping cannot be completed from the material supplied.\n\n## Source limitations\n\nNo source IDs were returned by the benchmark tools in the supplied record. Because the brief requires citations to use only returned source IDs, no source citation, URL, publication attribution, or external reference can be added without violating the evidence constraint.\n\n```json\n{\n  \"findings\": [],\n  \"claims\": [],\n  \"reasoning_steps\": [],\n  \"contradictions\": []\n}\n```",
+  "context": [],
+  "visited_urls": [
+    "https://www.aljazeera.com/news/2021/10/3/investigation-reveals-offshore-assets-of-heads-of-state",
+    "https://www.dw.com/en/pandora-papers-the-king-of-jordans-hidden-property-gems/a-59403014",
+    "https://www.icij.org/investigations/pandora-papers/jordan-king-abdullah-luxury-property/",
+    "https://www.theguardian.com/news/2021/oct/03/king-of-jordan-hidden-property-empire-worth-more-than-100m-pandora-papers-reveal"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "Pandora Papers King Abdullah II Jordan offshore property network ICIJ BBC Guardian sources",
+        "site:icij.org Pandora Papers Jordan King Abdullah II properties shell companies",
+        "site:theguardian.com Pandora Papers King Abdullah Jordan property"
+      ],
+      "max_results": 5,
+      "topic": "news",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "\"King Abdullah\" Pandora Papers companies Malibu Washington Ascot names addresses Trident Trust",
+        "\"Abdullah\" \"Pandora Papers\" \"BVI\" companies property Guardian",
+        "ICIJ Pandora Papers Abdullah II offshore companies names property addresses law firm"
+      ],
+      "max_results": 5,
+      "topic": "news",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 12,
+  "duration_seconds": 652.5156297999783
+}

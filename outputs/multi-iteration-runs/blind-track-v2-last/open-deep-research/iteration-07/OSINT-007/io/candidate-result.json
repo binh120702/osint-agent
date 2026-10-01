@@ -1,0 +1,48 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-007",
+  "report": "Error generating final report: APITimeoutError: Request timed out.",
+  "context": [],
+  "visited_urls": [
+    "https://www.cnbc.com/2024/01/29/doj-and-sec-unveil-charges-in-1point9-billion-cryptocurrency-fraud-scheme.html",
+    "https://www.justice.gov/criminal/case/hyperfund-and-associated-cases",
+    "https://www.sec.gov/newsroom/press-releases/2024-11",
+    "https://www.theguardian.com/technology/2024/jan/04/chief-executive-of-collapsed-crypto-fund-hyperverse-does-not-appear-to-exist"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "HyperFund HyperVerse investigation Ponzi pyramid recruitment CEO founder Ryan Xu Steven Reece sources",
+        "HyperFund HyperVerse chronology rebrand HyperCash HyperTech HyperVerse HyperNation",
+        "HyperVerse public promoters celebrities endorsements withdrawals commissions"
+      ],
+      "max_results": 8,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:sec.gov HyperFund complaint referral commissions 20 levels reinvest HyperVerse Steven Reece Lewis actor celebrities",
+        "site:justice.gov HyperFund Sam Lee Brenda Chunga plea agreement referral commissions withdrawals"
+      ],
+      "max_results": 6,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "HyperVerse launch Steven Reece Lewis Steve Wozniak Chuck Norris celebrities source",
+        "HyperFund HyperVerse rebrand June 2020 July 2021 December 2021 HyperNation chronology"
+      ],
+      "max_results": 6,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 10,
+  "duration_seconds": 395.01631019997876
+}

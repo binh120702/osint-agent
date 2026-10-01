@@ -1,0 +1,87 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-008",
+  "report": "# Wirecard / Jan Marsalek Public-Fraud Trail\n\n## Evidentiary status\n\nThe available research record contains no substantive benchmark-tool source results. It contains only:\n\n- A planning note stating that the investigation should distinguish company disclosures, audit uncertainty, missing cash, institutional failures, and Jan Marsalek’s disappearance.\n- An error stating: “Maximum retries exceeded.”\n\nNo source IDs, source titles, URLs, extracted documents, dates, quotations, entity records, or relationship records were returned. Accordingly, no factual chronology or source-supported attribution can be reconstructed without introducing evidence from outside the benchmark output.\n\n## Chronology\n\nA source-supported chronology cannot be established from the returned material.\n\nThe available record does not provide evidence for:\n\n- Any particular Wirecard public statement or disclosure.\n- Any audit report, warning, qualification, or unresolved audit issue.\n- The reported disappearance of cash.\n- The identity or status of any relevant account, trustee, bank, or fund.\n- Any supervisory, regulatory, governmental, or institutional action or omission.\n- Jan Marsalek’s disappearance, its timing, or its relationship to any alleged fraud.\n- Any causal link among the above events.\n\nAny dates, actors, entities, or event sequence would therefore be unsupported.\n\n## Wirecard public statements and disclosures\n\nNo benchmark-returned evidence identifies a Wirecard statement, financial disclosure, annual report, announcement, or other public communication.\n\nIt is therefore unknown from the available evidence:\n\n- What Wirecard represented publicly.\n- Which transactions, revenues, assets, balances, or business relationships it disclosed.\n- Whether any public statements were later contradicted.\n- Whether any statement was alleged to be false, misleading, incomplete, or fraudulent.\n\nNo conclusion should be drawn about Wirecard’s public disclosures from the research record supplied here.\n\n## Audit findings, warnings, qualifications, and uncertainty\n\nNo audit source or audit-related finding was returned.\n\nThe available evidence does not establish:\n\n- Which auditor or audit team was involved.\n- Whether an audit opinion was unqualified, qualified, adverse, or accompanied by an emphasis or warning.\n- Whether auditors identified missing documentation, confirmation problems, control weaknesses, or uncertainty over balances.\n- Whether any unresolved issue remained open at a particular reporting date.\n- Whether audit uncertainty directly established fraud.\n\nThe distinction between an audit concern and proof of wrongdoing cannot be applied to a specific document because no such document was returned.\n\n## Reported or alleged disappearance of cash\n\nNo source-supported evidence was returned concerning missing cash or allegedly nonexistent balances.\n\nThe following remain unknown:\n\n- The amount allegedly missing.\n- The relevant accounts or funds.\n- The banks, trustees, intermediaries, or other account holders.\n- Whether the funds were ever deposited.\n- Whether the accounts existed but were inaccessible, frozen, misrepresented, or otherwise disputed.\n- When the alleged disappearance was discovered.\n- Who made the allegation.\n- Whether the allegation was confirmed, rejected, or left unresolved.\n\nThe available record does not support describing the cash as stolen, transferred, fabricated, or otherwise misappropriated.\n\n## Supervisory, regulatory, governmental, and institutional issues\n\nNo benchmark-returned evidence identifies a regulator, government body, supervisor, law-enforcement agency, auditor, bank, trustee, or other institution in connection with the case.\n\nConsequently, the record does not establish:\n\n- Which institution had responsibility for oversight.\n- What warnings or reports were received.\n- Whether an institution failed to act.\n- Whether an investigation was opened or delayed.\n- Whether jurisdictional, organizational, or procedural problems existed.\n- Whether any omission contributed to the alleged fraud.\n\nClaims of supervisory or institutional failure must therefore be treated as unsubstantiated in this evidence set.\n\n## Jan Marsalek’s disappearance\n\nNo benchmark-returned source provides evidence about Jan Marsalek.\n\nThe available record does not establish:\n\n- That he disappeared.\n- When or where any disappearance occurred.\n- His position or responsibilities.\n- Whether he made any public or private statements.\n- Whether he was connected to particular accounts, transactions, disclosures, or institutional actions.\n- Whether his disappearance preceded, followed, caused, or reflected any other event.\n- Any motive, destination, assistance, or alleged involvement.\n\nNo evidence-based link between Marsalek and a broader fraud chronology can be stated.\n\n## Claims, allegations, inferences, and unknowns\n\nBecause no substantive source material was returned, the following distinctions must be preserved:\n\n- **Established facts:** None about the underlying Wirecard/Marsalek events are established by the returned benchmark evidence.\n- **Reported or alleged facts:** None are documented in a source-bearing record.\n- **Assessments:** None can be attributed to a named institution or source.\n- **Inferences:** No causal, temporal, or relational inference is supportable.\n- **Unknowns:** The public disclosures, audit record, cash status, institutional conduct, Marsalek chronology, and relationships among them are all unresolved in the available evidence.\n\n## Contradictions\n\nNo source pair or source statement was returned that could be compared. Therefore, no contradiction can be identified between:\n\n- Wirecard statements and audit findings;\n- audit findings and account or fund evidence;\n- institutional statements and later events; or\n- accounts concerning Jan Marsalek’s disappearance.\n\nThe absence of an identified contradiction does not mean that the underlying accounts were consistent; it means only that no relevant source material was available.\n\n## Conclusion\n\nThe requested public-fraud trail cannot be reconstructed from the benchmark output supplied. The research attempt returned no evidentiary sources and ended with a synthesis error. Any detailed account of the Wirecard disclosures, audit warnings, missing cash, institutional failures, or Jan Marsalek’s disappearance would require facts, dates, relationships, and citations not present in the available record.\n\n### Sources\n\nNo benchmark source IDs, source titles, or URLs were returned. No external sources have been added.\n\n```json\n{\n  \"findings\": [\n    {\n      \"question\": \"What source-supported Wirecard/Jan Marsalek public-fraud trail can be reconstructed from the returned benchmark evidence?\",\n      \"answer\": \"None. The available research record contains only a planning note and a synthesis error; it contains no substantive source IDs, documents, dates, quotations, entities, or relationships concerning the underlying events.\",\n      \"supporting_entities\": [],\n      \"source_references\": []\n    }\n  ],\n  \"claims\": [],\n  \"reasoning_steps\": [],\n  \"contradictions\": []\n}\n```",
+  "context": [],
+  "visited_urls": [
+    "https://safe-frankfurt.de/fileadmin/user_upload/editor_common/Policy_Center/SAFE_Policy_White_Paper_74.pdf",
+    "https://www.wirecard.com/2020/04/22/wirecard-ag-kpmg-special-review-lasts-until-april-27-2020-analysis-so-far-provides-no-evidence-of-balance-sheet-manipulation"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "Wirecard chronology annual reports ad hoc disclosure EY audit trustee accounts KPMG parliamentary inquiry Jan Marsalek disappearance source documents"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "Wirecard AG annual report 2018 2019 ad hoc 18 June 2020 cash trustee accounts audit findings official documents"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "Jan Marsalek disappearance last documented events Wirecard official investigation parliamentary report"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:bundestag.de Wirecard Untersuchungsausschuss Abschlussbericht Marsalek 1.9 billion trustee accounts EY 2020 PDF"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:esma.europa.eu Wirecard peer review report BaFin FREP 2020 2021 PDF"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "Wirecard 18 June 2020 EY bank confirmations 1.9 billion trustee accounts official statement 25 June insolvency"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "Jan Marsalek last seen disappeared 19 June 2020 official prosecutor Munich Wirecard source"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "Wirecard annual report 2018 2019 investor statements revenue cash trustee accounts official PDF"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 12,
+  "duration_seconds": 661.1235027000075
+}

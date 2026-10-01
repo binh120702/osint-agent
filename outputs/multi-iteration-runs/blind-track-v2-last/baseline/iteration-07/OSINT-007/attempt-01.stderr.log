@@ -1,0 +1,147 @@
+INFO:tools.engine_search:Initializing OSINTAggregator
+INFO:agent.loop:Starting run for thread_id=benchmark-osint-007-766786e9. LLM client provider=openai, model=gpt-5.6-luna
+INFO:agent.loop:Iteration 1/50: Calling LLM...
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:agent.loop:LLM requested 6 tool call(s)
+INFO:agent.loop:\u26a1 Executing tool: 'engine_search_tool' with arguments: {"query": "HyperFund HyperVerse investigation Ponzi promoters rebranding CEO Steven Reece evidence"}
+INFO:agent.loop:\u2699\ufe0f Tool 'engine_search_tool' execution complete. Result preview: {
+  "query": "HyperFund HyperVerse investigation Ponzi promoters rebranding CEO Steven Reece evidence",
+  "page": 1,
+  "page_size": 10,
+  "total": 4,
+  "sources": {
+    "benchmark": [
+      {
+        ...
+INFO:agent.loop:\u26a1 Executing tool: 'engine_search_tool' with arguments: {"query": "HyperVerse HyperFund public promoters investigation BBC Guardian ASIC SEC"}
+INFO:agent.loop:\u2699\ufe0f Tool 'engine_search_tool' execution complete. Result preview: {
+  "query": "HyperVerse HyperFund public promoters investigation BBC Guardian ASIC SEC",
+  "page": 1,
+  "page_size": 10,
+  "total": 4,
+  "sources": {
+    "benchmark": [
+      {
+        "title": "Chie...
+INFO:agent.loop:\u26a1 Executing tool: 'engine_search_tool' with arguments: {"query": "site:abc.net.au HyperVerse HyperFund Sam Lee CEO investigation"}
+INFO:agent.loop:\u2699\ufe0f Tool 'engine_search_tool' execution complete. Result preview: {
+  "query": "site:abc.net.au HyperVerse HyperFund Sam Lee CEO investigation",
+  "page": 1,
+  "page_size": 10,
+  "total": 4,
+  "sources": {
+    "benchmark": [
+      {
+        "title": "DOJ and SEC unv...
+INFO:agent.loop:\u26a1 Executing tool: 'engine_search_tool' with arguments: {"query": "HyperVerse CEO Steven Reece questionable persona LinkedIn investigation"}
+INFO:agent.loop:\u2699\ufe0f Tool 'engine_search_tool' execution complete. Result preview: {
+  "query": "HyperVerse CEO Steven Reece questionable persona LinkedIn investigation",
+  "page": 1,
+  "page_size": 10,
+  "total": 4,
+  "sources": {
+    "benchmark": [
+      {
+        "title": "Chief ...
+INFO:agent.loop:\u26a1 Executing tool: 'engine_search_tool' with arguments: {"query": "HyperFund HyperVerse crypto scheme recruitment daily returns MLM"}
+INFO:agent.loop:\u2699\ufe0f Tool 'engine_search_tool' execution complete. Result preview: {
+  "query": "HyperFund HyperVerse crypto scheme recruitment daily returns MLM",
+  "page": 1,
+  "page_size": 10,
+  "total": 4,
+  "sources": {
+    "benchmark": [
+      {
+        "title": "SEC Charges F...
+INFO:agent.loop:\u26a1 Executing tool: 'wiki_search_pages' with arguments: {"keyword": "HyperVerse", "limit": 5}
+INFO:agent.loop:\u2699\ufe0f Tool 'wiki_search_pages' execution complete. Result preview: [
+  {
+    "title": "HyperVerse",
+    "pageid": 75728944,
+    "size": 9387,
+    "wordcount": 819,
+    "snippet": "HyperVerse is a defunct cryptocurrency hedge fund (formerly HyperNation, then HyperFund...
+INFO:agent.loop:Iteration 2/50: Calling LLM...
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:agent.loop:LLM requested 6 tool call(s)
+INFO:agent.loop:\u26a1 Executing tool: 'deep_search' with arguments: {"pages": ["https://www.sec.gov/newsroom/press-releases/2024-11"]}
+INFO:agent.loop:\u2699\ufe0f Tool 'deep_search' execution complete. Result preview: {
+  "success": true,
+  "pages": [
+    {
+      "success": true,
+      "url": "https://www.sec.gov/newsroom/press-releases/2024-11",
+      "source_id": "SRC-004",
+      "title": "SEC Charges Founder of ...
+INFO:agent.loop:\u26a1 Executing tool: 'deep_search' with arguments: {"pages": ["https://www.theguardian.com/technology/2024/jan/04/chief-executive-of-collapsed-crypto-fund-hyperverse-does-not-appear-to-exist"]}
+INFO:agent.loop:\u2699\ufe0f Tool 'deep_search' execution complete. Result preview: {
+  "success": true,
+  "pages": [
+    {
+      "success": true,
+      "url": "https://www.theguardian.com/technology/2024/jan/04/chief-executive-of-collapsed-crypto-fund-hyperverse-does-not-appear-to-e...
+INFO:agent.loop:\u26a1 Executing tool: 'deep_search' with arguments: {"pages": ["https://www.cnbc.com/2024/01/29/doj-and-sec-unveil-charges-in-1point9-billion-cryptocurrency-fraud-scheme.html"]}
+INFO:agent.loop:\u2699\ufe0f Tool 'deep_search' execution complete. Result preview: {
+  "success": true,
+  "pages": [
+    {
+      "success": true,
+      "url": "https://www.cnbc.com/2024/01/29/doj-and-sec-unveil-charges-in-1point9-billion-cryptocurrency-fraud-scheme.html",
+      "sou...
+INFO:agent.loop:\u26a1 Executing tool: 'deep_search' with arguments: {"pages": ["https://www.justice.gov/criminal/case/hyperfund-and-associated-cases"]}
+INFO:agent.loop:\u2699\ufe0f Tool 'deep_search' execution complete. Result preview: {
+  "success": true,
+  "pages": [
+    {
+      "success": true,
+      "url": "https://www.justice.gov/criminal/case/hyperfund-and-associated-cases",
+      "source_id": "SRC-002",
+      "title": "HyperF...
+INFO:agent.loop:\u26a1 Executing tool: 'wiki_fetch_page' with arguments: {"title_or_url": "HyperVerse"}
+INFO:agent.loop:\u2699\ufe0f Tool 'wiki_fetch_page' execution complete. Result preview: {
+  "title": "HyperVerse",
+  "description": "Defunct cryptocurrency Ponzi scheme",
+  "url": "https://en.wikipedia.org/wiki/HyperVerse",
+  "summary": "HyperVerse is a defunct cryptocurrency hedge fund....
+INFO:agent.loop:\u26a1 Executing tool: 'wiki_fetch_page' with arguments: {"title_or_url": "Danny de Hek"}
+ERROR:agent.loop:Error executing tool 'wiki_fetch_page': Wikipedia categories not found (429)
+Traceback (most recent call last):
+  File "D:\coding\osint-agent\src\agent\loop.py", line 217, in run
+    result = tool_fn.invoke(tc.arguments)
+  File "D:\coding\osint-agent\src\agent\tool_decorator.py", line 151, in invoke
+    return fn(**merged)
+  File "D:\coding\osint-agent\src\tools\wiki_tools.py", line 23, in wiki_fetch_page
+    data = page.fetch_all()
+  File "D:\coding\osint-agent\src\crawlers\wikipedia_page.py", line 86, in fetch_all
+    self.fetch_categories()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\coding\osint-agent\src\crawlers\wikipedia_page.py", line 75, in fetch_categories
+    raise Exception(f"Wikipedia categories not found ({resp.status_code})")
+Exception: Wikipedia categories not found (429)
+INFO:agent.loop:Iteration 3/50: Calling LLM...
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:agent.loop:LLM requested 1 tool call(s)
+INFO:agent.loop:\u26a1 Executing tool: 'knowledge_agent' with arguments: {"source_title": "HyperFund/HyperVerse investigation source batch", "source_url": "SRC-004; SRC-003; SRC-001; SRC-002", "text": "SEC complaint (SRC-004) alleges HyperFund was a global crypto-asset MLM pyramid and Ponzi scheme raising over $1.7B, launched June 2020 by HyperTech Group, rebranded HyperVerse around Dec 2021 and HyperNation around May 2022. It alleges membership packages promised 0.5%-1% daily passive returns and tripling initial investment in 600 days, with referral rewards; no legitimate revenue or large-scale mining, withdrawals paid from new deposits, and collapse when withdrawals stopped. It identifies Sam/Xue Samuel Lee as co-founder/central figure and Brenda Chunga/Bitcoin Beautee as top promoter; complaint alleges Chunga earned over $3.7M, used wealth display to recruit, and her rank required at least $5M in referred investments. It alleges HyperFund hired an actor to pretend to be new CEO at HyperVerse launch. It describes memberships purchased in USDT, internal HyperUnits, withdrawal conversion via MOF/HOO Exchange, and possible value loss. Guardian (SRC-003) reports its investigation found claimed CEO Steven Reece Lewis credentials unverifiable: no records at Leeds/Cambridge, UK Companies House, SEC, Adobe acquisition filings, or Goldman Sachs employment; no LinkedIn/internet presence beyond promotion, and a Twitter account appeared shortly before launch and went inactive after six months. Guardian reports celebrity promotional messages from Steve Wozniak, Chuck Norris, Jim Norton, Lance Bass, with no suggestion they knew the business model; messages encouraged joining. Guardian describes minimum $300 memberships, 0.5% daily and 300% over 600 days, referral commissions down 20 levels, withdrawals blocked for many, migration to HyperNation, masked 'Mr H'/'Miss N' ambassadors, and a promoter saying HyperVerse and HyperNation were one big entity. CNBC (SRC-001) reports DOJ criminal charges/SEC civil action: Sam Lee charged, Rodney Burton/Bitcoin Rodney charged, Brenda Chunga pleaded guilty; DOJ alleges $1.9B worldwide Ponzi fraud, false mining claims, returns .5%-1% daily, collapse in 2022 and withdrawal blocking beginning July 2021. DOJ case page (SRC-002) states charges are allegations and defendants presumed innocent; identifies Lee, Burton, Chunga, aliases and alleged names HyperTech/HyperCapital/HyperVerse/HyperNation."}
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:neo4j.notifications:Received notification from DBMS server: <GqlStatusObject gql_status='00NA0', status_description="note: successful completion - index or constraint already exists. The command 'CREATE CONSTRAINT UNIQUE_ENTITY_PER_THREAD IF NOT EXISTS FOR (e:Entity) REQUIRE (e.thread_id, e.type, e.value) IS UNIQUE' has no effect. The index or constraint specified by 'CONSTRAINT UNIQUE_ENTITY_PER_THREAD FOR (e:Entity) REQUIRE (e.thread_id, e.type, e.value) IS UNIQUE' already exists.", position=None, raw_classification='SCHEMA', classification=<NotificationClassification.SCHEMA: 'SCHEMA'>, raw_severity='INFORMATION', severity=<NotificationSeverity.INFORMATION: 'INFORMATION'>, diagnostic_record={'_classification': 'SCHEMA', '_severity': 'INFORMATION', 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: 'CREATE CONSTRAINT UNIQUE_ENTITY_PER_THREAD IF NOT EXISTS FOR (e:Entity) REQUIRE (e.thread_id, e.type, e.value) IS UNIQUE'
+INFO:agent.loop:\u2699\ufe0f Tool 'knowledge_agent' execution complete. Result preview: {
+  "status": "ok",
+  "added_entities": [
+    "ORGANIZATION | HyperFund",
+    "ORGANIZATION | HyperTech Group",
+    "ORGANIZATION | HyperVerse",
+    "ORGANIZATION | HyperNation",
+    "ORGANIZATION | H...
+INFO:agent.loop:Iteration 4/50: Calling LLM...
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:agent.loop:LLM requested 2 tool call(s)
+INFO:agent.loop:\u26a1 Executing tool: 'kb_get' with arguments: {}
+INFO:agent.loop:\u2699\ufe0f Tool 'kb_get' execution complete. Result preview: ALIAS | Bitcoin Beautee | Promotional alias identified for Brenda Chunga.
+ALIAS | Bitcoin Rodney | Alias identified for Rodney Burton.
+ALIAS | Xue Samuel Lee | Alias or alternate name identified for S...
+INFO:agent.loop:\u26a1 Executing tool: 'kb_get_edges' with arguments: {"limit": 100}
+INFO:agent.loop:\u2699\ufe0f Tool 'kb_get_edges' execution complete. Result preview: alias_for | alias:Bitcoin Beautee -> person:Brenda Chunga | evidence: Bitcoin Beautee is identified as Brenda Chunga's promotional alias.
+alias_for | alias:Bitcoin Rodney -> person:Rodney Burton | evi...
+INFO:agent.loop:Iteration 5/50: Calling LLM...
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:agent.loop:No tool calls. Yielding final response (length=29141).

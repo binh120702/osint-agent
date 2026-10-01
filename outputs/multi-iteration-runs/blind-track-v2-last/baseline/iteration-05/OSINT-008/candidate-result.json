@@ -1,0 +1,1647 @@
+{
+  "case_id": "OSINT-008",
+  "case_sha256": "c123a282ff8f09725243ccb8a843f2a4061a89d3c505470400b854c23a6c09f9",
+  "trace": {
+    "thread_id": "benchmark-osint-008-fd3e172b",
+    "tool_calls": [
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "Wirecard fraud trail company statements audit uncertainty missing cash supervisory failures Jan Marsalek disappearance timeline"
+        },
+        "started_at": 1790785815.3781087,
+        "result": "{\n  \"query\": \"Wirecard fraud trail company statements audit uncertainty missing cash supervisory failures Jan Marsalek disappearance timeline\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 2,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"What are the wider supervisory implications of the Wirecard case?\",\n        \"url\": \"https://safe-frankfurt.de/fileadmin/user_upload/editor_common/Policy_Center/SAFE_Policy_White_Paper_74.pdf\",\n        \"snippet\": \" 1 \\nExternal authors: \\nKatja LANGENBUCHER \\nChristian LEUZ \\nJan Pieter KRAHNEN \\nLoriana PELIZZON \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\nWhat are the wider \\nsupervisory \\nimplications of the \\nWirecard case? \\n \\n \\nEconomic Governance Support Unit (EGOV) \\nDirectorate-General for Internal Policies \\nPE 651.385 - November 2020  EN \\nSTUDY \\nRequested by the ECON committee  \\n\\nIPOL | Economic Governance Support Unit \\n \\n 2 PE 651.385  \\n  \\n  \\n What are the wider supervisory implications of the Wirecard case? \\n \\nPE 651.385 3 \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\nAbstract  \\nThe paper discusses the policy implications of the Wirecard \\nscandal. The study finds that all lines of defense against corporate \\nfraud, including internal control systems, external audits, the \\noversight bodies for financial reporting and auditing and the \\nmarket supervisor, contributed to the scandal and are in need of \\nreform. To ensure market integrity and investor protection in the \\nfuture, the authors make eight suggestions fo\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      },\n      {\n        \"title\": \"What are the wider supervisory implications of the Wirecard case?\",\n        \"url\": \"https://www.wirecard.com/2020/04/22/wirecard-ag-kpmg-special-review-lasts-until-april-27-2020-analysis-so-far-provides-no-evidence-of-balance-sheet-manipulation\",\n        \"snippet\": \"04/28/2020 \\nWirecard AG: KPMG delivers report on special investigation \\nWirecard AG / Key word(s): Miscellaneous \\nWirecard AG: KPMG delivers report on special investigation \\n \\n28-Apr-2020 / 07:52 CET/CEST \\nDisclosure of an inside information acc. to Article 17 MAR of the Regulation (EU) No 596/2014, \\ntransmitted by DGAP - a service of EQS Group AG. \\nThe issuer is solely responsible for the content of this announcement. \\nWirecard AG in the early hours of today, April 28 2020, received the special audit report by the \\nauditing company KPMG. The report will be published as soon as possible under \\nhttps://www.wirecard.com/transparency. \\nIncriminating evidence for the public allegations of balance sheet forgery has not been identified. With \\nrespect to all four areas of the audit - Third Party Acquiring business (TPA), Merchant Cash Advance \\n(MCA)/Digital Lending as well as the business activities in India and Singapore -  no significant \\nfindings have been made, which would require an adju\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"What are the wider supervisory implications of the Wirecard case?\",\n      \"url\": \"https://safe-frankfurt.de/fileadmin/user_upload/editor_common/Policy_Center/SAFE_Policy_White_Paper_74.pdf\",\n      \"snippet\": \" 1 \\nExternal authors: \\nKatja LANGENBUCHER \\nChristian LEUZ \\nJan Pieter KRAHNEN \\nLoriana PELIZZON \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\nWhat are the wider \\nsupervisory \\nimplications of the \\nWirecard case? \\n \\n \\nEconomic Governance Support Unit (EGOV) \\nDirectorate-General for Internal Policies \\nPE 651.385 - November 2020  EN \\nSTUDY \\nRequested by the ECON committee  \\n\\nIPOL | Economic Governance Support Unit \\n \\n 2 PE 651.385  \\n  \\n  \\n What are the wider supervisory implications of the Wirecard case? \\n \\nPE 651.385 3 \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\nAbstract  \\nThe paper discusses the policy implications of the Wirecard \\nscandal. The study finds that all lines of defense against corporate \\nfraud, including internal control systems, external audits, the \\noversight bodies for financial reporting and auditing and the \\nmarket supervisor, contributed to the scandal and are in need of \\nreform. To ensure market integrity and investor protection in the \\nfuture, the authors make eight suggestions fo\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    },\n    {\n      \"title\": \"What are the wider supervisory implications of the Wirecard case?\",\n      \"url\": \"https://www.wirecard.com/2020/04/22/wirecard-ag-kpmg-special-review-lasts-until-april-27-2020-analysis-so-far-provides-no-evidence-of-balance-sheet-manipulation\",\n      \"snippet\": \"04/28/2020 \\nWirecard AG: KPMG delivers report on special investigation \\nWirecard AG / Key word(s): Miscellaneous \\nWirecard AG: KPMG delivers report on special investigation \\n \\n28-Apr-2020 / 07:52 CET/CEST \\nDisclosure of an inside information acc. to Article 17 MAR of the Regulation (EU) No 596/2014, \\ntransmitted by DGAP - a service of EQS Group AG. \\nThe issuer is solely responsible for the content of this announcement. \\nWirecard AG in the early hours of today, April 28 2020, received the special audit report by the \\nauditing company KPMG. The report will be published as soon as possible under \\nhttps://www.wirecard.com/transparency. \\nIncriminating evidence for the public allegations of balance sheet forgery has not been identified. With \\nrespect to all four areas of the audit - Third Party Acquiring business (TPA), Merchant Cash Advance \\n(MCA)/Digital Lending as well as the business activities in India and Singapore -  no significant \\nfindings have been made, which would require an adju\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 9.59
+      },
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "Wirecard KPMG special audit 2020 missing 1.9 billion EY BaFin Jan Marsalek official report"
+        },
+        "started_at": 1790785815.3882744,
+        "result": "{\n  \"query\": \"Wirecard KPMG special audit 2020 missing 1.9 billion EY BaFin Jan Marsalek official report\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 2,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"What are the wider supervisory implications of the Wirecard case?\",\n        \"url\": \"https://safe-frankfurt.de/fileadmin/user_upload/editor_common/Policy_Center/SAFE_Policy_White_Paper_74.pdf\",\n        \"snippet\": \" 1 \\nExternal authors: \\nKatja LANGENBUCHER \\nChristian LEUZ \\nJan Pieter KRAHNEN \\nLoriana PELIZZON \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\nWhat are the wider \\nsupervisory \\nimplications of the \\nWirecard case? \\n \\n \\nEconomic Governance Support Unit (EGOV) \\nDirectorate-General for Internal Policies \\nPE 651.385 - November 2020  EN \\nSTUDY \\nRequested by the ECON committee  \\n\\nIPOL | Economic Governance Support Unit \\n \\n 2 PE 651.385  \\n  \\n  \\n What are the wider supervisory implications of the Wirecard case? \\n \\nPE 651.385 3 \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\nAbstract  \\nThe paper discusses the policy implications of the Wirecard \\nscandal. The study finds that all lines of defense against corporate \\nfraud, including internal control systems, external audits, the \\noversight bodies for financial reporting and auditing and the \\nmarket supervisor, contributed to the scandal and are in need of \\nreform. To ensure market integrity and investor protection in the \\nfuture, the authors make eight suggestions fo\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      },\n      {\n        \"title\": \"What are the wider supervisory implications of the Wirecard case?\",\n        \"url\": \"https://www.wirecard.com/2020/04/22/wirecard-ag-kpmg-special-review-lasts-until-april-27-2020-analysis-so-far-provides-no-evidence-of-balance-sheet-manipulation\",\n        \"snippet\": \"04/28/2020 \\nWirecard AG: KPMG delivers report on special investigation \\nWirecard AG / Key word(s): Miscellaneous \\nWirecard AG: KPMG delivers report on special investigation \\n \\n28-Apr-2020 / 07:52 CET/CEST \\nDisclosure of an inside information acc. to Article 17 MAR of the Regulation (EU) No 596/2014, \\ntransmitted by DGAP - a service of EQS Group AG. \\nThe issuer is solely responsible for the content of this announcement. \\nWirecard AG in the early hours of today, April 28 2020, received the special audit report by the \\nauditing company KPMG. The report will be published as soon as possible under \\nhttps://www.wirecard.com/transparency. \\nIncriminating evidence for the public allegations of balance sheet forgery has not been identified. With \\nrespect to all four areas of the audit - Third Party Acquiring business (TPA), Merchant Cash Advance \\n(MCA)/Digital Lending as well as the business activities in India and Singapore -  no significant \\nfindings have been made, which would require an adju\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"What are the wider supervisory implications of the Wirecard case?\",\n      \"url\": \"https://safe-frankfurt.de/fileadmin/user_upload/editor_common/Policy_Center/SAFE_Policy_White_Paper_74.pdf\",\n      \"snippet\": \" 1 \\nExternal authors: \\nKatja LANGENBUCHER \\nChristian LEUZ \\nJan Pieter KRAHNEN \\nLoriana PELIZZON \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\nWhat are the wider \\nsupervisory \\nimplications of the \\nWirecard case? \\n \\n \\nEconomic Governance Support Unit (EGOV) \\nDirectorate-General for Internal Policies \\nPE 651.385 - November 2020  EN \\nSTUDY \\nRequested by the ECON committee  \\n\\nIPOL | Economic Governance Support Unit \\n \\n 2 PE 651.385  \\n  \\n  \\n What are the wider supervisory implications of the Wirecard case? \\n \\nPE 651.385 3 \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\nAbstract  \\nThe paper discusses the policy implications of the Wirecard \\nscandal. The study finds that all lines of defense against corporate \\nfraud, including internal control systems, external audits, the \\noversight bodies for financial reporting and auditing and the \\nmarket supervisor, contributed to the scandal and are in need of \\nreform. To ensure market integrity and investor protection in the \\nfuture, the authors make eight suggestions fo\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    },\n    {\n      \"title\": \"What are the wider supervisory implications of the Wirecard case?\",\n      \"url\": \"https://www.wirecard.com/2020/04/22/wirecard-ag-kpmg-special-review-lasts-until-april-27-2020-analysis-so-far-provides-no-evidence-of-balance-sheet-manipulation\",\n      \"snippet\": \"04/28/2020 \\nWirecard AG: KPMG delivers report on special investigation \\nWirecard AG / Key word(s): Miscellaneous \\nWirecard AG: KPMG delivers report on special investigation \\n \\n28-Apr-2020 / 07:52 CET/CEST \\nDisclosure of an inside information acc. to Article 17 MAR of the Regulation (EU) No 596/2014, \\ntransmitted by DGAP - a service of EQS Group AG. \\nThe issuer is solely responsible for the content of this announcement. \\nWirecard AG in the early hours of today, April 28 2020, received the special audit report by the \\nauditing company KPMG. The report will be published as soon as possible under \\nhttps://www.wirecard.com/transparency. \\nIncriminating evidence for the public allegations of balance sheet forgery has not been identified. With \\nrespect to all four areas of the audit - Third Party Acquiring business (TPA), Merchant Cash Advance \\n(MCA)/Digital Lending as well as the business activities in India and Singapore -  no significant \\nfindings have been made, which would require an adju\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 9.23
+      },
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "Wirecard Bundestag investigation supervisory failures BaFin Jan Marsalek disappeared June 2020"
+        },
+        "started_at": 1790785815.3983283,
+        "result": "{\n  \"query\": \"Wirecard Bundestag investigation supervisory failures BaFin Jan Marsalek disappeared June 2020\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 2,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"What are the wider supervisory implications of the Wirecard case?\",\n        \"url\": \"https://safe-frankfurt.de/fileadmin/user_upload/editor_common/Policy_Center/SAFE_Policy_White_Paper_74.pdf\",\n        \"snippet\": \" 1 \\nExternal authors: \\nKatja LANGENBUCHER \\nChristian LEUZ \\nJan Pieter KRAHNEN \\nLoriana PELIZZON \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\nWhat are the wider \\nsupervisory \\nimplications of the \\nWirecard case? \\n \\n \\nEconomic Governance Support Unit (EGOV) \\nDirectorate-General for Internal Policies \\nPE 651.385 - November 2020  EN \\nSTUDY \\nRequested by the ECON committee  \\n\\nIPOL | Economic Governance Support Unit \\n \\n 2 PE 651.385  \\n  \\n  \\n What are the wider supervisory implications of the Wirecard case? \\n \\nPE 651.385 3 \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\nAbstract  \\nThe paper discusses the policy implications of the Wirecard \\nscandal. The study finds that all lines of defense against corporate \\nfraud, including internal control systems, external audits, the \\noversight bodies for financial reporting and auditing and the \\nmarket supervisor, contributed to the scandal and are in need of \\nreform. To ensure market integrity and investor protection in the \\nfuture, the authors make eight suggestions fo\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      },\n      {\n        \"title\": \"What are the wider supervisory implications of the Wirecard case?\",\n        \"url\": \"https://www.wirecard.com/2020/04/22/wirecard-ag-kpmg-special-review-lasts-until-april-27-2020-analysis-so-far-provides-no-evidence-of-balance-sheet-manipulation\",\n        \"snippet\": \"04/28/2020 \\nWirecard AG: KPMG delivers report on special investigation \\nWirecard AG / Key word(s): Miscellaneous \\nWirecard AG: KPMG delivers report on special investigation \\n \\n28-Apr-2020 / 07:52 CET/CEST \\nDisclosure of an inside information acc. to Article 17 MAR of the Regulation (EU) No 596/2014, \\ntransmitted by DGAP - a service of EQS Group AG. \\nThe issuer is solely responsible for the content of this announcement. \\nWirecard AG in the early hours of today, April 28 2020, received the special audit report by the \\nauditing company KPMG. The report will be published as soon as possible under \\nhttps://www.wirecard.com/transparency. \\nIncriminating evidence for the public allegations of balance sheet forgery has not been identified. With \\nrespect to all four areas of the audit - Third Party Acquiring business (TPA), Merchant Cash Advance \\n(MCA)/Digital Lending as well as the business activities in India and Singapore -  no significant \\nfindings have been made, which would require an adju\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"What are the wider supervisory implications of the Wirecard case?\",\n      \"url\": \"https://safe-frankfurt.de/fileadmin/user_upload/editor_common/Policy_Center/SAFE_Policy_White_Paper_74.pdf\",\n      \"snippet\": \" 1 \\nExternal authors: \\nKatja LANGENBUCHER \\nChristian LEUZ \\nJan Pieter KRAHNEN \\nLoriana PELIZZON \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\nWhat are the wider \\nsupervisory \\nimplications of the \\nWirecard case? \\n \\n \\nEconomic Governance Support Unit (EGOV) \\nDirectorate-General for Internal Policies \\nPE 651.385 - November 2020  EN \\nSTUDY \\nRequested by the ECON committee  \\n\\nIPOL | Economic Governance Support Unit \\n \\n 2 PE 651.385  \\n  \\n  \\n What are the wider supervisory implications of the Wirecard case? \\n \\nPE 651.385 3 \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\nAbstract  \\nThe paper discusses the policy implications of the Wirecard \\nscandal. The study finds that all lines of defense against corporate \\nfraud, including internal control systems, external audits, the \\noversight bodies for financial reporting and auditing and the \\nmarket supervisor, contributed to the scandal and are in need of \\nreform. To ensure market integrity and investor protection in the \\nfuture, the authors make eight suggestions fo\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    },\n    {\n      \"title\": \"What are the wider supervisory implications of the Wirecard case?\",\n      \"url\": \"https://www.wirecard.com/2020/04/22/wirecard-ag-kpmg-special-review-lasts-until-april-27-2020-analysis-so-far-provides-no-evidence-of-balance-sheet-manipulation\",\n      \"snippet\": \"04/28/2020 \\nWirecard AG: KPMG delivers report on special investigation \\nWirecard AG / Key word(s): Miscellaneous \\nWirecard AG: KPMG delivers report on special investigation \\n \\n28-Apr-2020 / 07:52 CET/CEST \\nDisclosure of an inside information acc. to Article 17 MAR of the Regulation (EU) No 596/2014, \\ntransmitted by DGAP - a service of EQS Group AG. \\nThe issuer is solely responsible for the content of this announcement. \\nWirecard AG in the early hours of today, April 28 2020, received the special audit report by the \\nauditing company KPMG. The report will be published as soon as possible under \\nhttps://www.wirecard.com/transparency. \\nIncriminating evidence for the public allegations of balance sheet forgery has not been identified. With \\nrespect to all four areas of the audit - Third Party Acquiring business (TPA), Merchant Cash Advance \\n(MCA)/Digital Lending as well as the business activities in India and Singapore -  no significant \\nfindings have been made, which would require an adju\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 12.15
+      },
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "Wirecard insolvency 18 June 2020 1.9 billion trust accounts company statement"
+        },
+        "started_at": 1790785815.4111674,
+        "result": "{\n  \"query\": \"Wirecard insolvency 18 June 2020 1.9 billion trust accounts company statement\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 2,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"What are the wider supervisory implications of the Wirecard case?\",\n        \"url\": \"https://safe-frankfurt.de/fileadmin/user_upload/editor_common/Policy_Center/SAFE_Policy_White_Paper_74.pdf\",\n        \"snippet\": \" 1 \\nExternal authors: \\nKatja LANGENBUCHER \\nChristian LEUZ \\nJan Pieter KRAHNEN \\nLoriana PELIZZON \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\nWhat are the wider \\nsupervisory \\nimplications of the \\nWirecard case? \\n \\n \\nEconomic Governance Support Unit (EGOV) \\nDirectorate-General for Internal Policies \\nPE 651.385 - November 2020  EN \\nSTUDY \\nRequested by the ECON committee  \\n\\nIPOL | Economic Governance Support Unit \\n \\n 2 PE 651.385  \\n  \\n  \\n What are the wider supervisory implications of the Wirecard case? \\n \\nPE 651.385 3 \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\nAbstract  \\nThe paper discusses the policy implications of the Wirecard \\nscandal. The study finds that all lines of defense against corporate \\nfraud, including internal control systems, external audits, the \\noversight bodies for financial reporting and auditing and the \\nmarket supervisor, contributed to the scandal and are in need of \\nreform. To ensure market integrity and investor protection in the \\nfuture, the authors make eight suggestions fo\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      },\n      {\n        \"title\": \"What are the wider supervisory implications of the Wirecard case?\",\n        \"url\": \"https://www.wirecard.com/2020/04/22/wirecard-ag-kpmg-special-review-lasts-until-april-27-2020-analysis-so-far-provides-no-evidence-of-balance-sheet-manipulation\",\n        \"snippet\": \"04/28/2020 \\nWirecard AG: KPMG delivers report on special investigation \\nWirecard AG / Key word(s): Miscellaneous \\nWirecard AG: KPMG delivers report on special investigation \\n \\n28-Apr-2020 / 07:52 CET/CEST \\nDisclosure of an inside information acc. to Article 17 MAR of the Regulation (EU) No 596/2014, \\ntransmitted by DGAP - a service of EQS Group AG. \\nThe issuer is solely responsible for the content of this announcement. \\nWirecard AG in the early hours of today, April 28 2020, received the special audit report by the \\nauditing company KPMG. The report will be published as soon as possible under \\nhttps://www.wirecard.com/transparency. \\nIncriminating evidence for the public allegations of balance sheet forgery has not been identified. With \\nrespect to all four areas of the audit - Third Party Acquiring business (TPA), Merchant Cash Advance \\n(MCA)/Digital Lending as well as the business activities in India and Singapore -  no significant \\nfindings have been made, which would require an adju\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"What are the wider supervisory implications of the Wirecard case?\",\n      \"url\": \"https://safe-frankfurt.de/fileadmin/user_upload/editor_common/Policy_Center/SAFE_Policy_White_Paper_74.pdf\",\n      \"snippet\": \" 1 \\nExternal authors: \\nKatja LANGENBUCHER \\nChristian LEUZ \\nJan Pieter KRAHNEN \\nLoriana PELIZZON \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\nWhat are the wider \\nsupervisory \\nimplications of the \\nWirecard case? \\n \\n \\nEconomic Governance Support Unit (EGOV) \\nDirectorate-General for Internal Policies \\nPE 651.385 - November 2020  EN \\nSTUDY \\nRequested by the ECON committee  \\n\\nIPOL | Economic Governance Support Unit \\n \\n 2 PE 651.385  \\n  \\n  \\n What are the wider supervisory implications of the Wirecard case? \\n \\nPE 651.385 3 \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\nAbstract  \\nThe paper discusses the policy implications of the Wirecard \\nscandal. The study finds that all lines of defense against corporate \\nfraud, including internal control systems, external audits, the \\noversight bodies for financial reporting and auditing and the \\nmarket supervisor, contributed to the scandal and are in need of \\nreform. To ensure market integrity and investor protection in the \\nfuture, the authors make eight suggestions fo\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    },\n    {\n      \"title\": \"What are the wider supervisory implications of the Wirecard case?\",\n      \"url\": \"https://www.wirecard.com/2020/04/22/wirecard-ag-kpmg-special-review-lasts-until-april-27-2020-analysis-so-far-provides-no-evidence-of-balance-sheet-manipulation\",\n      \"snippet\": \"04/28/2020 \\nWirecard AG: KPMG delivers report on special investigation \\nWirecard AG / Key word(s): Miscellaneous \\nWirecard AG: KPMG delivers report on special investigation \\n \\n28-Apr-2020 / 07:52 CET/CEST \\nDisclosure of an inside information acc. to Article 17 MAR of the Regulation (EU) No 596/2014, \\ntransmitted by DGAP - a service of EQS Group AG. \\nThe issuer is solely responsible for the content of this announcement. \\nWirecard AG in the early hours of today, April 28 2020, received the special audit report by the \\nauditing company KPMG. The report will be published as soon as possible under \\nhttps://www.wirecard.com/transparency. \\nIncriminating evidence for the public allegations of balance sheet forgery has not been identified. With \\nrespect to all four areas of the audit - Third Party Acquiring business (TPA), Merchant Cash Advance \\n(MCA)/Digital Lending as well as the business activities in India and Singapore -  no significant \\nfindings have been made, which would require an adju\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 13.06
+      },
+      {
+        "name": "wiki_search_pages",
+        "arguments": {
+          "keyword": "Wirecard scandal",
+          "limit": 5
+        },
+        "started_at": 1790785815.4249032,
+        "result": "[\n  {\n    \"title\": \"Wirecard scandal\",\n    \"pageid\": 64387791,\n    \"size\": 48508,\n    \"wordcount\": 4213,\n    \"snippet\": \"The Wirecard scandal (German: Wirecard-Skandal) was a series of corrupt business practices and fraudulent financial reporting that led to the insolvency\",\n    \"timestamp\": \"2026-09-17T10:55:24Z\"\n  },\n  {\n    \"title\": \"Jan Marsalek\",\n    \"pageid\": 64520099,\n    \"size\": 20121,\n    \"wordcount\": 1949,\n    \"snippet\": \"Interpol issued a &quot;red notice&quot; arrest warrant for his alleged role in the Wirecard scandal. According to investigators, Marsalek had been recruited by Russian\",\n    \"timestamp\": \"2026-07-28T09:49:02Z\"\n  },\n  {\n    \"title\": \"Wirecard\",\n    \"pageid\": 10813199,\n    \"size\": 73918,\n    \"wordcount\": 5564,\n    \"snippet\": \"Wirecard AG is an insolvent German payment processor and financial services provider whose former CEO, COO, two board members, and other executives have\",\n    \"timestamp\": \"2026-09-05T22:48:53Z\"\n  },\n  {\n    \"title\": \"Dan McCrum\",\n    \"pageid\": 73194837,\n    \"size\": 10785,\n    \"wordcount\": 912,\n    \"snippet\": \"known for his investigation into the Wirecard scandal between 2014 and 2020. McCrum&#039;s 2022 book on the scandal Money Men: A Hot Startup, A Billion Dollar\",\n    \"timestamp\": \"2026-09-01T00:44:18Z\"\n  },\n  {\n    \"title\": \"OCBC Bank\",\n    \"pageid\": 1493846,\n    \"size\": 38211,\n    \"wordcount\": 3616,\n    \"snippet\": \"financing rules, in a matter related to the German payments provider Wirecard scandal between June 2015 and January 2016 relating to accounts maintained\",\n    \"timestamp\": \"2026-07-19T20:45:02Z\"\n  }\n]",
+        "duration_ms": 727.17
+      },
+      {
+        "name": "wiki_fetch_page",
+        "arguments": {
+          "title_or_url": "Wirecard scandal"
+        },
+        "started_at": 1790785846.3597238,
+        "result": "{\n  \"title\": \"Wirecard scandal\",\n  \"description\": \"Series of accounting scandals in Germany\",\n  \"url\": \"https://en.wikipedia.org/wiki/Wirecard_scandal\",\n  \"summary\": \"The Wirecard scandal was a series of corrupt business practices and fraudulent financial reporting that led to the insolvency of Wirecard, a payment processor and financial services provider, headquartered in Munich, Germany together with the failure of watchdogs over a number of years. The company was part of the DAX index. They offered customers electronic payment transaction and risk management services, as well as the issuance and processing of physical cards. The subsidiary, Wirecard Bank AG, held a banking licence and had contracts with multiple international financial services companies.\",\n  \"categories\": [\n    \"2020 crimes in Germany\",\n    \"2020 in economic history\",\n    \"2020 scandals\",\n    \"2020s in economic history\",\n    \"Accounting scandals\",\n    \"Corporate crime\",\n    \"Corporate scandals\",\n    \"Corruption in Germany\",\n    \"Finance fraud\"\n  ]\n}",
+        "duration_ms": 634.02
+      },
+      {
+        "name": "wiki_fetch_page",
+        "arguments": {
+          "title_or_url": "Jan Marsalek"
+        },
+        "started_at": 1790785846.9945161,
+        "result": "{\n  \"title\": \"Jan Marsalek\",\n  \"description\": \"Austrian fugitive businessman (born 1980)\",\n  \"url\": \"https://en.wikipedia.org/wiki/Jan_Marsalek\",\n  \"summary\": \"Jan Marsalek is an Austrian fugitive former businessman and suspected spy operative for Russia. From 2010 to 2020, he was chief operating officer of the German payment processing firm Wirecard, which became insolvent and collapsed in 2020. Marsalek was responsible for Wirecard's business in Asia, where the company admitted that nearly \\u20ac2 billion in cash it supposedly held did not exist.\",\n  \"categories\": [\n    \"1980 births\",\n    \"Austrian bankers\",\n    \"Austrian business executives\",\n    \"Austrian people of Czech descent\",\n    \"Chief operating officers\",\n    \"Fugitives wanted by Germany\",\n    \"Fugitives wanted on fraud charges\",\n    \"Living people\",\n    \"Russian spies\"\n  ]\n}",
+        "duration_ms": 593.27
+      },
+      {
+        "name": "get_url_content",
+        "arguments": {
+          "url": "https://safe-frankfurt.de/fileadmin/user_upload/editor_common/Policy_Center/SAFE_Policy_White_Paper_74.pdf"
+        },
+        "started_at": 1790785847.5885596,
+        "result": "{\n  \"success\": true,\n  \"url\": \"https://safe-frankfurt.de/fileadmin/user_upload/editor_common/Policy_Center/SAFE_Policy_White_Paper_74.pdf\",\n  \"source_id\": \"SRC-002\",\n  \"title\": \"What are the wider supervisory implications of the Wirecard case?\",\n  \"content\": {\n    \"page_title\": \"What are the wider supervisory implications of the Wirecard case?\",\n    \"fetch_error\": \"The read operation timed out\"\n  },\n  \"raw_text\": \" 1 \\nExternal authors: \\nKatja LANGENBUCHER \\nChristian LEUZ \\nJan Pieter KRAHNEN \\nLoriana PELIZZON \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\nWhat are the wider \\nsupervisory \\nimplications of the \\nWirecard case? \\n \\n \\nEconomic Governance Support Unit (EGOV) \\nDirectorate-General for Internal Policies \\nPE 651.385 - November 2020  EN \\nSTUDY \\nRequested by the ECON committee  \\n\\nIPOL | Economic Governance Support Unit \\n \\n 2 PE 651.385  \\n  \\n  \\n What are the wider supervisory implications of the Wirecard case? \\n \\nPE 651.385 3 \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\n \\nAbstract  \\nThe paper discusses the policy implications of the Wirecard \\nscandal. The study finds that all lines of defense against corporate \\nfraud, including internal control systems, external audits, the \\noversight bodies for financial reporting and auditing and the \\nmarket supervisor, contributed to the scandal and are in need of \\nreform. To ensure market integrity and investor protection in the \\nfuture, the authors make eight suggestions for the market and \\ninstitutional oversight architecture in Germany and in Europe. \\nThis document was provided by  the Economic Governanc e \\nSupport Unit at the request of the ECON Committee. \\n \\nWhat are the wider \\nsupervisory \\nimplications of the \\nWirecard case? \\nSubtitle (optional) \\nIPOL | Economic Governance Support Unit \\n \\n 4 PE 651.385  \\nThis document was requested by the European Parliament's Committee on Economic and Monetary \\nAffairs. \\n \\nAUTHORS \\nKatja LANGENBUCHER, Goethe University Frankfurt and Sciences Po Paris1 \\nChristian LEUZ, University of Chicago Booth School of Business and NBER \\nJan Pieter KRAHNEN, Leibniz Institute for Financial Research SAFE and Goethe University \\nLoriana  PELIZZON, Leibniz Institute for Financial Research SAFE, Goethe University and Ca’ Foscari \\nUniversity of Venice \\n \\nADMINISTRATOR RESPONSIBLE  \\nCristina DIAS \\nKristina GRIGAITÉ \\nRebecca SEGALL \\nMarcel MAGNUS \\n \\nEDITORIAL ASSISTANT  \\nDonella BOLDI \\n \\nLINGUISTIC VERSIONS \\nOriginal: EN \\n \\nABOUT THE EDITOR \\nThe Economic Governance Support Unit provide s in-house and external expertise to support EP \\ncommittees and other parliamentary bodies in shaping legislation and exercising democratic scrutiny \\nover EU internal policies. \\n \\nTo contact Economic Governance Support Unit or to subscribe to its newsletter please write to: \\nEconomic Governance Support Unit  \\nEuropean Parliament \\nB-1047 Brussels \\nE-mail: egov@ep.europa.eu  \\n \\nManuscript completed in May 2020 \\n© European Union, 2020 \\n \\nThis document and other supporting analyses are available on the internet at: \\nhttp://www.europarl.europa.eu/supporting-analyses \\n \\n \\nDISCLAIMER AND COPYRIGHT \\nThe opinions expressed in this document are the sole responsibility of the authors and do not \\nnecessarily represent the official position of the European Parliament.  \\nReproduction and translation for non -commercial purposes are authorised, provided the source is \\nacknowledged and the European Parliament is given prior notice and sent a copy. \\n                                                             \\n1Katja Langenbucher  is Member of BaFin’s Supervisory Board. The opinions expressed in this paper are entirely her own and do not reflect a \\nposition taken by BaFin. \\n What are the wider supervisory implications of the Wirecard case? \\n \\nPE 651.385 5 \\nCONTENTS \\nLIST OF TABLES 5 \\nLIST OF ABBREVIATIONS 6 \\nEXECUTIVE SUMMARY 7 \\nPREFACE 8 \\n1. MARKETS, OVERSIGHT AND THE WIRECARD CASE 9 \\n2. WEAKNESSES OF MARKET AND INSTITU TIONAL OVERSIGHT 11 \\n2.1. Informati on flow s bloc ked 11 \\n2.2. Weaknesses in external audi ts, i nternal ove rsight, and market f orce s 13 \\n2.3. Impaired enforcement of financial information disclosure 19 \\n2.4. Overarc hing mandate and accountability of the market supervisor 21 \\n3. CONCLUSIONS 24 \\nREFERENCES 26 \\nANNEX 30 \\nAppendix A on the facts and timeline 30 \\nReferences (Appendix A) 34 \\nAppendix B on an ove rview of supe rvisory architec tures across Europe 37 \\nReferences (Appendix B) 45 \\n \\n \\n \\n \\nLIST OF TABLES \\nTable 1:  Comparison of market supervision models 37 \\n \\n  \\nIPOL | Economic Governance Support Unit \\n \\n 6 PE 651.385  \\nLIST OF ABBREVIA TIONS \\nACP Autorité de Contrôle Prudentiel \\nAktG Aktiengesetz  (Stock Corporation Act) \\nAMF Autorité des Marchés Financiers \\nAOB Auditor Oversight Body (Abschlussprüferaufsichtsstelle, APAS) \\nBaFin Bundesanstalt für Finanzdienstleistungsaufsicht \\nCONSOB Commissione Nazionale per le Società e la Borsa \\nDAX Deutscher Aktienindex (German stock index) \\nESCMS European Single Capital Market Supervisor \\nESMA European Securities and Markets Authority \\nEU COM European Commission \\nFCA Financial Conduct Authority \\nFRC Financial Reporting Council \\nFREP Financial Reporting Enforcement Panel (Deutsche Prüfstelle für Rechnungslegung, \\n FRRP Financial Reporting Review Panel \\nFT Financial Times \\nHGB Handelsgesetzbuch (Commercial Code) \\nH3C Haut Conseil du Commissariat aux Comptes \\nIFRS International Financial Reporting Standards \\nMAR Market Abuse Regulation \\nNCA National Competent Authority \\nPCAOB Public Company Accounting Oversight Board \\nPIE Public interest entity  \\nPRA Prudential Regulation Authority \\nSEC Securities and Exchange Commission \\nSSM Single Supervisory Mechanism \\nSSR Short Selling Regulation \\nTD Transparency Directive \\nWpHG Wertpapierhandelsgesetz (Securities Trading Act) \\n  \\n What are the wider supervisory implications of the Wirecard case? \\n \\nPE 651.385 7 \\nEXECUTIVE SUMMARY \\nThis policy briefing explores possible policy lessons from the downfall of Wirecard, the German fintech \\npayment provider, then listed in the country’s top stock market segment DAX. In our view, all five lines \\nof defence against corporate fraud and deception have failed in one way or another: the company’s \\ninternal control system, its supervisory board, its external audit, the oversight bodies for financial \\nreporting and auditing and, last but not least, the market supervisor BaFin. The slow unravell ing of \\nWirecard is surprising as there were a number of signals suggesting fraudulent behaviour years before \\nits eventual revelation. Our analysis finds a root cause to be a flawed market and institutional oversi ght \\narchitecture, implicating all five lines of defence. In its current form, it is not sufficiently fit to preserve \\nmarket integrity and investor protection. To improve the system, we suggest changes at the national \\nas well as the European level. In fact, we understand the Wirecard scandal in German y  a s  a  po t en t ially  \\npivotal event for Europe’s capital market, triggering a regulatory reform of financial market oversight \\nthat ultimately improves its competitiveness among global capital markets.  \\nOur policy conclusions aim to ensure the integrity of th e capital market by strengtheni ng \\naccountability. Towards this end, we propose to improve the information flow to markets and \\nsupervision, respecting whistleblowing and short selling as important information sources. The \\naccountability of external auditors  has to be strengthened so that they have stronger incentives to \\ndetect accounting manipulations and fraud, which enhances the information value of audits for capi tal \\nmarkets and ultimately the accuracy and credibility of firms’ financial reporting. To strengthen internal \\ncontrol mechanisms, listed firms should be legally required to have an appropriate and effective \\ninternal control system. We recommend that its head reports to the supervisory board, not to the \\nmanagement board. Internal control audits should be considered. BaFin needs considerably stronger \\nsupervisory and enforcement powers in order to live up to its overarching mandate as to market \\nintegrity and investor protection. We recommend entrusting the agency with broad enforcement \\npowers, including forensic and investigative tools. These changes also entail relegating self-regulatory \\nenforcement bodies such as FREP in Germany to a purely ancillary, optional function. Along with \\nstrengthening its powers, we propose to clearly establish the supervis ory agency’s accountability for \\nfulfilling its overarching  mandate. This accountability requires an appropriate level of institutional \\nindependence as well as sufficient resources to fulfil its tasks. Finally, we submit that Wirecard holds \\nlessons that go well beyond the German market and oversight system. Considering the negative \\nspillovers of fraud cases in a European market and anticipating that national interests may play a rol e \\nin market supervision, which also creates unhelpful externalities, we suggest establishing a European \\nSingle Capital Market Supervisory body (ESCMS). Given that national supervisors are highly \\nknowledgeable of the local situation, we recommend integrating them into a European supervisory \\nnetwork. A hub -and-spoke architecture with  clear reporting lines to the hub will also introduce an \\nelement of institutional independence into national agencies and make regulatory capture harder.  \\n \\n  \\nIPOL | Economic Governance Support Unit \\n \\n 8 PE 651.385  \\nPREFACE \\nWirecard was initially founded as a German fintech in Munich in 1999. After an interlude o f insolvency in \\n2001, Wirecard was listed in 2005 in the Deutsche Börse’s Prime Standard market segment. It became a \\nleading fintech company in Germany, focusing on payment and risk management services in the debit and \\ncredit card business in Europe, Asia and America. It moved up to the Tec Dax in 2006 and, in 2018, to the \\nDAX, the top index segment of the German market. Starting in 2015, there were allegations about \\naccounting inconsistencies, esp. in the Financial Times (FT) which wrote about a “House of Wirecards”, partly  \\nbased on whistleblower information about the Singapore operations of the firm. In 2016, an analyst report,  \\nknown as the Zatarra Report, accused Wirecard of money laundering and fraud. Following this report, there \\nwas significant short selling of the Wirecard stock, some of which BaFin referred to the German prosecutor \\nfor market abuse, leading to indictments and settlements. \\nAfter another detailed report in the FT, in January 2019, BaFin requested an investigation of Wirecard’s \\nfinancial statements by the Financial Reporting Enf orcement Panel (FREP). FREP is a private agency,  \\nentrusted with a public mandate. It has been set up as the “first step” in the German “two-step procedure” of \\nfinancial reporting enforcement. When short selling peaked again, BaFin intervened and prohibited  \\nincreases in net short sale positions for a period of two months, in accordance with the European Securities \\nand Markets Authority (ESMA). It also filed a criminal complaint against a number of short sellers as well as \\nthe journalist who had authored the January FT article. The FT continued to report on allegedly inflated sales \\nand profit numbers at Wirecard, backed up with internal documents. In October 2019, KPMG was hired by \\nWirecard to conduct a forensic investigation. The report was published with sev eral delays in April 2020, \\nstating that KPMG was unable to verify the existence of 1 billion Euros in foreign bank accounts. BaFin filed \\na criminal complaint against Wirecard in June 2020 and, a few days later, the company filed for bankruptc y \\nacknowledging that financial assets of 1.9 billion Euros were missing.2 \\nThis policy briefing has been commissioned by the European Parliament. The paper was written in the \\nmonths of September and October 2020 by the four authors Jan Krahnen, Katja Langenbuc her, \\nChristian Leuz and Loriana Pelizzon. We are grateful for discussions with, and valuable comments from \\na number of colleagues who spoke to us or read a draft of the paper: Ray Ball, Jannis Bischof, Joachi m \\nBöcking, Joachim Hennrichs, Tom Huertas, Maximilian Muhn,  Christian Laux, Christophe Moussu, \\nEugene Soltes, and Michael Troege. We also thank Elisabeth Roegele and her team at BaFin for \\ndiscussing several questions relating to short selling, audits and supervisory governance in a telephone \\ncall on September 30. Last but certainly not least, we are deeply thankful for the intensive support given \\nto us by Johannes Kasinger, Head of SAFE Policy Center, and excellent research and editorial assistance \\nby Patrick Blank and Patricia Breuer. \\n  \\n                                                             \\n2 A detailed timeline for the Wirecard history from 2019 onwards is in Appendix A, in the Annex to this briefing. \\n What are the wider supervisory implications of the Wirecard case? \\n \\nPE 651.385 9 \\n1. MARKETS, OVERSIGHT AND THE WIRECARD CASE \\nCapital markets are a powerful instrument to allocate resources from investors to issuers, i.e. firms and \\nstates. A well-functioning capital market is a key determinant of economic growth as well as of private \\nand public wealth. The term “cap ital market” refers to a complex institutional structure, compri si ng \\nvarious contractual arrangements, regulatory or legal rules, and enforcement mechanisms, physical \\nand virtual trading venues, and a variety of financial instruments, like stocks, bonds, d erivatives, and \\ncurrencies, owned by a variety of investors. Together with the banking system, the capital market \\nprovides the financial infrastructure of the economy. As in banking, trust in the proper functioning of \\nthe capital market is a prerequisite f or it to play its beneficial role. It is, for instance, critical for broad \\ninvestor participation (Guiso et al. 2008). \\nScandals such as Wirecard can destroy investor trust in capital markets working fairly and with integri ty, \\nwhich in turn creates negative spillover effects. Scandals can make it harder for other, non-fraudulent \\nfirms to raise capital as investors raise the risk premium or choose to no longer participate in the market \\n(e.g. Aggarwal and Wu 2006; Kyle and Viswanathan 2008; Giannetti and Wang 2016; Gurun et al. 2018). \\nIt is for this reason that fraud deserves attention. In essence, trust in the capital market is a (valuable) \\npublic good. Among other things, it requires assurance that corporate insiders do not embezzle \\ninvestors’ money (e.g. Shleifer and Wolfenzon 2002). \\nFor this reason, countries’ legal frameworks and capital market regulation aim to facilitate capital \\nformation and market transactions and, at the same time, to protect market integrity and investors. \\nThis typically encompasses f inancial reporting and disclosure requirements, anti- fraud provisi ons, \\nrestrictions on insider trading and market manipulation, limits on self -dealing by corporate insiders, \\nand corporate governance stipulations. However, rules alone are not sufficient. Investors need to trust \\nthat compliance with these rules is monitored and, if necessary, enforced. Therefore, well-functioning \\ncapital markets also require effective public and private enforcement mechanisms. Effective capital \\nmarket regulation and enforcement contribute to the development of the capital market (e.g. La P orta \\net al. 2006) and lower firms’ cost of capital (Hail and Leuz 2006; 2009). These arguments form the \\neconomic basis for supervisory mandates in many countries. To illustrate: the US Securities and \\nExchange Commission (SEC) describes its mission as one “to protect investors, maintain fair, orderly, \\nand efficient markets, and facilitate capital formation” (SEC 2013). In a similar spirit, BaFin’s webs ite  \\nstates: “The objective of securities supervision is to ensure the transparency and integrity of the \\nfinancial market and the protection of investors.” \\nConsistent with these objectives and the above economic arguments, we use market integrity and \\ninvestor protection as the guiding principles for the analysis in this policy briefing. The goal is to draw \\na number of wider lessons from the Wirecard case. At the start, it is natural to ask: Why did the scandal \\n– fraud and deception at Wirecard – remain undetected for so long? Who or what is to blame? Was it \\ndue to deficiencies in institutional and legal design, supervisory failures, professional negligence or \\n(moral) failures of th e perpetrators?3 Common sense dictates that, in the end, the scandal is due to a \\nmix of reasons. In this briefing we will try to identify major reasons for the occurrence and slow \\ndetection of the scandal, emphasi sing the role of institutional deficiencies. These deficiencies can, in \\nprinciple, be mitigated by reforming market and oversight institutions as well as supervisory agencies.4 \\n                                                             \\n3See Soltes (2016) on the complex reasons why executives engage in white-collar crime. \\n4The German government has recently issued an action plan to fight accounting fraud and to strengthen control in capital markets. This \\nplan contains several proposals consistent with our suggestions. Given its recent issuance, and the fact that it outlines possible steps still to \\nbe taken, we will not discuss this action plan in our paper. More details can be found here. \\nIPOL | Economic Governance Support Unit \\n \\n 10 PE 651.385  \\nWe realise that, even with much more stringent market and institutional oversight, fraud will probabl y \\nnever be completely prevented. But this cannot and should not be the overall objective of regulatory \\neffort anyway, as it would be excessively costly to businesses, and stifle capital formation and marke t \\ntransactions. That said, well-functioning capital markets needs equally well- functioning market and \\nregulatory oversight. Without it, capital markets cannot deliver their positive contributions to the \\nformation and allocation of capital in an economy. The Wirecard scandal has revealed maj or \\nweaknesses in this ove rsight in Germany, especially with respect to investor protection and market \\nintegrity. Moreover, we believe the Wirecard scandal holds broader lessons for European capital market \\noversight.  \\nIn this policy briefing, we discuss four shortcomings of market a nd institutional oversight that the \\nWirecard case has brought to light: Shortcomings with respect to whistleblowers a nd in fo rm at io n flows  \\ninto prices (section 2.1); Weaknesses of external audits, internal controls but also market forces when it \\ncomes to Wirecard’s accounting information (section 2.2); Limitations in the supervisor’s investigation \\nand enforcement powers, limiting its ability to take the appropriate action when needed (sections 2.3 \\nand 2.4); The potential for negative externalities and the ri sk of supervisory capture in a fragmented \\nEuropean capital market (section 2.4). All four limitations give rise to far-reaching reform proposal s of \\nthe oversight system in Germany and Europe. Those proposals are summarised in section 3. \\n  \\n What are the wider supervisory implications of the Wirecard case? \\n \\nPE 651.385 11 \\n2. WEAKNESSES OF MARKET AND INSTITUTIONAL OVERSIGHT \\nThe criticism of the market and institutional oversight in Germany, discussed in this chapter, is not \\nexpressed lightly. We are well aware of the risk of judging with hindsight bias, and thus do not intend \\nto point fingers based on information that was pro bably not available at the time. The main purpose \\nof this briefing is to discuss \n\n[tool output truncated to avoid context overflow]",
+        "duration_ms": 0.54
+      },
+      {
+        "name": "get_url_content",
+        "arguments": {
+          "url": "https://www.wirecard.com/2020/04/22/wirecard-ag-kpmg-special-review-lasts-until-april-27-2020-analysis-so-far-provides-no-evidence-of-balance-sheet-manipulation"
+        },
+        "started_at": 1790785847.589754,
+        "result": "{\n  \"success\": true,\n  \"url\": \"https://www.wirecard.com/2020/04/22/wirecard-ag-kpmg-special-review-lasts-until-april-27-2020-analysis-so-far-provides-no-evidence-of-balance-sheet-manipulation\",\n  \"source_id\": \"SRC-001\",\n  \"title\": \"What are the wider supervisory implications of the Wirecard case?\",\n  \"content\": {\n    \"page_title\": \"What are the wider supervisory implications of the Wirecard case?\",\n    \"fetch_error\": \"Response did not contain enough readable source text\"\n  },\n  \"raw_text\": \"04/28/2020 \\nWirecard AG: KPMG delivers report on special investigation \\nWirecard AG / Key word(s): Miscellaneous \\nWirecard AG: KPMG delivers report on special investigation \\n \\n28-Apr-2020 / 07:52 CET/CEST \\nDisclosure of an inside information acc. to Article 17 MAR of the Regulation (EU) No 596/2014, \\ntransmitted by DGAP - a service of EQS Group AG. \\nThe issuer is solely responsible for the content of this announcement. \\nWirecard AG in the early hours of today, April 28 2020, received the special audit report by the \\nauditing company KPMG. The report will be published as soon as possible under \\nhttps://www.wirecard.com/transparency. \\nIncriminating evidence for the public allegations of balance sheet forgery has not been identified. With \\nrespect to all four areas of the audit - Third Party Acquiring business (TPA), Merchant Cash Advance \\n(MCA)/Digital Lending as well as the business activities in India and Singapore -  no significant \\nfindings have been made, which would require an adjustment of the annual accounts 2016-2018. \\nIn the course of the audits of the annual accounts for the years 2016-2018 the available documents \\nand audit measures were sufficient for the proof of the revenues in the Third Party Acquiring business. \\nAccording to the increased forensic requirements of the audit by KPMG, however, not all data could be \\nobtained that would have been required  to proof the revenues in these years, because the required \\ndata are primarily in the control of third parties. Since Wirecard meanwhile controls the necessary data \\nitself, more than 200 mio data relating to December 2019 sets have been provided to KPMG for a \\nforensic audit. This audit has not revealed any deviations between the reported revenues and account \\nbalances.  \\nKPMG has identified documentation and organizational weaknesses during the audit period, which \\nhad already been identified by Wirecard. Wirecard remedies these weaknesses since 2019 by \\nestablishing a Global Compliance Organization and with the support of external consultants.   \\nThe release of the annual accounts and the annual press conference will not take place on 30 April \\n2020. Wirecard will coordinate as soon as possible with the auditor E&Y, when the audit measures \\ncan be completed taking into account the Corona related restrictions and the completion of the KPMG \\nreport. \\n \\nContact: \\nIris Stöckl \\nVP Corp.Com./IR \\nTel.: +49 (0)89-4424-1424 \\ne-Mail: iris.stoeckl@wirecard.com \\nhttp://www.wirecard.com \\nISIN DE0007472060 \\nReuters: WDI.GDE \\nBloomberg: WDI GY  \\n28-Apr-2020 CET/CEST The DGAP Distribution Services include Regulatory Announcements, \\nFinancial/Corporate News and Press Releases.  \\nArchive at www.dgap.de \\nLanguage: English \\nCompany: Wirecard AG  Einsteinring 35  85609 Aschheim b. München  Germany \\nPhone: +49 (0)89-4424 1400 \\nFax: +49 (0)89-4424 1500 \\nE-mail: ir@wirecard.com \\nInternet: www.wirecard.com \\nISIN: DE0007472060 \\nWKN: 747206 \\nIndices: DAX, TecDAX, Prime All Share, Technology All Share \\nListed: Regulated Market in Frankfurt (Prime Standard); Regulated Unofficial Market in Berlin, \\nDusseldorf, Hamburg, Munich, Stuttgart, Tradegate Exchange \\nEQS News ID: 1031139 \\n \\n \\n  \\nEnd of AnnouncementDGAP News Service\\n \"\n}",
+        "duration_ms": 0.11
+      },
+      {
+        "name": "knowledge_agent",
+        "arguments": {
+          "source_title": "What are the wider supervisory implications of the Wirecard case?",
+          "source_url": "https://safe-frankfurt.de/fileadmin/user_upload/editor_common/Policy_Center/SAFE_Policy_White_Paper_74.pdf",
+          "text": "SRC-002, an EU Economic Governance Support Unit policy briefing (completed May 2020; published November 2020), states that all five lines of defence against corporate fraud/deception failed in one way or another: Wirecard's internal control system, supervisory board, external audit, oversight bodies for financial reporting and auditing, and market supervisor BaFin. It says signals suggesting fraudulent behaviour existed years before revelation. The briefing reports allegations beginning in 2015, a 2016 Zatarra report alleging money laundering and fraud, a January 2019 BaFin-requested FREP investigation, and continuing Financial Times reporting. It states KPMG was hired in October 2019; its report, delayed until April 2020, said KPMG was unable to verify the existence of €1 billion in foreign bank accounts. It states BaFin filed a criminal complaint in June 2020 and, a few days later, Wirecard filed for bankruptcy acknowledging €1.9 billion in missing financial assets. The briefing identifies weaknesses in whistleblower/information flows, external audits/internal controls/market forces, supervisory investigation and enforcement powers, and fragmented European oversight. It expressly cautions against hindsight bias and frames some conclusions as the authors' assessment."
+        },
+        "started_at": 1790785908.1396687,
+        "result": "{\n  \"status\": \"ok\",\n  \"added_entities\": [\n    \"DOCUMENT | SRC-002\",\n    \"DOCUMENT | Zatarra report\",\n    \"ORGANIZATION | EU Economic Governance Support Unit\",\n    \"ORGANIZATION | Wirecard\",\n    \"ORGANIZATION | KPMG\",\n    \"ORGANIZATION | BaFin\",\n    \"ORGANIZATION | FREP\",\n    \"ORGANIZATION | Financial Times\",\n    \"EVENT | FREP investigation of Wirecard\",\n    \"EVENT | KPMG special audit of Wirecard\",\n    \"EVENT | BaFin criminal complaint against Wirecard\",\n    \"EVENT | Wirecard bankruptcy\",\n    \"DATE | 2019-01\",\n    \"DATE | 2019-10\",\n    \"DATE | 2020-04\",\n    \"DATE | 2020-06\"\n  ],\n  \"added_edges\": [\n    \"PUBLISHED_BY | organization:EU Economic Governance Support Unit -> document:SRC-002\",\n    \"PERFORMED_SPECIAL_AUDIT | organization:KPMG -> organization:Wirecard\",\n    \"SUPERVISED_OR_INQUIRED_ABOUT | organization:BaFin -> organization:Wirecard\",\n    \"SUPERVISED_OR_INQUIRED_ABOUT | organization:FREP -> organization:Wirecard\",\n    \"LINKED_TO | document:Zatarra report -> organization:Wirecard\",\n    \"OCCURRED_ON | event:FREP investigation of Wirecard -> date:2019-01\",\n    \"OCCURRED_ON | event:KPMG special audit of Wirecard -> date:2019-10\",\n    \"OCCURRED_ON | event:KPMG special audit of Wirecard -> date:2020-04\",\n    \"OCCURRED_ON | event:BaFin criminal complaint against Wirecard -> date:2020-06\",\n    \"OCCURRED_ON | event:Wirecard bankruptcy -> date:2020-06\"\n  ],\n  \"neo4j\": true\n}",
+        "duration_ms": 40758.62
+      },
+      {
+        "name": "knowledge_agent",
+        "arguments": {
+          "source_title": "Wirecard AG: KPMG delivers report on special investigation",
+          "source_url": "https://www.wirecard.com/2020/04/22/wirecard-ag-kpmg-special-review-lasts-until-april-27-2020-analysis-so-far-provides-no-evidence-of-balance-sheet-manipulation",
+          "text": "SRC-001 is Wirecard's 28 April 2020 regulatory announcement. Wirecard said KPMG's special audit found no incriminating evidence for public allegations of balance-sheet forgery and no significant findings requiring adjustment of 2016-2018 annual accounts across TPA, MCA/Digital Lending, India and Singapore. It also said KPMG could not obtain all data needed to prove TPA revenues because required data were primarily controlled by third parties; 200 million December 2019 data sets supplied by Wirecard showed no deviations between reported revenues and account balances. KPMG identified documentation and organizational weaknesses, which Wirecard said it had already identified and was remedying through a Global Compliance Organization and external consultants. Wirecard postponed release of annual accounts and its annual press conference, pending coordination with EY and completion of audit measures."
+        },
+        "started_at": 1790785996.465618,
+        "result": "{\n  \"status\": \"ok\",\n  \"added_entities\": [\n    \"ORGANIZATION | Wirecard\",\n    \"ORGANIZATION | KPMG\",\n    \"ORGANIZATION | EY\",\n    \"DOCUMENT | SRC-001\",\n    \"DATE | 2020-04-28\",\n    \"PRODUCT | TPA\",\n    \"PRODUCT | MCA/Digital Lending\",\n    \"LOCATION | India\",\n    \"LOCATION | Singapore\"\n  ],\n  \"added_edges\": [\n    \"PUBLISHED_BY | document:SRC-001 -> organization:Wirecard\",\n    \"PERFORMED_SPECIAL_AUDIT | organization:KPMG -> organization:Wirecard\",\n    \"BUSINESS_AREA_UNDER_AUDIT | product:TPA -> organization:KPMG\",\n    \"BUSINESS_AREA_UNDER_AUDIT | product:MCA/Digital Lending -> organization:KPMG\",\n    \"BUSINESS_AREA_UNDER_AUDIT | location:India -> organization:KPMG\",\n    \"BUSINESS_AREA_UNDER_AUDIT | location:Singapore -> organization:KPMG\"\n  ],\n  \"neo4j\": true\n}",
+        "duration_ms": 35148.06
+      },
+      {
+        "name": "kb_get",
+        "arguments": {},
+        "started_at": 1790786070.390228,
+        "result": "DATE | 2019-01 | Month of the BaFin-requested FREP investigation.\nDATE | 2019-10 | Month when KPMG was hired.\nDATE | 2020-04 | Month when the delayed KPMG report was issued.\nDATE | 2020-04-28 | Date of Wirecard's regulatory announcement.\nDATE | 2020-06 | Month of BaFin's criminal complaint and Wirecard's bankruptcy filing.\nDOCUMENT | SRC-001 | Wirecard regulatory announcement dated 28 April 2020 concerning KPMG's special audit and postponement of annual reporting.\nDOCUMENT | SRC-002 | EU Economic Governance Support Unit policy briefing on the Wirecard fraud/deception failure; completed May 2020 and published November 2020.\nDOCUMENT | Zatarra report | 2016 report alleging money laundering and fraud involving Wirecard.\nEVENT | BaFin criminal complaint against Wirecard | Criminal complaint filed by BaFin in June 2020.\nEVENT | FREP investigation of Wirecard | Investigation requested by BaFin in January 2019.\nEVENT | KPMG special audit of Wirecard | KPMG was hired in October 2019; the report was delayed until April 2020 and could not verify €1 billion in foreign bank accounts.\nEVENT | Wirecard bankruptcy | Wirecard filed for bankruptcy a few days after BaFin's criminal complaint and acknowledged €1.9 billion in missing financial assets.\nLOCATION | India | Geographic area included in the scope of KPMG's special audit.\nLOCATION | Singapore | Geographic area included in the scope of KPMG's special audit.\nORGANIZATION | BaFin | German market supervisor identified as one of the failed lines of defence; requested the FREP investigation and filed a criminal complaint in June 2020.\nORGANIZATION | EU Economic Governance Support Unit | Unit identified as the authoring body of SRC-002.\nORGANIZATION | EY | Audit firm with which Wirecard planned to coordinate before completing audit measures.\nORGANIZATION | FREP | Organization that conducted an investigation requested by BaFin in January 2019.\nORGANIZATION | Financial Times | Publication that continued reporting on allegations involving Wirecard.\nORGANIZATION | KPMG | Hired by Wirecard in October 2019 to conduct a special investigation; its report was delayed until April 2020. | Performed the special audit referenced in the announcement.\nORGANIZATION | Wirecard | Company discussed in the briefing as the subject of fraud allegations, regulatory investigation, audit failures, and bankruptcy. | Company issuing the 28 April 2020 regulatory announcement.\nPRODUCT | MCA/Digital Lending | Business area included in the scope of KPMG's special audit.\nPRODUCT | TPA | Business area included in the scope of KPMG's special audit.",
+        "duration_ms": 13.16
+      },
+      {
+        "name": "kb_get_edges",
+        "arguments": {
+          "limit": 100
+        },
+        "started_at": 1790786070.4045978,
+        "result": "published_by | document:SRC-001 -> organization:Wirecard | evidence: SRC-001 is identified as Wirecard's regulatory announcement.\nlinked_to | document:Zatarra report -> organization:Wirecard | evidence: The 2016 Zatarra report alleged money laundering and fraud involving Wirecard.\noccurred_on | event:BaFin criminal complaint against Wirecard -> date:2020-06 | evidence: BaFin filed the criminal complaint in June 2020.\noccurred_on | event:FREP investigation of Wirecard -> date:2019-01 | evidence: The briefing dates the BaFin-requested FREP investigation to January 2019.\noccurred_on | event:KPMG special audit of Wirecard -> date:2019-10 | evidence: KPMG was hired in October 2019.\noccurred_on | event:KPMG special audit of Wirecard -> date:2020-04 | evidence: The KPMG report was delayed until April 2020.\noccurred_on | event:Wirecard bankruptcy -> date:2020-06 | evidence: Wirecard filed for bankruptcy in June 2020, shortly after BaFin's complaint.\nbusiness_area_under_audit | location:India -> organization:KPMG | evidence: India was explicitly identified as a geographic area covered by KPMG's special audit.\nbusiness_area_under_audit | location:Singapore -> organization:KPMG | evidence: Singapore was explicitly identified as a geographic area covered by KPMG's special audit.\nsupervised_or_inquired_about | organization:BaFin -> organization:Wirecard | evidence: BaFin is identified as Wirecard's market supervisor and requested an investigation into the company.\npublished_by | organization:EU Economic Governance Support Unit -> document:SRC-002 | evidence: SRC-002 is identified as an EU Economic Governance Support Unit policy briefing.\nsupervised_or_inquired_about | organization:FREP -> organization:Wirecard | evidence: FREP conducted an investigation into Wirecard beginning in January 2019.\nperformed_special_audit | organization:KPMG -> organization:Wirecard | evidence: KPMG was hired to conduct a special investigation of Wirecard and reported that it could not verify €1 billion in foreign bank accounts.\nbusiness_area_under_audit | product:MCA/Digital Lending -> organization:KPMG | evidence: MCA/Digital Lending was explicitly included among the areas examined in KPMG's special audit.\nbusiness_area_under_audit | product:TPA -> organization:KPMG | evidence: TPA was explicitly included among the areas examined in KPMG's special audit.",
+        "duration_ms": 11.72
+      }
+    ],
+    "final_report": "# Wirecard / Jan Marsalek public-fraud trail\n\n## Scope and evidentiary limits\n\nThis report uses only evidence returned by the benchmark tools. The benchmark sources establish a public trail involving Wirecard’s statements, KPMG’s audit uncertainty, missing assets, and supervisory weaknesses. The returned benchmark evidence does **not** provide a source ID containing specific facts about Jan Marsalek’s disappearance, whereabouts, escape route, or alleged intelligence links. Those matters are therefore not asserted here.\n\n## Executive assessment\n\nThe evidence supports a sequence in which concerns about Wirecard’s accounting and business practices appeared years before its collapse; supervisory and audit processes followed but did not resolve the concerns promptly; Wirecard publicly characterized the April 2020 KPMG review as not finding incriminating evidence of balance-sheet forgery while acknowledging important data and documentation limitations; and, shortly afterward, Wirecard’s bankruptcy filing acknowledged €1.9 billion in missing financial assets. An EU policy briefing assessed that multiple defenses—including internal controls, the supervisory board, external audit, financial-reporting oversight, and BaFin—failed in one way or another. That assessment is explicitly an authors’ policy analysis and should not be treated as a judicial finding. [SRC-001] [SRC-002]\n\n## Reconstructed timeline\n\n- **2015 onward:** The EU policy briefing reports allegations of accounting inconsistencies, including Financial Times reporting concerning Wirecard’s Singapore operations. [SRC-002]\n- **2016:** The Zatarra Report allegedly accused Wirecard of money laundering and fraud. The report’s allegations are described in the briefing; they are not independently established here. [SRC-002]\n- **January 2019:** BaFin requested an investigation of Wirecard’s financial statements by FREP, Germany’s private financial-reporting enforcement body operating under a public mandate. [SRC-002]\n- **2019:** Further Financial Times reporting alleged inflated sales and profit figures and was described as being supported by internal documents. [SRC-002]\n- **October 2019:** Wirecard hired KPMG to conduct a forensic investigation. [SRC-002]\n- **April 2020:** KPMG’s report was delayed until April. The EU briefing states that KPMG was unable to verify the existence of €1 billion in foreign bank accounts. [SRC-002]\n- **28 April 2020:** Wirecard issued a regulatory announcement stating that KPMG had found no incriminating evidence for public allegations of balance-sheet forgery and no significant findings requiring adjustments to the 2016–2018 annual accounts. [SRC-001]\n- **28 April 2020:** In the same announcement, Wirecard stated that KPMG could not obtain all data required to prove certain third-party-acquiring revenues because the data were primarily controlled by third parties. Wirecard also disclosed documentation and organizational weaknesses and postponed publication of its annual accounts and annual press conference. [SRC-001]\n- **June 2020:** The EU briefing states that BaFin filed a criminal complaint against Wirecard. [SRC-002]\n- **A few days later in June 2020:** Wirecard filed for bankruptcy and acknowledged that €1.9 billion in financial assets were missing. [SRC-002]\n\n## Findings\n\n### 1. What early warning signals preceded the collapse?\n\nThere were publicly reported allegations and investigative signals years before the bankruptcy: accounting inconsistencies reported from 2015, the 2016 Zatarra Report’s allegations, and continuing Financial Times reporting. The EU briefing characterizes these as signals suggesting fraudulent behavior, while cautioning against hindsight bias. [SRC-002]\n\n### 2. What did Wirecard publicly say about the KPMG review?\n\nWirecard stated on 28 April 2020 that KPMG had not identified incriminating evidence supporting public allegations of balance-sheet forgery and had found no significant findings requiring adjustments to the 2016–2018 accounts. The statement covered the third-party-acquiring business, merchant cash advance/digital lending, and activities in India and Singapore. [SRC-001]\n\nThis was Wirecard’s regulatory announcement—not an independent conclusion adopted by this report. [SRC-001]\n\n### 3. What uncertainty did the KPMG process contain?\n\nWirecard’s own announcement said that, under KPMG’s heightened forensic requirements, not all data needed to prove third-party-acquiring revenues could be obtained because the relevant data were controlled by third parties. The announcement also said KPMG had identified documentation and organizational weaknesses. [SRC-001]\n\nSeparately, the EU briefing states that KPMG could not verify the existence of €1 billion in foreign bank accounts. [SRC-002]\n\n### 4. What happened to the reported cash?\n\nThe strongest benchmark-supported endpoint is that, after BaFin’s June 2020 criminal complaint, Wirecard filed for bankruptcy and acknowledged €1.9 billion in missing financial assets. The sources do not establish in this record the precise location, mechanism, or ultimate disposition of those assets. [SRC-002]\n\n### 5. What supervisory failures are supported?\n\nThe EU policy briefing assesses that all five identified lines of defense failed in one way or another:\n\n1. Wirecard’s internal control system;\n2. its supervisory board;\n3. external audit;\n4. oversight bodies for financial reporting and auditing; and\n5. BaFin as market supervisor.\n\nThe briefing attributes the slow detection to a flawed market and institutional oversight architecture and identifies weaknesses in information flows, whistleblower treatment, external audits, internal controls, market forces, and supervisory investigation and enforcement powers. These are the authors’ assessments, not findings independently adjudicated by the benchmark evidence. [SRC-002]\n\n### 6. What can be established about Jan Marsalek’s disappearance?\n\nThe benchmark tool results returned a Wikipedia search result for Jan Marsalek, but that result did not provide a source ID and therefore cannot be cited under the requested evidentiary rule. The cited sources [SRC-001] and [SRC-002] do not provide facts about his disappearance, current whereabouts, alleged escape, or alleged intelligence connections.\n\nAccordingly, the Jan Marsalek disappearance portion of the requested trail remains **unsubstantiated in the benchmark evidence available here**.\n\n## Assessment of the fraud trail\n\nThe evidence supports a cumulative pattern rather than a single decisive disclosure:\n\n1. allegations and reporting emerged years before the collapse;\n2. regulatory and investigative responses occurred, including the FREP inquiry and KPMG engagement;\n3. Wirecard publicly emphasized the absence of incriminating evidence in KPMG’s report;\n4. the same announcement disclosed limitations in the available audit evidence and organizational weaknesses;\n5. the EU briefing records that KPMG could not verify €1 billion in foreign accounts;\n6. Wirecard subsequently acknowledged €1.9 billion in missing financial assets during bankruptcy proceedings.\n\nThe central tension is therefore between Wirecard’s public characterization of KPMG’s findings and the unresolved verification limitations documented in the same announcement and in the EU briefing. The evidence supports describing this as **audit uncertainty followed by a major cash shortfall**, but it does not by itself prove the full criminal mechanism, identify every responsible person, or establish Jan Marsalek’s post-collapse movements. [SRC-001] [SRC-002]\n\n## Contradictions and tensions\n\n- **Public reassurance versus unresolved verification:** Wirecard said KPMG found no incriminating evidence and no account-adjustment findings, while also saying KPMG lacked all data needed to prove certain revenues. The EU briefing additionally states that KPMG could not verify €1 billion in foreign bank accounts. This is an evidentiary tension, not necessarily a direct logical contradiction, because the statements concern different audit conclusions and evidentiary thresholds. [SRC-001] [SRC-002]\n- **Reported financial position versus later missing assets:** The April 2020 announcement presented the review as not requiring adjustments to the 2016–2018 annual accounts, whereas the June 2020 bankruptcy filing acknowledged €1.9 billion in missing financial assets. The sources do not provide enough detail to determine precisely how the figures and accounting periods relate. [SRC-001] [SRC-002]\n- **Scope of the supervisory assessment:** The EU briefing says all five lines of defense failed “in one way or another,” but it also warns against hindsight bias and presents the conclusion as an analytical assessment. It should not be recast as a definitive legal determination of liability. [SRC-002]\n\n## Conclusion\n\nThe benchmark evidence reconstructs a public-fraud trail in which repeated warning signals were followed by delayed or incomplete verification, public corporate reassurance, unresolved audit limitations, supervisory shortcomings, and ultimately Wirecard’s acknowledgment of €1.9 billion in missing financial assets and bankruptcy. The EU policy briefing’s principal assessment is systemic: responsibility for the failure to detect and stop the alleged fraud was distributed across corporate controls, the supervisory board, auditors, oversight bodies, and BaFin. [SRC-002]\n\nThe evidence supplied here does **not** support a factual reconstruction of Jan Marsalek’s disappearance. Any account of that aspect would require additional benchmark sources with identifiable source IDs.\n\n```json\n{\n  \"findings\": [\n    {\n      \"question\": \"What warning signals preceded Wirecard's collapse?\",\n      \"answer\": \"The evidence reports accounting-inconsistency allegations from 2015 onward, the 2016 Zatarra Report's allegations of money laundering and fraud, and continuing Financial Times reporting alleging inflated sales and profit figures. The EU briefing treats these as signals but cautions against hindsight bias.\",\n      \"supporting_entities\": [\n        \"Wirecard\",\n        \"Zatarra report\",\n        \"Financial Times\"\n      ],\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"question\": \"What supervisory action occurred before the collapse?\",\n      \"answer\": \"BaFin requested a FREP investigation of Wirecard's financial statements in January 2019 and filed a criminal complaint against Wirecard in June 2020.\",\n      \"supporting_entities\": [\n        \"BaFin\",\n        \"FREP\",\n        \"Wirecard\",\n        \"FREP investigation of Wirecard\",\n        \"BaFin criminal complaint against Wirecard\"\n      ],\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"question\": \"What did Wirecard say about KPMG's April 2020 review?\",\n      \"answer\": \"Wirecard said KPMG had found no incriminating evidence for public allegations of balance-sheet forgery and no significant findings requiring adjustment of the 2016-2018 annual accounts across the reviewed business areas.\",\n      \"supporting_entities\": [\n        \"Wirecard\",\n        \"KPMG\",\n        \"KPMG special audit of Wirecard\",\n        \"TPA\",\n        \"MCA/Digital Lending\",\n        \"India\",\n        \"Singapore\"\n      ],\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"question\": \"What audit uncertainty remained?\",\n      \"answer\": \"Wirecard said KPMG could not obtain all data needed to prove certain third-party-acquiring revenues because the data were controlled by third parties. The EU briefing states that KPMG could not verify the existence of 1 billion euros in foreign bank accounts. KPMG also identified documentation and organizational weaknesses.\",\n      \"supporting_entities\": [\n        \"Wirecard\",\n        \"KPMG\",\n        \"KPMG special audit of Wirecard\",\n        \"TPA\"\n      ],\n      \"source_references\": [\n        \"SRC-001\",\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"question\": \"What happened to the reported cash?\",\n      \"answer\": \"A few days after BaFin's June 2020 criminal complaint, Wirecard filed for bankruptcy and acknowledged that 1.9 billion euros in financial assets were missing. The mechanism, location, and disposition of the assets are not established by the cited evidence.\",\n      \"supporting_entities\": [\n        \"Wirecard\",\n        \"Wirecard bankruptcy\",\n        \"BaFin criminal complaint against Wirecard\"\n      ],\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"question\": \"What supervisory failures are supported?\",\n      \"answer\": \"The EU policy briefing assesses that Wirecard's internal controls, supervisory board, external audit, financial-reporting and auditing oversight bodies, and BaFin all failed in one way or another. This is an authors' policy assessment, not an adjudicated legal finding.\",\n      \"supporting_entities\": [\n        \"Wirecard\",\n        \"BaFin\"\n      ],\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"question\": \"What is established about Jan Marsalek's disappearance?\",\n      \"answer\": \"No source with an identifiable benchmark source ID returned facts about Jan Marsalek's disappearance, whereabouts, or post-collapse movements. Those matters remain unsubstantiated in this record.\",\n      \"supporting_entities\": [\n        \"Jan Marsalek\"\n      ],\n      \"source_references\": []\n    }\n  ],\n  \"claims\": [\n    {\n      \"claim\": \"The public record in the benchmark evidence shows a progression from early allegations and reporting to regulatory inquiries, an inconclusive or limited forensic process, and a later acknowledgment of 1.9 billion euros in missing financial assets.\",\n      \"source_references\": [\n        \"SRC-001\",\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"claim\": \"Wirecard's 28 April 2020 announcement was a company statement and should not be treated as an independent finding that no fraud occurred.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"claim\": \"The EU policy briefing attributes the slow detection of the scandal to weaknesses across multiple lines of defense and in the market and institutional oversight architecture.\",\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"claim\": \"The cited benchmark evidence does not establish the criminal mechanism behind the missing assets or Jan Marsalek's disappearance.\",\n      \"source_references\": [\n        \"SRC-001\",\n        \"SRC-002\"\n      ]\n    }\n  ],\n  \"reasoning_steps\": [\n    {\n      \"id\": \"RS-001\",\n      \"conclusion\": \"Warning signals existed before the 2020 collapse.\",\n      \"premise_entities\": [\n        \"Wirecard\",\n        \"Zatarra report\",\n        \"Financial Times\"\n      ],\n      \"premise_relations\": [\n        \"linked_to\"\n      ]\n    },\n    {\n      \"id\": \"RS-002\",\n      \"conclusion\": \"Regulatory scrutiny preceded the bankruptcy.\",\n      \"premise_entities\": [\n        \"BaFin\",\n        \"FREP\",\n        \"Wirecard\",\n        \"FREP investigation of Wirecard\",\n        \"BaFin criminal complaint against Wirecard\"\n      ],\n      \"premise_relations\": [\n        \"supervised_or_inquired_about\",\n        \"occurred_on\"\n      ]\n    },\n    {\n      \"id\": \"RS-003\",\n      \"conclusion\": \"The KPMG process did not eliminate material uncertainty about Wirecard's financial reporting.\",\n      \"premise_entities\": [\n        \"KPMG\",\n        \"Wirecard\",\n        \"KPMG special audit of Wirecard\",\n        \"TPA\"\n      ],\n      \"premise_relations\": [\n        \"performed_special_audit\",\n        \"business_area_under_audit\"\n      ]\n    },\n    {\n      \"id\": \"RS-004\",\n      \"conclusion\": \"The later bankruptcy acknowledgment materially changed the evidentiary picture from public reassurance to confirmed missing financial assets.\",\n      \"premise_entities\": [\n        \"Wirecard\",\n        \"Wirecard bankruptcy\",\n        \"KPMG special audit of Wirecard\"\n      ],\n      \"premise_relations\": [\n        \"occurred_on\",\n        \"performed_special_audit\"\n      ]\n    },\n    {\n      \"id\": \"RS-005\",\n      \"conclusion\": \"The benchmark record is insufficient to reconstruct Jan Marsalek's disappearance.\",\n      \"premise_entities\": [\n        \"Jan Marsalek\"\n      ],\n      \"premise_relations\": []\n    }\n  ],\n  \"contradictions\": [\n    {\n      \"contradiction_id\": \"C-001\",\n      \"description\": \"Wirecard said KPMG found no incriminating evidence and no significant findings requiring account adjustments, while also acknowledging that KPMG lacked data needed to prove certain revenues; the EU briefing further reports that KPMG could not verify 1 billion euros in foreign bank accounts. This is an evidentiary tension rather than a proven direct contradiction.\",\n      \"source_references\": [\n        \"SRC-001\",\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"contradiction_id\": \"C-002\",\n      \"description\": \"The April 2020 corporate announcement described no required adjustments to the 2016-2018 accounts, while the June 2020 bankruptcy filing acknowledged 1.9 billion euros in missing financial assets. The cited sources do not provide sufficient accounting detail to reconcile the statements.\",\n      \"source_references\": [\n        \"SRC-001\",\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"contradiction_id\": \"C-003\",\n      \"description\": \"The EU briefing presents broad institutional-failure conclusions but expressly cautions against hindsight bias and frames them as the authors' assessment. The conclusions therefore should not be treated as definitive legal findings.\",\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    }\n  ]\n}\n```",
+    "operational": {
+      "duration_ms": 419321.92,
+      "mode": "offline",
+      "iterations": 13,
+      "search_calls": 4,
+      "fetch_calls": 2,
+      "knowledge_base_calls": 2,
+      "termination_reason": "final_report"
+    },
+    "output": {
+      "entities": [
+        {
+          "type": "DOCUMENT",
+          "value": "SRC-002"
+        },
+        {
+          "type": "DOCUMENT",
+          "value": "Zatarra report"
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "EU Economic Governance Support Unit"
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "Wirecard"
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "KPMG"
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "BaFin"
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "FREP"
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "Financial Times"
+        },
+        {
+          "type": "EVENT",
+          "value": "FREP investigation of Wirecard"
+        },
+        {
+          "type": "EVENT",
+          "value": "KPMG special audit of Wirecard"
+        },
+        {
+          "type": "EVENT",
+          "value": "BaFin criminal complaint against Wirecard"
+        },
+        {
+          "type": "EVENT",
+          "value": "Wirecard bankruptcy"
+        },
+        {
+          "type": "DATE",
+          "value": "2019-01"
+        },
+        {
+          "type": "DATE",
+          "value": "2019-10"
+        },
+        {
+          "type": "DATE",
+          "value": "2020-04"
+        },
+        {
+          "type": "DATE",
+          "value": "2020-06"
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "Wirecard"
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "KPMG"
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "EY"
+        },
+        {
+          "type": "DOCUMENT",
+          "value": "SRC-001"
+        },
+        {
+          "type": "DATE",
+          "value": "2020-04-28"
+        },
+        {
+          "type": "PRODUCT",
+          "value": "TPA"
+        },
+        {
+          "type": "PRODUCT",
+          "value": "MCA/Digital Lending"
+        },
+        {
+          "type": "LOCATION",
+          "value": "India"
+        },
+        {
+          "type": "LOCATION",
+          "value": "Singapore"
+        }
+      ],
+      "relations": [
+        {
+          "relation_type": "PUBLISHED_BY",
+          "from_type": "organization",
+          "from_value": "EU Economic Governance Support Unit",
+          "to_type": "document",
+          "to_value": "SRC-002"
+        },
+        {
+          "relation_type": "PERFORMED_SPECIAL_AUDIT",
+          "from_type": "organization",
+          "from_value": "KPMG",
+          "to_type": "organization",
+          "to_value": "Wirecard"
+        },
+        {
+          "relation_type": "SUPERVISED_OR_INQUIRED_ABOUT",
+          "from_type": "organization",
+          "from_value": "BaFin",
+          "to_type": "organization",
+          "to_value": "Wirecard"
+        },
+        {
+          "relation_type": "SUPERVISED_OR_INQUIRED_ABOUT",
+          "from_type": "organization",
+          "from_value": "FREP",
+          "to_type": "organization",
+          "to_value": "Wirecard"
+        },
+        {
+          "relation_type": "LINKED_TO",
+          "from_type": "document",
+          "from_value": "Zatarra report",
+          "to_type": "organization",
+          "to_value": "Wirecard"
+        },
+        {
+          "relation_type": "OCCURRED_ON",
+          "from_type": "event",
+          "from_value": "FREP investigation of Wirecard",
+          "to_type": "date",
+          "to_value": "2019-01"
+        },
+        {
+          "relation_type": "OCCURRED_ON",
+          "from_type": "event",
+          "from_value": "KPMG special audit of Wirecard",
+          "to_type": "date",
+          "to_value": "2019-10"
+        },
+        {
+          "relation_type": "OCCURRED_ON",
+          "from_type": "event",
+          "from_value": "KPMG special audit of Wirecard",
+          "to_type": "date",
+          "to_value": "2020-04"
+        },
+        {
+          "relation_type": "OCCURRED_ON",
+          "from_type": "event",
+          "from_value": "BaFin criminal complaint against Wirecard",
+          "to_type": "date",
+          "to_value": "2020-06"
+        },
+        {
+          "relation_type": "OCCURRED_ON",
+          "from_type": "event",
+          "from_value": "Wirecard bankruptcy",
+          "to_type": "date",
+          "to_value": "2020-06"
+        },
+        {
+          "relation_type": "PUBLISHED_BY",
+          "from_type": "document",
+          "from_value": "SRC-001",
+          "to_type": "organization",
+          "to_value": "Wirecard"
+        },
+        {
+          "relation_type": "PERFORMED_SPECIAL_AUDIT",
+          "from_type": "organization",
+          "from_value": "KPMG",
+          "to_type": "organization",
+          "to_value": "Wirecard"
+        },
+        {
+          "relation_type": "BUSINESS_AREA_UNDER_AUDIT",
+          "from_type": "product",
+          "from_value": "TPA",
+          "to_type": "organization",
+          "to_value": "KPMG"
+        },
+        {
+          "relation_type": "BUSINESS_AREA_UNDER_AUDIT",
+          "from_type": "product",
+          "from_value": "MCA/Digital Lending",
+          "to_type": "organization",
+          "to_value": "KPMG"
+        },
+        {
+          "relation_type": "BUSINESS_AREA_UNDER_AUDIT",
+          "from_type": "location",
+          "from_value": "India",
+          "to_type": "organization",
+          "to_value": "KPMG"
+        },
+        {
+          "relation_type": "BUSINESS_AREA_UNDER_AUDIT",
+          "from_type": "location",
+          "from_value": "Singapore",
+          "to_type": "organization",
+          "to_value": "KPMG"
+        }
+      ],
+      "source_references": [
+        "SRC-001",
+        "SRC-002"
+      ],
+      "citations": [
+        "SRC-001",
+        "SRC-002"
+      ],
+      "available_source_references": [
+        "SRC-001",
+        "SRC-002"
+      ],
+      "report": "# Wirecard / Jan Marsalek public-fraud trail\n\n## Scope and evidentiary limits\n\nThis report uses only evidence returned by the benchmark tools. The benchmark sources establish a public trail involving Wirecard’s statements, KPMG’s audit uncertainty, missing assets, and supervisory weaknesses. The returned benchmark evidence does **not** provide a source ID containing specific facts about Jan Marsalek’s disappearance, whereabouts, escape route, or alleged intelligence links. Those matters are therefore not asserted here.\n\n## Executive assessment\n\nThe evidence supports a sequence in which concerns about Wirecard’s accounting and business practices appeared years before its collapse; supervisory and audit processes followed but did not resolve the concerns promptly; Wirecard publicly characterized the April 2020 KPMG review as not finding incriminating evidence of balance-sheet forgery while acknowledging important data and documentation limitations; and, shortly afterward, Wirecard’s bankruptcy filing acknowledged €1.9 billion in missing financial assets. An EU policy briefing assessed that multiple defenses—including internal controls, the supervisory board, external audit, financial-reporting oversight, and BaFin—failed in one way or another. That assessment is explicitly an authors’ policy analysis and should not be treated as a judicial finding. [SRC-001] [SRC-002]\n\n## Reconstructed timeline\n\n- **2015 onward:** The EU policy briefing reports allegations of accounting inconsistencies, including Financial Times reporting concerning Wirecard’s Singapore operations. [SRC-002]\n- **2016:** The Zatarra Report allegedly accused Wirecard of money laundering and fraud. The report’s allegations are described in the briefing; they are not independently established here. [SRC-002]\n- **January 2019:** BaFin requested an investigation of Wirecard’s financial statements by FREP, Germany’s private financial-reporting enforcement body operating under a public mandate. [SRC-002]\n- **2019:** Further Financial Times reporting alleged inflated sales and profit figures and was described as being supported by internal documents. [SRC-002]\n- **October 2019:** Wirecard hired KPMG to conduct a forensic investigation. [SRC-002]\n- **April 2020:** KPMG’s report was delayed until April. The EU briefing states that KPMG was unable to verify the existence of €1 billion in foreign bank accounts. [SRC-002]\n- **28 April 2020:** Wirecard issued a regulatory announcement stating that KPMG had found no incriminating evidence for public allegations of balance-sheet forgery and no significant findings requiring adjustments to the 2016–2018 annual accounts. [SRC-001]\n- **28 April 2020:** In the same announcement, Wirecard stated that KPMG could not obtain all data required to prove certain third-party-acquiring revenues because the data were primarily controlled by third parties. Wirecard also disclosed documentation and organizational weaknesses and postponed publication of its annual accounts and annual press conference. [SRC-001]\n- **June 2020:** The EU briefing states that BaFin filed a criminal complaint against Wirecard. [SRC-002]\n- **A few days later in June 2020:** Wirecard filed for bankruptcy and acknowledged that €1.9 billion in financial assets were missing. [SRC-002]\n\n## Findings\n\n### 1. What early warning signals preceded the collapse?\n\nThere were publicly reported allegations and investigative signals years before the bankruptcy: accounting inconsistencies reported from 2015, the 2016 Zatarra Report’s allegations, and continuing Financial Times reporting. The EU briefing characterizes these as signals suggesting fraudulent behavior, while cautioning against hindsight bias. [SRC-002]\n\n### 2. What did Wirecard publicly say about the KPMG review?\n\nWirecard stated on 28 April 2020 that KPMG had not identified incriminating evidence supporting public allegations of balance-sheet forgery and had found no significant findings requiring adjustments to the 2016–2018 accounts. The statement covered the third-party-acquiring business, merchant cash advance/digital lending, and activities in India and Singapore. [SRC-001]\n\nThis was Wirecard’s regulatory announcement—not an independent conclusion adopted by this report. [SRC-001]\n\n### 3. What uncertainty did the KPMG process contain?\n\nWirecard’s own announcement said that, under KPMG’s heightened forensic requirements, not all data needed to prove third-party-acquiring revenues could be obtained because the relevant data were controlled by third parties. The announcement also said KPMG had identified documentation and organizational weaknesses. [SRC-001]\n\nSeparately, the EU briefing states that KPMG could not verify the existence of €1 billion in foreign bank accounts. [SRC-002]\n\n### 4. What happened to the reported cash?\n\nThe strongest benchmark-supported endpoint is that, after BaFin’s June 2020 criminal complaint, Wirecard filed for bankruptcy and acknowledged €1.9 billion in missing financial assets. The sources do not establish in this record the precise location, mechanism, or ultimate disposition of those assets. [SRC-002]\n\n### 5. What supervisory failures are supported?\n\nThe EU policy briefing assesses that all five identified lines of defense failed in one way or another:\n\n1. Wirecard’s internal control system;\n2. its supervisory board;\n3. external audit;\n4. oversight bodies for financial reporting and auditing; and\n5. BaFin as market supervisor.\n\nThe briefing attributes the slow detection to a flawed market and institutional oversight architecture and identifies weaknesses in information flows, whistleblower treatment, external audits, internal controls, market forces, and supervisory investigation and enforcement powers. These are the authors’ assessments, not findings independently adjudicated by the benchmark evidence. [SRC-002]\n\n### 6. What can be established about Jan Marsalek’s disappearance?\n\nThe benchmark tool results returned a Wikipedia search result for Jan Marsalek, but that result did not provide a source ID and therefore cannot be cited under the requested evidentiary rule. The cited sources [SRC-001] and [SRC-002] do not provide facts about his disappearance, current whereabouts, alleged escape, or alleged intelligence connections.\n\nAccordingly, the Jan Marsalek disappearance portion of the requested trail remains **unsubstantiated in the benchmark evidence available here**.\n\n## Assessment of the fraud trail\n\nThe evidence supports a cumulative pattern rather than a single decisive disclosure:\n\n1. allegations and reporting emerged years before the collapse;\n2. regulatory and investigative responses occurred, including the FREP inquiry and KPMG engagement;\n3. Wirecard publicly emphasized the absence of incriminating evidence in KPMG’s report;\n4. the same announcement disclosed limitations in the available audit evidence and organizational weaknesses;\n5. the EU briefing records that KPMG could not verify €1 billion in foreign accounts;\n6. Wirecard subsequently acknowledged €1.9 billion in missing financial assets during bankruptcy proceedings.\n\nThe central tension is therefore between Wirecard’s public characterization of KPMG’s findings and the unresolved verification limitations documented in the same announcement and in the EU briefing. The evidence supports describing this as **audit uncertainty followed by a major cash shortfall**, but it does not by itself prove the full criminal mechanism, identify every responsible person, or establish Jan Marsalek’s post-collapse movements. [SRC-001] [SRC-002]\n\n## Contradictions and tensions\n\n- **Public reassurance versus unresolved verification:** Wirecard said KPMG found no incriminating evidence and no account-adjustment findings, while also saying KPMG lacked all data needed to prove certain revenues. The EU briefing additionally states that KPMG could not verify €1 billion in foreign bank accounts. This is an evidentiary tension, not necessarily a direct logical contradiction, because the statements concern different audit conclusions and evidentiary thresholds. [SRC-001] [SRC-002]\n- **Reported financial position versus later missing assets:** The April 2020 announcement presented the review as not requiring adjustments to the 2016–2018 annual accounts, whereas the June 2020 bankruptcy filing acknowledged €1.9 billion in missing financial assets. The sources do not provide enough detail to determine precisely how the figures and accounting periods relate. [SRC-001] [SRC-002]\n- **Scope of the supervisory assessment:** The EU briefing says all five lines of defense failed “in one way or another,” but it also warns against hindsight bias and presents the conclusion as an analytical assessment. It should not be recast as a definitive legal determination of liability. [SRC-002]\n\n## Conclusion\n\nThe benchmark evidence reconstructs a public-fraud trail in which repeated warning signals were followed by delayed or incomplete verification, public corporate reassurance, unresolved audit limitations, supervisory shortcomings, and ultimately Wirecard’s acknowledgment of €1.9 billion in missing financial assets and bankruptcy. The EU policy briefing’s principal assessment is systemic: responsibility for the failure to detect and stop the alleged fraud was distributed across corporate controls, the supervisory board, auditors, oversight bodies, and BaFin. [SRC-002]\n\nThe evidence supplied here does **not** support a factual reconstruction of Jan Marsalek’s disappearance. Any account of that aspect would require additional benchmark sources with identifiable source IDs.\n\n```json\n{\n  \"findings\": [\n    {\n      \"question\": \"What warning signals preceded Wirecard's collapse?\",\n      \"answer\": \"The evidence reports accounting-inconsistency allegations from 2015 onward, the 2016 Zatarra Report's allegations of money laundering and fraud, and continuing Financial Times reporting alleging inflated sales and profit figures. The EU briefing treats these as signals but cautions against hindsight bias.\",\n      \"supporting_entities\": [\n        \"Wirecard\",\n        \"Zatarra report\",\n        \"Financial Times\"\n      ],\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"question\": \"What supervisory action occurred before the collapse?\",\n      \"answer\": \"BaFin requested a FREP investigation of Wirecard's financial statements in January 2019 and filed a criminal complaint against Wirecard in June 2020.\",\n      \"supporting_entities\": [\n        \"BaFin\",\n        \"FREP\",\n        \"Wirecard\",\n        \"FREP investigation of Wirecard\",\n        \"BaFin criminal complaint against Wirecard\"\n      ],\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"question\": \"What did Wirecard say about KPMG's April 2020 review?\",\n      \"answer\": \"Wirecard said KPMG had found no incriminating evidence for public allegations of balance-sheet forgery and no significant findings requiring adjustment of the 2016-2018 annual accounts across the reviewed business areas.\",\n      \"supporting_entities\": [\n        \"Wirecard\",\n        \"KPMG\",\n        \"KPMG special audit of Wirecard\",\n        \"TPA\",\n        \"MCA/Digital Lending\",\n        \"India\",\n        \"Singapore\"\n      ],\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"question\": \"What audit uncertainty remained?\",\n      \"answer\": \"Wirecard said KPMG could not obtain all data needed to prove certain third-party-acquiring revenues because the data were controlled by third parties. The EU briefing states that KPMG could not verify the existence of 1 billion euros in foreign bank accounts. KPMG also identified documentation and organizational weaknesses.\",\n      \"supporting_entities\": [\n        \"Wirecard\",\n        \"KPMG\",\n        \"KPMG special audit of Wirecard\",\n        \"TPA\"\n      ],\n      \"source_references\": [\n        \"SRC-001\",\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"question\": \"What happened to the reported cash?\",\n      \"answer\": \"A few days after BaFin's June 2020 criminal complaint, Wirecard filed for bankruptcy and acknowledged that 1.9 billion euros in financial assets were missing. The mechanism, location, and disposition of the assets are not established by the cited evidence.\",\n      \"supporting_entities\": [\n        \"Wirecard\",\n        \"Wirecard bankruptcy\",\n        \"BaFin criminal complaint against Wirecard\"\n      ],\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"question\": \"What supervisory failures are supported?\",\n      \"answer\": \"The EU policy briefing assesses that Wirecard's internal controls, supervisory board, external audit, financial-reporting and auditing oversight bodies, and BaFin all failed in one way or another. This is an authors' policy assessment, not an adjudicated legal finding.\",\n      \"supporting_entities\": [\n        \"Wirecard\",\n        \"BaFin\"\n      ],\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"question\": \"What is established about Jan Marsalek's disappearance?\",\n      \"answer\": \"No source with an identifiable benchmark source ID returned facts about Jan Marsalek's disappearance, whereabouts, or post-collapse movements. Those matters remain unsubstantiated in this record.\",\n      \"supporting_entities\": [\n        \"Jan Marsalek\"\n      ],\n      \"source_references\": []\n    }\n  ],\n  \"claims\": [\n    {\n      \"claim\": \"The public record in the benchmark evidence shows a progression from early allegations and reporting to regulatory inquiries, an inconclusive or limited forensic process, and a later acknowledgment of 1.9 billion euros in missing financial assets.\",\n      \"source_references\": [\n        \"SRC-001\",\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"claim\": \"Wirecard's 28 April 2020 announcement was a company statement and should not be treated as an independent finding that no fraud occurred.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"claim\": \"The EU policy briefing attributes the slow detection of the scandal to weaknesses across multiple lines of defense and in the market and institutional oversight architecture.\",\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"claim\": \"The cited benchmark evidence does not establish the criminal mechanism behind the missing assets or Jan Marsalek's disappearance.\",\n      \"source_references\": [\n        \"SRC-001\",\n        \"SRC-002\"\n      ]\n    }\n  ],\n  \"reasoning_steps\": [\n    {\n      \"id\": \"RS-001\",\n      \"conclusion\": \"Warning signals existed before the 2020 collapse.\",\n      \"premise_entities\": [\n        \"Wirecard\",\n        \"Zatarra report\",\n        \"Financial Times\"\n      ],\n      \"premise_relations\": [\n        \"linked_to\"\n      ]\n    },\n    {\n      \"id\": \"RS-002\",\n      \"conclusion\": \"Regulatory scrutiny preceded the bankruptcy.\",\n      \"premise_entities\": [\n        \"BaFin\",\n        \"FREP\",\n        \"Wirecard\",\n        \"FREP investigation of Wirecard\",\n        \"BaFin criminal complaint against Wirecard\"\n      ],\n      \"premise_relations\": [\n        \"supervised_or_inquired_about\",\n        \"occurred_on\"\n      ]\n    },\n    {\n      \"id\": \"RS-003\",\n      \"conclusion\": \"The KPMG process did not eliminate material uncertainty about Wirecard's financial reporting.\",\n      \"premise_entities\": [\n        \"KPMG\",\n        \"Wirecard\",\n        \"KPMG special audit of Wirecard\",\n        \"TPA\"\n      ],\n      \"premise_relations\": [\n        \"performed_special_audit\",\n        \"business_area_under_audit\"\n      ]\n    },\n    {\n      \"id\": \"RS-004\",\n      \"conclusion\": \"The later bankruptcy acknowledgment materially changed the evidentiary picture from public reassurance to confirmed missing financial assets.\",\n      \"premise_entities\": [\n        \"Wirecard\",\n        \"Wirecard bankruptcy\",\n        \"KPMG special audit of Wirecard\"\n      ],\n      \"premise_relations\": [\n        \"occurred_on\",\n        \"performed_special_audit\"\n      ]\n    },\n    {\n      \"id\": \"RS-005\",\n      \"conclusion\": \"The benchmark record is insufficient to reconstruct Jan Marsalek's disappearance.\",\n      \"premise_entities\": [\n        \"Jan Marsalek\"\n      ],\n      \"premise_relations\": []\n    }\n  ],\n  \"contradictions\": [\n    {\n      \"contradiction_id\": \"C-001\",\n      \"description\": \"Wirecard said KPMG found no incriminating evidence and no significant findings requiring account adjustments, while also acknowledging that KPMG lacked data needed to prove certain revenues; the EU briefing further reports that KPMG could not verify 1 billion euros in foreign bank accounts. This is an evidentiary tension rather than a proven direct contradiction.\",\n      \"source_references\": [\n        \"SRC-001\",\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"contradiction_id\": \"C-002\",\n      \"description\": \"The April 2020 corporate announcement described no required adjustments to the 2016-2018 accounts, while the June 2020 bankruptcy filing acknowledged 1.9 billion euros in missing financial assets. The cited sources do not provide sufficient accounting detail to reconcile the statements.\",\n      \"source_references\": [\n        \"SRC-001\",\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"contradiction_id\": \"C-003\",\n      \"description\": \"The EU briefing presents broad institutional-failure conclusions but expressly cautions against hindsight bias and frames them as the authors' assessment. The conclusions therefore should not be treated as definitive legal findings.\",\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    }\n  ]\n}\n```",
+      "operational": {
+        "duration_ms": 419321.92,
+        "mode": "offline",
+        "iterations": 13,
+        "search_calls": 4,
+        "fetch_calls": 2,
+        "knowledge_base_calls": 2,
+        "termination_reason": "final_report"
+      },
+      "graph_capture_source": "trace",
+      "key_findings": [
+        {
+          "question": "What warning signals preceded Wirecard's collapse?",
+          "answer": "The evidence reports accounting-inconsistency allegations from 2015 onward, the 2016 Zatarra Report's allegations of money laundering and fraud, and continuing Financial Times reporting alleging inflated sales and profit figures. The EU briefing treats these as signals but cautions against hindsight bias.",
+          "supporting_entities": [
+            "Wirecard",
+            "Zatarra report",
+            "Financial Times"
+          ],
+          "source_references": [
+            "SRC-002"
+          ]
+        },
+        {
+          "question": "What supervisory action occurred before the collapse?",
+          "answer": "BaFin requested a FREP investigation of Wirecard's financial statements in January 2019 and filed a criminal complaint against Wirecard in June 2020.",
+          "supporting_entities": [
+            "BaFin",
+            "FREP",
+            "Wirecard",
+            "FREP investigation of Wirecard",
+            "BaFin criminal complaint against Wirecard"
+          ],
+          "source_references": [
+            "SRC-002"
+          ]
+        },
+        {
+          "question": "What did Wirecard say about KPMG's April 2020 review?",
+          "answer": "Wirecard said KPMG had found no incriminating evidence for public allegations of balance-sheet forgery and no significant findings requiring adjustment of the 2016-2018 annual accounts across the reviewed business areas.",
+          "supporting_entities": [
+            "Wirecard",
+            "KPMG",
+            "KPMG special audit of Wirecard",
+            "TPA",
+            "MCA/Digital Lending",
+            "India",
+            "Singapore"
+          ],
+          "source_references": [
+            "SRC-001"
+          ]
+        },
+        {
+          "question": "What audit uncertainty remained?",
+          "answer": "Wirecard said KPMG could not obtain all data needed to prove certain third-party-acquiring revenues because the data were controlled by third parties. The EU briefing states that KPMG could not verify the existence of 1 billion euros in foreign bank accounts. KPMG also identified documentation and organizational weaknesses.",
+          "supporting_entities": [
+            "Wirecard",
+            "KPMG",
+            "KPMG special audit of Wirecard",
+            "TPA"
+          ],
+          "source_references": [
+            "SRC-001",
+            "SRC-002"
+          ]
+        },
+        {
+          "question": "What happened to the reported cash?",
+          "answer": "A few days after BaFin's June 2020 criminal complaint, Wirecard filed for bankruptcy and acknowledged that 1.9 billion euros in financial assets were missing. The mechanism, location, and disposition of the assets are not established by the cited evidence.",
+          "supporting_entities": [
+            "Wirecard",
+            "Wirecard bankruptcy",
+            "BaFin criminal complaint against Wirecard"
+          ],
+          "source_references": [
+            "SRC-002"
+          ]
+        },
+        {
+          "question": "What supervisory failures are supported?",
+          "answer": "The EU policy briefing assesses that Wirecard's internal controls, supervisory board, external audit, financial-reporting and auditing oversight bodies, and BaFin all failed in one way or another. This is an authors' policy assessment, not an adjudicated legal finding.",
+          "supporting_entities": [
+            "Wirecard",
+            "BaFin"
+          ],
+          "source_references": [
+            "SRC-002"
+          ]
+        },
+        {
+          "question": "What is established about Jan Marsalek's disappearance?",
+          "answer": "No source with an identifiable benchmark source ID returned facts about Jan Marsalek's disappearance, whereabouts, or post-collapse movements. Those matters remain unsubstantiated in this record.",
+          "supporting_entities": [
+            "Jan Marsalek"
+          ],
+          "source_references": []
+        }
+      ],
+      "contradictions": [
+        {
+          "contradiction_id": "C-001",
+          "description": "Wirecard said KPMG found no incriminating evidence and no significant findings requiring account adjustments, while also acknowledging that KPMG lacked data needed to prove certain revenues; the EU briefing further reports that KPMG could not verify 1 billion euros in foreign bank accounts. This is an evidentiary tension rather than a proven direct contradiction.",
+          "source_references": [
+            "SRC-001",
+            "SRC-002"
+          ]
+        },
+        {
+          "contradiction_id": "C-002",
+          "description": "The April 2020 corporate announcement described no required adjustments to the 2016-2018 accounts, while the June 2020 bankruptcy filing acknowledged 1.9 billion euros in missing financial assets. The cited sources do not provide sufficient accounting detail to reconcile the statements.",
+          "source_references": [
+            "SRC-001",
+            "SRC-002"
+          ]
+        },
+        {
+          "contradiction_id": "C-003",
+          "description": "The EU briefing presents broad institutional-failure conclusions but expressly cautions against hindsight bias and frames them as the authors' assessment. The conclusions therefore should not be treated as definitive legal findings.",
+          "source_references": [
+            "SRC-002"
+          ]
+        }
+      ],
+      "reasoning_steps": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reasoning_step_details": [
+        {
+          "id": 1,
+          "conclusion": "Warning signals existed before the 2020 collapse.",
+          "premise_entities": [
+            "Wirecard",
+            "Zatarra report",
+            "Financial Times"
+          ],
+          "premise_relations": [
+            "linked_to"
+          ]
+        },
+        {
+          "id": 2,
+          "conclusion": "Regulatory scrutiny preceded the bankruptcy.",
+          "premise_entities": [
+            "BaFin",
+            "FREP",
+            "Wirecard",
+            "FREP investigation of Wirecard",
+            "BaFin criminal complaint against Wirecard"
+          ],
+          "premise_relations": [
+            "supervised_or_inquired_about",
+            "occurred_on"
+          ]
+        },
+        {
+          "id": 3,
+          "conclusion": "The KPMG process did not eliminate material uncertainty about Wirecard's financial reporting.",
+          "premise_entities": [
+            "KPMG",
+            "Wirecard",
+            "KPMG special audit of Wirecard",
+            "TPA"
+          ],
+          "premise_relations": [
+            "performed_special_audit",
+            "business_area_under_audit"
+          ]
+        },
+        {
+          "id": 4,
+          "conclusion": "The later bankruptcy acknowledgment materially changed the evidentiary picture from public reassurance to confirmed missing financial assets.",
+          "premise_entities": [
+            "Wirecard",
+            "Wirecard bankruptcy",
+            "KPMG special audit of Wirecard"
+          ],
+          "premise_relations": [
+            "occurred_on",
+            "performed_special_audit"
+          ]
+        },
+        {
+          "id": 5,
+          "conclusion": "The benchmark record is insufficient to reconstruct Jan Marsalek's disappearance.",
+          "premise_entities": [
+            "Jan Marsalek"
+          ],
+          "premise_relations": []
+        }
+      ],
+      "claims": [
+        {
+          "claim": "The public record in the benchmark evidence shows a progression from early allegations and reporting to regulatory inquiries, an inconclusive or limited forensic process, and a later acknowledgment of 1.9 billion euros in missing financial assets.",
+          "source_references": [
+            "SRC-001",
+            "SRC-002"
+          ]
+        },
+        {
+          "claim": "Wirecard's 28 April 2020 announcement was a company statement and should not be treated as an independent finding that no fraud occurred.",
+          "source_references": [
+            "SRC-001"
+          ]
+        },
+        {
+          "claim": "The EU policy briefing attributes the slow detection of the scandal to weaknesses across multiple lines of defense and in the market and institutional oversight architecture.",
+          "source_references": [
+            "SRC-002"
+          ]
+        },
+        {
+          "claim": "The cited benchmark evidence does not establish the criminal mechanism behind the missing assets or Jan Marsalek's disappearance.",
+          "source_references": [
+            "SRC-001",
+            "SRC-002"
+          ]
+        }
+      ],
+      "structured_output": true,
+      "structured_output_valid": true,
+      "structured_output_complete": true,
+      "missing_structured_sections": [],
+      "structured_output_errors": [],
+      "graph_capture_diagnostics": {
+        "entity_records_emitted": 25,
+        "relation_records_emitted": 16,
+        "knowledge_agent_calls": 2,
+        "relations_expected": 7,
+        "contradictions_expected": 1
+      }
+    }
+  },
+  "output": {
+    "entities": [
+      {
+        "type": "DOCUMENT",
+        "value": "SRC-002"
+      },
+      {
+        "type": "DOCUMENT",
+        "value": "Zatarra report"
+      },
+      {
+        "type": "ORGANIZATION",
+        "value": "EU Economic Governance Support Unit"
+      },
+      {
+        "type": "ORGANIZATION",
+        "value": "Wirecard"
+      },
+      {
+        "type": "ORGANIZATION",
+        "value": "KPMG"
+      },
+      {
+        "type": "ORGANIZATION",
+        "value": "BaFin"
+      },
+      {
+        "type": "ORGANIZATION",
+        "value": "FREP"
+      },
+      {
+        "type": "ORGANIZATION",
+        "value": "Financial Times"
+      },
+      {
+        "type": "EVENT",
+        "value": "FREP investigation of Wirecard"
+      },
+      {
+        "type": "EVENT",
+        "value": "KPMG special audit of Wirecard"
+      },
+      {
+        "type": "EVENT",
+        "value": "BaFin criminal complaint against Wirecard"
+      },
+      {
+        "type": "EVENT",
+        "value": "Wirecard bankruptcy"
+      },
+      {
+        "type": "DATE",
+        "value": "2019-01"
+      },
+      {
+        "type": "DATE",
+        "value": "2019-10"
+      },
+      {
+        "type": "DATE",
+        "value": "2020-04"
+      },
+      {
+        "type": "DATE",
+        "value": "2020-06"
+      },
+      {
+        "type": "ORGANIZATION",
+        "value": "Wirecard"
+      },
+      {
+        "type": "ORGANIZATION",
+        "value": "KPMG"
+      },
+      {
+        "type": "ORGANIZATION",
+        "value": "EY"
+      },
+      {
+        "type": "DOCUMENT",
+        "value": "SRC-001"
+      },
+      {
+        "type": "DATE",
+        "value": "2020-04-28"
+      },
+      {
+        "type": "PRODUCT",
+        "value": "TPA"
+      },
+      {
+        "type": "PRODUCT",
+        "value": "MCA/Digital Lending"
+      },
+      {
+        "type": "LOCATION",
+        "value": "India"
+      },
+      {
+        "type": "LOCATION",
+        "value": "Singapore"
+      }
+    ],
+    "relations": [
+      {
+        "relation_type": "PUBLISHED_BY",
+        "from_type": "organization",
+        "from_value": "EU Economic Governance Support Unit",
+        "to_type": "document",
+        "to_value": "SRC-002"
+      },
+      {
+        "relation_type": "PERFORMED_SPECIAL_AUDIT",
+        "from_type": "organization",
+        "from_value": "KPMG",
+        "to_type": "organization",
+        "to_value": "Wirecard"
+      },
+      {
+        "relation_type": "SUPERVISED_OR_INQUIRED_ABOUT",
+        "from_type": "organization",
+        "from_value": "BaFin",
+        "to_type": "organization",
+        "to_value": "Wirecard"
+      },
+      {
+        "relation_type": "SUPERVISED_OR_INQUIRED_ABOUT",
+        "from_type": "organization",
+        "from_value": "FREP",
+        "to_type": "organization",
+        "to_value": "Wirecard"
+      },
+      {
+        "relation_type": "LINKED_TO",
+        "from_type": "document",
+        "from_value": "Zatarra report",
+        "to_type": "organization",
+        "to_value": "Wirecard"
+      },
+      {
+        "relation_type": "OCCURRED_ON",
+        "from_type": "event",
+        "from_value": "FREP investigation of Wirecard",
+        "to_type": "date",
+        "to_value": "2019-01"
+      },
+      {
+        "relation_type": "OCCURRED_ON",
+        "from_type": "event",
+        "from_value": "KPMG special audit of Wirecard",
+        "to_type": "date",
+        "to_value": "2019-10"
+      },
+      {
+        "relation_type": "OCCURRED_ON",
+        "from_type": "event",
+        "from_value": "KPMG special audit of Wirecard",
+        "to_type": "date",
+        "to_value": "2020-04"
+      },
+      {
+        "relation_type": "OCCURRED_ON",
+        "from_type": "event",
+        "from_value": "BaFin criminal complaint against Wirecard",
+        "to_type": "date",
+        "to_value": "2020-06"
+      },
+      {
+        "relation_type": "OCCURRED_ON",
+        "from_type": "event",
+        "from_value": "Wirecard bankruptcy",
+        "to_type": "date",
+        "to_value": "2020-06"
+      },
+      {
+        "relation_type": "PUBLISHED_BY",
+        "from_type": "document",
+        "from_value": "SRC-001",
+        "to_type": "organization",
+        "to_value": "Wirecard"
+      },
+      {
+        "relation_type": "PERFORMED_SPECIAL_AUDIT",
+        "from_type": "organization",
+        "from_value": "KPMG",
+        "to_type": "organization",
+        "to_value": "Wirecard"
+      },
+      {
+        "relation_type": "BUSINESS_AREA_UNDER_AUDIT",
+        "from_type": "product",
+        "from_value": "TPA",
+        "to_type": "organization",
+        "to_value": "KPMG"
+      },
+      {
+        "relation_type": "BUSINESS_AREA_UNDER_AUDIT",
+        "from_type": "product",
+        "from_value": "MCA/Digital Lending",
+        "to_type": "organization",
+        "to_value": "KPMG"
+      },
+      {
+        "relation_type": "BUSINESS_AREA_UNDER_AUDIT",
+        "from_type": "location",
+        "from_value": "India",
+        "to_type": "organization",
+        "to_value": "KPMG"
+      },
+      {
+        "relation_type": "BUSINESS_AREA_UNDER_AUDIT",
+        "from_type": "location",
+        "from_value": "Singapore",
+        "to_type": "organization",
+        "to_value": "KPMG"
+      }
+    ],
+    "source_references": [
+      "SRC-001",
+      "SRC-002"
+    ],
+    "citations": [
+      "SRC-001",
+      "SRC-002"
+    ],
+    "available_source_references": [
+      "SRC-001",
+      "SRC-002"
+    ],
+    "report": "# Wirecard / Jan Marsalek public-fraud trail\n\n## Scope and evidentiary limits\n\nThis report uses only evidence returned by the benchmark tools. The benchmark sources establish a public trail involving Wirecard’s statements, KPMG’s audit uncertainty, missing assets, and supervisory weaknesses. The returned benchmark evidence does **not** provide a source ID containing specific facts about Jan Marsalek’s disappearance, whereabouts, escape route, or alleged intelligence links. Those matters are therefore not asserted here.\n\n## Executive assessment\n\nThe evidence supports a sequence in which concerns about Wirecard’s accounting and business practices appeared years before its collapse; supervisory and audit processes followed but did not resolve the concerns promptly; Wirecard publicly characterized the April 2020 KPMG review as not finding incriminating evidence of balance-sheet forgery while acknowledging important data and documentation limitations; and, shortly afterward, Wirecard’s bankruptcy filing acknowledged €1.9 billion in missing financial assets. An EU policy briefing assessed that multiple defenses—including internal controls, the supervisory board, external audit, financial-reporting oversight, and BaFin—failed in one way or another. That assessment is explicitly an authors’ policy analysis and should not be treated as a judicial finding. [SRC-001] [SRC-002]\n\n## Reconstructed timeline\n\n- **2015 onward:** The EU policy briefing reports allegations of accounting inconsistencies, including Financial Times reporting concerning Wirecard’s Singapore operations. [SRC-002]\n- **2016:** The Zatarra Report allegedly accused Wirecard of money laundering and fraud. The report’s allegations are described in the briefing; they are not independently established here. [SRC-002]\n- **January 2019:** BaFin requested an investigation of Wirecard’s financial statements by FREP, Germany’s private financial-reporting enforcement body operating under a public mandate. [SRC-002]\n- **2019:** Further Financial Times reporting alleged inflated sales and profit figures and was described as being supported by internal documents. [SRC-002]\n- **October 2019:** Wirecard hired KPMG to conduct a forensic investigation. [SRC-002]\n- **April 2020:** KPMG’s report was delayed until April. The EU briefing states that KPMG was unable to verify the existence of €1 billion in foreign bank accounts. [SRC-002]\n- **28 April 2020:** Wirecard issued a regulatory announcement stating that KPMG had found no incriminating evidence for public allegations of balance-sheet forgery and no significant findings requiring adjustments to the 2016–2018 annual accounts. [SRC-001]\n- **28 April 2020:** In the same announcement, Wirecard stated that KPMG could not obtain all data required to prove certain third-party-acquiring revenues because the data were primarily controlled by third parties. Wirecard also disclosed documentation and organizational weaknesses and postponed publication of its annual accounts and annual press conference. [SRC-001]\n- **June 2020:** The EU briefing states that BaFin filed a criminal complaint against Wirecard. [SRC-002]\n- **A few days later in June 2020:** Wirecard filed for bankruptcy and acknowledged that €1.9 billion in financial assets were missing. [SRC-002]\n\n## Findings\n\n### 1. What early warning signals preceded the collapse?\n\nThere were publicly reported allegations and investigative signals years before the bankruptcy: accounting inconsistencies reported from 2015, the 2016 Zatarra Report’s allegations, and continuing Financial Times reporting. The EU briefing characterizes these as signals suggesting fraudulent behavior, while cautioning against hindsight bias. [SRC-002]\n\n### 2. What did Wirecard publicly say about the KPMG review?\n\nWirecard stated on 28 April 2020 that KPMG had not identified incriminating evidence supporting public allegations of balance-sheet forgery and had found no significant findings requiring adjustments to the 2016–2018 accounts. The statement covered the third-party-acquiring business, merchant cash advance/digital lending, and activities in India and Singapore. [SRC-001]\n\nThis was Wirecard’s regulatory announcement—not an independent conclusion adopted by this report. [SRC-001]\n\n### 3. What uncertainty did the KPMG process contain?\n\nWirecard’s own announcement said that, under KPMG’s heightened forensic requirements, not all data needed to prove third-party-acquiring revenues could be obtained because the relevant data were controlled by third parties. The announcement also said KPMG had identified documentation and organizational weaknesses. [SRC-001]\n\nSeparately, the EU briefing states that KPMG could not verify the existence of €1 billion in foreign bank accounts. [SRC-002]\n\n### 4. What happened to the reported cash?\n\nThe strongest benchmark-supported endpoint is that, after BaFin’s June 2020 criminal complaint, Wirecard filed for bankruptcy and acknowledged €1.9 billion in missing financial assets. The sources do not establish in this record the precise location, mechanism, or ultimate disposition of those assets. [SRC-002]\n\n### 5. What supervisory failures are supported?\n\nThe EU policy briefing assesses that all five identified lines of defense failed in one way or another:\n\n1. Wirecard’s internal control system;\n2. its supervisory board;\n3. external audit;\n4. oversight bodies for financial reporting and auditing; and\n5. BaFin as market supervisor.\n\nThe briefing attributes the slow detection to a flawed market and institutional oversight architecture and identifies weaknesses in information flows, whistleblower treatment, external audits, internal controls, market forces, and supervisory investigation and enforcement powers. These are the authors’ assessments, not findings independently adjudicated by the benchmark evidence. [SRC-002]\n\n### 6. What can be established about Jan Marsalek’s disappearance?\n\nThe benchmark tool results returned a Wikipedia search result for Jan Marsalek, but that result did not provide a source ID and therefore cannot be cited under the requested evidentiary rule. The cited sources [SRC-001] and [SRC-002] do not provide facts about his disappearance, current whereabouts, alleged escape, or alleged intelligence connections.\n\nAccordingly, the Jan Marsalek disappearance portion of the requested trail remains **unsubstantiated in the benchmark evidence available here**.\n\n## Assessment of the fraud trail\n\nThe evidence supports a cumulative pattern rather than a single decisive disclosure:\n\n1. allegations and reporting emerged years before the collapse;\n2. regulatory and investigative responses occurred, including the FREP inquiry and KPMG engagement;\n3. Wirecard publicly emphasized the absence of incriminating evidence in KPMG’s report;\n4. the same announcement disclosed limitations in the available audit evidence and organizational weaknesses;\n5. the EU briefing records that KPMG could not verify €1 billion in foreign accounts;\n6. Wirecard subsequently acknowledged €1.9 billion in missing financial assets during bankruptcy proceedings.\n\nThe central tension is therefore between Wirecard’s public characterization of KPMG’s findings and the unresolved verification limitations documented in the same announcement and in the EU briefing. The evidence supports describing this as **audit uncertainty followed by a major cash shortfall**, but it does not by itself prove the full criminal mechanism, identify every responsible person, or establish Jan Marsalek’s post-collapse movements. [SRC-001] [SRC-002]\n\n## Contradictions and tensions\n\n- **Public reassurance versus unresolved verification:** Wirecard said KPMG found no incriminating evidence and no account-adjustment findings, while also saying KPMG lacked all data needed to prove certain revenues. The EU briefing additionally states that KPMG could not verify €1 billion in foreign bank accounts. This is an evidentiary tension, not necessarily a direct logical contradiction, because the statements concern different audit conclusions and evidentiary thresholds. [SRC-001] [SRC-002]\n- **Reported financial position versus later missing assets:** The April 2020 announcement presented the review as not requiring adjustments to the 2016–2018 annual accounts, whereas the June 2020 bankruptcy filing acknowledged €1.9 billion in missing financial assets. The sources do not provide enough detail to determine precisely how the figures and accounting periods relate. [SRC-001] [SRC-002]\n- **Scope of the supervisory assessment:** The EU briefing says all five lines of defense failed “in one way or another,” but it also warns against hindsight bias and presents the conclusion as an analytical assessment. It should not be recast as a definitive legal determination of liability. [SRC-002]\n\n## Conclusion\n\nThe benchmark evidence reconstructs a public-fraud trail in which repeated warning signals were followed by delayed or incomplete verification, public corporate reassurance, unresolved audit limitations, supervisory shortcomings, and ultimately Wirecard’s acknowledgment of €1.9 billion in missing financial assets and bankruptcy. The EU policy briefing’s principal assessment is systemic: responsibility for the failure to detect and stop the alleged fraud was distributed across corporate controls, the supervisory board, auditors, oversight bodies, and BaFin. [SRC-002]\n\nThe evidence supplied here does **not** support a factual reconstruction of Jan Marsalek’s disappearance. Any account of that aspect would require additional benchmark sources with identifiable source IDs.\n\n```json\n{\n  \"findings\": [\n    {\n      \"question\": \"What warning signals preceded Wirecard's collapse?\",\n      \"answer\": \"The evidence reports accounting-inconsistency allegations from 2015 onward, the 2016 Zatarra Report's allegations of money laundering and fraud, and continuing Financial Times reporting alleging inflated sales and profit figures. The EU briefing treats these as signals but cautions against hindsight bias.\",\n      \"supporting_entities\": [\n        \"Wirecard\",\n        \"Zatarra report\",\n        \"Financial Times\"\n      ],\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"question\": \"What supervisory action occurred before the collapse?\",\n      \"answer\": \"BaFin requested a FREP investigation of Wirecard's financial statements in January 2019 and filed a criminal complaint against Wirecard in June 2020.\",\n      \"supporting_entities\": [\n        \"BaFin\",\n        \"FREP\",\n        \"Wirecard\",\n        \"FREP investigation of Wirecard\",\n        \"BaFin criminal complaint against Wirecard\"\n      ],\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"question\": \"What did Wirecard say about KPMG's April 2020 review?\",\n      \"answer\": \"Wirecard said KPMG had found no incriminating evidence for public allegations of balance-sheet forgery and no significant findings requiring adjustment of the 2016-2018 annual accounts across the reviewed business areas.\",\n      \"supporting_entities\": [\n        \"Wirecard\",\n        \"KPMG\",\n        \"KPMG special audit of Wirecard\",\n        \"TPA\",\n        \"MCA/Digital Lending\",\n        \"India\",\n        \"Singapore\"\n      ],\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"question\": \"What audit uncertainty remained?\",\n      \"answer\": \"Wirecard said KPMG could not obtain all data needed to prove certain third-party-acquiring revenues because the data were controlled by third parties. The EU briefing states that KPMG could not verify the existence of 1 billion euros in foreign bank accounts. KPMG also identified documentation and organizational weaknesses.\",\n      \"supporting_entities\": [\n        \"Wirecard\",\n        \"KPMG\",\n        \"KPMG special audit of Wirecard\",\n        \"TPA\"\n      ],\n      \"source_references\": [\n        \"SRC-001\",\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"question\": \"What happened to the reported cash?\",\n      \"answer\": \"A few days after BaFin's June 2020 criminal complaint, Wirecard filed for bankruptcy and acknowledged that 1.9 billion euros in financial assets were missing. The mechanism, location, and disposition of the assets are not established by the cited evidence.\",\n      \"supporting_entities\": [\n        \"Wirecard\",\n        \"Wirecard bankruptcy\",\n        \"BaFin criminal complaint against Wirecard\"\n      ],\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"question\": \"What supervisory failures are supported?\",\n      \"answer\": \"The EU policy briefing assesses that Wirecard's internal controls, supervisory board, external audit, financial-reporting and auditing oversight bodies, and BaFin all failed in one way or another. This is an authors' policy assessment, not an adjudicated legal finding.\",\n      \"supporting_entities\": [\n        \"Wirecard\",\n        \"BaFin\"\n      ],\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"question\": \"What is established about Jan Marsalek's disappearance?\",\n      \"answer\": \"No source with an identifiable benchmark source ID returned facts about Jan Marsalek's disappearance, whereabouts, or post-collapse movements. Those matters remain unsubstantiated in this record.\",\n      \"supporting_entities\": [\n        \"Jan Marsalek\"\n      ],\n      \"source_references\": []\n    }\n  ],\n  \"claims\": [\n    {\n      \"claim\": \"The public record in the benchmark evidence shows a progression from early allegations and reporting to regulatory inquiries, an inconclusive or limited forensic process, and a later acknowledgment of 1.9 billion euros in missing financial assets.\",\n      \"source_references\": [\n        \"SRC-001\",\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"claim\": \"Wirecard's 28 April 2020 announcement was a company statement and should not be treated as an independent finding that no fraud occurred.\",\n      \"source_references\": [\n        \"SRC-001\"\n      ]\n    },\n    {\n      \"claim\": \"The EU policy briefing attributes the slow detection of the scandal to weaknesses across multiple lines of defense and in the market and institutional oversight architecture.\",\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"claim\": \"The cited benchmark evidence does not establish the criminal mechanism behind the missing assets or Jan Marsalek's disappearance.\",\n      \"source_references\": [\n        \"SRC-001\",\n        \"SRC-002\"\n      ]\n    }\n  ],\n  \"reasoning_steps\": [\n    {\n      \"id\": \"RS-001\",\n      \"conclusion\": \"Warning signals existed before the 2020 collapse.\",\n      \"premise_entities\": [\n        \"Wirecard\",\n        \"Zatarra report\",\n        \"Financial Times\"\n      ],\n      \"premise_relations\": [\n        \"linked_to\"\n      ]\n    },\n    {\n      \"id\": \"RS-002\",\n      \"conclusion\": \"Regulatory scrutiny preceded the bankruptcy.\",\n      \"premise_entities\": [\n        \"BaFin\",\n        \"FREP\",\n        \"Wirecard\",\n        \"FREP investigation of Wirecard\",\n        \"BaFin criminal complaint against Wirecard\"\n      ],\n      \"premise_relations\": [\n        \"supervised_or_inquired_about\",\n        \"occurred_on\"\n      ]\n    },\n    {\n      \"id\": \"RS-003\",\n      \"conclusion\": \"The KPMG process did not eliminate material uncertainty about Wirecard's financial reporting.\",\n      \"premise_entities\": [\n        \"KPMG\",\n        \"Wirecard\",\n        \"KPMG special audit of Wirecard\",\n        \"TPA\"\n      ],\n      \"premise_relations\": [\n        \"performed_special_audit\",\n        \"business_area_under_audit\"\n      ]\n    },\n    {\n      \"id\": \"RS-004\",\n      \"conclusion\": \"The later bankruptcy acknowledgment materially changed the evidentiary picture from public reassurance to confirmed missing financial assets.\",\n      \"premise_entities\": [\n        \"Wirecard\",\n        \"Wirecard bankruptcy\",\n        \"KPMG special audit of Wirecard\"\n      ],\n      \"premise_relations\": [\n        \"occurred_on\",\n        \"performed_special_audit\"\n      ]\n    },\n    {\n      \"id\": \"RS-005\",\n      \"conclusion\": \"The benchmark record is insufficient to reconstruct Jan Marsalek's disappearance.\",\n      \"premise_entities\": [\n        \"Jan Marsalek\"\n      ],\n      \"premise_relations\": []\n    }\n  ],\n  \"contradictions\": [\n    {\n      \"contradiction_id\": \"C-001\",\n      \"description\": \"Wirecard said KPMG found no incriminating evidence and no significant findings requiring account adjustments, while also acknowledging that KPMG lacked data needed to prove certain revenues; the EU briefing further reports that KPMG could not verify 1 billion euros in foreign bank accounts. This is an evidentiary tension rather than a proven direct contradiction.\",\n      \"source_references\": [\n        \"SRC-001\",\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"contradiction_id\": \"C-002\",\n      \"description\": \"The April 2020 corporate announcement described no required adjustments to the 2016-2018 accounts, while the June 2020 bankruptcy filing acknowledged 1.9 billion euros in missing financial assets. The cited sources do not provide sufficient accounting detail to reconcile the statements.\",\n      \"source_references\": [\n        \"SRC-001\",\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"contradiction_id\": \"C-003\",\n      \"description\": \"The EU briefing presents broad institutional-failure conclusions but expressly cautions against hindsight bias and frames them as the authors' assessment. The conclusions therefore should not be treated as definitive legal findings.\",\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    }\n  ]\n}\n```",
+    "operational": {
+      "duration_ms": 419321.92,
+      "mode": "offline",
+      "iterations": 13,
+      "search_calls": 4,
+      "fetch_calls": 2,
+      "knowledge_base_calls": 2,
+      "termination_reason": "final_report"
+    },
+    "graph_capture_source": "trace",
+    "key_findings": [
+      {
+        "question": "What warning signals preceded Wirecard's collapse?",
+        "answer": "The evidence reports accounting-inconsistency allegations from 2015 onward, the 2016 Zatarra Report's allegations of money laundering and fraud, and continuing Financial Times reporting alleging inflated sales and profit figures. The EU briefing treats these as signals but cautions against hindsight bias.",
+        "supporting_entities": [
+          "Wirecard",
+          "Zatarra report",
+          "Financial Times"
+        ],
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "What supervisory action occurred before the collapse?",
+        "answer": "BaFin requested a FREP investigation of Wirecard's financial statements in January 2019 and filed a criminal complaint against Wirecard in June 2020.",
+        "supporting_entities": [
+          "BaFin",
+          "FREP",
+          "Wirecard",
+          "FREP investigation of Wirecard",
+          "BaFin criminal complaint against Wirecard"
+        ],
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "What did Wirecard say about KPMG's April 2020 review?",
+        "answer": "Wirecard said KPMG had found no incriminating evidence for public allegations of balance-sheet forgery and no significant findings requiring adjustment of the 2016-2018 annual accounts across the reviewed business areas.",
+        "supporting_entities": [
+          "Wirecard",
+          "KPMG",
+          "KPMG special audit of Wirecard",
+          "TPA",
+          "MCA/Digital Lending",
+          "India",
+          "Singapore"
+        ],
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "question": "What audit uncertainty remained?",
+        "answer": "Wirecard said KPMG could not obtain all data needed to prove certain third-party-acquiring revenues because the data were controlled by third parties. The EU briefing states that KPMG could not verify the existence of 1 billion euros in foreign bank accounts. KPMG also identified documentation and organizational weaknesses.",
+        "supporting_entities": [
+          "Wirecard",
+          "KPMG",
+          "KPMG special audit of Wirecard",
+          "TPA"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "What happened to the reported cash?",
+        "answer": "A few days after BaFin's June 2020 criminal complaint, Wirecard filed for bankruptcy and acknowledged that 1.9 billion euros in financial assets were missing. The mechanism, location, and disposition of the assets are not established by the cited evidence.",
+        "supporting_entities": [
+          "Wirecard",
+          "Wirecard bankruptcy",
+          "BaFin criminal complaint against Wirecard"
+        ],
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "What supervisory failures are supported?",
+        "answer": "The EU policy briefing assesses that Wirecard's internal controls, supervisory board, external audit, financial-reporting and auditing oversight bodies, and BaFin all failed in one way or another. This is an authors' policy assessment, not an adjudicated legal finding.",
+        "supporting_entities": [
+          "Wirecard",
+          "BaFin"
+        ],
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "What is established about Jan Marsalek's disappearance?",
+        "answer": "No source with an identifiable benchmark source ID returned facts about Jan Marsalek's disappearance, whereabouts, or post-collapse movements. Those matters remain unsubstantiated in this record.",
+        "supporting_entities": [
+          "Jan Marsalek"
+        ],
+        "source_references": []
+      }
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "C-001",
+        "description": "Wirecard said KPMG found no incriminating evidence and no significant findings requiring account adjustments, while also acknowledging that KPMG lacked data needed to prove certain revenues; the EU briefing further reports that KPMG could not verify 1 billion euros in foreign bank accounts. This is an evidentiary tension rather than a proven direct contradiction.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "contradiction_id": "C-002",
+        "description": "The April 2020 corporate announcement described no required adjustments to the 2016-2018 accounts, while the June 2020 bankruptcy filing acknowledged 1.9 billion euros in missing financial assets. The cited sources do not provide sufficient accounting detail to reconcile the statements.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "contradiction_id": "C-003",
+        "description": "The EU briefing presents broad institutional-failure conclusions but expressly cautions against hindsight bias and frames them as the authors' assessment. The conclusions therefore should not be treated as definitive legal findings.",
+        "source_references": [
+          "SRC-002"
+        ]
+      }
+    ],
+    "reasoning_steps": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "reasoning_step_details": [
+      {
+        "id": 1,
+        "conclusion": "Warning signals existed before the 2020 collapse.",
+        "premise_entities": [
+          "Wirecard",
+          "Zatarra report",
+          "Financial Times"
+        ],
+        "premise_relations": [
+          "linked_to"
+        ]
+      },
+      {
+        "id": 2,
+        "conclusion": "Regulatory scrutiny preceded the bankruptcy.",
+        "premise_entities": [
+          "BaFin",
+          "FREP",
+          "Wirecard",
+          "FREP investigation of Wirecard",
+          "BaFin criminal complaint against Wirecard"
+        ],
+        "premise_relations": [
+          "supervised_or_inquired_about",
+          "occurred_on"
+        ]
+      },
+      {
+        "id": 3,
+        "conclusion": "The KPMG process did not eliminate material uncertainty about Wirecard's financial reporting.",
+        "premise_entities": [
+          "KPMG",
+          "Wirecard",
+          "KPMG special audit of Wirecard",
+          "TPA"
+        ],
+        "premise_relations": [
+          "performed_special_audit",
+          "business_area_under_audit"
+        ]
+      },
+      {
+        "id": 4,
+        "conclusion": "The later bankruptcy acknowledgment materially changed the evidentiary picture from public reassurance to confirmed missing financial assets.",
+        "premise_entities": [
+          "Wirecard",
+          "Wirecard bankruptcy",
+          "KPMG special audit of Wirecard"
+        ],
+        "premise_relations": [
+          "occurred_on",
+          "performed_special_audit"
+        ]
+      },
+      {
+        "id": 5,
+        "conclusion": "The benchmark record is insufficient to reconstruct Jan Marsalek's disappearance.",
+        "premise_entities": [
+          "Jan Marsalek"
+        ],
+        "premise_relations": []
+      }
+    ],
+    "claims": [
+      {
+        "claim": "The public record in the benchmark evidence shows a progression from early allegations and reporting to regulatory inquiries, an inconclusive or limited forensic process, and a later acknowledgment of 1.9 billion euros in missing financial assets.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "claim": "Wirecard's 28 April 2020 announcement was a company statement and should not be treated as an independent finding that no fraud occurred.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "The EU policy briefing attributes the slow detection of the scandal to weaknesses across multiple lines of defense and in the market and institutional oversight architecture.",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "claim": "The cited benchmark evidence does not establish the criminal mechanism behind the missing assets or Jan Marsalek's disappearance.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      }
+    ],
+    "structured_output": true,
+    "structured_output_valid": true,
+    "structured_output_complete": true,
+    "missing_structured_sections": [],
+    "structured_output_errors": [],
+    "graph_capture_diagnostics": {
+      "entity_records_emitted": 25,
+      "relation_records_emitted": 16,
+      "knowledge_agent_calls": 2,
+      "relations_expected": 7,
+      "contradictions_expected": 1
+    }
+  },
+  "metrics": {
+    "output_validation": {
+      "valid": true,
+      "errors": []
+    },
+    "entities": {
+      "true_positive": 3,
+      "false_positive": 20,
+      "false_negative": 5,
+      "precision": 0.13043478260869565,
+      "recall": 0.375,
+      "f1": 0.19354838709677416,
+      "missing": [
+        [
+          "alias",
+          "eur 1.9 billion missing cash"
+        ],
+        [
+          "alias",
+          "third party acquiring business"
+        ],
+        [
+          "location",
+          "belarus"
+        ],
+        [
+          "organization",
+          "wirecard ag"
+        ],
+        [
+          "person",
+          "jan marsalek"
+        ]
+      ],
+      "unexpected": [
+        [
+          "date",
+          "2019-01"
+        ],
+        [
+          "date",
+          "2019-10"
+        ],
+        [
+          "date",
+          "2020-04"
+        ],
+        [
+          "date",
+          "2020-04-28"
+        ],
+        [
+          "date",
+          "2020-06"
+        ],
+        [
+          "document",
+          "src-001"
+        ],
+        [
+          "document",
+          "src-002"
+        ],
+        [
+          "document",
+          "zatarra report"
+        ],
+        [
+          "event",
+          "bafin criminal complaint against wirecard"
+        ],
+        [
+          "event",
+          "frep investigation of wirecard"
+        ],
+        [
+          "event",
+          "kpmg special audit of wirecard"
+        ],
+        [
+          "event",
+          "wirecard bankruptcy"
+        ],
+        [
+          "location",
+          "india"
+        ],
+        [
+          "location",
+          "singapore"
+        ],
+        [
+          "organization",
+          "eu economic governance support unit"
+        ],
+        [
+          "organization",
+          "financial times"
+        ],
+        [
+          "organization",
+          "frep"
+        ],
+        [
+          "organization",
+          "wirecard"
+        ],
+        [
+          "product",
+          "mca/digital lending"
+        ],
+        [
+          "product",
+          "tpa"
+        ]
+      ]
+    },
+    "relations": {
+      "true_positive": 0,
+      "false_positive": 15,
+      "false_negative": 7,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "missing": [
+        [
+          [
+            "alias",
+            "third party acquiring business"
+          ],
+          "business_area_under_audit",
+          [
+            "organization",
+            "wirecard ag"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "bafin"
+          ],
+          "supervised_or_inquired_about",
+          [
+            "organization",
+            "wirecard ag"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "ey"
+          ],
+          "audited",
+          [
+            "organization",
+            "wirecard ag"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "kpmg"
+          ],
+          "audited",
+          [
+            "organization",
+            "wirecard ag"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "wirecard ag"
+          ],
+          "disclosed_missing_cash",
+          [
+            "alias",
+            "eur 1.9 billion missing cash"
+          ]
+        ],
+        [
+          [
+            "person",
+            "jan marsalek"
+          ],
+          "absconded_to",
+          [
+            "location",
+            "belarus"
+          ]
+        ],
+        [
+          [
+            "person",
+            "jan marsalek"
+          ],
+          "executive_of",
+          [
+            "organization",
+            "wirecard ag"
+          ]
+        ]
+      ],
+      "unexpected": [
+        [
+          [
+            "document",
+            "src-001"
+          ],
+          "published_by",
+          [
+            "organization",
+            "wirecard"
+          ]
+        ],
+        [
+          [
+            "document",
+            "zatarra report"
+          ],
+          "associated_with",
+          [
+            "organization",
+            "wirecard"
+          ]
+        ],
+        [
+          [
+            "event",
+            "bafin criminal complaint against wirecard"
+          ],
+          "occurred_on",
+          [
+            "date",
+            "2020-06"
+          ]
+        ],
+        [
+          [
+            "event",
+            "frep investigation of wirecard"
+          ],
+          "occurred_on",
+          [
+            "date",
+            "2019-01"
+          ]
+        ],
+        [
+          [
+            "event",
+            "kpmg special audit of wirecard"
+          ],
+          "occurred_on",
+          [
+            "date",
+            "2019-10"
+          ]
+        ],
+        [
+          [
+            "event",
+            "kpmg special audit of wirecard"
+          ],
+          "occurred_on",
+          [
+            "date",
+            "2020-04"
+          ]
+        ],
+        [
+          [
+            "event",
+            "wirecard bankruptcy"
+          ],
+          "occurred_on",
+          [
+            "date",
+            "2020-06"
+          ]
+        ],
+        [
+          [
+            "location",
+            "india"
+          ],
+          "business_area_under_audit",
+          [
+            "organization",
+            "kpmg"
+          ]
+        ],
+        [
+          [
+            "location",
+            "singapore"
+          ],
+          "business_area_under_audit",
+          [
+            "organization",
+            "kpmg"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "bafin"
+          ],
+          "supervised_or_inquired_about",
+          [
+            "organization",
+            "wirecard"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "eu economic governance support unit"
+          ],
+          "published_by",
+          [
+            "document",
+            "src-002"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "frep"
+          ],
+          "supervised_or_inquired_about",
+          [
+            "organization",
+            "wirecard"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "kpmg"
+          ],
+          "audited",
+          [
+            "organization",
+            "wirecard"
+          ]
+        ],
+        [
+          [
+            "product",
+            "mca/digital lending"
+          ],
+          "business_area_under_audit",
+          [
+            "organization",
+            "kpmg"
+          ]
+        ],
+        [
+          [
+            "product",
+            "tpa"
+          ],
+          "business_area_under_audit",
+          [
+            "organization",
+            "kpmg"
+          ]
+        ]
+      ],
+      "semantic_mapping": {
+        "also_known_as": "alias_of",
+        "alias_of": "alias_of",
+        "co_founded": "founded",
+        "founded": "founded",
+        "based_in": "located_in",
+        "located_in": "located_in",
+        "performed_special_audit": "audited",
+        "audited": "audited",
+        "former_coo_of": "executive_of",
+        "executive_of": "executive_of",
+        "provided_software": "provided",
+        "distributed_as_installer": "distributed",
+        "contained_malware": "contained",
+        "trojanized": "compromised",
+        "associated_with": "associated_with",
+        "linked_to": "associated_with",
+        "uses_or_is_associated_with": "associated_with"
+      }
+    },
+    "contradictions": {
+      "true_positive": 0,
+      "false_positive": 3,
+      "false_negative": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "details": [],
+      "missing": [
+        "CONTRA-001"
+      ],
+      "unexpected": [
+        "C-001",
+        "C-002",
+        "C-003"
+      ],
+      "grounded_recall": 0.0,
+      "grounded_f1": 0.0
+    },
+    "key_findings": {
+      "score": 0.17600574712643677,
+      "precision": 0.2857142857142857,
+      "recall": 0.6666666666666666,
+      "f1": 0.4,
+      "predicted": 7,
+      "expected": 3,
+      "matched": 2,
+      "details": [
+        {
+          "question": "What contradiction should an investigator reconcile?",
+          "status": "matched",
+          "score": 0.2655172413793103,
+          "semantic": 0.3793103448275862,
+          "supporting_entity_recall": 0.0,
+          "source_recall": 1.0,
+          "has_source_references": true
+        },
+        {
+          "question": "Which institutions form the oversight chain?",
+          "status": "matched",
+          "score": 0.26249999999999996,
+          "semantic": 0.375,
+          "supporting_entity_recall": 0.0,
+          "source_recall": 1.0,
+          "has_source_references": true
+        },
+        {
+          "question": "Why is Marsalek a key entity?",
+          "status": "missing",
+          "score": 0.0
+        }
+      ]
+    },
+    "source_traceability": {
+      "correct_sources": [
+        "SRC-001",
+        "SRC-002"
+      ],
+      "unknown_sources": [],
+      "unavailable_sources": [],
+      "source_precision": 1.0,
+      "source_recall": 1.0,
+      "ratio": 1.0,
+      "claim_level": {
+        "claims": 4,
+        "traceable_claims": 4,
+        "ratio": 1.0,
+        "unknown_sources": [],
+        "unavailable_sources": []
+      },
+      "finding_level": {
+        "findings": 7,
+        "traceable_findings": 6,
+        "ratio": 0.8571428571428571
+      }
+    },
+    "reasoning_coverage": {
+      "covered": [
+        1,
+        2,
+        3
+      ],
+      "invalid": [
+        4,
+        5
+      ],
+      "total": 3,
+      "precision": 0.6,
+      "recall": 1.0,
+      "f1": 0.7499999999999999,
+      "ratio": 1.0,
+      "status": "structured_step_ids"
+    },
+    "report_quality": {
+      "score": 0.5833333333333334,
+      "checks": {
+        "non_empty": true,
+        "structured_output_complete": true,
+        "structured_output_valid": true,
+        "findings_present": true,
+        "findings_match": false,
+        "claims_traceable": true,
+        "contradictions_complete": false,
+        "contradictions_grounded": false,
+        "finding_sources_grounded": false,
+        "reasoning_conclusions_grounded": false,
+        "uncertainty_language": true,
+        "readable_length": true
+      },
+      "scale": "deterministic rubric 0-1"
+    },
+    "reasoning_quality": {
+      "covered": 3,
+      "expected": 3,
+      "coverage": 1.0,
+      "semantic_similarity": 0.037037037037037035,
+      "premise_grounding": 0.2222222222222222,
+      "grounded_score": 0.018518518518518517,
+      "method": "premise_ids_plus_token_entailment_proxy",
+      "formula": "premise*conclusion",
+      "details": [
+        {
+          "id": 1,
+          "premise_score": 0.5,
+          "entity_recall": 0.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 0.1111111111111111,
+          "invalid_premise_entities": [
+            "Financial Times",
+            "Wirecard",
+            "Zatarra report"
+          ],
+          "invalid_premise_relations": [
+            "linked_to"
+          ],
+          "grounded_score": 0.05555555555555555
+        },
+        {
+          "id": 2,
+          "premise_score": 0.0,
+          "entity_recall": 0.0,
+          "relation_recall": 0.0,
+          "conclusion_similarity": 0.0,
+          "invalid_premise_entities": [
+            "BaFin",
+            "BaFin criminal complaint against Wirecard",
+            "FREP",
+            "FREP investigation of Wirecard",
+            "Wirecard"
+          ],
+          "invalid_premise_relations": [
+            "occurred_on"
+          ],
+          "grounded_score": 0.0
+        },
+        {
+          "id": 3,
+          "premise_score": 0.16666666666666666,
+          "entity_recall": 0.0,
+          "relation_recall": 0.3333333333333333,
+          "conclusion_similarity": 0.0,
+          "invalid_premise_entities": [
+            "KPMG",
+            "KPMG special audit of Wirecard",
+            "TPA",
+            "Wirecard"
+          ],
+          "invalid_premise_relations": [],
+          "grounded_score": 0.0
+        }
+      ]
+    },
+    "operational": {
+      "duration_ms": 419321.92,
+      "mode": "offline",
+      "iterations": 13,
+      "search_calls": 4,
+      "fetch_calls": 2,
+      "knowledge_base_calls": 2,
+      "termination_reason": "final_report"
+    },
+    "retrieval": {
+      "status": "not_annotated",
+      "topics": 0
+    }
+  }
+}

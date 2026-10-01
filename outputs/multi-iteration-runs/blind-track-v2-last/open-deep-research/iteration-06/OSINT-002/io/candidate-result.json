@@ -1,0 +1,61 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-002",
+  "report": "Error generating final report: APITimeoutError: Request timed out.",
+  "context": [],
+  "visited_urls": [
+    "https://rewardsforjustice.net/rewards/conti/",
+    "https://www.cisecurity.org/insights/blog/the-conti-leaks-a-case-of-cybercrimes-commercialization",
+    "https://www.justice.gov/usao-mdtn/conti-ransomware-2",
+    "https://www.rapid7.com/blog/post/2022/03/01/conti-ransomware-group-internal-chats-leaked-over-russia-ukraine-conflict/"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "Conti ransomware-as-a-service operation leaks internal chats roles affiliates operators official law enforcement court records",
+        "site:justice.gov Conti ransomware defendant alias",
+        "Conti leaks internal organization Jabber chats RaaS operators affiliates"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:justice.gov Conti Maksim Galochkin Rudenskiy Tsarev Zhuykov indictment alias Conti",
+        "site:justice.gov Conti ransomware conspiracy Lytvynenko Galochkin",
+        "site:europol.eu Conti ransomware aliases Wizard Spider"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "original Conti leaks chat logs 2022 internal roles admin negotiator affiliate developer",
+        "ContiLeaks original chat logs organization Jabber aliases administrators coders testers negotiators",
+        "Conti ransomware leak internal chats named aliases Target Reshaev Professor Tramp Dandis"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "\"Conti\" \"Maksim Galochkin\" press release",
+        "\"Oleksii Lytvynenko\" Conti DOJ",
+        "\"Conti ransomware\" indictment \"Mikhail Tsarev\""
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 10,
+  "duration_seconds": 373.294794299989
+}

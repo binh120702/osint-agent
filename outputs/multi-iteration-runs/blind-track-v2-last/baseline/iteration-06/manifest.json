@@ -1,0 +1,246 @@
+{
+  "approach": "baseline",
+  "iteration": 6,
+  "benchmark_cases": [
+    "OSINT-001",
+    "OSINT-002",
+    "OSINT-003",
+    "OSINT-004",
+    "OSINT-005",
+    "OSINT-006",
+    "OSINT-007",
+    "OSINT-008",
+    "OSINT-009",
+    "OSINT-010"
+  ],
+  "model": "gpt-5.6-luna",
+  "parallel_workers": 10,
+  "timeout_seconds": 1200,
+  "retry_timeout_seconds": 2400,
+  "started_at": "2026-09-30T16:39:53.121474+00:00",
+  "finished_at": "2026-09-30T16:52:34.498193+00:00",
+  "cases": [
+    {
+      "approach": "baseline",
+      "iteration": 6,
+      "case_id": "OSINT-001",
+      "started_at": "2026-09-30T16:39:53.121474+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 521.6198163999943
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-06/OSINT-001/candidate-result.json",
+      "artifact_sha256": "328bdb17cefee22d27c6c81cea12e6eae8dc34dd76c8a434b1720572b23bc8c1",
+      "source_artifact": "dataset/results/20260930T163954Z-2397e732/cases/OSINT-001.json",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T16:48:34.952015+00:00"
+    },
+    {
+      "approach": "baseline",
+      "iteration": 6,
+      "case_id": "OSINT-002",
+      "started_at": "2026-09-30T16:39:53.121827+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 331.6204987000092
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-06/OSINT-002/candidate-result.json",
+      "artifact_sha256": "f1d141c326364f46a2027feacf33f466ebc60ba978b61b6bf3399d008b6b2e5f",
+      "source_artifact": "dataset/results/20260930T163953Z-cf0bdde9/cases/OSINT-002.json",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T16:45:24.936026+00:00"
+    },
+    {
+      "approach": "baseline",
+      "iteration": 6,
+      "case_id": "OSINT-003",
+      "started_at": "2026-09-30T16:39:53.122140+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 761.1277784999693
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-06/OSINT-003/candidate-result.json",
+      "artifact_sha256": "510fc9d079a0b6d83f014ebcea1fd14b545798f2a4d07bd5acafe07596a3e2f2",
+      "source_artifact": "dataset/results/20261001T071849Z-55fd21cc/cases/OSINT-003.json",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T16:52:34.498193+00:00",
+      "replacement_source": "outputs/multi-iteration-runs/blind-track-v2-baseline-retest-003-010",
+      "replacement_iteration": 6,
+      "original_artifact": "outputs/multi-iteration-runs/blind-track-v2-baseline-original-before-retest-substitution/baseline/iteration-06/OSINT-003/candidate-result.json",
+      "original_terminal_status": "completed"
+    },
+    {
+      "approach": "baseline",
+      "iteration": 6,
+      "case_id": "OSINT-004",
+      "started_at": "2026-09-30T16:39:53.122749+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 502.47268120001536
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-06/OSINT-004/candidate-result.json",
+      "artifact_sha256": "8e94e1300a58147cf0e1a3550c78f0e58925eb4dfe236f719136bc3b1e9bb6e5",
+      "source_artifact": "dataset/results/20260930T163954Z-da355e5c/cases/OSINT-004.json",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T16:48:15.818700+00:00"
+    },
+    {
+      "approach": "baseline",
+      "iteration": 6,
+      "case_id": "OSINT-005",
+      "started_at": "2026-09-30T16:39:53.123063+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 326.85638989997096
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-06/OSINT-005/candidate-result.json",
+      "artifact_sha256": "9cf8e39af5f648b191fb61effc8b93b9927b7f1cd5868e57cc5bf33db1d6fd73",
+      "source_artifact": "dataset/results/20261001T110355Z-f45b6dfa/cases/OSINT-005.json",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T16:45:20.162620+00:00",
+      "replacement_source": "outputs/multi-iteration-runs/blind-track-v2-baseline-retest-005-10-iter",
+      "original_artifact": "outputs/multi-iteration-runs/blind-track-v2-baseline-before-osint005-10iter-substitution/iteration-06/OSINT-005/candidate-result.json",
+      "original_terminal_status": "completed"
+    },
+    {
+      "approach": "baseline",
+      "iteration": 6,
+      "case_id": "OSINT-006",
+      "started_at": "2026-09-30T16:39:53.123781+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 404.06320019997656
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-06/OSINT-006/candidate-result.json",
+      "artifact_sha256": "e6685ced83d55230eea3de68b4c7fe6eec1a1142d53264fcf21fc0c5d4156980",
+      "source_artifact": "dataset/results/20260930T163954Z-6663c1b9/cases/OSINT-006.json",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T16:46:37.373277+00:00"
+    },
+    {
+      "approach": "baseline",
+      "iteration": 6,
+      "case_id": "OSINT-007",
+      "started_at": "2026-09-30T16:39:53.125528+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 367.05687540001236
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-06/OSINT-007/candidate-result.json",
+      "artifact_sha256": "aeefbdcb0385727dfce89344b6e6ae2c58100068bffe043f12d489d72b46d6b5",
+      "source_artifact": "dataset/results/20260930T163954Z-396426c8/cases/OSINT-007.json",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T16:46:00.416439+00:00"
+    },
+    {
+      "approach": "baseline",
+      "iteration": 6,
+      "case_id": "OSINT-008",
+      "started_at": "2026-09-30T16:39:53.125480+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 542.3523663000087
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-06/OSINT-008/candidate-result.json",
+      "artifact_sha256": "96e988188225d365b7b0acaeae32ccf82cb5c794806034fd12afffe979c3b969",
+      "source_artifact": "dataset/results/20260930T163954Z-3219f0ec/cases/OSINT-008.json",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T16:48:55.701985+00:00"
+    },
+    {
+      "approach": "baseline",
+      "iteration": 6,
+      "case_id": "OSINT-009",
+      "started_at": "2026-09-30T16:39:53.126512+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 269.3744535999722
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-06/OSINT-009/candidate-result.json",
+      "artifact_sha256": "82c5d7030de164a25562e2ac3888314b59c302c628fdaf91db6e1a6ef8e67087",
+      "source_artifact": "dataset/results/20260930T163954Z-52b51c97/cases/OSINT-009.json",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T16:44:22.709135+00:00"
+    },
+    {
+      "approach": "baseline",
+      "iteration": 6,
+      "case_id": "OSINT-010",
+      "started_at": "2026-09-30T16:39:53.126436+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 387.8092003999627
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/baseline/iteration-06/OSINT-010/candidate-result.json",
+      "artifact_sha256": "f1f868d2e5f7fdaf9b001cc4f88d74d002f358bc3a366eacbdc78ee812087452",
+      "source_artifact": "dataset/results/20261001T121420Z-2d8cdf59/cases/OSINT-010.json",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T16:46:21.170272+00:00",
+      "replacement_source": "outputs/multi-iteration-runs/blind-track-v2-baseline-retest-010-10-iter",
+      "replacement_iteration": 6,
+      "original_artifact": "outputs/multi-iteration-runs/blind-track-v2-baseline-before-osint010-10iter-substitution/iteration-06/OSINT-010/candidate-result.json",
+      "original_terminal_status": "completed"
+    }
+  ],
+  "replacement_note": "OSINT-010 replaced with completed 10-iteration rerun; not rescored yet"
+}

@@ -1,0 +1,1472 @@
+{
+  "case_id": "OSINT-003",
+  "case_sha256": "d3ac51bdb2bd8e52c9b4d15ef076f83ff9404f18df45d64372bcceaa55ec1f2f",
+  "trace": {
+    "thread_id": "benchmark-osint-003-6e0c5ddc",
+    "tool_calls": [
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "Ronin Bridge hack Lazarus Group attribution FBI 2022 wallet laundering evidence"
+        },
+        "started_at": 1790838806.3416612,
+        "result": "{\n  \"query\": \"Ronin Bridge hack Lazarus Group attribution FBI 2022 wallet laundering evidence\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 4,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"FBI confirms North Korea's Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft\",\n        \"url\": \"https://www.elliptic.co/insights/fbi-confirms-north-korea-s-lazarus-group-as-hackers-behind-100-million-harmony-horizon-bridge-theft\",\n        \"snippet\": \"FBI confirms North Korea’s Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regul\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      },\n      {\n        \"title\": \"North Korea's Lazarus Group identified as exploiters of $540 million Ronin bridge theft\",\n        \"url\": \"https://www.elliptic.co/insights/540-million-stolen-from-the-ronin-defi-bridge\",\n        \"snippet\": \"North Korea’s Lazarus Group identified as exploiters behind $540 million Ronin bridge heist | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Dat\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-003\"\n      },\n      {\n        \"title\": \"Crypto Community Makes Profiting Hard for North Korean Hackers\",\n        \"url\": \"https://www.chainalysis.com/blog/axie-infinity-ronin-bridge-dprk-hack-seizure/\",\n        \"snippet\": \"Crypto Community Makes Profiting Hard for North Korean Hackers Products Crypto Investigations Investigations Solutions Reactor Investigate and trace funds across blockchains Wallet Scan Check recovery seeds for seizable crypto Rapid Instant crypto triage with AI-powered insights Crypto Compliance Compliance Solutions KYT Monitor transactions in real-time Sentinel Understand a stablecoins’s risk profile Address Screening Assess a wallet’s risk exposure VASP Risking Understand the risk profile of a VASP Crypto Security & Fraud Alterya AI-powered fraud prevention Hexagate Prevent web3 security hacks and exploits Crypto Data Chainalysis Data Solutions (DS) Proactive threat intelligence and alerting AI Chainalysis agents AI agents for blockchain intelligence Platform Platform Enterprise ready infrastructure for blockchain analysis solutions Blockchain Intelligence Power your blockchain technology needs with industry-leading intelligence Chainalysis Labs Our R&D hub for the latest innovation\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      },\n      {\n        \"title\": \"The Harmony Horizon Bridge Hack\",\n        \"url\": \"https://www.elliptic.co/resources/harmony-horizon-bridge-hack\",\n        \"snippet\": \"Crypto Insights & Research | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Data and intelligence Blockchain Analytics Due diligence dashboards \",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-004\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"FBI confirms North Korea's Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft\",\n      \"url\": \"https://www.elliptic.co/insights/fbi-confirms-north-korea-s-lazarus-group-as-hackers-behind-100-million-harmony-horizon-bridge-theft\",\n      \"snippet\": \"FBI confirms North Korea’s Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regul\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    },\n    {\n      \"title\": \"North Korea's Lazarus Group identified as exploiters of $540 million Ronin bridge theft\",\n      \"url\": \"https://www.elliptic.co/insights/540-million-stolen-from-the-ronin-defi-bridge\",\n      \"snippet\": \"North Korea’s Lazarus Group identified as exploiters behind $540 million Ronin bridge heist | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Dat\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-003\"\n    },\n    {\n      \"title\": \"Crypto Community Makes Profiting Hard for North Korean Hackers\",\n      \"url\": \"https://www.chainalysis.com/blog/axie-infinity-ronin-bridge-dprk-hack-seizure/\",\n      \"snippet\": \"Crypto Community Makes Profiting Hard for North Korean Hackers Products Crypto Investigations Investigations Solutions Reactor Investigate and trace funds across blockchains Wallet Scan Check recovery seeds for seizable crypto Rapid Instant crypto triage with AI-powered insights Crypto Compliance Compliance Solutions KYT Monitor transactions in real-time Sentinel Understand a stablecoins’s risk profile Address Screening Assess a wallet’s risk exposure VASP Risking Understand the risk profile of a VASP Crypto Security & Fraud Alterya AI-powered fraud prevention Hexagate Prevent web3 security hacks and exploits Crypto Data Chainalysis Data Solutions (DS) Proactive threat intelligence and alerting AI Chainalysis agents AI agents for blockchain intelligence Platform Platform Enterprise ready infrastructure for blockchain analysis solutions Blockchain Intelligence Power your blockchain technology needs with industry-leading intelligence Chainalysis Labs Our R&D hub for the latest innovation\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    },\n    {\n      \"title\": \"The Harmony Horizon Bridge Hack\",\n      \"url\": \"https://www.elliptic.co/resources/harmony-horizon-bridge-hack\",\n      \"snippet\": \"Crypto Insights & Research | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Data and intelligence Blockchain Analytics Due diligence dashboards \",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-004\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 2.86
+      },
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "Harmony Horizon bridge hack Lazarus Group attribution FBI wallet laundering evidence 2022"
+        },
+        "started_at": 1790838806.3450825,
+        "result": "{\n  \"query\": \"Harmony Horizon bridge hack Lazarus Group attribution FBI wallet laundering evidence 2022\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 4,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"FBI confirms North Korea's Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft\",\n        \"url\": \"https://www.elliptic.co/insights/fbi-confirms-north-korea-s-lazarus-group-as-hackers-behind-100-million-harmony-horizon-bridge-theft\",\n        \"snippet\": \"FBI confirms North Korea’s Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regul\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      },\n      {\n        \"title\": \"North Korea's Lazarus Group identified as exploiters of $540 million Ronin bridge theft\",\n        \"url\": \"https://www.elliptic.co/insights/540-million-stolen-from-the-ronin-defi-bridge\",\n        \"snippet\": \"North Korea’s Lazarus Group identified as exploiters behind $540 million Ronin bridge heist | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Dat\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-003\"\n      },\n      {\n        \"title\": \"Crypto Community Makes Profiting Hard for North Korean Hackers\",\n        \"url\": \"https://www.chainalysis.com/blog/axie-infinity-ronin-bridge-dprk-hack-seizure/\",\n        \"snippet\": \"Crypto Community Makes Profiting Hard for North Korean Hackers Products Crypto Investigations Investigations Solutions Reactor Investigate and trace funds across blockchains Wallet Scan Check recovery seeds for seizable crypto Rapid Instant crypto triage with AI-powered insights Crypto Compliance Compliance Solutions KYT Monitor transactions in real-time Sentinel Understand a stablecoins’s risk profile Address Screening Assess a wallet’s risk exposure VASP Risking Understand the risk profile of a VASP Crypto Security & Fraud Alterya AI-powered fraud prevention Hexagate Prevent web3 security hacks and exploits Crypto Data Chainalysis Data Solutions (DS) Proactive threat intelligence and alerting AI Chainalysis agents AI agents for blockchain intelligence Platform Platform Enterprise ready infrastructure for blockchain analysis solutions Blockchain Intelligence Power your blockchain technology needs with industry-leading intelligence Chainalysis Labs Our R&D hub for the latest innovation\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      },\n      {\n        \"title\": \"The Harmony Horizon Bridge Hack\",\n        \"url\": \"https://www.elliptic.co/resources/harmony-horizon-bridge-hack\",\n        \"snippet\": \"Crypto Insights & Research | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Data and intelligence Blockchain Analytics Due diligence dashboards \",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-004\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"FBI confirms North Korea's Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft\",\n      \"url\": \"https://www.elliptic.co/insights/fbi-confirms-north-korea-s-lazarus-group-as-hackers-behind-100-million-harmony-horizon-bridge-theft\",\n      \"snippet\": \"FBI confirms North Korea’s Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regul\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    },\n    {\n      \"title\": \"North Korea's Lazarus Group identified as exploiters of $540 million Ronin bridge theft\",\n      \"url\": \"https://www.elliptic.co/insights/540-million-stolen-from-the-ronin-defi-bridge\",\n      \"snippet\": \"North Korea’s Lazarus Group identified as exploiters behind $540 million Ronin bridge heist | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Dat\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-003\"\n    },\n    {\n      \"title\": \"Crypto Community Makes Profiting Hard for North Korean Hackers\",\n      \"url\": \"https://www.chainalysis.com/blog/axie-infinity-ronin-bridge-dprk-hack-seizure/\",\n      \"snippet\": \"Crypto Community Makes Profiting Hard for North Korean Hackers Products Crypto Investigations Investigations Solutions Reactor Investigate and trace funds across blockchains Wallet Scan Check recovery seeds for seizable crypto Rapid Instant crypto triage with AI-powered insights Crypto Compliance Compliance Solutions KYT Monitor transactions in real-time Sentinel Understand a stablecoins’s risk profile Address Screening Assess a wallet’s risk exposure VASP Risking Understand the risk profile of a VASP Crypto Security & Fraud Alterya AI-powered fraud prevention Hexagate Prevent web3 security hacks and exploits Crypto Data Chainalysis Data Solutions (DS) Proactive threat intelligence and alerting AI Chainalysis agents AI agents for blockchain intelligence Platform Platform Enterprise ready infrastructure for blockchain analysis solutions Blockchain Intelligence Power your blockchain technology needs with industry-leading intelligence Chainalysis Labs Our R&D hub for the latest innovation\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    },\n    {\n      \"title\": \"The Harmony Horizon Bridge Hack\",\n      \"url\": \"https://www.elliptic.co/resources/harmony-horizon-bridge-hack\",\n      \"snippet\": \"Crypto Insights & Research | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Data and intelligence Blockchain Analytics Due diligence dashboards \",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-004\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 2.32
+      },
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "Ronin Bridge Harmony Horizon theft linked Lazarus APT38 blockchain wallet evidence"
+        },
+        "started_at": 1790838806.35035,
+        "result": "{\n  \"query\": \"Ronin Bridge Harmony Horizon theft linked Lazarus APT38 blockchain wallet evidence\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 4,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"FBI confirms North Korea's Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft\",\n        \"url\": \"https://www.elliptic.co/insights/fbi-confirms-north-korea-s-lazarus-group-as-hackers-behind-100-million-harmony-horizon-bridge-theft\",\n        \"snippet\": \"FBI confirms North Korea’s Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regul\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      },\n      {\n        \"title\": \"North Korea's Lazarus Group identified as exploiters of $540 million Ronin bridge theft\",\n        \"url\": \"https://www.elliptic.co/insights/540-million-stolen-from-the-ronin-defi-bridge\",\n        \"snippet\": \"North Korea’s Lazarus Group identified as exploiters behind $540 million Ronin bridge heist | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Dat\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-003\"\n      },\n      {\n        \"title\": \"Crypto Community Makes Profiting Hard for North Korean Hackers\",\n        \"url\": \"https://www.chainalysis.com/blog/axie-infinity-ronin-bridge-dprk-hack-seizure/\",\n        \"snippet\": \"Crypto Community Makes Profiting Hard for North Korean Hackers Products Crypto Investigations Investigations Solutions Reactor Investigate and trace funds across blockchains Wallet Scan Check recovery seeds for seizable crypto Rapid Instant crypto triage with AI-powered insights Crypto Compliance Compliance Solutions KYT Monitor transactions in real-time Sentinel Understand a stablecoins’s risk profile Address Screening Assess a wallet’s risk exposure VASP Risking Understand the risk profile of a VASP Crypto Security & Fraud Alterya AI-powered fraud prevention Hexagate Prevent web3 security hacks and exploits Crypto Data Chainalysis Data Solutions (DS) Proactive threat intelligence and alerting AI Chainalysis agents AI agents for blockchain intelligence Platform Platform Enterprise ready infrastructure for blockchain analysis solutions Blockchain Intelligence Power your blockchain technology needs with industry-leading intelligence Chainalysis Labs Our R&D hub for the latest innovation\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      },\n      {\n        \"title\": \"The Harmony Horizon Bridge Hack\",\n        \"url\": \"https://www.elliptic.co/resources/harmony-horizon-bridge-hack\",\n        \"snippet\": \"Crypto Insights & Research | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Data and intelligence Blockchain Analytics Due diligence dashboards \",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-004\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"FBI confirms North Korea's Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft\",\n      \"url\": \"https://www.elliptic.co/insights/fbi-confirms-north-korea-s-lazarus-group-as-hackers-behind-100-million-harmony-horizon-bridge-theft\",\n      \"snippet\": \"FBI confirms North Korea’s Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regul\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    },\n    {\n      \"title\": \"North Korea's Lazarus Group identified as exploiters of $540 million Ronin bridge theft\",\n      \"url\": \"https://www.elliptic.co/insights/540-million-stolen-from-the-ronin-defi-bridge\",\n      \"snippet\": \"North Korea’s Lazarus Group identified as exploiters behind $540 million Ronin bridge heist | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Dat\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-003\"\n    },\n    {\n      \"title\": \"Crypto Community Makes Profiting Hard for North Korean Hackers\",\n      \"url\": \"https://www.chainalysis.com/blog/axie-infinity-ronin-bridge-dprk-hack-seizure/\",\n      \"snippet\": \"Crypto Community Makes Profiting Hard for North Korean Hackers Products Crypto Investigations Investigations Solutions Reactor Investigate and trace funds across blockchains Wallet Scan Check recovery seeds for seizable crypto Rapid Instant crypto triage with AI-powered insights Crypto Compliance Compliance Solutions KYT Monitor transactions in real-time Sentinel Understand a stablecoins’s risk profile Address Screening Assess a wallet’s risk exposure VASP Risking Understand the risk profile of a VASP Crypto Security & Fraud Alterya AI-powered fraud prevention Hexagate Prevent web3 security hacks and exploits Crypto Data Chainalysis Data Solutions (DS) Proactive threat intelligence and alerting AI Chainalysis agents AI agents for blockchain intelligence Platform Platform Enterprise ready infrastructure for blockchain analysis solutions Blockchain Intelligence Power your blockchain technology needs with industry-leading intelligence Chainalysis Labs Our R&D hub for the latest innovation\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    },\n    {\n      \"title\": \"The Harmony Horizon Bridge Hack\",\n      \"url\": \"https://www.elliptic.co/resources/harmony-horizon-bridge-hack\",\n      \"snippet\": \"Crypto Insights & Research | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Data and intelligence Blockchain Analytics Due diligence dashboards \",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-004\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 2.67
+      },
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "site:justice.gov Ronin Harmony Lazarus cryptocurrency theft"
+        },
+        "started_at": 1790838806.3539057,
+        "result": "{\n  \"query\": \"site:justice.gov Ronin Harmony Lazarus cryptocurrency theft\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 3,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"FBI confirms North Korea's Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft\",\n        \"url\": \"https://www.elliptic.co/insights/fbi-confirms-north-korea-s-lazarus-group-as-hackers-behind-100-million-harmony-horizon-bridge-theft\",\n        \"snippet\": \"FBI confirms North Korea’s Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regul\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      },\n      {\n        \"title\": \"Crypto Community Makes Profiting Hard for North Korean Hackers\",\n        \"url\": \"https://www.chainalysis.com/blog/axie-infinity-ronin-bridge-dprk-hack-seizure/\",\n        \"snippet\": \"Crypto Community Makes Profiting Hard for North Korean Hackers Products Crypto Investigations Investigations Solutions Reactor Investigate and trace funds across blockchains Wallet Scan Check recovery seeds for seizable crypto Rapid Instant crypto triage with AI-powered insights Crypto Compliance Compliance Solutions KYT Monitor transactions in real-time Sentinel Understand a stablecoins’s risk profile Address Screening Assess a wallet’s risk exposure VASP Risking Understand the risk profile of a VASP Crypto Security & Fraud Alterya AI-powered fraud prevention Hexagate Prevent web3 security hacks and exploits Crypto Data Chainalysis Data Solutions (DS) Proactive threat intelligence and alerting AI Chainalysis agents AI agents for blockchain intelligence Platform Platform Enterprise ready infrastructure for blockchain analysis solutions Blockchain Intelligence Power your blockchain technology needs with industry-leading intelligence Chainalysis Labs Our R&D hub for the latest innovation\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      },\n      {\n        \"title\": \"North Korea's Lazarus Group identified as exploiters of $540 million Ronin bridge theft\",\n        \"url\": \"https://www.elliptic.co/insights/540-million-stolen-from-the-ronin-defi-bridge\",\n        \"snippet\": \"North Korea’s Lazarus Group identified as exploiters behind $540 million Ronin bridge heist | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Dat\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-003\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"FBI confirms North Korea's Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft\",\n      \"url\": \"https://www.elliptic.co/insights/fbi-confirms-north-korea-s-lazarus-group-as-hackers-behind-100-million-harmony-horizon-bridge-theft\",\n      \"snippet\": \"FBI confirms North Korea’s Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regul\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    },\n    {\n      \"title\": \"Crypto Community Makes Profiting Hard for North Korean Hackers\",\n      \"url\": \"https://www.chainalysis.com/blog/axie-infinity-ronin-bridge-dprk-hack-seizure/\",\n      \"snippet\": \"Crypto Community Makes Profiting Hard for North Korean Hackers Products Crypto Investigations Investigations Solutions Reactor Investigate and trace funds across blockchains Wallet Scan Check recovery seeds for seizable crypto Rapid Instant crypto triage with AI-powered insights Crypto Compliance Compliance Solutions KYT Monitor transactions in real-time Sentinel Understand a stablecoins’s risk profile Address Screening Assess a wallet’s risk exposure VASP Risking Understand the risk profile of a VASP Crypto Security & Fraud Alterya AI-powered fraud prevention Hexagate Prevent web3 security hacks and exploits Crypto Data Chainalysis Data Solutions (DS) Proactive threat intelligence and alerting AI Chainalysis agents AI agents for blockchain intelligence Platform Platform Enterprise ready infrastructure for blockchain analysis solutions Blockchain Intelligence Power your blockchain technology needs with industry-leading intelligence Chainalysis Labs Our R&D hub for the latest innovation\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    },\n    {\n      \"title\": \"North Korea's Lazarus Group identified as exploiters of $540 million Ronin bridge theft\",\n      \"url\": \"https://www.elliptic.co/insights/540-million-stolen-from-the-ronin-defi-bridge\",\n      \"snippet\": \"North Korea’s Lazarus Group identified as exploiters behind $540 million Ronin bridge heist | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Dat\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-003\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 2.22
+      },
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "site:home.treasury.gov Ronin Harmony Lazarus sanctions wallet"
+        },
+        "started_at": 1790838806.3566859,
+        "result": "{\n  \"query\": \"site:home.treasury.gov Ronin Harmony Lazarus sanctions wallet\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 4,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"FBI confirms North Korea's Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft\",\n        \"url\": \"https://www.elliptic.co/insights/fbi-confirms-north-korea-s-lazarus-group-as-hackers-behind-100-million-harmony-horizon-bridge-theft\",\n        \"snippet\": \"FBI confirms North Korea’s Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regul\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      },\n      {\n        \"title\": \"Crypto Community Makes Profiting Hard for North Korean Hackers\",\n        \"url\": \"https://www.chainalysis.com/blog/axie-infinity-ronin-bridge-dprk-hack-seizure/\",\n        \"snippet\": \"Crypto Community Makes Profiting Hard for North Korean Hackers Products Crypto Investigations Investigations Solutions Reactor Investigate and trace funds across blockchains Wallet Scan Check recovery seeds for seizable crypto Rapid Instant crypto triage with AI-powered insights Crypto Compliance Compliance Solutions KYT Monitor transactions in real-time Sentinel Understand a stablecoins’s risk profile Address Screening Assess a wallet’s risk exposure VASP Risking Understand the risk profile of a VASP Crypto Security & Fraud Alterya AI-powered fraud prevention Hexagate Prevent web3 security hacks and exploits Crypto Data Chainalysis Data Solutions (DS) Proactive threat intelligence and alerting AI Chainalysis agents AI agents for blockchain intelligence Platform Platform Enterprise ready infrastructure for blockchain analysis solutions Blockchain Intelligence Power your blockchain technology needs with industry-leading intelligence Chainalysis Labs Our R&D hub for the latest innovation\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      },\n      {\n        \"title\": \"North Korea's Lazarus Group identified as exploiters of $540 million Ronin bridge theft\",\n        \"url\": \"https://www.elliptic.co/insights/540-million-stolen-from-the-ronin-defi-bridge\",\n        \"snippet\": \"North Korea’s Lazarus Group identified as exploiters behind $540 million Ronin bridge heist | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Dat\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-003\"\n      },\n      {\n        \"title\": \"The Harmony Horizon Bridge Hack\",\n        \"url\": \"https://www.elliptic.co/resources/harmony-horizon-bridge-hack\",\n        \"snippet\": \"Crypto Insights & Research | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Data and intelligence Blockchain Analytics Due diligence dashboards \",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-004\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"FBI confirms North Korea's Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft\",\n      \"url\": \"https://www.elliptic.co/insights/fbi-confirms-north-korea-s-lazarus-group-as-hackers-behind-100-million-harmony-horizon-bridge-theft\",\n      \"snippet\": \"FBI confirms North Korea’s Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regul\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    },\n    {\n      \"title\": \"Crypto Community Makes Profiting Hard for North Korean Hackers\",\n      \"url\": \"https://www.chainalysis.com/blog/axie-infinity-ronin-bridge-dprk-hack-seizure/\",\n      \"snippet\": \"Crypto Community Makes Profiting Hard for North Korean Hackers Products Crypto Investigations Investigations Solutions Reactor Investigate and trace funds across blockchains Wallet Scan Check recovery seeds for seizable crypto Rapid Instant crypto triage with AI-powered insights Crypto Compliance Compliance Solutions KYT Monitor transactions in real-time Sentinel Understand a stablecoins’s risk profile Address Screening Assess a wallet’s risk exposure VASP Risking Understand the risk profile of a VASP Crypto Security & Fraud Alterya AI-powered fraud prevention Hexagate Prevent web3 security hacks and exploits Crypto Data Chainalysis Data Solutions (DS) Proactive threat intelligence and alerting AI Chainalysis agents AI agents for blockchain intelligence Platform Platform Enterprise ready infrastructure for blockchain analysis solutions Blockchain Intelligence Power your blockchain technology needs with industry-leading intelligence Chainalysis Labs Our R&D hub for the latest innovation\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    },\n    {\n      \"title\": \"North Korea's Lazarus Group identified as exploiters of $540 million Ronin bridge theft\",\n      \"url\": \"https://www.elliptic.co/insights/540-million-stolen-from-the-ronin-defi-bridge\",\n      \"snippet\": \"North Korea’s Lazarus Group identified as exploiters behind $540 million Ronin bridge heist | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Dat\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-003\"\n    },\n    {\n      \"title\": \"The Harmony Horizon Bridge Hack\",\n      \"url\": \"https://www.elliptic.co/resources/harmony-horizon-bridge-hack\",\n      \"snippet\": \"Crypto Insights & Research | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Data and intelligence Blockchain Analytics Due diligence dashboards \",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-004\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 2.79
+      },
+      {
+        "name": "deep_search",
+        "arguments": {
+          "pages": [
+            "https://www.elliptic.co/insights/fbi-confirms-north-korea-s-lazarus-group-as-hackers-behind-100-million-harmony-horizon-bridge-theft"
+          ]
+        },
+        "started_at": 1790838815.2667437,
+        "result": "{\n  \"success\": true,\n  \"pages\": [\n    {\n      \"success\": true,\n      \"url\": \"https://www.elliptic.co/insights/fbi-confirms-north-korea-s-lazarus-group-as-hackers-behind-100-million-harmony-horizon-bridge-theft\",\n      \"source_id\": \"SRC-001\",\n      \"title\": \"FBI confirms North Korea's Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft\",\n      \"content\": {\n        \"page_title\": \"FBI confirms North Korea's Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft\"\n      },\n      \"raw_text\": \"FBI confirms North Korea’s Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Data and intelligence Blockchain Analytics Due diligence dashboards Screening and monitoring Law enforcement Trace illicit activity and recover assets How we help law enforcement Blockchain analytics Screening and monitoring Investigations Spotlight Operation Atlantic Operation Atlantic How Elliptic helped trace $45M+ in stolen crypto Products Products Lens Real-time multi-asset wallet & transaction screening Discovery VASP screening & entity due diligence Investigator Single-click cross-chain investigations Ecosystem monitoring Visualizations for crypto exposure trend analysis Platform The Elliptic difference Issuer due diligence Asset due diligence Data Fabric Elliptic’s copilot API documentation ROI Compliance efficency calculator Compliance efficency calculator See how much your business could save Training & Certifications Courses Crypto certification Master wallet screening, transaction monitoring and deep investigations Product certifications Turn your team into experts on Elliptic's blockchain analytics solutions Spotlight series Self-paced compliance training Fundamentals Blockchain basics Country guides Glossary Webinar Crypto regulation in 2026: How to prepare Crypto regulation in 2026: How to prepare Watch on demand Insights & Community Resources Insights and research From quick guides to trend forecasting and deep analysis Customer stories Real results, big impact. FAQs All your questions, answered Community Webinars Newsroom Partners Success story Global crypto exchange realizes $3.1M efficiency gain with Elliptic Global crypto exchange realizes $3.1M efficiency gain with Elliptic Uncover the story Company & Careers About Elliptic Security & Trust Careers Contact Sign in Get a demo Insights & research May 9, 2023 Law Enforcement +1 APAC FBI confirms North Korea’s Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft FBI confirms North Korea’s Lazarus Group as hackers behind $100 million Harmony Horizon Bridge theft By Elliptic The FBI has confirmed that the Lazarus Group – a cyberhacker group backed by North Korea – was behind the June 2022 hack of Harmony’s Horizon Bridge. The announcement confirms Elliptic’s previous attribution of the $100 million hack to North Korea, which we were the first to identify after numerous similarities were observed with Lazarus’ past blockchain laundering patterns. This is a preview of our upcoming briefing note into tracing the stolen funds from the Harmony Horizon Hack to North Korea, including the demixing of the funds through Tornado Cash and Railgun. Horizon – a cross-chain bridge servicing the Harmony blockchain – was exploited on June 24th 2022 for $99.7 million. Concerns had previously been raised that the bridge was over-centralized, meaning that it was particularly vulnerable to social engineering attacks – a common attack vector for the Lazarus Group. Similar issues resulted in the criminal organization stealing over $540 million from another cross-chain bridge called Ronin earlier in March 2022. After stealing the funds from Horizon, the Lazarus Group then programmatically structured transactions through Tornado Cash, which is a decentralized Ethereum-based mixer. Elliptic researchers identified that the laundering methods employed mirrored those the Lazarus Group had used when attempting to conceal funds from the Ronin Bridge hack, which had also been sent through Tornado Cash. US sanctions US sanctions Tornado Cash was subsequently sanctioned by the US Treasury in August 2022, with Secretary of State Anthony Blinken citing its prolific use by the Lazarus Group to launder funds from its past hacks. Elliptic’s research suggests that the Lazarus Group sent more than $555 million through Tornado Cash from these hacks, including more than $468 million from the Ronin hack and $96 million from the Harmony hack. This North Korea-linked activity accounts for approximately 5.8% of the nearly $9 billion in total funds sent through the Tornado Cash mixer to date. Elliptic has traced the stolen funds from the Horizon hack through Tornado Cash. Our forthcoming briefing note will break down the methodology we used and how it ultimately aided the eventual attribution of the exploit to the Lazarus Group. The post-Tornado withdrawals were initially placed into several addresses, where they remained dormant until January 2023. Read more <?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?> <?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?> <?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?> <?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?> <?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?> In January 2023, Lazarus began structuring the funds into several deposits into a privacy-based DeFi protocol called Railgun, which functions similar to a mixer. Elliptic has previously identified Railgun as a prime alternative to Tornado Cash following sanctions against the latter. You can read more about Railgun – and other Ethereum-based privacy-enhancing solutions – in our Tornado Cash Alternatives Briefing note . Railgun Railgun Elliptic’s research suggests that a significant portion of funds – estimated at around 70% – that has been sent through Railgun to date are funds from the Harmony hack. This suggests that since the OFAC sanctions on Tornado Cash, North Korea may be turning to lower obfuscating services as an alternative. However, the fact that funds from the Harmony hack comprised such a substantial volume of the Ether passing through Railgun renders the mixing ineffective. As an analogy, imagine if you threw five pennies into a jar full of 100 pennies, it would be extremely difficult for someone to determine which pennies were yours. However, if you threw 70 pennies into a jar with only 30 other pennies in it, then there would be a higher chance of linking those 70 specific pennies back to you. Mixers work in a similar way: when the anonymity set – or volume of other funds in the mixer is low – it makes the mixer less effective at concealing disproportionately large funds transfers. On-chain data shows that after sending the funds through Railgun, the Lazarus Group has since deposited funds into three cryptoasset exchanges. Two, namely Binance and Huobi, have announced that they have identified, blocked and seized a portion of the funds. This case demonstrates the importance of cryptoasset exchanges utlizing blockchain analytics solutions to identify transactions involving mixing services abused by sanctioned actors such as North Korea. Elliptic’s Holistic wallet and transaction screening solutions enable our customers to identify and block transactions involving these mixing services, including where there may be sanctions implications - such as links to North Korean perpetrated hacks. Contact us to learn more about how we can assist your compliance team in identifying these risks using our blockchain analytics solutions. Read more <?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?> <?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?> <?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?> <?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?> <?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?> Jump to… US sanctions Railgun Share Share Share to X Share to LinkedIn Share to Facebook Share by email Copy page URL to clipboard Please try again Dive deeper Dive deeper All insights Aug 5, 2026 Compliance +1 How credit unions can identify and manage their crypto exposure How credit unions can identify and manage their crypto exposure By Elliptic Aug 4, 2026 Regulation +1 How to build MAS' AML/CFT expectations into your controls How to build MAS' AML/CFT expectations into your controls June Lau Jul 30, 2026 Regulation +1 How US crypto regulation is being rewritten in 2026 How US crypto regulation is being rewritten in 2026 Peter Phelan Jul 24, 2026 Regulators & Government +1 Why Hong Kong’s crypto regulation is drawing institutional capital Why Hong Kong’s crypto regulation is drawing institutional capital June Lau Stay ahead with expert insights Solutions & Industries Banks and financial institutions Crypto companies Governments and regulators Law enforcement Payment service providers Products Discovery Lens Investigator Ecosystem monitoring Data Fabric Elliptic’s copilot The Elliptic difference API Documentation Service Status Training & Certifications Crypto certification Product certifications Blockchain basics Spotlight series Insights & Community Insights and research Customer stories FAQs Webinars Newsroom Company About Elliptic Security & Trust Partners Careers Contact © 2026 Elliptic Enterprises Limited. Registered in England and Wales (number 8458210). VAT registration number 171021261. Privacy Notice\"\n    }\n  ],\n  \"query_trace\": [\n    {\n      \"query\": \"Ronin Bridge hack Lazarus Group attribution FBI 2022 wallet laundering evidence\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-001\",\n        \"SRC-003\",\n        \"SRC-002\",\n        \"SRC-004\"\n      ],\n      \"total\": 4\n    },\n    {\n      \"query\": \"Harmony Horizon bridge hack Lazarus Group attribution FBI wallet laundering evidence 2022\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-001\",\n        \"SRC-003\",\n        \"SRC-002\",\n        \"SRC-004\"\n      ],\n      \"total\": 4\n    },\n    {\n      \"query\": \"Ronin Bridge Harmony Horizon theft linked Lazarus APT38 blockchain wallet evidence\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-001\",\n        \"SRC-003\",\n        \"SRC-002\",\n        \"SRC-004\"\n      ],\n      \"total\": 4\n    },\n    {\n      \"query\": \"site:justice.gov Ronin Harmony Lazarus cryptocurrency theft\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-001\",\n        \"SRC-002\",\n        \"SRC-003\"\n      ],\n      \"total\": 3\n    },\n    {\n      \"query\": \"site:home.treasury.gov Ronin Harmony Lazarus sanctions wallet\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-001\",\n        \"SRC-002\",\n        \"SRC-003\",\n        \"SRC-004\"\n      ],\n      \"total\": 4\n    }\n  ],\n  \"error\": null\n}",
+        "duration_ms": 0.2
+      },
+      {
+        "name": "deep_search",
+        "arguments": {
+          "pages": [
+            "https://www.elliptic.co/insights/540-million-stolen-from-the-ronin-defi-bridge"
+          ]
+        },
+        "started_at": 1790838815.2677243,
+        "result": "{\n  \"success\": true,\n  \"pages\": [\n    {\n      \"success\": true,\n      \"url\": \"https://www.elliptic.co/insights/540-million-stolen-from-the-ronin-defi-bridge\",\n      \"source_id\": \"SRC-003\",\n      \"title\": \"North Korea's Lazarus Group identified as exploiters of $540 million Ronin bridge theft\",\n      \"content\": {\n        \"page_title\": \"North Korea's Lazarus Group identified as exploiters of $540 million Ronin bridge theft\"\n      },\n      \"raw_text\": \"North Korea’s Lazarus Group identified as exploiters behind $540 million Ronin bridge heist | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Data and intelligence Blockchain Analytics Due diligence dashboards Screening and monitoring Law enforcement Trace illicit activity and recover assets How we help law enforcement Blockchain analytics Screening and monitoring Investigations Spotlight Operation Atlantic Operation Atlantic How Elliptic helped trace $45M+ in stolen crypto Products Products Lens Real-time multi-asset wallet & transaction screening Discovery VASP screening & entity due diligence Investigator Single-click cross-chain investigations Ecosystem monitoring Visualizations for crypto exposure trend analysis Platform The Elliptic difference Issuer due diligence Asset due diligence Data Fabric Elliptic’s copilot API documentation ROI Compliance efficency calculator Compliance efficency calculator See how much your business could save Training & Certifications Courses Crypto certification Master wallet screening, transaction monitoring and deep investigations Product certifications Turn your team into experts on Elliptic's blockchain analytics solutions Spotlight series Self-paced compliance training Fundamentals Blockchain basics Country guides Glossary Webinar Crypto regulation in 2026: How to prepare Crypto regulation in 2026: How to prepare Watch on demand Insights & Community Resources Insights and research From quick guides to trend forecasting and deep analysis Customer stories Real results, big impact. FAQs All your questions, answered Community Webinars Newsroom Partners Success story Global crypto exchange realizes $3.1M efficiency gain with Elliptic Global crypto exchange realizes $3.1M efficiency gain with Elliptic Uncover the story Company & Careers About Elliptic Security & Trust Careers Contact Sign in Get a demo Insights & research Mar 29, 2022 DeFi North Korea’s Lazarus Group identified as exploiters behind $540 million Ronin bridge heist North Korea’s Lazarus Group identified as exploiters behind $540 million Ronin bridge heist By Elliptic Intel [Update: this blog has been updated to reflect US sanctions announced against the Ronin Bridge Exploiter’s Ethereum address on April 14th 2022] On March 29th, the Ronin Network announced that 173,600 Ether (ETH) and 25.5 million USD Coins had been stolen from the Ronin cross-chain bridge six days earlier. The total value of the stolen cryptoassets at the time of the theft was $540 million. This is the second largest crypto theft of all time. On April 14th, the US Treasury’s Office of Foreign Assets Control (OFAC) announced new sanctions against the thief's Ethereum address and listed the owner of this address as Lazarus Group – the North Korean state hacking group . The sanctions prohibit US persons and entities from transacting with this address to ensure the state-sponsored group can’t cash out any further funds they continue to hold onto through US-based crypto exchanges. The incident occurred six days before the exploit was announced by Ronin. Amid confusion over the delayed response, it announced that the exploit was only discovered after a 5,000 ETH withdrawal attempt from one of their users failed. At the time of discovery, the stolen funds were worth over $615 million. How the hack unfolded How the hack unfolded According to a postmortem published by Ronin, the theft came as a result of an attacker hacking the “validator nodes”of the Ronin bridge. Funds can be moved out if five of the nine validators approve it. The attacker managed to get hold of the private cryptographic keys belonging to five of the validators, which was enough to steal the cryptoassets. The post mortem claims that “all evidence points to this attack being socially engineered, rather than a technical flaw ”. Laundering the stolen crypto Laundering the stolen crypto Elliptic’s internal analysis indicates that the attacker has managed to launder 18% of their stolen funds as of April 14th. First, the stolen USDC was swapped for ETH through decentralized exchanges (DEXs) to prevent it from being seized. Tokens such as stablecoins are controlled by their issuers, who in some cases can freeze tokens involved in illicit activity. By converting the tokens at DEXs, the hacker avoided the anti-money laundering (AML) and 'know your customer' (KYC) checks performed at centralized exchanges. This is an increasingly common tactic seen in hacks of this type, as described in Elliptic’s recent report: “ DeFi: Risk, Regulation, and the Rise of DeCrime ” . However, the attacker then began laundering $16.7 million worth of ETH through three centralized exchanges. This strategy is uncommon for typical DeFi exploits given these exchanges’ AML obligations, though it has been observed more often in past Lazarus group-affiliated exploits. As the affected exchanges publicly announced that they would work with law enforcement to establish their identity, the attacker changed their laundering strategy to instead make use of Tornado Cash – a popular smart contract-based mixer on the Ethereum blockchain. Ongoing transactions have so far sent $80.3 million worth of ETH through Tornado Cash. Destination of $107 million ETH of the stolen $540 million ETH & USDC. The attacker’s blockchain activity shows that another $9.7 million worth of ETH is in intermediary wallets prepared to be laundered, most likely also through Tornado Cash. This leaves a considerable $433 million remaining in the attacker’s original wallet. Elliptic investigators are tracking these stolen funds, and have labelled the addresses associated to this attacker in our systems – ensuring that our clients will be alerted if they receive any of these funds. How the Lazarus Group is laundering its funds. Source: Elliptic Forensics . Lazarus Group’s targeting of crypto entities Lazarus Group’s targeting of crypto entities Lazarus Group refers to a group of North Korean state hackers who have been targeting crypto entities since at least 2017. Until 2021, the majority of this activity was directed towards centralized exchanges located in South Korea or elsewhere in Asia. However, within the past year the group’s attention has turned to DeFi services. While the service that was attacked in this instance – Ronin Network’s bridge – is decentralized, the creators of the network Sky Mavis are located in Vietnam. It is somewhat unsurprising that this attack has been attributed to North Korea. Many features of the attack mirrored the method used by Lazarus Group in previous high-profile attacks, including the location of the victim, the attack method (believed to have involved social engineering) and the laundering pattern utilized by the group after the event. Many commentators believe that cryptoassets stolen by Lazarus Group are used to fund the state’s nuclear and ballistic missile programs. With recent reports that North Korea may be again preparing for nuclear testing, today’s sanctions activity highlights the importance of ensuring that Lazarus Group is not able to successfully launder the proceeds of these attacks. Contact us Contact us You can find out more about Elliptic’s transaction monitoring capabilities or contact us for a demo. Jump to… How the hack unfolded Laundering the stolen crypto Lazarus Group’s targeting of crypto entities Contact us Share Share Share to X Share to LinkedIn Share to Facebook Share by email Copy page URL to clipboard Please try again FAQs FAQs How does Elliptic support DeFi protocols with compliance? Elliptic lets DeFi protocols continuously screen wallets and transactions to detect risk and protect users, using scalable tools designed to handle high volumes of AML screening requests while maintaining regulatory compliance. Can protocols screen wallets in real time? Yes. Screening is real-time and API-driven, so a protocol can assess wallet risk at the point of interaction and apply its own rules based on the result. Why is generic screening not enough for DeFi? DeFi activity is multi-asset and cross-chain by nature. Screening only a native asset or a single chain leaves blind spots, so protocols need coverage across all assets and networks a wallet touches. Dive deeper Dive deeper All insights Dec 5, 2025 DeFi +1 Global crypto regulation review 2025 Global crypto regulation review 2025 Sep 5, 2025 DeFi +1 The Typologies Report The Typologies Report May 24, 2024 DeFi +1 Elliptic Typologies Report 2024 Elliptic Typologies Report 2024 Feb 28, 2024 DeFi +1 Regulatory Outlook 2024: This will be a defining year for DeFi Regulatory Outlook 2024: This will be a defining year for DeFi David Carlisle Stay ahead with expert insights Solutions & Industries Banks and financial institutions Crypto companies Governments and regulators Law enforcement Payment service providers Products Discovery Lens Investigator Ecosystem monitoring Data Fabric Elliptic’s copilot The Elliptic difference API Documentation Service Status Training & Certifications Crypto certification Product certifications Blockchain basics Spotlight series Insights & Community Insights and research Customer stories FAQs Webinars Newsroom Company About Elliptic Security & Trust Partners Careers Contact © 2026 Elliptic Enterprises Limited. Registered in England and Wales (number 8458210). VAT registration number 171021261. Privacy Notice\"\n    }\n  ],\n  \"query_trace\": [\n    {\n      \"query\": \"Ronin Bridge hack Lazarus Group attribution FBI 2022 wallet laundering evidence\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-001\",\n        \"SRC-003\",\n        \"SRC-002\",\n        \"SRC-004\"\n      ],\n      \"total\": 4\n    },\n    {\n      \"query\": \"Harmony Horizon bridge hack Lazarus Group attribution FBI wallet laundering evidence 2022\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-001\",\n        \"SRC-003\",\n        \"SRC-002\",\n        \"SRC-004\"\n      ],\n      \"total\": 4\n    },\n    {\n      \"query\": \"Ronin Bridge Harmony Horizon theft linked Lazarus APT38 blockchain wallet evidence\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-001\",\n        \"SRC-003\",\n        \"SRC-002\",\n        \"SRC-004\"\n      ],\n      \"total\": 4\n    },\n    {\n      \"query\": \"site:justice.gov Ronin Harmony Lazarus cryptocurrency theft\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-001\",\n        \"SRC-002\",\n        \"SRC-003\"\n      ],\n      \"total\": 3\n    },\n    {\n      \"query\": \"site:home.treasury.gov Ronin Harmony Lazarus sanctions wallet\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-001\",\n        \"SRC-002\",\n        \"SRC-003\",\n        \"SRC-004\"\n      ],\n      \"total\": 4\n    }\n  ],\n  \"error\": null\n}",
+        "duration_ms": 0.18
+      },
+      {
+        "name": "deep_search",
+        "arguments": {
+          "pages": [
+            "https://www.chainalysis.com/blog/axie-infinity-ronin-bridge-dprk-hack-seizure/"
+          ]
+        },
+        "started_at": 1790838815.268804,
+        "result": "{\n  \"success\": true,\n  \"pages\": [\n    {\n      \"success\": true,\n      \"url\": \"https://www.chainalysis.com/blog/axie-infinity-ronin-bridge-dprk-hack-seizure/\",\n      \"source_id\": \"SRC-002\",\n      \"title\": \"Crypto Community Makes Profiting Hard for North Korean Hackers\",\n      \"content\": {\n        \"page_title\": \"Crypto Community Makes Profiting Hard for North Korean Hackers\"\n      },\n      \"raw_text\": \"Crypto Community Makes Profiting Hard for North Korean Hackers Products Crypto Investigations Investigations Solutions Reactor Investigate and trace funds across blockchains Wallet Scan Check recovery seeds for seizable crypto Rapid Instant crypto triage with AI-powered insights Crypto Compliance Compliance Solutions KYT Monitor transactions in real-time Sentinel Understand a stablecoins’s risk profile Address Screening Assess a wallet’s risk exposure VASP Risking Understand the risk profile of a VASP Crypto Security & Fraud Alterya AI-powered fraud prevention Hexagate Prevent web3 security hacks and exploits Crypto Data Chainalysis Data Solutions (DS) Proactive threat intelligence and alerting AI Chainalysis agents AI agents for blockchain intelligence Platform Platform Enterprise ready infrastructure for blockchain analysis solutions Blockchain Intelligence Power your blockchain technology needs with industry-leading intelligence Chainalysis Labs Our R&D hub for the latest innovations Industries Law Enforcement Detect, disrupt, and deter crypto crime Centralized Exchanges Optimize crypto exchange operations Consumer Brands Start your seamless transition into web3 Cybersecurity Proactive threat hunting and prevention Financial Institutions Generate new revenue opportunities with digital assets National Security Target and disrupt threat networks Tax Agencies Administer and enforce digital asset tax policy Stablecoin Risk Management Compliance-led growth for the stablecoin economy Regulators Protect consumers and ensure market stability Decentralized Finance Reduce risk and grow faster Services Global Services Tailored, expert-led solutions to navigate crypto challenges and drive actionable results worldwide Training & Certifications Equip yourself with the knowledge needed to navigate cryptocurrency confidently Chainalysis Academy Get started with short training courses Insights Blog Chainalysis Blog Crime Policy & Regulation Crypto Basics Markets Company News Research Reports Research reports on crypto crime, regulation, and global activity · 2026 Crypto Crime Report · 2025 Geography of Crypto Report Glossary Events Webinars View upcoming and on-demand webinars from our experts and industry leaders Chainalysis Links The digital asset event where the public and private sectors meet Customers Customers Hear why 1500+ customers trust Chainalysis Podcast Company About Company Chainalysis is the blockchain data platform Why Chainalysis Turn blockchain transactions into insights and risk into compliance Careers Careers at Chainalysis Chainalysis is growing fast – join us today US Government Chainalysis Government Solutions Expert crypto investigation and analytics for the US government Network Partners Ecosystem collaboration with industry partners Login Request a demo Blog Crime Markets Crypto Basics Policy & Regulation Company News Search Chainalysis in Action $30 Million Seized: How the Cryptocurrency Community Is Making It Difficult for North Korean Hackers To Profit September 8, 2022 | Erin Plante One of the most troubling trends in crypto crime right now is the stunning rise in funds stolen from DeFi protocols , and in particular cross-chain bridges . Much of the value stolen from DeFi protocols can be attributed to bad actors affiliated with North Korea, especially elite hacking units like Lazarus Group. We estimate that so far in 2022, North Korea-linked groups have stolen approximately $1 billion of cryptocurrency from DeFi protocols. But today I had the privilege of joining the Axie Infinity team on stage at AxieCon to deliver some good news: With the help of law enforcement and leading organizations in the cryptocurrency industry, more than $30 million worth of cryptocurrency stolen by North Korean-linked hackers has been seized. This marks the first time ever that cryptocurrency stolen by a North Korean hacking group has been seized, and we’re confident it won’t be the last. These are the results thus far of our investigation following the March 2022 theft of more than $600 million from Ronin Network, a sidechain built for the play-to-earn game Axie Infinity. I am proud to say that the Chainalysis Crypto Incident Response team played a role in these seizures, utilizing advanced tracing techniques to follow stolen funds to cash out points and liaising with law enforcement and industry players to quickly freeze funds. The seizures represent approximately 10% of the total funds stolen from Axie Infinity (accounting for price differences between time stolen and seized), and demonstrate that it is becoming more difficult for bad actors to successfully cash out their ill-gotten crypto gains. We have proven that with the right blockchain analysis tools, world-class investigators and compliance professionals can collaborate to stop even the most sophisticated hackers and launderers. There is still work to be done, but this is a milestone in our efforts to make the cryptocurrency ecosystem safer. So, how did we do it? Here’s what we can share now. How the Ronin Bridge was hacked & the stolen funds were laundered The attack began when the Lazarus Group gained access to five of the nine private keys held by transaction validators for Ronin Network’s cross-chain bridge. They used this majority to approve two transactions, both withdrawals: one for 173,600 ether (ETH) and the other for 25.5 million USD Coin (USDC). They then initiated their laundering process – and Chainalysis began tracing the funds. The laundering of these funds has leveraged over 12,000 different crypto addresses to-date, which demonstrates the hackers’ highly sophisticated laundering capabilities. North Korea’s typical DeFi laundering technique has roughly five stages: Stolen Ether sent to intermediary wallets Ether mixed in batches using Tornado Cash Ether swapped for bitcoin Bitcoin mixed in batches Bitcoin deposited to crypto-to-fiat services for cashout Lazarus Group has replicated this process with large portions of Ronin’s stolen funds. We can visualize it below using Chainalysis Reactor: However, the U.S. Treasury’s Office of Foreign Assets Control (OFAC) recently sanctioned Tornado Cash for its role in laundering over $455 million worth of cryptocurrency stolen from Axie Infinity. Since then, Lazarus Group has moved away from the popular Ethereum mixer, instead leveraging DeFi services to chain hop, or switch between several different kinds of cryptocurrencies in a single transaction. Bridges serve an important function to move digital assets between chains and most usage of these platforms is completely legitimate. Lazarus appears to be using bridges in an attempt to obscure source of funds. With Chainalysis tools these cross chain funds movements are easily traced. We can use Chainalysis Storyline to see an example of how Lazarus Group utilized chain-hopping to launder some of the funds stolen from Axie Infinity: Above, we see that the hacker bridged ETH from the Ethereum blockchain to the BNB chain and then swapped that ETH for USDD, which was then bridged to the BitTorrent chain. Lazarus Group carried out hundreds of similar transactions across several blockchains to launder the funds they stole from Axie Infinity, in addition to the more conventional Tornado Cash-based laundering we covered above. Transparency and collaboration are key Cryptocurrency’s transparency is instrumental to investigating hacks like the one suffered by Axie Infinity. Investigators with the right tools can follow the money to understand and disrupt a cybercrime organization’s laundering activities. This would never be possible in traditional financial channels, where money laundering usually involves networks of shell companies and financial institutions in jurisdictions that may not cooperate. Even so, these seizures would not have been possible without collaboration across the public and private sectors. Much of the funds stolen from Axie Infinity remain unspent in cryptocurrency wallets under the hackers’ control. We look forward to continuing to work with the cryptocurrency ecosystem to prevent them and other illicit actors from cashing out their funds. Axie Infinity Money Laundering North Korea Ronin Bridge In This Article How the Ronin Bridge was hacked & the stolen funds were laundered Transparency and collaboration are key Share Recent posts Crime Estimated $30 Million Stolen in Violent Crypto Attacks in 2026 as France Records Emerges as Hotspot August 6, 2026 Crime OFAC Sanctions Members of Hamas Financing Network July 27, 2026 Crime OFAC Sanctions Iran Central Bank Crypto Wallets, Freezing $131M in Stablecoins July 15, 2026 Submit Type above and press Enter to search. Press Esc to cancel. Subscribe to our weekly newsletter Products Reactor Wallet Scan Rapid KYT VASP Risking Address Screening Sentinel Alterya Hexagate Chainalysis Data Solutions (DS) Chainalysis AI Agents Industries Law Enforcement Centralized Exchanges Financial Institutions Tax Agencies Regulators Stablecoin Risk Management Decentralized Finance Consumer Brands Cybersecurity Company About Us Why Chainalysis Partners Media Resources Scam Prevention Join Us Careers Open Positions Resources Blog Reports Webinars Glossary Services Global Services Training & Certification Security & Trust Trust Center © 2026, Chainalysis Privacy Policy Legal Cookie Preferences\"\n    }\n  ],\n  \"query_trace\": [\n    {\n      \"query\": \"Ronin Bridge hack Lazarus Group attribution FBI 2022 wallet laundering evidence\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-001\",\n        \"SRC-003\",\n        \"SRC-002\",\n        \"SRC-004\"\n      ],\n      \"total\": 4\n    },\n    {\n      \"query\": \"Harmony Horizon bridge hack Lazarus Group attribution FBI wallet laundering evidence 2022\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-001\",\n        \"SRC-003\",\n        \"SRC-002\",\n        \"SRC-004\"\n      ],\n      \"total\": 4\n    },\n    {\n      \"query\": \"Ronin Bridge Harmony Horizon theft linked Lazarus APT38 blockchain wallet evidence\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-001\",\n        \"SRC-003\",\n        \"SRC-002\",\n        \"SRC-004\"\n      ],\n      \"total\": 4\n    },\n    {\n      \"query\": \"site:justice.gov Ronin Harmony Lazarus cryptocurrency theft\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-001\",\n        \"SRC-002\",\n        \"SRC-003\"\n      ],\n      \"total\": 3\n    },\n    {\n      \"query\": \"site:home.treasury.gov Ronin Harmony Lazarus sanctions wallet\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-001\",\n        \"SRC-002\",\n        \"SRC-003\",\n        \"SRC-004\"\n      ],\n      \"total\": 4\n    }\n  ],\n  \"error\": null\n}",
+        "duration_ms": 0.18
+      },
+      {
+        "name": "deep_search",
+        "arguments": {
+          "pages": [
+            "https://www.elliptic.co/resources/harmony-horizon-bridge-hack"
+          ]
+        },
+        "started_at": 1790838815.2698147,
+        "result": "{\n  \"success\": true,\n  \"pages\": [\n    {\n      \"success\": true,\n      \"url\": \"https://www.elliptic.co/resources/harmony-horizon-bridge-hack\",\n      \"source_id\": \"SRC-004\",\n      \"title\": \"The Harmony Horizon Bridge Hack\",\n      \"content\": {\n        \"page_title\": \"The Harmony Horizon Bridge Hack\"\n      },\n      \"raw_text\": \"Crypto Insights & Research | Elliptic We’re hiring! Join us and make a move that matters Search Company & Careers About Elliptic Security & Trust Careers Contact Sign in Search Solutions & Industries Solutions for Banks and financial institutions Manage crypto risk with confidence How we help financial institutions Screening and monitoring Regulatory reporting Entity due diligence Stablecoin risk management Risk Management Investigations Crypto companies Scale rapidly in digital assets How we help crypto companies Screening and monitoring Blockchain analytics Investigations Data and intelligence API Documentation Payment service providers Move money with trust and speed How we help payment service providers Screening and monitoring Investigations Data and intelligence Blockchain analytics Stablecoin risk management Governments and regulators Strengthen oversight of digital assets How we help governments and regulators Data and intelligence Blockchain Analytics Due diligence dashboards Screening and monitoring Law enforcement Trace illicit activity and recover assets How we help law enforcement Blockchain analytics Screening and monitoring Investigations Spotlight Operation Atlantic Operation Atlantic How Elliptic helped trace $45M+ in stolen crypto Products Products Lens Real-time multi-asset wallet & transaction screening Discovery VASP screening & entity due diligence Investigator Single-click cross-chain investigations Ecosystem monitoring Visualizations for crypto exposure trend analysis Platform The Elliptic difference Issuer due diligence Asset due diligence Data Fabric Elliptic’s copilot API documentation ROI Compliance efficency calculator Compliance efficency calculator See how much your business could save Training & Certifications Courses Crypto certification Master wallet screening, transaction monitoring and deep investigations Product certifications Turn your team into experts on Elliptic's blockchain analytics solutions Spotlight series Self-paced compliance training Fundamentals Blockchain basics Country guides Glossary Webinar Crypto regulation in 2026: How to prepare Crypto regulation in 2026: How to prepare Watch on demand Insights & Community Resources Insights and research From quick guides to trend forecasting and deep analysis Customer stories Real results, big impact. FAQs All your questions, answered Community Webinars Newsroom Partners Success story Global crypto exchange realizes $3.1M efficiency gain with Elliptic Global crypto exchange realizes $3.1M efficiency gain with Elliptic Uncover the story Company & Careers About Elliptic Security & Trust Careers Contact Sign in Get a demo Insights and research Insights and research The latest crypto compliance insights, regulatory analysis and financial-crime research from Elliptic's experts. Article feed Aug 20, 2026 VASP Due Diligence +1 A practical framework for VASP due diligence A practical framework for VASP due diligence By Elliptic Aug 19, 2026 Reports & Whitepapers +1 How to onboard a VASP How to onboard a VASP Elliptic Aug 13, 2026 The EU’s 21st sanctions package creates a third country ban for cryptoassets The EU’s 21st sanctions package creates a third country ban for cryptoassets David Carlisle Aug 10, 2026 OFAC sanctions Shelbit and other entities associated with Iranian regime OFAC sanctions Shelbit and other entities associated with Iranian regime Elliptic Stay ahead with exclusive insight from our experts. Stay ahead with exclusive insight from our experts. Sign me up By submitting, you consent to allow Elliptic to store and process the information submitted to provide the content requested. Find insights All topics: All topics AI CBDCs Compliance Cross-Chain Crypto Crime Data & intelligence DeFi Digital assets Engineering Financial crime & typologies Financial Institutions Law enforcement Metaverse MiCA NFTs OFAC Regulation Regulation & policy Regulators & Government Reports & Whitepapers Risk Assessment Sanctions Stablecoins State of crypto Tokenization Travel Rule US policy VASP Due Diligence All industries: All industries Crypto Companies Financial Institutions Governments & Regulators Law Enforcement All regions: All regions Americas APAC EMEA Global North Korea Russia Aug 20, 2026 VASP Due Diligence +1 A practical framework for VASP due diligence A practical framework for VASP due diligence By Elliptic Elliptic Aug 19, 2026 Reports & Whitepapers +1 How to onboard a VASP How to onboard a VASP By Elliptic Elliptic Aug 13, 2026 The EU’s 21st sanctions package creates a third country ban for cryptoassets The EU’s 21st sanctions package creates a third country ban for cryptoassets By David Carlisle Vice President of Policy and Regulatory Affairs David Carlisle Aug 10, 2026 OFAC sanctions Shelbit and other entities associated with Iranian regime OFAC sanctions Shelbit and other entities associated with Iranian regime By Elliptic Elliptic Aug 5, 2026 Compliance +1 How credit unions can identify and manage their crypto exposure How credit unions can identify and manage their crypto exposure By Elliptic Elliptic Aug 4, 2026 Regulation +1 Crypto regulatory affairs: EU adopts new Russia sanctions Crypto regulatory affairs: EU adopts new Russia sanctions By David Carlisle Vice President of Policy and Regulatory Affairs David Carlisle Aug 4, 2026 Regulation +1 How to build MAS' AML/CFT expectations into your controls How to build MAS' AML/CFT expectations into your controls By June Lau June Lau Jul 30, 2026 Regulation +1 How US crypto regulation is being rewritten in 2026 How US crypto regulation is being rewritten in 2026 By Peter Phelan Peter Phelan Jul 29, 2026 Stablecoins +1 How banks should approach stablecoin compliance and financial crime risk How banks should approach stablecoin compliance and financial crime risk By Elliptic Elliptic 1 2 3 4 5 102 Blockchain intelligence without compromise Blockchain intelligence without compromise Together, we’re unstoppable. Book a demo Stay ahead with expert insights Solutions & Industries Banks and financial institutions Crypto companies Governments and regulators Law enforcement Payment service providers Products Discovery Lens Investigator Ecosystem monitoring Data Fabric Elliptic’s copilot The Elliptic difference API Documentation Service Status Training & Certifications Crypto certification Product certifications Blockchain basics Spotlight series Insights & Community Insights and research Customer stories FAQs Webinars Newsroom Company About Elliptic Security & Trust Partners Careers Contact © 2026 Elliptic Enterprises Limited. Registered in England and Wales (number 8458210). VAT registration number 171021261. Privacy Notice\"\n    }\n  ],\n  \"query_trace\": [\n    {\n      \"query\": \"Ronin Bridge hack Lazarus Group attribution FBI 2022 wallet laundering evidence\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-001\",\n        \"SRC-003\",\n        \"SRC-002\",\n        \"SRC-004\"\n      ],\n      \"total\": 4\n    },\n    {\n      \"query\": \"Harmony Horizon bridge hack Lazarus Group attribution FBI wallet laundering evidence 2022\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-001\",\n        \"SRC-003\",\n        \"SRC-002\",\n        \"SRC-004\"\n      ],\n      \"total\": 4\n    },\n    {\n      \"query\": \"Ronin Bridge Harmony Horizon theft linked Lazarus APT38 blockchain wallet evidence\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-001\",\n        \"SRC-003\",\n        \"SRC-002\",\n        \"SRC-004\"\n      ],\n      \"total\": 4\n    },\n    {\n      \"query\": \"site:justice.gov Ronin Harmony Lazarus cryptocurrency theft\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-001\",\n        \"SRC-002\",\n        \"SRC-003\"\n      ],\n      \"total\": 3\n    },\n    {\n      \"query\": \"site:home.treasury.gov Ronin Harmony Lazarus sanctions wallet\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-001\",\n        \"SRC-002\",\n        \"SRC-003\",\n        \"SRC-004\"\n      ],\n      \"total\": 4\n    }\n  ],\n  \"error\": null\n}",
+        "duration_ms": 0.14
+      },
+      {
+        "name": "knowledge_agent",
+        "arguments": {
+          "source_title": "Ronin and Harmony Horizon bridge theft attribution and laundering evidence",
+          "source_url": "SRC-001; SRC-002; SRC-003; SRC-004",
+          "text": "Tool-returned evidence: SRC-001 (Elliptic, May 9 2023) states the FBI confirmed North Korea-backed Lazarus Group was behind the June 24 2022 Harmony Horizon Bridge hack; Elliptic says its earlier attribution was based on similarities to Lazarus blockchain laundering patterns. Horizon was exploited for $99.7m. The stolen funds were programmatically structured through Tornado Cash, mirroring the Ronin laundering method. Elliptic estimates more than $555m from the two hacks passed through Tornado Cash: over $468m from Ronin and $96m from Harmony. After Tornado Cash sanctions, funds were structured through Railgun; Elliptic says about 70% of funds sent through Railgun were estimated to be Harmony-hack funds, and funds were deposited into three exchanges; Binance and Huobi identified, blocked and seized part of the funds. SRC-003 (Elliptic, Mar 29 2022, updated for Apr 14 sanctions) states Ronin theft involved 173,600 ETH and 25.5m USDC, worth $540m at theft; OFAC sanctioned the exploiter Ethereum address and listed its owner as Lazarus Group. Ronin postmortem said attacker obtained five of nine validator private keys and evidence pointed to social engineering rather than a technical flaw. Elliptic reported stolen USDC swapped for ETH through DEXs, then ETH sent through centralized exchanges and Tornado Cash; as of Apr 14, 18% had been laundered, $80.3m through Tornado Cash, $9.7m in intermediary wallets, and $433m remained in the original wallet. Elliptic assessed similarities to prior Lazarus attacks in victim location, social-engineering method and laundering pattern. SRC-002 (Chainalysis, Sep 8 2022) states Lazarus accessed five of nine Ronin validator keys and approved withdrawals of 173,600 ETH and 25.5m USDC; laundering used over 12,000 addresses. It describes a typical North Korea-linked DeFi laundering sequence: intermediary wallets, Tornado Cash mixing, ETH-to-BTC swaps, Bitcoin mixing, then crypto-to-fiat cashout. It says large portions of Ronin funds followed this process, and some funds were chain-hopped across Ethereum, BNB and BitTorrent; more than $30m was seized, approximately 10% of total stolen funds. SRC-004 provided no substantive incident text beyond an article listing."
+        },
+        "started_at": 1790838853.7577136,
+        "result": "{\n  \"status\": \"ok\",\n  \"added_entities\": [\n    \"ORGANIZATION | Lazarus Group\",\n    \"ORGANIZATION | Elliptic\",\n    \"ORGANIZATION | Chainalysis\",\n    \"ORGANIZATION | FBI\",\n    \"ORGANIZATION | Binance\",\n    \"ORGANIZATION | Huobi\",\n    \"LOCATION | North Korea\",\n    \"PRODUCT | Harmony Horizon Bridge\",\n    \"PRODUCT | Ronin Network\",\n    \"PRODUCT | Tornado Cash\",\n    \"PRODUCT | Railgun\",\n    \"EVENT | Harmony Horizon Bridge hack\",\n    \"EVENT | Ronin Network theft\",\n    \"DATE | 2022-06-24\",\n    \"DOCUMENT | SRC-001\",\n    \"DOCUMENT | SRC-002\",\n    \"DOCUMENT | SRC-003\"\n  ],\n  \"added_edges\": [\n    \"ASSOCIATED_WITH | organization:Lazarus Group -> location:North Korea\",\n    \"EXPLOITED | organization:Lazarus Group -> product:Harmony Horizon Bridge\",\n    \"HACKED_NETWORK | organization:Lazarus Group -> product:Ronin Network\",\n    \"OCCURRED_ON | event:Harmony Horizon Bridge hack -> date:2022-06-24\",\n    \"LAUNDERED_FUNDS_THROUGH | event:Harmony Horizon Bridge hack -> product:Tornado Cash\",\n    \"LAUNDERED_FUNDS_THROUGH | event:Harmony Horizon Bridge hack -> product:Railgun\",\n    \"LAUNDERED_FUNDS_THROUGH | event:Ronin Network theft -> product:Tornado Cash\",\n    \"TRANSFERRED_TO | event:Harmony Horizon Bridge hack -> organization:Binance\",\n    \"TRANSFERRED_TO | event:Harmony Horizon Bridge hack -> organization:Huobi\",\n    \"PUBLISHED_BY | organization:Elliptic -> document:SRC-001\",\n    \"PUBLISHED_BY | organization:Chainalysis -> document:SRC-002\",\n    \"PUBLISHED_BY | organization:Elliptic -> document:SRC-003\"\n  ],\n  \"neo4j\": true\n}",
+        "duration_ms": 77200.32
+      },
+      {
+        "name": "kb_get",
+        "arguments": {},
+        "started_at": 1790838946.5488627,
+        "result": "DATE | 2022-06-24 | Date of the Harmony Horizon Bridge hack.\nDOCUMENT | SRC-001 | Elliptic report dated May 9, 2023 concerning the Harmony Horizon Bridge hack and laundering activity.\nDOCUMENT | SRC-002 | Chainalysis report dated September 8, 2022 concerning the Ronin theft and laundering sequence.\nDOCUMENT | SRC-003 | Elliptic report dated March 29, 2022 and updated for April 14 sanctions concerning the Ronin theft.\nEVENT | Harmony Horizon Bridge hack | June 24, 2022 hack attributed to Lazarus Group; approximately $99.7 million was stolen.\nEVENT | Ronin Network theft | Theft involving 173,600 ETH and 25.5 million USDC, valued at approximately $540 million at the time.\nLOCATION | North Korea | Country identified as backing Lazarus Group.\nORGANIZATION | Binance | Exchange that identified, blocked, and seized part of the Harmony-related funds.\nORGANIZATION | Chainalysis | Blockchain analytics company that analyzed the Ronin laundering sequence.\nORGANIZATION | Elliptic | Blockchain analytics company that reported attribution and laundering analysis.\nORGANIZATION | FBI | The FBI confirmed Lazarus Group was behind the Harmony Horizon Bridge hack.\nORGANIZATION | Huobi | Exchange that identified, blocked, and seized part of the Harmony-related funds.\nORGANIZATION | Lazarus Group | North Korea-backed threat group attributed by the FBI and Elliptic to the Harmony Horizon Bridge and Ronin thefts.\nPRODUCT | Harmony Horizon Bridge | Bridge exploited on June 24, 2022, for approximately $99.7 million.\nPRODUCT | Railgun | Privacy protocol used to structure funds after Tornado Cash sanctions.\nPRODUCT | Ronin Network | Network from which attackers approved withdrawals of 173,600 ETH and 25.5 million USDC.\nPRODUCT | Tornado Cash | Mixer through which Harmony and Ronin proceeds were structured or laundered.",
+        "duration_ms": 11.25
+      },
+      {
+        "name": "kb_get_edges",
+        "arguments": {
+          "limit": 100
+        },
+        "started_at": 1790838960.241608,
+        "result": "laundered_funds_through | event:Harmony Horizon Bridge hack -> product:Railgun | evidence: After Tornado Cash sanctions, Harmony-related funds were structured through Railgun; Elliptic estimated about 70% of Railgun flows were Harmony-hack funds.\nlaundered_funds_through | event:Harmony Horizon Bridge hack -> product:Tornado Cash | evidence: Harmony proceeds were programmatically structured through Tornado Cash; Elliptic estimated approximately $96 million passed through it.\noccurred_on | event:Harmony Horizon Bridge hack -> date:2022-06-24 | evidence: The Harmony Horizon Bridge hack occurred on June 24, 2022.\ntransferred_to | event:Harmony Horizon Bridge hack -> organization:Binance | evidence: Part of the Harmony-related funds was deposited into Binance, which identified, blocked, and seized some funds.\ntransferred_to | event:Harmony Horizon Bridge hack -> organization:Huobi | evidence: Part of the Harmony-related funds was deposited into Huobi, which identified, blocked, and seized some funds.\nlaundered_funds_through | event:Ronin Network theft -> product:Tornado Cash | evidence: Ronin proceeds were sent through Tornado Cash; Elliptic reported $80.3 million had passed through it by April 14, 2022.\npublished_by | organization:Chainalysis -> document:SRC-002 | evidence: SRC-002 is identified as a Chainalysis report dated September 8, 2022.\npublished_by | organization:Elliptic -> document:SRC-001 | evidence: SRC-001 is identified as an Elliptic report dated May 9, 2023.\npublished_by | organization:Elliptic -> document:SRC-003 | evidence: SRC-003 is identified as an Elliptic report dated March 29, 2022.\nassociated_with | organization:Lazarus Group -> location:North Korea | evidence: The evidence describes Lazarus Group as North Korea-backed or North Korea-linked.\nexploited | organization:Lazarus Group -> product:Harmony Horizon Bridge | evidence: The FBI and Elliptic attributed the June 24, 2022 Horizon Bridge hack to Lazarus Group.\nhacked_network | organization:Lazarus Group -> product:Ronin Network | evidence: Lazarus accessed five of nine Ronin validator keys and approved withdrawals of 173,600 ETH and 25.5 million USDC.",
+        "duration_ms": 11.47
+      }
+    ],
+    "final_report": "# Final Report: Lazarus-linked Ronin Bridge and Harmony Horizon Thefts\n\n## Executive assessment\n\nThe available evidence supports a strong public attribution linking both the **Ronin Network theft** and the **Harmony Horizon Bridge hack** to the North Korea-backed **Lazarus Group**.\n\nThe linkage rests on three principal evidentiary categories:\n\n1. **Public attribution**\n   - The FBI confirmed that Lazarus Group was behind the June 2022 Harmony Horizon Bridge hack.\n   - OFAC identified the Ethereum address associated with the Ronin theft as owned by Lazarus Group.\n   - Elliptic assessed that the Ronin attack shared Lazarus characteristics, including social engineering and laundering behavior.  \n   **Sources:** [SRC-001], [SRC-003]\n\n2. **Common laundering patterns**\n   - Proceeds from both incidents were routed through Tornado Cash.\n   - The Harmony laundering sequence reportedly mirrored the Ronin laundering pattern.\n   - Ronin laundering involved intermediary wallets, mixer use, asset swaps, Bitcoin mixing, and cross-chain movement.\n   - After Tornado Cash sanctions, Harmony-related funds were reportedly routed through Railgun and subsequently to exchanges.  \n   **Sources:** [SRC-001], [SRC-002], [SRC-003]\n\n3. **Blockchain and wallet evidence**\n   - The Ronin attackers controlled five of nine validator private keys and approved withdrawals of 173,600 ETH and 25.5 million USDC.\n   - Ronin proceeds were traced through thousands of addresses and multiple chains.\n   - Harmony proceeds were traced from the theft through Tornado Cash, Railgun, and exchange deposits.\n   - The tools returned no specific wallet addresses, transaction hashes, or direct wallet identifier common to both thefts; therefore, the wallet evidence supports behavioral and flow-pattern linkage rather than a demonstrated address-to-address connection.  \n   **Sources:** [SRC-001], [SRC-002], [SRC-003]\n\n## Incident summaries\n\n### Ronin Network theft\n\nThe Ronin theft involved approximately **173,600 ETH and 25.5 million USDC**, valued at approximately **$540 million at the time of theft**. The attacker obtained five of nine validator keys and used them to authorize withdrawals. Ronin’s postmortem reportedly assessed that the attack was socially engineered rather than the result of a technical flaw.  \n**Sources:** [SRC-002], [SRC-003]\n\nThe funds were laundered through a combination of:\n\n- intermediary wallets;\n- decentralized exchanges, including conversion of USDC to ETH;\n- centralized exchanges;\n- Tornado Cash;\n- ETH-to-Bitcoin swaps;\n- Bitcoin mixing;\n- cross-chain activity involving Ethereum, BNB Chain, and BitTorrent Chain.\n\nChainalysis reported that more than **12,000 addresses** were involved in the laundering activity and that more than **$30 million** was seized. Elliptic reported that approximately **$80.3 million** had moved through Tornado Cash by April 14, 2022, while approximately **$9.7 million** was held in intermediary wallets and approximately **$433 million** remained in the original wallet at that point.  \n**Sources:** [SRC-002], [SRC-003]\n\nOFAC sanctioned the exploiter’s Ethereum address and identified its owner as Lazarus Group. Elliptic also assessed that the victim location, apparent social-engineering method, and laundering pattern resembled prior Lazarus-linked attacks.  \n**Source:** [SRC-003]\n\n### Harmony Horizon Bridge hack\n\nThe Harmony Horizon Bridge was exploited on **June 24, 2022**, for approximately **$99.7 million**. The FBI later confirmed that Lazarus Group was responsible. Elliptic stated that its prior attribution was based on similarities to Lazarus’s previous blockchain laundering patterns.  \n**Source:** [SRC-001]\n\nThe proceeds were reportedly:\n\n- programmatically structured through Tornado Cash;\n- laundered using a pattern that mirrored the Ronin laundering activity;\n- later routed through Railgun after Tornado Cash sanctions;\n- deposited into three cryptocurrency exchanges, including Binance and Huobi, which identified, blocked, and seized part of the funds.\n\nElliptic estimated that approximately **$96 million** from the Harmony hack and more than **$468 million** from the Ronin hack passed through Tornado Cash, for a combined total exceeding **$555 million**. Elliptic further estimated that approximately **70% of the funds sent through Railgun** were connected to the Harmony hack.  \n**Source:** [SRC-001]\n\n## Attribution analysis\n\n### Lazarus Group attribution\n\nThe Ronin attribution has both regulatory and private-sector support:\n\n- OFAC identified the Ronin exploiter’s Ethereum address as belonging to Lazarus Group.\n- Elliptic linked the attack to Lazarus based on similarities in the attack method, target context, and laundering pattern.\n- Chainalysis described the Ronin laundering process as consistent with North Korea-linked DeFi laundering practices and explicitly stated that Lazarus accessed the validator keys.  \n**Sources:** [SRC-002], [SRC-003]\n\nThe Harmony attribution is stronger in the available record because the FBI confirmation is expressly reported by Elliptic. The report also states that the FBI confirmation aligned with Elliptic’s earlier attribution based on laundering-pattern similarities.  \n**Source:** [SRC-001]\n\n### APT38 designation\n\nThe returned evidence identifies **Lazarus Group** and North Korea-linked hacking activity, but it does **not** explicitly identify **APT38** as the actor or provide a sourced equivalence between Lazarus Group and APT38.\n\nAccordingly, the case materials support a Lazarus/North Korea attribution but do not independently establish an APT38 attribution.  \n**Sources:** [SRC-001], [SRC-002], [SRC-003]\n\n## Laundering-pattern linkage\n\nThe strongest link between the two thefts is the repeated use of similar laundering infrastructure and methods:\n\n| Pattern | Ronin | Harmony | Assessment |\n|---|---:|---:|---|\n| Tornado Cash usage | Yes | Yes | Directly reported for both incidents |\n| Intermediary wallets | Yes | Yes | Reported for Ronin; Harmony funds were placed into multiple addresses |\n| Programmatic transaction structuring | Reported | Reported | Similar behavior |\n| Cross-asset conversion | USDC-to-ETH and ETH-to-BTC | Not fully specified in returned text | Stronger evidence for Ronin |\n| Cross-chain movement | Ethereum, BNB, BitTorrent | Not specifically detailed in returned text | Directly established only for Ronin |\n| Railgun usage | Not reported in returned text | Yes | Reported as a post-sanctions alternative for Harmony |\n| Exchange deposits and seizures | Seizures reported by Chainalysis | Binance and Huobi seizure activity reported | Supports traceability and cash-out disruption |\n\nElliptic specifically stated that Harmony’s laundering methods **mirrored** those used for the Ronin proceeds. That is the clearest direct public connection between the two cases.  \n**Sources:** [SRC-001], [SRC-002], [SRC-003]\n\n## Wallet evidence\n\nThe returned evidence supports the following wallet-level conclusions:\n\n- The Ronin attackers controlled the validator keys necessary to authorize the theft.\n- The Ronin exploiter’s Ethereum address was sanctioned by OFAC and attributed to Lazarus Group.\n- Ronin proceeds moved through an original wallet, intermediary wallets, mixers, exchanges, and multiple chains.\n- Harmony proceeds were traced through Tornado Cash, Railgun, and exchange deposits.\n- The funds associated with both thefts were tracked using blockchain analytics and transaction tracing.\n\nHowever, the tool output did not return:\n\n- specific Ethereum, Bitcoin, or other wallet addresses;\n- transaction hashes;\n- a common wallet address shared by the Ronin and Harmony proceeds;\n- a direct transfer from a Ronin wallet to a Harmony wallet;\n- a source explicitly naming APT38.\n\nThe available wallet evidence therefore demonstrates **attributed exploiter wallets and comparable laundering flows**, but not a direct address-level common-wallet connection between the incidents.  \n**Sources:** [SRC-001], [SRC-002], [SRC-003]\n\n## Confidence and limitations\n\n### High-confidence findings\n\n- Lazarus Group was publicly attributed to the Harmony Horizon Bridge hack by the FBI, as reported by Elliptic. **[SRC-001]**\n- OFAC identified the Ronin exploiter’s Ethereum address as belonging to Lazarus Group. **[SRC-003]**\n- Both thefts involved Tornado Cash laundering. **[SRC-001], [SRC-003]**\n- Elliptic reported that the Harmony laundering pattern mirrored the Ronin laundering pattern. **[SRC-001]**\n- Ronin laundering involved extensive address dispersion and cross-chain movement. **[SRC-002]**\n\n### Moderate-confidence assessments\n\n- The shared laundering behavior is consistent with a common operational actor or closely related North Korea-linked laundering capability.\n- The Ronin and Harmony incidents are best understood as separate thefts linked by public Lazarus attribution and recurring laundering tradecraft, rather than as one continuous theft event.\n\n### Unsupported or unresolved points\n\n- APT38 attribution is not established by the returned evidence.\n- A single wallet or transaction directly linking proceeds from both incidents is not shown.\n- The sources do not establish the individual identities of the operators.\n- The available excerpts do not provide complete seizure totals or a final accounting of recovered funds.\n\n## Conclusion\n\nThe evidence supports a well-founded public linkage between the Ronin Network and Harmony Horizon Bridge thefts through Lazarus Group attribution and highly similar laundering behavior. The strongest connective fact is Elliptic’s statement that the Harmony laundering method mirrored the Ronin laundering pattern, alongside the shared use of Tornado Cash and North Korea-linked operational characteristics.\n\nThe case does **not**, based on the returned material, establish a direct common wallet, transaction-level bridge between the two thefts, or an independent APT38 attribution. The appropriate conclusion is therefore:\n\n> **Both thefts were publicly attributed to Lazarus Group, and their proceeds exhibited materially similar laundering patterns. This provides strong behavioral and attributional linkage, but the returned evidence does not demonstrate a direct common-wallet connection or independently prove an APT38 designation.**\n\n## Structured JSON\n\n```json\n{\n  \"findings\": [\n    {\n      \"question\": \"Who was publicly attributed with the Harmony Horizon Bridge hack?\",\n      \"answer\": \"The FBI confirmed that the North Korea-backed Lazarus Group was behind the June 24, 2022 Harmony Horizon Bridge hack.\",\n      \"supporting_entities\": [\n        \"Lazarus Group\",\n        \"FBI\",\n        \"Harmony Horizon Bridge\",\n        \"Harmony Horizon Bridge hack\",\n        \"North Korea\"\n      ],\n      \"source_references\": [\"SRC-001\"]\n    },\n    {\n      \"question\": \"Who was publicly attributed with the Ronin Network theft?\",\n      \"answer\": \"OFAC identified the Ronin exploiter's Ethereum address as belonging to Lazarus Group. Elliptic and Chainalysis also described the attack and laundering activity as Lazarus or North Korea-linked.\",\n      \"supporting_entities\": [\n        \"Lazarus Group\",\n        \"Ronin Network\",\n        \"Ronin Network theft\",\n        \"North Korea\"\n      ],\n      \"source_references\": [\"SRC-002\", \"SRC-003\"]\n    },\n    {\n      \"question\": \"What common laundering infrastructure linked the two thefts?\",\n      \"answer\": \"Proceeds from both thefts were routed through Tornado Cash. Elliptic stated that the Harmony laundering methods mirrored those used for the Ronin proceeds.\",\n      \"supporting_entities\": [\n        \"Harmony Horizon Bridge hack\",\n        \"Ronin Network theft\",\n        \"Tornado Cash\",\n        \"Lazarus Group\"\n      ],\n      \"source_references\": [\"SRC-001\", \"SRC-003\"]\n    },\n    {\n      \"question\": \"What laundering methods were documented for the Ronin proceeds?\",\n      \"answer\": \"The Ronin proceeds moved through intermediary wallets, Tornado Cash, asset swaps, Bitcoin mixing, crypto-to-fiat services, and cross-chain transfers. Chainalysis reported more than 12,000 addresses involved.\",\n      \"supporting_entities\": [\n        \"Ronin Network theft\",\n        \"Tornado Cash\",\n        \"Ronin Network\",\n        \"Lazarus Group\"\n      ],\n      \"source_references\": [\"SRC-002\", \"SRC-003\"]\n    },\n    {\n      \"question\": \"What later laundering activity was reported for the Harmony proceeds?\",\n      \"answer\": \"After Tornado Cash sanctions, Harmony-related funds were structured through Railgun and later deposited into three exchanges. Binance and Huobi identified, blocked, and seized part of the funds.\",\n      \"supporting_entities\": [\n        \"Harmony Horizon Bridge hack\",\n        \"Railgun\",\n        \"Tornado Cash\",\n        \"Binance\",\n        \"Huobi\"\n      ],\n      \"source_references\": [\"SRC-001\"]\n    },\n    {\n      \"question\": \"Is there direct wallet evidence connecting the two thefts?\",\n      \"answer\": \"The returned evidence shows attributed exploiter wallets and similar fund flows, but it does not provide specific wallet addresses, transaction hashes, or a common wallet shared by both thefts.\",\n      \"supporting_entities\": [\n        \"Harmony Horizon Bridge hack\",\n        \"Ronin Network theft\",\n        \"Tornado Cash\",\n        \"Railgun\"\n      ],\n      \"source_references\": [\"SRC-001\", \"SRC-002\", \"SRC-003\"]\n    },\n    {\n      \"question\": \"Is APT38 attribution established?\",\n      \"answer\": \"No. The returned sources support Lazarus Group and North Korea-linked attribution but do not explicitly identify APT38 or establish an equivalence between APT38 and Lazarus Group.\",\n      \"supporting_entities\": [\n        \"Lazarus Group\",\n        \"North Korea\"\n      ],\n      \"source_references\": [\"SRC-001\", \"SRC-002\", \"SRC-003\"]\n    }\n  ],\n  \"claims\": [\n    {\n      \"claim\": \"The Ronin and Harmony thefts are linked by public Lazarus Group attribution and recurring laundering tradecraft.\",\n      \"source_references\": [\"SRC-001\", \"SRC-002\", \"SRC-003\"]\n    },\n    {\n      \"claim\": \"The Harmony laundering pattern reportedly mirrored the Ronin laundering pattern.\",\n      \"source_references\": [\"SRC-001\"]\n    },\n    {\n      \"claim\": \"Tornado Cash was used in laundering proceeds from both incidents.\",\n      \"source_references\": [\"SRC-001\", \"SRC-003\"]\n    },\n    {\n      \"claim\": \"Ronin laundering involved more than 12,000 addresses and included cross-chain activity.\",\n      \"source_references\": [\"SRC-002\"]\n    },\n    {\n      \"claim\": \"The Ronin exploiter's Ethereum address was sanctioned by OFAC and identified as belonging to Lazarus Group.\",\n      \"source_references\": [\"SRC-003\"]\n    },\n    {\n      \"claim\": \"The available evidence does not establish a direct common-wallet or transaction-level connection between the two thefts.\",\n      \"source_references\": [\"SRC-001\", \"SRC-002\", \"SRC-003\"]\n    },\n    {\n      \"claim\": \"APT38 attribution is unresolved in the returned evidence.\",\n      \"source_references\": [\"SRC-001\", \"SRC-002\", \"SRC-003\"]\n    }\n  ],\n  \"reasoning_steps\": [\n    {\n      \"id\": \"RS-1\",\n      \"conclusion\": \"Lazarus Group is publicly linked to both thefts.\",\n      \"premise_entities\": [\n        \"Lazarus Group\",\n        \"Harmony Horizon Bridge\",\n        \"Ronin Network\"\n      ],\n      \"premise_relations\": [\n        \"exploited\",\n        \"hacked_network\"\n      ]\n    },\n    {\n      \"id\": \"RS-2\",\n      \"conclusion\": \"The two incidents share a significant laundering-pattern linkage.\",\n      \"premise_entities\": [\n        \"Harmony Horizon Bridge hack\",\n        \"Ronin Network theft\",\n        \"Tornado Cash\",\n        \"Railgun\"\n      ],\n      \"premise_relations\": [\n        \"laundered_funds_through\"\n      ]\n    },\n    {\n      \"id\": \"RS-3\",\n      \"conclusion\": \"The laundering evidence supports common or closely related operational tradecraft, but not necessarily a direct common wallet.\",\n      \"premise_entities\": [\n        \"Harmony Horizon Bridge hack\",\n        \"Ronin Network theft\",\n        \"Tornado Cash\",\n        \"Railgun\"\n      ],\n      \"premise_relations\": [\n        \"laundered_funds_through\"\n      ]\n    },\n    {\n      \"id\": \"RS-4\",\n      \"conclusion\": \"APT38 cannot be confirmed from the returned sources.\",\n      \"premise_entities\": [\n        \"Lazarus Group\",\n        \"North Korea\"\n      ],\n      \"premise_relations\": [\n        \"associated_with\"\n      ]\n    }\n  ],\n  \"contradictions\": [\n    {\n      \"contradiction_id\": \"C-1\",\n      \"description\": \"The Ronin theft is described as approximately $540 million at the time of theft, while another passage refers to the stolen funds as worth over $600 million at discovery. This is a valuation-timing difference rather than a demonstrated contradiction.\",\n      \"source_references\": [\"SRC-003\"]\n    },\n    {\n      \"contradiction_id\": \"C-2\",\n      \"description\": \"The returned evidence supports Lazarus Group attribution but does not independently establish the requested APT38 designation.\",\n      \"source_references\": [\"SRC-001\", \"SRC-002\", \"SRC-003\"]\n    }\n  ]\n}\n```",
+    "operational": {
+      "duration_ms": 358101.38,
+      "mode": "offline",
+      "iterations": 12,
+      "search_calls": 5,
+      "fetch_calls": 4,
+      "knowledge_base_calls": 1,
+      "termination_reason": "final_report"
+    },
+    "output": {
+      "entities": [
+        {
+          "type": "ORGANIZATION",
+          "value": "Lazarus Group"
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "Elliptic"
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "Chainalysis"
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "FBI"
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "Binance"
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "Huobi"
+        },
+        {
+          "type": "LOCATION",
+          "value": "North Korea"
+        },
+        {
+          "type": "PRODUCT",
+          "value": "Harmony Horizon Bridge"
+        },
+        {
+          "type": "PRODUCT",
+          "value": "Ronin Network"
+        },
+        {
+          "type": "PRODUCT",
+          "value": "Tornado Cash"
+        },
+        {
+          "type": "PRODUCT",
+          "value": "Railgun"
+        },
+        {
+          "type": "EVENT",
+          "value": "Harmony Horizon Bridge hack"
+        },
+        {
+          "type": "EVENT",
+          "value": "Ronin Network theft"
+        },
+        {
+          "type": "DATE",
+          "value": "2022-06-24"
+        },
+        {
+          "type": "DOCUMENT",
+          "value": "SRC-001"
+        },
+        {
+          "type": "DOCUMENT",
+          "value": "SRC-002"
+        },
+        {
+          "type": "DOCUMENT",
+          "value": "SRC-003"
+        }
+      ],
+      "relations": [
+        {
+          "relation_type": "ASSOCIATED_WITH",
+          "from_type": "organization",
+          "from_value": "Lazarus Group",
+          "to_type": "location",
+          "to_value": "North Korea"
+        },
+        {
+          "relation_type": "EXPLOITED",
+          "from_type": "organization",
+          "from_value": "Lazarus Group",
+          "to_type": "product",
+          "to_value": "Harmony Horizon Bridge"
+        },
+        {
+          "relation_type": "HACKED_NETWORK",
+          "from_type": "organization",
+          "from_value": "Lazarus Group",
+          "to_type": "product",
+          "to_value": "Ronin Network"
+        },
+        {
+          "relation_type": "OCCURRED_ON",
+          "from_type": "event",
+          "from_value": "Harmony Horizon Bridge hack",
+          "to_type": "date",
+          "to_value": "2022-06-24"
+        },
+        {
+          "relation_type": "LAUNDERED_FUNDS_THROUGH",
+          "from_type": "event",
+          "from_value": "Harmony Horizon Bridge hack",
+          "to_type": "product",
+          "to_value": "Tornado Cash"
+        },
+        {
+          "relation_type": "LAUNDERED_FUNDS_THROUGH",
+          "from_type": "event",
+          "from_value": "Harmony Horizon Bridge hack",
+          "to_type": "product",
+          "to_value": "Railgun"
+        },
+        {
+          "relation_type": "LAUNDERED_FUNDS_THROUGH",
+          "from_type": "event",
+          "from_value": "Ronin Network theft",
+          "to_type": "product",
+          "to_value": "Tornado Cash"
+        },
+        {
+          "relation_type": "TRANSFERRED_TO",
+          "from_type": "event",
+          "from_value": "Harmony Horizon Bridge hack",
+          "to_type": "organization",
+          "to_value": "Binance"
+        },
+        {
+          "relation_type": "TRANSFERRED_TO",
+          "from_type": "event",
+          "from_value": "Harmony Horizon Bridge hack",
+          "to_type": "organization",
+          "to_value": "Huobi"
+        },
+        {
+          "relation_type": "PUBLISHED_BY",
+          "from_type": "organization",
+          "from_value": "Elliptic",
+          "to_type": "document",
+          "to_value": "SRC-001"
+        },
+        {
+          "relation_type": "PUBLISHED_BY",
+          "from_type": "organization",
+          "from_value": "Chainalysis",
+          "to_type": "document",
+          "to_value": "SRC-002"
+        },
+        {
+          "relation_type": "PUBLISHED_BY",
+          "from_type": "organization",
+          "from_value": "Elliptic",
+          "to_type": "document",
+          "to_value": "SRC-003"
+        }
+      ],
+      "source_references": [
+        "SRC-001",
+        "SRC-002",
+        "SRC-003"
+      ],
+      "citations": [
+        "SRC-001",
+        "SRC-002",
+        "SRC-003"
+      ],
+      "available_source_references": [
+        "SRC-001",
+        "SRC-002",
+        "SRC-003",
+        "SRC-004"
+      ],
+      "report": "# Final Report: Lazarus-linked Ronin Bridge and Harmony Horizon Thefts\n\n## Executive assessment\n\nThe available evidence supports a strong public attribution linking both the **Ronin Network theft** and the **Harmony Horizon Bridge hack** to the North Korea-backed **Lazarus Group**.\n\nThe linkage rests on three principal evidentiary categories:\n\n1. **Public attribution**\n   - The FBI confirmed that Lazarus Group was behind the June 2022 Harmony Horizon Bridge hack.\n   - OFAC identified the Ethereum address associated with the Ronin theft as owned by Lazarus Group.\n   - Elliptic assessed that the Ronin attack shared Lazarus characteristics, including social engineering and laundering behavior.  \n   **Sources:** [SRC-001], [SRC-003]\n\n2. **Common laundering patterns**\n   - Proceeds from both incidents were routed through Tornado Cash.\n   - The Harmony laundering sequence reportedly mirrored the Ronin laundering pattern.\n   - Ronin laundering involved intermediary wallets, mixer use, asset swaps, Bitcoin mixing, and cross-chain movement.\n   - After Tornado Cash sanctions, Harmony-related funds were reportedly routed through Railgun and subsequently to exchanges.  \n   **Sources:** [SRC-001], [SRC-002], [SRC-003]\n\n3. **Blockchain and wallet evidence**\n   - The Ronin attackers controlled five of nine validator private keys and approved withdrawals of 173,600 ETH and 25.5 million USDC.\n   - Ronin proceeds were traced through thousands of addresses and multiple chains.\n   - Harmony proceeds were traced from the theft through Tornado Cash, Railgun, and exchange deposits.\n   - The tools returned no specific wallet addresses, transaction hashes, or direct wallet identifier common to both thefts; therefore, the wallet evidence supports behavioral and flow-pattern linkage rather than a demonstrated address-to-address connection.  \n   **Sources:** [SRC-001], [SRC-002], [SRC-003]\n\n## Incident summaries\n\n### Ronin Network theft\n\nThe Ronin theft involved approximately **173,600 ETH and 25.5 million USDC**, valued at approximately **$540 million at the time of theft**. The attacker obtained five of nine validator keys and used them to authorize withdrawals. Ronin’s postmortem reportedly assessed that the attack was socially engineered rather than the result of a technical flaw.  \n**Sources:** [SRC-002], [SRC-003]\n\nThe funds were laundered through a combination of:\n\n- intermediary wallets;\n- decentralized exchanges, including conversion of USDC to ETH;\n- centralized exchanges;\n- Tornado Cash;\n- ETH-to-Bitcoin swaps;\n- Bitcoin mixing;\n- cross-chain activity involving Ethereum, BNB Chain, and BitTorrent Chain.\n\nChainalysis reported that more than **12,000 addresses** were involved in the laundering activity and that more than **$30 million** was seized. Elliptic reported that approximately **$80.3 million** had moved through Tornado Cash by April 14, 2022, while approximately **$9.7 million** was held in intermediary wallets and approximately **$433 million** remained in the original wallet at that point.  \n**Sources:** [SRC-002], [SRC-003]\n\nOFAC sanctioned the exploiter’s Ethereum address and identified its owner as Lazarus Group. Elliptic also assessed that the victim location, apparent social-engineering method, and laundering pattern resembled prior Lazarus-linked attacks.  \n**Source:** [SRC-003]\n\n### Harmony Horizon Bridge hack\n\nThe Harmony Horizon Bridge was exploited on **June 24, 2022**, for approximately **$99.7 million**. The FBI later confirmed that Lazarus Group was responsible. Elliptic stated that its prior attribution was based on similarities to Lazarus’s previous blockchain laundering patterns.  \n**Source:** [SRC-001]\n\nThe proceeds were reportedly:\n\n- programmatically structured through Tornado Cash;\n- laundered using a pattern that mirrored the Ronin laundering activity;\n- later routed through Railgun after Tornado Cash sanctions;\n- deposited into three cryptocurrency exchanges, including Binance and Huobi, which identified, blocked, and seized part of the funds.\n\nElliptic estimated that approximately **$96 million** from the Harmony hack and more than **$468 million** from the Ronin hack passed through Tornado Cash, for a combined total exceeding **$555 million**. Elliptic further estimated that approximately **70% of the funds sent through Railgun** were connected to the Harmony hack.  \n**Source:** [SRC-001]\n\n## Attribution analysis\n\n### Lazarus Group attribution\n\nThe Ronin attribution has both regulatory and private-sector support:\n\n- OFAC identified the Ronin exploiter’s Ethereum address as belonging to Lazarus Group.\n- Elliptic linked the attack to Lazarus based on similarities in the attack method, target context, and laundering pattern.\n- Chainalysis described the Ronin laundering process as consistent with North Korea-linked DeFi laundering practices and explicitly stated that Lazarus accessed the validator keys.  \n**Sources:** [SRC-002], [SRC-003]\n\nThe Harmony attribution is stronger in the available record because the FBI confirmation is expressly reported by Elliptic. The report also states that the FBI confirmation aligned with Elliptic’s earlier attribution based on laundering-pattern similarities.  \n**Source:** [SRC-001]\n\n### APT38 designation\n\nThe returned evidence identifies **Lazarus Group** and North Korea-linked hacking activity, but it does **not** explicitly identify **APT38** as the actor or provide a sourced equivalence between Lazarus Group and APT38.\n\nAccordingly, the case materials support a Lazarus/North Korea attribution but do not independently establish an APT38 attribution.  \n**Sources:** [SRC-001], [SRC-002], [SRC-003]\n\n## Laundering-pattern linkage\n\nThe strongest link between the two thefts is the repeated use of similar laundering infrastructure and methods:\n\n| Pattern | Ronin | Harmony | Assessment |\n|---|---:|---:|---|\n| Tornado Cash usage | Yes | Yes | Directly reported for both incidents |\n| Intermediary wallets | Yes | Yes | Reported for Ronin; Harmony funds were placed into multiple addresses |\n| Programmatic transaction structuring | Reported | Reported | Similar behavior |\n| Cross-asset conversion | USDC-to-ETH and ETH-to-BTC | Not fully specified in returned text | Stronger evidence for Ronin |\n| Cross-chain movement | Ethereum, BNB, BitTorrent | Not specifically detailed in returned text | Directly established only for Ronin |\n| Railgun usage | Not reported in returned text | Yes | Reported as a post-sanctions alternative for Harmony |\n| Exchange deposits and seizures | Seizures reported by Chainalysis | Binance and Huobi seizure activity reported | Supports traceability and cash-out disruption |\n\nElliptic specifically stated that Harmony’s laundering methods **mirrored** those used for the Ronin proceeds. That is the clearest direct public connection between the two cases.  \n**Sources:** [SRC-001], [SRC-002], [SRC-003]\n\n## Wallet evidence\n\nThe returned evidence supports the following wallet-level conclusions:\n\n- The Ronin attackers controlled the validator keys necessary to authorize the theft.\n- The Ronin exploiter’s Ethereum address was sanctioned by OFAC and attributed to Lazarus Group.\n- Ronin proceeds moved through an original wallet, intermediary wallets, mixers, exchanges, and multiple chains.\n- Harmony proceeds were traced through Tornado Cash, Railgun, and exchange deposits.\n- The funds associated with both thefts were tracked using blockchain analytics and transaction tracing.\n\nHowever, the tool output did not return:\n\n- specific Ethereum, Bitcoin, or other wallet addresses;\n- transaction hashes;\n- a common wallet address shared by the Ronin and Harmony proceeds;\n- a direct transfer from a Ronin wallet to a Harmony wallet;\n- a source explicitly naming APT38.\n\nThe available wallet evidence therefore demonstrates **attributed exploiter wallets and comparable laundering flows**, but not a direct address-level common-wallet connection between the incidents.  \n**Sources:** [SRC-001], [SRC-002], [SRC-003]\n\n## Confidence and limitations\n\n### High-confidence findings\n\n- Lazarus Group was publicly attributed to the Harmony Horizon Bridge hack by the FBI, as reported by Elliptic. **[SRC-001]**\n- OFAC identified the Ronin exploiter’s Ethereum address as belonging to Lazarus Group. **[SRC-003]**\n- Both thefts involved Tornado Cash laundering. **[SRC-001], [SRC-003]**\n- Elliptic reported that the Harmony laundering pattern mirrored the Ronin laundering pattern. **[SRC-001]**\n- Ronin laundering involved extensive address dispersion and cross-chain movement. **[SRC-002]**\n\n### Moderate-confidence assessments\n\n- The shared laundering behavior is consistent with a common operational actor or closely related North Korea-linked laundering capability.\n- The Ronin and Harmony incidents are best understood as separate thefts linked by public Lazarus attribution and recurring laundering tradecraft, rather than as one continuous theft event.\n\n### Unsupported or unresolved points\n\n- APT38 attribution is not established by the returned evidence.\n- A single wallet or transaction directly linking proceeds from both incidents is not shown.\n- The sources do not establish the individual identities of the operators.\n- The available excerpts do not provide complete seizure totals or a final accounting of recovered funds.\n\n## Conclusion\n\nThe evidence supports a well-founded public linkage between the Ronin Network and Harmony Horizon Bridge thefts through Lazarus Group attribution and highly similar laundering behavior. The strongest connective fact is Elliptic’s statement that the Harmony laundering method mirrored the Ronin laundering pattern, alongside the shared use of Tornado Cash and North Korea-linked operational characteristics.\n\nThe case does **not**, based on the returned material, establish a direct common wallet, transaction-level bridge between the two thefts, or an independent APT38 attribution. The appropriate conclusion is therefore:\n\n> **Both thefts were publicly attributed to Lazarus Group, and their proceeds exhibited materially similar laundering patterns. This provides strong behavioral and attributional linkage, but the returned evidence does not demonstrate a direct common-wallet connection or independently prove an APT38 designation.**\n\n## Structured JSON\n\n```json\n{\n  \"findings\": [\n    {\n      \"question\": \"Who was publicly attributed with the Harmony Horizon Bridge hack?\",\n      \"answer\": \"The FBI confirmed that the North Korea-backed Lazarus Group was behind the June 24, 2022 Harmony Horizon Bridge hack.\",\n      \"supporting_entities\": [\n        \"Lazarus Group\",\n        \"FBI\",\n        \"Harmony Horizon Bridge\",\n        \"Harmony Horizon Bridge hack\",\n        \"North Korea\"\n      ],\n      \"source_references\": [\"SRC-001\"]\n    },\n    {\n      \"question\": \"Who was publicly attributed with the Ronin Network theft?\",\n      \"answer\": \"OFAC identified the Ronin exploiter's Ethereum address as belonging to Lazarus Group. Elliptic and Chainalysis also described the attack and laundering activity as Lazarus or North Korea-linked.\",\n      \"supporting_entities\": [\n        \"Lazarus Group\",\n        \"Ronin Network\",\n        \"Ronin Network theft\",\n        \"North Korea\"\n      ],\n      \"source_references\": [\"SRC-002\", \"SRC-003\"]\n    },\n    {\n      \"question\": \"What common laundering infrastructure linked the two thefts?\",\n      \"answer\": \"Proceeds from both thefts were routed through Tornado Cash. Elliptic stated that the Harmony laundering methods mirrored those used for the Ronin proceeds.\",\n      \"supporting_entities\": [\n        \"Harmony Horizon Bridge hack\",\n        \"Ronin Network theft\",\n        \"Tornado Cash\",\n        \"Lazarus Group\"\n      ],\n      \"source_references\": [\"SRC-001\", \"SRC-003\"]\n    },\n    {\n      \"question\": \"What laundering methods were documented for the Ronin proceeds?\",\n      \"answer\": \"The Ronin proceeds moved through intermediary wallets, Tornado Cash, asset swaps, Bitcoin mixing, crypto-to-fiat services, and cross-chain transfers. Chainalysis reported more than 12,000 addresses involved.\",\n      \"supporting_entities\": [\n        \"Ronin Network theft\",\n        \"Tornado Cash\",\n        \"Ronin Network\",\n        \"Lazarus Group\"\n      ],\n      \"source_references\": [\"SRC-002\", \"SRC-003\"]\n    },\n    {\n      \"question\": \"What later laundering activity was reported for the Harmony proceeds?\",\n      \"answer\": \"After Tornado Cash sanctions, Harmony-related funds were structured through Railgun and later deposited into three exchanges. Binance and Huobi identified, blocked, and seized part of the funds.\",\n      \"supporting_entities\": [\n        \"Harmony Horizon Bridge hack\",\n        \"Railgun\",\n        \"Tornado Cash\",\n        \"Binance\",\n        \"Huobi\"\n      ],\n      \"source_references\": [\"SRC-001\"]\n    },\n    {\n      \"question\": \"Is there direct wallet evidence connecting the two thefts?\",\n      \"answer\": \"The returned evidence shows attributed exploiter wallets and similar fund flows, but it does not provide specific wallet addresses, transaction hashes, or a common wallet shared by both thefts.\",\n      \"supporting_entities\": [\n        \"Harmony Horizon Bridge hack\",\n        \"Ronin Network theft\",\n        \"Tornado Cash\",\n        \"Railgun\"\n      ],\n      \"source_references\": [\"SRC-001\", \"SRC-002\", \"SRC-003\"]\n    },\n    {\n      \"question\": \"Is APT38 attribution established?\",\n      \"answer\": \"No. The returned sources support Lazarus Group and North Korea-linked attribution but do not explicitly identify APT38 or establish an equivalence between APT38 and Lazarus Group.\",\n      \"supporting_entities\": [\n        \"Lazarus Group\",\n        \"North Korea\"\n      ],\n      \"source_references\": [\"SRC-001\", \"SRC-002\", \"SRC-003\"]\n    }\n  ],\n  \"claims\": [\n    {\n      \"claim\": \"The Ronin and Harmony thefts are linked by public Lazarus Group attribution and recurring laundering tradecraft.\",\n      \"source_references\": [\"SRC-001\", \"SRC-002\", \"SRC-003\"]\n    },\n    {\n      \"claim\": \"The Harmony laundering pattern reportedly mirrored the Ronin laundering pattern.\",\n      \"source_references\": [\"SRC-001\"]\n    },\n    {\n      \"claim\": \"Tornado Cash was used in laundering proceeds from both incidents.\",\n      \"source_references\": [\"SRC-001\", \"SRC-003\"]\n    },\n    {\n      \"claim\": \"Ronin laundering involved more than 12,000 addresses and included cross-chain activity.\",\n      \"source_references\": [\"SRC-002\"]\n    },\n    {\n      \"claim\": \"The Ronin exploiter's Ethereum address was sanctioned by OFAC and identified as belonging to Lazarus Group.\",\n      \"source_references\": [\"SRC-003\"]\n    },\n    {\n      \"claim\": \"The available evidence does not establish a direct common-wallet or transaction-level connection between the two thefts.\",\n      \"source_references\": [\"SRC-001\", \"SRC-002\", \"SRC-003\"]\n    },\n    {\n      \"claim\": \"APT38 attribution is unresolved in the returned evidence.\",\n      \"source_references\": [\"SRC-001\", \"SRC-002\", \"SRC-003\"]\n    }\n  ],\n  \"reasoning_steps\": [\n    {\n      \"id\": \"RS-1\",\n      \"conclusion\": \"Lazarus Group is publicly linked to both thefts.\",\n      \"premise_entities\": [\n        \"Lazarus Group\",\n        \"Harmony Horizon Bridge\",\n        \"Ronin Network\"\n      ],\n      \"premise_relations\": [\n        \"exploited\",\n        \"hacked_network\"\n      ]\n    },\n    {\n      \"id\": \"RS-2\",\n      \"conclusion\": \"The two incidents share a significant laundering-pattern linkage.\",\n      \"premise_entities\": [\n        \"Harmony Horizon Bridge hack\",\n        \"Ronin Network theft\",\n        \"Tornado Cash\",\n        \"Railgun\"\n      ],\n      \"premise_relations\": [\n        \"laundered_funds_through\"\n      ]\n    },\n    {\n      \"id\": \"RS-3\",\n      \"conclusion\": \"The laundering evidence supports common or closely related operational tradecraft, but not necessarily a direct common wallet.\",\n      \"premise_entities\": [\n        \"Harmony Horizon Bridge hack\",\n        \"Ronin Network theft\",\n        \"Tornado Cash\",\n        \"Railgun\"\n      ],\n      \"premise_relations\": [\n        \"laundered_funds_through\"\n      ]\n    },\n    {\n      \"id\": \"RS-4\",\n      \"conclusion\": \"APT38 cannot be confirmed from the returned sources.\",\n      \"premise_entities\": [\n        \"Lazarus Group\",\n        \"North Korea\"\n      ],\n      \"premise_relations\": [\n        \"associated_with\"\n      ]\n    }\n  ],\n  \"contradictions\": [\n    {\n      \"contradiction_id\": \"C-1\",\n      \"description\": \"The Ronin theft is described as approximately $540 million at the time of theft, while another passage refers to the stolen funds as worth over $600 million at discovery. This is a valuation-timing difference rather than a demonstrated contradiction.\",\n      \"source_references\": [\"SRC-003\"]\n    },\n    {\n      \"contradiction_id\": \"C-2\",\n      \"description\": \"The returned evidence supports Lazarus Group attribution but does not independently establish the requested APT38 designation.\",\n      \"source_references\": [\"SRC-001\", \"SRC-002\", \"SRC-003\"]\n    }\n  ]\n}\n```",
+      "operational": {
+        "duration_ms": 358101.38,
+        "mode": "offline",
+        "iterations": 12,
+        "search_calls": 5,
+        "fetch_calls": 4,
+        "knowledge_base_calls": 1,
+        "termination_reason": "final_report"
+      },
+      "graph_capture_source": "trace",
+      "key_findings": [
+        {
+          "question": "Who was publicly attributed with the Harmony Horizon Bridge hack?",
+          "answer": "The FBI confirmed that the North Korea-backed Lazarus Group was behind the June 24, 2022 Harmony Horizon Bridge hack.",
+          "supporting_entities": [
+            "Lazarus Group",
+            "FBI",
+            "Harmony Horizon Bridge",
+            "Harmony Horizon Bridge hack",
+            "North Korea"
+          ],
+          "source_references": [
+            "SRC-001"
+          ]
+        },
+        {
+          "question": "Who was publicly attributed with the Ronin Network theft?",
+          "answer": "OFAC identified the Ronin exploiter's Ethereum address as belonging to Lazarus Group. Elliptic and Chainalysis also described the attack and laundering activity as Lazarus or North Korea-linked.",
+          "supporting_entities": [
+            "Lazarus Group",
+            "Ronin Network",
+            "Ronin Network theft",
+            "North Korea"
+          ],
+          "source_references": [
+            "SRC-002",
+            "SRC-003"
+          ]
+        },
+        {
+          "question": "What common laundering infrastructure linked the two thefts?",
+          "answer": "Proceeds from both thefts were routed through Tornado Cash. Elliptic stated that the Harmony laundering methods mirrored those used for the Ronin proceeds.",
+          "supporting_entities": [
+            "Harmony Horizon Bridge hack",
+            "Ronin Network theft",
+            "Tornado Cash",
+            "Lazarus Group"
+          ],
+          "source_references": [
+            "SRC-001",
+            "SRC-003"
+          ]
+        },
+        {
+          "question": "What laundering methods were documented for the Ronin proceeds?",
+          "answer": "The Ronin proceeds moved through intermediary wallets, Tornado Cash, asset swaps, Bitcoin mixing, crypto-to-fiat services, and cross-chain transfers. Chainalysis reported more than 12,000 addresses involved.",
+          "supporting_entities": [
+            "Ronin Network theft",
+            "Tornado Cash",
+            "Ronin Network",
+            "Lazarus Group"
+          ],
+          "source_references": [
+            "SRC-002",
+            "SRC-003"
+          ]
+        },
+        {
+          "question": "What later laundering activity was reported for the Harmony proceeds?",
+          "answer": "After Tornado Cash sanctions, Harmony-related funds were structured through Railgun and later deposited into three exchanges. Binance and Huobi identified, blocked, and seized part of the funds.",
+          "supporting_entities": [
+            "Harmony Horizon Bridge hack",
+            "Railgun",
+            "Tornado Cash",
+            "Binance",
+            "Huobi"
+          ],
+          "source_references": [
+            "SRC-001"
+          ]
+        },
+        {
+          "question": "Is there direct wallet evidence connecting the two thefts?",
+          "answer": "The returned evidence shows attributed exploiter wallets and similar fund flows, but it does not provide specific wallet addresses, transaction hashes, or a common wallet shared by both thefts.",
+          "supporting_entities": [
+            "Harmony Horizon Bridge hack",
+            "Ronin Network theft",
+            "Tornado Cash",
+            "Railgun"
+          ],
+          "source_references": [
+            "SRC-001",
+            "SRC-002",
+            "SRC-003"
+          ]
+        },
+        {
+          "question": "Is APT38 attribution established?",
+          "answer": "No. The returned sources support Lazarus Group and North Korea-linked attribution but do not explicitly identify APT38 or establish an equivalence between APT38 and Lazarus Group.",
+          "supporting_entities": [
+            "Lazarus Group",
+            "North Korea"
+          ],
+          "source_references": [
+            "SRC-001",
+            "SRC-002",
+            "SRC-003"
+          ]
+        }
+      ],
+      "contradictions": [
+        {
+          "contradiction_id": "C-1",
+          "description": "The Ronin theft is described as approximately $540 million at the time of theft, while another passage refers to the stolen funds as worth over $600 million at discovery. This is a valuation-timing difference rather than a demonstrated contradiction.",
+          "source_references": [
+            "SRC-003"
+          ]
+        },
+        {
+          "contradiction_id": "C-2",
+          "description": "The returned evidence supports Lazarus Group attribution but does not independently establish the requested APT38 designation.",
+          "source_references": [
+            "SRC-001",
+            "SRC-002",
+            "SRC-003"
+          ]
+        }
+      ],
+      "reasoning_steps": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "reasoning_step_details": [
+        {
+          "id": 1,
+          "conclusion": "Lazarus Group is publicly linked to both thefts.",
+          "premise_entities": [
+            "Lazarus Group",
+            "Harmony Horizon Bridge",
+            "Ronin Network"
+          ],
+          "premise_relations": [
+            "exploited",
+            "hacked_network"
+          ]
+        },
+        {
+          "id": 2,
+          "conclusion": "The two incidents share a significant laundering-pattern linkage.",
+          "premise_entities": [
+            "Harmony Horizon Bridge hack",
+            "Ronin Network theft",
+            "Tornado Cash",
+            "Railgun"
+          ],
+          "premise_relations": [
+            "laundered_funds_through"
+          ]
+        },
+        {
+          "id": 3,
+          "conclusion": "The laundering evidence supports common or closely related operational tradecraft, but not necessarily a direct common wallet.",
+          "premise_entities": [
+            "Harmony Horizon Bridge hack",
+            "Ronin Network theft",
+            "Tornado Cash",
+            "Railgun"
+          ],
+          "premise_relations": [
+            "laundered_funds_through"
+          ]
+        },
+        {
+          "id": 4,
+          "conclusion": "APT38 cannot be confirmed from the returned sources.",
+          "premise_entities": [
+            "Lazarus Group",
+            "North Korea"
+          ],
+          "premise_relations": [
+            "associated_with"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "claim": "The Ronin and Harmony thefts are linked by public Lazarus Group attribution and recurring laundering tradecraft.",
+          "source_references": [
+            "SRC-001",
+            "SRC-002",
+            "SRC-003"
+          ]
+        },
+        {
+          "claim": "The Harmony laundering pattern reportedly mirrored the Ronin laundering pattern.",
+          "source_references": [
+            "SRC-001"
+          ]
+        },
+        {
+          "claim": "Tornado Cash was used in laundering proceeds from both incidents.",
+          "source_references": [
+            "SRC-001",
+            "SRC-003"
+          ]
+        },
+        {
+          "claim": "Ronin laundering involved more than 12,000 addresses and included cross-chain activity.",
+          "source_references": [
+            "SRC-002"
+          ]
+        },
+        {
+          "claim": "The Ronin exploiter's Ethereum address was sanctioned by OFAC and identified as belonging to Lazarus Group.",
+          "source_references": [
+            "SRC-003"
+          ]
+        },
+        {
+          "claim": "The available evidence does not establish a direct common-wallet or transaction-level connection between the two thefts.",
+          "source_references": [
+            "SRC-001",
+            "SRC-002",
+            "SRC-003"
+          ]
+        },
+        {
+          "claim": "APT38 attribution is unresolved in the returned evidence.",
+          "source_references": [
+            "SRC-001",
+            "SRC-002",
+            "SRC-003"
+          ]
+        }
+      ],
+      "structured_output": true,
+      "structured_output_valid": true,
+      "structured_output_complete": true,
+      "missing_structured_sections": [],
+      "structured_output_errors": [],
+      "graph_capture_diagnostics": {
+        "entity_records_emitted": 17,
+        "relation_records_emitted": 12,
+        "knowledge_agent_calls": 1,
+        "relations_expected": 6,
+        "contradictions_expected": 1
+      }
+    }
+  },
+  "output": {
+    "entities": [
+      {
+        "type": "ORGANIZATION",
+        "value": "Lazarus Group"
+      },
+      {
+        "type": "ORGANIZATION",
+        "value": "Elliptic"
+      },
+      {
+        "type": "ORGANIZATION",
+        "value": "Chainalysis"
+      },
+      {
+        "type": "ORGANIZATION",
+        "value": "FBI"
+      },
+      {
+        "type": "ORGANIZATION",
+        "value": "Binance"
+      },
+      {
+        "type": "ORGANIZATION",
+        "value": "Huobi"
+      },
+      {
+        "type": "LOCATION",
+        "value": "North Korea"
+      },
+      {
+        "type": "PRODUCT",
+        "value": "Harmony Horizon Bridge"
+      },
+      {
+        "type": "PRODUCT",
+        "value": "Ronin Network"
+      },
+      {
+        "type": "PRODUCT",
+        "value": "Tornado Cash"
+      },
+      {
+        "type": "PRODUCT",
+        "value": "Railgun"
+      },
+      {
+        "type": "EVENT",
+        "value": "Harmony Horizon Bridge hack"
+      },
+      {
+        "type": "EVENT",
+        "value": "Ronin Network theft"
+      },
+      {
+        "type": "DATE",
+        "value": "2022-06-24"
+      },
+      {
+        "type": "DOCUMENT",
+        "value": "SRC-001"
+      },
+      {
+        "type": "DOCUMENT",
+        "value": "SRC-002"
+      },
+      {
+        "type": "DOCUMENT",
+        "value": "SRC-003"
+      }
+    ],
+    "relations": [
+      {
+        "relation_type": "ASSOCIATED_WITH",
+        "from_type": "organization",
+        "from_value": "Lazarus Group",
+        "to_type": "location",
+        "to_value": "North Korea"
+      },
+      {
+        "relation_type": "EXPLOITED",
+        "from_type": "organization",
+        "from_value": "Lazarus Group",
+        "to_type": "product",
+        "to_value": "Harmony Horizon Bridge"
+      },
+      {
+        "relation_type": "HACKED_NETWORK",
+        "from_type": "organization",
+        "from_value": "Lazarus Group",
+        "to_type": "product",
+        "to_value": "Ronin Network"
+      },
+      {
+        "relation_type": "OCCURRED_ON",
+        "from_type": "event",
+        "from_value": "Harmony Horizon Bridge hack",
+        "to_type": "date",
+        "to_value": "2022-06-24"
+      },
+      {
+        "relation_type": "LAUNDERED_FUNDS_THROUGH",
+        "from_type": "event",
+        "from_value": "Harmony Horizon Bridge hack",
+        "to_type": "product",
+        "to_value": "Tornado Cash"
+      },
+      {
+        "relation_type": "LAUNDERED_FUNDS_THROUGH",
+        "from_type": "event",
+        "from_value": "Harmony Horizon Bridge hack",
+        "to_type": "product",
+        "to_value": "Railgun"
+      },
+      {
+        "relation_type": "LAUNDERED_FUNDS_THROUGH",
+        "from_type": "event",
+        "from_value": "Ronin Network theft",
+        "to_type": "product",
+        "to_value": "Tornado Cash"
+      },
+      {
+        "relation_type": "TRANSFERRED_TO",
+        "from_type": "event",
+        "from_value": "Harmony Horizon Bridge hack",
+        "to_type": "organization",
+        "to_value": "Binance"
+      },
+      {
+        "relation_type": "TRANSFERRED_TO",
+        "from_type": "event",
+        "from_value": "Harmony Horizon Bridge hack",
+        "to_type": "organization",
+        "to_value": "Huobi"
+      },
+      {
+        "relation_type": "PUBLISHED_BY",
+        "from_type": "organization",
+        "from_value": "Elliptic",
+        "to_type": "document",
+        "to_value": "SRC-001"
+      },
+      {
+        "relation_type": "PUBLISHED_BY",
+        "from_type": "organization",
+        "from_value": "Chainalysis",
+        "to_type": "document",
+        "to_value": "SRC-002"
+      },
+      {
+        "relation_type": "PUBLISHED_BY",
+        "from_type": "organization",
+        "from_value": "Elliptic",
+        "to_type": "document",
+        "to_value": "SRC-003"
+      }
+    ],
+    "source_references": [
+      "SRC-001",
+      "SRC-002",
+      "SRC-003"
+    ],
+    "citations": [
+      "SRC-001",
+      "SRC-002",
+      "SRC-003"
+    ],
+    "available_source_references": [
+      "SRC-001",
+      "SRC-002",
+      "SRC-003",
+      "SRC-004"
+    ],
+    "report": "# Final Report: Lazarus-linked Ronin Bridge and Harmony Horizon Thefts\n\n## Executive assessment\n\nThe available evidence supports a strong public attribution linking both the **Ronin Network theft** and the **Harmony Horizon Bridge hack** to the North Korea-backed **Lazarus Group**.\n\nThe linkage rests on three principal evidentiary categories:\n\n1. **Public attribution**\n   - The FBI confirmed that Lazarus Group was behind the June 2022 Harmony Horizon Bridge hack.\n   - OFAC identified the Ethereum address associated with the Ronin theft as owned by Lazarus Group.\n   - Elliptic assessed that the Ronin attack shared Lazarus characteristics, including social engineering and laundering behavior.  \n   **Sources:** [SRC-001], [SRC-003]\n\n2. **Common laundering patterns**\n   - Proceeds from both incidents were routed through Tornado Cash.\n   - The Harmony laundering sequence reportedly mirrored the Ronin laundering pattern.\n   - Ronin laundering involved intermediary wallets, mixer use, asset swaps, Bitcoin mixing, and cross-chain movement.\n   - After Tornado Cash sanctions, Harmony-related funds were reportedly routed through Railgun and subsequently to exchanges.  \n   **Sources:** [SRC-001], [SRC-002], [SRC-003]\n\n3. **Blockchain and wallet evidence**\n   - The Ronin attackers controlled five of nine validator private keys and approved withdrawals of 173,600 ETH and 25.5 million USDC.\n   - Ronin proceeds were traced through thousands of addresses and multiple chains.\n   - Harmony proceeds were traced from the theft through Tornado Cash, Railgun, and exchange deposits.\n   - The tools returned no specific wallet addresses, transaction hashes, or direct wallet identifier common to both thefts; therefore, the wallet evidence supports behavioral and flow-pattern linkage rather than a demonstrated address-to-address connection.  \n   **Sources:** [SRC-001], [SRC-002], [SRC-003]\n\n## Incident summaries\n\n### Ronin Network theft\n\nThe Ronin theft involved approximately **173,600 ETH and 25.5 million USDC**, valued at approximately **$540 million at the time of theft**. The attacker obtained five of nine validator keys and used them to authorize withdrawals. Ronin’s postmortem reportedly assessed that the attack was socially engineered rather than the result of a technical flaw.  \n**Sources:** [SRC-002], [SRC-003]\n\nThe funds were laundered through a combination of:\n\n- intermediary wallets;\n- decentralized exchanges, including conversion of USDC to ETH;\n- centralized exchanges;\n- Tornado Cash;\n- ETH-to-Bitcoin swaps;\n- Bitcoin mixing;\n- cross-chain activity involving Ethereum, BNB Chain, and BitTorrent Chain.\n\nChainalysis reported that more than **12,000 addresses** were involved in the laundering activity and that more than **$30 million** was seized. Elliptic reported that approximately **$80.3 million** had moved through Tornado Cash by April 14, 2022, while approximately **$9.7 million** was held in intermediary wallets and approximately **$433 million** remained in the original wallet at that point.  \n**Sources:** [SRC-002], [SRC-003]\n\nOFAC sanctioned the exploiter’s Ethereum address and identified its owner as Lazarus Group. Elliptic also assessed that the victim location, apparent social-engineering method, and laundering pattern resembled prior Lazarus-linked attacks.  \n**Source:** [SRC-003]\n\n### Harmony Horizon Bridge hack\n\nThe Harmony Horizon Bridge was exploited on **June 24, 2022**, for approximately **$99.7 million**. The FBI later confirmed that Lazarus Group was responsible. Elliptic stated that its prior attribution was based on similarities to Lazarus’s previous blockchain laundering patterns.  \n**Source:** [SRC-001]\n\nThe proceeds were reportedly:\n\n- programmatically structured through Tornado Cash;\n- laundered using a pattern that mirrored the Ronin laundering activity;\n- later routed through Railgun after Tornado Cash sanctions;\n- deposited into three cryptocurrency exchanges, including Binance and Huobi, which identified, blocked, and seized part of the funds.\n\nElliptic estimated that approximately **$96 million** from the Harmony hack and more than **$468 million** from the Ronin hack passed through Tornado Cash, for a combined total exceeding **$555 million**. Elliptic further estimated that approximately **70% of the funds sent through Railgun** were connected to the Harmony hack.  \n**Source:** [SRC-001]\n\n## Attribution analysis\n\n### Lazarus Group attribution\n\nThe Ronin attribution has both regulatory and private-sector support:\n\n- OFAC identified the Ronin exploiter’s Ethereum address as belonging to Lazarus Group.\n- Elliptic linked the attack to Lazarus based on similarities in the attack method, target context, and laundering pattern.\n- Chainalysis described the Ronin laundering process as consistent with North Korea-linked DeFi laundering practices and explicitly stated that Lazarus accessed the validator keys.  \n**Sources:** [SRC-002], [SRC-003]\n\nThe Harmony attribution is stronger in the available record because the FBI confirmation is expressly reported by Elliptic. The report also states that the FBI confirmation aligned with Elliptic’s earlier attribution based on laundering-pattern similarities.  \n**Source:** [SRC-001]\n\n### APT38 designation\n\nThe returned evidence identifies **Lazarus Group** and North Korea-linked hacking activity, but it does **not** explicitly identify **APT38** as the actor or provide a sourced equivalence between Lazarus Group and APT38.\n\nAccordingly, the case materials support a Lazarus/North Korea attribution but do not independently establish an APT38 attribution.  \n**Sources:** [SRC-001], [SRC-002], [SRC-003]\n\n## Laundering-pattern linkage\n\nThe strongest link between the two thefts is the repeated use of similar laundering infrastructure and methods:\n\n| Pattern | Ronin | Harmony | Assessment |\n|---|---:|---:|---|\n| Tornado Cash usage | Yes | Yes | Directly reported for both incidents |\n| Intermediary wallets | Yes | Yes | Reported for Ronin; Harmony funds were placed into multiple addresses |\n| Programmatic transaction structuring | Reported | Reported | Similar behavior |\n| Cross-asset conversion | USDC-to-ETH and ETH-to-BTC | Not fully specified in returned text | Stronger evidence for Ronin |\n| Cross-chain movement | Ethereum, BNB, BitTorrent | Not specifically detailed in returned text | Directly established only for Ronin |\n| Railgun usage | Not reported in returned text | Yes | Reported as a post-sanctions alternative for Harmony |\n| Exchange deposits and seizures | Seizures reported by Chainalysis | Binance and Huobi seizure activity reported | Supports traceability and cash-out disruption |\n\nElliptic specifically stated that Harmony’s laundering methods **mirrored** those used for the Ronin proceeds. That is the clearest direct public connection between the two cases.  \n**Sources:** [SRC-001], [SRC-002], [SRC-003]\n\n## Wallet evidence\n\nThe returned evidence supports the following wallet-level conclusions:\n\n- The Ronin attackers controlled the validator keys necessary to authorize the theft.\n- The Ronin exploiter’s Ethereum address was sanctioned by OFAC and attributed to Lazarus Group.\n- Ronin proceeds moved through an original wallet, intermediary wallets, mixers, exchanges, and multiple chains.\n- Harmony proceeds were traced through Tornado Cash, Railgun, and exchange deposits.\n- The funds associated with both thefts were tracked using blockchain analytics and transaction tracing.\n\nHowever, the tool output did not return:\n\n- specific Ethereum, Bitcoin, or other wallet addresses;\n- transaction hashes;\n- a common wallet address shared by the Ronin and Harmony proceeds;\n- a direct transfer from a Ronin wallet to a Harmony wallet;\n- a source explicitly naming APT38.\n\nThe available wallet evidence therefore demonstrates **attributed exploiter wallets and comparable laundering flows**, but not a direct address-level common-wallet connection between the incidents.  \n**Sources:** [SRC-001], [SRC-002], [SRC-003]\n\n## Confidence and limitations\n\n### High-confidence findings\n\n- Lazarus Group was publicly attributed to the Harmony Horizon Bridge hack by the FBI, as reported by Elliptic. **[SRC-001]**\n- OFAC identified the Ronin exploiter’s Ethereum address as belonging to Lazarus Group. **[SRC-003]**\n- Both thefts involved Tornado Cash laundering. **[SRC-001], [SRC-003]**\n- Elliptic reported that the Harmony laundering pattern mirrored the Ronin laundering pattern. **[SRC-001]**\n- Ronin laundering involved extensive address dispersion and cross-chain movement. **[SRC-002]**\n\n### Moderate-confidence assessments\n\n- The shared laundering behavior is consistent with a common operational actor or closely related North Korea-linked laundering capability.\n- The Ronin and Harmony incidents are best understood as separate thefts linked by public Lazarus attribution and recurring laundering tradecraft, rather than as one continuous theft event.\n\n### Unsupported or unresolved points\n\n- APT38 attribution is not established by the returned evidence.\n- A single wallet or transaction directly linking proceeds from both incidents is not shown.\n- The sources do not establish the individual identities of the operators.\n- The available excerpts do not provide complete seizure totals or a final accounting of recovered funds.\n\n## Conclusion\n\nThe evidence supports a well-founded public linkage between the Ronin Network and Harmony Horizon Bridge thefts through Lazarus Group attribution and highly similar laundering behavior. The strongest connective fact is Elliptic’s statement that the Harmony laundering method mirrored the Ronin laundering pattern, alongside the shared use of Tornado Cash and North Korea-linked operational characteristics.\n\nThe case does **not**, based on the returned material, establish a direct common wallet, transaction-level bridge between the two thefts, or an independent APT38 attribution. The appropriate conclusion is therefore:\n\n> **Both thefts were publicly attributed to Lazarus Group, and their proceeds exhibited materially similar laundering patterns. This provides strong behavioral and attributional linkage, but the returned evidence does not demonstrate a direct common-wallet connection or independently prove an APT38 designation.**\n\n## Structured JSON\n\n```json\n{\n  \"findings\": [\n    {\n      \"question\": \"Who was publicly attributed with the Harmony Horizon Bridge hack?\",\n      \"answer\": \"The FBI confirmed that the North Korea-backed Lazarus Group was behind the June 24, 2022 Harmony Horizon Bridge hack.\",\n      \"supporting_entities\": [\n        \"Lazarus Group\",\n        \"FBI\",\n        \"Harmony Horizon Bridge\",\n        \"Harmony Horizon Bridge hack\",\n        \"North Korea\"\n      ],\n      \"source_references\": [\"SRC-001\"]\n    },\n    {\n      \"question\": \"Who was publicly attributed with the Ronin Network theft?\",\n      \"answer\": \"OFAC identified the Ronin exploiter's Ethereum address as belonging to Lazarus Group. Elliptic and Chainalysis also described the attack and laundering activity as Lazarus or North Korea-linked.\",\n      \"supporting_entities\": [\n        \"Lazarus Group\",\n        \"Ronin Network\",\n        \"Ronin Network theft\",\n        \"North Korea\"\n      ],\n      \"source_references\": [\"SRC-002\", \"SRC-003\"]\n    },\n    {\n      \"question\": \"What common laundering infrastructure linked the two thefts?\",\n      \"answer\": \"Proceeds from both thefts were routed through Tornado Cash. Elliptic stated that the Harmony laundering methods mirrored those used for the Ronin proceeds.\",\n      \"supporting_entities\": [\n        \"Harmony Horizon Bridge hack\",\n        \"Ronin Network theft\",\n        \"Tornado Cash\",\n        \"Lazarus Group\"\n      ],\n      \"source_references\": [\"SRC-001\", \"SRC-003\"]\n    },\n    {\n      \"question\": \"What laundering methods were documented for the Ronin proceeds?\",\n      \"answer\": \"The Ronin proceeds moved through intermediary wallets, Tornado Cash, asset swaps, Bitcoin mixing, crypto-to-fiat services, and cross-chain transfers. Chainalysis reported more than 12,000 addresses involved.\",\n      \"supporting_entities\": [\n        \"Ronin Network theft\",\n        \"Tornado Cash\",\n        \"Ronin Network\",\n        \"Lazarus Group\"\n      ],\n      \"source_references\": [\"SRC-002\", \"SRC-003\"]\n    },\n    {\n      \"question\": \"What later laundering activity was reported for the Harmony proceeds?\",\n      \"answer\": \"After Tornado Cash sanctions, Harmony-related funds were structured through Railgun and later deposited into three exchanges. Binance and Huobi identified, blocked, and seized part of the funds.\",\n      \"supporting_entities\": [\n        \"Harmony Horizon Bridge hack\",\n        \"Railgun\",\n        \"Tornado Cash\",\n        \"Binance\",\n        \"Huobi\"\n      ],\n      \"source_references\": [\"SRC-001\"]\n    },\n    {\n      \"question\": \"Is there direct wallet evidence connecting the two thefts?\",\n      \"answer\": \"The returned evidence shows attributed exploiter wallets and similar fund flows, but it does not provide specific wallet addresses, transaction hashes, or a common wallet shared by both thefts.\",\n      \"supporting_entities\": [\n        \"Harmony Horizon Bridge hack\",\n        \"Ronin Network theft\",\n        \"Tornado Cash\",\n        \"Railgun\"\n      ],\n      \"source_references\": [\"SRC-001\", \"SRC-002\", \"SRC-003\"]\n    },\n    {\n      \"question\": \"Is APT38 attribution established?\",\n      \"answer\": \"No. The returned sources support Lazarus Group and North Korea-linked attribution but do not explicitly identify APT38 or establish an equivalence between APT38 and Lazarus Group.\",\n      \"supporting_entities\": [\n        \"Lazarus Group\",\n        \"North Korea\"\n      ],\n      \"source_references\": [\"SRC-001\", \"SRC-002\", \"SRC-003\"]\n    }\n  ],\n  \"claims\": [\n    {\n      \"claim\": \"The Ronin and Harmony thefts are linked by public Lazarus Group attribution and recurring laundering tradecraft.\",\n      \"source_references\": [\"SRC-001\", \"SRC-002\", \"SRC-003\"]\n    },\n    {\n      \"claim\": \"The Harmony laundering pattern reportedly mirrored the Ronin laundering pattern.\",\n      \"source_references\": [\"SRC-001\"]\n    },\n    {\n      \"claim\": \"Tornado Cash was used in laundering proceeds from both incidents.\",\n      \"source_references\": [\"SRC-001\", \"SRC-003\"]\n    },\n    {\n      \"claim\": \"Ronin laundering involved more than 12,000 addresses and included cross-chain activity.\",\n      \"source_references\": [\"SRC-002\"]\n    },\n    {\n      \"claim\": \"The Ronin exploiter's Ethereum address was sanctioned by OFAC and identified as belonging to Lazarus Group.\",\n      \"source_references\": [\"SRC-003\"]\n    },\n    {\n      \"claim\": \"The available evidence does not establish a direct common-wallet or transaction-level connection between the two thefts.\",\n      \"source_references\": [\"SRC-001\", \"SRC-002\", \"SRC-003\"]\n    },\n    {\n      \"claim\": \"APT38 attribution is unresolved in the returned evidence.\",\n      \"source_references\": [\"SRC-001\", \"SRC-002\", \"SRC-003\"]\n    }\n  ],\n  \"reasoning_steps\": [\n    {\n      \"id\": \"RS-1\",\n      \"conclusion\": \"Lazarus Group is publicly linked to both thefts.\",\n      \"premise_entities\": [\n        \"Lazarus Group\",\n        \"Harmony Horizon Bridge\",\n        \"Ronin Network\"\n      ],\n      \"premise_relations\": [\n        \"exploited\",\n        \"hacked_network\"\n      ]\n    },\n    {\n      \"id\": \"RS-2\",\n      \"conclusion\": \"The two incidents share a significant laundering-pattern linkage.\",\n      \"premise_entities\": [\n        \"Harmony Horizon Bridge hack\",\n        \"Ronin Network theft\",\n        \"Tornado Cash\",\n        \"Railgun\"\n      ],\n      \"premise_relations\": [\n        \"laundered_funds_through\"\n      ]\n    },\n    {\n      \"id\": \"RS-3\",\n      \"conclusion\": \"The laundering evidence supports common or closely related operational tradecraft, but not necessarily a direct common wallet.\",\n      \"premise_entities\": [\n        \"Harmony Horizon Bridge hack\",\n        \"Ronin Network theft\",\n        \"Tornado Cash\",\n        \"Railgun\"\n      ],\n      \"premise_relations\": [\n        \"laundered_funds_through\"\n      ]\n    },\n    {\n      \"id\": \"RS-4\",\n      \"conclusion\": \"APT38 cannot be confirmed from the returned sources.\",\n      \"premise_entities\": [\n        \"Lazarus Group\",\n        \"North Korea\"\n      ],\n      \"premise_relations\": [\n        \"associated_with\"\n      ]\n    }\n  ],\n  \"contradictions\": [\n    {\n      \"contradiction_id\": \"C-1\",\n      \"description\": \"The Ronin theft is described as approximately $540 million at the time of theft, while another passage refers to the stolen funds as worth over $600 million at discovery. This is a valuation-timing difference rather than a demonstrated contradiction.\",\n      \"source_references\": [\"SRC-003\"]\n    },\n    {\n      \"contradiction_id\": \"C-2\",\n      \"description\": \"The returned evidence supports Lazarus Group attribution but does not independently establish the requested APT38 designation.\",\n      \"source_references\": [\"SRC-001\", \"SRC-002\", \"SRC-003\"]\n    }\n  ]\n}\n```",
+    "operational": {
+      "duration_ms": 358101.38,
+      "mode": "offline",
+      "iterations": 12,
+      "search_calls": 5,
+      "fetch_calls": 4,
+      "knowledge_base_calls": 1,
+      "termination_reason": "final_report"
+    },
+    "graph_capture_source": "trace",
+    "key_findings": [
+      {
+        "question": "Who was publicly attributed with the Harmony Horizon Bridge hack?",
+        "answer": "The FBI confirmed that the North Korea-backed Lazarus Group was behind the June 24, 2022 Harmony Horizon Bridge hack.",
+        "supporting_entities": [
+          "Lazarus Group",
+          "FBI",
+          "Harmony Horizon Bridge",
+          "Harmony Horizon Bridge hack",
+          "North Korea"
+        ],
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "question": "Who was publicly attributed with the Ronin Network theft?",
+        "answer": "OFAC identified the Ronin exploiter's Ethereum address as belonging to Lazarus Group. Elliptic and Chainalysis also described the attack and laundering activity as Lazarus or North Korea-linked.",
+        "supporting_entities": [
+          "Lazarus Group",
+          "Ronin Network",
+          "Ronin Network theft",
+          "North Korea"
+        ],
+        "source_references": [
+          "SRC-002",
+          "SRC-003"
+        ]
+      },
+      {
+        "question": "What common laundering infrastructure linked the two thefts?",
+        "answer": "Proceeds from both thefts were routed through Tornado Cash. Elliptic stated that the Harmony laundering methods mirrored those used for the Ronin proceeds.",
+        "supporting_entities": [
+          "Harmony Horizon Bridge hack",
+          "Ronin Network theft",
+          "Tornado Cash",
+          "Lazarus Group"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-003"
+        ]
+      },
+      {
+        "question": "What laundering methods were documented for the Ronin proceeds?",
+        "answer": "The Ronin proceeds moved through intermediary wallets, Tornado Cash, asset swaps, Bitcoin mixing, crypto-to-fiat services, and cross-chain transfers. Chainalysis reported more than 12,000 addresses involved.",
+        "supporting_entities": [
+          "Ronin Network theft",
+          "Tornado Cash",
+          "Ronin Network",
+          "Lazarus Group"
+        ],
+        "source_references": [
+          "SRC-002",
+          "SRC-003"
+        ]
+      },
+      {
+        "question": "What later laundering activity was reported for the Harmony proceeds?",
+        "answer": "After Tornado Cash sanctions, Harmony-related funds were structured through Railgun and later deposited into three exchanges. Binance and Huobi identified, blocked, and seized part of the funds.",
+        "supporting_entities": [
+          "Harmony Horizon Bridge hack",
+          "Railgun",
+          "Tornado Cash",
+          "Binance",
+          "Huobi"
+        ],
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "question": "Is there direct wallet evidence connecting the two thefts?",
+        "answer": "The returned evidence shows attributed exploiter wallets and similar fund flows, but it does not provide specific wallet addresses, transaction hashes, or a common wallet shared by both thefts.",
+        "supporting_entities": [
+          "Harmony Horizon Bridge hack",
+          "Ronin Network theft",
+          "Tornado Cash",
+          "Railgun"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003"
+        ]
+      },
+      {
+        "question": "Is APT38 attribution established?",
+        "answer": "No. The returned sources support Lazarus Group and North Korea-linked attribution but do not explicitly identify APT38 or establish an equivalence between APT38 and Lazarus Group.",
+        "supporting_entities": [
+          "Lazarus Group",
+          "North Korea"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003"
+        ]
+      }
+    ],
+    "contradictions": [
+      {
+        "contradiction_id": "C-1",
+        "description": "The Ronin theft is described as approximately $540 million at the time of theft, while another passage refers to the stolen funds as worth over $600 million at discovery. This is a valuation-timing difference rather than a demonstrated contradiction.",
+        "source_references": [
+          "SRC-003"
+        ]
+      },
+      {
+        "contradiction_id": "C-2",
+        "description": "The returned evidence supports Lazarus Group attribution but does not independently establish the requested APT38 designation.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003"
+        ]
+      }
+    ],
+    "reasoning_steps": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "reasoning_step_details": [
+      {
+        "id": 1,
+        "conclusion": "Lazarus Group is publicly linked to both thefts.",
+        "premise_entities": [
+          "Lazarus Group",
+          "Harmony Horizon Bridge",
+          "Ronin Network"
+        ],
+        "premise_relations": [
+          "exploited",
+          "hacked_network"
+        ]
+      },
+      {
+        "id": 2,
+        "conclusion": "The two incidents share a significant laundering-pattern linkage.",
+        "premise_entities": [
+          "Harmony Horizon Bridge hack",
+          "Ronin Network theft",
+          "Tornado Cash",
+          "Railgun"
+        ],
+        "premise_relations": [
+          "laundered_funds_through"
+        ]
+      },
+      {
+        "id": 3,
+        "conclusion": "The laundering evidence supports common or closely related operational tradecraft, but not necessarily a direct common wallet.",
+        "premise_entities": [
+          "Harmony Horizon Bridge hack",
+          "Ronin Network theft",
+          "Tornado Cash",
+          "Railgun"
+        ],
+        "premise_relations": [
+          "laundered_funds_through"
+        ]
+      },
+      {
+        "id": 4,
+        "conclusion": "APT38 cannot be confirmed from the returned sources.",
+        "premise_entities": [
+          "Lazarus Group",
+          "North Korea"
+        ],
+        "premise_relations": [
+          "associated_with"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "claim": "The Ronin and Harmony thefts are linked by public Lazarus Group attribution and recurring laundering tradecraft.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003"
+        ]
+      },
+      {
+        "claim": "The Harmony laundering pattern reportedly mirrored the Ronin laundering pattern.",
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "claim": "Tornado Cash was used in laundering proceeds from both incidents.",
+        "source_references": [
+          "SRC-001",
+          "SRC-003"
+        ]
+      },
+      {
+        "claim": "Ronin laundering involved more than 12,000 addresses and included cross-chain activity.",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "claim": "The Ronin exploiter's Ethereum address was sanctioned by OFAC and identified as belonging to Lazarus Group.",
+        "source_references": [
+          "SRC-003"
+        ]
+      },
+      {
+        "claim": "The available evidence does not establish a direct common-wallet or transaction-level connection between the two thefts.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003"
+        ]
+      },
+      {
+        "claim": "APT38 attribution is unresolved in the returned evidence.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002",
+          "SRC-003"
+        ]
+      }
+    ],
+    "structured_output": true,
+    "structured_output_valid": true,
+    "structured_output_complete": true,
+    "missing_structured_sections": [],
+    "structured_output_errors": [],
+    "graph_capture_diagnostics": {
+      "entity_records_emitted": 17,
+      "relation_records_emitted": 12,
+      "knowledge_agent_calls": 1,
+      "relations_expected": 6,
+      "contradictions_expected": 1
+    }
+  },
+  "metrics": {
+    "output_validation": {
+      "valid": true,
+      "errors": []
+    },
+    "entities": {
+      "true_positive": 4,
+      "false_positive": 13,
+      "false_negative": 3,
+      "precision": 0.23529411764705882,
+      "recall": 0.5714285714285714,
+      "f1": 0.3333333333333333,
+      "missing": [
+        [
+          "alias",
+          "apt38"
+        ],
+        [
+          "crypto_wallet",
+          "fbi-listed harmony wallets"
+        ],
+        [
+          "crypto_wallet",
+          "ronin exploiter ethereum address"
+        ]
+      ],
+      "unexpected": [
+        [
+          "date",
+          "2022-06-24"
+        ],
+        [
+          "document",
+          "src-001"
+        ],
+        [
+          "document",
+          "src-002"
+        ],
+        [
+          "document",
+          "src-003"
+        ],
+        [
+          "event",
+          "harmony horizon bridge hack"
+        ],
+        [
+          "event",
+          "ronin network theft"
+        ],
+        [
+          "location",
+          "north korea"
+        ],
+        [
+          "organization",
+          "binance"
+        ],
+        [
+          "organization",
+          "chainalysis"
+        ],
+        [
+          "organization",
+          "elliptic"
+        ],
+        [
+          "organization",
+          "fbi"
+        ],
+        [
+          "organization",
+          "huobi"
+        ],
+        [
+          "product",
+          "railgun"
+        ]
+      ]
+    },
+    "relations": {
+      "true_positive": 0,
+      "false_positive": 12,
+      "false_negative": 6,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "missing": [
+        [
+          [
+            "alias",
+            "lazarus group"
+          ],
+          "alias_of",
+          [
+            "alias",
+            "apt38"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "lazarus group"
+          ],
+          "attributed_to_theft_from",
+          [
+            "organization",
+            "harmony horizon bridge"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "lazarus group"
+          ],
+          "attributed_to_theft_from",
+          [
+            "organization",
+            "ronin network"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "lazarus group"
+          ],
+          "laundered_funds_through",
+          [
+            "alias",
+            "tornado cash"
+          ]
+        ],
+        [
+          [
+            "crypto_wallet",
+            "fbi-listed harmony wallets"
+          ],
+          "listed_as_north_korean_controlled",
+          [
+            "alias",
+            "lazarus group"
+          ]
+        ],
+        [
+          [
+            "crypto_wallet",
+            "ronin exploiter ethereum address"
+          ],
+          "listed_as_lazarus_controlled",
+          [
+            "alias",
+            "lazarus group"
+          ]
+        ]
+      ],
+      "unexpected": [
+        [
+          [
+            "alias",
+            "lazarus group"
+          ],
+          "associated_with",
+          [
+            "location",
+            "north korea"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "lazarus group"
+          ],
+          "exploited",
+          [
+            "organization",
+            "harmony horizon bridge"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "lazarus group"
+          ],
+          "hacked_network",
+          [
+            "organization",
+            "ronin network"
+          ]
+        ],
+        [
+          [
+            "event",
+            "harmony horizon bridge hack"
+          ],
+          "laundered_funds_through",
+          [
+            "alias",
+            "tornado cash"
+          ]
+        ],
+        [
+          [
+            "event",
+            "harmony horizon bridge hack"
+          ],
+          "laundered_funds_through",
+          [
+            "product",
+            "railgun"
+          ]
+        ],
+        [
+          [
+            "event",
+            "harmony horizon bridge hack"
+          ],
+          "occurred_on",
+          [
+            "date",
+            "2022-06-24"
+          ]
+        ],
+        [
+          [
+            "event",
+            "harmony horizon bridge hack"
+          ],
+          "transferred_to",
+          [
+            "organization",
+            "binance"
+          ]
+        ],
+        [
+          [
+            "event",
+            "harmony horizon bridge hack"
+          ],
+          "transferred_to",
+          [
+            "organization",
+            "huobi"
+          ]
+        ],
+        [
+          [
+            "event",
+            "ronin network theft"
+          ],
+          "laundered_funds_through",
+          [
+            "alias",
+            "tornado cash"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "chainalysis"
+          ],
+          "published_by",
+          [
+            "document",
+            "src-002"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "elliptic"
+          ],
+          "published_by",
+          [
+            "document",
+            "src-001"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "elliptic"
+          ],
+          "published_by",
+          [
+            "document",
+            "src-003"
+          ]
+        ]
+      ],
+      "semantic_mapping": {
+        "also_known_as": "alias_of",
+        "alias_of": "alias_of",
+        "co_founded": "founded",
+        "founded": "founded",
+        "based_in": "located_in",
+        "located_in": "located_in",
+        "performed_special_audit": "audited",
+        "audited": "audited",
+        "former_coo_of": "executive_of",
+        "executive_of": "executive_of",
+        "provided_software": "provided",
+        "distributed_as_installer": "distributed",
+        "contained_malware": "contained",
+        "trojanized": "compromised",
+        "associated_with": "associated_with",
+        "linked_to": "associated_with",
+        "uses_or_is_associated_with": "associated_with"
+      }
+    },
+    "contradictions": {
+      "true_positive": 0,
+      "false_positive": 2,
+      "false_negative": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "details": [],
+      "missing": [
+        "CONTRA-001"
+      ],
+      "unexpected": [
+        "C-1",
+        "C-2"
+      ],
+      "grounded_recall": 0.0,
+      "grounded_f1": 0.0
+    },
+    "key_findings": {
+      "score": 0.08749999999999998,
+      "precision": 0.14285714285714285,
+      "recall": 0.3333333333333333,
+      "f1": 0.2,
+      "predicted": 7,
+      "expected": 3,
+      "matched": 1,
+      "details": [
+        {
+          "question": "What actor connects the Ronin and Harmony thefts?",
+          "status": "matched",
+          "score": 0.26249999999999996,
+          "semantic": 0.375,
+          "supporting_entity_recall": 0.0,
+          "source_recall": 1.0,
+          "has_source_references": true
+        },
+        {
+          "question": "What financial pivot links the cases?",
+          "status": "missing",
+          "score": 0.0
+        },
+        {
+          "question": "What should be traced in a benchmark run?",
+          "status": "missing",
+          "score": 0.0
+        }
+      ]
+    },
+    "source_traceability": {
+      "correct_sources": [
+        "SRC-001",
+        "SRC-002",
+        "SRC-003"
+      ],
+      "unknown_sources": [],
+      "unavailable_sources": [],
+      "source_precision": 1.0,
+      "source_recall": 0.75,
+      "ratio": 1.0,
+      "claim_level": {
+        "claims": 7,
+        "traceable_claims": 7,
+        "ratio": 1.0,
+        "unknown_sources": [],
+        "unavailable_sources": []
+      },
+      "finding_level": {
+        "findings": 7,
+        "traceable_findings": 7,
+        "ratio": 1.0
+      }
+    },
+    "reasoning_coverage": {
+      "covered": [
+        1,
+        2,
+        3
+      ],
+      "invalid": [
+        4
+      ],
+      "total": 3,
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.8571428571428571,
+      "ratio": 1.0,
+      "status": "structured_step_ids"
+    },
+    "report_quality": {
+      "score": 0.6666666666666666,
+      "checks": {
+        "non_empty": true,
+        "structured_output_complete": true,
+        "structured_output_valid": true,
+        "findings_present": true,
+        "findings_match": false,
+        "claims_traceable": true,
+        "contradictions_complete": false,
+        "contradictions_grounded": false,
+        "finding_sources_grounded": true,
+        "reasoning_conclusions_grounded": false,
+        "uncertainty_language": true,
+        "readable_length": true
+      },
+      "scale": "deterministic rubric 0-1"
+    },
+    "reasoning_quality": {
+      "covered": 3,
+      "expected": 3,
+      "coverage": 1.0,
+      "semantic_similarity": 0.0,
+      "premise_grounding": 0.2222222222222222,
+      "grounded_score": 0.0,
+      "method": "premise_ids_plus_token_entailment_proxy",
+      "formula": "premise*conclusion",
+      "details": [
+        {
+          "id": 1,
+          "premise_score": 0.5,
+          "entity_recall": 0.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 0.0,
+          "invalid_premise_entities": [
+            "Harmony Horizon Bridge",
+            "Lazarus Group",
+            "Ronin Network"
+          ],
+          "invalid_premise_relations": [
+            "exploited",
+            "hacked_network"
+          ],
+          "grounded_score": 0.0
+        },
+        {
+          "id": 2,
+          "premise_score": 0.0,
+          "entity_recall": 0.0,
+          "relation_recall": 0.0,
+          "conclusion_similarity": 0.0,
+          "invalid_premise_entities": [
+            "Harmony Horizon Bridge hack",
+            "Railgun",
+            "Ronin Network theft",
+            "Tornado Cash"
+          ],
+          "invalid_premise_relations": [],
+          "grounded_score": 0.0
+        },
+        {
+          "id": 3,
+          "premise_score": 0.16666666666666666,
+          "entity_recall": 0.0,
+          "relation_recall": 0.3333333333333333,
+          "conclusion_similarity": 0.0,
+          "invalid_premise_entities": [
+            "Harmony Horizon Bridge hack",
+            "Railgun",
+            "Ronin Network theft",
+            "Tornado Cash"
+          ],
+          "invalid_premise_relations": [],
+          "grounded_score": 0.0
+        }
+      ]
+    },
+    "operational": {
+      "duration_ms": 358101.38,
+      "mode": "offline",
+      "iterations": 12,
+      "search_calls": 5,
+      "fetch_calls": 4,
+      "knowledge_base_calls": 1,
+      "termination_reason": "final_report"
+    },
+    "retrieval": {
+      "status": "not_annotated",
+      "topics": 0
+    }
+  }
+}

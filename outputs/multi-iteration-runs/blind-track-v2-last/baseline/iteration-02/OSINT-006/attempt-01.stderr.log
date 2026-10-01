@@ -1,0 +1,47 @@
+INFO:tools.engine_search:Initializing OSINTAggregator
+INFO:agent.loop:Starting run for thread_id=benchmark-osint-006-9105bf19. LLM client provider=openai, model=gpt-5.6-luna
+INFO:agent.loop:Iteration 1/50: Calling LLM...
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:agent.loop:LLM requested 4 tool call(s)
+INFO:agent.loop:\u26a1 Executing tool: 'engine_search_tool' with arguments: {"query": "MOVEit Transfer CVE disclosure LEMURLOOT FIN11 CL0P attribution extortion infrastructure"}
+INFO:agent.loop:\u2699\ufe0f Tool 'engine_search_tool' execution complete. Result preview: {
+  "query": "MOVEit Transfer CVE disclosure LEMURLOOT FIN11 CL0P attribution extortion infrastructure",
+  "page": 1,
+  "page_size": 10,
+  "total": 2,
+  "sources": {
+    "benchmark": [
+      {
+       ...
+INFO:agent.loop:\u26a1 Executing tool: 'engine_search_tool' with arguments: {"query": "site:cloud.google.com/blog/topics/threat-intelligence LEMURLOOT MOVEit CVE-2023-34362"}
+INFO:agent.loop:\u2699\ufe0f Tool 'engine_search_tool' execution complete. Result preview: {
+  "query": "site:cloud.google.com/blog/topics/threat-intelligence LEMURLOOT MOVEit CVE-2023-34362",
+  "page": 1,
+  "page_size": 10,
+  "total": 2,
+  "sources": {
+    "benchmark": [
+      {
+        "t...
+INFO:agent.loop:\u26a1 Executing tool: 'engine_search_tool' with arguments: {"query": "CVE-2023-34362 MOVEit Transfer CISA advisory CL0P FIN11"}
+INFO:agent.loop:\u2699\ufe0f Tool 'engine_search_tool' execution complete. Result preview: {
+  "query": "CVE-2023-34362 MOVEit Transfer CISA advisory CL0P FIN11",
+  "page": 1,
+  "page_size": 10,
+  "total": 2,
+  "sources": {
+    "benchmark": [
+      {
+        "title": "NVD - CVE-2023-34362",...
+INFO:agent.loop:\u26a1 Executing tool: 'engine_search_tool' with arguments: {"query": "MOVEit Transfer exploitation May 2023 June 2023 LEMURLOOT Mandiant Microsoft"}
+INFO:agent.loop:\u2699\ufe0f Tool 'engine_search_tool' execution complete. Result preview: {
+  "query": "MOVEit Transfer exploitation May 2023 June 2023 LEMURLOOT Mandiant Microsoft",
+  "page": 1,
+  "page_size": 10,
+  "total": 2,
+  "sources": {
+    "benchmark": [
+      {
+        "title": "C...
+INFO:agent.loop:Iteration 2/50: Calling LLM...
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 400 Bad Request"

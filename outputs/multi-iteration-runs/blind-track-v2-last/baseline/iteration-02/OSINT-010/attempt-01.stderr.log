@@ -1,0 +1,146 @@
+INFO:tools.engine_search:Initializing OSINTAggregator
+INFO:agent.loop:Starting run for thread_id=benchmark-osint-010-2fa8e4b4. LLM client provider=openai, model=gpt-5.6-luna
+INFO:agent.loop:Iteration 1/50: Calling LLM...
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:agent.loop:LLM requested 6 tool call(s)
+INFO:agent.loop:\u26a1 Executing tool: 'engine_search_tool' with arguments: {"query": "Internet Research Agency 2016 influence operation DOJ indictment 2018 social media personas funding objectives"}
+INFO:agent.loop:\u2699\ufe0f Tool 'engine_search_tool' execution complete. Result preview: {
+  "query": "Internet Research Agency 2016 influence operation DOJ indictment 2018 social media personas funding objectives",
+  "page": 1,
+  "page_size": 10,
+  "total": 4,
+  "sources": {
+    "benchma...
+INFO:agent.loop:\u26a1 Executing tool: 'engine_search_tool' with arguments: {"query": "Senate Intelligence Committee Russian active measures campaign 2016 social media Internet Research Agency report personas"}
+INFO:agent.loop:\u2699\ufe0f Tool 'engine_search_tool' execution complete. Result preview: {
+  "query": "Senate Intelligence Committee Russian active measures campaign 2016 social media Internet Research Agency report personas",
+  "page": 1,
+  "page_size": 10,
+  "total": 4,
+  "sources": {
+ ...
+INFO:agent.loop:\u26a1 Executing tool: 'engine_search_tool' with arguments: {"query": "DOJ indictment Internet Research Agency February 2018 Concord Management social media US election"}
+INFO:agent.loop:\u2699\ufe0f Tool 'engine_search_tool' execution complete. Result preview: {
+  "query": "DOJ indictment Internet Research Agency February 2018 Concord Management social media US election",
+  "page": 1,
+  "page_size": 10,
+  "total": 4,
+  "sources": {
+    "benchmark": [
+      ...
+INFO:agent.loop:\u26a1 Executing tool: 'engine_search_tool' with arguments: {"query": "Facebook release IRA accounts 2016 ads Instagram Twitter platform data Russian influence operation"}
+INFO:agent.loop:\u2699\ufe0f Tool 'engine_search_tool' execution complete. Result preview: {
+  "query": "Facebook release IRA accounts 2016 ads Instagram Twitter platform data Russian influence operation",
+  "page": 1,
+  "page_size": 10,
+  "total": 4,
+  "sources": {
+    "benchmark": [
+     ...
+INFO:agent.loop:\u26a1 Executing tool: 'engine_search_tool' with arguments: {"query": "Internet Research Agency funding Yevgeny Prigozhin Concord 2016 indictment"}
+INFO:agent.loop:\u2699\ufe0f Tool 'engine_search_tool' execution complete. Result preview: {
+  "query": "Internet Research Agency funding Yevgeny Prigozhin Concord 2016 indictment",
+  "page": 1,
+  "page_size": 10,
+  "total": 4,
+  "sources": {
+    "benchmark": [
+      {
+        "title": "Int...
+INFO:agent.loop:\u26a1 Executing tool: 'engine_search_tool' with arguments: {"query": "Internet Research Agency personas @TEN_GOP Blacktivist Being Patriotic 2016"}
+INFO:agent.loop:\u2699\ufe0f Tool 'engine_search_tool' execution complete. Result preview: {
+  "query": "Internet Research Agency personas @TEN_GOP Blacktivist Being Patriotic 2016",
+  "page": 1,
+  "page_size": 10,
+  "total": 4,
+  "sources": {
+    "benchmark": [
+      {
+        "title": "In...
+INFO:agent.loop:Iteration 2/50: Calling LLM...
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:agent.loop:LLM requested 4 tool call(s)
+INFO:agent.loop:\u26a1 Executing tool: 'deep_search' with arguments: {"pages": ["https://www.justice.gov/d9/fieldable-panel-panes/basic-panes/attachments/2018/02/16/internet_research_agency_indictment.pdf"]}
+INFO:agent.loop:\u2699\ufe0f Tool 'deep_search' execution complete. Result preview: {
+  "success": true,
+  "pages": [
+    {
+      "success": true,
+      "url": "https://www.justice.gov/d9/fieldable-panel-panes/basic-panes/attachments/2018/02/16/internet_research_agency_indictment.pdf...
+INFO:agent.loop:\u26a1 Executing tool: 'deep_search' with arguments: {"pages": ["https://www.intelligence.senate.gov/wp-content/uploads/2024/08/sites-default-files-documents-report-volume2.pdf"]}
+INFO:agent.loop:\u2699\ufe0f Tool 'deep_search' execution complete. Result preview: {
+  "success": true,
+  "pages": [
+    {
+      "success": true,
+      "url": "https://www.intelligence.senate.gov/wp-content/uploads/2024/08/sites-default-files-documents-report-volume2.pdf",
+      "so...
+INFO:agent.loop:\u26a1 Executing tool: 'get_url_content' with arguments: {"url": "https://www.npr.org/2019/10/08/768319934/senate-report-russians-used-used-social-media-mostly-to-target-race-in-2016"}
+INFO:agent.loop:\u2699\ufe0f Tool 'get_url_content' execution complete. Result preview: {
+  "success": true,
+  "url": "https://www.npr.org/2019/10/08/768319934/senate-report-russians-used-used-social-media-mostly-to-target-race-in-2016",
+  "source_id": "SRC-002",
+  "title": "Senate Repor...
+INFO:agent.loop:\u26a1 Executing tool: 'get_url_content' with arguments: {"url": "https://digitalcommons.unl.edu/senatedocs/1/"}
+INFO:agent.loop:\u2699\ufe0f Tool 'get_url_content' execution complete. Result preview: {
+  "success": true,
+  "url": "https://digitalcommons.unl.edu/senatedocs/1/",
+  "source_id": "SRC-004",
+  "title": "The IRA, Social Media and Political Polarization in the United States",
+  "content":...
+INFO:agent.loop:Iteration 3/50: Calling LLM...
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:agent.loop:LLM requested 4 tool call(s)
+INFO:agent.loop:\u26a1 Executing tool: 'knowledge_agent' with arguments: {"source_title": "Internet Research Agency Indictment", "source_url": "https://www.justice.gov/d9/fieldable-panel-panes/basic-panes/attachments/2018/02/16/internet_research_agency_indictment.pdf", "text": "DOJ indictment alleges IRA was a Russian organization engaged in election/political interference. From 2014 it targeted the 2016 U.S. presidential election. It alleges funding from Yevgeniy Prigozhin and companies he controlled, Concord Management and Consulting and Concord Catering; Concord was primary funding source and monthly Project Lakhta budget exceeded 73 million rubles (over $1.25m) by September 2016. Employees posed as U.S. persons, created false U.S. personas, operated divisive political/social pages and groups, used stolen identities, bought social-media political ads, staged U.S. rallies, solicited/compensated U.S. persons, and sought coordination with unwitting campaign/activists. Strategic goal alleged: sow discord; by early/mid-2016 support Trump and disparage Clinton. Translator project operated on YouTube, Facebook, Instagram, Twitter; over 80 employees by July 2016; strategy included spreading distrust toward candidates and political system. IRA had hundreds of employees, millions-dollar annual budget, and described its activity as information warfare against the United States. Indictment allegations are not convictions."}
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:neo4j.notifications:Received notification from DBMS server: <GqlStatusObject gql_status='00NA0', status_description="note: successful completion - index or constraint already exists. The command 'CREATE CONSTRAINT UNIQUE_ENTITY_PER_THREAD IF NOT EXISTS FOR (e:Entity) REQUIRE (e.thread_id, e.type, e.value) IS UNIQUE' has no effect. The index or constraint specified by 'CONSTRAINT UNIQUE_ENTITY_PER_THREAD FOR (e:Entity) REQUIRE (e.thread_id, e.type, e.value) IS UNIQUE' already exists.", position=None, raw_classification='SCHEMA', classification=<NotificationClassification.SCHEMA: 'SCHEMA'>, raw_severity='INFORMATION', severity=<NotificationSeverity.INFORMATION: 'INFORMATION'>, diagnostic_record={'_classification': 'SCHEMA', '_severity': 'INFORMATION', 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: 'CREATE CONSTRAINT UNIQUE_ENTITY_PER_THREAD IF NOT EXISTS FOR (e:Entity) REQUIRE (e.thread_id, e.type, e.value) IS UNIQUE'
+INFO:agent.loop:\u2699\ufe0f Tool 'knowledge_agent' execution complete. Result preview: {
+  "status": "ok",
+  "added_entities": [
+    "ORGANIZATION | Internet Research Agency",
+    "ORGANIZATION | Concord Management and Consulting",
+    "ORGANIZATION | Concord Catering",
+    "ORGANIZATIO...
+INFO:agent.loop:\u26a1 Executing tool: 'knowledge_agent' with arguments: {"source_title": "Senate Select Committee Volume II", "source_url": "https://www.intelligence.senate.gov/wp-content/uploads/2024/08/sites-default-files-documents-report-volume2.pdf", "text": "Senate report says 2016 IRA operatives associated with St. Petersburg used social media information warfare to spread disinformation and societal division, masquerade as Americans, use targeted ads, falsified news, self-generated content and platform tools, reach tens of millions, polarize by societal/ideological/racial differences, provoke real-world events, and covertly support Russia's favored candidate. Committee found IRA sought to harm Hillary Clinton and support Donald Trump at Kremlin direction; Russian government tasked and supported the interference, based on relationship with Prigozhin, his financial direction and ties to Russian officials, while noting Moscow denials. Committee found broader objective beyond election: sow discord and undermine faith in democratic process. Preponderance focused on race, immigration, Second Amendment and other divisions. African-Americans were most targeted; over 66% of Facebook ads contained race-related terms; Blacktivist generated 11.2m Facebook engagements; 96% of YouTube content targeted racial issues/police brutality. Paid ads were not key: about $100,000 over two years, versus approximately $1.25m monthly operational costs; nearly 3,400 Facebook/Instagram ads compared with 61,500 Facebook posts, 116,000 Instagram posts and 10.4m tweets. IRA also coopted unwitting Americans into petitions, personal-data sharing, self-defense courses, rallies and campaign assistance. Committee said full scope remains unknown because it relied heavily on platform companies."}
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:agent.loop:\u2699\ufe0f Tool 'knowledge_agent' execution complete. Result preview: {
+  "status": "ok",
+  "added_entities": [
+    "ORGANIZATION | Internet Research Agency",
+    "ORGANIZATION | Russian government",
+    "ORGANIZATION | Kremlin",
+    "LOCATION | St. Petersburg, Russia",...
+INFO:agent.loop:\u26a1 Executing tool: 'knowledge_agent' with arguments: {"source_title": "The IRA, Social Media and Political Polarization in the United States", "source_url": "https://digitalcommons.unl.edu/senatedocs/1/", "text": "Technical Advisory Group analysis based on data provided by social-media firms to Senate Intelligence Committee: IRA Facebook, Instagram and Twitter campaigns reached tens of millions in U.S. between 2013-2018; over 30m users shared IRA Facebook/Instagram posts between 2015-2017. Activity peaks corresponded to political-calendar dates, crises and international events. US activity began on Twitter in 2013 and evolved to Facebook, Instagram and YouTube. Organic posting had more reach than ads. Campaign objectives included encouraging African-American voters to boycott elections or use wrong procedures, encouraging extreme-right voters to be confrontational, and spreading sensationalist/conspiratorial/junk political news across political spectrum; later Mexican-American/Hispanic distrust of U.S. institutions. Activity and engagement increased after 2016 election and continued, covering public policy, national security and youth issues; Instagram activity particularly increased. These are report assessments based on platform data."}
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:agent.loop:\u2699\ufe0f Tool 'knowledge_agent' execution complete. Result preview: {
+  "status": "ok",
+  "added_entities": [
+    "ORGANIZATION | IRA",
+    "ORGANIZATION | Senate Intelligence Committee",
+    "PRODUCT | Facebook",
+    "PRODUCT | Instagram",
+    "PRODUCT | Twitter",
+  ...
+INFO:agent.loop:\u26a1 Executing tool: 'knowledge_agent' with arguments: {"source_title": "NPR report on Senate findings", "source_url": "https://www.npr.org/2019/10/08/768319934/senate-report-russians-used-used-social-media-mostly-to-target-race-in-2016", "text": "NPR summarizes Senate findings: Russian government interference singled out African Americans; over 66% of IRA Facebook content contained race-related terms and Blacktivist generated 11.2m engagements. After Election Day 2016, Instagram activity increased 238%, Facebook 59%, Twitter 52%, and YouTube citations 84%. Senate said IRA worked at Kremlin direction, was almost invariably supportive of Trump, sought to harm Clinton, and focused on divisive issues to pit Americans against one another."}
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:agent.loop:\u2699\ufe0f Tool 'knowledge_agent' execution complete. Result preview: {
+  "status": "ok",
+  "added_entities": [
+    "ORGANIZATION | Russian government",
+    "ORGANIZATION | Internet Research Agency (IRA)",
+    "ORGANIZATION | Kremlin",
+    "PERSON | Donald Trump",
+    "...
+INFO:agent.loop:Iteration 4/50: Calling LLM...
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:agent.loop:LLM requested 2 tool call(s)
+INFO:agent.loop:\u26a1 Executing tool: 'kb_get' with arguments: {}
+INFO:agent.loop:\u2699\ufe0f Tool 'kb_get' execution complete. Result preview: ALIAS | IRA | Acronym used for the Internet Research Agency.
+DATE | 2013-2018 | Period during which IRA Facebook, Instagram, and Twitter campaigns reached U.S. users.
+DATE | 2015-2017 | Period during ...
+INFO:agent.loop:\u26a1 Executing tool: 'kb_get_edges' with arguments: {"limit": 200}
+INFO:agent.loop:\u2699\ufe0f Tool 'kb_get_edges' execution complete. Result preview: alias_for | alias:IRA -> organization:Internet Research Agency | evidence: IRA is the acronym used for the Internet Research Agency.
+mentions | document:DOJ indictment -> organization:Internet Researc...
+INFO:agent.loop:Iteration 5/50: Calling LLM...
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:agent.loop:No tool calls. Yielding final response (length=33583).

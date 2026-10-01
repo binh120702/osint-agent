@@ -1,0 +1,1170 @@
+{
+  "case_id": "OSINT-005",
+  "case_sha256": "bc939ca0ba60a20ac10055abc21d111df1c1f979dd8831fd0a9ee95bc4c881da",
+  "trace": {
+    "thread_id": "benchmark-osint-005-9fed9d06",
+    "tool_calls": [
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "OneCoin fraud scheme founders Ruja Ignatova Karl Greenwood DOJ FBI official"
+        },
+        "started_at": 1790853989.8625815,
+        "result": "{\n  \"query\": \"OneCoin fraud scheme founders Ruja Ignatova Karl Greenwood DOJ FBI official\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 2,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"Justice Department Announces Compensation Process for OneCoin Fraud Victims\",\n        \"url\": \"https://www.justice.gov/opa/pr/justice-department-announces-compensation-process-onecoin-fraud-victims-funds-recovered\",\n        \"snippet\": \"Office of Public Affairs | Justice Department Announces Compensation Process for OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture | United States Department of Justice Skip to main content An official website of the United States government Here's how you know Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites. DOJ Menu U.S. Department of Justice About The Attorney General Organizational Chart Budget & Performance History Privacy Program Our Work News Press Releases Speeches Videos Photo Galleries Blogs Podcasts Resources Guidance Documents Forms Publications Information for Victims in Large Cases Justice Manual Business and Contracts Grants Employment Why Justice ? Benefits DOJ Vacancies Legal Careers at DOJ Our Offices Fin\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      },\n      {\n        \"title\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison\",\n        \"url\": \"https://www.afslaw.com/perspectives/investigations-blog/co-founder-fraudulent-cryptocurrency-sentenced-20-years-prison\",\n        \"snippet\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison | ArentFox Schiff Skip to main content About Careers Innovation Locations ArentFox Schiff Main navigation Attorneys Industries & Practices Insights Search the Site Search the Site Toggle Main Menu close menu Main navigation Attorneys Industries & Practices Insights Blogs Alerts Events News The Fine Print Fashion Counsel Press Releases Health Care Counsel Blog Managing Automotive Blog AI Law Blog Customs & Import Compliance Blog Longevity Lens Trade Secrets Case Watch Trump’s Policy Playbook Consumer Products Watch Environmental Law Advisor Energy & Cleantech Counsel The In-House Advisor International Arbitration & Dispute Resolution Blog Investigations Blog National Security Counsel Privacy Counsel Footer About Leadership Alumni Diversity Innovation Pro Bono Careers Attorney Opportunities Professional Opportunities Summer Program Locations Washington, DC Chicago New York Los Angeles Boston San Francisco Lake Forest\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"Justice Department Announces Compensation Process for OneCoin Fraud Victims\",\n      \"url\": \"https://www.justice.gov/opa/pr/justice-department-announces-compensation-process-onecoin-fraud-victims-funds-recovered\",\n      \"snippet\": \"Office of Public Affairs | Justice Department Announces Compensation Process for OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture | United States Department of Justice Skip to main content An official website of the United States government Here's how you know Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites. DOJ Menu U.S. Department of Justice About The Attorney General Organizational Chart Budget & Performance History Privacy Program Our Work News Press Releases Speeches Videos Photo Galleries Blogs Podcasts Resources Guidance Documents Forms Publications Information for Victims in Large Cases Justice Manual Business and Contracts Grants Employment Why Justice ? Benefits DOJ Vacancies Legal Careers at DOJ Our Offices Fin\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    },\n    {\n      \"title\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison\",\n      \"url\": \"https://www.afslaw.com/perspectives/investigations-blog/co-founder-fraudulent-cryptocurrency-sentenced-20-years-prison\",\n      \"snippet\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison | ArentFox Schiff Skip to main content About Careers Innovation Locations ArentFox Schiff Main navigation Attorneys Industries & Practices Insights Search the Site Search the Site Toggle Main Menu close menu Main navigation Attorneys Industries & Practices Insights Blogs Alerts Events News The Fine Print Fashion Counsel Press Releases Health Care Counsel Blog Managing Automotive Blog AI Law Blog Customs & Import Compliance Blog Longevity Lens Trade Secrets Case Watch Trump’s Policy Playbook Consumer Products Watch Environmental Law Advisor Energy & Cleantech Counsel The In-House Advisor International Arbitration & Dispute Resolution Blog Investigations Blog National Security Counsel Privacy Counsel Footer About Leadership Alumni Diversity Innovation Pro Bono Careers Attorney Opportunities Professional Opportunities Summer Program Locations Washington, DC Chicago New York Los Angeles Boston San Francisco Lake Forest\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 1.23
+      },
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "OneCoin founders roles Sebastian Greenwood Konstantin Ignatov Ruja Ignatova official court"
+        },
+        "started_at": 1790853989.8641682,
+        "result": "{\n  \"query\": \"OneCoin founders roles Sebastian Greenwood Konstantin Ignatov Ruja Ignatova official court\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 2,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"Justice Department Announces Compensation Process for OneCoin Fraud Victims\",\n        \"url\": \"https://www.justice.gov/opa/pr/justice-department-announces-compensation-process-onecoin-fraud-victims-funds-recovered\",\n        \"snippet\": \"Office of Public Affairs | Justice Department Announces Compensation Process for OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture | United States Department of Justice Skip to main content An official website of the United States government Here's how you know Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites. DOJ Menu U.S. Department of Justice About The Attorney General Organizational Chart Budget & Performance History Privacy Program Our Work News Press Releases Speeches Videos Photo Galleries Blogs Podcasts Resources Guidance Documents Forms Publications Information for Victims in Large Cases Justice Manual Business and Contracts Grants Employment Why Justice ? Benefits DOJ Vacancies Legal Careers at DOJ Our Offices Fin\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      },\n      {\n        \"title\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison\",\n        \"url\": \"https://www.afslaw.com/perspectives/investigations-blog/co-founder-fraudulent-cryptocurrency-sentenced-20-years-prison\",\n        \"snippet\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison | ArentFox Schiff Skip to main content About Careers Innovation Locations ArentFox Schiff Main navigation Attorneys Industries & Practices Insights Search the Site Search the Site Toggle Main Menu close menu Main navigation Attorneys Industries & Practices Insights Blogs Alerts Events News The Fine Print Fashion Counsel Press Releases Health Care Counsel Blog Managing Automotive Blog AI Law Blog Customs & Import Compliance Blog Longevity Lens Trade Secrets Case Watch Trump’s Policy Playbook Consumer Products Watch Environmental Law Advisor Energy & Cleantech Counsel The In-House Advisor International Arbitration & Dispute Resolution Blog Investigations Blog National Security Counsel Privacy Counsel Footer About Leadership Alumni Diversity Innovation Pro Bono Careers Attorney Opportunities Professional Opportunities Summer Program Locations Washington, DC Chicago New York Los Angeles Boston San Francisco Lake Forest\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"Justice Department Announces Compensation Process for OneCoin Fraud Victims\",\n      \"url\": \"https://www.justice.gov/opa/pr/justice-department-announces-compensation-process-onecoin-fraud-victims-funds-recovered\",\n      \"snippet\": \"Office of Public Affairs | Justice Department Announces Compensation Process for OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture | United States Department of Justice Skip to main content An official website of the United States government Here's how you know Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites. DOJ Menu U.S. Department of Justice About The Attorney General Organizational Chart Budget & Performance History Privacy Program Our Work News Press Releases Speeches Videos Photo Galleries Blogs Podcasts Resources Guidance Documents Forms Publications Information for Victims in Large Cases Justice Manual Business and Contracts Grants Employment Why Justice ? Benefits DOJ Vacancies Legal Careers at DOJ Our Offices Fin\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    },\n    {\n      \"title\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison\",\n      \"url\": \"https://www.afslaw.com/perspectives/investigations-blog/co-founder-fraudulent-cryptocurrency-sentenced-20-years-prison\",\n      \"snippet\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison | ArentFox Schiff Skip to main content About Careers Innovation Locations ArentFox Schiff Main navigation Attorneys Industries & Practices Insights Search the Site Search the Site Toggle Main Menu close menu Main navigation Attorneys Industries & Practices Insights Blogs Alerts Events News The Fine Print Fashion Counsel Press Releases Health Care Counsel Blog Managing Automotive Blog AI Law Blog Customs & Import Compliance Blog Longevity Lens Trade Secrets Case Watch Trump’s Policy Playbook Consumer Products Watch Environmental Law Advisor Energy & Cleantech Counsel The In-House Advisor International Arbitration & Dispute Resolution Blog Investigations Blog National Security Counsel Privacy Counsel Footer About Leadership Alumni Diversity Innovation Pro Bono Careers Attorney Opportunities Professional Opportunities Summer Program Locations Washington, DC Chicago New York Los Angeles Boston San Francisco Lake Forest\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 1.03
+      },
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "Ruja Ignatova status missing FBI wanted 2024 2025 official"
+        },
+        "started_at": 1790853989.865562,
+        "result": "{\n  \"query\": \"Ruja Ignatova status missing FBI wanted 2024 2025 official\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 2,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"Justice Department Announces Compensation Process for OneCoin Fraud Victims\",\n        \"url\": \"https://www.justice.gov/opa/pr/justice-department-announces-compensation-process-onecoin-fraud-victims-funds-recovered\",\n        \"snippet\": \"Office of Public Affairs | Justice Department Announces Compensation Process for OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture | United States Department of Justice Skip to main content An official website of the United States government Here's how you know Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites. DOJ Menu U.S. Department of Justice About The Attorney General Organizational Chart Budget & Performance History Privacy Program Our Work News Press Releases Speeches Videos Photo Galleries Blogs Podcasts Resources Guidance Documents Forms Publications Information for Victims in Large Cases Justice Manual Business and Contracts Grants Employment Why Justice ? Benefits DOJ Vacancies Legal Careers at DOJ Our Offices Fin\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      },\n      {\n        \"title\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison\",\n        \"url\": \"https://www.afslaw.com/perspectives/investigations-blog/co-founder-fraudulent-cryptocurrency-sentenced-20-years-prison\",\n        \"snippet\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison | ArentFox Schiff Skip to main content About Careers Innovation Locations ArentFox Schiff Main navigation Attorneys Industries & Practices Insights Search the Site Search the Site Toggle Main Menu close menu Main navigation Attorneys Industries & Practices Insights Blogs Alerts Events News The Fine Print Fashion Counsel Press Releases Health Care Counsel Blog Managing Automotive Blog AI Law Blog Customs & Import Compliance Blog Longevity Lens Trade Secrets Case Watch Trump’s Policy Playbook Consumer Products Watch Environmental Law Advisor Energy & Cleantech Counsel The In-House Advisor International Arbitration & Dispute Resolution Blog Investigations Blog National Security Counsel Privacy Counsel Footer About Leadership Alumni Diversity Innovation Pro Bono Careers Attorney Opportunities Professional Opportunities Summer Program Locations Washington, DC Chicago New York Los Angeles Boston San Francisco Lake Forest\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"Justice Department Announces Compensation Process for OneCoin Fraud Victims\",\n      \"url\": \"https://www.justice.gov/opa/pr/justice-department-announces-compensation-process-onecoin-fraud-victims-funds-recovered\",\n      \"snippet\": \"Office of Public Affairs | Justice Department Announces Compensation Process for OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture | United States Department of Justice Skip to main content An official website of the United States government Here's how you know Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites. DOJ Menu U.S. Department of Justice About The Attorney General Organizational Chart Budget & Performance History Privacy Program Our Work News Press Releases Speeches Videos Photo Galleries Blogs Podcasts Resources Guidance Documents Forms Publications Information for Victims in Large Cases Justice Manual Business and Contracts Grants Employment Why Justice ? Benefits DOJ Vacancies Legal Careers at DOJ Our Offices Fin\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    },\n    {\n      \"title\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison\",\n      \"url\": \"https://www.afslaw.com/perspectives/investigations-blog/co-founder-fraudulent-cryptocurrency-sentenced-20-years-prison\",\n      \"snippet\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison | ArentFox Schiff Skip to main content About Careers Innovation Locations ArentFox Schiff Main navigation Attorneys Industries & Practices Insights Search the Site Search the Site Toggle Main Menu close menu Main navigation Attorneys Industries & Practices Insights Blogs Alerts Events News The Fine Print Fashion Counsel Press Releases Health Care Counsel Blog Managing Automotive Blog AI Law Blog Customs & Import Compliance Blog Longevity Lens Trade Secrets Case Watch Trump’s Policy Playbook Consumer Products Watch Environmental Law Advisor Energy & Cleantech Counsel The In-House Advisor International Arbitration & Dispute Resolution Blog Investigations Blog National Security Counsel Privacy Counsel Footer About Leadership Alumni Diversity Innovation Pro Bono Careers Attorney Opportunities Professional Opportunities Summer Program Locations Washington, DC Chicago New York Los Angeles Boston San Francisco Lake Forest\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 0.99
+      },
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "OneCoin BBC Cryptoqueen investigation founders fraud scheme"
+        },
+        "started_at": 1790853989.8669343,
+        "result": "{\n  \"query\": \"OneCoin BBC Cryptoqueen investigation founders fraud scheme\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 2,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"Justice Department Announces Compensation Process for OneCoin Fraud Victims\",\n        \"url\": \"https://www.justice.gov/opa/pr/justice-department-announces-compensation-process-onecoin-fraud-victims-funds-recovered\",\n        \"snippet\": \"Office of Public Affairs | Justice Department Announces Compensation Process for OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture | United States Department of Justice Skip to main content An official website of the United States government Here's how you know Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites. DOJ Menu U.S. Department of Justice About The Attorney General Organizational Chart Budget & Performance History Privacy Program Our Work News Press Releases Speeches Videos Photo Galleries Blogs Podcasts Resources Guidance Documents Forms Publications Information for Victims in Large Cases Justice Manual Business and Contracts Grants Employment Why Justice ? Benefits DOJ Vacancies Legal Careers at DOJ Our Offices Fin\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      },\n      {\n        \"title\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison\",\n        \"url\": \"https://www.afslaw.com/perspectives/investigations-blog/co-founder-fraudulent-cryptocurrency-sentenced-20-years-prison\",\n        \"snippet\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison | ArentFox Schiff Skip to main content About Careers Innovation Locations ArentFox Schiff Main navigation Attorneys Industries & Practices Insights Search the Site Search the Site Toggle Main Menu close menu Main navigation Attorneys Industries & Practices Insights Blogs Alerts Events News The Fine Print Fashion Counsel Press Releases Health Care Counsel Blog Managing Automotive Blog AI Law Blog Customs & Import Compliance Blog Longevity Lens Trade Secrets Case Watch Trump’s Policy Playbook Consumer Products Watch Environmental Law Advisor Energy & Cleantech Counsel The In-House Advisor International Arbitration & Dispute Resolution Blog Investigations Blog National Security Counsel Privacy Counsel Footer About Leadership Alumni Diversity Innovation Pro Bono Careers Attorney Opportunities Professional Opportunities Summer Program Locations Washington, DC Chicago New York Los Angeles Boston San Francisco Lake Forest\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"Justice Department Announces Compensation Process for OneCoin Fraud Victims\",\n      \"url\": \"https://www.justice.gov/opa/pr/justice-department-announces-compensation-process-onecoin-fraud-victims-funds-recovered\",\n      \"snippet\": \"Office of Public Affairs | Justice Department Announces Compensation Process for OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture | United States Department of Justice Skip to main content An official website of the United States government Here's how you know Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites. DOJ Menu U.S. Department of Justice About The Attorney General Organizational Chart Budget & Performance History Privacy Program Our Work News Press Releases Speeches Videos Photo Galleries Blogs Podcasts Resources Guidance Documents Forms Publications Information for Victims in Large Cases Justice Manual Business and Contracts Grants Employment Why Justice ? Benefits DOJ Vacancies Legal Careers at DOJ Our Offices Fin\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    },\n    {\n      \"title\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison\",\n      \"url\": \"https://www.afslaw.com/perspectives/investigations-blog/co-founder-fraudulent-cryptocurrency-sentenced-20-years-prison\",\n      \"snippet\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison | ArentFox Schiff Skip to main content About Careers Innovation Locations ArentFox Schiff Main navigation Attorneys Industries & Practices Insights Search the Site Search the Site Toggle Main Menu close menu Main navigation Attorneys Industries & Practices Insights Blogs Alerts Events News The Fine Print Fashion Counsel Press Releases Health Care Counsel Blog Managing Automotive Blog AI Law Blog Customs & Import Compliance Blog Longevity Lens Trade Secrets Case Watch Trump’s Policy Playbook Consumer Products Watch Environmental Law Advisor Energy & Cleantech Counsel The In-House Advisor International Arbitration & Dispute Resolution Blog Investigations Blog National Security Counsel Privacy Counsel Footer About Leadership Alumni Diversity Innovation Pro Bono Careers Attorney Opportunities Professional Opportunities Summer Program Locations Washington, DC Chicago New York Los Angeles Boston San Francisco Lake Forest\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 0.99
+      },
+      {
+        "name": "get_url_content",
+        "arguments": {
+          "url": "https://www.justice.gov/opa/pr/justice-department-announces-compensation-process-onecoin-fraud-victims-funds-recovered"
+        },
+        "started_at": 1790853997.3913524,
+        "result": "{\n  \"success\": true,\n  \"url\": \"https://www.justice.gov/opa/pr/justice-department-announces-compensation-process-onecoin-fraud-victims-funds-recovered\",\n  \"source_id\": \"SRC-001\",\n  \"title\": \"Justice Department Announces Compensation Process for OneCoin Fraud Victims\",\n  \"content\": {\n    \"page_title\": \"Justice Department Announces Compensation Process for OneCoin Fraud Victims\"\n  },\n  \"raw_text\": \"Office of Public Affairs | Justice Department Announces Compensation Process for OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture | United States Department of Justice Skip to main content An official website of the United States government Here's how you know Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites. DOJ Menu U.S. Department of Justice About The Attorney General Organizational Chart Budget & Performance History Privacy Program Our Work News Press Releases Speeches Videos Photo Galleries Blogs Podcasts Resources Guidance Documents Forms Publications Information for Victims in Large Cases Justice Manual Business and Contracts Grants Employment Why Justice ? Benefits DOJ Vacancies Legal Careers at DOJ Our Offices Find Help Contact Us Utilities Our Offices Find Help Contact Us Search Menu Close About News Documents Internships FOIA Contact Information for Journalists Our Offices Find Help Contact Us Main Menu U.S. Department of Justice About title=\\\"About\\\" About The Attorney General Organizational Chart Budget & Performance History Privacy Program Our Work News title=\\\"News\\\" News Press Releases Speeches Videos Photo Galleries Blogs Podcasts Resources title=\\\"Guidance & Resources\\\" Resources Guidance Documents Forms Publications Information for Victims in Large Cases Justice Manual Business and Contracts Grants Employment Employment Why Justice ? Benefits DOJ Vacancies Legal Careers at DOJ Our Offices Find Help Contact Us Search Breadcrumb Justice.gov Office of Public Affairs News Press Releases Justice Department Announces Compensation Process For OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture MENU News All News Blogs Photo Galleries Podcasts Press Releases Speeches Videos Archived Press Releases Archived News Press Release Justice Department Announces Compensation Process for OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture Monday, April 13, 2026 Share Facebook X LinkedIn Email For Immediate Release Office of Public Affairs Today, the Department of Justice announced the beginning of the remission compensation process to provide recovery for victims of the international investment scheme involving OneCoin Ltd. Between 2014 and 2019, Ruja Ignatova and Karl Sebastian Greenwood, co-founders of OneCoin Ltd. (OneCoin), and others orchestrated a large, international cryptocurrency investment scheme defrauding investors from around the globe. OneCoin, which began operations in 2014 and was based in Sofia, Bulgaria, marketed and sold a fraudulent cryptocurrency by the same name through a global multi-level-marketing (MLM) network. As a result of misrepresentations made about OneCoin, victims invested over $4 billion worldwide in the fraudulent cryptocurrency. The Department of Justice filed a number of OneCoin-related prosecutions in the Southern District of New York. Several key figures involved in the scheme have been sentenced, and the Department pursued criminal forfeiture of property derived from the proceeds of the fraud scheme. More than $40 million in forfeited assets are currently available for victim compensation. Through the remission process, victims who purchased the fraudulent OneCoin cryptocurrency between 2014 and 2019 may be eligible for compensation. Individuals who believe they may be victims may obtain a petition form online at www.onecoinremission.com . Victims may also call, email, or write to the Remission Administrator to request that a Petition Form be sent to them. The deadline for filing a petition is June 30. The Criminal Division’s Money Laundering, Narcotics and Forfeiture Section manages the remission compensation process. “Victims are at the core of everything we do at the Department of Justice,” said Assistant Attorney General A. Tysen Duva of the Justice Department's Criminal Division. “As we did in this complex investment fraud case, the Department pursues forfeiture to take the profit out of crime and then use that money to compensate victims wherever possible. I commend the efforts of our colleagues in the Southern District of New York, our law enforcement partners, and our Money Laundering, Narcotics and Forfeiture Section, which manages the Asset Forfeiture Program, for all of their work on behalf of the victims in this important case.” “Between 2014 and 2019, OneCoin’s founders sold a lie disguised as cryptocurrency, costing victims more than $4 billion worldwide,” said U.S. Attorney Jay Clayton for the Southern District of New York. “Today’s announcement marks an important step toward returning funds to those harmed. While no recovery can fully undo the damage, our Office will continue working to seize criminal proceeds and prioritize getting money back into the hands of victims. If you believe you may be a victim of OneCoin, you may obtain a petition form online at www.onecoinremission.com.” “The victim losses accrued in this case are monumental,” said Assistant Director in Charge James C. Barnacle Jr of the FBI New York Field Office. “Misled by falsified statements and empty promises, many unknowingly depleted their savings for a fraudulent investment scheme in an emerging financial ecosystem that would never pay out. With the unwavering support from the Department of Justice, the FBI maintains its commitment to returning these stolen funds to their rightful owners. Our office will continue its investigative pursuit of these criminal fraudsters — especially locating Ruja Ignatova, an FBI Top Ten Fugitive — alongside our partners at the Internal Revenue Service Criminal Investigation (IRS-CI) and the Southern District of New York. Any information concerning this fugitive can be submitted online at tips.fbi.gov or via our tipline at 1-800-CALL-FBI.” “The victims of the OneCoin scheme were misled and financially devastated by promises that were never real,” said Special Agent in Charge Jenifer L. Piovesan of IRS-CI. “Alongside our law enforcement partners, we worked tirelessly to trace illicit funds and recover them for victims. This compensation process represents a critical step toward returning stolen assets to those who were deceived. IRS-CI remains steadfast in its mission to follow the money and dismantle complex financial fraud schemes like OneCoin.” More information regarding the remission process, including eligibility criteria, updates, and frequently asked questions are available at www.onecoinremission.com or by calling 1-833-421-9748. Kroll Settlement Administration LLC is serving as the remission administrator in this matter. The FBI and IRS-CI conducted the criminal fraud investigation. The Justice Department’s Office of International Affairs (OIA) provided significant assistance. The Department of Justice, through the Asset Forfeiture Program, works diligently to compensate victims of crime. Since 2000, the Criminal Division’s Money Laundering, Narcotics and Forfeiture Section (MNF), which oversees the Asset Forfeiture Program’s victim compensation program, has returned more than $12.5 billion in forfeited assets to victims of crime. MNF Attorney Advisor Drew Halter with the section’s Program Management and Training Unit is leading the remission process. Neither the Remission Administrator nor the Department of Justice will ask for any payment to participate in this remission process. Please be cautious of any individual or organization claiming to represent the Remission Administrator or the federal government in this matter. If you are a victim, any communications will come directly from the Remission Administrator or from government representatives with whom you have already had contact. PSA: FBI Warns of the Impersonation of Law Enforcement and Government Officials https://www.ic3.gov/PSA/2025/PSA250418 PSA: Fictitious Law Firms Targeting Cryptocurrency Scam Victims Combine Multiple Exploitation Tactics While Offering to Recover Funds https://www.ic3.gov/PSA/2025/PSA250813 How To Avoid a Government Impersonation Scam https://consumer.ftc.gov/articles/how-avoid-government-impersonation-scam Updated April 13, 2026 Topic Financial Fraud Components Criminal Division Criminal - Money Laundering, Narcotics and Forfeiture Section Criminal - Office of International Affairs Federal Bureau of Investigation (FBI) USAO - New York, Southern Press Release Number: 26-351 Related Content Press Release Former Banker Convicted for Scheme to Bribe Ghanaian Officials Today, a federal jury convicted a dual U.S.-Ghanaian citizen for his role in a scheme to bribe Ghanaian officials in connection with the development and financing of a multi-million-dollar power... August 6, 2026 Press Release Ukrainian-Israeli Citizen Sentenced for Multi-Million Dollar Fake Brokerage Scheme Yaroslav Shilkloper, 50, a dual citizen of Ukraine and Israel, was sentenced today to four years in prison for his participation in a conspiracy that utilized a sophisticated phony brokerage-business... July 28, 2026 Press Release Two Key Members of Chinese Money Laundering Network Charged with Laundering $43 Million in Investment Fraud Proceeds A New York man and woman made an initial appearance today in Brooklyn, New York on charges of conspiracy to launder money derived from cyber investment fraud scams. July 16, 2026 Office of Public Affairs U.S. Department of Justice 950 Pennsylvania Avenue, NW Washington DC 20530 Office of Public Affairs Direct Line 202-514-2007 Department of Justice Main Switchboard 202-514-2000 Signup for Email Updates Social Media twitter facebook youtube instagram linkedin About Budget & Performance Archives FOIA Accessibility Legal Policies & Disclaimers Privacy For Employees Office of the Inspector General No FEAR Act Data EEO Policy Statement Vulnerability Disclosure Multilingual Vote.gov Have a question about Government Services? Contact USA.gov Top\"\n}",
+        "duration_ms": 0.1
+      },
+      {
+        "name": "get_url_content",
+        "arguments": {
+          "url": "https://www.afslaw.com/perspectives/investigations-blog/co-founder-fraudulent-cryptocurrency-sentenced-20-years-prison"
+        },
+        "started_at": 1790853997.3919635,
+        "result": "{\n  \"success\": true,\n  \"url\": \"https://www.afslaw.com/perspectives/investigations-blog/co-founder-fraudulent-cryptocurrency-sentenced-20-years-prison\",\n  \"source_id\": \"SRC-002\",\n  \"title\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison\",\n  \"content\": {\n    \"page_title\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison\"\n  },\n  \"raw_text\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison | ArentFox Schiff Skip to main content About Careers Innovation Locations ArentFox Schiff Main navigation Attorneys Industries & Practices Insights Search the Site Search the Site Toggle Main Menu close menu Main navigation Attorneys Industries & Practices Insights Blogs Alerts Events News The Fine Print Fashion Counsel Press Releases Health Care Counsel Blog Managing Automotive Blog AI Law Blog Customs & Import Compliance Blog Longevity Lens Trade Secrets Case Watch Trump’s Policy Playbook Consumer Products Watch Environmental Law Advisor Energy & Cleantech Counsel The In-House Advisor International Arbitration & Dispute Resolution Blog Investigations Blog National Security Counsel Privacy Counsel Footer About Leadership Alumni Diversity Innovation Pro Bono Careers Attorney Opportunities Professional Opportunities Summer Program Locations Washington, DC Chicago New York Los Angeles Boston San Francisco Lake Forest Ann Arbor Decentraland Contact Client Payments Subscribe Search How can we help you? How can we help you? Breadcrumb Insights Investigations Blog Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison September 15, 2023 D. Jacques Smith , Randall A. Brater , Nadia Patel , Michael F. Dearington Share This Page Email LinkedIn X Facebook Headlines that Matter for Companies and Executives in Regulated Industries Off Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison Karl Sebastian Greenwood, a citizen of Sweden and the United Kingdom and co-founder of the cryptocurrency OneCoin, was sentenced to 20 years in prison for his alleged role in a $4 billion fraud scheme. As described by prosecutors, OneCoin began operations in Bulgaria in 2014 and sold a fraudulent cryptocurrency with the same name through a multi-level-marketing (MLM) scheme. Around 2015, OneCoin began operating in the United States. The government charged Greenwood and others with making various misrepresentations about OneCoin to secure over $4 billion in investments from approximately 3.5 million investors. These alleged misrepresentations include claiming that OneCoin’s value was based on market supply and demand though the value was actually set arbitrarily without regard to market forces. Greenwood also claimed to have a private blockchain to identify OneCoins and record historical transactions, when no public verifiable blockchain actually existed. According to the government, OneCoin marketed its cryptocurrency through a global MLM network whereby OneCoin members would receive commissions for recruiting others to purchase cryptocurrency packages. As OneCoin’s top MLM distributor, Greenwood is alleged to have earned 5% of monthly OneCoin sales, totaling over $300 million. In addition to his 20-year prison term, Greenwood was ordered to pay approximately $300,000 in forfeiture. OneCoin’s other co-founder, Ruja Ignatova, remains at large and was added to the FBI’s Top Ten Most Wanted List in June 2022. A link to the US Department of Justice’s (DOJ) press release can be found here. Prison Inmate Pleads Guilty in COVID-19 Relief Fraud Telvin Breaux, an inmate in a California prison, and three other co-defendants pleaded guilty to conspiracy and aggravated identity theft charges for their alleged roles in a $25 million unemployment benefits scheme. According to the DOJ, Breaux and his co-defendants obtained personal identifying information of other inmates, as well as patients and customers at hospitals, dentists’ offices, and other businesses where one of the co-defendants worked or had connections. Breaux and his co-defendants then used this information to submit fraudulent unemployment insurance claims to the California Employment Development Department (EDD). In connection with these false claims, Breaux and his co-defendants also made specific misrepresentations that the individuals whose information they stole were unable to work as a result of the COVID-19 pandemic. In total, defendants are alleged to have submitted over 400 fraudulent claims totaling over $25 million to the EDD, $5.4 million of which was actually paid out and used by the defendants to purchase luxury vehicles, fund trips to Las Vegas, and pay rent and tuition. Each defendant faces a maximum of 22 years imprisonment as well as fines of $250,000. A link to the DOJ’s press release can be found here. Former NYC Non-Profit Finance Director Sentenced to 18 Months Imprisonment Donna Murray, the former finance director of a New York City-based nonprofit financial services trade association with over 600 members, was sentenced to 18 months imprisonment for allegedly embezzling nearly half a million dollars from the nonprofit. The government alleges that Murray was the nonprofit’s sole finance department employee and was responsible for maintaining the organization’s books and records, handling accounts receivable and payable, and managing financial statements to outside auditors. In addition, Murray is alleged to have been the only employee with the ability to make wire transfers for the organization. As detailed in the DOJ’s information, Murray was charged with a months-long embezzlement scheme in which she stole over $488,000 from the organization’s bank accounts through 105 unauthorized wire transfers to her personal account. Murray covered up the scheme by creating false entries in the organizations general ledger and transferring less than $10,000 in each transaction to avoid triggering bank reporting requirements. Prosecutors charged Murray with using the misappropriated funds to pay personal loans and purchase luxury items. For her conduct, Murray was sentenced to 18 months in prison. A link to the DOJ’s press release can be found here. Contacts D. Jacques Smith Partner and Investigations Practice Leader Randall A. Brater Partner and Co-General Counsel Nadia Patel Partner Michael F. Dearington Partner Related Practices Investigations Continue Reading All Insights from Investigations Blog Investigations Blog DOJ Formally Establishes National Fraud Enforcement Division, Reassigns Criminal Division Portfolio August 24, 2026 D. Jacques Smith , Michael F. Dearington , Nadia Patel , Laura Zell , Michelle J. Shapiro , Sean A. Worley , John M. Hindley Investigations Blog DOJ’s National Fraud Enforcement Division Announces Enforcement Priorities August 17, 2026 D. Jacques Smith , Michael F. Dearington , Nadia Patel , Hillary M. Stemple , Laura Zell , Michelle J. Shapiro , Roberto Martinez , Sean A. Worley Investigations Blog NYSBA Issues Ethics Opinion on Lawyer Involvement in Deceptive Investigative Conduct in FCA Cases August 10, 2026 D. Jacques Smith , Michael F. Dearington , Nadia Patel , Hillary M. Stemple , Laura Zell , Michelle J. Shapiro , Shoshana Golden , Roberto Martinez Footer About Leadership Alumni Diversity Innovation Pro Bono Careers Attorney Opportunities Professional Opportunities Summer Program Locations Washington, DC Chicago New York Los Angeles Boston San Francisco Lake Forest Ann Arbor Decentraland Contact Client Payments Subscribe Social Linkedin Twitter Youtube Sub footer Disclaimer Privacy Policy Terms of Use Cookie Preferences Accessibility Non Discrimination © Copyright 2026 ArentFox Schiff LLP. All Rights Reserved. Back to Top\"\n}",
+        "duration_ms": 0.1
+      },
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "site:justice.gov OneCoin Ruja Ignatova Greenwood Ignatov indictment"
+        },
+        "started_at": 1790853997.3925648,
+        "result": "{\n  \"query\": \"site:justice.gov OneCoin Ruja Ignatova Greenwood Ignatov indictment\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 2,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"Justice Department Announces Compensation Process for OneCoin Fraud Victims\",\n        \"url\": \"https://www.justice.gov/opa/pr/justice-department-announces-compensation-process-onecoin-fraud-victims-funds-recovered\",\n        \"snippet\": \"Office of Public Affairs | Justice Department Announces Compensation Process for OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture | United States Department of Justice Skip to main content An official website of the United States government Here's how you know Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites. DOJ Menu U.S. Department of Justice About The Attorney General Organizational Chart Budget & Performance History Privacy Program Our Work News Press Releases Speeches Videos Photo Galleries Blogs Podcasts Resources Guidance Documents Forms Publications Information for Victims in Large Cases Justice Manual Business and Contracts Grants Employment Why Justice ? Benefits DOJ Vacancies Legal Careers at DOJ Our Offices Fin\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      },\n      {\n        \"title\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison\",\n        \"url\": \"https://www.afslaw.com/perspectives/investigations-blog/co-founder-fraudulent-cryptocurrency-sentenced-20-years-prison\",\n        \"snippet\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison | ArentFox Schiff Skip to main content About Careers Innovation Locations ArentFox Schiff Main navigation Attorneys Industries & Practices Insights Search the Site Search the Site Toggle Main Menu close menu Main navigation Attorneys Industries & Practices Insights Blogs Alerts Events News The Fine Print Fashion Counsel Press Releases Health Care Counsel Blog Managing Automotive Blog AI Law Blog Customs & Import Compliance Blog Longevity Lens Trade Secrets Case Watch Trump’s Policy Playbook Consumer Products Watch Environmental Law Advisor Energy & Cleantech Counsel The In-House Advisor International Arbitration & Dispute Resolution Blog Investigations Blog National Security Counsel Privacy Counsel Footer About Leadership Alumni Diversity Innovation Pro Bono Careers Attorney Opportunities Professional Opportunities Summer Program Locations Washington, DC Chicago New York Los Angeles Boston San Francisco Lake Forest\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"Justice Department Announces Compensation Process for OneCoin Fraud Victims\",\n      \"url\": \"https://www.justice.gov/opa/pr/justice-department-announces-compensation-process-onecoin-fraud-victims-funds-recovered\",\n      \"snippet\": \"Office of Public Affairs | Justice Department Announces Compensation Process for OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture | United States Department of Justice Skip to main content An official website of the United States government Here's how you know Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites. DOJ Menu U.S. Department of Justice About The Attorney General Organizational Chart Budget & Performance History Privacy Program Our Work News Press Releases Speeches Videos Photo Galleries Blogs Podcasts Resources Guidance Documents Forms Publications Information for Victims in Large Cases Justice Manual Business and Contracts Grants Employment Why Justice ? Benefits DOJ Vacancies Legal Careers at DOJ Our Offices Fin\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    },\n    {\n      \"title\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison\",\n      \"url\": \"https://www.afslaw.com/perspectives/investigations-blog/co-founder-fraudulent-cryptocurrency-sentenced-20-years-prison\",\n      \"snippet\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison | ArentFox Schiff Skip to main content About Careers Innovation Locations ArentFox Schiff Main navigation Attorneys Industries & Practices Insights Search the Site Search the Site Toggle Main Menu close menu Main navigation Attorneys Industries & Practices Insights Blogs Alerts Events News The Fine Print Fashion Counsel Press Releases Health Care Counsel Blog Managing Automotive Blog AI Law Blog Customs & Import Compliance Blog Longevity Lens Trade Secrets Case Watch Trump’s Policy Playbook Consumer Products Watch Environmental Law Advisor Energy & Cleantech Counsel The In-House Advisor International Arbitration & Dispute Resolution Blog Investigations Blog National Security Counsel Privacy Counsel Footer About Leadership Alumni Diversity Innovation Pro Bono Careers Attorney Opportunities Professional Opportunities Summer Program Locations Washington, DC Chicago New York Los Angeles Boston San Francisco Lake Forest\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 1.07
+      },
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "site:fbi.gov Ruja Ignatova OneCoin wanted"
+        },
+        "started_at": 1790853997.3941922,
+        "result": "{\n  \"query\": \"site:fbi.gov Ruja Ignatova OneCoin wanted\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 2,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison\",\n        \"url\": \"https://www.afslaw.com/perspectives/investigations-blog/co-founder-fraudulent-cryptocurrency-sentenced-20-years-prison\",\n        \"snippet\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison | ArentFox Schiff Skip to main content About Careers Innovation Locations ArentFox Schiff Main navigation Attorneys Industries & Practices Insights Search the Site Search the Site Toggle Main Menu close menu Main navigation Attorneys Industries & Practices Insights Blogs Alerts Events News The Fine Print Fashion Counsel Press Releases Health Care Counsel Blog Managing Automotive Blog AI Law Blog Customs & Import Compliance Blog Longevity Lens Trade Secrets Case Watch Trump’s Policy Playbook Consumer Products Watch Environmental Law Advisor Energy & Cleantech Counsel The In-House Advisor International Arbitration & Dispute Resolution Blog Investigations Blog National Security Counsel Privacy Counsel Footer About Leadership Alumni Diversity Innovation Pro Bono Careers Attorney Opportunities Professional Opportunities Summer Program Locations Washington, DC Chicago New York Los Angeles Boston San Francisco Lake Forest\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      },\n      {\n        \"title\": \"Justice Department Announces Compensation Process for OneCoin Fraud Victims\",\n        \"url\": \"https://www.justice.gov/opa/pr/justice-department-announces-compensation-process-onecoin-fraud-victims-funds-recovered\",\n        \"snippet\": \"Office of Public Affairs | Justice Department Announces Compensation Process for OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture | United States Department of Justice Skip to main content An official website of the United States government Here's how you know Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites. DOJ Menu U.S. Department of Justice About The Attorney General Organizational Chart Budget & Performance History Privacy Program Our Work News Press Releases Speeches Videos Photo Galleries Blogs Podcasts Resources Guidance Documents Forms Publications Information for Victims in Large Cases Justice Manual Business and Contracts Grants Employment Why Justice ? Benefits DOJ Vacancies Legal Careers at DOJ Our Offices Fin\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison\",\n      \"url\": \"https://www.afslaw.com/perspectives/investigations-blog/co-founder-fraudulent-cryptocurrency-sentenced-20-years-prison\",\n      \"snippet\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison | ArentFox Schiff Skip to main content About Careers Innovation Locations ArentFox Schiff Main navigation Attorneys Industries & Practices Insights Search the Site Search the Site Toggle Main Menu close menu Main navigation Attorneys Industries & Practices Insights Blogs Alerts Events News The Fine Print Fashion Counsel Press Releases Health Care Counsel Blog Managing Automotive Blog AI Law Blog Customs & Import Compliance Blog Longevity Lens Trade Secrets Case Watch Trump’s Policy Playbook Consumer Products Watch Environmental Law Advisor Energy & Cleantech Counsel The In-House Advisor International Arbitration & Dispute Resolution Blog Investigations Blog National Security Counsel Privacy Counsel Footer About Leadership Alumni Diversity Innovation Pro Bono Careers Attorney Opportunities Professional Opportunities Summer Program Locations Washington, DC Chicago New York Los Angeles Boston San Francisco Lake Forest\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    },\n    {\n      \"title\": \"Justice Department Announces Compensation Process for OneCoin Fraud Victims\",\n      \"url\": \"https://www.justice.gov/opa/pr/justice-department-announces-compensation-process-onecoin-fraud-victims-funds-recovered\",\n      \"snippet\": \"Office of Public Affairs | Justice Department Announces Compensation Process for OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture | United States Department of Justice Skip to main content An official website of the United States government Here's how you know Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites. DOJ Menu U.S. Department of Justice About The Attorney General Organizational Chart Budget & Performance History Privacy Program Our Work News Press Releases Speeches Videos Photo Galleries Blogs Podcasts Resources Guidance Documents Forms Publications Information for Victims in Large Cases Justice Manual Business and Contracts Grants Employment Why Justice ? Benefits DOJ Vacancies Legal Careers at DOJ Our Offices Fin\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 1.03
+      },
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "site:justice.gov \"Ruja Ignatova\" \"OneCoin\""
+        },
+        "started_at": 1790853997.395797,
+        "result": "{\n  \"query\": \"site:justice.gov \\\"Ruja Ignatova\\\" \\\"OneCoin\\\"\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 2,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"Justice Department Announces Compensation Process for OneCoin Fraud Victims\",\n        \"url\": \"https://www.justice.gov/opa/pr/justice-department-announces-compensation-process-onecoin-fraud-victims-funds-recovered\",\n        \"snippet\": \"Office of Public Affairs | Justice Department Announces Compensation Process for OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture | United States Department of Justice Skip to main content An official website of the United States government Here's how you know Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites. DOJ Menu U.S. Department of Justice About The Attorney General Organizational Chart Budget & Performance History Privacy Program Our Work News Press Releases Speeches Videos Photo Galleries Blogs Podcasts Resources Guidance Documents Forms Publications Information for Victims in Large Cases Justice Manual Business and Contracts Grants Employment Why Justice ? Benefits DOJ Vacancies Legal Careers at DOJ Our Offices Fin\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      },\n      {\n        \"title\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison\",\n        \"url\": \"https://www.afslaw.com/perspectives/investigations-blog/co-founder-fraudulent-cryptocurrency-sentenced-20-years-prison\",\n        \"snippet\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison | ArentFox Schiff Skip to main content About Careers Innovation Locations ArentFox Schiff Main navigation Attorneys Industries & Practices Insights Search the Site Search the Site Toggle Main Menu close menu Main navigation Attorneys Industries & Practices Insights Blogs Alerts Events News The Fine Print Fashion Counsel Press Releases Health Care Counsel Blog Managing Automotive Blog AI Law Blog Customs & Import Compliance Blog Longevity Lens Trade Secrets Case Watch Trump’s Policy Playbook Consumer Products Watch Environmental Law Advisor Energy & Cleantech Counsel The In-House Advisor International Arbitration & Dispute Resolution Blog Investigations Blog National Security Counsel Privacy Counsel Footer About Leadership Alumni Diversity Innovation Pro Bono Careers Attorney Opportunities Professional Opportunities Summer Program Locations Washington, DC Chicago New York Los Angeles Boston San Francisco Lake Forest\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"Justice Department Announces Compensation Process for OneCoin Fraud Victims\",\n      \"url\": \"https://www.justice.gov/opa/pr/justice-department-announces-compensation-process-onecoin-fraud-victims-funds-recovered\",\n      \"snippet\": \"Office of Public Affairs | Justice Department Announces Compensation Process for OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture | United States Department of Justice Skip to main content An official website of the United States government Here's how you know Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites. DOJ Menu U.S. Department of Justice About The Attorney General Organizational Chart Budget & Performance History Privacy Program Our Work News Press Releases Speeches Videos Photo Galleries Blogs Podcasts Resources Guidance Documents Forms Publications Information for Victims in Large Cases Justice Manual Business and Contracts Grants Employment Why Justice ? Benefits DOJ Vacancies Legal Careers at DOJ Our Offices Fin\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    },\n    {\n      \"title\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison\",\n      \"url\": \"https://www.afslaw.com/perspectives/investigations-blog/co-founder-fraudulent-cryptocurrency-sentenced-20-years-prison\",\n      \"snippet\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison | ArentFox Schiff Skip to main content About Careers Innovation Locations ArentFox Schiff Main navigation Attorneys Industries & Practices Insights Search the Site Search the Site Toggle Main Menu close menu Main navigation Attorneys Industries & Practices Insights Blogs Alerts Events News The Fine Print Fashion Counsel Press Releases Health Care Counsel Blog Managing Automotive Blog AI Law Blog Customs & Import Compliance Blog Longevity Lens Trade Secrets Case Watch Trump’s Policy Playbook Consumer Products Watch Environmental Law Advisor Energy & Cleantech Counsel The In-House Advisor International Arbitration & Dispute Resolution Blog Investigations Blog National Security Counsel Privacy Counsel Footer About Leadership Alumni Diversity Innovation Pro Bono Careers Attorney Opportunities Professional Opportunities Summer Program Locations Washington, DC Chicago New York Los Angeles Boston San Francisco Lake Forest\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 0.99
+      },
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "site:interpol.int Ruja Ignatova OneCoin"
+        },
+        "started_at": 1790853997.3973548,
+        "result": "{\n  \"query\": \"site:interpol.int Ruja Ignatova OneCoin\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 2,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison\",\n        \"url\": \"https://www.afslaw.com/perspectives/investigations-blog/co-founder-fraudulent-cryptocurrency-sentenced-20-years-prison\",\n        \"snippet\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison | ArentFox Schiff Skip to main content About Careers Innovation Locations ArentFox Schiff Main navigation Attorneys Industries & Practices Insights Search the Site Search the Site Toggle Main Menu close menu Main navigation Attorneys Industries & Practices Insights Blogs Alerts Events News The Fine Print Fashion Counsel Press Releases Health Care Counsel Blog Managing Automotive Blog AI Law Blog Customs & Import Compliance Blog Longevity Lens Trade Secrets Case Watch Trump’s Policy Playbook Consumer Products Watch Environmental Law Advisor Energy & Cleantech Counsel The In-House Advisor International Arbitration & Dispute Resolution Blog Investigations Blog National Security Counsel Privacy Counsel Footer About Leadership Alumni Diversity Innovation Pro Bono Careers Attorney Opportunities Professional Opportunities Summer Program Locations Washington, DC Chicago New York Los Angeles Boston San Francisco Lake Forest\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      },\n      {\n        \"title\": \"Justice Department Announces Compensation Process for OneCoin Fraud Victims\",\n        \"url\": \"https://www.justice.gov/opa/pr/justice-department-announces-compensation-process-onecoin-fraud-victims-funds-recovered\",\n        \"snippet\": \"Office of Public Affairs | Justice Department Announces Compensation Process for OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture | United States Department of Justice Skip to main content An official website of the United States government Here's how you know Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites. DOJ Menu U.S. Department of Justice About The Attorney General Organizational Chart Budget & Performance History Privacy Program Our Work News Press Releases Speeches Videos Photo Galleries Blogs Podcasts Resources Guidance Documents Forms Publications Information for Victims in Large Cases Justice Manual Business and Contracts Grants Employment Why Justice ? Benefits DOJ Vacancies Legal Careers at DOJ Our Offices Fin\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison\",\n      \"url\": \"https://www.afslaw.com/perspectives/investigations-blog/co-founder-fraudulent-cryptocurrency-sentenced-20-years-prison\",\n      \"snippet\": \"Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison | ArentFox Schiff Skip to main content About Careers Innovation Locations ArentFox Schiff Main navigation Attorneys Industries & Practices Insights Search the Site Search the Site Toggle Main Menu close menu Main navigation Attorneys Industries & Practices Insights Blogs Alerts Events News The Fine Print Fashion Counsel Press Releases Health Care Counsel Blog Managing Automotive Blog AI Law Blog Customs & Import Compliance Blog Longevity Lens Trade Secrets Case Watch Trump’s Policy Playbook Consumer Products Watch Environmental Law Advisor Energy & Cleantech Counsel The In-House Advisor International Arbitration & Dispute Resolution Blog Investigations Blog National Security Counsel Privacy Counsel Footer About Leadership Alumni Diversity Innovation Pro Bono Careers Attorney Opportunities Professional Opportunities Summer Program Locations Washington, DC Chicago New York Los Angeles Boston San Francisco Lake Forest\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    },\n    {\n      \"title\": \"Justice Department Announces Compensation Process for OneCoin Fraud Victims\",\n      \"url\": \"https://www.justice.gov/opa/pr/justice-department-announces-compensation-process-onecoin-fraud-victims-funds-recovered\",\n      \"snippet\": \"Office of Public Affairs | Justice Department Announces Compensation Process for OneCoin Fraud Victims With Funds Recovered Through Asset Forfeiture | United States Department of Justice Skip to main content An official website of the United States government Here's how you know Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites. DOJ Menu U.S. Department of Justice About The Attorney General Organizational Chart Budget & Performance History Privacy Program Our Work News Press Releases Speeches Videos Photo Galleries Blogs Podcasts Resources Guidance Documents Forms Publications Information for Victims in Large Cases Justice Manual Business and Contracts Grants Employment Why Justice ? Benefits DOJ Vacancies Legal Careers at DOJ Our Offices Fin\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 0.98
+      },
+      {
+        "name": "knowledge_agent",
+        "arguments": {
+          "source_title": "OneCoin DOJ compensation announcement and sentencing overview",
+          "source_url": "https://www.justice.gov/opa/pr/justice-department-announces-compensation-process-onecoin-fraud-victims-funds-recovered; https://www.afslaw.com/perspectives/investigations-blog/co-founder-fraudulent-cryptocurrency-sentenced-20-years-prison",
+          "text": "SRC-001 (DOJ, updated April 13 2026): Between 2014 and 2019, Ruja Ignatova and Karl Sebastian Greenwood, co-founders of OneCoin Ltd., and others orchestrated an international cryptocurrency investment scheme. OneCoin was based in Sofia, Bulgaria, marketed a fraudulent cryptocurrency through a global multi-level-marketing network, and victims invested over $4 billion worldwide. DOJ says several key figures were sentenced, criminal forfeiture was pursued, and more than $40 million in forfeited assets was available for victim compensation. DOJ identifies Ignatova as an FBI Top Ten Fugitive and says authorities continue trying to locate her; this establishes wanted status, not her whereabouts or whether she is alive. SRC-002 (ArentFox Schiff, Sept. 15 2023): Karl Sebastian Greenwood, a Swedish and UK citizen and OneCoin co-founder, was sentenced to 20 years in prison and ordered to forfeit approximately $300,000. The article reports prosecutors alleged OneCoin misrepresented market-based value, claimed a private blockchain despite no public verifiable blockchain, used an MLM recruitment/commission structure, and that Greenwood as top MLM distributor allegedly earned 5% of monthly sales totaling over $300 million. It reports Ruja Ignatova, the other co-founder, remained at large and was added to the FBI Top Ten Most Wanted List in June 2022. Treat allegations and reported prosecutor assertions as such; distinguish sentence and wanted-list status as enforcement facts from unresolved claims about Ignatova's status."
+        },
+        "started_at": 1790854010.6199493,
+        "result": "{\n  \"status\": \"ok\",\n  \"added_entities\": [\n    \"PERSON | Ruja Ignatova\",\n    \"PERSON | Karl Sebastian Greenwood\",\n    \"ORGANIZATION | OneCoin Ltd.\",\n    \"ORGANIZATION | Federal Bureau of Investigation\",\n    \"LOCATION | Sofia, Bulgaria\",\n    \"PRODUCT | OneCoin cryptocurrency\",\n    \"EVENT | OneCoin international cryptocurrency investment scheme\",\n    \"EVENT | Karl Sebastian Greenwood sentencing\",\n    \"EVENT | Ruja Ignatova FBI Top Ten listing\",\n    \"DATE | 2014-2019\"\n  ],\n  \"added_edges\": [\n    \"CO_FOUNDED | person:Ruja Ignatova -> organization:OneCoin Ltd.\",\n    \"CO_FOUNDED | person:Karl Sebastian Greenwood -> organization:OneCoin Ltd.\",\n    \"BASED_IN | organization:OneCoin Ltd. -> location:Sofia, Bulgaria\",\n    \"PROMOTED | organization:OneCoin Ltd. -> product:OneCoin cryptocurrency\",\n    \"PART_OF_OPERATION | person:Ruja Ignatova -> event:OneCoin international cryptocurrency investment scheme\",\n    \"PART_OF_OPERATION | person:Karl Sebastian Greenwood -> event:OneCoin international cryptocurrency investment scheme\",\n    \"OCCURRED_ON | event:OneCoin international cryptocurrency investment scheme -> date:2014-2019\",\n    \"OCCURRED_ON | event:Ruja Ignatova FBI Top Ten listing -> date:2022-06\",\n    \"OTHER_RELATION | event:Karl Sebastian Greenwood sentencing -> person:Karl Sebastian Greenwood\",\n    \"OTHER_RELATION | person:Ruja Ignatova -> event:Ruja Ignatova FBI Top Ten listing\",\n    \"OTHER_RELATION | organization:Federal Bureau of Investigation -> person:Ruja Ignatova\"\n  ],\n  \"neo4j\": true\n}",
+        "duration_ms": 133621.42
+      },
+      {
+        "name": "kb_get",
+        "arguments": {},
+        "started_at": 1790854149.2182412,
+        "result": "DATE | 2014-2019 | Period during which the OneCoin scheme was orchestrated.\nDATE | 2022-06\nEVENT | Karl Sebastian Greenwood sentencing | Greenwood was sentenced to 20 years in prison and ordered to forfeit approximately $300,000; the precise sentencing date is not provided.\nEVENT | OneCoin international cryptocurrency investment scheme | International cryptocurrency investment scheme orchestrated between 2014 and 2019; victims invested over $4 billion worldwide.\nEVENT | Ruja Ignatova FBI Top Ten listing | Ignatova was added to the FBI Top Ten Most Wanted List in June 2022; this establishes wanted-list status, not her whereabouts or whether she is alive.\nLOCATION | Sofia, Bulgaria | Location where OneCoin Ltd. was based.\nORGANIZATION | Federal Bureau of Investigation | FBI; identified Ruja Ignatova as a Top Ten Fugitive and included her on its Top Ten Most Wanted List.\nORGANIZATION | OneCoin Ltd. | Company co-founded by Ruja Ignatova and Karl Sebastian Greenwood; described as based in Sofia, Bulgaria, and involved in the OneCoin investment scheme.\nPERSON | Karl Sebastian Greenwood | OneCoin co-founder and alleged top MLM distributor; sentenced to 20 years in prison and ordered to forfeit approximately $300,000.\nPERSON | Ruja Ignatova | OneCoin co-founder; identified by DOJ as an FBI Top Ten Fugitive and reported as remaining at large. Her whereabouts and whether she is alive remain unresolved.\nPRODUCT | OneCoin cryptocurrency | Cryptocurrency marketed through OneCoin's global multi-level-marketing network; prosecutors alleged that its market-based value and private blockchain were misrepresented.",
+        "duration_ms": 9.41
+      },
+      {
+        "name": "kb_get_edges",
+        "arguments": {
+          "limit": 100
+        },
+        "started_at": 1790854149.2284343,
+        "result": "other_relation | event:Karl Sebastian Greenwood sentencing -> person:Karl Sebastian Greenwood | evidence: The event records Greenwood's 20-year prison sentence and approximately $300,000 forfeiture order.\noccurred_on | event:OneCoin international cryptocurrency investment scheme -> date:2014-2019 | evidence: The scheme operated between 2014 and 2019.\noccurred_on | event:Ruja Ignatova FBI Top Ten listing -> date:2022-06 | evidence: The listing was reported as occurring in June 2022.\nother_relation | organization:Federal Bureau of Investigation -> person:Ruja Ignatova | evidence: The FBI identifies Ignatova as a Top Ten Fugitive; this does not establish her location or whether she is alive.\nbased_in | organization:OneCoin Ltd. -> location:Sofia, Bulgaria | evidence: OneCoin Ltd. was reported as based in Sofia, Bulgaria.\npromoted | organization:OneCoin Ltd. -> product:OneCoin cryptocurrency | evidence: OneCoin Ltd. marketed the OneCoin cryptocurrency through a global multi-level-marketing network.\nco_founded | person:Karl Sebastian Greenwood -> organization:OneCoin Ltd. | evidence: DOJ and ArentFox Schiff identify Greenwood as a OneCoin co-founder.\npart_of_operation | person:Karl Sebastian Greenwood -> event:OneCoin international cryptocurrency investment scheme | evidence: Greenwood was identified as one of the people who orchestrated the scheme.\nco_founded | person:Ruja Ignatova -> organization:OneCoin Ltd. | evidence: DOJ identifies Ignatova as a co-founder of OneCoin Ltd.\nother_relation | person:Ruja Ignatova -> event:Ruja Ignatova FBI Top Ten listing | evidence: Ignatova was added to the FBI Top Ten Most Wanted List in June 2022 and remains wanted.\npart_of_operation | person:Ruja Ignatova -> event:OneCoin international cryptocurrency investment scheme | evidence: Ignatova was identified as one of the people who orchestrated the scheme.",
+        "duration_ms": 9.01
+      }
+    ],
+    "final_report": "# OneCoin / “Cryptoqueen” Network — Final Report\n\n## Executive summary\n\nThe benchmark evidence documents OneCoin as an international cryptocurrency investment fraud scheme operated from 2014 to 2019. OneCoin Ltd., based in Sofia, Bulgaria, marketed a cryptocurrency through a global multi-level-marketing (MLM) network. The U.S. Department of Justice states that victims invested more than **$4 billion worldwide**. [SRC-001]\n\nThe principal founders identified in the evidence are:\n\n- **Ruja Ignatova** — co-founder of OneCoin Ltd. and a person identified by the FBI as a Top Ten Fugitive. [SRC-001]\n- **Karl Sebastian Greenwood** — co-founder of OneCoin Ltd.; described as OneCoin’s top MLM distributor and sentenced to 20 years in prison. [SRC-001] [SRC-002]\n\nThe evidence supports enforcement outcomes against Greenwood and the continuing fugitive status of Ignatova. It does **not** establish Ignatova’s current location, whether she is alive, or the truth of reported claims about her alleged disappearance or death. The only supported conclusion is that she remains wanted and that authorities continue efforts to locate her. [SRC-001] [SRC-002]\n\n## 1. Reconstructed scheme\n\nAccording to the DOJ, OneCoin began operations in 2014 and was based in Sofia, Bulgaria. It marketed and sold a cryptocurrency bearing the OneCoin name through a global MLM network. The DOJ describes Ignatova, Greenwood, and others as having orchestrated the scheme between 2014 and 2019. Victims invested more than $4 billion globally. [SRC-001]\n\nThe reported operating model was:\n\n1. OneCoin was presented as a cryptocurrency investment opportunity.\n2. Sales were conducted through an international MLM structure.\n3. Members were incentivized to recruit additional purchasers.\n4. Investors were induced by representations concerning the cryptocurrency’s value and technical infrastructure.\n5. Criminal proceeds were later subject to forfeiture proceedings, with more than $40 million identified by the DOJ as available for victim compensation. [SRC-001]\n\nThe more detailed allegations reported by ArentFox Schiff, attributed to prosecutors, were that:\n\n- OneCoin’s value was represented as being determined by market supply and demand, although prosecutors alleged it was set arbitrarily.\n- Greenwood claimed OneCoin had a private blockchain for identifying coins and recording transactions, although prosecutors alleged no publicly verifiable blockchain existed.\n- Members received commissions for recruiting others to buy cryptocurrency packages.\n- Greenwood allegedly earned 5% of monthly OneCoin sales as the top MLM distributor, allegedly totaling more than $300 million. [SRC-002]\n\nThe technical and earnings assertions above are reported prosecutorial allegations and should not be treated as independently established facts beyond the enforcement outcomes expressly documented.\n\n## 2. Principal founders and roles\n\n### Ruja Ignatova\n\n**Supported role:** Co-founder of OneCoin Ltd. and participant in the scheme described by the DOJ. [SRC-001]\n\n**Enforcement status:** The DOJ identifies Ignatova as an FBI Top Ten Fugitive. The evidence also reports that she was added to the FBI’s Top Ten Most Wanted List in June 2022. [SRC-001] [SRC-002]\n\n**Unresolved status:** The evidence does not establish:\n\n- where Ignatova is;\n- whether she is alive;\n- whether she remains active in the OneCoin network;\n- whether claims about her alleged death or concealment are true.\n\nThe DOJ’s continued effort to locate her establishes an active fugitive investigation, not proof of her whereabouts or present condition. [SRC-001]\n\n### Karl Sebastian Greenwood\n\n**Supported role:** Co-founder of OneCoin Ltd. and participant in orchestrating the scheme. [SRC-001]\n\n**Reported operational role:** Prosecutors described Greenwood as OneCoin’s top MLM distributor. The article reports that he allegedly earned 5% of monthly OneCoin sales, allegedly exceeding $300 million in total. These are prosecutorial allegations as reported by the secondary source. [SRC-002]\n\n**Enforcement outcome:** Greenwood was sentenced to 20 years in prison and ordered to forfeit approximately $300,000. [SRC-002]\n\n### Other individuals\n\nThe DOJ states that Ignatova and Greenwood acted “and others,” but the benchmark evidence supplied here does not identify or establish the roles of additional named founders or network participants. No additional person is included as a principal founder in this report.\n\n## 3. Enforcement facts\n\nThe following are documented enforcement facts in the returned sources:\n\n- The DOJ initiated prosecutions relating to OneCoin in the Southern District of New York. [SRC-001]\n- Several key figures were sentenced, although the supplied DOJ text does not enumerate all of them. [SRC-001]\n- Greenwood received a 20-year prison sentence. [SRC-002]\n- Greenwood was ordered to forfeit approximately $300,000. [SRC-002]\n- Criminal forfeiture proceedings recovered assets for potential victim compensation. [SRC-001]\n- More than $40 million in forfeited assets was identified as available for compensation to eligible victims. [SRC-001]\n- The FBI and IRS Criminal Investigation conducted the criminal fraud investigation. [SRC-001]\n- Ignatova is identified as an FBI Top Ten Fugitive and remains the subject of efforts to locate her. [SRC-001]\n\n## 4. Allegations and assessments\n\nThe following should be treated as allegations or reported prosecutorial assertions rather than independently adjudicated facts in the supplied evidence:\n\n- OneCoin’s market value was falsely represented as being based on supply and demand. [SRC-002]\n- OneCoin represented that it had a private blockchain despite allegedly lacking a publicly verifiable blockchain. [SRC-002]\n- Greenwood allegedly earned more than $300 million through his MLM-distributor role. [SRC-002]\n- The MLM recruitment and commission structure formed part of the mechanism used to obtain investments. The DOJ independently confirms the existence of the MLM model; the characterization of specific statements as fraudulent is reported through the enforcement narrative. [SRC-001] [SRC-002]\n\nThe broader fraud characterization is supported by the DOJ’s official description of OneCoin as a fraudulent cryptocurrency and an international investment scheme. [SRC-001]\n\n## 5. Ruja Ignatova: what is known and what remains unresolved\n\n### Established by the supplied evidence\n\n- Ignatova was a co-founder of OneCoin Ltd. [SRC-001]\n- She was identified as one of the people who orchestrated the scheme. [SRC-001]\n- She was added to the FBI Top Ten Most Wanted List in June 2022. [SRC-002]\n- The DOJ currently describes her as an FBI Top Ten Fugitive and says authorities continue trying to locate her. [SRC-001]\n\n### Not established by the supplied evidence\n\n- Ignatova’s current location.\n- Whether she is alive or deceased.\n- Whether she escaped with assistance from other network members.\n- Whether any alleged sighting, death report, or concealment theory is accurate.\n- Whether she retains control over assets or operations connected to OneCoin.\n\nAccordingly, “missing,” “at large,” and “wanted” are supported enforcement descriptions. A definitive claim that Ignatova is dead, alive, hiding in a particular country, or protected by named associates would exceed the benchmark evidence.\n\n## 6. Key analytical conclusions\n\n1. **OneCoin was structured as a global MLM investment operation rather than merely a standalone cryptocurrency project.** The MLM sales and recruitment system is confirmed by both the DOJ and the sentencing overview. [SRC-001] [SRC-002]\n2. **The two principal founders supported by the evidence are Ignatova and Greenwood.** [SRC-001]\n3. **Greenwood’s role had a documented enforcement endpoint:** conviction-related sentencing as reported by the source, a 20-year prison term, and forfeiture. [SRC-002]\n4. **Ignatova’s case remains an unresolved fugitive matter.** Her wanted status is documented, but her physical and biological status is not resolved by the supplied evidence. [SRC-001] [SRC-002]\n5. **The financial scale was global and substantial:** the DOJ reports more than $4 billion invested by victims and more than $40 million in forfeited assets available for compensation. [SRC-001]\n\n## Structured JSON\n\n```json\n{\n  \"findings\": [\n    {\n      \"question\": \"What was OneCoin?\",\n      \"answer\": \"OneCoin Ltd. was a Sofia-based company that marketed and sold a fraudulent cryptocurrency through a global multi-level-marketing network between 2014 and 2019.\",\n      \"supporting_entities\": [\n        \"OneCoin Ltd.\",\n        \"OneCoin cryptocurrency\",\n        \"OneCoin international cryptocurrency investment scheme\",\n        \"Sofia, Bulgaria\",\n        \"2014-2019\"\n      ],\n      \"source_references\": [\"SRC-001\", \"SRC-002\"]\n    },\n    {\n      \"question\": \"What was the documented scale of the scheme?\",\n      \"answer\": \"The DOJ states that victims invested more than $4 billion worldwide.\",\n      \"supporting_entities\": [\n        \"OneCoin international cryptocurrency investment scheme\",\n        \"OneCoin cryptocurrency\"\n      ],\n      \"source_references\": [\"SRC-001\"]\n    },\n    {\n      \"question\": \"Who were the principal founders identified in the evidence?\",\n      \"answer\": \"Ruja Ignatova and Karl Sebastian Greenwood are identified as co-founders of OneCoin Ltd.\",\n      \"supporting_entities\": [\n        \"Ruja Ignatova\",\n        \"Karl Sebastian Greenwood\",\n        \"OneCoin Ltd.\"\n      ],\n      \"source_references\": [\"SRC-001\", \"SRC-002\"]\n    },\n    {\n      \"question\": \"What role is documented for Karl Sebastian Greenwood?\",\n      \"answer\": \"He was a co-founder and was described by prosecutors as OneCoin's top MLM distributor. He was sentenced to 20 years in prison and ordered to forfeit approximately $300,000.\",\n      \"supporting_entities\": [\n        \"Karl Sebastian Greenwood\",\n        \"OneCoin Ltd.\",\n        \"Karl Sebastian Greenwood sentencing\"\n      ],\n      \"source_references\": [\"SRC-001\", \"SRC-002\"]\n    },\n    {\n      \"question\": \"What role and enforcement status are documented for Ruja Ignatova?\",\n      \"answer\": \"She was a co-founder and participant in orchestrating the scheme. She was added to the FBI Top Ten Most Wanted List in June 2022 and is identified by the DOJ as an FBI Top Ten Fugitive.\",\n      \"supporting_entities\": [\n        \"Ruja Ignatova\",\n        \"OneCoin Ltd.\",\n        \"Ruja Ignatova FBI Top Ten listing\",\n        \"Federal Bureau of Investigation\"\n      ],\n      \"source_references\": [\"SRC-001\", \"SRC-002\"]\n    },\n    {\n      \"question\": \"What is unresolved about Ignatova's status?\",\n      \"answer\": \"The supplied evidence does not establish her location, whether she is alive, or whether claims about her alleged death or concealment are true.\",\n      \"supporting_entities\": [\n        \"Ruja Ignatova\",\n        \"Ruja Ignatova FBI Top Ten listing\",\n        \"Federal Bureau of Investigation\"\n      ],\n      \"source_references\": [\"SRC-001\", \"SRC-002\"]\n    },\n    {\n      \"question\": \"What enforcement and recovery actions are documented?\",\n      \"answer\": \"The DOJ pursued OneCoin-related prosecutions and criminal forfeiture; more than $40 million in forfeited assets was identified as available for victim compensation.\",\n      \"supporting_entities\": [\n        \"OneCoin international cryptocurrency investment scheme\",\n        \"Karl Sebastian Greenwood sentencing\"\n      ],\n      \"source_references\": [\"SRC-001\"]\n    }\n  ],\n  \"claims\": [\n    {\n      \"claim\": \"Prosecutors alleged that OneCoin's value was represented as market-based even though it was set arbitrarily.\",\n      \"source_references\": [\"SRC-002\"]\n    },\n    {\n      \"claim\": \"Prosecutors alleged that Greenwood claimed OneCoin had a private blockchain even though no publicly verifiable blockchain existed.\",\n      \"source_references\": [\"SRC-002\"]\n    },\n    {\n      \"claim\": \"Greenwood allegedly earned 5% of monthly OneCoin sales, totaling more than $300 million.\",\n      \"source_references\": [\"SRC-002\"]\n    },\n    {\n      \"claim\": \"The MLM structure used commissions and recruitment incentives to sell cryptocurrency packages.\",\n      \"source_references\": [\"SRC-001\", \"SRC-002\"]\n    },\n    {\n      \"claim\": \"Ignatova's current location or biological status is unresolved in the supplied evidence.\",\n      \"source_references\": [\"SRC-001\", \"SRC-002\"]\n    }\n  ],\n  \"reasoning_steps\": [\n    {\n      \"id\": \"RS-001\",\n      \"conclusion\": \"Ignatova and Greenwood are the principal founders supported by the benchmark evidence.\",\n      \"premise_entities\": [\n        \"Ruja Ignatova\",\n        \"Karl Sebastian Greenwood\",\n        \"OneCoin Ltd.\"\n      ],\n      \"premise_relations\": [\n        \"co_founded\"\n      ]\n    },\n    {\n      \"id\": \"RS-002\",\n      \"conclusion\": \"OneCoin's documented operating model involved global MLM promotion of the OneCoin cryptocurrency.\",\n      \"premise_entities\": [\n        \"OneCoin Ltd.\",\n        \"OneCoin cryptocurrency\"\n      ],\n      \"premise_relations\": [\n        \"promoted\"\n      ]\n    },\n    {\n      \"id\": \"RS-003\",\n      \"conclusion\": \"The scheme operated during the 2014-2019 period documented by the DOJ.\",\n      \"premise_entities\": [\n        \"OneCoin international cryptocurrency investment scheme\",\n        \"2014-2019\"\n      ],\n      \"premise_relations\": [\n        \"occurred_on\"\n      ]\n    },\n    {\n      \"id\": \"RS-004\",\n      \"conclusion\": \"Greenwood's role resulted in a documented 20-year prison sentence and forfeiture order.\",\n      \"premise_entities\": [\n        \"Karl Sebastian Greenwood sentencing\",\n        \"Karl Sebastian Greenwood\"\n      ],\n      \"premise_relations\": [\n        \"other_relation\"\n      ]\n    },\n    {\n      \"id\": \"RS-005\",\n      \"conclusion\": \"Ignatova's wanted status is established, but her location and whether she is alive are not established.\",\n      \"premise_entities\": [\n        \"Federal Bureau of Investigation\",\n        \"Ruja Ignatova\",\n        \"Ruja Ignatova FBI Top Ten listing\"\n      ],\n      \"premise_relations\": [\n        \"other_relation\"\n      ]\n    }\n  ],\n  \"contradictions\": []\n}\n```",
+    "operational": {
+      "duration_ms": 244810.25,
+      "mode": "offline",
+      "iterations": 13,
+      "search_calls": 8,
+      "fetch_calls": 2,
+      "knowledge_base_calls": 1,
+      "termination_reason": "final_report"
+    },
+    "output": {
+      "entities": [
+        {
+          "type": "PERSON",
+          "value": "Ruja Ignatova"
+        },
+        {
+          "type": "PERSON",
+          "value": "Karl Sebastian Greenwood"
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "OneCoin Ltd."
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "Federal Bureau of Investigation"
+        },
+        {
+          "type": "LOCATION",
+          "value": "Sofia, Bulgaria"
+        },
+        {
+          "type": "PRODUCT",
+          "value": "OneCoin cryptocurrency"
+        },
+        {
+          "type": "EVENT",
+          "value": "OneCoin international cryptocurrency investment scheme"
+        },
+        {
+          "type": "EVENT",
+          "value": "Karl Sebastian Greenwood sentencing"
+        },
+        {
+          "type": "EVENT",
+          "value": "Ruja Ignatova FBI Top Ten listing"
+        },
+        {
+          "type": "DATE",
+          "value": "2014-2019"
+        }
+      ],
+      "relations": [
+        {
+          "relation_type": "CO_FOUNDED",
+          "from_type": "person",
+          "from_value": "Ruja Ignatova",
+          "to_type": "organization",
+          "to_value": "OneCoin Ltd."
+        },
+        {
+          "relation_type": "CO_FOUNDED",
+          "from_type": "person",
+          "from_value": "Karl Sebastian Greenwood",
+          "to_type": "organization",
+          "to_value": "OneCoin Ltd."
+        },
+        {
+          "relation_type": "BASED_IN",
+          "from_type": "organization",
+          "from_value": "OneCoin Ltd.",
+          "to_type": "location",
+          "to_value": "Sofia, Bulgaria"
+        },
+        {
+          "relation_type": "PROMOTED",
+          "from_type": "organization",
+          "from_value": "OneCoin Ltd.",
+          "to_type": "product",
+          "to_value": "OneCoin cryptocurrency"
+        },
+        {
+          "relation_type": "PART_OF_OPERATION",
+          "from_type": "person",
+          "from_value": "Ruja Ignatova",
+          "to_type": "event",
+          "to_value": "OneCoin international cryptocurrency investment scheme"
+        },
+        {
+          "relation_type": "PART_OF_OPERATION",
+          "from_type": "person",
+          "from_value": "Karl Sebastian Greenwood",
+          "to_type": "event",
+          "to_value": "OneCoin international cryptocurrency investment scheme"
+        },
+        {
+          "relation_type": "OCCURRED_ON",
+          "from_type": "event",
+          "from_value": "OneCoin international cryptocurrency investment scheme",
+          "to_type": "date",
+          "to_value": "2014-2019"
+        },
+        {
+          "relation_type": "OCCURRED_ON",
+          "from_type": "event",
+          "from_value": "Ruja Ignatova FBI Top Ten listing",
+          "to_type": "date",
+          "to_value": "2022-06"
+        },
+        {
+          "relation_type": "OTHER_RELATION",
+          "from_type": "event",
+          "from_value": "Karl Sebastian Greenwood sentencing",
+          "to_type": "person",
+          "to_value": "Karl Sebastian Greenwood"
+        },
+        {
+          "relation_type": "OTHER_RELATION",
+          "from_type": "person",
+          "from_value": "Ruja Ignatova",
+          "to_type": "event",
+          "to_value": "Ruja Ignatova FBI Top Ten listing"
+        },
+        {
+          "relation_type": "OTHER_RELATION",
+          "from_type": "organization",
+          "from_value": "Federal Bureau of Investigation",
+          "to_type": "person",
+          "to_value": "Ruja Ignatova"
+        }
+      ],
+      "source_references": [
+        "SRC-001",
+        "SRC-002"
+      ],
+      "citations": [
+        "SRC-001",
+        "SRC-002"
+      ],
+      "available_source_references": [
+        "SRC-001",
+        "SRC-002"
+      ],
+      "report": "# OneCoin / “Cryptoqueen” Network — Final Report\n\n## Executive summary\n\nThe benchmark evidence documents OneCoin as an international cryptocurrency investment fraud scheme operated from 2014 to 2019. OneCoin Ltd., based in Sofia, Bulgaria, marketed a cryptocurrency through a global multi-level-marketing (MLM) network. The U.S. Department of Justice states that victims invested more than **$4 billion worldwide**. [SRC-001]\n\nThe principal founders identified in the evidence are:\n\n- **Ruja Ignatova** — co-founder of OneCoin Ltd. and a person identified by the FBI as a Top Ten Fugitive. [SRC-001]\n- **Karl Sebastian Greenwood** — co-founder of OneCoin Ltd.; described as OneCoin’s top MLM distributor and sentenced to 20 years in prison. [SRC-001] [SRC-002]\n\nThe evidence supports enforcement outcomes against Greenwood and the continuing fugitive status of Ignatova. It does **not** establish Ignatova’s current location, whether she is alive, or the truth of reported claims about her alleged disappearance or death. The only supported conclusion is that she remains wanted and that authorities continue efforts to locate her. [SRC-001] [SRC-002]\n\n## 1. Reconstructed scheme\n\nAccording to the DOJ, OneCoin began operations in 2014 and was based in Sofia, Bulgaria. It marketed and sold a cryptocurrency bearing the OneCoin name through a global MLM network. The DOJ describes Ignatova, Greenwood, and others as having orchestrated the scheme between 2014 and 2019. Victims invested more than $4 billion globally. [SRC-001]\n\nThe reported operating model was:\n\n1. OneCoin was presented as a cryptocurrency investment opportunity.\n2. Sales were conducted through an international MLM structure.\n3. Members were incentivized to recruit additional purchasers.\n4. Investors were induced by representations concerning the cryptocurrency’s value and technical infrastructure.\n5. Criminal proceeds were later subject to forfeiture proceedings, with more than $40 million identified by the DOJ as available for victim compensation. [SRC-001]\n\nThe more detailed allegations reported by ArentFox Schiff, attributed to prosecutors, were that:\n\n- OneCoin’s value was represented as being determined by market supply and demand, although prosecutors alleged it was set arbitrarily.\n- Greenwood claimed OneCoin had a private blockchain for identifying coins and recording transactions, although prosecutors alleged no publicly verifiable blockchain existed.\n- Members received commissions for recruiting others to buy cryptocurrency packages.\n- Greenwood allegedly earned 5% of monthly OneCoin sales as the top MLM distributor, allegedly totaling more than $300 million. [SRC-002]\n\nThe technical and earnings assertions above are reported prosecutorial allegations and should not be treated as independently established facts beyond the enforcement outcomes expressly documented.\n\n## 2. Principal founders and roles\n\n### Ruja Ignatova\n\n**Supported role:** Co-founder of OneCoin Ltd. and participant in the scheme described by the DOJ. [SRC-001]\n\n**Enforcement status:** The DOJ identifies Ignatova as an FBI Top Ten Fugitive. The evidence also reports that she was added to the FBI’s Top Ten Most Wanted List in June 2022. [SRC-001] [SRC-002]\n\n**Unresolved status:** The evidence does not establish:\n\n- where Ignatova is;\n- whether she is alive;\n- whether she remains active in the OneCoin network;\n- whether claims about her alleged death or concealment are true.\n\nThe DOJ’s continued effort to locate her establishes an active fugitive investigation, not proof of her whereabouts or present condition. [SRC-001]\n\n### Karl Sebastian Greenwood\n\n**Supported role:** Co-founder of OneCoin Ltd. and participant in orchestrating the scheme. [SRC-001]\n\n**Reported operational role:** Prosecutors described Greenwood as OneCoin’s top MLM distributor. The article reports that he allegedly earned 5% of monthly OneCoin sales, allegedly exceeding $300 million in total. These are prosecutorial allegations as reported by the secondary source. [SRC-002]\n\n**Enforcement outcome:** Greenwood was sentenced to 20 years in prison and ordered to forfeit approximately $300,000. [SRC-002]\n\n### Other individuals\n\nThe DOJ states that Ignatova and Greenwood acted “and others,” but the benchmark evidence supplied here does not identify or establish the roles of additional named founders or network participants. No additional person is included as a principal founder in this report.\n\n## 3. Enforcement facts\n\nThe following are documented enforcement facts in the returned sources:\n\n- The DOJ initiated prosecutions relating to OneCoin in the Southern District of New York. [SRC-001]\n- Several key figures were sentenced, although the supplied DOJ text does not enumerate all of them. [SRC-001]\n- Greenwood received a 20-year prison sentence. [SRC-002]\n- Greenwood was ordered to forfeit approximately $300,000. [SRC-002]\n- Criminal forfeiture proceedings recovered assets for potential victim compensation. [SRC-001]\n- More than $40 million in forfeited assets was identified as available for compensation to eligible victims. [SRC-001]\n- The FBI and IRS Criminal Investigation conducted the criminal fraud investigation. [SRC-001]\n- Ignatova is identified as an FBI Top Ten Fugitive and remains the subject of efforts to locate her. [SRC-001]\n\n## 4. Allegations and assessments\n\nThe following should be treated as allegations or reported prosecutorial assertions rather than independently adjudicated facts in the supplied evidence:\n\n- OneCoin’s market value was falsely represented as being based on supply and demand. [SRC-002]\n- OneCoin represented that it had a private blockchain despite allegedly lacking a publicly verifiable blockchain. [SRC-002]\n- Greenwood allegedly earned more than $300 million through his MLM-distributor role. [SRC-002]\n- The MLM recruitment and commission structure formed part of the mechanism used to obtain investments. The DOJ independently confirms the existence of the MLM model; the characterization of specific statements as fraudulent is reported through the enforcement narrative. [SRC-001] [SRC-002]\n\nThe broader fraud characterization is supported by the DOJ’s official description of OneCoin as a fraudulent cryptocurrency and an international investment scheme. [SRC-001]\n\n## 5. Ruja Ignatova: what is known and what remains unresolved\n\n### Established by the supplied evidence\n\n- Ignatova was a co-founder of OneCoin Ltd. [SRC-001]\n- She was identified as one of the people who orchestrated the scheme. [SRC-001]\n- She was added to the FBI Top Ten Most Wanted List in June 2022. [SRC-002]\n- The DOJ currently describes her as an FBI Top Ten Fugitive and says authorities continue trying to locate her. [SRC-001]\n\n### Not established by the supplied evidence\n\n- Ignatova’s current location.\n- Whether she is alive or deceased.\n- Whether she escaped with assistance from other network members.\n- Whether any alleged sighting, death report, or concealment theory is accurate.\n- Whether she retains control over assets or operations connected to OneCoin.\n\nAccordingly, “missing,” “at large,” and “wanted” are supported enforcement descriptions. A definitive claim that Ignatova is dead, alive, hiding in a particular country, or protected by named associates would exceed the benchmark evidence.\n\n## 6. Key analytical conclusions\n\n1. **OneCoin was structured as a global MLM investment operation rather than merely a standalone cryptocurrency project.** The MLM sales and recruitment system is confirmed by both the DOJ and the sentencing overview. [SRC-001] [SRC-002]\n2. **The two principal founders supported by the evidence are Ignatova and Greenwood.** [SRC-001]\n3. **Greenwood’s role had a documented enforcement endpoint:** conviction-related sentencing as reported by the source, a 20-year prison term, and forfeiture. [SRC-002]\n4. **Ignatova’s case remains an unresolved fugitive matter.** Her wanted status is documented, but her physical and biological status is not resolved by the supplied evidence. [SRC-001] [SRC-002]\n5. **The financial scale was global and substantial:** the DOJ reports more than $4 billion invested by victims and more than $40 million in forfeited assets available for compensation. [SRC-001]\n\n## Structured JSON\n\n```json\n{\n  \"findings\": [\n    {\n      \"question\": \"What was OneCoin?\",\n      \"answer\": \"OneCoin Ltd. was a Sofia-based company that marketed and sold a fraudulent cryptocurrency through a global multi-level-marketing network between 2014 and 2019.\",\n      \"supporting_entities\": [\n        \"OneCoin Ltd.\",\n        \"OneCoin cryptocurrency\",\n        \"OneCoin international cryptocurrency investment scheme\",\n        \"Sofia, Bulgaria\",\n        \"2014-2019\"\n      ],\n      \"source_references\": [\"SRC-001\", \"SRC-002\"]\n    },\n    {\n      \"question\": \"What was the documented scale of the scheme?\",\n      \"answer\": \"The DOJ states that victims invested more than $4 billion worldwide.\",\n      \"supporting_entities\": [\n        \"OneCoin international cryptocurrency investment scheme\",\n        \"OneCoin cryptocurrency\"\n      ],\n      \"source_references\": [\"SRC-001\"]\n    },\n    {\n      \"question\": \"Who were the principal founders identified in the evidence?\",\n      \"answer\": \"Ruja Ignatova and Karl Sebastian Greenwood are identified as co-founders of OneCoin Ltd.\",\n      \"supporting_entities\": [\n        \"Ruja Ignatova\",\n        \"Karl Sebastian Greenwood\",\n        \"OneCoin Ltd.\"\n      ],\n      \"source_references\": [\"SRC-001\", \"SRC-002\"]\n    },\n    {\n      \"question\": \"What role is documented for Karl Sebastian Greenwood?\",\n      \"answer\": \"He was a co-founder and was described by prosecutors as OneCoin's top MLM distributor. He was sentenced to 20 years in prison and ordered to forfeit approximately $300,000.\",\n      \"supporting_entities\": [\n        \"Karl Sebastian Greenwood\",\n        \"OneCoin Ltd.\",\n        \"Karl Sebastian Greenwood sentencing\"\n      ],\n      \"source_references\": [\"SRC-001\", \"SRC-002\"]\n    },\n    {\n      \"question\": \"What role and enforcement status are documented for Ruja Ignatova?\",\n      \"answer\": \"She was a co-founder and participant in orchestrating the scheme. She was added to the FBI Top Ten Most Wanted List in June 2022 and is identified by the DOJ as an FBI Top Ten Fugitive.\",\n      \"supporting_entities\": [\n        \"Ruja Ignatova\",\n        \"OneCoin Ltd.\",\n        \"Ruja Ignatova FBI Top Ten listing\",\n        \"Federal Bureau of Investigation\"\n      ],\n      \"source_references\": [\"SRC-001\", \"SRC-002\"]\n    },\n    {\n      \"question\": \"What is unresolved about Ignatova's status?\",\n      \"answer\": \"The supplied evidence does not establish her location, whether she is alive, or whether claims about her alleged death or concealment are true.\",\n      \"supporting_entities\": [\n        \"Ruja Ignatova\",\n        \"Ruja Ignatova FBI Top Ten listing\",\n        \"Federal Bureau of Investigation\"\n      ],\n      \"source_references\": [\"SRC-001\", \"SRC-002\"]\n    },\n    {\n      \"question\": \"What enforcement and recovery actions are documented?\",\n      \"answer\": \"The DOJ pursued OneCoin-related prosecutions and criminal forfeiture; more than $40 million in forfeited assets was identified as available for victim compensation.\",\n      \"supporting_entities\": [\n        \"OneCoin international cryptocurrency investment scheme\",\n        \"Karl Sebastian Greenwood sentencing\"\n      ],\n      \"source_references\": [\"SRC-001\"]\n    }\n  ],\n  \"claims\": [\n    {\n      \"claim\": \"Prosecutors alleged that OneCoin's value was represented as market-based even though it was set arbitrarily.\",\n      \"source_references\": [\"SRC-002\"]\n    },\n    {\n      \"claim\": \"Prosecutors alleged that Greenwood claimed OneCoin had a private blockchain even though no publicly verifiable blockchain existed.\",\n      \"source_references\": [\"SRC-002\"]\n    },\n    {\n      \"claim\": \"Greenwood allegedly earned 5% of monthly OneCoin sales, totaling more than $300 million.\",\n      \"source_references\": [\"SRC-002\"]\n    },\n    {\n      \"claim\": \"The MLM structure used commissions and recruitment incentives to sell cryptocurrency packages.\",\n      \"source_references\": [\"SRC-001\", \"SRC-002\"]\n    },\n    {\n      \"claim\": \"Ignatova's current location or biological status is unresolved in the supplied evidence.\",\n      \"source_references\": [\"SRC-001\", \"SRC-002\"]\n    }\n  ],\n  \"reasoning_steps\": [\n    {\n      \"id\": \"RS-001\",\n      \"conclusion\": \"Ignatova and Greenwood are the principal founders supported by the benchmark evidence.\",\n      \"premise_entities\": [\n        \"Ruja Ignatova\",\n        \"Karl Sebastian Greenwood\",\n        \"OneCoin Ltd.\"\n      ],\n      \"premise_relations\": [\n        \"co_founded\"\n      ]\n    },\n    {\n      \"id\": \"RS-002\",\n      \"conclusion\": \"OneCoin's documented operating model involved global MLM promotion of the OneCoin cryptocurrency.\",\n      \"premise_entities\": [\n        \"OneCoin Ltd.\",\n        \"OneCoin cryptocurrency\"\n      ],\n      \"premise_relations\": [\n        \"promoted\"\n      ]\n    },\n    {\n      \"id\": \"RS-003\",\n      \"conclusion\": \"The scheme operated during the 2014-2019 period documented by the DOJ.\",\n      \"premise_entities\": [\n        \"OneCoin international cryptocurrency investment scheme\",\n        \"2014-2019\"\n      ],\n      \"premise_relations\": [\n        \"occurred_on\"\n      ]\n    },\n    {\n      \"id\": \"RS-004\",\n      \"conclusion\": \"Greenwood's role resulted in a documented 20-year prison sentence and forfeiture order.\",\n      \"premise_entities\": [\n        \"Karl Sebastian Greenwood sentencing\",\n        \"Karl Sebastian Greenwood\"\n      ],\n      \"premise_relations\": [\n        \"other_relation\"\n      ]\n    },\n    {\n      \"id\": \"RS-005\",\n      \"conclusion\": \"Ignatova's wanted status is established, but her location and whether she is alive are not established.\",\n      \"premise_entities\": [\n        \"Federal Bureau of Investigation\",\n        \"Ruja Ignatova\",\n        \"Ruja Ignatova FBI Top Ten listing\"\n      ],\n      \"premise_relations\": [\n        \"other_relation\"\n      ]\n    }\n  ],\n  \"contradictions\": []\n}\n```",
+      "operational": {
+        "duration_ms": 244810.25,
+        "mode": "offline",
+        "iterations": 13,
+        "search_calls": 8,
+        "fetch_calls": 2,
+        "knowledge_base_calls": 1,
+        "termination_reason": "final_report"
+      },
+      "graph_capture_source": "trace",
+      "key_findings": [
+        {
+          "question": "What was OneCoin?",
+          "answer": "OneCoin Ltd. was a Sofia-based company that marketed and sold a fraudulent cryptocurrency through a global multi-level-marketing network between 2014 and 2019.",
+          "supporting_entities": [
+            "OneCoin Ltd.",
+            "OneCoin cryptocurrency",
+            "OneCoin international cryptocurrency investment scheme",
+            "Sofia, Bulgaria",
+            "2014-2019"
+          ],
+          "source_references": [
+            "SRC-001",
+            "SRC-002"
+          ]
+        },
+        {
+          "question": "What was the documented scale of the scheme?",
+          "answer": "The DOJ states that victims invested more than $4 billion worldwide.",
+          "supporting_entities": [
+            "OneCoin international cryptocurrency investment scheme",
+            "OneCoin cryptocurrency"
+          ],
+          "source_references": [
+            "SRC-001"
+          ]
+        },
+        {
+          "question": "Who were the principal founders identified in the evidence?",
+          "answer": "Ruja Ignatova and Karl Sebastian Greenwood are identified as co-founders of OneCoin Ltd.",
+          "supporting_entities": [
+            "Ruja Ignatova",
+            "Karl Sebastian Greenwood",
+            "OneCoin Ltd."
+          ],
+          "source_references": [
+            "SRC-001",
+            "SRC-002"
+          ]
+        },
+        {
+          "question": "What role is documented for Karl Sebastian Greenwood?",
+          "answer": "He was a co-founder and was described by prosecutors as OneCoin's top MLM distributor. He was sentenced to 20 years in prison and ordered to forfeit approximately $300,000.",
+          "supporting_entities": [
+            "Karl Sebastian Greenwood",
+            "OneCoin Ltd.",
+            "Karl Sebastian Greenwood sentencing"
+          ],
+          "source_references": [
+            "SRC-001",
+            "SRC-002"
+          ]
+        },
+        {
+          "question": "What role and enforcement status are documented for Ruja Ignatova?",
+          "answer": "She was a co-founder and participant in orchestrating the scheme. She was added to the FBI Top Ten Most Wanted List in June 2022 and is identified by the DOJ as an FBI Top Ten Fugitive.",
+          "supporting_entities": [
+            "Ruja Ignatova",
+            "OneCoin Ltd.",
+            "Ruja Ignatova FBI Top Ten listing",
+            "Federal Bureau of Investigation"
+          ],
+          "source_references": [
+            "SRC-001",
+            "SRC-002"
+          ]
+        },
+        {
+          "question": "What is unresolved about Ignatova's status?",
+          "answer": "The supplied evidence does not establish her location, whether she is alive, or whether claims about her alleged death or concealment are true.",
+          "supporting_entities": [
+            "Ruja Ignatova",
+            "Ruja Ignatova FBI Top Ten listing",
+            "Federal Bureau of Investigation"
+          ],
+          "source_references": [
+            "SRC-001",
+            "SRC-002"
+          ]
+        },
+        {
+          "question": "What enforcement and recovery actions are documented?",
+          "answer": "The DOJ pursued OneCoin-related prosecutions and criminal forfeiture; more than $40 million in forfeited assets was identified as available for victim compensation.",
+          "supporting_entities": [
+            "OneCoin international cryptocurrency investment scheme",
+            "Karl Sebastian Greenwood sentencing"
+          ],
+          "source_references": [
+            "SRC-001"
+          ]
+        }
+      ],
+      "contradictions": [],
+      "reasoning_steps": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "reasoning_step_details": [
+        {
+          "id": 1,
+          "conclusion": "Ignatova and Greenwood are the principal founders supported by the benchmark evidence.",
+          "premise_entities": [
+            "Ruja Ignatova",
+            "Karl Sebastian Greenwood",
+            "OneCoin Ltd."
+          ],
+          "premise_relations": [
+            "co_founded"
+          ]
+        },
+        {
+          "id": 2,
+          "conclusion": "OneCoin's documented operating model involved global MLM promotion of the OneCoin cryptocurrency.",
+          "premise_entities": [
+            "OneCoin Ltd.",
+            "OneCoin cryptocurrency"
+          ],
+          "premise_relations": [
+            "promoted"
+          ]
+        },
+        {
+          "id": 3,
+          "conclusion": "The scheme operated during the 2014-2019 period documented by the DOJ.",
+          "premise_entities": [
+            "OneCoin international cryptocurrency investment scheme",
+            "2014-2019"
+          ],
+          "premise_relations": [
+            "occurred_on"
+          ]
+        },
+        {
+          "id": 4,
+          "conclusion": "Greenwood's role resulted in a documented 20-year prison sentence and forfeiture order.",
+          "premise_entities": [
+            "Karl Sebastian Greenwood sentencing",
+            "Karl Sebastian Greenwood"
+          ],
+          "premise_relations": [
+            "other_relation"
+          ]
+        },
+        {
+          "id": 5,
+          "conclusion": "Ignatova's wanted status is established, but her location and whether she is alive are not established.",
+          "premise_entities": [
+            "Federal Bureau of Investigation",
+            "Ruja Ignatova",
+            "Ruja Ignatova FBI Top Ten listing"
+          ],
+          "premise_relations": [
+            "other_relation"
+          ]
+        }
+      ],
+      "claims": [
+        {
+          "claim": "Prosecutors alleged that OneCoin's value was represented as market-based even though it was set arbitrarily.",
+          "source_references": [
+            "SRC-002"
+          ]
+        },
+        {
+          "claim": "Prosecutors alleged that Greenwood claimed OneCoin had a private blockchain even though no publicly verifiable blockchain existed.",
+          "source_references": [
+            "SRC-002"
+          ]
+        },
+        {
+          "claim": "Greenwood allegedly earned 5% of monthly OneCoin sales, totaling more than $300 million.",
+          "source_references": [
+            "SRC-002"
+          ]
+        },
+        {
+          "claim": "The MLM structure used commissions and recruitment incentives to sell cryptocurrency packages.",
+          "source_references": [
+            "SRC-001",
+            "SRC-002"
+          ]
+        },
+        {
+          "claim": "Ignatova's current location or biological status is unresolved in the supplied evidence.",
+          "source_references": [
+            "SRC-001",
+            "SRC-002"
+          ]
+        }
+      ],
+      "structured_output": true,
+      "structured_output_valid": true,
+      "structured_output_complete": true,
+      "missing_structured_sections": [],
+      "structured_output_errors": [],
+      "graph_capture_diagnostics": {
+        "entity_records_emitted": 10,
+        "relation_records_emitted": 11,
+        "knowledge_agent_calls": 1,
+        "relations_expected": 4,
+        "contradictions_expected": 1
+      }
+    }
+  },
+  "output": {
+    "entities": [
+      {
+        "type": "PERSON",
+        "value": "Ruja Ignatova"
+      },
+      {
+        "type": "PERSON",
+        "value": "Karl Sebastian Greenwood"
+      },
+      {
+        "type": "ORGANIZATION",
+        "value": "OneCoin Ltd."
+      },
+      {
+        "type": "ORGANIZATION",
+        "value": "Federal Bureau of Investigation"
+      },
+      {
+        "type": "LOCATION",
+        "value": "Sofia, Bulgaria"
+      },
+      {
+        "type": "PRODUCT",
+        "value": "OneCoin cryptocurrency"
+      },
+      {
+        "type": "EVENT",
+        "value": "OneCoin international cryptocurrency investment scheme"
+      },
+      {
+        "type": "EVENT",
+        "value": "Karl Sebastian Greenwood sentencing"
+      },
+      {
+        "type": "EVENT",
+        "value": "Ruja Ignatova FBI Top Ten listing"
+      },
+      {
+        "type": "DATE",
+        "value": "2014-2019"
+      }
+    ],
+    "relations": [
+      {
+        "relation_type": "CO_FOUNDED",
+        "from_type": "person",
+        "from_value": "Ruja Ignatova",
+        "to_type": "organization",
+        "to_value": "OneCoin Ltd."
+      },
+      {
+        "relation_type": "CO_FOUNDED",
+        "from_type": "person",
+        "from_value": "Karl Sebastian Greenwood",
+        "to_type": "organization",
+        "to_value": "OneCoin Ltd."
+      },
+      {
+        "relation_type": "BASED_IN",
+        "from_type": "organization",
+        "from_value": "OneCoin Ltd.",
+        "to_type": "location",
+        "to_value": "Sofia, Bulgaria"
+      },
+      {
+        "relation_type": "PROMOTED",
+        "from_type": "organization",
+        "from_value": "OneCoin Ltd.",
+        "to_type": "product",
+        "to_value": "OneCoin cryptocurrency"
+      },
+      {
+        "relation_type": "PART_OF_OPERATION",
+        "from_type": "person",
+        "from_value": "Ruja Ignatova",
+        "to_type": "event",
+        "to_value": "OneCoin international cryptocurrency investment scheme"
+      },
+      {
+        "relation_type": "PART_OF_OPERATION",
+        "from_type": "person",
+        "from_value": "Karl Sebastian Greenwood",
+        "to_type": "event",
+        "to_value": "OneCoin international cryptocurrency investment scheme"
+      },
+      {
+        "relation_type": "OCCURRED_ON",
+        "from_type": "event",
+        "from_value": "OneCoin international cryptocurrency investment scheme",
+        "to_type": "date",
+        "to_value": "2014-2019"
+      },
+      {
+        "relation_type": "OCCURRED_ON",
+        "from_type": "event",
+        "from_value": "Ruja Ignatova FBI Top Ten listing",
+        "to_type": "date",
+        "to_value": "2022-06"
+      },
+      {
+        "relation_type": "OTHER_RELATION",
+        "from_type": "event",
+        "from_value": "Karl Sebastian Greenwood sentencing",
+        "to_type": "person",
+        "to_value": "Karl Sebastian Greenwood"
+      },
+      {
+        "relation_type": "OTHER_RELATION",
+        "from_type": "person",
+        "from_value": "Ruja Ignatova",
+        "to_type": "event",
+        "to_value": "Ruja Ignatova FBI Top Ten listing"
+      },
+      {
+        "relation_type": "OTHER_RELATION",
+        "from_type": "organization",
+        "from_value": "Federal Bureau of Investigation",
+        "to_type": "person",
+        "to_value": "Ruja Ignatova"
+      }
+    ],
+    "source_references": [
+      "SRC-001",
+      "SRC-002"
+    ],
+    "citations": [
+      "SRC-001",
+      "SRC-002"
+    ],
+    "available_source_references": [
+      "SRC-001",
+      "SRC-002"
+    ],
+    "report": "# OneCoin / “Cryptoqueen” Network — Final Report\n\n## Executive summary\n\nThe benchmark evidence documents OneCoin as an international cryptocurrency investment fraud scheme operated from 2014 to 2019. OneCoin Ltd., based in Sofia, Bulgaria, marketed a cryptocurrency through a global multi-level-marketing (MLM) network. The U.S. Department of Justice states that victims invested more than **$4 billion worldwide**. [SRC-001]\n\nThe principal founders identified in the evidence are:\n\n- **Ruja Ignatova** — co-founder of OneCoin Ltd. and a person identified by the FBI as a Top Ten Fugitive. [SRC-001]\n- **Karl Sebastian Greenwood** — co-founder of OneCoin Ltd.; described as OneCoin’s top MLM distributor and sentenced to 20 years in prison. [SRC-001] [SRC-002]\n\nThe evidence supports enforcement outcomes against Greenwood and the continuing fugitive status of Ignatova. It does **not** establish Ignatova’s current location, whether she is alive, or the truth of reported claims about her alleged disappearance or death. The only supported conclusion is that she remains wanted and that authorities continue efforts to locate her. [SRC-001] [SRC-002]\n\n## 1. Reconstructed scheme\n\nAccording to the DOJ, OneCoin began operations in 2014 and was based in Sofia, Bulgaria. It marketed and sold a cryptocurrency bearing the OneCoin name through a global MLM network. The DOJ describes Ignatova, Greenwood, and others as having orchestrated the scheme between 2014 and 2019. Victims invested more than $4 billion globally. [SRC-001]\n\nThe reported operating model was:\n\n1. OneCoin was presented as a cryptocurrency investment opportunity.\n2. Sales were conducted through an international MLM structure.\n3. Members were incentivized to recruit additional purchasers.\n4. Investors were induced by representations concerning the cryptocurrency’s value and technical infrastructure.\n5. Criminal proceeds were later subject to forfeiture proceedings, with more than $40 million identified by the DOJ as available for victim compensation. [SRC-001]\n\nThe more detailed allegations reported by ArentFox Schiff, attributed to prosecutors, were that:\n\n- OneCoin’s value was represented as being determined by market supply and demand, although prosecutors alleged it was set arbitrarily.\n- Greenwood claimed OneCoin had a private blockchain for identifying coins and recording transactions, although prosecutors alleged no publicly verifiable blockchain existed.\n- Members received commissions for recruiting others to buy cryptocurrency packages.\n- Greenwood allegedly earned 5% of monthly OneCoin sales as the top MLM distributor, allegedly totaling more than $300 million. [SRC-002]\n\nThe technical and earnings assertions above are reported prosecutorial allegations and should not be treated as independently established facts beyond the enforcement outcomes expressly documented.\n\n## 2. Principal founders and roles\n\n### Ruja Ignatova\n\n**Supported role:** Co-founder of OneCoin Ltd. and participant in the scheme described by the DOJ. [SRC-001]\n\n**Enforcement status:** The DOJ identifies Ignatova as an FBI Top Ten Fugitive. The evidence also reports that she was added to the FBI’s Top Ten Most Wanted List in June 2022. [SRC-001] [SRC-002]\n\n**Unresolved status:** The evidence does not establish:\n\n- where Ignatova is;\n- whether she is alive;\n- whether she remains active in the OneCoin network;\n- whether claims about her alleged death or concealment are true.\n\nThe DOJ’s continued effort to locate her establishes an active fugitive investigation, not proof of her whereabouts or present condition. [SRC-001]\n\n### Karl Sebastian Greenwood\n\n**Supported role:** Co-founder of OneCoin Ltd. and participant in orchestrating the scheme. [SRC-001]\n\n**Reported operational role:** Prosecutors described Greenwood as OneCoin’s top MLM distributor. The article reports that he allegedly earned 5% of monthly OneCoin sales, allegedly exceeding $300 million in total. These are prosecutorial allegations as reported by the secondary source. [SRC-002]\n\n**Enforcement outcome:** Greenwood was sentenced to 20 years in prison and ordered to forfeit approximately $300,000. [SRC-002]\n\n### Other individuals\n\nThe DOJ states that Ignatova and Greenwood acted “and others,” but the benchmark evidence supplied here does not identify or establish the roles of additional named founders or network participants. No additional person is included as a principal founder in this report.\n\n## 3. Enforcement facts\n\nThe following are documented enforcement facts in the returned sources:\n\n- The DOJ initiated prosecutions relating to OneCoin in the Southern District of New York. [SRC-001]\n- Several key figures were sentenced, although the supplied DOJ text does not enumerate all of them. [SRC-001]\n- Greenwood received a 20-year prison sentence. [SRC-002]\n- Greenwood was ordered to forfeit approximately $300,000. [SRC-002]\n- Criminal forfeiture proceedings recovered assets for potential victim compensation. [SRC-001]\n- More than $40 million in forfeited assets was identified as available for compensation to eligible victims. [SRC-001]\n- The FBI and IRS Criminal Investigation conducted the criminal fraud investigation. [SRC-001]\n- Ignatova is identified as an FBI Top Ten Fugitive and remains the subject of efforts to locate her. [SRC-001]\n\n## 4. Allegations and assessments\n\nThe following should be treated as allegations or reported prosecutorial assertions rather than independently adjudicated facts in the supplied evidence:\n\n- OneCoin’s market value was falsely represented as being based on supply and demand. [SRC-002]\n- OneCoin represented that it had a private blockchain despite allegedly lacking a publicly verifiable blockchain. [SRC-002]\n- Greenwood allegedly earned more than $300 million through his MLM-distributor role. [SRC-002]\n- The MLM recruitment and commission structure formed part of the mechanism used to obtain investments. The DOJ independently confirms the existence of the MLM model; the characterization of specific statements as fraudulent is reported through the enforcement narrative. [SRC-001] [SRC-002]\n\nThe broader fraud characterization is supported by the DOJ’s official description of OneCoin as a fraudulent cryptocurrency and an international investment scheme. [SRC-001]\n\n## 5. Ruja Ignatova: what is known and what remains unresolved\n\n### Established by the supplied evidence\n\n- Ignatova was a co-founder of OneCoin Ltd. [SRC-001]\n- She was identified as one of the people who orchestrated the scheme. [SRC-001]\n- She was added to the FBI Top Ten Most Wanted List in June 2022. [SRC-002]\n- The DOJ currently describes her as an FBI Top Ten Fugitive and says authorities continue trying to locate her. [SRC-001]\n\n### Not established by the supplied evidence\n\n- Ignatova’s current location.\n- Whether she is alive or deceased.\n- Whether she escaped with assistance from other network members.\n- Whether any alleged sighting, death report, or concealment theory is accurate.\n- Whether she retains control over assets or operations connected to OneCoin.\n\nAccordingly, “missing,” “at large,” and “wanted” are supported enforcement descriptions. A definitive claim that Ignatova is dead, alive, hiding in a particular country, or protected by named associates would exceed the benchmark evidence.\n\n## 6. Key analytical conclusions\n\n1. **OneCoin was structured as a global MLM investment operation rather than merely a standalone cryptocurrency project.** The MLM sales and recruitment system is confirmed by both the DOJ and the sentencing overview. [SRC-001] [SRC-002]\n2. **The two principal founders supported by the evidence are Ignatova and Greenwood.** [SRC-001]\n3. **Greenwood’s role had a documented enforcement endpoint:** conviction-related sentencing as reported by the source, a 20-year prison term, and forfeiture. [SRC-002]\n4. **Ignatova’s case remains an unresolved fugitive matter.** Her wanted status is documented, but her physical and biological status is not resolved by the supplied evidence. [SRC-001] [SRC-002]\n5. **The financial scale was global and substantial:** the DOJ reports more than $4 billion invested by victims and more than $40 million in forfeited assets available for compensation. [SRC-001]\n\n## Structured JSON\n\n```json\n{\n  \"findings\": [\n    {\n      \"question\": \"What was OneCoin?\",\n      \"answer\": \"OneCoin Ltd. was a Sofia-based company that marketed and sold a fraudulent cryptocurrency through a global multi-level-marketing network between 2014 and 2019.\",\n      \"supporting_entities\": [\n        \"OneCoin Ltd.\",\n        \"OneCoin cryptocurrency\",\n        \"OneCoin international cryptocurrency investment scheme\",\n        \"Sofia, Bulgaria\",\n        \"2014-2019\"\n      ],\n      \"source_references\": [\"SRC-001\", \"SRC-002\"]\n    },\n    {\n      \"question\": \"What was the documented scale of the scheme?\",\n      \"answer\": \"The DOJ states that victims invested more than $4 billion worldwide.\",\n      \"supporting_entities\": [\n        \"OneCoin international cryptocurrency investment scheme\",\n        \"OneCoin cryptocurrency\"\n      ],\n      \"source_references\": [\"SRC-001\"]\n    },\n    {\n      \"question\": \"Who were the principal founders identified in the evidence?\",\n      \"answer\": \"Ruja Ignatova and Karl Sebastian Greenwood are identified as co-founders of OneCoin Ltd.\",\n      \"supporting_entities\": [\n        \"Ruja Ignatova\",\n        \"Karl Sebastian Greenwood\",\n        \"OneCoin Ltd.\"\n      ],\n      \"source_references\": [\"SRC-001\", \"SRC-002\"]\n    },\n    {\n      \"question\": \"What role is documented for Karl Sebastian Greenwood?\",\n      \"answer\": \"He was a co-founder and was described by prosecutors as OneCoin's top MLM distributor. He was sentenced to 20 years in prison and ordered to forfeit approximately $300,000.\",\n      \"supporting_entities\": [\n        \"Karl Sebastian Greenwood\",\n        \"OneCoin Ltd.\",\n        \"Karl Sebastian Greenwood sentencing\"\n      ],\n      \"source_references\": [\"SRC-001\", \"SRC-002\"]\n    },\n    {\n      \"question\": \"What role and enforcement status are documented for Ruja Ignatova?\",\n      \"answer\": \"She was a co-founder and participant in orchestrating the scheme. She was added to the FBI Top Ten Most Wanted List in June 2022 and is identified by the DOJ as an FBI Top Ten Fugitive.\",\n      \"supporting_entities\": [\n        \"Ruja Ignatova\",\n        \"OneCoin Ltd.\",\n        \"Ruja Ignatova FBI Top Ten listing\",\n        \"Federal Bureau of Investigation\"\n      ],\n      \"source_references\": [\"SRC-001\", \"SRC-002\"]\n    },\n    {\n      \"question\": \"What is unresolved about Ignatova's status?\",\n      \"answer\": \"The supplied evidence does not establish her location, whether she is alive, or whether claims about her alleged death or concealment are true.\",\n      \"supporting_entities\": [\n        \"Ruja Ignatova\",\n        \"Ruja Ignatova FBI Top Ten listing\",\n        \"Federal Bureau of Investigation\"\n      ],\n      \"source_references\": [\"SRC-001\", \"SRC-002\"]\n    },\n    {\n      \"question\": \"What enforcement and recovery actions are documented?\",\n      \"answer\": \"The DOJ pursued OneCoin-related prosecutions and criminal forfeiture; more than $40 million in forfeited assets was identified as available for victim compensation.\",\n      \"supporting_entities\": [\n        \"OneCoin international cryptocurrency investment scheme\",\n        \"Karl Sebastian Greenwood sentencing\"\n      ],\n      \"source_references\": [\"SRC-001\"]\n    }\n  ],\n  \"claims\": [\n    {\n      \"claim\": \"Prosecutors alleged that OneCoin's value was represented as market-based even though it was set arbitrarily.\",\n      \"source_references\": [\"SRC-002\"]\n    },\n    {\n      \"claim\": \"Prosecutors alleged that Greenwood claimed OneCoin had a private blockchain even though no publicly verifiable blockchain existed.\",\n      \"source_references\": [\"SRC-002\"]\n    },\n    {\n      \"claim\": \"Greenwood allegedly earned 5% of monthly OneCoin sales, totaling more than $300 million.\",\n      \"source_references\": [\"SRC-002\"]\n    },\n    {\n      \"claim\": \"The MLM structure used commissions and recruitment incentives to sell cryptocurrency packages.\",\n      \"source_references\": [\"SRC-001\", \"SRC-002\"]\n    },\n    {\n      \"claim\": \"Ignatova's current location or biological status is unresolved in the supplied evidence.\",\n      \"source_references\": [\"SRC-001\", \"SRC-002\"]\n    }\n  ],\n  \"reasoning_steps\": [\n    {\n      \"id\": \"RS-001\",\n      \"conclusion\": \"Ignatova and Greenwood are the principal founders supported by the benchmark evidence.\",\n      \"premise_entities\": [\n        \"Ruja Ignatova\",\n        \"Karl Sebastian Greenwood\",\n        \"OneCoin Ltd.\"\n      ],\n      \"premise_relations\": [\n        \"co_founded\"\n      ]\n    },\n    {\n      \"id\": \"RS-002\",\n      \"conclusion\": \"OneCoin's documented operating model involved global MLM promotion of the OneCoin cryptocurrency.\",\n      \"premise_entities\": [\n        \"OneCoin Ltd.\",\n        \"OneCoin cryptocurrency\"\n      ],\n      \"premise_relations\": [\n        \"promoted\"\n      ]\n    },\n    {\n      \"id\": \"RS-003\",\n      \"conclusion\": \"The scheme operated during the 2014-2019 period documented by the DOJ.\",\n      \"premise_entities\": [\n        \"OneCoin international cryptocurrency investment scheme\",\n        \"2014-2019\"\n      ],\n      \"premise_relations\": [\n        \"occurred_on\"\n      ]\n    },\n    {\n      \"id\": \"RS-004\",\n      \"conclusion\": \"Greenwood's role resulted in a documented 20-year prison sentence and forfeiture order.\",\n      \"premise_entities\": [\n        \"Karl Sebastian Greenwood sentencing\",\n        \"Karl Sebastian Greenwood\"\n      ],\n      \"premise_relations\": [\n        \"other_relation\"\n      ]\n    },\n    {\n      \"id\": \"RS-005\",\n      \"conclusion\": \"Ignatova's wanted status is established, but her location and whether she is alive are not established.\",\n      \"premise_entities\": [\n        \"Federal Bureau of Investigation\",\n        \"Ruja Ignatova\",\n        \"Ruja Ignatova FBI Top Ten listing\"\n      ],\n      \"premise_relations\": [\n        \"other_relation\"\n      ]\n    }\n  ],\n  \"contradictions\": []\n}\n```",
+    "operational": {
+      "duration_ms": 244810.25,
+      "mode": "offline",
+      "iterations": 13,
+      "search_calls": 8,
+      "fetch_calls": 2,
+      "knowledge_base_calls": 1,
+      "termination_reason": "final_report"
+    },
+    "graph_capture_source": "trace",
+    "key_findings": [
+      {
+        "question": "What was OneCoin?",
+        "answer": "OneCoin Ltd. was a Sofia-based company that marketed and sold a fraudulent cryptocurrency through a global multi-level-marketing network between 2014 and 2019.",
+        "supporting_entities": [
+          "OneCoin Ltd.",
+          "OneCoin cryptocurrency",
+          "OneCoin international cryptocurrency investment scheme",
+          "Sofia, Bulgaria",
+          "2014-2019"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "What was the documented scale of the scheme?",
+        "answer": "The DOJ states that victims invested more than $4 billion worldwide.",
+        "supporting_entities": [
+          "OneCoin international cryptocurrency investment scheme",
+          "OneCoin cryptocurrency"
+        ],
+        "source_references": [
+          "SRC-001"
+        ]
+      },
+      {
+        "question": "Who were the principal founders identified in the evidence?",
+        "answer": "Ruja Ignatova and Karl Sebastian Greenwood are identified as co-founders of OneCoin Ltd.",
+        "supporting_entities": [
+          "Ruja Ignatova",
+          "Karl Sebastian Greenwood",
+          "OneCoin Ltd."
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "What role is documented for Karl Sebastian Greenwood?",
+        "answer": "He was a co-founder and was described by prosecutors as OneCoin's top MLM distributor. He was sentenced to 20 years in prison and ordered to forfeit approximately $300,000.",
+        "supporting_entities": [
+          "Karl Sebastian Greenwood",
+          "OneCoin Ltd.",
+          "Karl Sebastian Greenwood sentencing"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "What role and enforcement status are documented for Ruja Ignatova?",
+        "answer": "She was a co-founder and participant in orchestrating the scheme. She was added to the FBI Top Ten Most Wanted List in June 2022 and is identified by the DOJ as an FBI Top Ten Fugitive.",
+        "supporting_entities": [
+          "Ruja Ignatova",
+          "OneCoin Ltd.",
+          "Ruja Ignatova FBI Top Ten listing",
+          "Federal Bureau of Investigation"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "What is unresolved about Ignatova's status?",
+        "answer": "The supplied evidence does not establish her location, whether she is alive, or whether claims about her alleged death or concealment are true.",
+        "supporting_entities": [
+          "Ruja Ignatova",
+          "Ruja Ignatova FBI Top Ten listing",
+          "Federal Bureau of Investigation"
+        ],
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "question": "What enforcement and recovery actions are documented?",
+        "answer": "The DOJ pursued OneCoin-related prosecutions and criminal forfeiture; more than $40 million in forfeited assets was identified as available for victim compensation.",
+        "supporting_entities": [
+          "OneCoin international cryptocurrency investment scheme",
+          "Karl Sebastian Greenwood sentencing"
+        ],
+        "source_references": [
+          "SRC-001"
+        ]
+      }
+    ],
+    "contradictions": [],
+    "reasoning_steps": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "reasoning_step_details": [
+      {
+        "id": 1,
+        "conclusion": "Ignatova and Greenwood are the principal founders supported by the benchmark evidence.",
+        "premise_entities": [
+          "Ruja Ignatova",
+          "Karl Sebastian Greenwood",
+          "OneCoin Ltd."
+        ],
+        "premise_relations": [
+          "co_founded"
+        ]
+      },
+      {
+        "id": 2,
+        "conclusion": "OneCoin's documented operating model involved global MLM promotion of the OneCoin cryptocurrency.",
+        "premise_entities": [
+          "OneCoin Ltd.",
+          "OneCoin cryptocurrency"
+        ],
+        "premise_relations": [
+          "promoted"
+        ]
+      },
+      {
+        "id": 3,
+        "conclusion": "The scheme operated during the 2014-2019 period documented by the DOJ.",
+        "premise_entities": [
+          "OneCoin international cryptocurrency investment scheme",
+          "2014-2019"
+        ],
+        "premise_relations": [
+          "occurred_on"
+        ]
+      },
+      {
+        "id": 4,
+        "conclusion": "Greenwood's role resulted in a documented 20-year prison sentence and forfeiture order.",
+        "premise_entities": [
+          "Karl Sebastian Greenwood sentencing",
+          "Karl Sebastian Greenwood"
+        ],
+        "premise_relations": [
+          "other_relation"
+        ]
+      },
+      {
+        "id": 5,
+        "conclusion": "Ignatova's wanted status is established, but her location and whether she is alive are not established.",
+        "premise_entities": [
+          "Federal Bureau of Investigation",
+          "Ruja Ignatova",
+          "Ruja Ignatova FBI Top Ten listing"
+        ],
+        "premise_relations": [
+          "other_relation"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "claim": "Prosecutors alleged that OneCoin's value was represented as market-based even though it was set arbitrarily.",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "claim": "Prosecutors alleged that Greenwood claimed OneCoin had a private blockchain even though no publicly verifiable blockchain existed.",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "claim": "Greenwood allegedly earned 5% of monthly OneCoin sales, totaling more than $300 million.",
+        "source_references": [
+          "SRC-002"
+        ]
+      },
+      {
+        "claim": "The MLM structure used commissions and recruitment incentives to sell cryptocurrency packages.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      },
+      {
+        "claim": "Ignatova's current location or biological status is unresolved in the supplied evidence.",
+        "source_references": [
+          "SRC-001",
+          "SRC-002"
+        ]
+      }
+    ],
+    "structured_output": true,
+    "structured_output_valid": true,
+    "structured_output_complete": true,
+    "missing_structured_sections": [],
+    "structured_output_errors": [],
+    "graph_capture_diagnostics": {
+      "entity_records_emitted": 10,
+      "relation_records_emitted": 11,
+      "knowledge_agent_calls": 1,
+      "relations_expected": 4,
+      "contradictions_expected": 1
+    }
+  },
+  "metrics": {
+    "output_validation": {
+      "valid": true,
+      "errors": []
+    },
+    "entities": {
+      "true_positive": 4,
+      "false_positive": 6,
+      "false_negative": 2,
+      "precision": 0.4,
+      "recall": 0.6666666666666666,
+      "f1": 0.5,
+      "missing": [
+        [
+          "alias",
+          "cryptoqueen"
+        ],
+        [
+          "person",
+          "konstantin ignatov"
+        ]
+      ],
+      "unexpected": [
+        [
+          "date",
+          "2014-2019"
+        ],
+        [
+          "event",
+          "karl sebastian greenwood sentencing"
+        ],
+        [
+          "event",
+          "onecoin international cryptocurrency investment scheme"
+        ],
+        [
+          "event",
+          "ruja ignatova fbi top ten listing"
+        ],
+        [
+          "organization",
+          "federal bureau of investigation"
+        ],
+        [
+          "product",
+          "onecoin cryptocurrency"
+        ]
+      ]
+    },
+    "relations": {
+      "true_positive": 3,
+      "false_positive": 8,
+      "false_negative": 1,
+      "precision": 0.2727272727272727,
+      "recall": 0.75,
+      "f1": 0.39999999999999997,
+      "missing": [
+        [
+          [
+            "person",
+            "konstantin ignatov"
+          ],
+          "led_or_promoted",
+          [
+            "organization",
+            "onecoin ltd."
+          ]
+        ]
+      ],
+      "unexpected": [
+        [
+          [
+            "event",
+            "karl sebastian greenwood sentencing"
+          ],
+          "other_relation",
+          [
+            "person",
+            "karl sebastian greenwood"
+          ]
+        ],
+        [
+          [
+            "event",
+            "onecoin international cryptocurrency investment scheme"
+          ],
+          "occurred_on",
+          [
+            "date",
+            "2014-2019"
+          ]
+        ],
+        [
+          [
+            "event",
+            "ruja ignatova fbi top ten listing"
+          ],
+          "occurred_on",
+          [
+            "date",
+            "2022-06"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "federal bureau of investigation"
+          ],
+          "other_relation",
+          [
+            "person",
+            "ruja ignatova"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "onecoin ltd."
+          ],
+          "promoted",
+          [
+            "product",
+            "onecoin cryptocurrency"
+          ]
+        ],
+        [
+          [
+            "person",
+            "karl sebastian greenwood"
+          ],
+          "part_of_operation",
+          [
+            "event",
+            "onecoin international cryptocurrency investment scheme"
+          ]
+        ],
+        [
+          [
+            "person",
+            "ruja ignatova"
+          ],
+          "other_relation",
+          [
+            "event",
+            "ruja ignatova fbi top ten listing"
+          ]
+        ],
+        [
+          [
+            "person",
+            "ruja ignatova"
+          ],
+          "part_of_operation",
+          [
+            "event",
+            "onecoin international cryptocurrency investment scheme"
+          ]
+        ]
+      ],
+      "semantic_mapping": {
+        "also_known_as": "alias_of",
+        "alias_of": "alias_of",
+        "co_founded": "founded",
+        "founded": "founded",
+        "based_in": "located_in",
+        "located_in": "located_in",
+        "performed_special_audit": "audited",
+        "audited": "audited",
+        "former_coo_of": "executive_of",
+        "executive_of": "executive_of",
+        "provided_software": "provided",
+        "distributed_as_installer": "distributed",
+        "contained_malware": "contained",
+        "trojanized": "compromised",
+        "associated_with": "associated_with",
+        "linked_to": "associated_with",
+        "uses_or_is_associated_with": "associated_with"
+      }
+    },
+    "contradictions": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "details": [],
+      "missing": [
+        "CONTRA-001"
+      ],
+      "unexpected": [],
+      "grounded_recall": 0.0,
+      "grounded_f1": 0.0
+    },
+    "key_findings": {
+      "score": 0.1361111111111111,
+      "precision": 0.14285714285714285,
+      "recall": 0.5,
+      "f1": 0.22222222222222224,
+      "predicted": 7,
+      "expected": 2,
+      "matched": 1,
+      "details": [
+        {
+          "question": "What was OneCoin core misrepresentation?",
+          "status": "missing",
+          "score": 0.0
+        },
+        {
+          "question": "Who were key network actors?",
+          "status": "matched",
+          "score": 0.2722222222222222,
+          "semantic": 0.3888888888888889,
+          "supporting_entity_recall": 0.0,
+          "source_recall": 1.0,
+          "has_source_references": true
+        }
+      ]
+    },
+    "source_traceability": {
+      "correct_sources": [
+        "SRC-001",
+        "SRC-002"
+      ],
+      "unknown_sources": [],
+      "unavailable_sources": [],
+      "source_precision": 1.0,
+      "source_recall": 1.0,
+      "ratio": 1.0,
+      "claim_level": {
+        "claims": 5,
+        "traceable_claims": 5,
+        "ratio": 1.0,
+        "unknown_sources": [],
+        "unavailable_sources": []
+      },
+      "finding_level": {
+        "findings": 7,
+        "traceable_findings": 7,
+        "ratio": 1.0
+      }
+    },
+    "reasoning_coverage": {
+      "covered": [
+        1,
+        2
+      ],
+      "invalid": [
+        3,
+        4,
+        5
+      ],
+      "total": 2,
+      "precision": 0.4,
+      "recall": 1.0,
+      "f1": 0.5714285714285715,
+      "ratio": 1.0,
+      "status": "structured_step_ids"
+    },
+    "report_quality": {
+      "score": 0.6666666666666666,
+      "checks": {
+        "non_empty": true,
+        "structured_output_complete": true,
+        "structured_output_valid": true,
+        "findings_present": true,
+        "findings_match": false,
+        "claims_traceable": true,
+        "contradictions_complete": false,
+        "contradictions_grounded": false,
+        "finding_sources_grounded": true,
+        "reasoning_conclusions_grounded": false,
+        "uncertainty_language": true,
+        "readable_length": true
+      },
+      "scale": "deterministic rubric 0-1"
+    },
+    "reasoning_quality": {
+      "covered": 2,
+      "expected": 2,
+      "coverage": 1.0,
+      "semantic_similarity": 0.1111111111111111,
+      "premise_grounding": 0.25,
+      "grounded_score": 0.05555555555555555,
+      "method": "premise_ids_plus_token_entailment_proxy",
+      "formula": "premise*conclusion",
+      "details": [
+        {
+          "id": 1,
+          "premise_score": 0.5,
+          "entity_recall": 0.0,
+          "relation_recall": 1.0,
+          "conclusion_similarity": 0.2222222222222222,
+          "invalid_premise_entities": [
+            "Karl Sebastian Greenwood",
+            "OneCoin Ltd.",
+            "Ruja Ignatova"
+          ],
+          "invalid_premise_relations": [],
+          "grounded_score": 0.1111111111111111
+        },
+        {
+          "id": 2,
+          "premise_score": 0.0,
+          "entity_recall": 0.0,
+          "relation_recall": 0.0,
+          "conclusion_similarity": 0.0,
+          "invalid_premise_entities": [
+            "OneCoin Ltd.",
+            "OneCoin cryptocurrency"
+          ],
+          "invalid_premise_relations": [
+            "promoted"
+          ],
+          "grounded_score": 0.0
+        }
+      ]
+    },
+    "operational": {
+      "duration_ms": 244810.25,
+      "mode": "offline",
+      "iterations": 13,
+      "search_calls": 8,
+      "fetch_calls": 2,
+      "knowledge_base_calls": 1,
+      "termination_reason": "final_report"
+    },
+    "retrieval": {
+      "status": "not_annotated",
+      "topics": 0
+    }
+  }
+}

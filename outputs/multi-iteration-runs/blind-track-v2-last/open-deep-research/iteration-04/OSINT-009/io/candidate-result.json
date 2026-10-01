@@ -1,0 +1,58 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-009",
+  "report": "Error generating final report: APITimeoutError: Request timed out.",
+  "context": [],
+  "visited_urls": [
+    "https://www.aljazeera.com/news/2021/10/3/investigation-reveals-offshore-assets-of-heads-of-state",
+    "https://www.dw.com/en/pandora-papers-the-king-of-jordans-hidden-property-gems/a-59403014",
+    "https://www.icij.org/investigations/pandora-papers/jordan-king-abdullah-luxury-property/",
+    "https://www.theguardian.com/news/2021/oct/03/king-of-jordan-hidden-property-empire-worth-more-than-100m-pandora-papers-reveal"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "Pandora Papers King Abdullah II Jordan offshore companies properties source documents ICIJ OCCRP Guardian Washington Post"
+      ],
+      "max_results": 5,
+      "topic": "news",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:icij.org/investigations/pandora-papers Jordan Abdullah companies names R Holdings V Ltd property Malibu Washington London adviser lawyer",
+        "King Abdullah Pandora Papers 36 companies names offshore adviser intermediary director beneficial owner",
+        "Guardian Pandora papers Abdullah company names trusts property dates Ascot Malibu Washington"
+      ],
+      "max_results": 5,
+      "topic": "news",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "King Abdullah Pandora Papers underlying records companies names British Virgin Islands R Holdings Panama Papers documents",
+        "Pandora Papers Jordan king offshore entities DLA Piper adviser trust company names"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "BBC Pandora Papers King Abdullah properties Malibu Ascot London Washington names companies 2021",
+        "King Abdullah offshore property Pandora Papers three Malibu mansions 14 properties dates 2003 2017",
+        "Pandora Papers King Abdullah lawyers DLA Piper Royal Hashemite Court properties"
+      ],
+      "max_results": 5,
+      "topic": "news",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 12,
+  "duration_seconds": 645.2040340999956
+}

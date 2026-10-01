@@ -1,0 +1,214 @@
+{
+  "protocol": "common-contract-track-v2-blind-aware",
+  "benchmark_snapshot_sha256": "561e463eac51c71d83b97cf20c706395f8ecb3763fdec6d77715c17da9156bd0",
+  "candidates": {
+    "baseline": {
+      "protocol": "common-contract-track-v1",
+      "candidate": "baseline",
+      "benchmark_snapshot_sha256": "561e463eac51c71d83b97cf20c706395f8ecb3763fdec6d77715c17da9156bd0",
+      "completed_output": {
+        "n_rows": 94,
+        "metrics": {
+          "finding_f1": {
+            "mean": 0.29238462483143335
+          },
+          "contradiction_f1": {
+            "mean": 0.002127659574468085
+          },
+          "reasoning": {
+            "mean": 0.36277307184172997
+          },
+          "report_quality": {
+            "mean": 0.6560283687943262
+          },
+          "source_precision": {
+            "mean": 0.9787234042553191
+          },
+          "source_recall": {
+            "mean": 0.9379432624113476
+          }
+        }
+      },
+      "valid_only": {
+        "n_rows": 94,
+        "metrics": {
+          "finding_f1": {
+            "mean": 0.29238462483143335
+          },
+          "contradiction_f1": {
+            "mean": 0.002127659574468085
+          },
+          "reasoning": {
+            "mean": 0.36277307184172997
+          },
+          "report_quality": {
+            "mean": 0.6560283687943262
+          },
+          "source_precision": {
+            "mean": 0.9787234042553191
+          },
+          "source_recall": {
+            "mean": 0.9379432624113476
+          }
+        }
+      },
+      "validity_rate": 1.0
+    },
+    "openosint": {
+      "protocol": "common-contract-track-v1",
+      "candidate": "openosint",
+      "benchmark_snapshot_sha256": "561e463eac51c71d83b97cf20c706395f8ecb3763fdec6d77715c17da9156bd0",
+      "completed_output": {
+        "n_rows": 60,
+        "metrics": {
+          "finding_f1": {
+            "mean": 0.24722795722795723
+          },
+          "contradiction_f1": {
+            "mean": 0.0
+          },
+          "reasoning": {
+            "mean": 0.3202536326926023
+          },
+          "report_quality": {
+            "mean": 0.6555555555555554
+          },
+          "source_precision": {
+            "mean": 1.0
+          },
+          "source_recall": {
+            "mean": 0.8726851851851852
+          }
+        }
+      },
+      "valid_only": {
+        "n_rows": 60,
+        "metrics": {
+          "finding_f1": {
+            "mean": 0.24722795722795723
+          },
+          "contradiction_f1": {
+            "mean": 0.0
+          },
+          "reasoning": {
+            "mean": 0.3202536326926023
+          },
+          "report_quality": {
+            "mean": 0.6555555555555554
+          },
+          "source_precision": {
+            "mean": 1.0
+          },
+          "source_recall": {
+            "mean": 0.8726851851851852
+          }
+        }
+      },
+      "validity_rate": 1.0
+    },
+    "gpt-researcher": {
+      "protocol": "common-contract-track-v1",
+      "candidate": "gpt-researcher",
+      "benchmark_snapshot_sha256": "561e463eac51c71d83b97cf20c706395f8ecb3763fdec6d77715c17da9156bd0",
+      "completed_output": {
+        "n_rows": 100,
+        "metrics": {
+          "finding_f1": {
+            "mean": 0.26627200577200577
+          },
+          "contradiction_f1": {
+            "mean": 0.0
+          },
+          "reasoning": {
+            "mean": 0.27839043697575705
+          },
+          "report_quality": {
+            "mean": 0.465
+          },
+          "source_precision": {
+            "mean": 0.0
+          },
+          "source_recall": {
+            "mean": 0.0
+          }
+        }
+      },
+      "valid_only": {
+        "n_rows": 100,
+        "metrics": {
+          "finding_f1": {
+            "mean": 0.26627200577200577
+          },
+          "contradiction_f1": {
+            "mean": 0.0
+          },
+          "reasoning": {
+            "mean": 0.27839043697575705
+          },
+          "report_quality": {
+            "mean": 0.465
+          },
+          "source_precision": {
+            "mean": 0.0
+          },
+          "source_recall": {
+            "mean": 0.0
+          }
+        }
+      },
+      "validity_rate": 1.0
+    },
+    "open-deep-research": {
+      "protocol": "common-contract-track-v1",
+      "candidate": "open-deep-research",
+      "benchmark_snapshot_sha256": "561e463eac51c71d83b97cf20c706395f8ecb3763fdec6d77715c17da9156bd0",
+      "completed_output": {
+        "n_rows": 98,
+        "metrics": {
+          "finding_f1": {
+            "mean": 0.1498392647102131
+          },
+          "contradiction_f1": {
+            "mean": 0.0
+          },
+          "reasoning": {
+            "mean": 0.20961174562248278
+          },
+          "report_quality": {
+            "mean": 0.4574829931972789
+          },
+          "source_precision": {
+            "mean": 0.45918367346938777
+          },
+          "source_recall": {
+            "mean": 0.445578231292517
+          }
+        }
+      },
+      "valid_only": {
+        "n_rows": 98,
+        "metrics": {
+          "finding_f1": {
+            "mean": 0.1498392647102131
+          },
+          "contradiction_f1": {
+            "mean": 0.0
+          },
+          "reasoning": {
+            "mean": 0.20961174562248278
+          },
+          "report_quality": {
+            "mean": 0.4574829931972789
+          },
+          "source_precision": {
+            "mean": 0.45918367346938777
+          },
+          "source_recall": {
+            "mean": 0.445578231292517
+          }
+        }
+      },
+      "validity_rate": 1.0
+    }
+  }
+}

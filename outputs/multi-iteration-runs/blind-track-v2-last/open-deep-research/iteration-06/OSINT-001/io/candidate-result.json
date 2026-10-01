@@ -1,0 +1,65 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-001",
+  "report": "Error generating final report: APITimeoutError: Request timed out.",
+  "context": [],
+  "visited_urls": [
+    "https://attack.mitre.org/groups/G0032/",
+    "https://attack.mitre.org/software/S0584/",
+    "https://blog.google/threat-analysis-group/countering-threats-north-korea/",
+    "https://cloud.google.com/blog/topics/threat-intelligence/3cx-software-supply-chain-compromise",
+    "https://securelist.com/gopuram-backdoor-deployed-through-3cx-supply-chain-attack/109344/",
+    "https://www.csa.gov.sg/alerts-and-advisories/alerts/al-2023-040/",
+    "https://www.cybersecuritydive.com/news/supply-chain-attack-3cx-desktop-thousands/646432/",
+    "https://www.wired.com/story/3cx-supply-chain-attack-north-korea-cryptocurrency-targets/",
+    "https://www.wired.com/story/3cx-supply-chain-attack-times-two"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "2023 3CX supply chain compromise Mandiant UNC4736 report initial access source code library developer workstation",
+        "3CX incident report March 2023 malicious library build pipeline official",
+        "CISA 3CX compromise advisory 2023"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:3cx.com blog security incident 3CX DesktopApp March 2023 update versions official",
+        "site:3cx.com 3CXDesktopApp 18.12.416 18.12.407 malicious official incident",
+        "3CX official incident report April 2023 build environment employee library compromise"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "CrowdStrike 3CX supply chain compromise March 2023 Labyrinth Chollima hashes certificates update channels",
+        "SentinelOne Smooth Operator 3CX technical analysis hashes versions macOS Windows",
+        "Sophos 3CX supply chain attack malicious library d3dcompiler_47.dll analysis"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "3CX supply chain compromise timeline March 29 April 2023 CISA advisory national cyber agency",
+        "3CXDesktopApp malicious versions signed MSI update channel Electron macOS Windows Linux 2023 report"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 12,
+  "duration_seconds": 624.1287272000336
+}

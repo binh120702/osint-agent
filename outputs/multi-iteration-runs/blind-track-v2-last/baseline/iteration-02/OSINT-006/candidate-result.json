@@ -1,0 +1,392 @@
+{
+  "case_id": "OSINT-006",
+  "case_sha256": "bccd1f9d517bc90de434853c508839638537596d61a04ba257322308ed3bdcec",
+  "trace": {
+    "thread_id": "benchmark-osint-006-9105bf19",
+    "tool_calls": [
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "MOVEit Transfer CVE disclosure LEMURLOOT FIN11 CL0P attribution extortion infrastructure"
+        },
+        "started_at": 1790783517.4939833,
+        "result": "{\n  \"query\": \"MOVEit Transfer CVE disclosure LEMURLOOT FIN11 CL0P attribution extortion infrastructure\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 2,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"CL0P Ransomware Gang Exploits CVE-2023-34362 MOVEit Vulnerability\",\n        \"url\": \"https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a\",\n        \"snippet\": \"Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threa\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      },\n      {\n        \"title\": \"NVD - CVE-2023-34362\",\n        \"url\": \"https://nvd.nist.gov/vuln/detail/cve-2023-34362\",\n        \"snippet\": \"NVD - cve-2023-34362 You are viewing this page in an unauthorized frame window. This is a potential security issue, you are being redirected to https://nvd.nist.gov An official website of the United States government Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. NVD MENU General Expand or Collapse NVD Dashboard News and Status Updates FAQ Visualizations Legal Disclaimer Vulnerabilities Expand or Collapse Search & Statistics Weakness Types Data Feeds Vendor Comments CVMAP Vulnerability Metrics Expand or Collapse CVSS v4.0 Calculators CVSS v3.x Calculators CVSS v2.0 Calculator Products Expand or Collapse CPE Dictionary CPE Search CPE Statistics SWID Developers Expand or Collapse Start Here Request an API Key Vulnerabilities Products Data S\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"CL0P Ransomware Gang Exploits CVE-2023-34362 MOVEit Vulnerability\",\n      \"url\": \"https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a\",\n      \"snippet\": \"Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threa\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    },\n    {\n      \"title\": \"NVD - CVE-2023-34362\",\n      \"url\": \"https://nvd.nist.gov/vuln/detail/cve-2023-34362\",\n      \"snippet\": \"NVD - cve-2023-34362 You are viewing this page in an unauthorized frame window. This is a potential security issue, you are being redirected to https://nvd.nist.gov An official website of the United States government Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. NVD MENU General Expand or Collapse NVD Dashboard News and Status Updates FAQ Visualizations Legal Disclaimer Vulnerabilities Expand or Collapse Search & Statistics Weakness Types Data Feeds Vendor Comments CVMAP Vulnerability Metrics Expand or Collapse CVSS v4.0 Calculators CVSS v3.x Calculators CVSS v2.0 Calculator Products Expand or Collapse CPE Dictionary CPE Search CPE Statistics SWID Developers Expand or Collapse Start Here Request an API Key Vulnerabilities Products Data S\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 1.67
+      },
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "site:cloud.google.com/blog/topics/threat-intelligence LEMURLOOT MOVEit CVE-2023-34362"
+        },
+        "started_at": 1790783517.4960225,
+        "result": "{\n  \"query\": \"site:cloud.google.com/blog/topics/threat-intelligence LEMURLOOT MOVEit CVE-2023-34362\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 2,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"NVD - CVE-2023-34362\",\n        \"url\": \"https://nvd.nist.gov/vuln/detail/cve-2023-34362\",\n        \"snippet\": \"NVD - cve-2023-34362 You are viewing this page in an unauthorized frame window. This is a potential security issue, you are being redirected to https://nvd.nist.gov An official website of the United States government Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. NVD MENU General Expand or Collapse NVD Dashboard News and Status Updates FAQ Visualizations Legal Disclaimer Vulnerabilities Expand or Collapse Search & Statistics Weakness Types Data Feeds Vendor Comments CVMAP Vulnerability Metrics Expand or Collapse CVSS v4.0 Calculators CVSS v3.x Calculators CVSS v2.0 Calculator Products Expand or Collapse CPE Dictionary CPE Search CPE Statistics SWID Developers Expand or Collapse Start Here Request an API Key Vulnerabilities Products Data S\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      },\n      {\n        \"title\": \"CL0P Ransomware Gang Exploits CVE-2023-34362 MOVEit Vulnerability\",\n        \"url\": \"https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a\",\n        \"snippet\": \"Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threa\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"NVD - CVE-2023-34362\",\n      \"url\": \"https://nvd.nist.gov/vuln/detail/cve-2023-34362\",\n      \"snippet\": \"NVD - cve-2023-34362 You are viewing this page in an unauthorized frame window. This is a potential security issue, you are being redirected to https://nvd.nist.gov An official website of the United States government Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. NVD MENU General Expand or Collapse NVD Dashboard News and Status Updates FAQ Visualizations Legal Disclaimer Vulnerabilities Expand or Collapse Search & Statistics Weakness Types Data Feeds Vendor Comments CVMAP Vulnerability Metrics Expand or Collapse CVSS v4.0 Calculators CVSS v3.x Calculators CVSS v2.0 Calculator Products Expand or Collapse CPE Dictionary CPE Search CPE Statistics SWID Developers Expand or Collapse Start Here Request an API Key Vulnerabilities Products Data S\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    },\n    {\n      \"title\": \"CL0P Ransomware Gang Exploits CVE-2023-34362 MOVEit Vulnerability\",\n      \"url\": \"https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a\",\n      \"snippet\": \"Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threa\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 1.49
+      },
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "CVE-2023-34362 MOVEit Transfer CISA advisory CL0P FIN11"
+        },
+        "started_at": 1790783517.49788,
+        "result": "{\n  \"query\": \"CVE-2023-34362 MOVEit Transfer CISA advisory CL0P FIN11\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 2,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"NVD - CVE-2023-34362\",\n        \"url\": \"https://nvd.nist.gov/vuln/detail/cve-2023-34362\",\n        \"snippet\": \"NVD - cve-2023-34362 You are viewing this page in an unauthorized frame window. This is a potential security issue, you are being redirected to https://nvd.nist.gov An official website of the United States government Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. NVD MENU General Expand or Collapse NVD Dashboard News and Status Updates FAQ Visualizations Legal Disclaimer Vulnerabilities Expand or Collapse Search & Statistics Weakness Types Data Feeds Vendor Comments CVMAP Vulnerability Metrics Expand or Collapse CVSS v4.0 Calculators CVSS v3.x Calculators CVSS v2.0 Calculator Products Expand or Collapse CPE Dictionary CPE Search CPE Statistics SWID Developers Expand or Collapse Start Here Request an API Key Vulnerabilities Products Data S\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      },\n      {\n        \"title\": \"CL0P Ransomware Gang Exploits CVE-2023-34362 MOVEit Vulnerability\",\n        \"url\": \"https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a\",\n        \"snippet\": \"Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threa\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"NVD - CVE-2023-34362\",\n      \"url\": \"https://nvd.nist.gov/vuln/detail/cve-2023-34362\",\n      \"snippet\": \"NVD - cve-2023-34362 You are viewing this page in an unauthorized frame window. This is a potential security issue, you are being redirected to https://nvd.nist.gov An official website of the United States government Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. NVD MENU General Expand or Collapse NVD Dashboard News and Status Updates FAQ Visualizations Legal Disclaimer Vulnerabilities Expand or Collapse Search & Statistics Weakness Types Data Feeds Vendor Comments CVMAP Vulnerability Metrics Expand or Collapse CVSS v4.0 Calculators CVSS v3.x Calculators CVSS v2.0 Calculator Products Expand or Collapse CPE Dictionary CPE Search CPE Statistics SWID Developers Expand or Collapse Start Here Request an API Key Vulnerabilities Products Data S\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    },\n    {\n      \"title\": \"CL0P Ransomware Gang Exploits CVE-2023-34362 MOVEit Vulnerability\",\n      \"url\": \"https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a\",\n      \"snippet\": \"Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threa\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 1.44
+      },
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "MOVEit Transfer exploitation May 2023 June 2023 LEMURLOOT Mandiant Microsoft"
+        },
+        "started_at": 1790783517.4996781,
+        "result": "{\n  \"query\": \"MOVEit Transfer exploitation May 2023 June 2023 LEMURLOOT Mandiant Microsoft\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 2,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"CL0P Ransomware Gang Exploits CVE-2023-34362 MOVEit Vulnerability\",\n        \"url\": \"https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a\",\n        \"snippet\": \"Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threa\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      },\n      {\n        \"title\": \"NVD - CVE-2023-34362\",\n        \"url\": \"https://nvd.nist.gov/vuln/detail/cve-2023-34362\",\n        \"snippet\": \"NVD - cve-2023-34362 You are viewing this page in an unauthorized frame window. This is a potential security issue, you are being redirected to https://nvd.nist.gov An official website of the United States government Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. NVD MENU General Expand or Collapse NVD Dashboard News and Status Updates FAQ Visualizations Legal Disclaimer Vulnerabilities Expand or Collapse Search & Statistics Weakness Types Data Feeds Vendor Comments CVMAP Vulnerability Metrics Expand or Collapse CVSS v4.0 Calculators CVSS v3.x Calculators CVSS v2.0 Calculator Products Expand or Collapse CPE Dictionary CPE Search CPE Statistics SWID Developers Expand or Collapse Start Here Request an API Key Vulnerabilities Products Data S\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"CL0P Ransomware Gang Exploits CVE-2023-34362 MOVEit Vulnerability\",\n      \"url\": \"https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a\",\n      \"snippet\": \"Zero-Day Vulnerability in MOVEit Transfer Exploited for Data Theft | Mandiant | Google Cloud Blog Jump to Content Cloud Blog Contact sales Get started for free Cloud Blog Solutions & technology AI & Machine Learning API Management Application Development Application Modernization Chrome Enterprise Compute Containers & Kubernetes Data Analytics Databases DevOps & SRE Maps & Geospatial Security Security & Identity Threat Intelligence Infrastructure Infrastructure Modernization Networking Productivity & Collaboration SAP on Google Cloud Storage & Data Transfer Sustainability Ecosystem IT Leaders Industries Financial Services Healthcare & Life Sciences Manufacturing Media & Entertainment Public Sector Retail Supply Chain Telecommunications Partners Startups & SMB Training & Certifications Inside Google Cloud Google Cloud Next & Events Google Cloud Consulting Google Maps Platform Google Workspace Developers & Practitioners Transform with Google Cloud Contact sales Get started for free Threa\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    },\n    {\n      \"title\": \"NVD - CVE-2023-34362\",\n      \"url\": \"https://nvd.nist.gov/vuln/detail/cve-2023-34362\",\n      \"snippet\": \"NVD - cve-2023-34362 You are viewing this page in an unauthorized frame window. This is a potential security issue, you are being redirected to https://nvd.nist.gov An official website of the United States government Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. NVD MENU General Expand or Collapse NVD Dashboard News and Status Updates FAQ Visualizations Legal Disclaimer Vulnerabilities Expand or Collapse Search & Statistics Weakness Types Data Feeds Vendor Comments CVMAP Vulnerability Metrics Expand or Collapse CVSS v4.0 Calculators CVSS v3.x Calculators CVSS v2.0 Calculator Products Expand or Collapse CPE Dictionary CPE Search CPE Statistics SWID Developers Expand or Collapse Start Here Request an API Key Vulnerabilities Products Data S\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 1.48
+      },
+      {
+        "name": "__runtime_failure__",
+        "result": "Error code: 400 - {'error': {'message': '请求参数不正确，请检查请求体后重试。 原因：请求中存在目标接口不支持的字段、缺少必填字段，或 JSON 格式不完整。 解决方案：请按目标接口文档检查参数名、字段类型和 JSON 格式；移除不支持的参数后重试。 request_id: 202609301551282230310878268d9d6ai9zPcfO', 'type': 'invalid_request', 'param': '', 'code': 'invalid_request', 'reason': '请求中存在目标接口不支持的字段、缺少必填字段，或 JSON 格式不完整。', 'solution': '请按目标接口文档检查参数名、字段类型和 JSON 格式；移除不支持的参数后重试。', 'request_id': '202609301551282230310878268d9d6ai9zPcfO'}}",
+        "duration_ms": 0
+      }
+    ],
+    "final_report": "",
+    "operational": {
+      "duration_ms": 94007.84,
+      "mode": "offline",
+      "iterations": 5,
+      "search_calls": 4,
+      "fetch_calls": 0,
+      "knowledge_base_calls": 0,
+      "termination_reason": "runtime_failure"
+    },
+    "output": {
+      "entities": [],
+      "relations": [],
+      "source_references": [],
+      "citations": [],
+      "available_source_references": [
+        "SRC-001",
+        "SRC-002"
+      ],
+      "report": "",
+      "operational": {
+        "duration_ms": 94007.84,
+        "mode": "offline",
+        "iterations": 5,
+        "search_calls": 4,
+        "fetch_calls": 0,
+        "knowledge_base_calls": 0,
+        "termination_reason": "runtime_failure"
+      },
+      "graph_capture_source": "trace",
+      "key_findings": [],
+      "contradictions": [],
+      "reasoning_steps": [],
+      "reasoning_step_details": [],
+      "claims": [],
+      "structured_output": false,
+      "structured_output_valid": false,
+      "structured_output_complete": false,
+      "missing_structured_sections": [
+        "claims",
+        "contradictions",
+        "findings",
+        "reasoning_steps"
+      ],
+      "structured_output_errors": [],
+      "graph_capture_diagnostics": {
+        "entity_records_emitted": 0,
+        "relation_records_emitted": 0,
+        "knowledge_agent_calls": 0,
+        "relations_expected": 5,
+        "contradictions_expected": 1
+      }
+    }
+  },
+  "output": {
+    "entities": [],
+    "relations": [],
+    "source_references": [],
+    "citations": [],
+    "available_source_references": [
+      "SRC-001",
+      "SRC-002"
+    ],
+    "report": "",
+    "operational": {
+      "duration_ms": 94007.84,
+      "mode": "offline",
+      "iterations": 5,
+      "search_calls": 4,
+      "fetch_calls": 0,
+      "knowledge_base_calls": 0,
+      "termination_reason": "runtime_failure"
+    },
+    "graph_capture_source": "trace",
+    "key_findings": [],
+    "contradictions": [],
+    "reasoning_steps": [],
+    "reasoning_step_details": [],
+    "claims": [],
+    "structured_output": false,
+    "structured_output_valid": false,
+    "structured_output_complete": false,
+    "missing_structured_sections": [
+      "claims",
+      "contradictions",
+      "findings",
+      "reasoning_steps"
+    ],
+    "structured_output_errors": [],
+    "graph_capture_diagnostics": {
+      "entity_records_emitted": 0,
+      "relation_records_emitted": 0,
+      "knowledge_agent_calls": 0,
+      "relations_expected": 5,
+      "contradictions_expected": 1
+    }
+  },
+  "metrics": {
+    "output_validation": {
+      "valid": false,
+      "errors": []
+    },
+    "entities": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "missing": [
+        [
+          "alias",
+          "cl0p"
+        ],
+        [
+          "alias",
+          "cve-2023-34362"
+        ],
+        [
+          "alias",
+          "fin11"
+        ],
+        [
+          "alias",
+          "lemurloot"
+        ],
+        [
+          "alias",
+          "moveit transfer"
+        ],
+        [
+          "alias",
+          "unc4857"
+        ],
+        [
+          "organization",
+          "mandiant"
+        ],
+        [
+          "organization",
+          "nvd"
+        ]
+      ],
+      "unexpected": []
+    },
+    "relations": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "missing": [
+        [
+          [
+            "alias",
+            "cve-2023-34362"
+          ],
+          "affects",
+          [
+            "alias",
+            "moveit transfer"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "fin11"
+          ],
+          "linked_to_extortion_brand",
+          [
+            "alias",
+            "cl0p"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "unc4857"
+          ],
+          "deployed",
+          [
+            "alias",
+            "lemurloot"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "unc4857"
+          ],
+          "exploited",
+          [
+            "alias",
+            "cve-2023-34362"
+          ]
+        ],
+        [
+          [
+            "alias",
+            "unc4857"
+          ],
+          "merged_into",
+          [
+            "alias",
+            "fin11"
+          ]
+        ]
+      ],
+      "unexpected": [],
+      "semantic_mapping": {
+        "also_known_as": "alias_of",
+        "alias_of": "alias_of",
+        "co_founded": "founded",
+        "founded": "founded",
+        "based_in": "located_in",
+        "located_in": "located_in",
+        "performed_special_audit": "audited",
+        "audited": "audited",
+        "former_coo_of": "executive_of",
+        "executive_of": "executive_of",
+        "provided_software": "provided",
+        "distributed_as_installer": "distributed",
+        "contained_malware": "contained",
+        "trojanized": "compromised",
+        "associated_with": "associated_with",
+        "linked_to": "associated_with",
+        "uses_or_is_associated_with": "associated_with"
+      }
+    },
+    "contradictions": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "details": [],
+      "missing": [
+        "CONTRA-001"
+      ],
+      "unexpected": [],
+      "grounded_recall": 0.0,
+      "grounded_f1": 0.0
+    },
+    "key_findings": {
+      "score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "predicted": 0,
+      "expected": 3,
+      "matched": 0,
+      "details": [
+        {
+          "question": "What vulnerability enabled the campaign?",
+          "status": "missing",
+          "score": 0.0
+        },
+        {
+          "question": "What malware/tooling should be extracted?",
+          "status": "missing",
+          "score": 0.0
+        },
+        {
+          "question": "How should attribution be represented?",
+          "status": "missing",
+          "score": 0.0
+        }
+      ]
+    },
+    "source_traceability": {
+      "correct_sources": [],
+      "unknown_sources": [],
+      "unavailable_sources": [],
+      "source_precision": 0.0,
+      "source_recall": 0.0,
+      "ratio": 0.0,
+      "claim_level": {
+        "claims": 0,
+        "traceable_claims": 0,
+        "ratio": 0.0,
+        "status": "no_structured_claims"
+      },
+      "finding_level": {
+        "findings": 0,
+        "traceable_findings": 0,
+        "ratio": 0.0
+      }
+    },
+    "reasoning_coverage": {
+      "covered": [],
+      "invalid": [],
+      "total": 3,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "ratio": 0.0,
+      "status": "no_structured_steps"
+    },
+    "report_quality": {
+      "score": 0.0,
+      "checks": {
+        "non_empty": false,
+        "structured_output_complete": false,
+        "structured_output_valid": false,
+        "findings_present": false,
+        "findings_match": false,
+        "claims_traceable": false,
+        "contradictions_complete": false,
+        "contradictions_grounded": false,
+        "finding_sources_grounded": false,
+        "reasoning_conclusions_grounded": false,
+        "uncertainty_language": false,
+        "readable_length": false
+      },
+      "scale": "deterministic rubric 0-1"
+    },
+    "reasoning_quality": {
+      "covered": 0,
+      "expected": 3,
+      "coverage": 0.0,
+      "semantic_similarity": 0.0,
+      "premise_grounding": 0.0,
+      "grounded_score": 0.0,
+      "method": "premise_ids_plus_token_entailment_proxy",
+      "formula": "premise*conclusion",
+      "details": []
+    },
+    "operational": {
+      "duration_ms": 94007.84,
+      "mode": "offline",
+      "iterations": 5,
+      "search_calls": 4,
+      "fetch_calls": 0,
+      "knowledge_base_calls": 0,
+      "termination_reason": "runtime_failure"
+    },
+    "retrieval": {
+      "status": "not_annotated",
+      "topics": 0
+    }
+  }
+}

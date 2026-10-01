@@ -1,0 +1,111 @@
+INFO:tools.engine_search:Initializing OSINTAggregator
+INFO:agent.loop:Starting run for thread_id=benchmark-osint-005-3cfd4e19. LLM client provider=openai, model=gpt-5.6-luna
+INFO:agent.loop:Iteration 1/50: Calling LLM...
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:agent.loop:LLM requested 5 tool call(s)
+INFO:agent.loop:\u26a1 Executing tool: 'engine_search_tool' with arguments: {"query": "OneCoin fraud scheme founders roles Ruja Ignatova Karl Greenwood DOJ indictment official"}
+INFO:agent.loop:\u2699\ufe0f Tool 'engine_search_tool' execution complete. Result preview: {
+  "query": "OneCoin fraud scheme founders roles Ruja Ignatova Karl Greenwood DOJ indictment official",
+  "page": 1,
+  "page_size": 10,
+  "total": 2,
+  "sources": {
+    "benchmark": [
+      {
+       ...
+INFO:agent.loop:\u26a1 Executing tool: 'engine_search_tool' with arguments: {"query": "site:justice.gov OneCoin Ruja Ignatova Karl Greenwood Konstantin Ignatov fraud"}
+INFO:agent.loop:\u2699\ufe0f Tool 'engine_search_tool' execution complete. Result preview: {
+  "query": "site:justice.gov OneCoin Ruja Ignatova Karl Greenwood Konstantin Ignatov fraud",
+  "page": 1,
+  "page_size": 10,
+  "total": 2,
+  "sources": {
+    "benchmark": [
+      {
+        "title": ...
+INFO:agent.loop:\u26a1 Executing tool: 'engine_search_tool' with arguments: {"query": "OneCoin BBC Cryptoqueen disappearance status FBI wanted"}
+INFO:agent.loop:\u2699\ufe0f Tool 'engine_search_tool' execution complete. Result preview: {
+  "query": "OneCoin BBC Cryptoqueen disappearance status FBI wanted",
+  "page": 1,
+  "page_size": 10,
+  "total": 2,
+  "sources": {
+    "benchmark": [
+      {
+        "title": "Co-Founder of Fraudule...
+INFO:agent.loop:\u26a1 Executing tool: 'engine_search_tool' with arguments: {"query": "OneCoin Wikipedia founders Sebastian Greenwood Ruja Ignatova"}
+INFO:agent.loop:\u2699\ufe0f Tool 'engine_search_tool' execution complete. Result preview: {
+  "query": "OneCoin Wikipedia founders Sebastian Greenwood Ruja Ignatova",
+  "page": 1,
+  "page_size": 10,
+  "total": 2,
+  "sources": {
+    "benchmark": [
+      {
+        "title": "Justice Departmen...
+INFO:agent.loop:\u26a1 Executing tool: 'engine_search_tool' with arguments: {"query": "OneCoin official investigation Europol Ruja Ignatova FBI reward"}
+INFO:agent.loop:\u2699\ufe0f Tool 'engine_search_tool' execution complete. Result preview: {
+  "query": "OneCoin official investigation Europol Ruja Ignatova FBI reward",
+  "page": 1,
+  "page_size": 10,
+  "total": 2,
+  "sources": {
+    "benchmark": [
+      {
+        "title": "Justice Depart...
+INFO:agent.loop:Iteration 2/50: Calling LLM...
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:agent.loop:LLM requested 2 tool call(s)
+INFO:agent.loop:\u26a1 Executing tool: 'deep_search' with arguments: {"pages": ["https://www.justice.gov/opa/pr/justice-department-announces-compensation-process-onecoin-fraud-victims-funds-recovered"]}
+INFO:agent.loop:\u2699\ufe0f Tool 'deep_search' execution complete. Result preview: {
+  "success": true,
+  "pages": [
+    {
+      "success": true,
+      "url": "https://www.justice.gov/opa/pr/justice-department-announces-compensation-process-onecoin-fraud-victims-funds-recovered",
+  ...
+INFO:agent.loop:\u26a1 Executing tool: 'deep_search' with arguments: {"pages": ["https://www.afslaw.com/perspectives/investigations-blog/co-founder-fraudulent-cryptocurrency-sentenced-20-years-prison"]}
+INFO:agent.loop:\u2699\ufe0f Tool 'deep_search' execution complete. Result preview: {
+  "success": true,
+  "pages": [
+    {
+      "success": true,
+      "url": "https://www.afslaw.com/perspectives/investigations-blog/co-founder-fraudulent-cryptocurrency-sentenced-20-years-prison",
+  ...
+INFO:agent.loop:Iteration 3/50: Calling LLM...
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:agent.loop:LLM requested 2 tool call(s)
+INFO:agent.loop:\u26a1 Executing tool: 'knowledge_agent' with arguments: {"source_title": "Justice Department Announces Compensation Process for OneCoin Fraud Victims", "source_url": "https://www.justice.gov/opa/pr/justice-department-announces-compensation-process-onecoin-fraud-victims-funds-recovered", "text": "DOJ says that between 2014 and 2019 Ruja Ignatova and Karl Sebastian Greenwood, co-founders of OneCoin Ltd., and others orchestrated an international cryptocurrency investment scheme. OneCoin began operations in 2014, was based in Sofia, Bulgaria, and marketed/sold a fraudulent cryptocurrency through a global multi-level-marketing network. Misrepresentations led victims to invest over $4 billion worldwide. Several key figures were sentenced; DOJ pursued criminal forfeiture. More than $40 million in forfeited assets was available for victim compensation. DOJ identifies Ruja Ignatova as an FBI Top Ten Fugitive and says FBI/IRS-CI investigated and continue pursuing her location."}
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:neo4j.notifications:Received notification from DBMS server: <GqlStatusObject gql_status='00NA0', status_description="note: successful completion - index or constraint already exists. The command 'CREATE CONSTRAINT UNIQUE_ENTITY_PER_THREAD IF NOT EXISTS FOR (e:Entity) REQUIRE (e.thread_id, e.type, e.value) IS UNIQUE' has no effect. The index or constraint specified by 'CONSTRAINT UNIQUE_ENTITY_PER_THREAD FOR (e:Entity) REQUIRE (e.thread_id, e.type, e.value) IS UNIQUE' already exists.", position=None, raw_classification='SCHEMA', classification=<NotificationClassification.SCHEMA: 'SCHEMA'>, raw_severity='INFORMATION', severity=<NotificationSeverity.INFORMATION: 'INFORMATION'>, diagnostic_record={'_classification': 'SCHEMA', '_severity': 'INFORMATION', 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: 'CREATE CONSTRAINT UNIQUE_ENTITY_PER_THREAD IF NOT EXISTS FOR (e:Entity) REQUIRE (e.thread_id, e.type, e.value) IS UNIQUE'
+INFO:agent.loop:\u2699\ufe0f Tool 'knowledge_agent' execution complete. Result preview: {
+  "status": "ok",
+  "added_entities": [
+    "PERSON | Ruja Ignatova",
+    "PERSON | Karl Sebastian Greenwood",
+    "ORGANIZATION | OneCoin Ltd.",
+    "ORGANIZATION | U.S. Department of Justice",
+   ...
+INFO:agent.loop:\u26a1 Executing tool: 'knowledge_agent' with arguments: {"source_title": "Co-Founder of Fraudulent Cryptocurrency Sentenced to 20 Years in Prison", "source_url": "https://www.afslaw.com/perspectives/investigations-blog/co-founder-fraudulent-cryptocurrency-sentenced-20-years-prison", "text": "ArentFox Schiff summarizes prosecutors' account: OneCoin began in Bulgaria in 2014 and operated in the US around 2015; alleged misrepresentations secured over $4 billion from approximately 3.5 million investors. Greenwood allegedly claimed value was based on supply/demand though set arbitrarily, and claimed a private blockchain though no public verifiable blockchain existed. OneCoin used global MLM commissions for recruitment; Greenwood was described as top MLM distributor and alleged to have earned 5% of monthly sales, over $300 million. Karl Sebastian Greenwood, citizen of Sweden and UK and co-founder, was sentenced to 20 years in prison and ordered to forfeit approximately $300,000. Ruja Ignatova, the other co-founder, was described as remaining at large and added to FBI Top Ten Most Wanted in June 2022. Distinguish source's 'alleged' and 'prosecutors' descriptions from adjudicated facts."}
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:agent.loop:\u2699\ufe0f Tool 'knowledge_agent' execution complete. Result preview: {
+  "status": "ok",
+  "added_entities": [
+    "ORGANIZATION | OneCoin",
+    "ORGANIZATION | Federal Bureau of Investigation",
+    "PERSON | Karl Sebastian Greenwood",
+    "PERSON | Ruja Ignatova",
+   ...
+INFO:agent.loop:Iteration 4/50: Calling LLM...
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:agent.loop:LLM requested 2 tool call(s)
+INFO:agent.loop:\u26a1 Executing tool: 'kb_get' with arguments: {}
+INFO:agent.loop:\u2699\ufe0f Tool 'kb_get' execution complete. Result preview: DATE | 2014 | OneCoin began operations. | Year prosecutors' account states that OneCoin began in Bulgaria.
+DATE | 2014-2019 | Period during which DOJ says the scheme was orchestrated.
+DATE | 2015 | Ap...
+INFO:agent.loop:\u26a1 Executing tool: 'kb_get_edges' with arguments: {"limit": 100}
+INFO:agent.loop:\u2699\ufe0f Tool 'kb_get_edges' execution complete. Result preview: occurred_on | event:OneCoin international cryptocurrency investment scheme -> date:2014-2019 | evidence: DOJ says the scheme was orchestrated between 2014 and 2019.
+targeted | organization:Federal Bur...
+INFO:agent.loop:Iteration 5/50: Calling LLM...
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:agent.loop:No tool calls. Yielding final response (length=13714).

@@ -1,0 +1,8 @@
+D:\coding\osint-agent\outputs\candidate-runs\gpt-researcher\source\gpt_researcher\config\config.py:49: FutureWarning: LLM_PROVIDER, FAST_LLM_MODEL and SMART_LLM_MODEL are deprecated and will be removed soon. Use FAST_LLM and SMART_LLM instead.
+  self._handle_deprecated_attributes()
+INFO:     [01:14:32] \U0001f310 Browsing the web to learn more about the task: Investigate the following case using only evidence returned by the benchmark tools, then return a complete final report. Do not ask whether to continue.
+Goal: Investigate how HyperFund/HyperVerse combined alleged crypto Ponzi mechanics, public promoters, rebranding, and a questionable CEO persona to recruit investors.
+Target: HyperFund / HyperVerse alleged crypto fraud network
+
+Do not invent facts. Label allegations, assessments, and uncertainty. Cite only source IDs returned by tools. Include readable Markdown and a fenced JSON object containing arrays named findings, claims, reasoning_steps, and contradictions. Each finding should contain question, answer, supporting_entities, and source_references; each claim should contain claim and source_references; each reasoning step should contain id, conclusion, premise_entities, and premise_relations; each contradiction should contain contradiction_id, description, and source_references. Use IDs and relationship names only when they are supported by tool-returned evidence. Report uncertainty or omit unsupported items. The evaluator will score the report against the private benchmark annotations....
+INFO:     [01:14:32] \U0001f914 Planning the research strategy and subtasks...

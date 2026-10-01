@@ -1,0 +1,1082 @@
+{
+  "case_id": "OSINT-009",
+  "case_sha256": "3aa3b341383e011f9697da9fb4ff056c7fda89ebd8853c08dfc09bf79b841f83",
+  "trace": {
+    "thread_id": "benchmark-osint-009-46a8a969",
+    "tool_calls": [
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "Pandora Papers King Abdullah II offshore property network shell companies advisers jurisdictions luxury real estate locations ICIJ"
+        },
+        "started_at": 1790789055.4532385,
+        "result": "{\n  \"query\": \"Pandora Papers King Abdullah II offshore property network shell companies advisers jurisdictions luxury real estate locations ICIJ\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 4,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"Investigation reveals offshore assets of heads of state\",\n        \"url\": \"https://www.aljazeera.com/news/2021/10/3/investigation-reveals-offshore-assets-of-heads-of-state\",\n        \"snippet\": \"Jordan king exposed over tax havens and luxury homes | Pandora Papers News | Al Jazeera Skip links Skip to Content Live Sign up Navigation menu News Show more news sections Africa Asia US & Canada Latin America Europe Asia Pacific Middle East Explained Sport Opinion Video More Show more sections Features Economy Human Rights Climate Crisis Investigations Interactives In Pictures Science & Technology Podcasts Travel Sponsored Content Live Click here to search Sign up News | Pandora Papers Jordan king exposed over tax havens and luxury homes So-called Pandora Papers says King Abdullah II is among dozens of world leaders secretly holding millions of dollars offshore. Save Click here to share on social media Share Add Al Jazeera on Google King Abdullah's lawyers were cited as saying all the properties were bought with personal wealth [Elizabeth Frantz/Reuters] Published On 3 Oct 2021 3 Oct 2021 | Updated: 4 Oct 2021 10:52 AM (GMT) Updated: 4 Oct 2021 10:52 AM (GMT) Jordan’s King Abdullah I\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-003\"\n      },\n      {\n        \"title\": \"While foreign aid poured in, Jordan's King Abdullah funnelled $100 million into luxury homes\",\n        \"url\": \"https://www.icij.org/investigations/pandora-papers/jordan-king-abdullah-luxury-property/\",\n        \"snippet\": \"Jordan king exposed over tax havens and luxury homes | Pandora Papers News | Al Jazeera Skip links Skip to Content Live Sign up Navigation menu News Show more news sections Africa Asia US & Canada Latin America Europe Asia Pacific Middle East Explained Sport Opinion Video More Show more sections Features Economy Human Rights Climate Crisis Investigations Interactives In Pictures Science & Technology Podcasts Travel Sponsored Content Live Click here to search Sign up News | Pandora Papers Jordan king exposed over tax havens and luxury homes So-called Pandora Papers says King Abdullah II is among dozens of world leaders secretly holding millions of dollars offshore. Save Share Jordan king exposed over tax havens and luxury homes on social media Share Add Al Jazeera on Google King Abdullah's lawyers were cited as saying all the properties were bought with personal wealth [Elizabeth Frantz/Reuters] Published On 3 Oct 2021 3 Oct 2021 | Updated: 4 Oct 2021 10:52 AM (GMT) Updated: 4 Oct 2021 \",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-004\"\n      },\n      {\n        \"title\": \"King of Jordan hidden property empire worth more than $100m, Pandora papers reveal\",\n        \"url\": \"https://www.theguardian.com/news/2021/oct/03/king-of-jordan-hidden-property-empire-worth-more-than-100m-pandora-papers-reveal\",\n        \"snippet\": \"King of Jordan hidden property empire worth more than $100m, Pandora papers reveal | King Abdullah | The Guardian Skip to main content Skip to navigation Close dialogue 1 / 4 Next image Previous image Toggle caption Print subscriptions Search jobs Sign in Int International edition UK edition US edition Australia edition Europe edition The Guardian - Back to home The Guardian News Opinion Sport Culture Lifestyle Show more Hide expanded menu News View all News World news US politics UK news Climate crisis Middle East Ukraine Environment Science Global development Football Tech Business Obituaries Opinion View all Opinion The Guardian view Columnists Cartoons Opinion videos Letters Sport View all Sport Football Cricket Rugby union Tennis Cycling F1 Golf US sports Culture View all Culture Books Music TV & radio Art & design Film Games Classical Stage Lifestyle View all Lifestyle Fashion Food Recipes Love & sex Health & fitness Home & garden Women Men Family Travel Money Search input google\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      },\n      {\n        \"title\": \"Pandora Papers: The royal 'you know who' from Jordan\",\n        \"url\": \"https://www.dw.com/en/pandora-papers-the-king-of-jordans-hidden-property-gems/a-59403014\",\n        \"snippet\": \"Pandora Papers: The royal 'you know who' from Jordan Skip to content Skip to main menu Skip to more DW sites Latest videos Latest audio Regions Africa Asia Europe Latin America Middle East North America Germany Topics Climate Equality Health Human Rights Migration Technology Categories Business Science Environment Culture Sports In focus Ukraine Israel-Hamas conflict German politics Latest audio Latest videos Live TV Advertisement Politics Jordan Pandora Papers: The royal 'you know who' from Jordan Jennifer Holleis 10/04/2021 October 4, 2021 The global Pandora Papers investigation has shed light on King Abdullah II's investments abroad. Though probably not illegal, they are still at odds with the government's declared principles of financial transparency. https://p.dw.com/p/41FR8 King Abdullah II of Jordan is listed in the Pandora Papers but rejects any wrongdoings Image: Ameer Al Mohmmedaw/dpa/picture alliance Advertisement Jordan's King Abdullah II is among the prominent people liste\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"Investigation reveals offshore assets of heads of state\",\n      \"url\": \"https://www.aljazeera.com/news/2021/10/3/investigation-reveals-offshore-assets-of-heads-of-state\",\n      \"snippet\": \"Jordan king exposed over tax havens and luxury homes | Pandora Papers News | Al Jazeera Skip links Skip to Content Live Sign up Navigation menu News Show more news sections Africa Asia US & Canada Latin America Europe Asia Pacific Middle East Explained Sport Opinion Video More Show more sections Features Economy Human Rights Climate Crisis Investigations Interactives In Pictures Science & Technology Podcasts Travel Sponsored Content Live Click here to search Sign up News | Pandora Papers Jordan king exposed over tax havens and luxury homes So-called Pandora Papers says King Abdullah II is among dozens of world leaders secretly holding millions of dollars offshore. Save Click here to share on social media Share Add Al Jazeera on Google King Abdullah's lawyers were cited as saying all the properties were bought with personal wealth [Elizabeth Frantz/Reuters] Published On 3 Oct 2021 3 Oct 2021 | Updated: 4 Oct 2021 10:52 AM (GMT) Updated: 4 Oct 2021 10:52 AM (GMT) Jordan’s King Abdullah I\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-003\"\n    },\n    {\n      \"title\": \"While foreign aid poured in, Jordan's King Abdullah funnelled $100 million into luxury homes\",\n      \"url\": \"https://www.icij.org/investigations/pandora-papers/jordan-king-abdullah-luxury-property/\",\n      \"snippet\": \"Jordan king exposed over tax havens and luxury homes | Pandora Papers News | Al Jazeera Skip links Skip to Content Live Sign up Navigation menu News Show more news sections Africa Asia US & Canada Latin America Europe Asia Pacific Middle East Explained Sport Opinion Video More Show more sections Features Economy Human Rights Climate Crisis Investigations Interactives In Pictures Science & Technology Podcasts Travel Sponsored Content Live Click here to search Sign up News | Pandora Papers Jordan king exposed over tax havens and luxury homes So-called Pandora Papers says King Abdullah II is among dozens of world leaders secretly holding millions of dollars offshore. Save Share Jordan king exposed over tax havens and luxury homes on social media Share Add Al Jazeera on Google King Abdullah's lawyers were cited as saying all the properties were bought with personal wealth [Elizabeth Frantz/Reuters] Published On 3 Oct 2021 3 Oct 2021 | Updated: 4 Oct 2021 10:52 AM (GMT) Updated: 4 Oct 2021 \",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-004\"\n    },\n    {\n      \"title\": \"King of Jordan hidden property empire worth more than $100m, Pandora papers reveal\",\n      \"url\": \"https://www.theguardian.com/news/2021/oct/03/king-of-jordan-hidden-property-empire-worth-more-than-100m-pandora-papers-reveal\",\n      \"snippet\": \"King of Jordan hidden property empire worth more than $100m, Pandora papers reveal | King Abdullah | The Guardian Skip to main content Skip to navigation Close dialogue 1 / 4 Next image Previous image Toggle caption Print subscriptions Search jobs Sign in Int International edition UK edition US edition Australia edition Europe edition The Guardian - Back to home The Guardian News Opinion Sport Culture Lifestyle Show more Hide expanded menu News View all News World news US politics UK news Climate crisis Middle East Ukraine Environment Science Global development Football Tech Business Obituaries Opinion View all Opinion The Guardian view Columnists Cartoons Opinion videos Letters Sport View all Sport Football Cricket Rugby union Tennis Cycling F1 Golf US sports Culture View all Culture Books Music TV & radio Art & design Film Games Classical Stage Lifestyle View all Lifestyle Fashion Food Recipes Love & sex Health & fitness Home & garden Women Men Family Travel Money Search input google\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    },\n    {\n      \"title\": \"Pandora Papers: The royal 'you know who' from Jordan\",\n      \"url\": \"https://www.dw.com/en/pandora-papers-the-king-of-jordans-hidden-property-gems/a-59403014\",\n      \"snippet\": \"Pandora Papers: The royal 'you know who' from Jordan Skip to content Skip to main menu Skip to more DW sites Latest videos Latest audio Regions Africa Asia Europe Latin America Middle East North America Germany Topics Climate Equality Health Human Rights Migration Technology Categories Business Science Environment Culture Sports In focus Ukraine Israel-Hamas conflict German politics Latest audio Latest videos Live TV Advertisement Politics Jordan Pandora Papers: The royal 'you know who' from Jordan Jennifer Holleis 10/04/2021 October 4, 2021 The global Pandora Papers investigation has shed light on King Abdullah II's investments abroad. Though probably not illegal, they are still at odds with the government's declared principles of financial transparency. https://p.dw.com/p/41FR8 King Abdullah II of Jordan is listed in the Pandora Papers but rejects any wrongdoings Image: Ameer Al Mohmmedaw/dpa/picture alliance Advertisement Jordan's King Abdullah II is among the prominent people liste\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 4.59
+      },
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "site:icij.org/investigations/pandora-papers Jordan King Abdullah II properties companies advisers"
+        },
+        "started_at": 1790789055.4583526,
+        "result": "{\n  \"query\": \"site:icij.org/investigations/pandora-papers Jordan King Abdullah II properties companies advisers\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 4,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"While foreign aid poured in, Jordan's King Abdullah funnelled $100 million into luxury homes\",\n        \"url\": \"https://www.icij.org/investigations/pandora-papers/jordan-king-abdullah-luxury-property/\",\n        \"snippet\": \"Jordan king exposed over tax havens and luxury homes | Pandora Papers News | Al Jazeera Skip links Skip to Content Live Sign up Navigation menu News Show more news sections Africa Asia US & Canada Latin America Europe Asia Pacific Middle East Explained Sport Opinion Video More Show more sections Features Economy Human Rights Climate Crisis Investigations Interactives In Pictures Science & Technology Podcasts Travel Sponsored Content Live Click here to search Sign up News | Pandora Papers Jordan king exposed over tax havens and luxury homes So-called Pandora Papers says King Abdullah II is among dozens of world leaders secretly holding millions of dollars offshore. Save Share Jordan king exposed over tax havens and luxury homes on social media Share Add Al Jazeera on Google King Abdullah's lawyers were cited as saying all the properties were bought with personal wealth [Elizabeth Frantz/Reuters] Published On 3 Oct 2021 3 Oct 2021 | Updated: 4 Oct 2021 10:52 AM (GMT) Updated: 4 Oct 2021 \",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-004\"\n      },\n      {\n        \"title\": \"Investigation reveals offshore assets of heads of state\",\n        \"url\": \"https://www.aljazeera.com/news/2021/10/3/investigation-reveals-offshore-assets-of-heads-of-state\",\n        \"snippet\": \"Jordan king exposed over tax havens and luxury homes | Pandora Papers News | Al Jazeera Skip links Skip to Content Live Sign up Navigation menu News Show more news sections Africa Asia US & Canada Latin America Europe Asia Pacific Middle East Explained Sport Opinion Video More Show more sections Features Economy Human Rights Climate Crisis Investigations Interactives In Pictures Science & Technology Podcasts Travel Sponsored Content Live Click here to search Sign up News | Pandora Papers Jordan king exposed over tax havens and luxury homes So-called Pandora Papers says King Abdullah II is among dozens of world leaders secretly holding millions of dollars offshore. Save Click here to share on social media Share Add Al Jazeera on Google King Abdullah's lawyers were cited as saying all the properties were bought with personal wealth [Elizabeth Frantz/Reuters] Published On 3 Oct 2021 3 Oct 2021 | Updated: 4 Oct 2021 10:52 AM (GMT) Updated: 4 Oct 2021 10:52 AM (GMT) Jordan’s King Abdullah I\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-003\"\n      },\n      {\n        \"title\": \"Pandora Papers: The royal 'you know who' from Jordan\",\n        \"url\": \"https://www.dw.com/en/pandora-papers-the-king-of-jordans-hidden-property-gems/a-59403014\",\n        \"snippet\": \"Pandora Papers: The royal 'you know who' from Jordan Skip to content Skip to main menu Skip to more DW sites Latest videos Latest audio Regions Africa Asia Europe Latin America Middle East North America Germany Topics Climate Equality Health Human Rights Migration Technology Categories Business Science Environment Culture Sports In focus Ukraine Israel-Hamas conflict German politics Latest audio Latest videos Live TV Advertisement Politics Jordan Pandora Papers: The royal 'you know who' from Jordan Jennifer Holleis 10/04/2021 October 4, 2021 The global Pandora Papers investigation has shed light on King Abdullah II's investments abroad. Though probably not illegal, they are still at odds with the government's declared principles of financial transparency. https://p.dw.com/p/41FR8 King Abdullah II of Jordan is listed in the Pandora Papers but rejects any wrongdoings Image: Ameer Al Mohmmedaw/dpa/picture alliance Advertisement Jordan's King Abdullah II is among the prominent people liste\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      },\n      {\n        \"title\": \"King of Jordan hidden property empire worth more than $100m, Pandora papers reveal\",\n        \"url\": \"https://www.theguardian.com/news/2021/oct/03/king-of-jordan-hidden-property-empire-worth-more-than-100m-pandora-papers-reveal\",\n        \"snippet\": \"King of Jordan hidden property empire worth more than $100m, Pandora papers reveal | King Abdullah | The Guardian Skip to main content Skip to navigation Close dialogue 1 / 4 Next image Previous image Toggle caption Print subscriptions Search jobs Sign in Int International edition UK edition US edition Australia edition Europe edition The Guardian - Back to home The Guardian News Opinion Sport Culture Lifestyle Show more Hide expanded menu News View all News World news US politics UK news Climate crisis Middle East Ukraine Environment Science Global development Football Tech Business Obituaries Opinion View all Opinion The Guardian view Columnists Cartoons Opinion videos Letters Sport View all Sport Football Cricket Rugby union Tennis Cycling F1 Golf US sports Culture View all Culture Books Music TV & radio Art & design Film Games Classical Stage Lifestyle View all Lifestyle Fashion Food Recipes Love & sex Health & fitness Home & garden Women Men Family Travel Money Search input google\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"While foreign aid poured in, Jordan's King Abdullah funnelled $100 million into luxury homes\",\n      \"url\": \"https://www.icij.org/investigations/pandora-papers/jordan-king-abdullah-luxury-property/\",\n      \"snippet\": \"Jordan king exposed over tax havens and luxury homes | Pandora Papers News | Al Jazeera Skip links Skip to Content Live Sign up Navigation menu News Show more news sections Africa Asia US & Canada Latin America Europe Asia Pacific Middle East Explained Sport Opinion Video More Show more sections Features Economy Human Rights Climate Crisis Investigations Interactives In Pictures Science & Technology Podcasts Travel Sponsored Content Live Click here to search Sign up News | Pandora Papers Jordan king exposed over tax havens and luxury homes So-called Pandora Papers says King Abdullah II is among dozens of world leaders secretly holding millions of dollars offshore. Save Share Jordan king exposed over tax havens and luxury homes on social media Share Add Al Jazeera on Google King Abdullah's lawyers were cited as saying all the properties were bought with personal wealth [Elizabeth Frantz/Reuters] Published On 3 Oct 2021 3 Oct 2021 | Updated: 4 Oct 2021 10:52 AM (GMT) Updated: 4 Oct 2021 \",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-004\"\n    },\n    {\n      \"title\": \"Investigation reveals offshore assets of heads of state\",\n      \"url\": \"https://www.aljazeera.com/news/2021/10/3/investigation-reveals-offshore-assets-of-heads-of-state\",\n      \"snippet\": \"Jordan king exposed over tax havens and luxury homes | Pandora Papers News | Al Jazeera Skip links Skip to Content Live Sign up Navigation menu News Show more news sections Africa Asia US & Canada Latin America Europe Asia Pacific Middle East Explained Sport Opinion Video More Show more sections Features Economy Human Rights Climate Crisis Investigations Interactives In Pictures Science & Technology Podcasts Travel Sponsored Content Live Click here to search Sign up News | Pandora Papers Jordan king exposed over tax havens and luxury homes So-called Pandora Papers says King Abdullah II is among dozens of world leaders secretly holding millions of dollars offshore. Save Click here to share on social media Share Add Al Jazeera on Google King Abdullah's lawyers were cited as saying all the properties were bought with personal wealth [Elizabeth Frantz/Reuters] Published On 3 Oct 2021 3 Oct 2021 | Updated: 4 Oct 2021 10:52 AM (GMT) Updated: 4 Oct 2021 10:52 AM (GMT) Jordan’s King Abdullah I\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-003\"\n    },\n    {\n      \"title\": \"Pandora Papers: The royal 'you know who' from Jordan\",\n      \"url\": \"https://www.dw.com/en/pandora-papers-the-king-of-jordans-hidden-property-gems/a-59403014\",\n      \"snippet\": \"Pandora Papers: The royal 'you know who' from Jordan Skip to content Skip to main menu Skip to more DW sites Latest videos Latest audio Regions Africa Asia Europe Latin America Middle East North America Germany Topics Climate Equality Health Human Rights Migration Technology Categories Business Science Environment Culture Sports In focus Ukraine Israel-Hamas conflict German politics Latest audio Latest videos Live TV Advertisement Politics Jordan Pandora Papers: The royal 'you know who' from Jordan Jennifer Holleis 10/04/2021 October 4, 2021 The global Pandora Papers investigation has shed light on King Abdullah II's investments abroad. Though probably not illegal, they are still at odds with the government's declared principles of financial transparency. https://p.dw.com/p/41FR8 King Abdullah II of Jordan is listed in the Pandora Papers but rejects any wrongdoings Image: Ameer Al Mohmmedaw/dpa/picture alliance Advertisement Jordan's King Abdullah II is among the prominent people liste\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    },\n    {\n      \"title\": \"King of Jordan hidden property empire worth more than $100m, Pandora papers reveal\",\n      \"url\": \"https://www.theguardian.com/news/2021/oct/03/king-of-jordan-hidden-property-empire-worth-more-than-100m-pandora-papers-reveal\",\n      \"snippet\": \"King of Jordan hidden property empire worth more than $100m, Pandora papers reveal | King Abdullah | The Guardian Skip to main content Skip to navigation Close dialogue 1 / 4 Next image Previous image Toggle caption Print subscriptions Search jobs Sign in Int International edition UK edition US edition Australia edition Europe edition The Guardian - Back to home The Guardian News Opinion Sport Culture Lifestyle Show more Hide expanded menu News View all News World news US politics UK news Climate crisis Middle East Ukraine Environment Science Global development Football Tech Business Obituaries Opinion View all Opinion The Guardian view Columnists Cartoons Opinion videos Letters Sport View all Sport Football Cricket Rugby union Tennis Cycling F1 Golf US sports Culture View all Culture Books Music TV & radio Art & design Film Games Classical Stage Lifestyle View all Lifestyle Fashion Food Recipes Love & sex Health & fitness Home & garden Women Men Family Travel Money Search input google\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 2.96
+      },
+      {
+        "name": "engine_search_tool",
+        "arguments": {
+          "query": "King Abdullah II Pandora Papers Malibu London Washington companies Trident Trust"
+        },
+        "started_at": 1790789055.4618025,
+        "result": "{\n  \"query\": \"King Abdullah II Pandora Papers Malibu London Washington companies Trident Trust\",\n  \"page\": 1,\n  \"page_size\": 10,\n  \"total\": 4,\n  \"sources\": {\n    \"benchmark\": [\n      {\n        \"title\": \"King of Jordan hidden property empire worth more than $100m, Pandora papers reveal\",\n        \"url\": \"https://www.theguardian.com/news/2021/oct/03/king-of-jordan-hidden-property-empire-worth-more-than-100m-pandora-papers-reveal\",\n        \"snippet\": \"King of Jordan hidden property empire worth more than $100m, Pandora papers reveal | King Abdullah | The Guardian Skip to main content Skip to navigation Close dialogue 1 / 4 Next image Previous image Toggle caption Print subscriptions Search jobs Sign in Int International edition UK edition US edition Australia edition Europe edition The Guardian - Back to home The Guardian News Opinion Sport Culture Lifestyle Show more Hide expanded menu News View all News World news US politics UK news Climate crisis Middle East Ukraine Environment Science Global development Football Tech Business Obituaries Opinion View all Opinion The Guardian view Columnists Cartoons Opinion videos Letters Sport View all Sport Football Cricket Rugby union Tennis Cycling F1 Golf US sports Culture View all Culture Books Music TV & radio Art & design Film Games Classical Stage Lifestyle View all Lifestyle Fashion Food Recipes Love & sex Health & fitness Home & garden Women Men Family Travel Money Search input google\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-002\"\n      },\n      {\n        \"title\": \"Investigation reveals offshore assets of heads of state\",\n        \"url\": \"https://www.aljazeera.com/news/2021/10/3/investigation-reveals-offshore-assets-of-heads-of-state\",\n        \"snippet\": \"Jordan king exposed over tax havens and luxury homes | Pandora Papers News | Al Jazeera Skip links Skip to Content Live Sign up Navigation menu News Show more news sections Africa Asia US & Canada Latin America Europe Asia Pacific Middle East Explained Sport Opinion Video More Show more sections Features Economy Human Rights Climate Crisis Investigations Interactives In Pictures Science & Technology Podcasts Travel Sponsored Content Live Click here to search Sign up News | Pandora Papers Jordan king exposed over tax havens and luxury homes So-called Pandora Papers says King Abdullah II is among dozens of world leaders secretly holding millions of dollars offshore. Save Click here to share on social media Share Add Al Jazeera on Google King Abdullah's lawyers were cited as saying all the properties were bought with personal wealth [Elizabeth Frantz/Reuters] Published On 3 Oct 2021 3 Oct 2021 | Updated: 4 Oct 2021 10:52 AM (GMT) Updated: 4 Oct 2021 10:52 AM (GMT) Jordan’s King Abdullah I\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-003\"\n      },\n      {\n        \"title\": \"While foreign aid poured in, Jordan's King Abdullah funnelled $100 million into luxury homes\",\n        \"url\": \"https://www.icij.org/investigations/pandora-papers/jordan-king-abdullah-luxury-property/\",\n        \"snippet\": \"Jordan king exposed over tax havens and luxury homes | Pandora Papers News | Al Jazeera Skip links Skip to Content Live Sign up Navigation menu News Show more news sections Africa Asia US & Canada Latin America Europe Asia Pacific Middle East Explained Sport Opinion Video More Show more sections Features Economy Human Rights Climate Crisis Investigations Interactives In Pictures Science & Technology Podcasts Travel Sponsored Content Live Click here to search Sign up News | Pandora Papers Jordan king exposed over tax havens and luxury homes So-called Pandora Papers says King Abdullah II is among dozens of world leaders secretly holding millions of dollars offshore. Save Share Jordan king exposed over tax havens and luxury homes on social media Share Add Al Jazeera on Google King Abdullah's lawyers were cited as saying all the properties were bought with personal wealth [Elizabeth Frantz/Reuters] Published On 3 Oct 2021 3 Oct 2021 | Updated: 4 Oct 2021 10:52 AM (GMT) Updated: 4 Oct 2021 \",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-004\"\n      },\n      {\n        \"title\": \"Pandora Papers: The royal 'you know who' from Jordan\",\n        \"url\": \"https://www.dw.com/en/pandora-papers-the-king-of-jordans-hidden-property-gems/a-59403014\",\n        \"snippet\": \"Pandora Papers: The royal 'you know who' from Jordan Skip to content Skip to main menu Skip to more DW sites Latest videos Latest audio Regions Africa Asia Europe Latin America Middle East North America Germany Topics Climate Equality Health Human Rights Migration Technology Categories Business Science Environment Culture Sports In focus Ukraine Israel-Hamas conflict German politics Latest audio Latest videos Live TV Advertisement Politics Jordan Pandora Papers: The royal 'you know who' from Jordan Jennifer Holleis 10/04/2021 October 4, 2021 The global Pandora Papers investigation has shed light on King Abdullah II's investments abroad. Though probably not illegal, they are still at odds with the government's declared principles of financial transparency. https://p.dw.com/p/41FR8 King Abdullah II of Jordan is listed in the Pandora Papers but rejects any wrongdoings Image: Ameer Al Mohmmedaw/dpa/picture alliance Advertisement Jordan's King Abdullah II is among the prominent people liste\",\n        \"source\": \"benchmark\",\n        \"source_id\": \"SRC-001\"\n      }\n    ]\n  },\n  \"merged_results\": [\n    {\n      \"title\": \"King of Jordan hidden property empire worth more than $100m, Pandora papers reveal\",\n      \"url\": \"https://www.theguardian.com/news/2021/oct/03/king-of-jordan-hidden-property-empire-worth-more-than-100m-pandora-papers-reveal\",\n      \"snippet\": \"King of Jordan hidden property empire worth more than $100m, Pandora papers reveal | King Abdullah | The Guardian Skip to main content Skip to navigation Close dialogue 1 / 4 Next image Previous image Toggle caption Print subscriptions Search jobs Sign in Int International edition UK edition US edition Australia edition Europe edition The Guardian - Back to home The Guardian News Opinion Sport Culture Lifestyle Show more Hide expanded menu News View all News World news US politics UK news Climate crisis Middle East Ukraine Environment Science Global development Football Tech Business Obituaries Opinion View all Opinion The Guardian view Columnists Cartoons Opinion videos Letters Sport View all Sport Football Cricket Rugby union Tennis Cycling F1 Golf US sports Culture View all Culture Books Music TV & radio Art & design Film Games Classical Stage Lifestyle View all Lifestyle Fashion Food Recipes Love & sex Health & fitness Home & garden Women Men Family Travel Money Search input google\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-002\"\n    },\n    {\n      \"title\": \"Investigation reveals offshore assets of heads of state\",\n      \"url\": \"https://www.aljazeera.com/news/2021/10/3/investigation-reveals-offshore-assets-of-heads-of-state\",\n      \"snippet\": \"Jordan king exposed over tax havens and luxury homes | Pandora Papers News | Al Jazeera Skip links Skip to Content Live Sign up Navigation menu News Show more news sections Africa Asia US & Canada Latin America Europe Asia Pacific Middle East Explained Sport Opinion Video More Show more sections Features Economy Human Rights Climate Crisis Investigations Interactives In Pictures Science & Technology Podcasts Travel Sponsored Content Live Click here to search Sign up News | Pandora Papers Jordan king exposed over tax havens and luxury homes So-called Pandora Papers says King Abdullah II is among dozens of world leaders secretly holding millions of dollars offshore. Save Click here to share on social media Share Add Al Jazeera on Google King Abdullah's lawyers were cited as saying all the properties were bought with personal wealth [Elizabeth Frantz/Reuters] Published On 3 Oct 2021 3 Oct 2021 | Updated: 4 Oct 2021 10:52 AM (GMT) Updated: 4 Oct 2021 10:52 AM (GMT) Jordan’s King Abdullah I\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-003\"\n    },\n    {\n      \"title\": \"While foreign aid poured in, Jordan's King Abdullah funnelled $100 million into luxury homes\",\n      \"url\": \"https://www.icij.org/investigations/pandora-papers/jordan-king-abdullah-luxury-property/\",\n      \"snippet\": \"Jordan king exposed over tax havens and luxury homes | Pandora Papers News | Al Jazeera Skip links Skip to Content Live Sign up Navigation menu News Show more news sections Africa Asia US & Canada Latin America Europe Asia Pacific Middle East Explained Sport Opinion Video More Show more sections Features Economy Human Rights Climate Crisis Investigations Interactives In Pictures Science & Technology Podcasts Travel Sponsored Content Live Click here to search Sign up News | Pandora Papers Jordan king exposed over tax havens and luxury homes So-called Pandora Papers says King Abdullah II is among dozens of world leaders secretly holding millions of dollars offshore. Save Share Jordan king exposed over tax havens and luxury homes on social media Share Add Al Jazeera on Google King Abdullah's lawyers were cited as saying all the properties were bought with personal wealth [Elizabeth Frantz/Reuters] Published On 3 Oct 2021 3 Oct 2021 | Updated: 4 Oct 2021 10:52 AM (GMT) Updated: 4 Oct 2021 \",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-004\"\n    },\n    {\n      \"title\": \"Pandora Papers: The royal 'you know who' from Jordan\",\n      \"url\": \"https://www.dw.com/en/pandora-papers-the-king-of-jordans-hidden-property-gems/a-59403014\",\n      \"snippet\": \"Pandora Papers: The royal 'you know who' from Jordan Skip to content Skip to main menu Skip to more DW sites Latest videos Latest audio Regions Africa Asia Europe Latin America Middle East North America Germany Topics Climate Equality Health Human Rights Migration Technology Categories Business Science Environment Culture Sports In focus Ukraine Israel-Hamas conflict German politics Latest audio Latest videos Live TV Advertisement Politics Jordan Pandora Papers: The royal 'you know who' from Jordan Jennifer Holleis 10/04/2021 October 4, 2021 The global Pandora Papers investigation has shed light on King Abdullah II's investments abroad. Though probably not illegal, they are still at odds with the government's declared principles of financial transparency. https://p.dw.com/p/41FR8 King Abdullah II of Jordan is listed in the Pandora Papers but rejects any wrongdoings Image: Ameer Al Mohmmedaw/dpa/picture alliance Advertisement Jordan's King Abdullah II is among the prominent people liste\",\n      \"source\": \"benchmark\",\n      \"source_id\": \"SRC-001\"\n    }\n  ],\n  \"errors\": {}\n}",
+        "duration_ms": 2.6
+      },
+      {
+        "name": "deep_search",
+        "arguments": {
+          "pages": [
+            "https://www.icij.org/investigations/pandora-papers/jordan-king-abdullah-luxury-property/"
+          ]
+        },
+        "started_at": 1790789081.7451916,
+        "result": "{\n  \"success\": true,\n  \"pages\": [\n    {\n      \"success\": true,\n      \"url\": \"https://www.icij.org/investigations/pandora-papers/jordan-king-abdullah-luxury-property/\",\n      \"source_id\": \"SRC-004\",\n      \"title\": \"While foreign aid poured in, Jordan's King Abdullah funnelled $100 million into luxury homes\",\n      \"content\": {\n        \"page_title\": \"While foreign aid poured in, Jordan's King Abdullah funnelled $100 million into luxury homes\",\n        \"fetch_error\": \"Not Allowed\"\n      },\n      \"raw_text\": \"Jordan king exposed over tax havens and luxury homes | Pandora Papers News | Al Jazeera Skip links Skip to Content Live Sign up Navigation menu News Show more news sections Africa Asia US & Canada Latin America Europe Asia Pacific Middle East Explained Sport Opinion Video More Show more sections Features Economy Human Rights Climate Crisis Investigations Interactives In Pictures Science & Technology Podcasts Travel Sponsored Content Live Click here to search Sign up News | Pandora Papers Jordan king exposed over tax havens and luxury homes So-called Pandora Papers says King Abdullah II is among dozens of world leaders secretly holding millions of dollars offshore. Save Share Jordan king exposed over tax havens and luxury homes on social media Share Add Al Jazeera on Google King Abdullah's lawyers were cited as saying all the properties were bought with personal wealth [Elizabeth Frantz/Reuters] Published On 3 Oct 2021 3 Oct 2021 | Updated: 4 Oct 2021 10:52 AM (GMT) Updated: 4 Oct 2021 10:52 AM (GMT) Jordan’s King Abdullah II is among dozens of world leaders to have hidden millions of dollars in offshore tax havens and secretly bought luxury homes around the globe, according to an investigation published on Sunday. The so-called Pandora Papers probe involving some 600 journalists is based on the leak of some 11.9 million documents from 14 global financial services. Recommended Stories list of 4 items list 1 of 4 South Africa court postpones Zuma corruption trial to September list 2 of 4 Peru kicks off corruption case against Keiko Fujimori list 3 of 4 China’s anti-corruption watchdog eyes new target: alcohol list 4 of 4 Tunisia: Former anti-corruption chief placed under house arrest end of list The documents show how King Abdullah II created a network of offshore companies and tax havens to amass a $100m property empire from Malibu, California to Washington, DC and London. According to the investigation: “Three beachfront mansions in Malibu [were] purchased through three offshore companies for $68 million by the King of Jordan in the years after Jordanians filled the streets during Arab Spring to protest joblessness and corruption.” Abdullah, 59, also owns three luxury apartments in a complex in Washington, DC, with panoramic views of the Potomac River, and a house in Ascot, one of England’s most expensive towns, along with multimillion-dollar apartments in central London, the report said. “Jordan doesn’t have the kind of money that other Middle Eastern monarchies, like Saudi Arabia, have to allow a king to flaunt his wealth,” Annelle Sheline, a Middle East scholar, was quoted as saying. “If the Jordanian monarch were to display his wealth more publicly, it wouldn’t only antagonize his people, it would p**s off Western donors who have given him money.” The royal palace said on Monday that King Abdullah’s properties in the US and UK were “no secret”, and that privacy and security reasons were behind not disclosing it. Advertisement “This is not unusual nor improper,” said the royal palace statement. “The cost of these properties and all related expenditures have been personally funded by His Majesty. None of these expenses have been funded by the state budget or treasury,” the statement continued. The Jordanian palace said these properties were used during official visits and some of these are used during private visits. King Abdullah’s lawyers were cited saying all the properties were bought with personal wealth, and it was common practice for high-profile individuals to buy properties via offshore companies for privacy and security reasons. “Any implication that there is something improper about ownership of property through companies in offshore jurisdictions is categorically denied,” said DLA Piper, the law firm that represents the monarch. “[Abdullah] has not at any point misused public monies or made any use whatsoever of the proceeds of aid or assistance intended for public use.” 336 high-level politicians Some 35 current and former leaders are featured in the documents analysed by the International Consortium of Investigative Journalists (ICIJ) – facing allegations ranging from corruption to money laundering and global tax avoidance. The documents also show Czech Prime Minister Andrej Babis – facing an election later this week – failed to declare an offshore investment company used to buy a chateau worth $22m in the south of France. In total, the ICIJ found links between almost 1,000 companies in offshore havens and 336 high-level politicians and public officials, including country leaders, cabinet ministers, ambassadors and others. More than two-thirds of the companies were set up in the British Virgin Islands. In most countries, the ICIJ stresses, it is not illegal to have assets offshore or to use shell companies to do business across national borders. But such revelations are no less of an embarrassment for leaders who may have campaigned publicly against corruption, or advocated austerity measures at home. “The new data leak must be a wake-up call,” said Sven Giegold, a Green party lawmaker in the European Parliament. “Global tax evasion fuels global inequality. We need to expand and sharpen the countermeasures now.” Aliyev and Kenyatta on the list Among the other revelations from the ICIJ investigation: Family and associates of Azerbaijani President Ilham Aliyev are alleged to have been secretly involved in property deals in Britain worth hundreds of millions. Kenyan President Uhuru Kenyatta and six family members are alleged to secretly own a network of offshore companies. Members of Pakistan Prime Minister Imran Khan’s inner circle, including cabinet ministers and their families, are said to secretly own companies and trusts holding millions of dollars. Russian President Vladimir Putin is not directly named in the files, but he is linked via associates to secret assets in Monaco. Advertisement The Pandora Papers are the latest in a series of mass ICIJ leaks of financial documents that started with LuxLeaks in 2014, and was followed by the Panama Papers, the Paradise Papers and FinCen. The documents behind the latest investigation are drawn from financial services companies in countries including the British Virgin Islands, Panama, Belize, Cyprus, the United Arab Emirates, Singapore and Switzerland. The latest bombshell is even more expansive than the Panama Papers, porting through nearly 3 terabytes of data — the equivalent of roughly 750,000 photos on a smartphone — leaked from 14 different service providers doing business in 38 different jurisdictions in the world. The records date back to the 1970s, but most of the files span from 1996 to 2020. Advertisement About About Show more About Us Code of Ethics Terms and Conditions EU/EEA Regulatory Notice Privacy Policy Cookie Policy Cookie Preferences Accessibility Statement Sitemap Work for us Connect Connect Show more Contact Us User Accounts Help Advertise with us Stay Connected Newsletters Channel Finder TV Schedule Podcasts Submit a Tip Paid Partner Content Our Channels Our Channels Show more Al Jazeera Arabic Al Jazeera English Al Jazeera Investigative Unit Al Jazeera Mubasher Al Jazeera Documentary Al Jazeera Balkans AJ+ Our Network Our Network Show more Al Jazeera Centre for Studies Al Jazeera Media Institute Learn Arabic Al Jazeera Centre for Public Liberties & Human Rights Al Jazeera Forum Al Jazeera Hotel Partners Follow Al Jazeera English: © 2026 Al Jazeera Media Network\"\n    }\n  ],\n  \"query_trace\": [\n    {\n      \"query\": \"Pandora Papers King Abdullah II offshore property network shell companies advisers jurisdictions luxury real estate locations ICIJ\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-003\",\n        \"SRC-004\",\n        \"SRC-002\",\n        \"SRC-001\"\n      ],\n      \"total\": 4\n    },\n    {\n      \"query\": \"site:icij.org/investigations/pandora-papers Jordan King Abdullah II properties companies advisers\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-004\",\n        \"SRC-003\",\n        \"SRC-001\",\n        \"SRC-002\"\n      ],\n      \"total\": 4\n    },\n    {\n      \"query\": \"King Abdullah II Pandora Papers Malibu London Washington companies Trident Trust\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-002\",\n        \"SRC-003\",\n        \"SRC-004\",\n        \"SRC-001\"\n      ],\n      \"total\": 4\n    }\n  ],\n  \"error\": null\n}",
+        "duration_ms": 0.16
+      },
+      {
+        "name": "deep_search",
+        "arguments": {
+          "pages": [
+            "https://www.theguardian.com/news/2021/oct/03/king-of-jordan-hidden-property-empire-worth-more-than-100m-pandora-papers-reveal"
+          ]
+        },
+        "started_at": 1790789081.7459402,
+        "result": "{\n  \"success\": true,\n  \"pages\": [\n    {\n      \"success\": true,\n      \"url\": \"https://www.theguardian.com/news/2021/oct/03/king-of-jordan-hidden-property-empire-worth-more-than-100m-pandora-papers-reveal\",\n      \"source_id\": \"SRC-002\",\n      \"title\": \"King of Jordan hidden property empire worth more than $100m, Pandora papers reveal\",\n      \"content\": {\n        \"page_title\": \"King of Jordan hidden property empire worth more than $100m, Pandora papers reveal\"\n      },\n      \"raw_text\": \"King of Jordan hidden property empire worth more than $100m, Pandora papers reveal | King Abdullah | The Guardian Skip to main content Skip to navigation Close dialogue 1 / 4 Next image Previous image Toggle caption Print subscriptions Search jobs Sign in Int International edition UK edition US edition Australia edition Europe edition The Guardian - Back to home The Guardian News Opinion Sport Culture Lifestyle Show more Hide expanded menu News View all News World news US politics UK news Climate crisis Middle East Ukraine Environment Science Global development Football Tech Business Obituaries Opinion View all Opinion The Guardian view Columnists Cartoons Opinion videos Letters Sport View all Sport Football Cricket Rugby union Tennis Cycling F1 Golf US sports Culture View all Culture Books Music TV & radio Art & design Film Games Classical Stage Lifestyle View all Lifestyle Fashion Food Recipes Love & sex Health & fitness Home & garden Women Men Family Travel Money Search input google-search Search Support us Print subscriptions Search jobs Holidays Digital Archive Guardian Licensing Live events About Us The Guardian app Video Podcasts Pictures Newsletters Today's paper Inside the Guardian Guardian Weekly Crosswords Wordiply Corrections Tips Search input google-search Search Search jobs Holidays Digital Archive Guardian Licensing Live events About Us King Abdullah II has spent the past decades amassing an international luxury property empire worth well in excess of $100m. Illustration: Guardian Design View image in fullscreen King Abdullah II has spent the past decades amassing an international luxury property empire worth well in excess of $100m. Illustration: Guardian Design Pandora papers King Abdullah This article is more than 4 years old King of Jordan hidden property empire worth more than $100m, Pandora papers reveal This article is more than 4 years old Arab world’s longest-serving current monarch has disguised his ownership of properties via series of offshore firms, documents show See all of our Pandora papers coverage Simon Goodley and Michael Safi Sun 3 Oct 2021 17.30 BST Last modified on Wed 6 Oct 2021 07.36 BST Share Jordanian security forces arrived unexpectedly at Moayyad al-Majali’s home one day in October 2019, detaining the lawyer, confiscating his laptop and phones and accusing him of one of the kingdom’s most serious offences. His crime was slandering the country’s ruler, King Abdullah II, simply by asking a single question : how much land does the king own? In a country propped up by billions of dollars in international financial aid – and where unemployment has nearly doubled over the past seven years – the topic is considered too sensitive for the Jordanian public to know about. But today, the Guardian can reveal part of the answer, thanks to documents that form the Pandora papers , the largest ever trove of leaked offshore data. The files expose that the Arab world’s longest-serving current monarch has spent the past decades amassing an international luxury property empire worth well in excess of $100m (£74m), with its footprint stretching from the clifftops of Malibu, California, to Washington DC and on to central London’s most exclusive postcodes. Abdullah built this property empire showing the same zeal for secrecy he has demonstrated when asked about his finances at home. He has disguised his ownership through a series of offshore companies incorporated in the British Virgin Islands (BVI) , according to records shared by the International Consortium of Investigative Journalists with the Guardian, the BBC and other media outlets around the world. The multimillion-dollar properties were acquired as US economic and military aid to Jordan quadrupled and Jordanian citizens were subjected to austerity as part of an International Monetary Fund (IMF) bailout for the resource-poor country. View image in fullscreen Abdullah acquired three clifftop properties on California’s Malibu coast. Photograph: c/o BBC Using offshore companies to acquire property is not illegal and it is sometimes done to protect privacy or security. But the secrecy the offshore system confers on those wealthy enough to keep their purchases from public view can also open the door to money laundering. Perhaps the most palatial – and certainly the most expensive – of the king’s purchases revealed in the Pandora papers is a vast clifftop property on California’s Malibu coast. It is described as a “resort hotel-like mega mansion” containing 26 rooms, overlooking a stretch of coastline made famous as the location of the dramatic final scene in the original 1968 Planet of the Apes film. Quick Guide What are the Pandora papers? Show The Pandora papers are the largest trove of leaked data exposing tax haven secrecy in history. They provide a rare window into the hidden world of offshore finance, casting light on the financial secrets of some of the world’s richest people. The files were leaked to the International Consortium of Investigative Journalists (ICIJ), which shared access with the Guardian, BBC and other media outlets around the world. In total, the trove consists of 11.9m files leaked from a total of 14 offshore service providers, totalling 2.94 terabytes of information. That makes it larger in volume than both the Panama papers (2016) and Paradise papers (2017), two previous offshore leaks. Where did the Pandora documents come from? The ICIJ, a Washington DC-based journalism nonprofit, is not identifying the source of the leaked documents. In order to facilitate a global investigation, the ICIJ gave remote access to the documents to journalists in 117 countries, including reporters at the Washington Post, Le Monde, El País, Süddeutsche Zeitung, PBS Frontline and the Australian Broadcasting Corporation. In the UK, the investigation has been led by the Guardian and BBC Panorama. What is an offshore service provider? The 14 offshore service providers in the leak provide corporate services to individuals or companies seeking to do business offshore. Their clients are typically seeking to discreetly set up companies or trusts in lightly regulated tax havens such as the British Virgin Islands (BVI), Panama, the Cook Islands and the US state of South Dakota. Companies registered offshore can be used to hold assets such as property, aircraft, yachts and investments in stocks and shares. By holding those assets in an offshore company, it is possible to hide from the rest of the world the identity of the person they actually belong to, or the “beneficial owner”. Why do people move money offshore? Usually for reasons of tax, secrecy or regulation. Offshore jurisdictions tend to have no income or corporation taxes, which makes them potentially attractive to wealthy individuals and companies who don’t want to pay taxes in their home countries. Although morally questionable, this kind of tax avoidance can be legal. Offshore jurisdictions also tend to be highly secretive and publish little or no information about the companies or trusts incorporated there. This can make them useful to criminals, such as tax evaders or money launderers, who need to hide money from tax or law enforcement authorities. It is also true that people in corrupt or unstable countries may use offshore providers to put their assets beyond the reach of repressive governments or criminal adversaries who may try to seize them, or to seek to circumvent hard currency restrictions. Others may go offshore for reasons of inheritance or estate planning. Has everyone named in the Pandora papers done something wrong? No. Moving money offshore is not in or of itself illegal, and there are legitimate reasons why some people do it. Not everyone named in the Pandora papers is suspected of wrongdoing. Those who are may stand accused of a wide range of misbehaviour: from the morally questionable through to the potentially criminal. The Guardian is only publishing stories based on leaked documents after considering the public interest. That is a broad concept that may include furthering transparency by revealing the secret offshore owners of UK property, even where those owners have done nothing wrong. Other articles might illuminate issues of important public debate, raise moral questions, shed light on how the offshore industry operates, or help inform voters about politicians or donors in the interests of democratic accountability. Was this helpful? Thank you for your feedback. Public records show the home passed from Hollywood producers to dotcom billionaires, before, the Pandora papers reveal, it was bought by Abdullah in August 2014 for $33.5m, estimated to be a record price for property in the area. The king then acquired the two neighbouring properties. In the previous two years, Abdullah had acquired three condominiums in Washington DC for a total of $13.8m. The leak of papers also reveals how the Jordanian ruler secretly acquired a portfolio of seven luxury UK properties – including three in Belgravia, London. Purchased between 2003 and 2011, the UK properties are estimated to have a current market value of about £28m. The UK was sending up to £100m a year in bilateral aid to Jordan during much of the time covered by the papers. The monarch says he owns his property in a personal capacity – but while there is no evidence of any wrongdoing, the king’s net worth and source of his income remain closely guarded. The king’s lawyers said: “HM [His Majesty] has not at any point misused public monies or made any use whatsoever of the proceeds of aid or assistance intended for public use … HM cares deeply for Jordan and its people and acts with integrity and in the best interests of his country and its citizens at all times.” Jordan appeared to have blocked the ICIJ website on Sunday, hours before the Pandora papers launched. Abdullah has ruled Jordan since the death in 1999 of his father, Hussein, who positioned the kingdom as a key ally of the west and was known for his public displays of wealth. He would speed around the capital, Amman, in one of the dozens of sports cars he owned – most of which are now on display at a museum in the city. His son has maintained the links to the west but is less publicly conspicuous in his spending – in keeping with economic conditions in the country described by US congressional researchers as “extremely difficult”, and which have driven several open challenges to his rule over the past decade. About one in four Jordanians are unemployed, according to 2020 figures, while Jordan has implemented waves of austerity policies over the past three decades in exchange for access to IMF loans, a process Abdullah has accelerated. The moves have led to successive tax hikes and cuts to subsidies on bread, electricity and fuel. The government is also launching a campaign to flush out tax cheats in order to rein in public debt, all of which contrasts starkly with the impact austerity has had on the king. “Under Jordanian laws, HM is not required to pay taxes,” his lawyers said. Protests against cuts to the welfare state and for higher public sector wages have led Abdullah to dismiss several prime ministers over the past decade, in what is seen as a way to relieve public anger and deflect it away from the monarch. His lawyers say Abdullah gives a “significant percentage” of his personal wealth to charitable causes in line with his “vision towards achieving an equitable society”. View image in fullscreen Abdullah has a portfolio of seven luxury UK properties purchased between 2003 and 2011 – including three in Belgravia, London. Photograph: Martin Godwin/The Guardian Nonetheless, the bulk of the Pandora papers property purchases came during a difficult past decade in which Abdullah has faced two public challenges to his rule. The first came as part of the “Arab spring” that swept the Middle East in 2011. Those protests – in which the king and his wife, Queen Rania, were openly accused of “stealing” the country – were crushed by security forces while promises of more democracy have largely failed to materialise. The timing revealed by the Pandora papers raises questions about whether the monarch may have considered the need for a safe haven abroad for himself or his personal fortune. View image in fullscreen King Abdullah II and Queen Rania. Photograph: Richard Gardner/Rex/Shutterstock The second challenge was an alleged coup plot in April of this year cultivated by the king’s half-brother Hamzah, who gained attention and support in some quarters by publicly criticising government corruption and attempts to reform the Jordanian economy by “repeatedly returning to people’s pockets”. Hamzah was placed under house arrest and his alleged accomplices in the sedition plot were sentenced to lengthy jail terms. Eager to shore up a western-friendly ruler, the US has poured increasing financial aid into Jordan over the past decades amounting to a total of $22bn by 2018, and billions more in the years since. Yet at the same time, according to the Pandora papers, the king has spent millions burnishing his property portfolio. The most recent Jordanian budget shows an annual sum of approximately $35m in public funds spent on the upkeep of the country’s royal palaces, but does not list any salary for the king or other working royals. Abdullah’s lawyers said: “The source of HM’s personal wealth is not from public monies, rather from personal sources.” The lengths to which Abdullah has gone to hide details of the purchases also suggest he is aware they will be a politically awkward matter to explain to his subjects. The leaked Pandora documents include a February 2017 internal memorandum between compliance managers at the Panamanian law firm Alcogal, which state that a Jordanian national client called Abdullah Al Hussein, born 30 January 1962 (Abdullah II’s birth date) and with an address of “ Raghadan Palace “ (which is located in the royal court compound of al-Maquar in Amman, Jordan), was the beneficial owner of 16 companies that variously held assets in the US, the UK and Jersey. 3:13 What are the Pandora papers? – video explainer Among those companies are Nabisco Holdings SA, Setara Limited and Timara Limited – which acquired the three Malibu clifftop properties – plus a series of other entities that own the king’s property assets in Washington DC and the UK. According to the leaked files, Alcogal staff appear to have worked hard to safeguard the king’s secrecy by not identifying him on internal documents as a politically exposed person (PEP) and discussing ways to avoid storing his identity as beneficial owner. Do you have information about this story? Email simon.goodley@theguardian.com. Their reticence reached almost farcical levels, with one December 2017 email between Alcogal employees discussing the “final beneficiary” as a resident of Jordan, then referring to the king simply as “you know who”. Alcogal said it had never “deliberately failed to identify a politically exposed person as such in its due diligence processes”. It said in this case, the beneficial ownership identity details were recorded on the BVI’s beneficial ownership secure search (Boss) system in November 2017 in compliance with the territory’s laws. Moayyad al-Majali, the Jordanian lawyer, was ultimately released but fined. Guardian Newsroom: The Pandora papers Join Guardian journalist Paul Lewis and guests in this special livestreamed event looking in-depth into the Pandora papers investigation. On Monday 18 October, 8pm BST | 9pm CEST | 12am PDT | 3pm EDT. Book tickets here Explore more on these topics King Abdullah Pandora papers Jordan Tax havens Aid Pandora papers news Share Reuse this content Most viewed Most viewed News Opinion Sport Culture Lifestyle Original reporting and incisive analysis, direct from the Guardian every morning Sign up for our email About us Help Complaints & corrections Contact us Tip us off SecureDrop Privacy policy Cookie policy Tax strategy Terms & conditions All topics All writers Newsletters Digital newspaper archive Bluesky Facebook Instagram LinkedIn Threads TikTok YouTube Advertise with us Search UK jobs Tips Accessibility settings Work with us Back to top © 2026 Guardian News & Media Limited or its affiliated companies. All rights reserved. (dcr)\"\n    }\n  ],\n  \"query_trace\": [\n    {\n      \"query\": \"Pandora Papers King Abdullah II offshore property network shell companies advisers jurisdictions luxury real estate locations ICIJ\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-003\",\n        \"SRC-004\",\n        \"SRC-002\",\n        \"SRC-001\"\n      ],\n      \"total\": 4\n    },\n    {\n      \"query\": \"site:icij.org/investigations/pandora-papers Jordan King Abdullah II properties companies advisers\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-004\",\n        \"SRC-003\",\n        \"SRC-001\",\n        \"SRC-002\"\n      ],\n      \"total\": 4\n    },\n    {\n      \"query\": \"King Abdullah II Pandora Papers Malibu London Washington companies Trident Trust\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-002\",\n        \"SRC-003\",\n        \"SRC-004\",\n        \"SRC-001\"\n      ],\n      \"total\": 4\n    }\n  ],\n  \"error\": null\n}",
+        "duration_ms": 0.19
+      },
+      {
+        "name": "deep_search",
+        "arguments": {
+          "pages": [
+            "https://www.dw.com/en/pandora-papers-the-king-of-jordans-hidden-property-gems/a-59403014"
+          ]
+        },
+        "started_at": 1790789081.7467732,
+        "result": "{\n  \"success\": true,\n  \"pages\": [\n    {\n      \"success\": true,\n      \"url\": \"https://www.dw.com/en/pandora-papers-the-king-of-jordans-hidden-property-gems/a-59403014\",\n      \"source_id\": \"SRC-001\",\n      \"title\": \"Pandora Papers: The royal 'you know who' from Jordan\",\n      \"content\": {\n        \"page_title\": \"Pandora Papers: The royal 'you know who' from Jordan\"\n      },\n      \"raw_text\": \"Pandora Papers: The royal 'you know who' from Jordan Skip to content Skip to main menu Skip to more DW sites Latest videos Latest audio Regions Africa Asia Europe Latin America Middle East North America Germany Topics Climate Equality Health Human Rights Migration Technology Categories Business Science Environment Culture Sports In focus Ukraine Israel-Hamas conflict German politics Latest audio Latest videos Live TV Advertisement Politics Jordan Pandora Papers: The royal 'you know who' from Jordan Jennifer Holleis 10/04/2021 October 4, 2021 The global Pandora Papers investigation has shed light on King Abdullah II's investments abroad. Though probably not illegal, they are still at odds with the government's declared principles of financial transparency. https://p.dw.com/p/41FR8 King Abdullah II of Jordan is listed in the Pandora Papers but rejects any wrongdoings Image: Ameer Al Mohmmedaw/dpa/picture alliance Advertisement Jordan's King Abdullah II is among the prominent people listed in the global Pandora Papers investigation by the International Consortium of Investigative Journalists (ICIJ) and a team of 150 news outlets — including DW's Turkish service. Their research, which was published on Sunday, revealed that the 59-year-old monarch used money from his various offshore accounts to buy properties in the years 2003 to 2017. In total, he is said to have purchased 14 houses and flats in the United States and the United Kingdom for a total of more than €91 million ($106 million) through his 36 front companies that are registered in tax havens. He was generally referred to by trust firm sources quoted in the report as the \\\"final beneficiary\\\" living in Jordan, or \\\"You know who\\\" from Jordan. However, an immediate statement by the king's lawyers rejected the claims that King Abdullah II had used money that was not his own: \\\"HM [His Majesty] has not at any point misused public monies or made any use whatsoever of the proceeds of aid or assistance intended for public use … HM cares deeply for Jordan and its people and acts with integrity and in the best interests of his country and its citizens at all times.\\\" On Monday, the royal court also issued a statement confirming that the monarch owns properties abroad for diplomatic visits and consultations. For security reasons, it had been important to treat their details as secret, the statement says. The statement also adds that none of these purchases were funded by the state treasury or by foreign grants or loans that Jordan has received as foreign assistance. \\\"I wouldn't say that the papers have revealed anything sensationally surprising. It has always been clear that the royal family is wealthy and owns properties abroad,\\\" Dr. Maria Josua, Middle East analyst at the Hamburg-based research institute GIGA, told DW. King Abdullah II of Jordan and his wife Queen Rania are generally seen as the modern couple of the Middle East Image: picture-alliance/dpa/P. van Katwijk Repressed discontent However, the Jordan-related content of the Pandora Papers still hits a sensitive nerve among the population. \\\"There is significant discontent toward the monarch, and these revelations are vindicating what a lot of people feel about the monarch. The question is now whether this will lead to any significant political changes in the country,\\\" Karim Merhej, a non-resident fellow at Tahrir Institute for Middle East Policy, told DW. Opinion polls routinely show that Jordanians generally have very little trust in their state institutions. For instance, according to the Arab Barometer, in 2018 only 38% of Jordanians said they had some or great trust in the government, while 68% said they had no trust in parliament. However, surveying citizens' views towards the king or the royal family is not allowed. \\\"Another aspect is that for Jordan, repression is currently extremely strong,\\\" Josua said, adding that unions and professional associations that had advocated for improvements were closed down or strongly censured. Furthermore, as has been seen before in Jordan, a news blackout has been imposed. \\\"It is the royal attempt to control the narrative,\\\" Josua said. The ICIJ website was also taken down in Jordan only hours before the Pandora Papers were published on the organization's webpage. Above criticism Despite these measures, however, the revelations will likely contribute to furthering discontent in the country towards the political system, even though the disguised purchases of the real estate might have been legal, as the Royal Hashemite Court claims. On previous occasions, discontent and accusations, though veiled, have been directed toward the palace and the royal couple of Abdullah II and his Kuwaiti-born Palestinian wife, Rania. In early 2021, a purported coup concocted by Prince Hamzah, King Abdullah II's half-brother, alongside Bassem Awadallah, a former chief of the Royal Hashemite Court whom many Jordanians despise due to perceived corruption, was thwarted. While under house arrest, Prince Hamzah released a video addressing Jordanians in which he criticized the desolate state Jordan has found itself in, emphasizing the rampant corruption that now allegedly plagued the country. \\\"But there have never been direct accusations against the king himself,\\\" Josua said. The ICIJ website has been taken down in Jordan Image: Zeljko Lukunic/PIXSELL/picture alliance Major foreign assistance Economically, the country has been struggling for a long time. Poverty and unemployment rates are very high. According to the Jordanian Bureau of Statistics, 25% of the population over 18 was out of work in the first quarter of this year. Youth employment is estimated to be up in the region of 40%. Jordan, with its population of around 10 million people, lacks the rich oil and gas deposits possessed by many of its neighbors and suffers from a shortage of water. One of the poorest countries in the region, it has been receiving billions of dollars in development aid from the US (in 2020, $1.5 billion/€1.29 billion), the European Union and other nations, including Germany. But it seems that according to current knowledge, development aid hasn’t been funnelled to the palace. \\\"Jordan ranks very high on the Open Budget Survey and the Jordanian government has effectively made its finances quite transparent — this is not very surprising given the fact that the country is heavily reliant on grants and loans from other countries and international organizations,\\\" Merhej told DW. The population has protested against high unemployment rates and corruption in the past Image: Ahmad Gharabli/AFP/Getty Images Germany, which has also sent millions in aid to Jordan, also seems fairly sure that the money went to the projects it was meant for, including assistance for tens of thousands of Syrian refugees. A spokesperson told DW that the \\\"Federal Ministry for Economic Cooperation and Development (BMZ) has no knowledge that development cooperation funds for Jordan for which the BMZ is responsible have been made available to the Jordanian royal family. Rather, the structure of our development cooperation with Jordan and the disbursement of corresponding funds is linked to the agreed progress of the respective joint projects.\\\" But the coming days, months and years will show the real impact of the Pandora Papers, in Jordan as well. According to the ICIJ, the previous global investigation, dubbed Panama Papers, is still creating waves, even five years after its publication. Jennifer Holleis Editor and political analyst specializing in the Middle East and North Africa. Send us your feedback Your feedback Advertisement Skip next section Explore more Explore more The Most Popular Politicians on Instagram The Most Popular Politicians on Instagram From Queen Rania to Barack Obama - who is the most popular politician on Instagram? Culture 03/28/2017 March 28, 2017 Skip next section More on Politics from Middle East More on Politics from Middle East Houthi strikes threaten to pull Yemen into Middle East war The Houthis are using regional warfare to increase pressure on Saudi Arabia and risk to reopen Yemen's own conflict. Politics 08/25/2026 August 25, 2026 How the Iran war has deepened Saudi-UAE rivalry The UAE and Saudi Arabia have long been rivals. But the Iran war has deepened their rift. Could it split the region? Politics 07/28/2026 July 28, 2026 18:02 min Iran war highlights the vulnerabilities of AI data centers Are data centers the next targets in war? And, if so, who is going to protect them — and how? Politics 07/12/2026 July 12, 2026 09:33 min Show more Skip next section Related topics Related topics Pandora Papers Jordan Footer About DW Who we are Press DW Global Media Forum DW offers Learn German DW Akademie Service Newsletters Reception FAQ Contact Topics from A to Z Headlines B2B Sales & Distribution Travel Advertising German News Service Follow us on Add DW as preferred source on Google © 2026 Deutsche Welle Privacy Policy Legal notice Digital accessibility Data privacy settings\"\n    }\n  ],\n  \"query_trace\": [\n    {\n      \"query\": \"Pandora Papers King Abdullah II offshore property network shell companies advisers jurisdictions luxury real estate locations ICIJ\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-003\",\n        \"SRC-004\",\n        \"SRC-002\",\n        \"SRC-001\"\n      ],\n      \"total\": 4\n    },\n    {\n      \"query\": \"site:icij.org/investigations/pandora-papers Jordan King Abdullah II properties companies advisers\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-004\",\n        \"SRC-003\",\n        \"SRC-001\",\n        \"SRC-002\"\n      ],\n      \"total\": 4\n    },\n    {\n      \"query\": \"King Abdullah II Pandora Papers Malibu London Washington companies Trident Trust\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-002\",\n        \"SRC-003\",\n        \"SRC-004\",\n        \"SRC-001\"\n      ],\n      \"total\": 4\n    }\n  ],\n  \"error\": null\n}",
+        "duration_ms": 0.17
+      },
+      {
+        "name": "deep_search",
+        "arguments": {
+          "pages": [
+            "https://www.aljazeera.com/news/2021/10/3/investigation-reveals-offshore-assets-of-heads-of-state"
+          ]
+        },
+        "started_at": 1790789081.7476554,
+        "result": "{\n  \"success\": true,\n  \"pages\": [\n    {\n      \"success\": true,\n      \"url\": \"https://www.aljazeera.com/news/2021/10/3/investigation-reveals-offshore-assets-of-heads-of-state\",\n      \"source_id\": \"SRC-003\",\n      \"title\": \"Investigation reveals offshore assets of heads of state\",\n      \"content\": {\n        \"page_title\": \"Investigation reveals offshore assets of heads of state\"\n      },\n      \"raw_text\": \"Jordan king exposed over tax havens and luxury homes | Pandora Papers News | Al Jazeera Skip links Skip to Content Live Sign up Navigation menu News Show more news sections Africa Asia US & Canada Latin America Europe Asia Pacific Middle East Explained Sport Opinion Video More Show more sections Features Economy Human Rights Climate Crisis Investigations Interactives In Pictures Science & Technology Podcasts Travel Sponsored Content Live Click here to search Sign up News | Pandora Papers Jordan king exposed over tax havens and luxury homes So-called Pandora Papers says King Abdullah II is among dozens of world leaders secretly holding millions of dollars offshore. Save Click here to share on social media Share Add Al Jazeera on Google King Abdullah's lawyers were cited as saying all the properties were bought with personal wealth [Elizabeth Frantz/Reuters] Published On 3 Oct 2021 3 Oct 2021 | Updated: 4 Oct 2021 10:52 AM (GMT) Updated: 4 Oct 2021 10:52 AM (GMT) Jordan’s King Abdullah II is among dozens of world leaders to have hidden millions of dollars in offshore tax havens and secretly bought luxury homes around the globe, according to an investigation published on Sunday. The so-called Pandora Papers probe involving some 600 journalists is based on the leak of some 11.9 million documents from 14 global financial services. Recommended Stories list of 4 items list 1 of 4 South Africa court postpones Zuma corruption trial to September list 2 of 4 Peru kicks off corruption case against Keiko Fujimori list 3 of 4 China’s anti-corruption watchdog eyes new target: alcohol list 4 of 4 Tunisia: Former anti-corruption chief placed under house arrest end of list The documents show how King Abdullah II created a network of offshore companies and tax havens to amass a $100m property empire from Malibu, California to Washington, DC and London. According to the investigation: “Three beachfront mansions in Malibu [were] purchased through three offshore companies for $68 million by the King of Jordan in the years after Jordanians filled the streets during Arab Spring to protest joblessness and corruption.” Abdullah, 59, also owns three luxury apartments in a complex in Washington, DC, with panoramic views of the Potomac River, and a house in Ascot, one of England’s most expensive towns, along with multimillion-dollar apartments in central London, the report said. “Jordan doesn’t have the kind of money that other Middle Eastern monarchies, like Saudi Arabia, have to allow a king to flaunt his wealth,” Annelle Sheline, a Middle East scholar, was quoted as saying. “If the Jordanian monarch were to display his wealth more publicly, it wouldn’t only antagonize his people, it would p**s off Western donors who have given him money.” The royal palace said on Monday that King Abdullah’s properties in the US and UK were “no secret”, and that privacy and security reasons were behind not disclosing it. Advertisement “This is not unusual nor improper,” said the royal palace statement. “The cost of these properties and all related expenditures have been personally funded by His Majesty. None of these expenses have been funded by the state budget or treasury,” the statement continued. The Jordanian palace said these properties were used during official visits and some of these are used during private visits. King Abdullah’s lawyers were cited saying all the properties were bought with personal wealth, and it was common practice for high-profile individuals to buy properties via offshore companies for privacy and security reasons. “Any implication that there is something improper about ownership of property through companies in offshore jurisdictions is categorically denied,” said DLA Piper, the law firm that represents the monarch. “[Abdullah] has not at any point misused public monies or made any use whatsoever of the proceeds of aid or assistance intended for public use.” 336 high-level politicians Some 35 current and former leaders are featured in the documents analysed by the International Consortium of Investigative Journalists (ICIJ) – facing allegations ranging from corruption to money laundering and global tax avoidance. The documents also show Czech Prime Minister Andrej Babis – facing an election later this week – failed to declare an offshore investment company used to buy a chateau worth $22m in the south of France. In total, the ICIJ found links between almost 1,000 companies in offshore havens and 336 high-level politicians and public officials, including country leaders, cabinet ministers, ambassadors and others. More than two-thirds of the companies were set up in the British Virgin Islands. In most countries, the ICIJ stresses, it is not illegal to have assets offshore or to use shell companies to do business across national borders. But such revelations are no less of an embarrassment for leaders who may have campaigned publicly against corruption, or advocated austerity measures at home. “The new data leak must be a wake-up call,” said Sven Giegold, a Green party lawmaker in the European Parliament. “Global tax evasion fuels global inequality. We need to expand and sharpen the countermeasures now.” Aliyev and Kenyatta on the list Among the other revelations from the ICIJ investigation: Family and associates of Azerbaijani President Ilham Aliyev are alleged to have been secretly involved in property deals in Britain worth hundreds of millions. Kenyan President Uhuru Kenyatta and six family members are alleged to secretly own a network of offshore companies. Members of Pakistan Prime Minister Imran Khan’s inner circle, including cabinet ministers and their families, are said to secretly own companies and trusts holding millions of dollars. Russian President Vladimir Putin is not directly named in the files, but he is linked via associates to secret assets in Monaco. Advertisement The Pandora Papers are the latest in a series of mass ICIJ leaks of financial documents that started with LuxLeaks in 2014, and was followed by the Panama Papers, the Paradise Papers and FinCen. The documents behind the latest investigation are drawn from financial services companies in countries including the British Virgin Islands, Panama, Belize, Cyprus, the United Arab Emirates, Singapore and Switzerland. The latest bombshell is even more expansive than the Panama Papers, porting through nearly 3 terabytes of data — the equivalent of roughly 750,000 photos on a smartphone — leaked from 14 different service providers doing business in 38 different jurisdictions in the world. The records date back to the 1970s, but most of the files span from 1996 to 2020. Advertisement About About Show more About Us Code of Ethics Terms and Conditions EU/EEA Regulatory Notice Privacy Policy Cookie Policy Cookie Preferences Accessibility Statement Sitemap Work for us Connect Connect Show more Contact Us User Accounts Help Advertise with us Stay Connected Newsletters Channel Finder TV Schedule Podcasts Submit a Tip Paid Partner Content Our Channels Our Channels Show more Al Jazeera Arabic Al Jazeera English Al Jazeera Investigative Unit Al Jazeera Mubasher Al Jazeera Documentary Al Jazeera Balkans AJ+ Our Network Our Network Show more Al Jazeera Centre for Studies Al Jazeera Media Institute Learn Arabic Al Jazeera Centre for Public Liberties & Human Rights Al Jazeera Forum Al Jazeera Hotel Partners Follow Al Jazeera English: © 2026 Al Jazeera Media Network\"\n    }\n  ],\n  \"query_trace\": [\n    {\n      \"query\": \"Pandora Papers King Abdullah II offshore property network shell companies advisers jurisdictions luxury real estate locations ICIJ\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-003\",\n        \"SRC-004\",\n        \"SRC-002\",\n        \"SRC-001\"\n      ],\n      \"total\": 4\n    },\n    {\n      \"query\": \"site:icij.org/investigations/pandora-papers Jordan King Abdullah II properties companies advisers\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-004\",\n        \"SRC-003\",\n        \"SRC-001\",\n        \"SRC-002\"\n      ],\n      \"total\": 4\n    },\n    {\n      \"query\": \"King Abdullah II Pandora Papers Malibu London Washington companies Trident Trust\",\n      \"page\": 1,\n      \"page_size\": 10,\n      \"returned_source_ids\": [\n        \"SRC-002\",\n        \"SRC-003\",\n        \"SRC-004\",\n        \"SRC-001\"\n      ],\n      \"total\": 4\n    }\n  ],\n  \"error\": null\n}",
+        "duration_ms": 0.14
+      },
+      {
+        "name": "knowledge_agent",
+        "arguments": {
+          "source_title": "Pandora Papers reporting on King Abdullah II property network",
+          "source_url": "https://www.theguardian.com/news/2021/oct/03/king-of-jordan-hidden-property-empire-worth-more-than-100m-pandora-papers-reveal",
+          "text": "Benchmark sources report that the Pandora Papers showed King Abdullah II as beneficial owner of an offshore property network. The Guardian says a February 2017 Alcogal memorandum identified a Jordanian client called Abdullah Al Hussein, born 30 January 1962 and with Raghadan Palace address, as beneficial owner of 16 companies holding assets in the US, UK and Jersey. Named companies included Nabisco Holdings SA, Setara Limited and Timara Limited; the latter three Malibu properties were acquired through them. The Guardian reports three Malibu clifftop properties, including a 26-room mansion bought in August 2014 for $33.5m and two neighboring properties; three Washington DC condominiums bought in the prior two years for $13.8m total; and seven luxury UK properties bought 2003-2011, including three in Belgravia, with estimated current value about £28m. The overall portfolio was reported as well over $100m. It says companies were incorporated in the British Virgin Islands, while the network held assets in the US, UK and Jersey. Alcogal staff allegedly avoided identifying the client as a politically exposed person and used the phrase 'you know who'; Alcogal denied deliberately failing to identify a PEP and said identity details were recorded in BVI's secure beneficial-ownership system in November 2017. The Guardian says there was no evidence of wrongdoing. The palace and DLA Piper lawyers said properties were personally funded, used for official/private visits, and acquired through offshore companies for privacy/security; they denied use of public monies or aid. Other reporting (SRC-001) says 14 houses/flats in US and UK, 2003-2017, totaling over €91m/$106m, via 36 front companies registered in tax havens, and that the royal court said purchases were not funded by state treasury, grants or loans. SRC-003/SRC-004 report three Malibu beachfront mansions bought through three offshore companies for $68m, three Washington apartments, an Ascot house and multimillion-dollar central London apartments; ICIJ investigation involved 11.9m leaked documents from 14 financial services. Al Jazeera says jurisdictions represented in the broader leak included BVI, Panama, Belize, Cyprus, UAE, Singapore and Switzerland, but this is not evidence that Abdullah's entities were in all those jurisdictions."
+        },
+        "started_at": 1790789110.698707,
+        "result": "{\n  \"status\": \"ok\",\n  \"added_entities\": [\n    \"PERSON | King Abdullah II\",\n    \"ALIAS | Abdullah Al Hussein\",\n    \"ADDRESS | Raghadan Palace\",\n    \"ORGANIZATION | Alcogal\",\n    \"ORGANIZATION | Nabisco Holdings SA\",\n    \"ORGANIZATION | Setara Limited\",\n    \"ORGANIZATION | Timara Limited\",\n    \"DOCUMENT | February 2017 Alcogal memorandum\",\n    \"LOCATION | British Virgin Islands\",\n    \"LOCATION | Malibu\",\n    \"LOCATION | Washington, DC\",\n    \"LOCATION | Belgravia\",\n    \"LOCATION | Ascot\",\n    \"LOCATION | London\",\n    \"LOCATION | Jersey\"\n  ],\n  \"added_edges\": [\n    \"ALIAS_FOR | alias:Abdullah Al Hussein -> person:King Abdullah II\",\n    \"ASSOCIATED_WITH | person:King Abdullah II -> address:Raghadan Palace\",\n    \"LINKED_TO | document:February 2017 Alcogal memorandum -> person:King Abdullah II\",\n    \"LINKED_TO | document:February 2017 Alcogal memorandum -> organization:Nabisco Holdings SA\",\n    \"LINKED_TO | document:February 2017 Alcogal memorandum -> organization:Setara Limited\",\n    \"LINKED_TO | document:February 2017 Alcogal memorandum -> organization:Timara Limited\",\n    \"OWNED_OR_CONNECTED_TO_FRONT_COMPANY | person:King Abdullah II -> organization:Nabisco Holdings SA\",\n    \"OWNED_OR_CONNECTED_TO_FRONT_COMPANY | person:King Abdullah II -> organization:Setara Limited\",\n    \"OWNED_OR_CONNECTED_TO_FRONT_COMPANY | person:King Abdullah II -> organization:Timara Limited\",\n    \"INCORPORATED_IN | organization:Nabisco Holdings SA -> location:British Virgin Islands\",\n    \"INCORPORATED_IN | organization:Setara Limited -> location:British Virgin Islands\",\n    \"INCORPORATED_IN | organization:Timara Limited -> location:British Virgin Islands\",\n    \"OWNED_PROPERTY_IN | person:King Abdullah II -> location:Malibu\",\n    \"OWNED_PROPERTY_IN | person:King Abdullah II -> location:Washington, DC\",\n    \"OWNED_PROPERTY_IN | person:King Abdullah II -> location:Belgravia\",\n    \"OWNED_PROPERTY_IN | person:King Abdullah II -> location:Ascot\",\n    \"OWNED_PROPERTY_IN | person:King Abdullah II -> location:London\",\n    \"OWNED_PROPERTY_IN | person:King Abdullah II -> location:Jersey\"\n  ],\n  \"neo4j\": true\n}",
+        "duration_ms": 47641.76
+      },
+      {
+        "name": "kb_get",
+        "arguments": {},
+        "started_at": 1790789166.8402843,
+        "result": "ADDRESS | Raghadan Palace | Address recorded for the client identified as Abdullah Al Hussein.\nALIAS | Abdullah Al Hussein | Name used for the Jordanian client in a February 2017 Alcogal memorandum.\nDOCUMENT | February 2017 Alcogal memorandum | Memorandum identifying Abdullah Al Hussein as beneficial owner of 16 companies.\nLOCATION | Ascot | Location of a UK house mentioned in other reporting.\nLOCATION | Belgravia | London district where three of the reported luxury UK properties were located.\nLOCATION | British Virgin Islands | Jurisdiction where the companies were reported to be incorporated.\nLOCATION | Jersey | Jurisdiction reported as holding assets in the wider offshore network.\nLOCATION | London | Location of reported multimillion-dollar central London apartments and Belgravia properties.\nLOCATION | Malibu | Location of three clifftop or beachfront properties, including a 26-room mansion bought in August 2014 for $33.5 million.\nLOCATION | Washington, DC | Location of three condominiums bought in the two years before the Malibu mansion, for $13.8 million in total.\nORGANIZATION | Alcogal | Law firm whose February 2017 memorandum identified the beneficial owner.\nORGANIZATION | Nabisco Holdings SA | One of the companies named in reporting on the offshore property network.\nORGANIZATION | Setara Limited | One of the companies named in reporting on the offshore property network.\nORGANIZATION | Timara Limited | One of the companies named in reporting; associated with acquisition of Malibu properties.\nPERSON | King Abdullah II | Jordanian king reported as beneficial owner of an offshore property network; born 30 January 1962.",
+        "duration_ms": 9.3
+      },
+      {
+        "name": "kb_get_edges",
+        "arguments": {
+          "limit": 100
+        },
+        "started_at": 1790789173.0774708,
+        "result": "alias_for | alias:Abdullah Al Hussein -> person:King Abdullah II | evidence: The Guardian reported that the client named Abdullah Al Hussein was King Abdullah II.\nlinked_to | document:February 2017 Alcogal memorandum -> organization:Nabisco Holdings SA | evidence: The memorandum reportedly concerned the 16-company network including Nabisco Holdings SA.\nlinked_to | document:February 2017 Alcogal memorandum -> organization:Setara Limited | evidence: The memorandum reportedly concerned the 16-company network including Setara Limited.\nlinked_to | document:February 2017 Alcogal memorandum -> organization:Timara Limited | evidence: The memorandum reportedly concerned the 16-company network including Timara Limited.\nlinked_to | document:February 2017 Alcogal memorandum -> person:King Abdullah II | evidence: The memorandum identified the client reported to be King Abdullah II as beneficial owner.\nincorporated_in | organization:Nabisco Holdings SA -> location:British Virgin Islands | evidence: The named companies were reported to be incorporated in the British Virgin Islands.\nincorporated_in | organization:Setara Limited -> location:British Virgin Islands | evidence: The named companies were reported to be incorporated in the British Virgin Islands.\nincorporated_in | organization:Timara Limited -> location:British Virgin Islands | evidence: The named companies were reported to be incorporated in the British Virgin Islands.\nassociated_with | person:King Abdullah II -> address:Raghadan Palace | evidence: The Alcogal memorandum reportedly listed Raghadan Palace as the client's address.\nowned_or_connected_to_front_company | person:King Abdullah II -> organization:Nabisco Holdings SA | evidence: Reported as a beneficial owner of the offshore company network; other reporting characterized the entities as front companies.\nowned_or_connected_to_front_company | person:King Abdullah II -> organization:Setara Limited | evidence: Reported as a beneficial owner of the offshore company network; other reporting characterized the entities as front companies.\nowned_or_connected_to_front_company | person:King Abdullah II -> organization:Timara Limited | evidence: Reported as a beneficial owner of the offshore company network; Timara was associated with Malibu property acquisitions.\nowned_property_in | person:King Abdullah II -> location:Ascot | evidence: Other reporting mentioned an Ascot house in the portfolio.\nowned_property_in | person:King Abdullah II -> location:Belgravia | evidence: Reportedly held three of seven luxury UK properties in Belgravia.\nowned_property_in | person:King Abdullah II -> location:Jersey | evidence: The offshore network was reported to hold assets in Jersey, although the text does not specify the asset type.\nowned_property_in | person:King Abdullah II -> location:London | evidence: Other reporting mentioned multimillion-dollar central London apartments; the overall portfolio was reported at more than $100 million.\nowned_property_in | person:King Abdullah II -> location:Malibu | evidence: Reportedly beneficially owned three Malibu properties, including a mansion bought in August 2014 for $33.5 million.\nowned_property_in | person:King Abdullah II -> location:Washington, DC | evidence: Reportedly beneficially owned three Washington condominiums bought for $13.8 million in total.",
+        "duration_ms": 9.43
+      }
+    ],
+    "final_report": "# Final Report: Pandora Papers — King Abdullah II’s Offshore Property Network\n\n## Executive summary\n\nPublic reporting based on the Pandora Papers alleges that Jordan’s King Abdullah II was the beneficial owner of a multinational property-holding network using offshore companies. The reported portfolio was valued at **more than $100 million** and included luxury real estate in **Malibu, California; Washington, D.C.; Ascot; and central London, including Belgravia**. The network was reportedly incorporated primarily in the **British Virgin Islands (BVI)** and held assets connected to the **United States, United Kingdom, and Jersey**. [SRC-002] [SRC-003] [SRC-004]\n\nThe clearest company-level reporting identifies **Nabisco Holdings SA, Setara Limited, and Timara Limited**. The three entities were linked to the Malibu acquisitions, with Timara specifically associated in the reporting with those properties. [SRC-002]\n\nThe reporting identifies two important intermediaries or advisers:\n\n- **Alcogal**, the Panamanian law firm whose records reportedly identified “Abdullah Al Hussein,” at the address of Raghadan Palace, as beneficial owner of 16 companies. [SRC-002]\n- **DLA Piper**, identified as the law firm representing the monarch and communicating his denial that the offshore ownership structure was improper or involved public funds. [SRC-003] [SRC-002]\n\nThe sources do **not establish that the arrangements were illegal**. The Guardian expressly reported that it found no evidence of wrongdoing, while the palace and lawyers said the properties were privately funded and held offshore for privacy and security reasons. [SRC-002] [SRC-003] [SRC-001]\n\n## Network map\n\n```text\nKing Abdullah II\n└── Reported alias/client name: Abdullah Al Hussein\n    └── Address in Alcogal memorandum: Raghadan Palace, Amman\n        └── Reported beneficial ownership of an offshore company network\n            ├── Nabisco Holdings SA\n            ├── Setara Limited\n            ├── Timara Limited\n            └── Other entities not individually identified in the available reporting\n                ├── Malibu properties, California\n                ├── Washington, D.C. condominiums\n                ├── Ascot house\n                ├── Central London properties, including Belgravia\n                └── Assets reportedly connected to Jersey\n```\n\nThe three named companies were reported as incorporated in the **British Virgin Islands**. [SRC-002]\n\n## Key findings\n\n### 1. Who was identified as the beneficial owner?\n\nThe Guardian reported that a February 2017 internal Alcogal memorandum identified a Jordanian client named **“Abdullah Al Hussein,” born January 30, 1962**, with an address at **Raghadan Palace**. The reporting connected those identifying details to King Abdullah II and said the client was listed as beneficial owner of 16 companies. [SRC-002]\n\nThis identification is supported by the matching name, birth date, nationality, and royal-palace address reported by the Guardian, but the available sources describe it as a finding from leaked documents and reporting rather than a public corporate-register disclosure. [SRC-002]\n\n### 2. Which shell or offshore companies were named?\n\nThe available reporting specifically names:\n\n- **Nabisco Holdings SA**\n- **Setara Limited**\n- **Timara Limited**\n\nThe Guardian reported that these companies were among the entities in the network and that **Setara Limited and Timara Limited**, along with Nabisco Holdings SA, were connected to the Malibu property acquisitions. The reporting describes the broader entities as offshore companies; DW characterizes the wider network as involving **36 front companies registered in tax havens**. [SRC-002] [SRC-001]\n\nThe term “front companies” reflects DW’s characterization. The sources do not provide a complete list of all 16 or 36 entities, so the full corporate chain cannot be reconstructed from the available evidence. [SRC-001] [SRC-002]\n\n### 3. What properties and locations were reported?\n\nThe reported luxury-property footprint included:\n\n- **Malibu, California:** Three clifftop or beachfront properties. One was described as a 26-room mansion purchased in August 2014 for **$33.5 million**; two neighboring properties were subsequently acquired. Other reporting placed the combined price of the three Malibu mansions at **$68 million**. [SRC-002] [SRC-003] [SRC-004]\n- **Washington, D.C.:** Three luxury condominiums, acquired in the two years before the Malibu mansion, for **$13.8 million in total**. [SRC-002]\n- **Ascot, England:** A house in one of England’s most expensive towns. [SRC-003] [SRC-004]\n- **Central London:** Multimillion-dollar apartments, including **three properties in Belgravia**. The reported UK portfolio consisted of seven luxury properties purchased between 2003 and 2011, with an estimated current value of approximately **£28 million**. [SRC-002] [SRC-003]\n- **Jersey:** The Guardian reported that the 16-company network held assets in the US, UK, and Jersey. The available text does not identify the specific Jersey asset or property. [SRC-002]\n\n### 4. What jurisdictions were involved?\n\nThe reporting identifies the **British Virgin Islands** as the incorporation jurisdiction for the named companies and describes the network as holding assets in the **United States, United Kingdom, and Jersey**. [SRC-002]\n\nThe wider Pandora Papers reporting referenced offshore service providers and jurisdictions including the **BVI, Panama, Belize, Cyprus, the United Arab Emirates, Singapore, and Switzerland**. However, the available sources do **not** establish that King Abdullah’s specific entities were incorporated or maintained in every one of those jurisdictions. [SRC-003]\n\n### 5. Who were the advisers or intermediaries?\n\n**Alcogal** was the relevant corporate-services or legal intermediary in the specific reporting. Its leaked records reportedly included the February 2017 memorandum identifying the beneficial owner and the 16-company network. The Guardian further reported that Alcogal personnel discussed how to preserve the client’s secrecy and referred to the “final beneficiary” as “you know who.” [SRC-002]\n\nAlcogal denied deliberately failing to identify a politically exposed person and said the beneficial-owner information had been recorded in the BVI’s secure beneficial-ownership system in November 2017. [SRC-002]\n\n**DLA Piper** represented King Abdullah in responses to the reporting. It denied that offshore ownership was improper and said the properties had not been funded with public money or aid proceeds. [SRC-003]\n\n### 6. What was the reported financial scale and timeline?\n\nThe portfolio was variously reported as:\n\n- **Well over $100 million** by The Guardian. [SRC-002]\n- Approximately **$106 million / more than €91 million**, involving 14 houses and flats in the US and UK acquired between 2003 and 2017, according to DW. [SRC-001]\n- A **$100 million property empire**, according to Al Jazeera and the ICIJ article title. [SRC-003] [SRC-004]\n\nThe specific property purchases reported by The Guardian include:\n\n- UK properties acquired between **2003 and 2011**;\n- Washington, D.C. condominiums acquired in the two years before the Malibu mansion;\n- The principal Malibu mansion acquired in **August 2014**;\n- The wider reporting period extending through **2017**. [SRC-002] [SRC-001]\n\n### 7. What explanations and denials were given?\n\nThe royal palace said the properties were no secret, that privacy and security justified nondisclosure, and that the properties were used for official and private visits. It said all costs were personally funded and that no state treasury funds were used. [SRC-003] [SRC-004]\n\nThe king’s lawyers said the properties were acquired with personal wealth and denied any use of public monies, foreign aid, or assistance intended for public use. [SRC-002] [SRC-003]\n\nThe sources state that owning property through offshore companies is not inherently illegal. The Guardian reported **no evidence of wrongdoing**, while DW assessed that the purchases were probably not illegal but potentially inconsistent with Jordan’s stated principles of financial transparency. [SRC-002] [SRC-001]\n\n## Assessment\n\nThe strongest supported assessment is that the Pandora Papers reporting linked King Abdullah II to a substantial offshore property network, with named BVI companies used to hold or acquire high-value real estate in the United States and United Kingdom. The reporting also connects the network to Alcogal’s corporate-services records and to legal responses coordinated through DLA Piper. [SRC-002] [SRC-003]\n\nThe evidence supports concerns about **secrecy, transparency, and political optics**, particularly because the purchases coincided with Jordanian austerity, international aid, and domestic economic hardship. However, the available sources do not prove that public money or aid was used, nor do they establish criminal conduct. [SRC-001] [SRC-002] [SRC-003]\n\n## Contradictions and unresolved points\n\n1. **Number of companies:** The Guardian reports a February 2017 memorandum identifying 16 companies, while DW reports 36 front companies. These may refer to different scopes—such as the core network versus a broader set of entities—but the available sources do not resolve the discrepancy. [SRC-001] [SRC-002]\n\n2. **Number of properties:** DW reports 14 houses and flats, while the detailed Guardian account identifies seven UK properties, three Washington condominiums, and three Malibu properties—13 properties in total. The available reporting does not identify the possible additional property. [SRC-001] [SRC-002]\n\n3. **Portfolio valuation:** Reported values range from more than $100 million to approximately $106 million / more than €91 million. These figures may reflect different currencies, valuation dates, or property counts. [SRC-001] [SRC-002] [SRC-003]\n\n4. **Jurisdictional scope:** The sources clearly identify BVI incorporation and assets connected to the US, UK, and Jersey. The broader list of offshore jurisdictions in Al Jazeera’s account describes the Pandora Papers generally and should not be treated as a confirmed list of jurisdictions used by Abdullah’s specific entities. [SRC-002] [SRC-003]\n\n```json\n{\n  \"findings\": [\n    {\n      \"question\": \"Who was reported as the beneficial owner of the offshore network?\",\n      \"answer\": \"A February 2017 Alcogal memorandum reportedly identified a Jordanian client named Abdullah Al Hussein, born January 30, 1962, with an address at Raghadan Palace; the reporting connected this client to King Abdullah II and described him as beneficial owner of 16 companies.\",\n      \"supporting_entities\": [\n        \"King Abdullah II\",\n        \"Abdullah Al Hussein\",\n        \"Raghadan Palace\",\n        \"Alcogal\",\n        \"February 2017 Alcogal memorandum\"\n      ],\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"question\": \"Which named offshore companies were connected to the network?\",\n      \"answer\": \"The available reporting names Nabisco Holdings SA, Setara Limited, and Timara Limited. The companies were reported as incorporated in the British Virgin Islands and connected to the Malibu acquisitions.\",\n      \"supporting_entities\": [\n        \"Nabisco Holdings SA\",\n        \"Setara Limited\",\n        \"Timara Limited\",\n        \"British Virgin Islands\"\n      ],\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"question\": \"Where was the reported property portfolio located?\",\n      \"answer\": \"The portfolio included three Malibu properties, three Washington, D.C. condominiums, a house in Ascot, and seven luxury UK properties including three in Belgravia and other central London apartments. The network was also reported to hold assets connected to Jersey.\",\n      \"supporting_entities\": [\n        \"Malibu\",\n        \"Washington, DC\",\n        \"Ascot\",\n        \"Belgravia\",\n        \"London\",\n        \"Jersey\"\n      ],\n      \"source_references\": [\n        \"SRC-001\",\n        \"SRC-002\",\n        \"SRC-003\",\n        \"SRC-004\"\n      ]\n    },\n    {\n      \"question\": \"What was the reported value and timing of the acquisitions",
+    "operational": {
+      "duration_ms": 267541.86,
+      "mode": "offline",
+      "iterations": 10,
+      "search_calls": 3,
+      "fetch_calls": 4,
+      "knowledge_base_calls": 1,
+      "termination_reason": "final_report"
+    },
+    "output": {
+      "entities": [
+        {
+          "type": "PERSON",
+          "value": "King Abdullah II"
+        },
+        {
+          "type": "ALIAS",
+          "value": "Abdullah Al Hussein"
+        },
+        {
+          "type": "ADDRESS",
+          "value": "Raghadan Palace"
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "Alcogal"
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "Nabisco Holdings SA"
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "Setara Limited"
+        },
+        {
+          "type": "ORGANIZATION",
+          "value": "Timara Limited"
+        },
+        {
+          "type": "DOCUMENT",
+          "value": "February 2017 Alcogal memorandum"
+        },
+        {
+          "type": "LOCATION",
+          "value": "British Virgin Islands"
+        },
+        {
+          "type": "LOCATION",
+          "value": "Malibu"
+        },
+        {
+          "type": "LOCATION",
+          "value": "Washington, DC"
+        },
+        {
+          "type": "LOCATION",
+          "value": "Belgravia"
+        },
+        {
+          "type": "LOCATION",
+          "value": "Ascot"
+        },
+        {
+          "type": "LOCATION",
+          "value": "London"
+        },
+        {
+          "type": "LOCATION",
+          "value": "Jersey"
+        }
+      ],
+      "relations": [
+        {
+          "relation_type": "ALIAS_FOR",
+          "from_type": "alias",
+          "from_value": "Abdullah Al Hussein",
+          "to_type": "person",
+          "to_value": "King Abdullah II"
+        },
+        {
+          "relation_type": "ASSOCIATED_WITH",
+          "from_type": "person",
+          "from_value": "King Abdullah II",
+          "to_type": "address",
+          "to_value": "Raghadan Palace"
+        },
+        {
+          "relation_type": "LINKED_TO",
+          "from_type": "document",
+          "from_value": "February 2017 Alcogal memorandum",
+          "to_type": "person",
+          "to_value": "King Abdullah II"
+        },
+        {
+          "relation_type": "LINKED_TO",
+          "from_type": "document",
+          "from_value": "February 2017 Alcogal memorandum",
+          "to_type": "organization",
+          "to_value": "Nabisco Holdings SA"
+        },
+        {
+          "relation_type": "LINKED_TO",
+          "from_type": "document",
+          "from_value": "February 2017 Alcogal memorandum",
+          "to_type": "organization",
+          "to_value": "Setara Limited"
+        },
+        {
+          "relation_type": "LINKED_TO",
+          "from_type": "document",
+          "from_value": "February 2017 Alcogal memorandum",
+          "to_type": "organization",
+          "to_value": "Timara Limited"
+        },
+        {
+          "relation_type": "OWNED_OR_CONNECTED_TO_FRONT_COMPANY",
+          "from_type": "person",
+          "from_value": "King Abdullah II",
+          "to_type": "organization",
+          "to_value": "Nabisco Holdings SA"
+        },
+        {
+          "relation_type": "OWNED_OR_CONNECTED_TO_FRONT_COMPANY",
+          "from_type": "person",
+          "from_value": "King Abdullah II",
+          "to_type": "organization",
+          "to_value": "Setara Limited"
+        },
+        {
+          "relation_type": "OWNED_OR_CONNECTED_TO_FRONT_COMPANY",
+          "from_type": "person",
+          "from_value": "King Abdullah II",
+          "to_type": "organization",
+          "to_value": "Timara Limited"
+        },
+        {
+          "relation_type": "INCORPORATED_IN",
+          "from_type": "organization",
+          "from_value": "Nabisco Holdings SA",
+          "to_type": "location",
+          "to_value": "British Virgin Islands"
+        },
+        {
+          "relation_type": "INCORPORATED_IN",
+          "from_type": "organization",
+          "from_value": "Setara Limited",
+          "to_type": "location",
+          "to_value": "British Virgin Islands"
+        },
+        {
+          "relation_type": "INCORPORATED_IN",
+          "from_type": "organization",
+          "from_value": "Timara Limited",
+          "to_type": "location",
+          "to_value": "British Virgin Islands"
+        },
+        {
+          "relation_type": "OWNED_PROPERTY_IN",
+          "from_type": "person",
+          "from_value": "King Abdullah II",
+          "to_type": "location",
+          "to_value": "Malibu"
+        },
+        {
+          "relation_type": "OWNED_PROPERTY_IN",
+          "from_type": "person",
+          "from_value": "King Abdullah II",
+          "to_type": "location",
+          "to_value": "Washington, DC"
+        },
+        {
+          "relation_type": "OWNED_PROPERTY_IN",
+          "from_type": "person",
+          "from_value": "King Abdullah II",
+          "to_type": "location",
+          "to_value": "Belgravia"
+        },
+        {
+          "relation_type": "OWNED_PROPERTY_IN",
+          "from_type": "person",
+          "from_value": "King Abdullah II",
+          "to_type": "location",
+          "to_value": "Ascot"
+        },
+        {
+          "relation_type": "OWNED_PROPERTY_IN",
+          "from_type": "person",
+          "from_value": "King Abdullah II",
+          "to_type": "location",
+          "to_value": "London"
+        },
+        {
+          "relation_type": "OWNED_PROPERTY_IN",
+          "from_type": "person",
+          "from_value": "King Abdullah II",
+          "to_type": "location",
+          "to_value": "Jersey"
+        }
+      ],
+      "source_references": [
+        "SRC-001",
+        "SRC-002",
+        "SRC-003",
+        "SRC-004"
+      ],
+      "citations": [
+        "SRC-001",
+        "SRC-002",
+        "SRC-003",
+        "SRC-004"
+      ],
+      "available_source_references": [
+        "SRC-001",
+        "SRC-002",
+        "SRC-003",
+        "SRC-004"
+      ],
+      "report": "# Final Report: Pandora Papers — King Abdullah II’s Offshore Property Network\n\n## Executive summary\n\nPublic reporting based on the Pandora Papers alleges that Jordan’s King Abdullah II was the beneficial owner of a multinational property-holding network using offshore companies. The reported portfolio was valued at **more than $100 million** and included luxury real estate in **Malibu, California; Washington, D.C.; Ascot; and central London, including Belgravia**. The network was reportedly incorporated primarily in the **British Virgin Islands (BVI)** and held assets connected to the **United States, United Kingdom, and Jersey**. [SRC-002] [SRC-003] [SRC-004]\n\nThe clearest company-level reporting identifies **Nabisco Holdings SA, Setara Limited, and Timara Limited**. The three entities were linked to the Malibu acquisitions, with Timara specifically associated in the reporting with those properties. [SRC-002]\n\nThe reporting identifies two important intermediaries or advisers:\n\n- **Alcogal**, the Panamanian law firm whose records reportedly identified “Abdullah Al Hussein,” at the address of Raghadan Palace, as beneficial owner of 16 companies. [SRC-002]\n- **DLA Piper**, identified as the law firm representing the monarch and communicating his denial that the offshore ownership structure was improper or involved public funds. [SRC-003] [SRC-002]\n\nThe sources do **not establish that the arrangements were illegal**. The Guardian expressly reported that it found no evidence of wrongdoing, while the palace and lawyers said the properties were privately funded and held offshore for privacy and security reasons. [SRC-002] [SRC-003] [SRC-001]\n\n## Network map\n\n```text\nKing Abdullah II\n└── Reported alias/client name: Abdullah Al Hussein\n    └── Address in Alcogal memorandum: Raghadan Palace, Amman\n        └── Reported beneficial ownership of an offshore company network\n            ├── Nabisco Holdings SA\n            ├── Setara Limited\n            ├── Timara Limited\n            └── Other entities not individually identified in the available reporting\n                ├── Malibu properties, California\n                ├── Washington, D.C. condominiums\n                ├── Ascot house\n                ├── Central London properties, including Belgravia\n                └── Assets reportedly connected to Jersey\n```\n\nThe three named companies were reported as incorporated in the **British Virgin Islands**. [SRC-002]\n\n## Key findings\n\n### 1. Who was identified as the beneficial owner?\n\nThe Guardian reported that a February 2017 internal Alcogal memorandum identified a Jordanian client named **“Abdullah Al Hussein,” born January 30, 1962**, with an address at **Raghadan Palace**. The reporting connected those identifying details to King Abdullah II and said the client was listed as beneficial owner of 16 companies. [SRC-002]\n\nThis identification is supported by the matching name, birth date, nationality, and royal-palace address reported by the Guardian, but the available sources describe it as a finding from leaked documents and reporting rather than a public corporate-register disclosure. [SRC-002]\n\n### 2. Which shell or offshore companies were named?\n\nThe available reporting specifically names:\n\n- **Nabisco Holdings SA**\n- **Setara Limited**\n- **Timara Limited**\n\nThe Guardian reported that these companies were among the entities in the network and that **Setara Limited and Timara Limited**, along with Nabisco Holdings SA, were connected to the Malibu property acquisitions. The reporting describes the broader entities as offshore companies; DW characterizes the wider network as involving **36 front companies registered in tax havens**. [SRC-002] [SRC-001]\n\nThe term “front companies” reflects DW’s characterization. The sources do not provide a complete list of all 16 or 36 entities, so the full corporate chain cannot be reconstructed from the available evidence. [SRC-001] [SRC-002]\n\n### 3. What properties and locations were reported?\n\nThe reported luxury-property footprint included:\n\n- **Malibu, California:** Three clifftop or beachfront properties. One was described as a 26-room mansion purchased in August 2014 for **$33.5 million**; two neighboring properties were subsequently acquired. Other reporting placed the combined price of the three Malibu mansions at **$68 million**. [SRC-002] [SRC-003] [SRC-004]\n- **Washington, D.C.:** Three luxury condominiums, acquired in the two years before the Malibu mansion, for **$13.8 million in total**. [SRC-002]\n- **Ascot, England:** A house in one of England’s most expensive towns. [SRC-003] [SRC-004]\n- **Central London:** Multimillion-dollar apartments, including **three properties in Belgravia**. The reported UK portfolio consisted of seven luxury properties purchased between 2003 and 2011, with an estimated current value of approximately **£28 million**. [SRC-002] [SRC-003]\n- **Jersey:** The Guardian reported that the 16-company network held assets in the US, UK, and Jersey. The available text does not identify the specific Jersey asset or property. [SRC-002]\n\n### 4. What jurisdictions were involved?\n\nThe reporting identifies the **British Virgin Islands** as the incorporation jurisdiction for the named companies and describes the network as holding assets in the **United States, United Kingdom, and Jersey**. [SRC-002]\n\nThe wider Pandora Papers reporting referenced offshore service providers and jurisdictions including the **BVI, Panama, Belize, Cyprus, the United Arab Emirates, Singapore, and Switzerland**. However, the available sources do **not** establish that King Abdullah’s specific entities were incorporated or maintained in every one of those jurisdictions. [SRC-003]\n\n### 5. Who were the advisers or intermediaries?\n\n**Alcogal** was the relevant corporate-services or legal intermediary in the specific reporting. Its leaked records reportedly included the February 2017 memorandum identifying the beneficial owner and the 16-company network. The Guardian further reported that Alcogal personnel discussed how to preserve the client’s secrecy and referred to the “final beneficiary” as “you know who.” [SRC-002]\n\nAlcogal denied deliberately failing to identify a politically exposed person and said the beneficial-owner information had been recorded in the BVI’s secure beneficial-ownership system in November 2017. [SRC-002]\n\n**DLA Piper** represented King Abdullah in responses to the reporting. It denied that offshore ownership was improper and said the properties had not been funded with public money or aid proceeds. [SRC-003]\n\n### 6. What was the reported financial scale and timeline?\n\nThe portfolio was variously reported as:\n\n- **Well over $100 million** by The Guardian. [SRC-002]\n- Approximately **$106 million / more than €91 million**, involving 14 houses and flats in the US and UK acquired between 2003 and 2017, according to DW. [SRC-001]\n- A **$100 million property empire**, according to Al Jazeera and the ICIJ article title. [SRC-003] [SRC-004]\n\nThe specific property purchases reported by The Guardian include:\n\n- UK properties acquired between **2003 and 2011**;\n- Washington, D.C. condominiums acquired in the two years before the Malibu mansion;\n- The principal Malibu mansion acquired in **August 2014**;\n- The wider reporting period extending through **2017**. [SRC-002] [SRC-001]\n\n### 7. What explanations and denials were given?\n\nThe royal palace said the properties were no secret, that privacy and security justified nondisclosure, and that the properties were used for official and private visits. It said all costs were personally funded and that no state treasury funds were used. [SRC-003] [SRC-004]\n\nThe king’s lawyers said the properties were acquired with personal wealth and denied any use of public monies, foreign aid, or assistance intended for public use. [SRC-002] [SRC-003]\n\nThe sources state that owning property through offshore companies is not inherently illegal. The Guardian reported **no evidence of wrongdoing**, while DW assessed that the purchases were probably not illegal but potentially inconsistent with Jordan’s stated principles of financial transparency. [SRC-002] [SRC-001]\n\n## Assessment\n\nThe strongest supported assessment is that the Pandora Papers reporting linked King Abdullah II to a substantial offshore property network, with named BVI companies used to hold or acquire high-value real estate in the United States and United Kingdom. The reporting also connects the network to Alcogal’s corporate-services records and to legal responses coordinated through DLA Piper. [SRC-002] [SRC-003]\n\nThe evidence supports concerns about **secrecy, transparency, and political optics**, particularly because the purchases coincided with Jordanian austerity, international aid, and domestic economic hardship. However, the available sources do not prove that public money or aid was used, nor do they establish criminal conduct. [SRC-001] [SRC-002] [SRC-003]\n\n## Contradictions and unresolved points\n\n1. **Number of companies:** The Guardian reports a February 2017 memorandum identifying 16 companies, while DW reports 36 front companies. These may refer to different scopes—such as the core network versus a broader set of entities—but the available sources do not resolve the discrepancy. [SRC-001] [SRC-002]\n\n2. **Number of properties:** DW reports 14 houses and flats, while the detailed Guardian account identifies seven UK properties, three Washington condominiums, and three Malibu properties—13 properties in total. The available reporting does not identify the possible additional property. [SRC-001] [SRC-002]\n\n3. **Portfolio valuation:** Reported values range from more than $100 million to approximately $106 million / more than €91 million. These figures may reflect different currencies, valuation dates, or property counts. [SRC-001] [SRC-002] [SRC-003]\n\n4. **Jurisdictional scope:** The sources clearly identify BVI incorporation and assets connected to the US, UK, and Jersey. The broader list of offshore jurisdictions in Al Jazeera’s account describes the Pandora Papers generally and should not be treated as a confirmed list of jurisdictions used by Abdullah’s specific entities. [SRC-002] [SRC-003]\n\n```json\n{\n  \"findings\": [\n    {\n      \"question\": \"Who was reported as the beneficial owner of the offshore network?\",\n      \"answer\": \"A February 2017 Alcogal memorandum reportedly identified a Jordanian client named Abdullah Al Hussein, born January 30, 1962, with an address at Raghadan Palace; the reporting connected this client to King Abdullah II and described him as beneficial owner of 16 companies.\",\n      \"supporting_entities\": [\n        \"King Abdullah II\",\n        \"Abdullah Al Hussein\",\n        \"Raghadan Palace\",\n        \"Alcogal\",\n        \"February 2017 Alcogal memorandum\"\n      ],\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"question\": \"Which named offshore companies were connected to the network?\",\n      \"answer\": \"The available reporting names Nabisco Holdings SA, Setara Limited, and Timara Limited. The companies were reported as incorporated in the British Virgin Islands and connected to the Malibu acquisitions.\",\n      \"supporting_entities\": [\n        \"Nabisco Holdings SA\",\n        \"Setara Limited\",\n        \"Timara Limited\",\n        \"British Virgin Islands\"\n      ],\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"question\": \"Where was the reported property portfolio located?\",\n      \"answer\": \"The portfolio included three Malibu properties, three Washington, D.C. condominiums, a house in Ascot, and seven luxury UK properties including three in Belgravia and other central London apartments. The network was also reported to hold assets connected to Jersey.\",\n      \"supporting_entities\": [\n        \"Malibu\",\n        \"Washington, DC\",\n        \"Ascot\",\n        \"Belgravia\",\n        \"London\",\n        \"Jersey\"\n      ],\n      \"source_references\": [\n        \"SRC-001\",\n        \"SRC-002\",\n        \"SRC-003\",\n        \"SRC-004\"\n      ]\n    },\n    {\n      \"question\": \"What was the reported value and timing of the acquisitions",
+      "operational": {
+        "duration_ms": 267541.86,
+        "mode": "offline",
+        "iterations": 10,
+        "search_calls": 3,
+        "fetch_calls": 4,
+        "knowledge_base_calls": 1,
+        "termination_reason": "final_report"
+      },
+      "graph_capture_source": "trace",
+      "key_findings": [],
+      "contradictions": [],
+      "reasoning_steps": [],
+      "reasoning_step_details": [],
+      "claims": [],
+      "structured_output": false,
+      "structured_output_valid": false,
+      "structured_output_complete": false,
+      "missing_structured_sections": [
+        "claims",
+        "contradictions",
+        "findings",
+        "reasoning_steps"
+      ],
+      "structured_output_errors": [],
+      "graph_capture_diagnostics": {
+        "entity_records_emitted": 15,
+        "relation_records_emitted": 18,
+        "knowledge_agent_calls": 1,
+        "relations_expected": 9,
+        "contradictions_expected": 1
+      }
+    }
+  },
+  "output": {
+    "entities": [
+      {
+        "type": "PERSON",
+        "value": "King Abdullah II"
+      },
+      {
+        "type": "ALIAS",
+        "value": "Abdullah Al Hussein"
+      },
+      {
+        "type": "ADDRESS",
+        "value": "Raghadan Palace"
+      },
+      {
+        "type": "ORGANIZATION",
+        "value": "Alcogal"
+      },
+      {
+        "type": "ORGANIZATION",
+        "value": "Nabisco Holdings SA"
+      },
+      {
+        "type": "ORGANIZATION",
+        "value": "Setara Limited"
+      },
+      {
+        "type": "ORGANIZATION",
+        "value": "Timara Limited"
+      },
+      {
+        "type": "DOCUMENT",
+        "value": "February 2017 Alcogal memorandum"
+      },
+      {
+        "type": "LOCATION",
+        "value": "British Virgin Islands"
+      },
+      {
+        "type": "LOCATION",
+        "value": "Malibu"
+      },
+      {
+        "type": "LOCATION",
+        "value": "Washington, DC"
+      },
+      {
+        "type": "LOCATION",
+        "value": "Belgravia"
+      },
+      {
+        "type": "LOCATION",
+        "value": "Ascot"
+      },
+      {
+        "type": "LOCATION",
+        "value": "London"
+      },
+      {
+        "type": "LOCATION",
+        "value": "Jersey"
+      }
+    ],
+    "relations": [
+      {
+        "relation_type": "ALIAS_FOR",
+        "from_type": "alias",
+        "from_value": "Abdullah Al Hussein",
+        "to_type": "person",
+        "to_value": "King Abdullah II"
+      },
+      {
+        "relation_type": "ASSOCIATED_WITH",
+        "from_type": "person",
+        "from_value": "King Abdullah II",
+        "to_type": "address",
+        "to_value": "Raghadan Palace"
+      },
+      {
+        "relation_type": "LINKED_TO",
+        "from_type": "document",
+        "from_value": "February 2017 Alcogal memorandum",
+        "to_type": "person",
+        "to_value": "King Abdullah II"
+      },
+      {
+        "relation_type": "LINKED_TO",
+        "from_type": "document",
+        "from_value": "February 2017 Alcogal memorandum",
+        "to_type": "organization",
+        "to_value": "Nabisco Holdings SA"
+      },
+      {
+        "relation_type": "LINKED_TO",
+        "from_type": "document",
+        "from_value": "February 2017 Alcogal memorandum",
+        "to_type": "organization",
+        "to_value": "Setara Limited"
+      },
+      {
+        "relation_type": "LINKED_TO",
+        "from_type": "document",
+        "from_value": "February 2017 Alcogal memorandum",
+        "to_type": "organization",
+        "to_value": "Timara Limited"
+      },
+      {
+        "relation_type": "OWNED_OR_CONNECTED_TO_FRONT_COMPANY",
+        "from_type": "person",
+        "from_value": "King Abdullah II",
+        "to_type": "organization",
+        "to_value": "Nabisco Holdings SA"
+      },
+      {
+        "relation_type": "OWNED_OR_CONNECTED_TO_FRONT_COMPANY",
+        "from_type": "person",
+        "from_value": "King Abdullah II",
+        "to_type": "organization",
+        "to_value": "Setara Limited"
+      },
+      {
+        "relation_type": "OWNED_OR_CONNECTED_TO_FRONT_COMPANY",
+        "from_type": "person",
+        "from_value": "King Abdullah II",
+        "to_type": "organization",
+        "to_value": "Timara Limited"
+      },
+      {
+        "relation_type": "INCORPORATED_IN",
+        "from_type": "organization",
+        "from_value": "Nabisco Holdings SA",
+        "to_type": "location",
+        "to_value": "British Virgin Islands"
+      },
+      {
+        "relation_type": "INCORPORATED_IN",
+        "from_type": "organization",
+        "from_value": "Setara Limited",
+        "to_type": "location",
+        "to_value": "British Virgin Islands"
+      },
+      {
+        "relation_type": "INCORPORATED_IN",
+        "from_type": "organization",
+        "from_value": "Timara Limited",
+        "to_type": "location",
+        "to_value": "British Virgin Islands"
+      },
+      {
+        "relation_type": "OWNED_PROPERTY_IN",
+        "from_type": "person",
+        "from_value": "King Abdullah II",
+        "to_type": "location",
+        "to_value": "Malibu"
+      },
+      {
+        "relation_type": "OWNED_PROPERTY_IN",
+        "from_type": "person",
+        "from_value": "King Abdullah II",
+        "to_type": "location",
+        "to_value": "Washington, DC"
+      },
+      {
+        "relation_type": "OWNED_PROPERTY_IN",
+        "from_type": "person",
+        "from_value": "King Abdullah II",
+        "to_type": "location",
+        "to_value": "Belgravia"
+      },
+      {
+        "relation_type": "OWNED_PROPERTY_IN",
+        "from_type": "person",
+        "from_value": "King Abdullah II",
+        "to_type": "location",
+        "to_value": "Ascot"
+      },
+      {
+        "relation_type": "OWNED_PROPERTY_IN",
+        "from_type": "person",
+        "from_value": "King Abdullah II",
+        "to_type": "location",
+        "to_value": "London"
+      },
+      {
+        "relation_type": "OWNED_PROPERTY_IN",
+        "from_type": "person",
+        "from_value": "King Abdullah II",
+        "to_type": "location",
+        "to_value": "Jersey"
+      }
+    ],
+    "source_references": [
+      "SRC-001",
+      "SRC-002",
+      "SRC-003",
+      "SRC-004"
+    ],
+    "citations": [
+      "SRC-001",
+      "SRC-002",
+      "SRC-003",
+      "SRC-004"
+    ],
+    "available_source_references": [
+      "SRC-001",
+      "SRC-002",
+      "SRC-003",
+      "SRC-004"
+    ],
+    "report": "# Final Report: Pandora Papers — King Abdullah II’s Offshore Property Network\n\n## Executive summary\n\nPublic reporting based on the Pandora Papers alleges that Jordan’s King Abdullah II was the beneficial owner of a multinational property-holding network using offshore companies. The reported portfolio was valued at **more than $100 million** and included luxury real estate in **Malibu, California; Washington, D.C.; Ascot; and central London, including Belgravia**. The network was reportedly incorporated primarily in the **British Virgin Islands (BVI)** and held assets connected to the **United States, United Kingdom, and Jersey**. [SRC-002] [SRC-003] [SRC-004]\n\nThe clearest company-level reporting identifies **Nabisco Holdings SA, Setara Limited, and Timara Limited**. The three entities were linked to the Malibu acquisitions, with Timara specifically associated in the reporting with those properties. [SRC-002]\n\nThe reporting identifies two important intermediaries or advisers:\n\n- **Alcogal**, the Panamanian law firm whose records reportedly identified “Abdullah Al Hussein,” at the address of Raghadan Palace, as beneficial owner of 16 companies. [SRC-002]\n- **DLA Piper**, identified as the law firm representing the monarch and communicating his denial that the offshore ownership structure was improper or involved public funds. [SRC-003] [SRC-002]\n\nThe sources do **not establish that the arrangements were illegal**. The Guardian expressly reported that it found no evidence of wrongdoing, while the palace and lawyers said the properties were privately funded and held offshore for privacy and security reasons. [SRC-002] [SRC-003] [SRC-001]\n\n## Network map\n\n```text\nKing Abdullah II\n└── Reported alias/client name: Abdullah Al Hussein\n    └── Address in Alcogal memorandum: Raghadan Palace, Amman\n        └── Reported beneficial ownership of an offshore company network\n            ├── Nabisco Holdings SA\n            ├── Setara Limited\n            ├── Timara Limited\n            └── Other entities not individually identified in the available reporting\n                ├── Malibu properties, California\n                ├── Washington, D.C. condominiums\n                ├── Ascot house\n                ├── Central London properties, including Belgravia\n                └── Assets reportedly connected to Jersey\n```\n\nThe three named companies were reported as incorporated in the **British Virgin Islands**. [SRC-002]\n\n## Key findings\n\n### 1. Who was identified as the beneficial owner?\n\nThe Guardian reported that a February 2017 internal Alcogal memorandum identified a Jordanian client named **“Abdullah Al Hussein,” born January 30, 1962**, with an address at **Raghadan Palace**. The reporting connected those identifying details to King Abdullah II and said the client was listed as beneficial owner of 16 companies. [SRC-002]\n\nThis identification is supported by the matching name, birth date, nationality, and royal-palace address reported by the Guardian, but the available sources describe it as a finding from leaked documents and reporting rather than a public corporate-register disclosure. [SRC-002]\n\n### 2. Which shell or offshore companies were named?\n\nThe available reporting specifically names:\n\n- **Nabisco Holdings SA**\n- **Setara Limited**\n- **Timara Limited**\n\nThe Guardian reported that these companies were among the entities in the network and that **Setara Limited and Timara Limited**, along with Nabisco Holdings SA, were connected to the Malibu property acquisitions. The reporting describes the broader entities as offshore companies; DW characterizes the wider network as involving **36 front companies registered in tax havens**. [SRC-002] [SRC-001]\n\nThe term “front companies” reflects DW’s characterization. The sources do not provide a complete list of all 16 or 36 entities, so the full corporate chain cannot be reconstructed from the available evidence. [SRC-001] [SRC-002]\n\n### 3. What properties and locations were reported?\n\nThe reported luxury-property footprint included:\n\n- **Malibu, California:** Three clifftop or beachfront properties. One was described as a 26-room mansion purchased in August 2014 for **$33.5 million**; two neighboring properties were subsequently acquired. Other reporting placed the combined price of the three Malibu mansions at **$68 million**. [SRC-002] [SRC-003] [SRC-004]\n- **Washington, D.C.:** Three luxury condominiums, acquired in the two years before the Malibu mansion, for **$13.8 million in total**. [SRC-002]\n- **Ascot, England:** A house in one of England’s most expensive towns. [SRC-003] [SRC-004]\n- **Central London:** Multimillion-dollar apartments, including **three properties in Belgravia**. The reported UK portfolio consisted of seven luxury properties purchased between 2003 and 2011, with an estimated current value of approximately **£28 million**. [SRC-002] [SRC-003]\n- **Jersey:** The Guardian reported that the 16-company network held assets in the US, UK, and Jersey. The available text does not identify the specific Jersey asset or property. [SRC-002]\n\n### 4. What jurisdictions were involved?\n\nThe reporting identifies the **British Virgin Islands** as the incorporation jurisdiction for the named companies and describes the network as holding assets in the **United States, United Kingdom, and Jersey**. [SRC-002]\n\nThe wider Pandora Papers reporting referenced offshore service providers and jurisdictions including the **BVI, Panama, Belize, Cyprus, the United Arab Emirates, Singapore, and Switzerland**. However, the available sources do **not** establish that King Abdullah’s specific entities were incorporated or maintained in every one of those jurisdictions. [SRC-003]\n\n### 5. Who were the advisers or intermediaries?\n\n**Alcogal** was the relevant corporate-services or legal intermediary in the specific reporting. Its leaked records reportedly included the February 2017 memorandum identifying the beneficial owner and the 16-company network. The Guardian further reported that Alcogal personnel discussed how to preserve the client’s secrecy and referred to the “final beneficiary” as “you know who.” [SRC-002]\n\nAlcogal denied deliberately failing to identify a politically exposed person and said the beneficial-owner information had been recorded in the BVI’s secure beneficial-ownership system in November 2017. [SRC-002]\n\n**DLA Piper** represented King Abdullah in responses to the reporting. It denied that offshore ownership was improper and said the properties had not been funded with public money or aid proceeds. [SRC-003]\n\n### 6. What was the reported financial scale and timeline?\n\nThe portfolio was variously reported as:\n\n- **Well over $100 million** by The Guardian. [SRC-002]\n- Approximately **$106 million / more than €91 million**, involving 14 houses and flats in the US and UK acquired between 2003 and 2017, according to DW. [SRC-001]\n- A **$100 million property empire**, according to Al Jazeera and the ICIJ article title. [SRC-003] [SRC-004]\n\nThe specific property purchases reported by The Guardian include:\n\n- UK properties acquired between **2003 and 2011**;\n- Washington, D.C. condominiums acquired in the two years before the Malibu mansion;\n- The principal Malibu mansion acquired in **August 2014**;\n- The wider reporting period extending through **2017**. [SRC-002] [SRC-001]\n\n### 7. What explanations and denials were given?\n\nThe royal palace said the properties were no secret, that privacy and security justified nondisclosure, and that the properties were used for official and private visits. It said all costs were personally funded and that no state treasury funds were used. [SRC-003] [SRC-004]\n\nThe king’s lawyers said the properties were acquired with personal wealth and denied any use of public monies, foreign aid, or assistance intended for public use. [SRC-002] [SRC-003]\n\nThe sources state that owning property through offshore companies is not inherently illegal. The Guardian reported **no evidence of wrongdoing**, while DW assessed that the purchases were probably not illegal but potentially inconsistent with Jordan’s stated principles of financial transparency. [SRC-002] [SRC-001]\n\n## Assessment\n\nThe strongest supported assessment is that the Pandora Papers reporting linked King Abdullah II to a substantial offshore property network, with named BVI companies used to hold or acquire high-value real estate in the United States and United Kingdom. The reporting also connects the network to Alcogal’s corporate-services records and to legal responses coordinated through DLA Piper. [SRC-002] [SRC-003]\n\nThe evidence supports concerns about **secrecy, transparency, and political optics**, particularly because the purchases coincided with Jordanian austerity, international aid, and domestic economic hardship. However, the available sources do not prove that public money or aid was used, nor do they establish criminal conduct. [SRC-001] [SRC-002] [SRC-003]\n\n## Contradictions and unresolved points\n\n1. **Number of companies:** The Guardian reports a February 2017 memorandum identifying 16 companies, while DW reports 36 front companies. These may refer to different scopes—such as the core network versus a broader set of entities—but the available sources do not resolve the discrepancy. [SRC-001] [SRC-002]\n\n2. **Number of properties:** DW reports 14 houses and flats, while the detailed Guardian account identifies seven UK properties, three Washington condominiums, and three Malibu properties—13 properties in total. The available reporting does not identify the possible additional property. [SRC-001] [SRC-002]\n\n3. **Portfolio valuation:** Reported values range from more than $100 million to approximately $106 million / more than €91 million. These figures may reflect different currencies, valuation dates, or property counts. [SRC-001] [SRC-002] [SRC-003]\n\n4. **Jurisdictional scope:** The sources clearly identify BVI incorporation and assets connected to the US, UK, and Jersey. The broader list of offshore jurisdictions in Al Jazeera’s account describes the Pandora Papers generally and should not be treated as a confirmed list of jurisdictions used by Abdullah’s specific entities. [SRC-002] [SRC-003]\n\n```json\n{\n  \"findings\": [\n    {\n      \"question\": \"Who was reported as the beneficial owner of the offshore network?\",\n      \"answer\": \"A February 2017 Alcogal memorandum reportedly identified a Jordanian client named Abdullah Al Hussein, born January 30, 1962, with an address at Raghadan Palace; the reporting connected this client to King Abdullah II and described him as beneficial owner of 16 companies.\",\n      \"supporting_entities\": [\n        \"King Abdullah II\",\n        \"Abdullah Al Hussein\",\n        \"Raghadan Palace\",\n        \"Alcogal\",\n        \"February 2017 Alcogal memorandum\"\n      ],\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"question\": \"Which named offshore companies were connected to the network?\",\n      \"answer\": \"The available reporting names Nabisco Holdings SA, Setara Limited, and Timara Limited. The companies were reported as incorporated in the British Virgin Islands and connected to the Malibu acquisitions.\",\n      \"supporting_entities\": [\n        \"Nabisco Holdings SA\",\n        \"Setara Limited\",\n        \"Timara Limited\",\n        \"British Virgin Islands\"\n      ],\n      \"source_references\": [\n        \"SRC-002\"\n      ]\n    },\n    {\n      \"question\": \"Where was the reported property portfolio located?\",\n      \"answer\": \"The portfolio included three Malibu properties, three Washington, D.C. condominiums, a house in Ascot, and seven luxury UK properties including three in Belgravia and other central London apartments. The network was also reported to hold assets connected to Jersey.\",\n      \"supporting_entities\": [\n        \"Malibu\",\n        \"Washington, DC\",\n        \"Ascot\",\n        \"Belgravia\",\n        \"London\",\n        \"Jersey\"\n      ],\n      \"source_references\": [\n        \"SRC-001\",\n        \"SRC-002\",\n        \"SRC-003\",\n        \"SRC-004\"\n      ]\n    },\n    {\n      \"question\": \"What was the reported value and timing of the acquisitions",
+    "operational": {
+      "duration_ms": 267541.86,
+      "mode": "offline",
+      "iterations": 10,
+      "search_calls": 3,
+      "fetch_calls": 4,
+      "knowledge_base_calls": 1,
+      "termination_reason": "final_report"
+    },
+    "graph_capture_source": "trace",
+    "key_findings": [],
+    "contradictions": [],
+    "reasoning_steps": [],
+    "reasoning_step_details": [],
+    "claims": [],
+    "structured_output": false,
+    "structured_output_valid": false,
+    "structured_output_complete": false,
+    "missing_structured_sections": [
+      "claims",
+      "contradictions",
+      "findings",
+      "reasoning_steps"
+    ],
+    "structured_output_errors": [],
+    "graph_capture_diagnostics": {
+      "entity_records_emitted": 15,
+      "relation_records_emitted": 18,
+      "knowledge_agent_calls": 1,
+      "relations_expected": 9,
+      "contradictions_expected": 1
+    }
+  },
+  "metrics": {
+    "output_validation": {
+      "valid": false,
+      "errors": []
+    },
+    "entities": {
+      "true_positive": 5,
+      "false_positive": 10,
+      "false_negative": 5,
+      "precision": 0.3333333333333333,
+      "recall": 0.5,
+      "f1": 0.4,
+      "missing": [
+        [
+          "location",
+          "malibu, california"
+        ],
+        [
+          "organization",
+          "guinevere enterprises ltd."
+        ],
+        [
+          "organization",
+          "zayer ltd."
+        ],
+        [
+          "person",
+          "andrew evans"
+        ],
+        [
+          "person",
+          "victoria loraine"
+        ]
+      ],
+      "unexpected": [
+        [
+          "address",
+          "raghadan palace"
+        ],
+        [
+          "alias",
+          "abdullah al hussein"
+        ],
+        [
+          "document",
+          "february 2017 alcogal memorandum"
+        ],
+        [
+          "location",
+          "ascot"
+        ],
+        [
+          "location",
+          "belgravia"
+        ],
+        [
+          "location",
+          "jersey"
+        ],
+        [
+          "location",
+          "malibu"
+        ],
+        [
+          "organization",
+          "nabisco holdings sa"
+        ],
+        [
+          "organization",
+          "setara limited"
+        ],
+        [
+          "organization",
+          "timara limited"
+        ]
+      ]
+    },
+    "relations": {
+      "true_positive": 2,
+      "false_positive": 16,
+      "false_negative": 7,
+      "precision": 0.1111111111111111,
+      "recall": 0.2222222222222222,
+      "f1": 0.14814814814814814,
+      "missing": [
+        [
+          [
+            "organization",
+            "alcogal"
+          ],
+          "offshore_service_provider_for",
+          [
+            "person",
+            "king abdullah ii"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "guinevere enterprises ltd."
+          ],
+          "incorporated_in",
+          [
+            "location",
+            "british virgin islands"
+          ]
+        ],
+        [
+          [
+            "person",
+            "andrew evans"
+          ],
+          "wealth_manager_or_record_keeper_for",
+          [
+            "person",
+            "king abdullah ii"
+          ]
+        ],
+        [
+          [
+            "person",
+            "king abdullah ii"
+          ],
+          "owned_or_connected_to_front_company",
+          [
+            "organization",
+            "guinevere enterprises ltd."
+          ]
+        ],
+        [
+          [
+            "person",
+            "king abdullah ii"
+          ],
+          "owned_or_connected_to_front_company",
+          [
+            "organization",
+            "zayer ltd."
+          ]
+        ],
+        [
+          [
+            "person",
+            "king abdullah ii"
+          ],
+          "owned_property_in",
+          [
+            "location",
+            "malibu, california"
+          ]
+        ],
+        [
+          [
+            "person",
+            "victoria loraine"
+          ],
+          "adviser_to",
+          [
+            "person",
+            "king abdullah ii"
+          ]
+        ]
+      ],
+      "unexpected": [
+        [
+          [
+            "alias",
+            "abdullah al hussein"
+          ],
+          "alias_for",
+          [
+            "person",
+            "king abdullah ii"
+          ]
+        ],
+        [
+          [
+            "document",
+            "february 2017 alcogal memorandum"
+          ],
+          "associated_with",
+          [
+            "organization",
+            "nabisco holdings sa"
+          ]
+        ],
+        [
+          [
+            "document",
+            "february 2017 alcogal memorandum"
+          ],
+          "associated_with",
+          [
+            "organization",
+            "setara limited"
+          ]
+        ],
+        [
+          [
+            "document",
+            "february 2017 alcogal memorandum"
+          ],
+          "associated_with",
+          [
+            "organization",
+            "timara limited"
+          ]
+        ],
+        [
+          [
+            "document",
+            "february 2017 alcogal memorandum"
+          ],
+          "associated_with",
+          [
+            "person",
+            "king abdullah ii"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "nabisco holdings sa"
+          ],
+          "incorporated_in",
+          [
+            "location",
+            "british virgin islands"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "setara limited"
+          ],
+          "incorporated_in",
+          [
+            "location",
+            "british virgin islands"
+          ]
+        ],
+        [
+          [
+            "organization",
+            "timara limited"
+          ],
+          "incorporated_in",
+          [
+            "location",
+            "british virgin islands"
+          ]
+        ],
+        [
+          [
+            "person",
+            "king abdullah ii"
+          ],
+          "associated_with",
+          [
+            "address",
+            "raghadan palace"
+          ]
+        ],
+        [
+          [
+            "person",
+            "king abdullah ii"
+          ],
+          "owned_or_connected_to_front_company",
+          [
+            "organization",
+            "nabisco holdings sa"
+          ]
+        ],
+        [
+          [
+            "person",
+            "king abdullah ii"
+          ],
+          "owned_or_connected_to_front_company",
+          [
+            "organization",
+            "setara limited"
+          ]
+        ],
+        [
+          [
+            "person",
+            "king abdullah ii"
+          ],
+          "owned_or_connected_to_front_company",
+          [
+            "organization",
+            "timara limited"
+          ]
+        ],
+        [
+          [
+            "person",
+            "king abdullah ii"
+          ],
+          "owned_property_in",
+          [
+            "location",
+            "ascot"
+          ]
+        ],
+        [
+          [
+            "person",
+            "king abdullah ii"
+          ],
+          "owned_property_in",
+          [
+            "location",
+            "belgravia"
+          ]
+        ],
+        [
+          [
+            "person",
+            "king abdullah ii"
+          ],
+          "owned_property_in",
+          [
+            "location",
+            "jersey"
+          ]
+        ],
+        [
+          [
+            "person",
+            "king abdullah ii"
+          ],
+          "owned_property_in",
+          [
+            "location",
+            "malibu"
+          ]
+        ]
+      ],
+      "semantic_mapping": {
+        "also_known_as": "alias_of",
+        "alias_of": "alias_of",
+        "co_founded": "founded",
+        "founded": "founded",
+        "based_in": "located_in",
+        "located_in": "located_in",
+        "performed_special_audit": "audited",
+        "audited": "audited",
+        "former_coo_of": "executive_of",
+        "executive_of": "executive_of",
+        "provided_software": "provided",
+        "distributed_as_installer": "distributed",
+        "contained_malware": "contained",
+        "trojanized": "compromised",
+        "associated_with": "associated_with",
+        "linked_to": "associated_with",
+        "uses_or_is_associated_with": "associated_with"
+      }
+    },
+    "contradictions": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "details": [],
+      "missing": [
+        "CONTRA-001"
+      ],
+      "unexpected": [],
+      "grounded_recall": 0.0,
+      "grounded_f1": 0.0
+    },
+    "key_findings": {
+      "score": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "predicted": 0,
+      "expected": 3,
+      "matched": 0,
+      "details": [
+        {
+          "question": "What offshore ownership pattern should be reconstructed?",
+          "status": "missing",
+          "score": 0.0
+        },
+        {
+          "question": "Which jurisdictions and locations matter?",
+          "status": "missing",
+          "score": 0.0
+        },
+        {
+          "question": "What caveat should be preserved?",
+          "status": "missing",
+          "score": 0.0
+        }
+      ]
+    },
+    "source_traceability": {
+      "correct_sources": [
+        "SRC-001",
+        "SRC-002",
+        "SRC-003",
+        "SRC-004"
+      ],
+      "unknown_sources": [],
+      "unavailable_sources": [],
+      "source_precision": 1.0,
+      "source_recall": 1.0,
+      "ratio": 0.0,
+      "claim_level": {
+        "claims": 0,
+        "traceable_claims": 0,
+        "ratio": 0.0,
+        "status": "no_structured_claims"
+      },
+      "finding_level": {
+        "findings": 0,
+        "traceable_findings": 0,
+        "ratio": 0.0
+      }
+    },
+    "reasoning_coverage": {
+      "covered": [],
+      "invalid": [],
+      "total": 3,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "ratio": 0.0,
+      "status": "no_structured_steps"
+    },
+    "report_quality": {
+      "score": 0.25,
+      "checks": {
+        "non_empty": true,
+        "structured_output_complete": false,
+        "structured_output_valid": false,
+        "findings_present": false,
+        "findings_match": false,
+        "claims_traceable": false,
+        "contradictions_complete": false,
+        "contradictions_grounded": false,
+        "finding_sources_grounded": false,
+        "reasoning_conclusions_grounded": false,
+        "uncertainty_language": true,
+        "readable_length": true
+      },
+      "scale": "deterministic rubric 0-1"
+    },
+    "reasoning_quality": {
+      "covered": 0,
+      "expected": 3,
+      "coverage": 0.0,
+      "semantic_similarity": 0.0,
+      "premise_grounding": 0.0,
+      "grounded_score": 0.0,
+      "method": "premise_ids_plus_token_entailment_proxy",
+      "formula": "premise*conclusion",
+      "details": []
+    },
+    "operational": {
+      "duration_ms": 267541.86,
+      "mode": "offline",
+      "iterations": 10,
+      "search_calls": 3,
+      "fetch_calls": 4,
+      "knowledge_base_calls": 1,
+      "termination_reason": "final_report"
+    },
+    "retrieval": {
+      "status": "not_annotated",
+      "topics": 0
+    }
+  }
+}

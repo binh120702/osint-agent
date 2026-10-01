@@ -1,0 +1,80 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-002",
+  "report": "Error generating final report: APITimeoutError: Request timed out.",
+  "context": [],
+  "visited_urls": [
+    "https://rewardsforjustice.net/rewards/conti/",
+    "https://www.cisecurity.org/insights/blog/the-conti-leaks-a-case-of-cybercrimes-commercialization",
+    "https://www.justice.gov/usao-mdtn/conti-ransomware-2",
+    "https://www.rapid7.com/blog/post/2022/03/01/conti-ransomware-group-internal-chats-leaked-over-russia-ukraine-conflict/"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "Conti ransomware as a service official indictment complaint sanctions advisory internal chats leak organizational structure aliases defendants"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:justice.gov Conti ransomware indictment defendant alias TrickBot Ryuk Conti"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "Conti leaks internal chats organization roles affiliates payment negotiation primary source analysis"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:justice.gov/usao Conti Galochkin Rudenskiy Tsarev Zhuykov Lytvynenko press release aliases"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:justice.gov Conti ransomware \"Wizard Spider\" indictment aliases defendants"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:home.treasury.gov Conti sanctions aliases Wizard Spider TrickBot"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "FBI CISA Conti advisory ransomware as a service affiliates operators aliases"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 10,
+  "duration_seconds": 401.44189490005374
+}

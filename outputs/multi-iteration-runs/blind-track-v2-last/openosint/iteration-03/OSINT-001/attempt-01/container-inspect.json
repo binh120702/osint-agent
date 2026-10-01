@@ -1,0 +1,237 @@
+[
+    {
+        "Id": "e6d38477eee620db1de6176922731f30415d95eb17111318c225f4dfff6a87c4",
+        "Created": "2026-09-30T20:26:39.011072022Z",
+        "Path": "python",
+        "Args": [
+            "adapter.py"
+        ],
+        "State": {
+            "Status": "exited",
+            "Running": false,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 0,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-30T20:26:39.993811162Z",
+            "FinishedAt": "2026-09-30T20:28:25.174510707Z"
+        },
+        "Image": "sha256:7b18154df12666bf6419f4197b7f49577524dcfb26e75c62f5367e68900ab3bb",
+        "ResolvConfPath": "/var/lib/docker/containers/e6d38477eee620db1de6176922731f30415d95eb17111318c225f4dfff6a87c4/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/e6d38477eee620db1de6176922731f30415d95eb17111318c225f4dfff6a87c4/hostname",
+        "HostsPath": "/var/lib/docker/containers/e6d38477eee620db1de6176922731f30415d95eb17111318c225f4dfff6a87c4/hosts",
+        "LogPath": "/var/lib/docker/containers/e6d38477eee620db1de6176922731f30415d95eb17111318c225f4dfff6a87c4/e6d38477eee620db1de6176922731f30415d95eb17111318c225f4dfff6a87c4-json.log",
+        "Name": "/osint-openosint-pilot-68cec0b470ed-1790799998",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "none",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": [
+                "ALL"
+            ],
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": true,
+            "SecurityOpt": [
+                "no-new-privileges"
+            ],
+            "Tmpfs": {
+                "/tmp": "rw,noexec,nosuid,size=256m"
+            },
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 2147483648,
+            "NanoCpus": 2000000000,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 4294967296,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": 128,
+            "Ulimits": [],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "Mounts": [
+                {
+                    "Type": "bind",
+                    "Source": "D:\\coding\\osint-agent\\outputs\\multi-iteration-runs\\blind-track-v2\\openosint\\iteration-03\\OSINT-001\\attempt-01\\input",
+                    "Target": "/input",
+                    "ReadOnly": true
+                },
+                {
+                    "Type": "bind",
+                    "Source": "D:\\coding\\osint-agent\\outputs\\multi-iteration-runs\\blind-track-v2\\openosint\\iteration-03\\OSINT-001\\attempt-01\\io",
+                    "Target": "/io"
+                }
+            ],
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "D:\\coding\\osint-agent\\outputs\\multi-iteration-runs\\blind-track-v2\\openosint\\iteration-03\\OSINT-001\\attempt-01\\input",
+                "Destination": "/input",
+                "Mode": "",
+                "RW": false,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "D:\\coding\\osint-agent\\outputs\\multi-iteration-runs\\blind-track-v2\\openosint\\iteration-03\\OSINT-001\\attempt-01\\io",
+                "Destination": "/io",
+                "Mode": "",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "e6d38477eee6",
+            "Domainname": "",
+            "User": "65534:65534",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D",
+                "PYTHON_VERSION=3.11.16",
+                "PYTHON_SHA256=91bcdebfdde239a003ae93738a7fce0f9230fee5c4bc2b86f6e6e8c6f98aabe8",
+                "PYTHONDONTWRITEBYTECODE=1",
+                "PYTHONUNBUFFERED=1"
+            ],
+            "Cmd": [
+                "python",
+                "adapter.py"
+            ],
+            "Image": "sha256:7b18154df12666bf6419f4197b7f49577524dcfb26e75c62f5367e68900ab3bb",
+            "Volumes": null,
+            "WorkingDir": "/opt/benchmark",
+            "Entrypoint": null,
+            "Labels": {},
+            "StopTimeout": 1
+        },
+        "NetworkSettings": {
+            "SandboxID": "",
+            "SandboxKey": "",
+            "Ports": {},
+            "Networks": {
+                "none": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "8ab780aa9e321a600f1b5a5f35ca08d67632ea93a4de9407aca203faa7264849",
+                    "EndpointID": "",
+                    "Gateway": "",
+                    "IPAddress": "",
+                    "MacAddress": "",
+                    "IPPrefixLen": 0,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": null
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:357769ef24d2cd779e6fa69dd1e8f2b24e0bd850e585843f90050a7250e63e13",
+            "size": 2005,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]

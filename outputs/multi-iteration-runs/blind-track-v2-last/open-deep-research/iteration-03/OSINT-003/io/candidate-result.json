@@ -1,0 +1,51 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-003",
+  "report": "Error generating final report: APITimeoutError: Request timed out.",
+  "context": [],
+  "visited_urls": [
+    "https://www.chainalysis.com/blog/axie-infinity-ronin-bridge-dprk-hack-seizure/",
+    "https://www.elliptic.co/insights/540-million-stolen-from-the-ronin-defi-bridge",
+    "https://www.elliptic.co/insights/fbi-confirms-north-korea-s-lazarus-group-as-hackers-behind-100-million-harmony-horizon-bridge-theft",
+    "https://www.elliptic.co/resources/harmony-horizon-bridge-hack"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "Ronin Bridge theft Lazarus Group APT38 official attribution stolen assets laundering wallet addresses Chainalysis FBI Treasury",
+        "Harmony Horizon Bridge theft Lazarus Group APT38 official attribution stolen assets laundering wallet addresses blockchain intelligence",
+        "Ronin Harmony bridge theft comparison direct connection wallet transaction infrastructure attribution"
+      ],
+      "max_results": 8,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:justice.gov Harmony Horizon Bridge Lazarus Group June 2022 $100 million",
+        "site:fbi.gov Harmony Horizon Bridge Lazarus Group June 2022",
+        "site:home.treasury.gov Ronin bridge Lazarus Group OFAC Ethereum address APT38",
+        "site:home.treasury.gov Harmony Horizon Bridge Lazarus Group APT38"
+      ],
+      "max_results": 8,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "Ronin bridge hack wallet addresses intermediary Tornado Cash exact addresses Elliptic",
+        "Harmony Horizon bridge hack wallet addresses Tornado Cash Railgun exact addresses Elliptic",
+        "Ronin Harmony Lazarus APT38 attribution media allegations competing attribution"
+      ],
+      "max_results": 8,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 10,
+  "duration_seconds": 415.27241719997255
+}

@@ -1,0 +1,75 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-002",
+  "report": "Error generating final report: APITimeoutError: Request timed out.",
+  "context": [],
+  "visited_urls": [
+    "https://rewardsforjustice.net/rewards/conti/",
+    "https://www.cisecurity.org/insights/blog/the-conti-leaks-a-case-of-cybercrimes-commercialization",
+    "https://www.justice.gov/usao-mdtn/conti-ransomware-2",
+    "https://www.rapid7.com/blog/post/2022/03/01/conti-ransomware-group-internal-chats-leaked-over-russia-ukraine-conflict/"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "Conti ransomware original chat leaks internal organization RaaS roles 2022 primary source",
+        "site:justice.gov Conti ransomware indictment FBI",
+        "site:fbi.gov Conti ransomware advisory",
+        "site:home.treasury.gov Conti sanctions TrickBot"
+      ],
+      "max_results": 8,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:justice.gov Conti Galochkin Rudenskiy Tsarev Zhuykov indictment September 2023 press release",
+        "site:justice.gov Conti ransomware Lytvynenko 2025 indictment",
+        "site:home.treasury.gov Conti ransomware sanctions 2023",
+        "site:fbi.gov Conti ransomware 2022 advisory"
+      ],
+      "max_results": 8,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "Conti leaks internal chats roles negotiator recruiter affiliate administrator exact aliases Target Reshaev Professor Tramp Dandis",
+        "Krebs Conti leaks internal organization coders testers administrators reverse engineers 60 people",
+        "Conti chat leaks original archive 2022 ContiLeaks"
+      ],
+      "max_results": 8,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:home.treasury.gov Conti ransomware sanctions Russian 2022 2023",
+        "site:justice.gov Conti ransomware Galochkin Tsarev indictment PDF",
+        "site:fbi.gov \"Conti\" ransomware advisory",
+        "site:justice.gov \"Conti\" \"Wizard Spider\""
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "KrebsOnSecurity Conti leaks part 2 business units recruiters negotiators payments",
+        "KrebsOnSecurity Conti leaks part 3 developers testers aliases",
+        "ContiLeaks chat logs archive GitHub developer 2022 analysis"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 10,
+  "duration_seconds": 424.7320552999736
+}

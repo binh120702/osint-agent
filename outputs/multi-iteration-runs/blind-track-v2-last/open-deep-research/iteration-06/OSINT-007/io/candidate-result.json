@@ -1,0 +1,52 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-007",
+  "report": "Error generating final report: APITimeoutError: Request timed out.",
+  "context": [],
+  "visited_urls": [
+    "https://www.cnbc.com/2024/01/29/doj-and-sec-unveil-charges-in-1point9-billion-cryptocurrency-fraud-scheme.html",
+    "https://www.justice.gov/criminal/case/hyperfund-and-associated-cases",
+    "https://www.sec.gov/newsroom/press-releases/2024-11",
+    "https://www.theguardian.com/technology/2024/jan/04/chief-executive-of-collapsed-crypto-fund-hyperverse-does-not-appear-to-exist"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "HyperFund HyperVerse fraud operating model promised returns recruitment withdrawals official court regulator evidence",
+        "HyperFund HyperVerse chronology names branding Ryan Xu Sam Lee chief executive biography",
+        "HyperVerse promoters celebrities influencers statements evidence",
+        "HyperFund HyperVerse SEC FTC ASIC UK FCA investigations"
+      ],
+      "max_results": 8,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:justice.gov HyperFund Sam Lee Brenda Chunga Rodney Burton sentencing 2026 HyperVerse",
+        "site:sec.gov HyperFund complaint HyperVerse HyperNation referral commissions withdrawals Sam Lee",
+        "HyperVerse launch Steve Wozniak Chuck Norris what said promotional video HyperFund",
+        "HyperFund HyperVerse promoters influencers celebrities testimonials exact statements"
+      ],
+      "max_results": 8,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "HyperFund HyperVerse HyperNation HyperCapital HyperTech chronology rebrand official documents",
+        "Sam Lee HyperFund founder denied founder HyperVerse CEO Steven Reece Lewis conflicting accounts",
+        "HyperVerse Australia ASIC HyperFund pyramid scheme regulator warning"
+      ],
+      "max_results": 8,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 10,
+  "duration_seconds": 397.3954740999616
+}

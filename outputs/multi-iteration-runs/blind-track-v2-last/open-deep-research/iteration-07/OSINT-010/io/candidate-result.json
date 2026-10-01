@@ -1,0 +1,49 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-010",
+  "report": "Error generating final report: APITimeoutError: Request timed out.",
+  "context": [],
+  "visited_urls": [
+    "https://digitalcommons.unl.edu/senatedocs/1/",
+    "https://www.intelligence.senate.gov/wp-content/uploads/2024/08/sites-default-files-documents-report-volume2.pdf",
+    "https://www.justice.gov/d9/fieldable-panel-panes/basic-panes/attachments/2018/02/16/internet_research_agency_indictment.pdf",
+    "https://www.npr.org/2019/10/08/768319934/senate-report-russians-used-used-social-media-mostly-to-target-race-in-2016"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "Internet Research Agency 2016 US influence operation DOJ indictment Senate report social media platform disclosures source",
+        "site:justice.gov Internet Research Agency indictment 2018 2016 election",
+        "Senate Intelligence Committee Russian active measures social media IRA report"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "Facebook disclosure IRA 470 accounts 80,000 posts 126 million 2016 Senate source",
+        "Twitter IRA 3814 accounts platform disclosure 2016 election",
+        "Google YouTube IRA 2016 accounts disclosure Senate intelligence report"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:intelligence.senate.gov report volume 2 IRA Blacktivist Being Patriotic Heart of Texas Army of Jesus United Muslims of America",
+        "site:justice.gov 2018 indictment Internet Research Agency Defeat Crooked Hillary Stop All Invaders names pages hashtags"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 10,
+  "duration_seconds": 390.84803519997513
+}

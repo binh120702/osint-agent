@@ -1,0 +1,48 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-006",
+  "report": "# MOVEit Transfer Exploitation Campaign: Evidence-Constrained Report\n\n## Evidence availability\n\nNo benchmark evidence records, source IDs, source titles, or URLs were returned in the supplied research results. The only available result states that report synthesis failed after exceeding the maximum number of retries.\n\nBecause the brief requires the investigation to rely **exclusively on evidence returned by the benchmark tools**, no external facts about MOVEit Transfer, CVE identifiers, exploitation dates, LEMURLOOT, FIN11, CL0P, or related infrastructure can be added. No factual campaign timeline can therefore be established from the available evidence.\n\n## Findings by requested dimension\n\n| Investigative dimension | Evidence-supported result |\n|---|---|\n| Relevant CVE and disclosure date | **Unknown.** No benchmark source identifying the CVE or disclosure date was returned. |\n| Affected product or versions | **Unknown.** No benchmark source identifying affected MOVEit Transfer products or versions was returned. |\n| Exploitation method | **Unknown.** No benchmark source describing the exploitation method was returned. |\n| Progression to mass exploitation | **Unknown.** No benchmark source establishing the timing, scale, or progression of exploitation was returned. |\n| LEMURLOOT deployment | **Unknown.** No benchmark source describing LEMURLOOT deployment, delivery, persistence, or execution was returned. |\n| LEMURLOOT behavior | **Unknown.** No benchmark source describing malware or web-shell behavior was returned. |\n| Attribution to FIN11 | **Unknown.** No benchmark attribution assessment involving FIN11 was returned. |\n| Attribution to CL0P | **Unknown.** No benchmark attribution assessment involving CL0P was returned. |\n| Competing attributions | **Unknown.** No benchmark evidence comparing competing actor attributions was returned. |\n| Extortion infrastructure | **Unknown.** No benchmark source identifying infrastructure or linking it to CL0P was returned. |\n| Relationships among actors, malware, infrastructure, and campaign stages | **Unknown.** No evidence-supported relationship names or relationship records were returned. |\n| Contradictions | **None can be identified from the returned material.** The absence of returned evidence is not itself a contradiction between substantive sources. |\n\n## Timeline\n\nA reliable timeline cannot be constructed from the available benchmark output. In particular, the following dates remain unestablished:\n\n1. CVE disclosure: **unknown**\n2. Initial exploitation: **unknown**\n3. First observed mass exploitation: **unknown**\n4. LEMURLOOT deployment: **unknown**\n5. Public attribution to FIN11 and/or CL0P: **unknown**\n6. Identification of CL0P-linked extortion infrastructure: **unknown**\n\nNo dates should be inferred from general knowledge or from sources outside the benchmark results.\n\n## Attribution and evidentiary status\n\nThere is no benchmark evidence available to classify any of the following as confirmed, alleged, or assessed:\n\n- FIN11 as an operator of the MOVEit exploitation campaign.\n- CL0P as an operator of the campaign.\n- A relationship between FIN11 and CL0P.\n- A relationship between LEMURLOOT and either actor.\n- A relationship between the exploitation campaign and particular extortion infrastructure.\n- Any competing attribution or disagreement among analysts.\n\nAccordingly, these matters must remain **unknown**, rather than being characterized as confirmed facts, allegations, or analyst assessments.\n\n## Source limitations\n\nNo source IDs or URLs were returned by the benchmark tools in the supplied material. Consequently:\n\n- No source-linked factual claims can be made.\n- No `[Title](URL)` references can be provided without inventing sources.\n- No source list can be populated.\n- The requested campaign reconstruction is unresolved because the underlying benchmark evidence is unavailable.\n\n## Structured result\n\n```json\n{\n  \"findings\": [\n    {\n      \"question\": \"What does the benchmark evidence establish about the MOVEit Transfer exploitation campaign from CVE disclosure through exploitation, LEMURLOOT deployment, attribution, and CL0P-linked infrastructure?\",\n      \"answer\": \"Nothing substantive can be established from the supplied benchmark output because no evidence records, source IDs, or URLs were returned. The CVE, dates, affected versions, exploitation method, LEMURLOOT behavior, actor attribution, infrastructure, relationships, and competing assessments are unknown.\",\n      \"supporting_entities\": [],\n      \"source_references\": []\n    }\n  ],\n  \"claims\": [],\n  \"reasoning_steps\": [\n    {\n      \"id\": \"RS-1\",\n      \"conclusion\": \"A supported campaign reconstruction cannot be produced.\",\n      \"premise_entities\": [],\n      \"premise_relations\": []\n    }\n  ],\n  \"contradictions\": []\n}\n```\n\n## Sources\n\nNo benchmark source IDs, titles, or URLs were returned; therefore, no source links can be listed without introducing unsupported material.",
+  "context": [],
+  "visited_urls": [
+    "https://nvd.nist.gov/vuln/detail/cve-2023-34362",
+    "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "MOVEit Transfer exploitation campaign vulnerability disclosure CVE-2023-34362 LEMURLOOT FIN11 CL0P chronology",
+        "MOVEit Transfer mass exploitation LEMURLOOT web shell June 2023 Mandiant Rapid7 Huntress",
+        "MOVEit vulnerability disclosure May 2023 Progress advisory CL0P extortion infrastructure"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "MOVEit Transfer Progress advisory May 31 2023 versions CVE-2023-34362 LEMURLOOT deployment Mandiant FIN11 CL0P",
+        "MOVEit exploitation campaign June 2023 Huntress LEMURLOOT human.aspx guestaccess.aspx",
+        "CL0P MOVEit leak site June 2023 infrastructure domains servers FIN11 attribution"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "CISA AA23-158A MOVEit CL0P CVE-2023-34362 attribution LEMURLOOT",
+        "Microsoft MOVEit CL0P FIN11 June 2023 attribution",
+        "Rapid7 MOVEit CVE-2023-34362 mass exploitation May 2023 LEMURLOOT"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 12,
+  "duration_seconds": 517.017276300001
+}

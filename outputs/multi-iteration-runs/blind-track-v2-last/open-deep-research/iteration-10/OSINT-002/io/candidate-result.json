@@ -1,0 +1,50 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-002",
+  "report": "Error generating final report: APITimeoutError: Request timed out.",
+  "context": [],
+  "visited_urls": [
+    "https://rewardsforjustice.net/rewards/conti/",
+    "https://www.cisecurity.org/insights/blog/the-conti-leaks-a-case-of-cybercrimes-commercialization",
+    "https://www.justice.gov/usao-mdtn/conti-ransomware-2",
+    "https://www.rapid7.com/blog/post/2022/03/01/conti-ransomware-group-internal-chats-leaked-over-russia-ukraine-conflict/"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "Conti ransomware as a service structure leaks internal organization aliases law enforcement indictment sanctions official",
+        "Conti ransomware original leaks internal chats analysis affiliates management negotiation",
+        "site:justice.gov Conti ransomware indictment alias",
+        "site:treasury.gov Conti ransomware sanctions"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "Conti indictment Maksim Galochkin Rudenskiy Tsarev Zhuykov Lytvynenko aliases official DOJ",
+        "Conti ransomware sanctions aliases Target Reshaev Professor Tramp Dandis official",
+        "Conti Wizard Spider law enforcement attribution official report"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "Krebs Conti leaks internal organization coders testers administrators aliases negotiation chats",
+        "Conti leaks internal chats roles hierarchy affiliates recruitment salaries infrastructure analysis"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 10,
+  "duration_seconds": 447.5916465999908
+}

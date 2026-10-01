@@ -1,0 +1,224 @@
+{
+  "approach": "gpt-researcher",
+  "iteration": 10,
+  "benchmark_cases": [
+    "OSINT-001",
+    "OSINT-002",
+    "OSINT-003",
+    "OSINT-004",
+    "OSINT-005",
+    "OSINT-006",
+    "OSINT-007",
+    "OSINT-008",
+    "OSINT-009",
+    "OSINT-010"
+  ],
+  "model": "gpt-5.6-luna",
+  "parallel_workers": 10,
+  "timeout_seconds": 1200,
+  "retry_timeout_seconds": 2400,
+  "started_at": "2026-09-30T18:29:08.035196+00:00",
+  "finished_at": "2026-09-30T18:35:16.604836+00:00",
+  "cases": [
+    {
+      "approach": "gpt-researcher",
+      "iteration": 10,
+      "case_id": "OSINT-001",
+      "started_at": "2026-09-30T18:29:08.035196+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 10.512765999999829
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/gpt-researcher/iteration-10/OSINT-001/io/candidate-result.json",
+      "artifact_sha256": "bcd1a76508b83302ad6d0a09101469ca3d10e17b9c6b8b63aa41a3d870dcde12",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T18:29:18.599187+00:00"
+    },
+    {
+      "approach": "gpt-researcher",
+      "iteration": 10,
+      "case_id": "OSINT-002",
+      "started_at": "2026-09-30T18:29:08.035509+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 122.88013000000501
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/gpt-researcher/iteration-10/OSINT-002/io/candidate-result.json",
+      "artifact_sha256": "2c8a1d06fa05a5c9b87acffd0786fdb7f7c87e13bcff736696404b247a481387",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T18:31:10.936194+00:00"
+    },
+    {
+      "approach": "gpt-researcher",
+      "iteration": 10,
+      "case_id": "OSINT-003",
+      "started_at": "2026-09-30T18:29:08.035780+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 110.9420681000338
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/gpt-researcher/iteration-10/OSINT-003/io/candidate-result.json",
+      "artifact_sha256": "7e675cc87be9cf0542cb7d44aa32d0a58dde857e1efed70b629a1f6b5d2d5233",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T18:30:58.999677+00:00"
+    },
+    {
+      "approach": "gpt-researcher",
+      "iteration": 10,
+      "case_id": "OSINT-004",
+      "started_at": "2026-09-30T18:29:08.036238+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 114.18032869999297
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/gpt-researcher/iteration-10/OSINT-004/io/candidate-result.json",
+      "artifact_sha256": "344f9dd918271627d65698094aa2fd6f821e3e39297d0edbb630f3dfa7756175",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T18:31:02.236048+00:00"
+    },
+    {
+      "approach": "gpt-researcher",
+      "iteration": 10,
+      "case_id": "OSINT-005",
+      "started_at": "2026-09-30T18:29:08.036633+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 139.66377280000597
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/gpt-researcher/iteration-10/OSINT-005/io/candidate-result.json",
+      "artifact_sha256": "8970f7e5e47e329e3ed45a923e83bc1b0066c3157735dd924978f87500c86712",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T18:31:27.722520+00:00"
+    },
+    {
+      "approach": "gpt-researcher",
+      "iteration": 10,
+      "case_id": "OSINT-006",
+      "started_at": "2026-09-30T18:29:08.037428+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 159.1978912000195
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/gpt-researcher/iteration-10/OSINT-006/io/candidate-result.json",
+      "artifact_sha256": "4de691154bd13413d8e9d0d8991db9a96ee0aa8c48ad8af4f4dd974e143d3afa",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T18:31:47.269245+00:00"
+    },
+    {
+      "approach": "gpt-researcher",
+      "iteration": 10,
+      "case_id": "OSINT-007",
+      "started_at": "2026-09-30T18:29:08.038567+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 368.54597560002003
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/gpt-researcher/iteration-10/OSINT-007/io/candidate-result.json",
+      "artifact_sha256": "4fb45dcbb28e2e57a32b3dafa6deab17437c59d7334c47799d2601d031af3a44",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T18:35:16.604836+00:00"
+    },
+    {
+      "approach": "gpt-researcher",
+      "iteration": 10,
+      "case_id": "OSINT-008",
+      "started_at": "2026-09-30T18:29:08.038677+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 155.06591559998924
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/gpt-researcher/iteration-10/OSINT-008/io/candidate-result.json",
+      "artifact_sha256": "02a1b095e02d035d8eaa570e59c8de974e258dd2ad00f87dbe7103081f861e6e",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T18:31:43.124352+00:00"
+    },
+    {
+      "approach": "gpt-researcher",
+      "iteration": 10,
+      "case_id": "OSINT-009",
+      "started_at": "2026-09-30T18:29:08.039093+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 127.8913699000259
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/gpt-researcher/iteration-10/OSINT-009/io/candidate-result.json",
+      "artifact_sha256": "48b26fd794fce859c52d41d7b2da165715204eea1e7ee93d5d55ca4626cdfaf8",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T18:31:15.949985+00:00"
+    },
+    {
+      "approach": "gpt-researcher",
+      "iteration": 10,
+      "case_id": "OSINT-010",
+      "started_at": "2026-09-30T18:29:08.039536+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 121.20226890000049
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/gpt-researcher/iteration-10/OSINT-010/io/candidate-result.json",
+      "artifact_sha256": "1c172d6176f7d33e192a7d2bce72ea9f11620014469ca02a87c62a91a51bf964",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T18:31:09.260868+00:00"
+    }
+  ]
+}

@@ -1,0 +1,1622 @@
+{
+  "protocol": "common-contract-track-v1",
+  "candidate": "open-deep-research",
+  "benchmark_snapshot_sha256": "561e463eac51c71d83b97cf20c706395f8ecb3763fdec6d77715c17da9156bd0",
+  "rows": [
+    {
+      "iteration": 1,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-01/OSINT-001/io/candidate-result.json",
+      "artifact_sha256": "025c1bfc046370e63b06bd33fa2e335444bb2740c8caadd7328e922c09924cde",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.23529411764705885,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.34690128141102644,
+        "report_quality": 0.4166666666666667,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-01/OSINT-002/io/candidate-result.json",
+      "artifact_sha256": "6cbf131b9aa5b48566af2ec7dd1ebe1548fe1087624daeb5201d745807e957eb",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.375,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.5184395955888577,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-01/OSINT-003/io/candidate-result.json",
+      "artifact_sha256": "92f15a804990ab750a541b212b9d6ced32c98b678503a401ea724fec46ce932c",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.4482076423172332,
+        "report_quality": 0.5,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-01/OSINT-004/io/candidate-result.json",
+      "artifact_sha256": "d3aec24a8b35d2c3398a7bdb2c744380d4c66c28c71c89895de5a91653ebd4dd",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.36363636363636365,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.4362254882669471,
+        "report_quality": 0.4166666666666667,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-01/OSINT-005/io/candidate-result.json",
+      "artifact_sha256": "553f96ef41ab3dbf04f006383b4750dad0236eab882fa87d5dcdd829916930be",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.16666666666666669,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.43671481676583424,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-01/OSINT-006/io/candidate-result.json",
+      "artifact_sha256": "701868a625df86e611e02a2678ccddd2513c6cf8351bf69d86b93000e97292bb",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.25,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-01/OSINT-007/io/candidate-result.json",
+      "artifact_sha256": "74668f5ea4f02b22220ff7a35b0f0a59f111c0e2d33bc2e86520a5c416732ced",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.25,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-01/OSINT-008/io/candidate-result.json",
+      "artifact_sha256": "8de6ff7eec266dbb67063019c6cac2c284c4f73e059af788fa50748d4ab36b38",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.15384615384615383,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.2215333218673813,
+        "report_quality": 0.5,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-01/OSINT-009/io/candidate-result.json",
+      "artifact_sha256": "71147a39f3e07b1cd2fbdf7219bfa88fa0ff34c966f718c13bf2b49f372acda7",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.30769230769230765,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.36317740581374486,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 1,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-01/OSINT-010/io/candidate-result.json",
+      "artifact_sha256": "beb691b0825813c3698c00b32eee8f4a6765342979814af0f48f2e9dbe67d451",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.30769230769230765,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.2203139490856089,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-02/OSINT-001/io/candidate-result.json",
+      "artifact_sha256": "3ba33feb3c68ad9a56d2303ea64afaa8f1bdd554702927f301d23617eaf2efcb",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.08841091794609258,
+        "report_quality": 0.5,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-02/OSINT-002/io/candidate-result.json",
+      "artifact_sha256": "a53819d6ca98ae7363d8ccaf8e983c196a66ee2f2f82a4799093a3fe28c944b5",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.25,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-02/OSINT-003/io/candidate-result.json",
+      "artifact_sha256": "b28bc81f7eeb8548a342bc75abdc9eed317c1afe48e689757a3b5225e2d92595",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.5,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-02/OSINT-004/io/candidate-result.json",
+      "artifact_sha256": "a3c9569f045d741bf51c690abfc34bd0b5a6667a26659c86571b831288788c62",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.18049936561412921,
+        "report_quality": 0.5,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-02/OSINT-005/io/candidate-result.json",
+      "artifact_sha256": "b3b7cda1aa06d55524d84532bd7239610a9f10bf86767d0b4a1670f4e904af5e",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.2666666666666667,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.21661919803183427,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-02/OSINT-006/io/candidate-result.json",
+      "artifact_sha256": "65561ad763813e3b2a6f82264ae4bf28b3be403f2181a6e5fe4de2cf8783ef85",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.5,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.3813660975061847,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-02/OSINT-007/io/candidate-result.json",
+      "artifact_sha256": "07ce8979a480079361d1a6d659b18725a0e87d005f33773cb874e57be1b46640",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.25,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-02/OSINT-008/io/candidate-result.json",
+      "artifact_sha256": "10986a3271fbb37083a9c3c2eb74224f0524dc4d61c5b1451389e94e98ff5058",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.18181818181818182,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.1913950333833553,
+        "report_quality": 0.5,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-02/OSINT-009/io/candidate-result.json",
+      "artifact_sha256": "5d099ad80ac48772c7b6bae7d7ed4ece24e11a1dd5a71f1b11454a97c24f9540",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.25,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 2,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-02/OSINT-010/io/candidate-result.json",
+      "artifact_sha256": "ccd5aae09c0b50a620594f0cba422c9e53f56f1f113a26fbec6f247dddc39251",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.25,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-03/OSINT-001/io/candidate-result.json",
+      "artifact_sha256": "27982746e30bf0a39547ebd8f8264e09bfa2d47bb929c79edd50b9656d7109ed",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.25,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-03/OSINT-002/io/candidate-result.json",
+      "artifact_sha256": "609a56ca43da9dab8f230893f5cf589bb5a8e283c69debf68ed4097fa2572a6b",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.25,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-03/OSINT-003/io/candidate-result.json",
+      "artifact_sha256": "d4e0962e82a43806d1896de777070293adecb81006c7a38e2e5a559be093926a",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.25,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-03/OSINT-004/io/candidate-result.json",
+      "artifact_sha256": "2e8524452cc37ac1d268335f047fb296d2d9e49827e0b6f21e6a35c035d31fa7",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.25,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-03/OSINT-005/io/candidate-result.json",
+      "artifact_sha256": "f3cd446a7dd8e1694cddc5ee6f5733420b027f3f8409213b0d1d6301f03d241e",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.21899110887279405,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-03/OSINT-006/io/candidate-result.json",
+      "artifact_sha256": "73cc1dcaf6f3f7739eb9a7357f206ca4e30b74b85e1fd6eb406c29145e85a325",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.25,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-03/OSINT-007/io/candidate-result.json",
+      "artifact_sha256": "3c7c325e884fbc1a9eb13fe8e67a91adae3c66aca8854a25901616ebd7eb22b4",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.22381649624775604,
+        "report_quality": 0.5,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-03/OSINT-008/io/candidate-result.json",
+      "artifact_sha256": "b31b6e53956b6ad879a043c278f1b0877ad9a27ba604cfd642d27653216e92fa",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.2222222222222222,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.3044856175599393,
+        "report_quality": 0.5,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-03/OSINT-009/io/candidate-result.json",
+      "artifact_sha256": "776301b0c92684032a3b1ad1e1a0e816bedb26a785728616a42565cfd7974858",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.25,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 3,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-03/OSINT-010/io/candidate-result.json",
+      "artifact_sha256": "bbbf2d7c4814914fcd7f42767ff513f4e87587607bc1eae1a9e2d679d072aeac",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.25,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-04/OSINT-001/io/candidate-result.json",
+      "artifact_sha256": "e6e2a112b4932febb07628e92ae17d726ae47b20632dcf0d3a396c64602d671b",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.25,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-04/OSINT-002/io/candidate-result.json",
+      "artifact_sha256": "3f7854d6e109e7f04b453e70a7e40e4519c235daa03788b83bfcd1d832b24d93",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.23714095156402948,
+        "report_quality": 0.5,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-04/OSINT-003/io/candidate-result.json",
+      "artifact_sha256": "a0257be3d6d5f598b9a676169c5f6a050741566d68813a12bb4f8bc9b6cc0c67",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.25,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-04/OSINT-004/io/candidate-result.json",
+      "artifact_sha256": "b1a49d3300b02c48e13882f085d531ef96282b1ed5e45af4f0dd69784227f903",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.5,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-04/OSINT-005/io/candidate-result.json",
+      "artifact_sha256": "771af336f89c2cdd30403968fb62a19707e7a7ee7f8b9b1f2166a969ee0543be",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.25,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-04/OSINT-006/io/candidate-result.json",
+      "artifact_sha256": "9bb9f5eab60b4bbcc82beb4302d7071bb8c458d2fc8108e6fbba7b8b9faecb14",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.1145344078401879,
+        "report_quality": 0.5,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-04/OSINT-007/io/candidate-result.json",
+      "artifact_sha256": "13c5fb57ecb4588258fbdbe99367bbd2c1d65d89fb2fdb12e1dbd3983d6df6ab",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.2170044692901458,
+        "report_quality": 0.5,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-04/OSINT-008/io/candidate-result.json",
+      "artifact_sha256": "31ce90b9c626b7fd2b8b11a7dc7918d7a48dc105830664225955c40872e29744",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.5,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-04/OSINT-009/io/candidate-result.json",
+      "artifact_sha256": "f69556f72568e08b6c67360e7c82bc1931d9ff7394d4e0615d74dda674e5ccf9",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.25,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 4,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-04/OSINT-010/io/candidate-result.json",
+      "artifact_sha256": "f866f864d97eb05f1205af9d024eecba17f091a347d36a3e7e6b5619ed0873aa",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.30769230769230765,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.22500721366222254,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-05/OSINT-001/io/candidate-result.json",
+      "artifact_sha256": "4b5911ca9ea4434d11a6add068df82f54ef04810d79e8e811e0932a6818bf046",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0657802424420559,
+        "report_quality": 0.5,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-05/OSINT-002/io/candidate-result.json",
+      "artifact_sha256": "fd6ad79e20a0c4b630ba1255a106d54fb5561cb0b9207b54eff2326fd2a0b3d1",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.3333333333333333,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.5513558756217979,
+        "report_quality": 0.6666666666666666,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-05/OSINT-003/io/candidate-result.json",
+      "artifact_sha256": "603685de67353a3a99156e2bae2a4ddaeba279398d4040c13e84a03daf474cad",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.2,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.39265817063676667,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-05/OSINT-004/io/candidate-result.json",
+      "artifact_sha256": "1f9e37ea560260916ef5cb4d9235b98fd360ceb93f06e90fa3da5e1f1f3fcd0f",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.3333333333333333,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.42795451661904343,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-05/OSINT-005/io/candidate-result.json",
+      "artifact_sha256": "2fc09a9b50131fc9aa63a1fc7c213eb4eb12bdb657b61b4f51ad9fb8d4e58435",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.33333333333333337,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.214519136898921,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-05/OSINT-006/io/candidate-result.json",
+      "artifact_sha256": "08fb97da33e993f5c0f20f8b5ddaf919c9803f7e7ec8a02fd22d098a93aecef9",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.19360929421725795,
+        "report_quality": 0.5,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-05/OSINT-007/io/candidate-result.json",
+      "artifact_sha256": "3f671a320739661bfa7779bbafcc9905e8cd1742b902fb1f95417cf4f1c54cf0",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.16367382065610703,
+        "report_quality": 0.5,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-05/OSINT-008/io/candidate-result.json",
+      "artifact_sha256": "90a70632f1f6e0a88bda058c9fb7a244eae7dcf87ea795f4665286e4dfd8f83b",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.37043086582416396,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 5,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-05/OSINT-009/io/candidate-result.json",
+      "artifact_sha256": "6d4ad3c4d1f5e2f08db5646345e6be6f5c32fbefad26fc466b888f7bf135f21c",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.4166666666666667,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-06/OSINT-001/io/candidate-result.json",
+      "artifact_sha256": "249c2e67a89290df85accaf7d64314e2d66ef7af52ea8363df1c0640e1c66e9e",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.25,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-06/OSINT-002/io/candidate-result.json",
+      "artifact_sha256": "a4d462f2b84b6458d7ca14969629e5e7084979a904c3da11f89400a1ffebb0d8",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.25,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-06/OSINT-003/io/candidate-result.json",
+      "artifact_sha256": "cb8ae5eea9b2c4b616716370b9b78aa36ec48a0d19ef76298d192c72a11fc045",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.4166666666666667,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-06/OSINT-004/io/candidate-result.json",
+      "artifact_sha256": "9a28a0f88f3981cde0b172cc92a21425585f9b63557f1016b2c881c83eebafae",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.36363636363636365,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.4254941778446261,
+        "report_quality": 0.4166666666666667,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-06/OSINT-005/io/candidate-result.json",
+      "artifact_sha256": "6da5a0629caf4232cc84e63405c1c9c889e91998a5fb799b2939d6f98cd44a9e",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.25,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.21676154092963817,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-06/OSINT-006/io/candidate-result.json",
+      "artifact_sha256": "2d57ae229545288f2a6715605de6d4a4d9c2bbcbe4b92605088450342b9ef557",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.36363636363636365,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.39134859329383326,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-06/OSINT-007/io/candidate-result.json",
+      "artifact_sha256": "32ce057889c51116165473e8302dacc9586106574dea69b9df84092d4dab634b",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.25,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-06/OSINT-008/io/candidate-result.json",
+      "artifact_sha256": "6306e9ad82f29d881cc6b60476cd9106af699ff20cf10939b8e3e15cdca1eb76",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.2222222222222222,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.2682663690495343,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 6,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-06/OSINT-010/io/candidate-result.json",
+      "artifact_sha256": "a4f85d0aade11300dcb228bfd2268ca684c133fb9eda14027850f2034adcd530",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.2,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.3012663937735212,
+        "report_quality": 0.4166666666666667,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-07/OSINT-001/io/candidate-result.json",
+      "artifact_sha256": "62a4af84c165e72bee90547b8382838aec1fc872f1691dee1cd30edfe57905c6",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.28571428571428575,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.45898043307835135,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 0.5555555555555556
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-07/OSINT-002/io/candidate-result.json",
+      "artifact_sha256": "13b42ab131ffff96f1acd6983f2e2c9eeafc4ae3e021ec2f5312352ee75ce532",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.25,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-07/OSINT-003/io/candidate-result.json",
+      "artifact_sha256": "7c008a60315313117c002f95b635926cd8051413aaebddaa3c52e1fab9c11e59",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.18181818181818182,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.291091586980229,
+        "report_quality": 0.5,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-07/OSINT-004/io/candidate-result.json",
+      "artifact_sha256": "a6ba0d868553da2a13cb772f383dacb106b414793cc99f5bd1d3844491ea05de",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.4444444444444444,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.4798457941694858,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-07/OSINT-005/io/candidate-result.json",
+      "artifact_sha256": "eafe3003d086fbc127e43761e7be05ae66d451a3a113f97cf665bf6be44c6ab7",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.38970049564613973,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-07/OSINT-006/io/candidate-result.json",
+      "artifact_sha256": "a429f1d2dc374231ec77ec0f03ec0ec4f16cf7d80de0bbe77f39598bde4674a0",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.5,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.2397845499916369,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-07/OSINT-007/io/candidate-result.json",
+      "artifact_sha256": "eb8256ba049b5e3887a8de2c6c9cc93060f26fe7ae30dfa1f71cfabe69e553a9",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.25,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-07/OSINT-008/io/candidate-result.json",
+      "artifact_sha256": "84c25f448fd310d80d5af1f4862a666de1769f94b9775d0a746211a2f8e03dcd",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.4444444444444444,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.30811239411974395,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-07/OSINT-009/io/candidate-result.json",
+      "artifact_sha256": "1640e295f55896655390c7df7cd1163df9a44165fa0ed5ff6f67615ec2524881",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.36363636363636365,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.36926829625834473,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 7,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-07/OSINT-010/io/candidate-result.json",
+      "artifact_sha256": "f769966d13443674534019b1bb548201f608422cfa198a8c53ce195e6bf5bd3b",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.25,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-08/OSINT-001/io/candidate-result.json",
+      "artifact_sha256": "b4899fb5111989fb6f0a03b8f7ba8a6788bf67410db707ec8fee4cbf9c8d833e",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.5,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.33144079562424905,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 0.5555555555555556
+      }
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-08/OSINT-002/io/candidate-result.json",
+      "artifact_sha256": "d3f8eda7e52969243cfcfb87c7de086b9560174753b3d259e7061a5b67b697c0",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.18616340776009102,
+        "report_quality": 0.5,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-08/OSINT-003/io/candidate-result.json",
+      "artifact_sha256": "73e35092ffd1389d142c9512b5de42f98b5a3706bb2e5e3e06139304bde017aa",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.4900178794423864,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-08/OSINT-004/io/candidate-result.json",
+      "artifact_sha256": "7fd92aa2f0924df0f9a3bc2e17b3f8d48634f72885b12a461f928df6bf63da68",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.4,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.38558705820594447,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-08/OSINT-005/io/candidate-result.json",
+      "artifact_sha256": "a9d8bd0c84cfd487ccfdd4ea762195702eaa8069e47f08ebb5ec2155e0725ea9",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.16666666666666669,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.3047285523082609,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-08/OSINT-006/io/candidate-result.json",
+      "artifact_sha256": "c3398cd271e4c4427ceafd3b3ad0d52af8568166eedfb63e7b70636fd6141a86",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.5,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.39747704473174045,
+        "report_quality": 0.4166666666666667,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-08/OSINT-007/io/candidate-result.json",
+      "artifact_sha256": "db249b561c0ea798db69d741f5273ead1c6c7e547afadf40a4b2540970651f67",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.25,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-08/OSINT-008/io/candidate-result.json",
+      "artifact_sha256": "efc3db3c9f1a5a0d61f4bfc6a1d4e340b1814230a2b5ce6064b092889625e43d",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.15384615384615383,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.1954387224965071,
+        "report_quality": 0.5,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-08/OSINT-009/io/candidate-result.json",
+      "artifact_sha256": "1c5c3e3e174c749c72ec09dce6d6e13a9959f0d2ce57b396675391067a87ac2e",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.4,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.2676423191240317,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 8,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-08/OSINT-010/io/candidate-result.json",
+      "artifact_sha256": "658a14073acaa88df6fe054b2c6bc6f6fcef6141453cb638442ab258c1a45636",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.16666666666666666,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.31346738872812385,
+        "report_quality": 0.4166666666666667,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-09/OSINT-001/io/candidate-result.json",
+      "artifact_sha256": "a3132be96ec79c3793351508a481f10759330b9c55e39a103c9cdf6dad04b6e1",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.09219432416906682,
+        "report_quality": 0.5,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-09/OSINT-002/io/candidate-result.json",
+      "artifact_sha256": "5f72d5d52691092253e788b0d3f9af2bb4726dbca3c76efd27ced03f9fbb4498",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.25,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-09/OSINT-003/io/candidate-result.json",
+      "artifact_sha256": "50b2ec19f9dd693be51cf3c6a5f3fceb5cfa8657dbde3fb5bd2b63f2de4ed38b",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.30567969051062893,
+        "report_quality": 0.5,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-09/OSINT-004/io/candidate-result.json",
+      "artifact_sha256": "09235c061d0e132900dc1382985ef63c12f178487ff578b9adafabddbd8c88ce",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.2222222222222222,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.4300224676240112,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-09/OSINT-005/io/candidate-result.json",
+      "artifact_sha256": "18c34a820ffe8d51f0af0cdf32f5c4860aafac117d26b3921fbdf7145c891515",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.15384615384615385,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.4963601785224789,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-09/OSINT-006/io/candidate-result.json",
+      "artifact_sha256": "b9e94add92af46a64b6aef11e6de734997b4caa68cfea924498641ba29ded704",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.30769230769230765,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.44402133357064383,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-09/OSINT-007/io/candidate-result.json",
+      "artifact_sha256": "c9a5e2a7dbaa479f8930c443819a7cf39823791bc7f09873767bcefdc1aa55b1",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.21378063932995733,
+        "report_quality": 0.5,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-09/OSINT-008/io/candidate-result.json",
+      "artifact_sha256": "aacde58bb96d817735fe878524b05ecb9667dc07737b430445790f117fe255cd",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.19024846217383343,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-09/OSINT-009/io/candidate-result.json",
+      "artifact_sha256": "74533d1f235265e05e4c3808cd494d46430f935cc85a9e3430824e8e25f5011e",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.5,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.3353222663833489,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 9,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-09/OSINT-010/io/candidate-result.json",
+      "artifact_sha256": "7a359ec96fa9b4623819eda1d751d6790b584bbdf91b88626055b847fb560631",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.3333333333333333,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.213129008525448,
+        "report_quality": 0.4166666666666667,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-001",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-10/OSINT-001/io/candidate-result.json",
+      "artifact_sha256": "26279816fa7362eff7e9b2627a094e4985dd97e073f59bb3a9e6877908668692",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.6666666666666666,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.4218430397417108,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 0.5555555555555556
+      }
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-002",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-10/OSINT-002/io/candidate-result.json",
+      "artifact_sha256": "932700e070157e6a83103817d3d27be8f0cb987c855b8f3b04d9402c69f97a47",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.25,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-003",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-10/OSINT-003/io/candidate-result.json",
+      "artifact_sha256": "035265143f4b213e575d0ff5360d3ed6dc7069bf5bc0d2e8c298d271125a6bab",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.2,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.42255752485477543,
+        "report_quality": 0.5,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-004",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-10/OSINT-004/io/candidate-result.json",
+      "artifact_sha256": "517744cdbd6835581e58f86b5c7412969be1b9cdc8e426e9e6f002584f31c70d",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.5454545454545454,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.4726161799341016,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-005",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-10/OSINT-005/io/candidate-result.json",
+      "artifact_sha256": "41d76ac9d6ea45fa7efd07f0cec93868128378ffc142ba3e4db22427800a3fe5",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.16666666666666669,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.21041962756757915,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-006",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-10/OSINT-006/io/candidate-result.json",
+      "artifact_sha256": "7c5bab3bc449d12734f69e5cc5862169ed8126de99feb1a34833d42f94ae8a95",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.28571428571428575,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.23885784695413292,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-007",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-10/OSINT-007/io/candidate-result.json",
+      "artifact_sha256": "84fbc06b6a506fe5358818fd8bca1b0a4890eab25813e39f19c65a8c2d3eada6",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.0,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.0,
+        "report_quality": 0.25,
+        "source_precision": 0.0,
+        "source_recall": 0.0
+      }
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-008",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-10/OSINT-008/io/candidate-result.json",
+      "artifact_sha256": "0d1c77691c82c7215678a600cc63bfa99766b6a4b8874e5e185c39ae540c41d0",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.25,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.39047710995253104,
+        "report_quality": 0.5,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-009",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-10/OSINT-009/io/candidate-result.json",
+      "artifact_sha256": "bd3da3b8e44148d55bde18075b0f5880a817f2b63e8f228c025b549401e3627c",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.30769230769230765,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.47912428267505947,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    },
+    {
+      "iteration": 10,
+      "case_id": "OSINT-010",
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2/open-deep-research/iteration-10/OSINT-010/io/candidate-result.json",
+      "artifact_sha256": "7eb4e4d763077f9a799b139535e4029573f58b89cf3a2cbfbc6e3ae761d60301",
+      "structured_output_valid": true,
+      "structured_output_errors": [],
+      "metrics": {
+        "finding_f1": 0.25,
+        "contradiction_f1": 0.0,
+        "reasoning": 0.20264699340616654,
+        "report_quality": 0.5833333333333334,
+        "source_precision": 1.0,
+        "source_recall": 1.0
+      }
+    }
+  ],
+  "completed_output": {
+    "n_rows": 98,
+    "metrics": {
+      "finding_f1": {
+        "mean": 0.1498392647102131
+      },
+      "contradiction_f1": {
+        "mean": 0.0
+      },
+      "reasoning": {
+        "mean": 0.20961174562248278
+      },
+      "report_quality": {
+        "mean": 0.4574829931972789
+      },
+      "source_precision": {
+        "mean": 0.45918367346938777
+      },
+      "source_recall": {
+        "mean": 0.445578231292517
+      }
+    }
+  },
+  "valid_only": {
+    "n_rows": 98,
+    "metrics": {
+      "finding_f1": {
+        "mean": 0.1498392647102131
+      },
+      "contradiction_f1": {
+        "mean": 0.0
+      },
+      "reasoning": {
+        "mean": 0.20961174562248278
+      },
+      "report_quality": {
+        "mean": 0.4574829931972789
+      },
+      "source_precision": {
+        "mean": 0.45918367346938777
+      },
+      "source_recall": {
+        "mean": 0.445578231292517
+      }
+    }
+  },
+  "validity_rate": 1.0
+}

@@ -1,0 +1,62 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-002",
+  "report": "Error generating final report: APITimeoutError: Request timed out.",
+  "context": [],
+  "visited_urls": [
+    "https://rewardsforjustice.net/rewards/conti/",
+    "https://www.cisecurity.org/insights/blog/the-conti-leaks-a-case-of-cybercrimes-commercialization",
+    "https://www.justice.gov/usao-mdtn/conti-ransomware-2",
+    "https://www.rapid7.com/blog/post/2022/03/01/conti-ransomware-group-internal-chats-leaked-over-russia-ukraine-conflict/"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "Conti ransomware leaks chat logs organization roles management recruitment negotiations finances infrastructure official attribution indictment sanctions",
+        "site:justice.gov Conti ransomware indictment aliases",
+        "site:treasury.gov Conti ransomware sanctions",
+        "Conti ransomware leak original chat logs analysis"
+      ],
+      "max_results": 8,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:justice.gov Conti Galochkin Rudenskiy Tsarev Zhuykov indictment aliases",
+        "site:justice.gov \"Conti\" \"Mikhail Tsarev\"",
+        "site:justice.gov \"Oleksii Lytvynenko\" Conti"
+      ],
+      "max_results": 8,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "Conti leaks KrebsOnSecurity business units coders testers administrators aliases management",
+        "Conti ransomware internal chats roles salaries recruitment negotiations finances Krebs 2022",
+        "Conti leak infrastructure blog technical analysis 2022"
+      ],
+      "max_results": 8,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:home.treasury.gov Conti ransomware sanctions 2023 2024",
+        "site:state.gov Conti ransomware aliases Target Reshaev Professor Tramp Dandis",
+        "site:fbi.gov Conti ransomware advisory"
+      ],
+      "max_results": 6,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 10,
+  "duration_seconds": 428.7534148999839
+}

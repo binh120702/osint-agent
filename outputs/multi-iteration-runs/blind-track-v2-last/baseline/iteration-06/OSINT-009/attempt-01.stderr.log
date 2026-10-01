@@ -1,0 +1,106 @@
+INFO:tools.engine_search:Initializing OSINTAggregator
+INFO:agent.loop:Starting run for thread_id=benchmark-osint-009-968c6052. LLM client provider=openai, model=gpt-5.6-luna
+INFO:agent.loop:Iteration 1/50: Calling LLM...
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:agent.loop:LLM requested 4 tool call(s)
+INFO:agent.loop:\u26a1 Executing tool: 'engine_search_tool' with arguments: {"query": "Pandora Papers King Abdullah II offshore property network shell companies advisers jurisdictions luxury real estate ICIJ"}
+INFO:agent.loop:\u2699\ufe0f Tool 'engine_search_tool' execution complete. Result preview: {
+  "query": "Pandora Papers King Abdullah II offshore property network shell companies advisers jurisdictions luxury real estate ICIJ",
+  "page": 1,
+  "page_size": 10,
+  "total": 4,
+  "sources": {
+  ...
+INFO:agent.loop:\u26a1 Executing tool: 'engine_search_tool' with arguments: {"query": "site:icij.org/investigations/pandora-papers King Abdullah II properties companies advisers"}
+INFO:agent.loop:\u2699\ufe0f Tool 'engine_search_tool' execution complete. Result preview: {
+  "query": "site:icij.org/investigations/pandora-papers King Abdullah II properties companies advisers",
+  "page": 1,
+  "page_size": 10,
+  "total": 4,
+  "sources": {
+    "benchmark": [
+      {
+     ...
+INFO:agent.loop:\u26a1 Executing tool: 'engine_search_tool' with arguments: {"query": "King Abdullah II Pandora Papers Malibu Washington London property companies"}
+INFO:agent.loop:\u2699\ufe0f Tool 'engine_search_tool' execution complete. Result preview: {
+  "query": "King Abdullah II Pandora Papers Malibu Washington London property companies",
+  "page": 1,
+  "page_size": 10,
+  "total": 4,
+  "sources": {
+    "benchmark": [
+      {
+        "title": "Ki...
+INFO:agent.loop:\u26a1 Executing tool: 'engine_search_tool' with arguments: {"query": "Pandora Papers Jordan King Abdullah offshore companies RBS International advisers"}
+INFO:agent.loop:\u2699\ufe0f Tool 'engine_search_tool' execution complete. Result preview: {
+  "query": "Pandora Papers Jordan King Abdullah offshore companies RBS International advisers",
+  "page": 1,
+  "page_size": 10,
+  "total": 4,
+  "sources": {
+    "benchmark": [
+      {
+        "title...
+INFO:agent.loop:Iteration 2/50: Calling LLM...
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:agent.loop:LLM requested 4 tool call(s)
+INFO:agent.loop:\u26a1 Executing tool: 'deep_search' with arguments: {"pages": ["https://www.icij.org/investigations/pandora-papers/jordan-king-abdullah-luxury-property/"]}
+INFO:agent.loop:\u2699\ufe0f Tool 'deep_search' execution complete. Result preview: {
+  "success": true,
+  "pages": [
+    {
+      "success": true,
+      "url": "https://www.icij.org/investigations/pandora-papers/jordan-king-abdullah-luxury-property/",
+      "source_id": "SRC-004",
+  ...
+INFO:agent.loop:\u26a1 Executing tool: 'deep_search' with arguments: {"pages": ["https://www.theguardian.com/news/2021/oct/03/king-of-jordan-hidden-property-empire-worth-more-than-100m-pandora-papers-reveal"]}
+INFO:agent.loop:\u2699\ufe0f Tool 'deep_search' execution complete. Result preview: {
+  "success": true,
+  "pages": [
+    {
+      "success": true,
+      "url": "https://www.theguardian.com/news/2021/oct/03/king-of-jordan-hidden-property-empire-worth-more-than-100m-pandora-papers-reve...
+INFO:agent.loop:\u26a1 Executing tool: 'deep_search' with arguments: {"pages": ["https://www.dw.com/en/pandora-papers-the-king-of-jordans-hidden-property-gems/a-59403014"]}
+INFO:agent.loop:\u2699\ufe0f Tool 'deep_search' execution complete. Result preview: {
+  "success": true,
+  "pages": [
+    {
+      "success": true,
+      "url": "https://www.dw.com/en/pandora-papers-the-king-of-jordans-hidden-property-gems/a-59403014",
+      "source_id": "SRC-001",
+  ...
+INFO:agent.loop:\u26a1 Executing tool: 'deep_search' with arguments: {"pages": ["https://www.aljazeera.com/news/2021/10/3/investigation-reveals-offshore-assets-of-heads-of-state"]}
+INFO:agent.loop:\u2699\ufe0f Tool 'deep_search' execution complete. Result preview: {
+  "success": true,
+  "pages": [
+    {
+      "success": true,
+      "url": "https://www.aljazeera.com/news/2021/10/3/investigation-reveals-offshore-assets-of-heads-of-state",
+      "source_id": "SRC-...
+INFO:agent.loop:Iteration 3/50: Calling LLM...
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:agent.loop:LLM requested 1 tool call(s)
+INFO:agent.loop:\u26a1 Executing tool: 'knowledge_agent' with arguments: {"source_title": "Pandora Papers reporting on King Abdullah II property network", "source_url": "https://www.theguardian.com/news/2021/oct/03/king-of-jordan-hidden-property-empire-worth-more-than-100m-pandora-papers-reveal", "text": "Benchmark sources report that leaked Pandora Papers documents identified King Abdullah II / Abdullah Al Hussein (born 30 January 1962, address Raghadan Palace) as beneficial owner of a network of offshore companies. The Guardian reports 16 companies holding assets in the US, UK and Jersey, incorporated in the British Virgin Islands, while DW reports 36 front companies registered in tax havens and 14 houses/flats in the US and UK acquired 2003-2017 for more than €91m/$106m. Named companies include Nabisco Holdings SA, Setara Limited and Timara Limited, which acquired three Malibu clifftop properties; other entities held Washington DC and UK assets. Property locations and reported amounts: three Malibu properties, including a 26-room resort-hotel-like mansion bought in August 2014 for $33.5m and two neighboring properties; three Washington DC condominiums bought in the prior two years for $13.8m total; seven UK properties bought 2003-2011, including three in Belgravia, with estimated current value about £28m; also a house in Ascot and central London apartments. Al Jazeera reports three Malibu beachfront mansions purchased through three offshore companies for $68m, plus the Washington apartments, Ascot house and London apartments, describing a roughly $100m property empire. Alcogal, the Panamanian law firm, appears in the Guardian account as corporate-service adviser; internal compliance records allegedly discussed avoiding identifying the client as a politically exposed person, while Alcogal denied deliberately failing to identify a PEP and said beneficial-owner details were recorded in the BVI secure system in November 2017. Royal palace and DLA Piper, representing Abdullah, said properties were no secret / secrecy was for privacy and security, all personally funded, not state budget, treasury, foreign grants, loans or public monies; lawyers denied wrongdoing and misuse of aid. Sources also state offshore ownership is not inherently illegal, and there was no evidence of wrongdoing in the Guardian report. The reporting contextualizes purchases against Jordanian aid, austerity, unemployment and Arab Spring protests, but does not establish that aid funded the properties."}
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:neo4j.notifications:Received notification from DBMS server: <GqlStatusObject gql_status='00NA0', status_description="note: successful completion - index or constraint already exists. The command 'CREATE CONSTRAINT UNIQUE_ENTITY_PER_THREAD IF NOT EXISTS FOR (e:Entity) REQUIRE (e.thread_id, e.type, e.value) IS UNIQUE' has no effect. The index or constraint specified by 'CONSTRAINT UNIQUE_ENTITY_PER_THREAD FOR (e:Entity) REQUIRE (e.thread_id, e.type, e.value) IS UNIQUE' already exists.", position=None, raw_classification='SCHEMA', classification=<NotificationClassification.SCHEMA: 'SCHEMA'>, raw_severity='INFORMATION', severity=<NotificationSeverity.INFORMATION: 'INFORMATION'>, diagnostic_record={'_classification': 'SCHEMA', '_severity': 'INFORMATION', 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: 'CREATE CONSTRAINT UNIQUE_ENTITY_PER_THREAD IF NOT EXISTS FOR (e:Entity) REQUIRE (e.thread_id, e.type, e.value) IS UNIQUE'
+INFO:agent.loop:\u2699\ufe0f Tool 'knowledge_agent' execution complete. Result preview: {
+  "status": "ok",
+  "added_entities": [
+    "PERSON | King Abdullah II",
+    "ALIAS | Abdullah Al Hussein",
+    "ADDRESS | Raghadan Palace",
+    "LOCATION | Jordan",
+    "LOCATION | British Virgin I...
+INFO:agent.loop:Iteration 4/50: Calling LLM...
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:agent.loop:LLM requested 2 tool call(s)
+INFO:agent.loop:\u26a1 Executing tool: 'kb_get' with arguments: {}
+INFO:agent.loop:\u2699\ufe0f Tool 'kb_get' execution complete. Result preview: ADDRESS | Raghadan Palace | Address associated with King Abdullah II.
+ALIAS | Abdullah Al Hussein | Alternate name used for King Abdullah II.
+DATE | 2003-2017 | Reported acquisition period for propert...
+INFO:agent.loop:\u26a1 Executing tool: 'kb_get_edges' with arguments: {"limit": 100}
+INFO:agent.loop:\u2699\ufe0f Tool 'kb_get_edges' execution complete. Result preview: located_in | address:Raghadan Palace -> location:Jordan | evidence: Raghadan Palace is the Jordanian royal residence associated with the King.
+alias_for | alias:Abdullah Al Hussein -> person:King Abdu...
+INFO:agent.loop:Iteration 5/50: Calling LLM...
+INFO:httpx:HTTP Request: POST https://api.a6api.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:agent.loop:No tool calls. Yielding final response (length=21344).

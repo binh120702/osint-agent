@@ -1,0 +1,65 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-005",
+  "report": "Error generating final report: APITimeoutError: Request timed out.",
+  "context": [],
+  "visited_urls": [
+    "https://www.afslaw.com/perspectives/investigations-blog/co-founder-fraudulent-cryptocurrency-sentenced-20-years-prison",
+    "https://www.justice.gov/opa/pr/justice-department-announces-compensation-process-onecoin-fraud-victims-funds-recovered"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "site:justice.gov OneCoin Ruja Ignatova indictment Konstantin Ignatov official press release",
+        "site:justice.gov OneCoin Karl Greenwood sentencing official",
+        "site:europol.eu OneCoin Ruja Ignatova most wanted official"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "OneCoin court opinion package tokens blockchain mining commissions indictment PDF",
+        "site:justice.gov OneCoin OneCoin Ltd educational packages tokens mining blockchain"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:justice.gov/usao-sdny OneCoin Greenwood Ignatov Capuci press release OneCoin packages tokens educational materials blockchain",
+        "site:justice.gov/opa/pr OneCoin Greenwood Ignatov Capuci OneCoin cryptocurrency fraud"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:fbi.gov/wanted/topten Ruja Ignatova OneCoin official wanted June 2022",
+        "site:fbi.gov Ruja Ignatova OneCoin reward official"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "OneCoin indictment PDF Southern District New York Ignatova Greenwood packages tokens mining educational products"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 10,
+  "duration_seconds": 407.6451836999622
+}

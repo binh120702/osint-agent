@@ -1,0 +1,48 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-006",
+  "report": "Error generating final report: APITimeoutError: Request timed out.",
+  "context": [],
+  "visited_urls": [
+    "https://nvd.nist.gov/vuln/detail/cve-2023-34362",
+    "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "MOVEit Transfer mass exploitation CVE-2023-34362 disclosure timeline LEMURLOOT FIN11 CL0P extortion infrastructure chronology",
+        "site:cisa.gov MOVEit CVE-2023-34362 LEMURLOOT",
+        "site:mandiant.com MOVEit LEMURLOOT FIN11 CL0P"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "Progress MOVEit Transfer CVE-2023-34362 May 31 2023 advisory timeline May 27 patch June 2023 MOVEit Cloud",
+        "site:progress.com MOVEit Transfer Critical Vulnerability 31May2023 CVE-2023-34362",
+        "site:cisa.gov MOVEit CL0P FIN11 LEMURLOOT advisory"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "MOVEit campaign CL0P infrastructure leak site extortion infrastructure IP 5.252.188.0/22 FIN11 LEMURLOOT",
+        "MOVEit LEMURLOOT CL0P extortion infrastructure connection analysis",
+        "site:unit42.paloaltonetworks.com MOVEit CL0P LEMURLOOT"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 11,
+  "duration_seconds": 607.8055368000059
+}

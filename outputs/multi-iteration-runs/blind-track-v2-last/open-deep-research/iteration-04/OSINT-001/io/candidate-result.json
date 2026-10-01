@@ -1,0 +1,56 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-001",
+  "report": "Error generating final report: APITimeoutError: Request timed out.",
+  "context": [],
+  "visited_urls": [
+    "https://attack.mitre.org/groups/G0032/",
+    "https://attack.mitre.org/software/S0584/",
+    "https://blog.google/threat-analysis-group/countering-threats-north-korea/",
+    "https://cloud.google.com/blog/topics/threat-intelligence/3cx-software-supply-chain-compromise",
+    "https://securelist.com/gopuram-backdoor-deployed-through-3cx-supply-chain-attack/109344/",
+    "https://www.csa.gov.sg/alerts-and-advisories/alerts/al-2023-040/",
+    "https://www.cybersecuritydive.com/news/supply-chain-attack-3cx-desktop-thousands/646432/",
+    "https://www.wired.com/story/3cx-supply-chain-attack-north-korea-cryptocurrency-targets/",
+    "https://www.wired.com/story/3cx-supply-chain-attack-times-two"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "2023 3CX DesktopApp supply chain compromise Mandiant report initial access build signing affected versions attribution UNC4736",
+        "3CX official security incident statement March April 2023 DesktopApp compromise",
+        "CISA 3CX DesktopApp supply chain compromise advisory 2023"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:crowdstrike.com 3CX supply chain March 2023 Labyrinth Chollima report signed binary versions",
+        "site:sentinelone.com 3CX Smooth Operator supply chain attack technical analysis macOS Windows March 2023",
+        "site:3cx.com security incident 3CX DesktopApp 18.12.416 update April 2023",
+        "site:sophos.com 3CX supply chain attack DLL sideloading technical analysis 2023"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "3CX DesktopApp compromise earliest March 2023 March 22 March 29 malicious build release update mechanism GitHub icons d3dcompiler_47.dll",
+        "3CX supply chain attack affected versions 18.12.407 18.12.416 Electron macOS Windows Linux technical report",
+        "3CX malicious installer code signing certificate build pipeline compromise Mandiant 2023"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 12,
+  "duration_seconds": 649.1262262000237
+}

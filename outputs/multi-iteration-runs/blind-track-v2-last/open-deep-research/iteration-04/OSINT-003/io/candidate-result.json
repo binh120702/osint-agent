@@ -1,0 +1,65 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-003",
+  "report": "Error generating final report: APITimeoutError: Request timed out.",
+  "context": [],
+  "visited_urls": [
+    "https://www.chainalysis.com/blog/axie-infinity-ronin-bridge-dprk-hack-seizure/",
+    "https://www.elliptic.co/insights/540-million-stolen-from-the-ronin-defi-bridge",
+    "https://www.elliptic.co/insights/fbi-confirms-north-korea-s-lazarus-group-as-hackers-behind-100-million-harmony-horizon-bridge-theft",
+    "https://www.elliptic.co/resources/harmony-horizon-bridge-hack"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "official FBI Ronin Bridge theft Lazarus March 2022 statement",
+        "US Treasury Ronin Bridge Lazarus sanctions 2022",
+        "Ronin bridge hack incident report wallet addresses laundering",
+        "Harmony Horizon Bridge hack FBI Lazarus attribution June 2022",
+        "US Treasury Harmony Horizon Bridge Lazarus address sanctions"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:fbi.gov Harmony Horizon Bridge June 2022 Lazarus statement May 2023",
+        "site:fbi.gov Ronin Network Lazarus March 2022 statement",
+        "site:home.treasury.gov Ronin bridge exploiter address Lazarus April 2022",
+        "site:home.treasury.gov Harmony Horizon Bridge address Lazarus"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "Harmony Horizon Bridge hack stolen wallet address 2022 Tornado Cash Railgun Elliptic addresses",
+        "Ronin bridge hack exploiter wallet address 0x sanctions OFAC 2022",
+        "Harmony Horizon Bridge court filing wallet addresses Lazarus"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "FBI statement January 2023 Harmony Horizon Bridge Lazarus Group official",
+        "Treasury OFAC Ronin bridge exploiter Ethereum address Lazarus official 2022",
+        "Ronin Network postmortem social engineering five validators official",
+        "Harmony Horizon Bridge incident report June 24 2022 official"
+      ],
+      "max_results": 5,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 10,
+  "duration_seconds": 424.90042389999144
+}

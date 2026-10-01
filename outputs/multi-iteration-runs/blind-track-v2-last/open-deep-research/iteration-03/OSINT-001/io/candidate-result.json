@@ -1,0 +1,53 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-001",
+  "report": "Error generating final report: APITimeoutError: Request timed out.",
+  "context": [],
+  "visited_urls": [
+    "https://attack.mitre.org/groups/G0032/",
+    "https://attack.mitre.org/software/S0584/",
+    "https://blog.google/threat-analysis-group/countering-threats-north-korea/",
+    "https://cloud.google.com/blog/topics/threat-intelligence/3cx-software-supply-chain-compromise",
+    "https://securelist.com/gopuram-backdoor-deployed-through-3cx-supply-chain-attack/109344/",
+    "https://www.csa.gov.sg/alerts-and-advisories/alerts/al-2023-040/",
+    "https://www.cybersecuritydive.com/news/supply-chain-attack-3cx-desktop-thousands/646432/",
+    "https://www.wired.com/story/3cx-supply-chain-attack-north-korea-cryptocurrency-targets/",
+    "https://www.wired.com/story/3cx-supply-chain-attack-times-two"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "2023 3CX DesktopApp supply chain compromise investigation initial access earliest documented access CrowdStrike Mandiant SentinelOne 3CX report",
+        "3CX compromise 2023 official report initial access build environment signing malicious code versions operating systems attribution"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:mandiant.com 3CX build environment signed installer March 2023 timeline X_TRADER initial access",
+        "3CX security alert timeline March 2023 malicious signed updates 18.12.407 18.12.416 build server",
+        "3CX compromise initial access phishing social engineering employee X_TRADER Trading Technologies competing account"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "3CX DesktopApp compromise technical analysis signed MSI macOS build environment malicious code release versions Sophos SentinelOne CrowdStrike",
+        "3CX supply chain compromise earliest observed March 22 March 29 2023 signed binary Windows macOS Linux details"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 12,
+  "duration_seconds": 650.1444140000385
+}

@@ -1,0 +1,39 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-009",
+  "report": "Error generating final report: APITimeoutError: Request timed out.",
+  "context": [],
+  "visited_urls": [
+    "https://www.aljazeera.com/news/2021/10/3/investigation-reveals-offshore-assets-of-heads-of-state",
+    "https://www.dw.com/en/pandora-papers-the-king-of-jordans-hidden-property-gems/a-59403014",
+    "https://www.icij.org/investigations/pandora-papers/jordan-king-abdullah-luxury-property/",
+    "https://www.theguardian.com/news/2021/oct/03/king-of-jordan-hidden-property-empire-worth-more-than-100m-pandora-papers-reveal"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "Pandora Papers King Abdullah II Jordan offshore property network ICIJ source",
+        "site:icij.org/investigations/pandora-papers Abdullah II Jordan properties companies",
+        "Pandora Papers Jordan King Abdullah II shell companies Malibu Washington DC London response"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:icij.org/investigations/pandora-papers/jordan-king-abdullah-luxury-property \"Abdullah\" companies names",
+        "\"King Abdullah\" Pandora Papers \"Portcullis\" company",
+        "\"King Abdullah\" Pandora Papers lawyer agent company British Virgin Islands Malibu address"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 10,
+  "duration_seconds": 418.1065805000253
+}

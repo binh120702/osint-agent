@@ -1,0 +1,61 @@
+{
+  "candidate": "langchain-ai/open_deep_research",
+  "adaptation": "native-langgraph-snapshot-search-file-inference-v1",
+  "case_id": "OSINT-003",
+  "report": "# Ronin Bridge and Harmony Horizon Theft: Evidence-Constrained Research Report\n\n## Executive conclusion\n\nNo substantive research evidence was returned by the benchmark tools. The only returned material states that a research pass was planned and that synthesis failed after the maximum number of retries:\n\n> “Error synthesizing research report: Maximum retries exceeded”\n\nNo benchmark source IDs, source titles, URLs, attribution statements, transaction records, wallet addresses, analytical reports, sanctions records, or law-enforcement documents were returned.\n\nAccordingly, the available benchmark output does **not** permit a supported conclusion about whether Lazarus Group or APT38 was publicly linked to both:\n\n- the Ronin Bridge theft; or\n- the Harmony Horizon theft.\n\nIt also does not permit a supported comparison of laundering methods, transaction flows, intermediary services, asset conversion, sanctions exposure, timing, wallet relationships, or fund movements.\n\nThe user-provided research target identifies the subject to investigate, but it is not itself evidence establishing attribution or an on-chain relationship. Because the requested methodology permits citations only to source IDs returned by the benchmark tools, no external links, source names, wallet addresses, relationship names, or factual attribution claims can be added.\n\n## Evidence actually returned\n\nThe returned material contains only two research-process statements:\n\n1. A reflection stating that the intended investigation would examine:\n   - public attribution;\n   - laundering and transaction comparisons;\n   - wallet and on-chain evidence;\n   - distinctions between facts, allegations, and analytical judgments; and\n   - contradictions and alternative explanations.\n\n2. An error stating that report synthesis failed after the maximum number of retries.\n\nNeither statement is an evidentiary source about either theft. Neither provides a source ID. Neither identifies a government, law-enforcement agency, company, researcher, wallet, blockchain transaction, address, sanctions designation, or laundering service.\n\n## Public attribution\n\n### Ronin Bridge theft\n\nThe returned benchmark material contains no attributable statement from a government, law-enforcement agency, company, researcher, blockchain analytics provider, or other identified source linking Lazarus Group or APT38 to the Ronin Bridge theft.\n\nTherefore, the available evidence supports no conclusion beyond:\n\n- attribution was an intended research question; and\n- no attribution evidence was successfully returned.\n\n### Harmony Horizon theft\n\nThe returned benchmark material likewise contains no attributable statement linking Lazarus Group or APT38 to the Harmony Horizon theft.\n\nNo official announcement, investigative report, company statement, research publication, or other identified source was returned.\n\n### Link between the two incidents\n\nBecause no source-backed attribution was returned for either incident, the available evidence cannot establish:\n\n- that the same actor conducted both thefts;\n- that Lazarus Group and APT38 are being used as equivalent labels in the returned evidence;\n- that the incidents share an operational actor;\n- that public authorities or private researchers have reached the same conclusion; or\n- that any alleged connection is supported by direct evidence rather than inference.\n\n## Laundering methods and transaction-flow comparison\n\nNo laundering or transaction-flow evidence was returned. In particular, the benchmark output contains no supported information about:\n\n- the initial stolen assets;\n- bridge or exchange transactions;\n- chain-hopping;\n- mixers or other intermediary services;\n- decentralized exchanges;\n- asset swaps or conversions;\n- stablecoin use;\n- privacy-enhancing tools;\n- sanctions exposure;\n- timing of laundering activity;\n- transaction clustering;\n- deposit or withdrawal patterns; or\n- similarities or differences between the two thefts.\n\nIt would therefore be unsupported to characterize either incident’s laundering process or to infer that similarities in laundering methods demonstrate common authorship.\n\nLikewise, no differences can be assessed. Absence of returned evidence is not evidence that the incidents had identical or different laundering patterns.\n\n## Wallet and on-chain evidence\n\nNo wallet addresses, transaction hashes, blockchain networks, labels, clusters, or fund movements were returned by the benchmark tools.\n\nConsequently, the available material does not establish:\n\n- any wallet controlled by an alleged actor;\n- any wallet associated with either theft;\n- a relationship between wallets involved in the two incidents;\n- common ownership or control;\n- a transfer from one theft-associated wallet to another;\n- use of a particular intermediary service;\n- conversion of stolen assets into another asset;\n- movement into or through a sanctioned address; or\n- any other on-chain relationship.\n\nNo wallet relationship names or analytical labels should be inferred or introduced without returned source evidence.\n\n## Verified facts, allegations, assessments, and uncertainty\n\n### Verified from the returned benchmark output\n\nThe following are the only directly supported facts:\n\n- The requested investigation concerned alleged links between Lazarus Group/APT38 and the Ronin Bridge and Harmony Horizon thefts.\n- The intended research scope included attribution, laundering patterns, transaction flows, and wallet evidence.\n- Research-report synthesis failed after the maximum number of retries.\n- No substantive benchmark evidence was included in the returned findings.\n\n### Not established\n\nThe available output does not establish:\n\n- attribution of either theft to Lazarus Group or APT38;\n- a common actor behind both thefts;\n- any specific laundering technique;\n- any shared intermediary;\n- any sanctions-related fact;\n- any wallet ownership or control;\n- any fund movement;\n- any public official or private-sector attribution;\n- any contradiction between sources; or\n- any alternative explanation grounded in returned evidence.\n\n### Uncertainty\n\nThe absence of returned evidence may reflect failed retrieval or failed synthesis rather than a finding that no public evidence exists. It is therefore not appropriate to interpret the tool output as disproving attribution claims. It only means that those claims cannot be evaluated under the stated source-restriction rules using the material returned here.\n\n## Assessment against the research questions\n\n| Research question | Result using returned benchmark evidence |\n|---|---|\n| Was Lazarus Group/APT38 publicly linked to the Ronin Bridge theft? | Cannot determine; no attribution source was returned. |\n| Was Lazarus Group/APT38 publicly linked to the Harmony Horizon theft? | Cannot determine; no attribution source was returned. |\n| Were both thefts publicly linked to the same actor? | Not established. |\n| Were laundering methods similar? | Cannot determine; no laundering evidence was returned. |\n| Were laundering methods different? | Cannot determine; no comparative evidence was returned. |\n| Were intermediary services shared? | Not established. |\n| Were asset-conversion paths shared? | Not established. |\n| Was there shared sanctions exposure? | Not established. |\n| Were the timing and transaction flows related? | Cannot determine. |\n| Were wallets linked across the incidents? | Not established; no wallet evidence was returned. |\n| Were there contradictions among sources? | None can be identified because no substantive sources were returned. |\n\n## Required structured data\n\n```json\n{\n  \"findings\": [],\n  \"claims\": [],\n  \"reasoning_steps\": [],\n  \"contradictions\": []\n}\n```\n\n## Sources\n\nNo benchmark source IDs, titles, or URLs were returned. Therefore, no source links can be cited without violating the requirement to rely exclusively on source IDs provided by the benchmark tools.",
+  "context": [],
+  "visited_urls": [
+    "https://www.chainalysis.com/blog/axie-infinity-ronin-bridge-dprk-hack-seizure/",
+    "https://www.elliptic.co/insights/540-million-stolen-from-the-ronin-defi-bridge",
+    "https://www.elliptic.co/insights/fbi-confirms-north-korea-s-lazarus-group-as-hackers-behind-100-million-harmony-horizon-bridge-theft",
+    "https://www.elliptic.co/resources/harmony-horizon-bridge-hack"
+  ],
+  "search_trace": [
+    {
+      "queries": [
+        "Ronin Bridge theft Lazarus Group APT38 official attribution FBI Treasury Sky Mavis wallet evidence",
+        "Harmony Horizon Bridge theft Lazarus Group APT38 official attribution FBI Treasury wallet evidence",
+        "Ronin Harmony bridge hacks attribution Lazarus Group APT38 comparison laundering on-chain"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "site:home.treasury.gov Ronin Lazarus Ethereum address April 14 2022 OFAC",
+        "site:home.treasury.gov Harmony Horizon Lazarus sanctions June 2022",
+        "site:fbi.gov Harmony Horizon Bridge Lazarus May 2023"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "Ronin Network official postmortem Lazarus attribution March 2022",
+        "Harmony Horizon Bridge official statement Lazarus FBI attribution",
+        "FBI statement Harmony Horizon Bridge Lazarus Group address"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    },
+    {
+      "queries": [
+        "APT38 Ronin Bridge theft Harmony Horizon Bridge attribution",
+        "APT38 Lazarus Ronin Harmony bridge hack",
+        "site:mandiant.com OR site:recordedfuture.com OR site:securelist.com APT38 Ronin Harmony"
+      ],
+      "max_results": 10,
+      "topic": "general",
+      "source_char_limit": 8000,
+      "full_snapshot_preserved_in": "input-case.json"
+    }
+  ],
+  "request_count": 12,
+  "duration_seconds": 511.29302679997636
+}

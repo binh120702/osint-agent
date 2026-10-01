@@ -1,0 +1,119 @@
+{
+  "approach": "openosint",
+  "iteration": 7,
+  "benchmark_cases": [
+    "OSINT-001",
+    "OSINT-003",
+    "OSINT-006",
+    "OSINT-008",
+    "OSINT-009"
+  ],
+  "model": "gpt-5.6-luna",
+  "parallel_workers": 10,
+  "timeout_seconds": 1200,
+  "retry_timeout_seconds": 2400,
+  "started_at": "2026-09-30T20:45:30.521138+00:00",
+  "finished_at": "2026-09-30T20:50:09.905073+00:00",
+  "cases": [
+    {
+      "approach": "openosint",
+      "iteration": 7,
+      "case_id": "OSINT-001",
+      "started_at": "2026-09-30T20:45:30.521138+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 118.35569050000049
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2-last/openosint/iteration-07/OSINT-001/attempt-01/io/candidate-result.json",
+      "artifact_sha256": "e1f650d644b1de84fa1d846cb35ed89685c7aa31ec74090caa1a6179fa5976d6",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T20:47:29.223852+00:00"
+    },
+    {
+      "approach": "openosint",
+      "iteration": 7,
+      "case_id": "OSINT-003",
+      "started_at": "2026-09-30T20:45:30.521765+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 82.9747993000201
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2-last/openosint/iteration-07/OSINT-003/attempt-01/io/candidate-result.json",
+      "artifact_sha256": "09b9d7377a252324032eb264abb50f7b28526c3892ceae35fe5982855ff82779",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T20:46:53.845215+00:00"
+    },
+    {
+      "approach": "openosint",
+      "iteration": 7,
+      "case_id": "OSINT-006",
+      "started_at": "2026-09-30T20:45:30.523148+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 99.96425769996131
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2-last/openosint/iteration-07/OSINT-006/attempt-01/io/candidate-result.json",
+      "artifact_sha256": "acd5afba1ea21d19a33521f7c57d6e0b3c68d5bd8cddd9a968d032f899c367b0",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T20:47:10.830973+00:00"
+    },
+    {
+      "approach": "openosint",
+      "iteration": 7,
+      "case_id": "OSINT-008",
+      "started_at": "2026-09-30T20:45:30.523906+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 96.94183299998986
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2-last/openosint/iteration-07/OSINT-008/attempt-01/io/candidate-result.json",
+      "artifact_sha256": "d16190e86664a35f680779e9b373769ac233b37ae3592b4f18fb313d6a035334",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T20:47:07.811608+00:00"
+    },
+    {
+      "approach": "openosint",
+      "iteration": 7,
+      "case_id": "OSINT-009",
+      "started_at": "2026-09-30T20:45:30.524438+00:00",
+      "timeout_seconds": 1200,
+      "retry_timeout_seconds": 2400,
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "exit_code": 0,
+          "duration_seconds": 102.56916169996839
+        }
+      ],
+      "artifact": "outputs/multi-iteration-runs/blind-track-v2-last/openosint/iteration-07/OSINT-009/attempt-01/io/candidate-result.json",
+      "artifact_sha256": "a61811d23eef5849827eab7f4187fb4bd0d224941f1cf9dbc5ba31b6198d54ed",
+      "terminal_status": "completed",
+      "finished_at": "2026-09-30T20:47:13.441394+00:00"
+    }
+  ]
+}
