@@ -112,21 +112,6 @@ def adapt_report_output(case: BenchmarkCase, parsed: dict[str, Any], validation_
             item["description"] = item["details"]
         if "contradiction_id" not in item:
             item["contradiction_id"] = item.get("id", item.get("contradictionId", ""))
-        if not str(item.get("contradiction_id", "")).strip():
-            expected_contradictions = [x for x in case.data["ground_truth"].get("contradictions", []) if isinstance(x, dict)]
-            text = " ".join(str(item.get(k, "")) for k in ("description", "details", "issue", "statement", "topic"))
-            import re
-            tokens = set(re.findall(r"[a-z0-9]+", text.casefold()))
-            candidates = []
-            for expected in expected_contradictions:
-                expected_tokens = set(re.findall(r"[a-z0-9]+", str(expected.get("description", "")).casefold()))
-                overlap = len(tokens & expected_tokens) / len(expected_tokens) if expected_tokens else 0.0
-                candidates.append((overlap, str(expected["contradiction_id"])))
-            candidates.sort(reverse=True)
-            # A generated contradiction may be assigned to a case contradiction
-            # only when the description has a unique, substantial lexical match.
-            if candidates and candidates[0][0] >= 0.20 and (len(candidates) == 1 or candidates[0][0] > candidates[1][0]):
-                item["contradiction_id"] = candidates[0][1]
         item["source_references"] = [_lookup(v, source_aliases) for v in _as_list(
             item.get("source_references", item.get("sources", [])))]
         contradictions.append(item)

@@ -137,10 +137,57 @@ def _source_ids(output: dict[str, Any], source_lookup: dict[str, str]) -> set[st
     return values
 
 
-def _contradiction_scores(case: dict[str, Any], output: dict[str, Any]) -> dict[str, Any]:
-    expected_items = case["ground_truth"].get("contradictions", [])
-    expected_by_id = {str(item["contradiction_id"]): set(item.get("source_references", [])) for item in expected_items}
+def _contradiction_scores(case: dict[str, Any], output: dict[str, Any], blind: bool = False) -> dict[str, Any]:
+    expected_items = [item for item in case["ground_truth"].get("contradictions", []) if isinstance(item, dict)]
     predicted_items = [item for item in output.get("contradictions", []) if isinstance(item, dict)]
+    if blind:
+        expected_descriptions = [str(item.get("description", "")) for item in expected_items]
+        predicted_descriptions = [" ".join(str(item.get(key, "")) for key in
+                                           ("description", "details", "issue", "statement", "topic"))
+                                 for item in predicted_items]
+        if _BLIND_SEMANTIC_MODE == "token":
+            matrix = [[_token_f1(left, right) for right in expected_descriptions]
+                      for left in predicted_descriptions]
+        else:
+            matrix = _semantic_similarity_matrix(predicted_descriptions, expected_descriptions) if predicted_descriptions else []
+        pairs = sorted(((matrix[pi][ei], pi, ei)
+                        for pi in range(len(predicted_items))
+                        for ei in range(len(expected_items))), reverse=True)
+        used_predicted, used_expected, matches = set(), set(), {}
+        for similarity, pi, ei in pairs:
+            if similarity < 0.35 or pi in used_predicted or ei in used_expected:
+                continue
+            used_predicted.add(pi)
+            used_expected.add(ei)
+            matches[ei] = (pi, similarity)
+        true_positive = len(matches)
+        false_positive = len(predicted_items) - true_positive
+        false_negative = len(expected_items) - true_positive
+        precision = true_positive / (true_positive + false_positive) if true_positive + false_positive else 0.0
+        recall = true_positive / (true_positive + false_negative) if true_positive + false_negative else 0.0
+        result = {"true_positive": true_positive, "false_positive": false_positive,
+                  "false_negative": false_negative, "precision": precision,
+                  "recall": recall,
+                  "f1": 2 * precision * recall / (precision + recall) if precision + recall else 0.0}
+        result["matching"] = {"method": f"blind_{_BLIND_SEMANTIC_MODE}_description_similarity",
+                              "threshold": 0.35}
+        details = []
+        for ei, expected in enumerate(expected_items):
+            if ei not in matches:
+                continue
+            pi, similarity = matches[ei]
+            cited = set(predicted_items[pi].get("source_references", []))
+            refs = set(expected.get("source_references", []))
+            details.append({"contradiction_id": str(expected["contradiction_id"]),
+                            "description_similarity": similarity,
+                            "source_reference_recall": len(cited & refs) / len(refs) if refs else 1.0,
+                            "source_references_correct": cited >= refs})
+        result["details"] = details
+        result["grounded_recall"] = (sum(item["source_reference_recall"] for item in details) /
+                                      len(details) if details else 0.0)
+        result["grounded_f1"] = result["f1"] * result["grounded_recall"]
+        return result
+    expected_by_id = {str(item["contradiction_id"]): set(item.get("source_references", [])) for item in expected_items}
     predicted = {str(item.get("contradiction_id", item.get("id", ""))): set(item.get("source_references", [])) for item in predicted_items}
     result = _f1(set(predicted), set(expected_by_id))
     details = []
@@ -403,7 +450,7 @@ def score_case(case: dict[str, Any], output: dict[str, Any], judge: Callable[[st
     step_f1 = 2 * step_precision * step_recall / (step_precision + step_recall) if step_precision + step_recall else 0.0
     finding_scores = _finding_scores(case, output, judge)
     claim_traceability = _claim_traceability(case, output)
-    contradiction_scores = _contradiction_scores(case, output)
+    contradiction_scores = _contradiction_scores(case, output, blind=blind)
     reasoning_quality = _reasoning_quality(case, output, judge, blind=blind)
     predicted_findings = [item for item in output.get("key_findings", []) if isinstance(item, dict)]
     available_expected = available_sources & expected_sources
