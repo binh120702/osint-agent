@@ -81,12 +81,50 @@ class PinterestSeleniumScraper:
         Returns:
             List of pin data dictionaries
         """
-        url = f"https://www.pinterest.com/{username}/"
-        logger.info(f"Scraping profile: {url}")
-        
+        username = username.strip().strip("/")
+        is_url = username.startswith(("http://", "https://"))
+        is_board_path = not is_url and "/" in username
+        if is_url:
+            url = username
+        elif is_board_path:
+            url = f"https://www.pinterest.com/{username}/"
+        else:
+            profile_url = f"https://www.pinterest.com/{username}/"
+            logger.info(f"Discovering Pinterest boards: {profile_url}")
+            self.driver.get(profile_url)
+            time.sleep(3)
+            board_links = self.driver.find_elements(
+                By.CSS_SELECTOR,
+                '[data-test-id="board-rep-tap-area-link"]',
+            )
+            board_urls = list(dict.fromkeys(
+                link.get_attribute("href") for link in board_links if link.get_attribute("href")
+            ))
+            pins = []
+            for board_url in board_urls:
+                remaining = max_pins - len(pins)
+                if remaining <= 0:
+                    break
+                board_pins = self.scrape_profile(
+                    board_url,
+                    max_pins=remaining,
+                    max_find_time_in_seconds=max_find_time_in_seconds,
+                )
+                known_images = {pin["image_url"] for pin in pins}
+                pins.extend(pin for pin in board_pins if pin["image_url"] not in known_images)
+            return pins[:max_pins]
+        logger.info(f"Scraping Pinterest pins: {url}")
+
         self.driver.get(url)
         time.sleep(3)  # Wait for initial load
-        
+
+        board_pin_limit = None
+        if re.search(r"/[^/]+/[^/]+/?$", urlparse(url).path):
+            body_text = self.driver.find_element(By.TAG_NAME, "body").text
+            count_match = re.search(r"\b(\d+)\s+Pins?\b", body_text)
+            if count_match:
+                board_pin_limit = min(int(count_match.group(1)), max_pins)
+
         pins = []
         pins_without_scraped_at = []
         last_height = 0
@@ -98,7 +136,13 @@ class PinterestSeleniumScraper:
             self._scroll_page()
             
             # Extract pins from current view
-            pin_elements = self.driver.find_elements(By.CSS_SELECTOR, '[data-test-id="pin"]')
+            pin_elements = self.driver.find_elements(
+                By.CSS_SELECTOR,
+                '[data-test-id="pin"], [data-test-id="pinWrapper"]',
+            )
+            if board_pin_limit is not None:
+                gated_pins = self.driver.find_elements(By.CSS_SELECTOR, '[data-test-id="gated-pin-rep"]')
+                pin_elements.extend(gated_pins[:board_pin_limit])
             
             for elem in pin_elements:
                 if len(pins) >= max_pins:
@@ -106,6 +150,8 @@ class PinterestSeleniumScraper:
                 
                 try:
                     pin_data = self._extract_pin_data(elem)
+                    if not pin_data:
+                        continue
                     pin_data_without_scraped_at = pin_data.copy()
                     pin_data_without_scraped_at.pop('scraped_at')
 
@@ -150,9 +196,18 @@ class PinterestSeleniumScraper:
     def _extract_pin_data(self, element) -> Optional[Dict]:
         """Extract data from a pin element"""
         try:
-            # Try to find image
+            # Recommendation placeholders have images but no pin identity.
+            if element.get_attribute('data-test-id') == 'gated-pin-image':
+                return None
             img = element.find_element(By.TAG_NAME, 'img')
             image_url = img.get_attribute('src')
+            if not image_url or 'pinimg.com' not in image_url:
+                return None
+            if element.get_attribute('data-test-id') == 'gated-pin-rep':
+                parent_text = element.text.strip()
+                ancestor_text = element.find_element(By.XPATH, "../..").text.strip()
+                if parent_text or ancestor_text in {"More like this", "More ideas from Finley Gould"}:
+                    return None
             
             # Get high-res version (replace size parameters)
             if 'pinimg.com' in image_url:
@@ -171,8 +226,8 @@ class PinterestSeleniumScraper:
             try:
                 desc_elem = element.find_element(By.CSS_SELECTOR, '[data-test-id="desc"]')
                 description = desc_elem.text
-            except:
-                description = img.get_attribute('alt') or ''
+            except Exception:
+                description = '' if img.get_attribute('alt') == 'Pin' else (img.get_attribute('alt') or '')
             
             return {
                 'image_url': image_url,
@@ -287,10 +342,10 @@ def scrape_pinterest_profile(username: str, max_pins: int = 50, output_dir: str 
 
 @tool
 def pinterest_scrape_by_username(username: str) -> str:
-    """Scrape a Pinterest profile by username, input the username of the Pinterest profile to scrape.
-    To find the username of the Pinterest profile, you can use the engine_search tool to search the web for information about the object of investigation.
+    """Scrape pins from a Pinterest username, profile, or board URL.
+    For usernames, discover public boards on the profile and collect pins from those boards.
     Args:
-        username: The username of the Pinterest profile to scrape.
+        username: Pinterest username, profile URL, or board URL.
         
     Returns:
         Something with the information of the Pinterest profile.

@@ -26,6 +26,10 @@ interface Props {
   onSelectThread: (id: string) => void;
   onDeleteThread: (id: string) => void;
   onNewThread: () => void;
+  threadPage: number;
+  threadPageSize: number;
+  threadTotal: number;
+  onThreadPageChange: (page: number) => void;
 }
 
 const TYPE_LABELS: Record<string, string> = {
@@ -50,7 +54,7 @@ const formatProposedValue = (value?: string) => {
   }
 };
 
-export const InvestigationHome: React.FC<Props> = ({ subjects, onCreateSubject, onOpenSettings, onStartThread, onToggleStatus, onDeleteSubject, onRefresh, loading, activeTab, onTabChange, threads, onSelectThread, onDeleteThread, onNewThread }) => {
+export const InvestigationHome: React.FC<Props> = ({ subjects, onCreateSubject, onOpenSettings, onStartThread, onToggleStatus, onDeleteSubject, onRefresh, loading, activeTab, onTabChange, threads, onSelectThread, onDeleteThread, onNewThread, threadPage, threadPageSize, threadTotal, onThreadPageChange }) => {
   const [progress, setProgress] = useState<Record<string, SubjectProgress>>({});
   const [progressLoading, setProgressLoading] = useState(false);
   const [query, setQuery] = useState('');
@@ -179,10 +183,10 @@ export const InvestigationHome: React.FC<Props> = ({ subjects, onCreateSubject, 
 
         <nav className="mt-6 flex gap-1 border-b border-border-dark" aria-label="Workspace sections">
           <button onClick={() => onTabChange('subjects')} className={`min-h-11 border-b-2 px-4 text-xs font-bold transition-colors ${activeTab === 'subjects' ? 'border-accent-blue text-accent-blue' : 'border-transparent text-slate-500 hover:text-slate-200'}`}>Subjects <span className="ml-1 text-[10px] opacity-60">{subjects.length}</span></button>
-          <button onClick={() => onTabChange('threads')} className={`min-h-11 border-b-2 px-4 text-xs font-bold transition-colors ${activeTab === 'threads' ? 'border-accent-blue text-accent-blue' : 'border-transparent text-slate-500 hover:text-slate-200'}`}>Threads <span className="ml-1 text-[10px] opacity-60">{threads.length}</span></button>
+          <button onClick={() => onTabChange('threads')} className={`min-h-11 border-b-2 px-4 text-xs font-bold transition-colors ${activeTab === 'threads' ? 'border-accent-blue text-accent-blue' : 'border-transparent text-slate-500 hover:text-slate-200'}`}>Threads <span className="ml-1 text-[10px] opacity-60">{threadTotal}</span></button>
         </nav>
 
-        {activeTab === 'threads' ? <ThreadBrowser threads={threads} subjects={subjects} onSelectThread={onSelectThread} onDeleteThread={onDeleteThread} onNewThread={onNewThread} /> : <>
+        {activeTab === 'threads' ? <ThreadBrowser threads={threads} subjects={subjects} onSelectThread={onSelectThread} onDeleteThread={onDeleteThread} onNewThread={onNewThread} page={threadPage} pageSize={threadPageSize} total={threadTotal} onPageChange={onThreadPageChange} /> : <>
 
         <section className="grid gap-px border-x border-b border-border-dark bg-border-dark sm:grid-cols-3" aria-label="Active investigation summary">
           <div className="bg-panel-dark px-5 py-4"><div className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Active subjects</div><div className="mt-2 text-2xl font-semibold text-slate-100">{activeSubjects.length}</div></div>

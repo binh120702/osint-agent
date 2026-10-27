@@ -51,4 +51,5 @@ outputs/candidate-runs/open-deep-research/runs/
 outputs/*.py
 outputs/*.json
 package-lock.json
-OSINT_Agent___AAMAS/
+OSINT_Agent___AAMAS/*
+AGENTS.md

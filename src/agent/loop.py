@@ -103,37 +103,41 @@ def get_thread(thread_id: str) -> list[AnyMessage]:
     return msgs
 
 
-def list_threads() -> list[dict]:
-    """Return a summary list of all active threads from memory and disk, sorted by modification time."""
+def list_threads(limit: int | None = None, offset: int = 0) -> list[dict]:
+    """Return thread summaries without loading transcripts outside the requested page."""
     _DATA_DIR.mkdir(parents=True, exist_ok=True)
-    thread_ids = set(_THREADS.keys())
-    for f in _DATA_DIR.glob("*.json"):
-        thread_ids.add(f.stem)
+    files = {f.stem: f for f in _DATA_DIR.glob("*.json")}
+    thread_ids = set(files) | set(_THREADS)
+    ordered = sorted(
+        thread_ids,
+        key=lambda tid: os.path.getmtime(files[tid]) if tid in files else 0.0,
+        reverse=True,
+    )
+    if limit is not None:
+        ordered = ordered[max(0, offset):max(0, offset) + max(0, limit)]
+    else:
+        ordered = ordered[max(0, offset):]
 
     result = []
-    for tid in thread_ids:
+    for tid in ordered:
         msgs = get_thread(tid)
         title = ""
         for m in msgs:
             if isinstance(m, HumanMessage):
                 title = m.content[:80]
                 break
-        
-        fpath = _DATA_DIR / f"{tid}.json"
-        mtime = os.path.getmtime(fpath) if fpath.exists() else 0.0
-        
         result.append({
             "thread_id": tid,
             "message_count": len(msgs),
             "title": title,
-            "mtime": mtime
         })
-        
-    result.sort(key=lambda x: x["mtime"], reverse=True)
-    for item in result:
-        del item["mtime"]
-        
     return result
+
+
+def thread_count() -> int:
+    """Return the number of persisted and in-memory threads without loading them."""
+    _DATA_DIR.mkdir(parents=True, exist_ok=True)
+    return len({f.stem for f in _DATA_DIR.glob("*.json")} | set(_THREADS))
 
 
 def delete_thread(thread_id: str) -> bool:

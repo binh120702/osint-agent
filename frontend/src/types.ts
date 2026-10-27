@@ -25,6 +25,13 @@ export interface Thread {
   subject_name?: string | null;
 }
 
+export interface ThreadPage {
+  items: Thread[];
+  total: number;
+  page: number;
+  page_size: number;
+}
+
 export interface Subject {
   subject_id: string;
   name: string;

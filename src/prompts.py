@@ -14,7 +14,7 @@ MAIN_PROMPT = """
     1. Use the deep_search tool to extract text/links/images from relevant URLs.
         - You may include a site's robots.txt URL, but note: deep_search is bounded and may only discover a limited number of extra URLs.
     2. Use the engine_search_tool for merged SearXNG + DuckDuckGo web search. Use duckduckgo_search when a DuckDuckGo-specific search is needed.
-    3. Use the pinterest_scrape_by_username tool to get more information about the Pinterest profile.
+    3. Use the pinterest_scrape_by_username tool with the Pinterest username. It discovers the profile's public boards and collects their pins; a board URL can also be supplied directly.
 
     KNOWLEDGE BASE GUIDELINES:
     - When investigating a selected subject, the system-provided shared subject context is durable knowledge from earlier conversations.

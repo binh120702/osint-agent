@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { MessageSquare, Search, Trash2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, MessageSquare, Search, Trash2 } from 'lucide-react';
 import type { Subject, Thread } from '../types';
 
 interface Props {
@@ -8,9 +8,13 @@ interface Props {
   onSelectThread: (id: string) => void;
   onDeleteThread: (id: string) => void;
   onNewThread: () => void;
+  page: number;
+  pageSize: number;
+  total: number;
+  onPageChange: (page: number) => void;
 }
 
-export const ThreadBrowser: React.FC<Props> = ({ threads, subjects, onSelectThread, onDeleteThread, onNewThread }) => {
+export const ThreadBrowser: React.FC<Props> = ({ threads, subjects, onSelectThread, onDeleteThread, onNewThread, page, pageSize, total, onPageChange }) => {
   const [query, setQuery] = useState('');
   const [subjectFilter, setSubjectFilter] = useState('all');
 
@@ -33,7 +37,7 @@ export const ThreadBrowser: React.FC<Props> = ({ threads, subjects, onSelectThre
       </div>
     </div>
 
-    <div className="mt-4 flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-slate-500"><span>{filteredThreads.length} of {threads.length} threads</span><span>Sorted by recent activity</span></div>
+    <div className="mt-4 flex items-center justify-between text-[10px] font-bold uppercase tracking-widest text-slate-500"><span>{filteredThreads.length} shown · {total} total threads</span><span>Sorted by recent activity</span></div>
     <div className="mt-3 overflow-hidden border border-border-dark bg-panel-dark">
       {filteredThreads.length === 0 ? <div className="px-6 py-16 text-center"><MessageSquare size={24} className="mx-auto text-slate-600" /><p className="mt-4 text-sm font-semibold text-slate-300">No matching threads</p><p className="mt-2 text-xs text-slate-500">Try a different subject or search term.</p></div> : <div className="divide-y divide-border-dark">
         {filteredThreads.map((thread) => {
@@ -51,5 +55,12 @@ export const ThreadBrowser: React.FC<Props> = ({ threads, subjects, onSelectThre
         })}
       </div>}
     </div>
+    {total > pageSize && <div className="flex items-center justify-between border-x border-b border-border-dark bg-bg-dark px-4 py-3 text-xs text-slate-500">
+      <span>Page {page} of {Math.ceil(total / pageSize)}</span>
+      <div className="flex items-center gap-1">
+        <button onClick={() => onPageChange(page - 1)} disabled={page === 1} className="p-2 text-slate-400 hover:text-slate-100 disabled:cursor-not-allowed disabled:opacity-30" title="Previous page"><ChevronLeft size={15} /></button>
+        <button onClick={() => onPageChange(page + 1)} disabled={page >= Math.ceil(total / pageSize)} className="p-2 text-slate-400 hover:text-slate-100 disabled:cursor-not-allowed disabled:opacity-30" title="Next page"><ChevronRight size={15} /></button>
+      </div>
+    </div>}
   </section>;
 };

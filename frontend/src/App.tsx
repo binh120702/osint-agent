@@ -6,10 +6,13 @@ import { KBViewer } from './components/KBViewer';
 import { SubjectBar } from './components/SubjectBar';
 import { InvestigationHome } from './components/InvestigationHome';
 import { CreateSubjectModal } from './components/CreateSubjectModal';
-import type { Thread, Message, Subject } from './types';
+import type { Thread, ThreadPage, Message, Subject } from './types';
 
 function App() {
   const [threads, setThreads] = useState<Thread[]>([]);
+  const [threadPage, setThreadPage] = useState(1);
+  const [threadTotal, setThreadTotal] = useState(0);
+  const THREAD_PAGE_SIZE = 25;
   const [currentThreadId, setCurrentThreadId] = useState<string | null>(null);
   const [currentSubjectId, setCurrentSubjectId] = useState<string | null>(null);
   const [subjects, setSubjects] = useState<Subject[]>([]);
@@ -27,14 +30,27 @@ function App() {
   const [showCreateSubjectForThread, setShowCreateSubjectForThread] = useState(false);
   const [homeTab, setHomeTab] = useState<'subjects' | 'threads'>('subjects');
 
-  const fetchThreads = async () => {
+  const fetchThreads = async (page = 1) => {
     try {
-      const res = await fetch('/api/threads');
-      const data = await res.json();
-      setThreads(Array.isArray(data) ? data : []);
+      const res = await fetch(`/api/threads?page=${page}&page_size=${THREAD_PAGE_SIZE}`);
+      const data: ThreadPage | Thread[] = await res.json();
+      if (Array.isArray(data)) {
+        setThreads(data);
+        setThreadTotal(data.length);
+      } else {
+        setThreads(Array.isArray(data.items) ? data.items : []);
+        setThreadTotal(typeof data.total === 'number' ? data.total : 0);
+        setThreadPage(data.page || page);
+      }
     } catch (e) {
       console.error('Failed to load threads', e);
     }
+  };
+
+  const handleThreadPageChange = (page: number) => {
+    if (page < 1 || page > Math.ceil(threadTotal / THREAD_PAGE_SIZE)) return;
+    setThreadPage(page);
+    fetchThreads(page);
   };
 
   const fetchSubjects = async () => {
@@ -422,6 +438,10 @@ function App() {
         threads={threads}
         onSelectThread={handleSelectThread}
         onDeleteThread={handleDeleteThread}
+        threadPage={threadPage}
+        threadPageSize={THREAD_PAGE_SIZE}
+        threadTotal={threadTotal}
+        onThreadPageChange={handleThreadPageChange}
       />
       {showCreateSubject && <CreateSubjectModal onClose={() => setShowCreateSubject(false)} onCreated={handleSubjectCreated} />}
     </>;

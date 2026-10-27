@@ -21,7 +21,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 load_dotenv()
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
@@ -137,14 +137,18 @@ async def chat(req: ChatRequest):
 # ── Thread management ────────────────────────────────────────────────────────
 
 @app.get("/api/threads")
-def list_threads():
+def list_threads(
+    page: int = Query(1, ge=1),
+    page_size: int = Query(25, ge=1, le=100),
+):
     subjects = get_subject_manager()
-    result = agent_loop.list_threads()
+    total = agent_loop.thread_count()
+    result = agent_loop.list_threads(limit=page_size, offset=(page - 1) * page_size)
     for thread in result:
         subject = subjects.get_by_thread(thread["thread_id"])
         thread["subject_id"] = subject.subject_id if subject else None
         thread["subject_name"] = subject.name if subject else None
-    return result
+    return {"items": result, "total": total, "page": page, "page_size": page_size}
 
 
 @app.get("/api/threads/{thread_id}/messages")
