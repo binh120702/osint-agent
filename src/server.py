@@ -342,10 +342,14 @@ def list_tools():
     config = _load_tool_config()
     tools = get_all_tools()
     all_names = list(config.keys())
-    enabled_names = {t.name for t in tools}
+    enabled_tools = {tool.name: tool for tool in tools}
     return [
-        {"name": n, "enabled": n in enabled_names, "description": ""}
-        for n in all_names if not n.startswith("_")
+        {
+            "name": name,
+            "enabled": name in enabled_tools,
+            "description": getattr(enabled_tools.get(name), "description", ""),
+        }
+        for name in all_names if not name.startswith("_")
     ]
 
 

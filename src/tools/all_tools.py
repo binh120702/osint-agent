@@ -1,50 +1,48 @@
+import importlib
 import json
 from pathlib import Path
 from typing import Dict
 
-from tools.deep_search import deep_search
-from tools.engine_search import duckduckgo_search, engine_search_tool
-from tools.final_report import final_report
-from tools.github_tools import github_repo_summary, github_search_repos
-from tools.image_descriptor import describe_image
-from tools.knowledge_base import (
-    kb_current_thread_namespace,
-    knowledge_agent,
-    kb_get,
-    kb_get_edges,
-    kb_search_entities,
-    kb_search_relationships,
-    kb_update_entity,
-    kb_upsert_relationship,
-    kb_remove_relationship,
+from agent.tool_decorator import get_registered_tools
+
+
+# Only import purpose-built tool modules. Other files in this package include
+# legacy utilities with optional dependencies and are not agent tools.
+TOOL_MODULES = (
+    "tools.pinterest",
+    "tools.deep_search",
+    "tools.engine_search",
+    "tools.web_content_tools",
+    "tools.wiki_tools",
+    "tools.github_tools",
+    "tools.image_descriptor",
+    "tools.final_report",
+    "tools.knowledge_base",
 )
-from tools.pinterest import pinterest_scrape_by_username
-from tools.web_content_tools import get_url_content
-from tools.wiki_tools import wiki_fetch_page, wiki_search_pages
 
 
-TOOLS: Dict[str, object] = {
-    "pinterest_scrape_by_username": pinterest_scrape_by_username,
-    "deep_search": deep_search,
-    "engine_search_tool": engine_search_tool,
-    "duckduckgo_search": duckduckgo_search,
-    "get_url_content": get_url_content,
-    "wiki_fetch_page": wiki_fetch_page,
-    "wiki_search_pages": wiki_search_pages,
-    "github_repo_summary": github_repo_summary,
-    "github_search_repos": github_search_repos,
-    "describe_image": describe_image,
-    "final_report": final_report,
-    "knowledge_agent": knowledge_agent,
-    "kb_get": kb_get,
-    "kb_get_edges": kb_get_edges,
-    "kb_search_entities": kb_search_entities,
-    "kb_search_relationships": kb_search_relationships,
-    "kb_update_entity": kb_update_entity,
-    "kb_upsert_relationship": kb_upsert_relationship,
-    "kb_remove_relationship": kb_remove_relationship,
-    "kb_current_thread_namespace": kb_current_thread_namespace,
-}
+def discover_tools() -> Dict[str, object]:
+    """Import declared modules and return their decorated tools by name."""
+    for module_name in TOOL_MODULES:
+        importlib.import_module(module_name)
+
+    registered_tools = get_registered_tools()
+    allowed_modules = set(TOOL_MODULES)
+    tools = {
+        name: registered
+        for name, registered in registered_tools.items()
+        if getattr(registered, "tool_module", "") in allowed_modules
+    }
+    for name, registered in tools.items():
+        schema = getattr(registered, "schema", None)
+        if not name or not isinstance(schema, dict) or schema.get("function", {}).get("name") != name:
+            raise ValueError(f"Tool {name!r} has an invalid function schema")
+        if not callable(getattr(registered, "invoke", None)):
+            raise ValueError(f"Tool {name!r} does not implement invoke(args)")
+    return tools
+
+
+TOOLS: Dict[str, object] = discover_tools()
 
 
 def _load_tool_config() -> Dict[str, bool]:
@@ -67,6 +65,9 @@ def _load_tool_config() -> Dict[str, bool]:
         return default_config
 
     merged = default_config.copy()
+    if not isinstance(raw, dict):
+        return default_config
+
     for name, value in raw.items():
         if name in merged and isinstance(value, bool):
             merged[name] = value

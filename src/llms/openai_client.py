@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 from openai import OpenAI
 
 from agent.messages import AnyMessage, AIMessage, ToolCall
-from llms.llm_client import LLMClient
+from llms.llm_client import LLMClient, merge_streamed_tool_name
 
 
 load_dotenv()
@@ -120,7 +120,9 @@ class OpenAIClient(LLMClient):
                             tc_accum[idx]["id"] = tc_delta.id
                         if tc_delta.function:
                             if tc_delta.function.name:
-                                tc_accum[idx]["name"] += tc_delta.function.name
+                                tc_accum[idx]["name"] = merge_streamed_tool_name(
+                                    tc_accum[idx]["name"], tc_delta.function.name
+                                )
                             if tc_delta.function.arguments:
                                 tc_accum[idx]["arguments"] += tc_delta.function.arguments
 

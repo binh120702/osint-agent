@@ -23,6 +23,9 @@ from functools import wraps
 from typing import Any, Callable, get_type_hints
 
 
+_REGISTERED_TOOLS: dict[str, Callable] = {}
+
+
 # ── Python type → JSON Schema converter ──────────────────────────────────────────
 
 _PY_TO_JSON: dict[type, str] = {
@@ -126,7 +129,13 @@ def _build_schema(fn: Callable) -> dict:
 # ── Decorator ────────────────────────────────────────────────────────────────
 
 def tool(fn: Callable) -> Callable:
-    """Decorate a function as an agent tool."""
+    """Decorate and register a function as an agent tool."""
+    if not callable(fn) or not inspect.isfunction(fn):
+        raise TypeError("@tool can only decorate functions")
+    if not fn.__doc__ or not inspect.getdoc(fn):
+        raise ValueError(f"Tool {fn.__name__!r} must have a description docstring")
+    if fn.__name__ in _REGISTERED_TOOLS:
+        raise ValueError(f"Duplicate tool name: {fn.__name__}")
 
     @wraps(fn)
     def wrapper(*args, **kwargs):
@@ -134,6 +143,7 @@ def tool(fn: Callable) -> Callable:
 
     # Attach metadata
     wrapper.name = fn.__name__  # type: ignore[attr-defined]
+    wrapper.tool_module = fn.__module__  # type: ignore[attr-defined]
     wrapper.description = (inspect.getdoc(fn) or "").split("\n\n")[0].strip()  # type: ignore[attr-defined]
     wrapper.schema = _build_schema(fn)  # type: ignore[attr-defined]
 
@@ -151,5 +161,11 @@ def tool(fn: Callable) -> Callable:
         return fn(**merged)
 
     wrapper.invoke = invoke  # type: ignore[attr-defined]
+    _REGISTERED_TOOLS[wrapper.name] = wrapper
 
     return wrapper
+
+
+def get_registered_tools() -> dict[str, Callable]:
+    """Return a snapshot of tools registered by imported modules."""
+    return dict(_REGISTERED_TOOLS)

@@ -8,6 +8,26 @@ from typing import Iterator
 from agent.messages import AnyMessage, AIMessage
 
 
+def merge_streamed_tool_name(current: str, fragment: str) -> str:
+    """Merge provider tool-name deltas without duplicating repeated names.
+
+    Most OpenAI-compatible APIs send a name once, but some send the full name
+    again in later deltas. Treat full repeats and prefix/superset updates as
+    idempotent while preserving ordinary suffix fragments.
+    """
+    if not fragment:
+        return current
+    if not current:
+        return fragment
+    if fragment == current or current.endswith(fragment):
+        return current
+    if fragment.startswith(current):
+        return fragment
+    if current.startswith(fragment):
+        return current
+    return current + fragment
+
+
 class LLMClient(ABC):
     """Abstract interface for all LLM clients."""
 

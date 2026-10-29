@@ -4,6 +4,10 @@ An Open Source Intelligence (OSINT) agent built from scratch with a custom light
 
 It runs as a FastAPI server and serves an interactive dark-mode HTML chat interface directly.
 
+## Adding Tools
+
+See the [tool contributor guide](src/README.md#adding-an-agent-tool) for the `@tool` contract, module discovery, enablement, and testing. Run contract and registry tests from the repository root with `python -m unittest discover -s tests -p 'test_*.py' && python -m unittest discover -s src/tests -p 'test_*.py'`.
+
 ## Prerequisites
 
 - **Python 3.13** (see `src/pyproject.toml` and `src/.python-version`)
@@ -78,6 +82,9 @@ This starts the Uvicorn server on **http://localhost:8000**. Open this URL in yo
 ## MVP Smoke Demo
 
 For a quick end-to-end validation of the workflow (web search → entity extraction → knowledge graph updates → streaming responses), see [docs/smoke_demo.md](docs/smoke_demo.md).
+
+Chat UI:
+![demo](assets/demo.png)
 
 ---
 
